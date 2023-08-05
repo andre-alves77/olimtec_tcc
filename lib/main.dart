@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/components/sport_item.dart';
+import 'package:olimtec_tcc/pages/modalities_page.dart';
 import 'theme/color_schemes.g.dart';
 
 void main() {
@@ -15,29 +16,24 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           useMaterial3: true,
+          visualDensity: VisualDensity.adaptivePlatformDensity,
           colorScheme: lightColorScheme,
           fontFamily: 'Lato'),
       darkTheme: ThemeData(
         useMaterial3: true,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
         colorScheme: darkColorScheme,
         fontFamily: 'Lato',
       ),
       themeMode: ThemeMode.dark,
       home: Scaffold(
         appBar: AppBar(
-          title: Text(
+          title: const Text(
             'MODALIDADES',
-            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
           ),
         ),
-        body: Column(
-          children: [
-            SportItem(Icons.sports_basketball, 'BASQUETE MASCULINO'),
-            SportItem(Icons.sports_basketball, 'BASQUETE FEMININO'),
-            SportItem(Icons.sports_basketball, 'BASQUETE'),
-            SportItem(Icons.sports_basketball, 'BASQUETE'),
-          ],
-        ),
+        body: const ModalitiesPage(),
       ),
     );
   }
