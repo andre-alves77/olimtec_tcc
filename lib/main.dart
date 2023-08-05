@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/components/sport_item.dart';
-import 'color_schemes.g.dart';
+import 'theme/color_schemes.g.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,13 +13,31 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(useMaterial3: true, colorScheme: lightColorScheme),
-      darkTheme: ThemeData(useMaterial3: true, colorScheme: darkColorScheme),
+      theme: ThemeData(
+          useMaterial3: true,
+          colorScheme: lightColorScheme,
+          fontFamily: 'Lato'),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: darkColorScheme,
+        fontFamily: 'Lato',
+      ),
+      themeMode: ThemeMode.dark,
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Home'),
+          title: Text(
+            'MODALIDADES',
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+          ),
         ),
-        body: Center(child: SportItem(Icons.sports_basketball, 'BASQUETE')),
+        body: Column(
+          children: [
+            SportItem(Icons.sports_basketball, 'BASQUETE MASCULINO'),
+            SportItem(Icons.sports_basketball, 'BASQUETE FEMININO'),
+            SportItem(Icons.sports_basketball, 'BASQUETE'),
+            SportItem(Icons.sports_basketball, 'BASQUETE'),
+          ],
+        ),
       ),
     );
   }
