@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/components/navbar.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -25,7 +24,6 @@ class _HomePageState extends State<HomePage> {
           MainCard(),
         ],
       ),
-      bottomNavigationBar: MyCustomBottomNavigationBar(),
     );
   }
 }
