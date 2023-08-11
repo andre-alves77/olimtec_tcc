@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../components/test_widget.dart';
+import '../components/main_card.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -17,12 +19,9 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: const [
-          MainCard(),
-          MainCard(),
-        ],
+      body: const Center(
+        child: 
+        MainCard('09:15 - BASQUETE MASCULINO', 'Quadra 01', 'assets/images/LOGO_3EAA_EXAMPLE.png', 'assets/images/LOGO_1EAA_EXAMPLE.png', '3ºEAA', '1ºEAB'),
       ),
     );
   }
@@ -51,8 +50,8 @@ class bottomtest extends StatelessWidget {
   }
 }
 
-class MainCard extends StatelessWidget {
-  const MainCard({super.key});
+class MainCardTest extends StatelessWidget {
+  const MainCardTest({super.key});
 
   @override
   Widget build(BuildContext context) {
