@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../components/test_widget.dart';
-import '../components/main_card.dart';
+import '../components/card_carousel.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: const Center(
         child: 
-        MainCard('09:15 - BASQUETE MASCULINO', 'Quadra 01', 'assets/images/LOGO_3EAA_EXAMPLE.png', 'assets/images/LOGO_1EAA_EXAMPLE.png', '3ºEAA', '1ºEAB'),
+        CardCarousel(),
       ),
     );
   }
