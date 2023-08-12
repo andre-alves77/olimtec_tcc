@@ -14,28 +14,33 @@ class GameCard extends StatelessWidget {
       child: Card(
         clipBehavior: Clip.antiAliasWithSaveLayer,
         elevation: 10,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
         child: Container(
+          color: Theme.of(context).colorScheme.primaryContainer,
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
           width: sizeWidth,
           child: Column(
             children: [
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 12),
+                  FittedBox(
+                    fit: BoxFit.fill,
                     child: Text(
-                      'BASQUETE MASCULINO - QUADRA 01 ',
+                      'BASQUETE MASCULINO - QUADRA 01',
                       style: TextStyle(
                         fontFamily: 'Lato',
-                        fontSize: 17,
+                        fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
                   ),
                 ],
               ),
-              SizedBox(
-                width: 320,
+              Padding(
+                padding: const EdgeInsets.only(bottom: 4),
                 child: Divider(
                   height: 1,
                   thickness: 2,
@@ -43,67 +48,77 @@ class GameCard extends StatelessWidget {
                 ),
               ),
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
-                          child: Image.asset(
-                            'assets/images/LOGO_1EAA_EXAMPLE.png',
-                            width: sizeWidth / 5,
-                            fit: BoxFit.cover,
-                          ),
+                  Column(
+                    children: [
+                      ClipRRect(
+                        borderRadius: BorderRadius.circular(8),
+                        child: Image.asset(
+                          'assets/images/LOGO_3EAA_EXAMPLE.png',
+                          width: sizeWidth / 6,
+                          fit: BoxFit.cover,
                         ),
-                        Text(
-                          '1ºEAB',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
+                      ),
+                      Text(
+                        '1ºEAB',
+                        style: TextStyle(
+                          fontFamily: 'Lato',
+                          fontSize: 18,
+                          fontWeight: FontWeight.bold,
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 30),
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Column(
                       children: [
-                        Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Text(
-                              '41 : 22 ',
-                              style: TextStyle(
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold,
+                        Container(
+                          margin: EdgeInsets.only(top: 6.5),
+                          width: 100,
+                          height: 45,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(20),
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                '41 : 22',
+                                style: TextStyle(
+                                  fontSize: 18,
+                                  fontWeight: FontWeight.bold,
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                        Text(
-                          'Encerrado',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
+                        Padding(
+                          padding: const EdgeInsets.all(10),
+                          child: Text(
+                            'Encerrado',
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 16,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
                         ),
                       ],
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 25),
+                    padding: const EdgeInsets.only(left: 0),
                     child: Column(
                       children: [
                         ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.asset(
                               'assets/images/LOGO_3EAA_EXAMPLE.png',
-                              width: sizeWidth / 5,
+                              width: sizeWidth / 6,
                               fit: BoxFit.cover,
                             ),
                           ),
