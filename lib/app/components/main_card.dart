@@ -3,7 +3,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class MainCard extends StatelessWidget {
-  const MainCard(this.modalidade, this.local, this.imageA, this.imageB, this.timeA, this.timeB, {super.key});
+  const MainCard(this.modalidade, this.local, this.imageA, this.imageB,
+      this.timeA, this.timeB,
+      {super.key});
 
   final modalidade;
   final local;
@@ -14,21 +16,19 @@ class MainCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-   var size = MediaQuery.of(context).size;
-   final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+    var size = MediaQuery.of(context).size;
+    final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return Container(
       constraints: BoxConstraints(
         minWidth: 200,
-        maxWidth: 400,
+        maxWidth: 300,
       ),
       width: size.width * 0.9,
       height: size.height * 0.30,
       decoration: BoxDecoration(
-        color: Theme.of(context).colorScheme.primaryContainer,
-        borderRadius: BorderRadius.circular(20)
-      ),
+          color: Theme.of(context).colorScheme.primaryContainer,
+          borderRadius: BorderRadius.circular(20)),
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
         child: Column(
@@ -79,8 +79,8 @@ class MainCard extends StatelessWidget {
                     borderRadius: BorderRadius.circular(8),
                     child: Image.asset(
                       Theme.of(context).brightness == Brightness.dark
-                      ? 'assets/images/IMAGE_VS_L.png'
-                      : 'assets/images/IMAGE_VS.png',
+                          ? 'assets/images/IMAGE_VS_L.png'
+                          : 'assets/images/IMAGE_VS.png',
                       width: sizeWidth / 4,
                       fit: BoxFit.cover,
                     ),
@@ -99,28 +99,29 @@ class MainCard extends StatelessWidget {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
               child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Text(
-                    timeA,
-                    style: const TextStyle(
-                    fontFamily: 'Lato',
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                  mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      timeA,
+                      style: const TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  SizedBox(width: sizeWidth / 14,),
-                  Text(
-                    timeB,
-                    style: const TextStyle(
-                    fontFamily: 'Lato',
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
+                    SizedBox(
+                      width: sizeWidth / 14,
                     ),
-                  ),
-                ]
-              ),
+                    Text(
+                      timeB,
+                      style: const TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 16,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ]),
             ),
           ],
         ),

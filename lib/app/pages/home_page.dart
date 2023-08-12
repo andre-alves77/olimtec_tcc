@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/components/game_card.dart';
 
 import '../components/card_carousel.dart';
 
@@ -19,9 +20,26 @@ class _HomePageState extends State<HomePage> {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
         ),
       ),
-      body: const Center(
-        child: 
-        CardCarousel(),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          CardCarousel(),
+          Text(
+            'RESULTADOS',
+            style: TextStyle(
+                color: Theme.of(context).colorScheme.onPrimaryContainer,
+                fontWeight: FontWeight.bold,
+                fontSize: 26),
+          ),
+          Container(
+            constraints: BoxConstraints(maxWidth: 400),
+            child: Column(
+              children: [
+                GameCard(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
