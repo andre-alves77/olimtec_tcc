@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/components/game_card.dart';
+import 'package:olimtec_tcc/app/components/main_card.dart';
 
 import '../components/card_carousel.dart';
 
@@ -23,14 +24,26 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          CardCarousel(),
-          Text(
-            'RESULTADOS',
-            style: TextStyle(
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-                fontWeight: FontWeight.bold,
-                fontSize: 26),
-          ),
+         Container(
+          constraints: BoxConstraints(maxWidth: 400, minWidth: 200),
+           child: CardCarousel(),
+           /* child: MainCard(
+            '09:15 - VOLEI MASCULINO',
+               'Quadra 01',
+               'assets/images/LOGO_3EAA_EXAMPLE.png',
+               'assets/images/LOGO_1EAA_EXAMPLE.png',
+               '3ºEAA',
+               '1ºEAB'), */
+         ),
+          
+          //CardCarousel(),
+          //Text(
+            //'RESULTADOS',
+            //style: TextStyle(
+                //color: Theme.of(context).colorScheme.onPrimaryContainer,
+                //fontWeight: FontWeight.bold,
+                //fontSize: 26),
+          //),
           Container(
             constraints: BoxConstraints(maxWidth: 400),
             child: Column(

@@ -52,7 +52,7 @@ class _CardCarouselState extends State<CardCarousel> {
       children: <Widget>[
         CarouselSlider(
           options: CarouselOptions(
-            height: size.height * 0.3,
+            
             autoPlay: true,
             autoPlayInterval: Duration(seconds: 5),
             autoPlayAnimationDuration: Duration(milliseconds: 800),
@@ -68,12 +68,8 @@ class _CardCarouselState extends State<CardCarousel> {
           items: cardList.map((card) {
             return Builder(builder: (BuildContext context) {
               return Container(
-                height: MediaQuery.of(context).size.height * 0.30,
                 width: MediaQuery.of(context).size.width * 0.9,
-                child: Card(
-                  color: Theme.of(context).colorScheme.primary,
-                  child: card,
-                ),
+                child: card,
               );
             });
           }).toList(),

@@ -19,18 +19,14 @@ class MainCard extends StatelessWidget {
     var size = MediaQuery.of(context).size;
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
-    return Container(
-      constraints: BoxConstraints(
-        minWidth: 200,
-        maxWidth: 300,
-      ),
-      width: size.width * 0.9,
-      height: size.height * 0.30,
-      decoration: BoxDecoration(
+    return AspectRatio(
+      aspectRatio: 1.8,
+      child: Container(
+        decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.primaryContainer,
-          borderRadius: BorderRadius.circular(20)),
-      child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
+          borderRadius: BorderRadius.circular(20)
+        ),
+        width: sizeWidth,
         child: Column(
           mainAxisSize: MainAxisSize.max,
           children: [
@@ -38,12 +34,16 @@ class MainCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  modalidade,
-                  style: const TextStyle(
-                    fontFamily: 'Lato',
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
+                Container(
+                  child: FittedBox(
+                    child: Text(
+                      modalidade,
+                      style: const TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -52,11 +52,15 @@ class MainCard extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text(
-                  local,
-                  style: const TextStyle(
-                    fontFamily: 'Lato',
-                    fontSize: 14,
+                Container(
+                  child: FittedBox(
+                    child: Text(
+                      local,
+                      style: const TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 14,
+                      ),
+                    ),
                   ),
                 ),
               ],
@@ -102,23 +106,31 @@ class MainCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Text(
-                      timeA,
-                      style: const TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                    Container(
+                      child: FittedBox(
+                        child: Text(
+                          timeA,
+                          style: const TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
                     SizedBox(
                       width: sizeWidth / 14,
                     ),
-                    Text(
-                      timeB,
-                      style: const TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold,
+                    Container(
+                      child: FittedBox(
+                        child: Text(
+                          timeB,
+                          style: const TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 16,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
                       ),
                     ),
                   ]),
