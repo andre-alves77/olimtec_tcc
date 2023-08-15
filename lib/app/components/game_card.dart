@@ -21,100 +21,107 @@ class GameCard extends StatelessWidget {
           color: Theme.of(context).colorScheme.primaryContainer,
           padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
           width: sizeWidth,
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  FittedBox(
-                    fit: BoxFit.fill,
-                    child: Text(
-                      'BASQUETE MASCULINO - QUADRA 01',
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: const EdgeInsets.only(bottom: 4),
-                child: Divider(
-                  height: 1,
-                  thickness: 2,
-                  color: Theme.of(context).colorScheme.primary,
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          'assets/images/LOGO_3EAA_EXAMPLE.png',
-                          width: sizeWidth / 6,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      Text(
-                        '1ºEAB',
+          child: FittedBox(
+            fit: BoxFit.contain,
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: Text(
+                        'BASQUETE MASCULINO - QUADRA 01',
                         style: TextStyle(
                           fontFamily: 'Lato',
-                          fontSize: 18,
+                          fontSize: 17.8,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 4),
+                  child: FittedBox(
+                    child: Container(
+                      width: 330,
+                      child: Divider(
+                        height: 1,
+                        thickness: 2,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 30),
-                    child: Column(
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
                       children: [
-                        Container(
-                          margin: EdgeInsets.only(top: 6.5),
-                          width: 100,
-                          height: 45,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(20),
-                            color: Theme.of(context).colorScheme.primary,
-                          ),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                '41 : 22',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            'assets/images/LOGO_3EAA_EXAMPLE.png',
+                            width: sizeWidth / 6,
+                            fit: BoxFit.cover,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.all(10),
-                          child: Text(
-                            'Encerrado',
-                            style: TextStyle(
-                              fontFamily: 'Lato',
-                              fontSize: 16,
-                              fontWeight: FontWeight.bold,
-                            ),
+                        Text(
+                          '1ºEAB',
+                          style: TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 0),
-                    child: Column(
-                      children: [
-                        ClipRRect(
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 30),
+                      child: Column(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.only(top: 6.5),
+                            width: 100,
+                            height: 45,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(20),
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
+                            child: Row(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  '41 : 22',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.all(10),
+                            child: Text(
+                              'Encerrado',
+                              style: TextStyle(
+                                fontFamily: 'Lato',
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 0),
+                      child: Column(
+                        children: [
+                          ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.asset(
                               'assets/images/LOGO_3EAA_EXAMPLE.png',
@@ -130,12 +137,13 @@ class GameCard extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                      ],
+                        ],
+                      ),
                     ),
-                  ),
-                ],
-              ),
-            ],
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),
