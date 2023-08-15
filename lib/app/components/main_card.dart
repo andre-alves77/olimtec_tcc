@@ -22,11 +22,10 @@ class MainCard extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 1.7,
       child: Card(
-        clipBehavior: Clip.antiAliasWithSaveLayer,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),
-        elevation: 10,
+        elevation: 20,
         child: Container(
           decoration: BoxDecoration(
             color: Theme.of(context).colorScheme.primaryContainer,

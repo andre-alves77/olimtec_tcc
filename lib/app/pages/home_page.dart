@@ -37,6 +37,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
           ),
+          SizedBox(height: 10),
           Container(
             constraints: BoxConstraints(maxWidth: 400),
             child: Column(
