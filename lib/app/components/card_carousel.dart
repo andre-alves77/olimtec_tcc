@@ -52,13 +52,14 @@ class _CardCarouselState extends State<CardCarousel> {
       children: <Widget>[
         CarouselSlider(
           options: CarouselOptions(
-            
             autoPlay: true,
             autoPlayInterval: Duration(seconds: 5),
             autoPlayAnimationDuration: Duration(milliseconds: 800),
             autoPlayCurve: Curves.fastOutSlowIn,
             pauseAutoPlayOnTouch: true,
-            aspectRatio: 2.0,
+            aspectRatio: 1.7,
+            clipBehavior: Clip.none,
+
             onPageChanged: (index, reason) {
               setState(() {
                 _currentIndex = index;
@@ -67,9 +68,11 @@ class _CardCarouselState extends State<CardCarousel> {
           ),
           items: cardList.map((card) {
             return Builder(builder: (BuildContext context) {
-              return Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                child: card,
+              return AspectRatio(
+                aspectRatio: 1.7,
+                child: Container(
+                  child: card,
+                ),
               );
             });
           }).toList(),
