@@ -13,21 +13,24 @@ int _currentIndex = 0;
 
 List cardList = [
   MainCard(
-      '09:15 - BASQUETE MASCULINO',
+      '09:15 - ',
+      'BASQUETE MASCULINO',
       'Quadra 01',
       'assets/images/LOGO_3EAA_EXAMPLE.png',
       'assets/images/LOGO_1EAA_EXAMPLE.png',
       '3ºEAA',
       '1ºEAB'),
   MainCard(
-      '09:15 - HANDBALL MASCULINO',
+      '09:15 - ',
+      'HANDBALL MASCULINO',
       'Quadra 01',
       'assets/images/LOGO_3EAA_EXAMPLE.png',
       'assets/images/LOGO_1EAA_EXAMPLE.png',
       '3ºEAA',
       '1ºEAB'),
   MainCard(
-      '09:15 - VOLEI MASCULINO',
+      '09:15 - ',
+      'VOLEI MASCULINO',
       'Quadra 01',
       'assets/images/LOGO_3EAA_EXAMPLE.png',
       'assets/images/LOGO_1EAA_EXAMPLE.png',
@@ -57,9 +60,10 @@ class _CardCarouselState extends State<CardCarousel> {
             autoPlayAnimationDuration: Duration(milliseconds: 800),
             autoPlayCurve: Curves.fastOutSlowIn,
             pauseAutoPlayOnTouch: true,
+            enlargeCenterPage: true,
+            viewportFraction: 1,
             aspectRatio: 1.7,
             clipBehavior: Clip.none,
-
             onPageChanged: (index, reason) {
               setState(() {
                 _currentIndex = index;

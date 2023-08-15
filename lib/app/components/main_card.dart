@@ -3,10 +3,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class MainCard extends StatelessWidget {
-  const MainCard(this.modalidade, this.local, this.imageA, this.imageB,
+  const MainCard(this.hora ,this.modalidade, this.local, this.imageA, this.imageB,
       this.timeA, this.timeB,
       {super.key});
 
+  final hora;
   final modalidade;
   final local;
   final imageA;
@@ -43,13 +44,25 @@ class MainCard extends StatelessWidget {
                     Container(
                       width: sizeWidth / 1.4,
                       child: FittedBox(
-                        child: Text(
-                          modalidade,
-                          style: const TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                          ),
+                        child: Row(
+                          children: [
+                            Text(
+                              hora,
+                              style: const TextStyle(
+                                fontFamily: 'Lato',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Text(
+                              modalidade,
+                              style: const TextStyle(
+                                fontFamily: 'Lato',
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
