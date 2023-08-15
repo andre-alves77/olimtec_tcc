@@ -20,7 +20,7 @@ class App extends StatelessWidget {
         colorScheme: darkColorScheme,
         fontFamily: 'Lato',
       ),
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.system,
       home: HomePage(),
     );
   }
