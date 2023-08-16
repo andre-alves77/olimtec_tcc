@@ -49,7 +49,7 @@ const darkColorScheme = ColorScheme(
   onTertiary: Color(0xFF00363D),
   tertiaryContainer: Color(0xFF004F58),
   onTertiaryContainer: Color(0xFF97F0FF),
-  error: Color(0xFFFFB4AB),
+  error: Color(0xFFBA1A1A),
   errorContainer: Color(0xFF93000A),
   onError: Color(0xFF690005),
   onErrorContainer: Color(0xFFFFDAD6),

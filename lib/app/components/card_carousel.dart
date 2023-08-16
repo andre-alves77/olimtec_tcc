@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'main_card.dart';
 
 class CardCarousel extends StatefulWidget {
@@ -12,30 +13,9 @@ class CardCarousel extends StatefulWidget {
 int _currentIndex = 0;
 
 List cardList = [
-  MainCard(
-      '09:15 - ',
-      'BASQUETE MASCULINO',
-      'Quadra 01',
-      'assets/images/LOGO_3EAA_EXAMPLE.png',
-      'assets/images/LOGO_1EAA_EXAMPLE.png',
-      '3ºEAA',
-      '1ºEAB'),
-  MainCard(
-      '09:15 - ',
-      'HANDBALL MASCULINO',
-      'Quadra 01',
-      'assets/images/LOGO_3EAA_EXAMPLE.png',
-      'assets/images/LOGO_1EAA_EXAMPLE.png',
-      '3ºEAA',
-      '1ºEAB'),
-  MainCard(
-      '09:15 - ',
-      'VOLEI MASCULINO',
-      'Quadra 01',
-      'assets/images/LOGO_3EAA_EXAMPLE.png',
-      'assets/images/LOGO_1EAA_EXAMPLE.png',
-      '3ºEAA',
-      '1ºEAB'),
+  MainCard(gametest),
+  MainCard(gametest),
+  MainCard(gametest),
 ];
 
 List<T> map<T>(List list, Function handler) {

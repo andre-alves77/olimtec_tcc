@@ -1,9 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/models/game.dart';
 
 class GameCard extends StatelessWidget {
-  GameCard({super.key});
+  GameCard(this.game, {super.key});
+
+  Game game;
 
   @override
   Widget build(BuildContext context) {
@@ -30,13 +33,26 @@ class GameCard extends StatelessWidget {
                   children: [
                     FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: Text(
-                        'BASQUETE MASCULINO - QUADRA 01',
-                        style: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 17.8,
-                          fontWeight: FontWeight.bold,
-                        ),
+                      child: Row(
+                        children: [
+                          Text(
+                            game.modalidade,
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 17.8,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Text(' - '),
+                          Text(
+                            game.local,
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 17.8,
+                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ],
@@ -62,13 +78,13 @@ class GameCard extends StatelessWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8),
                           child: Image.asset(
-                            'assets/images/LOGO_3EAA_EXAMPLE.png',
+                            game.team1.image,
                             width: sizeWidth / 6,
                             fit: BoxFit.cover,
                           ),
                         ),
                         Text(
-                          '1ºEAB',
+                          game.team1.name,
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 18,
@@ -104,16 +120,35 @@ class GameCard extends StatelessWidget {
                             ),
                           ),
                           Padding(
-                            padding: const EdgeInsets.all(10),
-                            child: Text(
-                              'Encerrado',
-                              style: TextStyle(
-                                fontFamily: 'Lato',
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
+                              padding: const EdgeInsets.all(10),
+                              child: game.gameState == GameState.predicted
+                                  ? Text(
+                                      'Previsto',
+                                      style: TextStyle(
+                                          fontFamily: 'Lato',
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.bold,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSecondaryContainer),
+                                    )
+                                  : game.gameState == GameState.inProgress
+                                      ? Text(
+                                          '• Em andamento',
+                                          style: TextStyle(
+                                              fontFamily: 'Lato',
+                                              fontSize: 16,
+                                              fontWeight: FontWeight.w900,
+                                              color: Colors.redAccent),
+                                        )
+                                      : Text(
+                                          'Encerrado',
+                                          style: TextStyle(
+                                            fontFamily: 'Lato',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        )),
                         ],
                       ),
                     ),
@@ -124,13 +159,13 @@ class GameCard extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8),
                             child: Image.asset(
-                              'assets/images/LOGO_3EAA_EXAMPLE.png',
+                              game.team2.image,
                               width: sizeWidth / 6,
                               fit: BoxFit.cover,
                             ),
                           ),
                           Text(
-                            '3ºEAA',
+                            game.team2.name,
                             style: TextStyle(
                               fontFamily: 'Lato',
                               fontSize: 18,

@@ -1,19 +1,12 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/models/game.dart';
 
 class MainCard extends StatelessWidget {
-  const MainCard(this.hora ,this.modalidade, this.local, this.imageA, this.imageB,
-      this.timeA, this.timeB,
-      {super.key});
+  const MainCard(this.game, {super.key});
 
-  final hora;
-  final modalidade;
-  final local;
-  final imageA;
-  final imageB;
-  final timeA;
-  final timeB;
+  final Game game;
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +22,8 @@ class MainCard extends StatelessWidget {
         elevation: 20,
         child: Container(
           decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.primaryContainer,
-            borderRadius: BorderRadius.circular(20)
-          ),
+              color: Theme.of(context).colorScheme.primaryContainer,
+              borderRadius: BorderRadius.circular(20)),
           width: sizeWidth,
           child: FittedBox(
             child: Column(
@@ -47,15 +39,16 @@ class MainCard extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              hora,
+                              game.time,
                               style: const TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
+                            Text(' - '),
                             Text(
-                              modalidade,
+                              game.modalidade,
                               style: const TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 18,
@@ -76,7 +69,7 @@ class MainCard extends StatelessWidget {
                       width: sizeWidth / 5,
                       child: FittedBox(
                         child: Text(
-                          local,
+                          game.local,
                           style: const TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 14,
@@ -95,7 +88,7 @@ class MainCard extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          imageA,
+                          game.team1.image,
                           width: sizeWidth / 4,
                           fit: BoxFit.cover,
                         ),
@@ -113,7 +106,7 @@ class MainCard extends StatelessWidget {
                       ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.asset(
-                          imageB,
+                          game.team2.image,
                           width: sizeWidth / 4,
                           fit: BoxFit.cover,
                         ),
@@ -131,7 +124,7 @@ class MainCard extends StatelessWidget {
                           width: sizeWidth / 7,
                           child: FittedBox(
                             child: Text(
-                              timeA,
+                              game.team1.name,
                               style: const TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 16,
@@ -147,7 +140,7 @@ class MainCard extends StatelessWidget {
                           width: sizeWidth / 7,
                           child: FittedBox(
                             child: Text(
-                              timeB,
+                              game.team2.name,
                               style: const TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 16,

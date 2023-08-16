@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/components/game_card.dart';
 import 'package:olimtec_tcc/app/components/main_card.dart';
 import 'package:olimtec_tcc/app/components/test_widget.dart';
+import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
 import '../components/card_carousel.dart';
 
@@ -25,15 +26,15 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-         Container(
-          constraints: BoxConstraints(maxWidth: 400, minWidth: 200),
-           child: CardCarousel(),
-         ),
+          Container(
+            constraints: BoxConstraints(maxWidth: 400, minWidth: 200),
+            child: CardCarousel(),
+          ),
           Container(
             constraints: BoxConstraints(maxWidth: 400),
             child: Column(
               children: [
-                GameCard(),
+                GameCard(gametest),
               ],
             ),
           ),
