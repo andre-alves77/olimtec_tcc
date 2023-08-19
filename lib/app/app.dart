@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/pages/aovivo_page.dart';
+import 'package:olimtec_tcc/app/pages/equipe_page.dart';
 
 import 'pages/home_page.dart';
 import 'theme/color_schemes.g.dart';
