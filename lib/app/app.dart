@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/components/game_card.dart';
 import 'package:olimtec_tcc/app/pages/aovivo_page.dart';
 import 'package:olimtec_tcc/app/pages/equipe_page.dart';
+import 'package:olimtec_tcc/app/pages/home_page.dart';
 import 'package:olimtec_tcc/app/pages/landing_page/landing_page.dart';
-import 'pages/home_page.dart';
 import 'theme/color_schemes.g.dart';
 
 class App extends StatelessWidget {
