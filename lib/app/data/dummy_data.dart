@@ -15,3 +15,13 @@ Game gametest = Game(
   modalidade: 'BASQUETE MASCULINO',
   gameState: GameState.inProgress,
 );
+
+List<Game> games = [
+  gametest,
+  gametest,
+  gametest,
+  gametest,
+  gametest,
+  gametest,
+  gametest,
+];

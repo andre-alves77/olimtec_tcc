@@ -16,7 +16,6 @@ class _LandingPageState extends State<LandingPage> {
     var size = MediaQuery.of(context).size;
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
-
     return Scaffold(
       body: Container(
         width: size.width,
@@ -77,7 +76,7 @@ class _LandingPageState extends State<LandingPage> {
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                   child: Container(
                     width: sizeWidth / 1.2,
-                    child: const FittedBox(
+                    child: FittedBox(
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [
@@ -96,11 +95,11 @@ class _LandingPageState extends State<LandingPage> {
                   ),
                 ),
                 LandingTabBar(),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            );
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
