@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/components/game_card.dart';
-import 'package:olimtec_tcc/app/components/main_card.dart';
-import 'package:olimtec_tcc/app/components/test_widget.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
 class MainAoVivo extends StatefulWidget {
@@ -59,37 +57,9 @@ class _MainAoVivoState extends State<MainAoVivo> {
                       child: Column(
                         children: [
                           GameCard(gametest),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      constraints: BoxConstraints(maxWidth: 400),
-                      child: Column(
-                        children: [
                           GameCard(gametest),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      constraints: BoxConstraints(maxWidth: 400),
-                      child: Column(
-                        children: [
                           GameCard(gametest),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      constraints: BoxConstraints(maxWidth: 400),
-                      child: Column(
-                        children: [
                           GameCard(gametest),
-                        ],
-                      ),
-                    ),
-                    Container(
-                      constraints: BoxConstraints(maxWidth: 400),
-                      child: Column(
-                        children: [
                           GameCard(gametest),
                         ],
                       ),

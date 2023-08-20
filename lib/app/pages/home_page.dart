@@ -32,27 +32,29 @@ class _HomePageState extends State<HomePage> {
             fit: BoxFit.cover,
           ),
         ),
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'OLIM',
-              style: TextStyle(
-                fontFamily: 'Lato',
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            Text(
-              'TEC',
-              style: TextStyle(
+        title: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'OLIM',
+                style: TextStyle(
                   fontFamily: 'Lato',
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.primary),
-            ),
-          ],
+                ),
+              ),
+              Text(
+                'TEC',
+                style: TextStyle(
+                    fontFamily: 'Lato',
+                    fontSize: 28,
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.primary),
+              ),
+            ],
+          ),
         ),
       ),
       body: Center(
