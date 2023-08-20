@@ -10,7 +10,6 @@ class MainCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return AspectRatio(
