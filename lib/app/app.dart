@@ -24,7 +24,7 @@ class App extends StatelessWidget {
         fontFamily: 'Lato',
       ),
       themeMode: ThemeMode.system,
-      home: MainEquipe(),
+      home: HomePage(),
     );
   }
 }
