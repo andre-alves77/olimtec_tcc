@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/pages/landing_page/landing_page.dart';
 
 import 'pages/home_page.dart';
 import 'theme/color_schemes.g.dart';
