@@ -4,6 +4,7 @@ import 'package:olimtec_tcc/app/pages/aovivo_page.dart';
 import 'package:olimtec_tcc/app/pages/equipe_page.dart';
 import 'package:olimtec_tcc/app/pages/landing_page/landing_page.dart';
 import 'pages/home_page.dart';
+import 'pages/perfil_page.dart';
 import 'theme/color_schemes.g.dart';
 
 class App extends StatelessWidget {
@@ -23,8 +24,8 @@ class App extends StatelessWidget {
         colorScheme: darkColorScheme,
         fontFamily: 'Lato',
       ),
-      themeMode: ThemeMode.system,
-      home: MainEquipe(),
+      themeMode: ThemeMode.dark,
+      home: HomePage(),
     );
   }
 }
