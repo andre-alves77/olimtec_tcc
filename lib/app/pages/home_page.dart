@@ -37,7 +37,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-        centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -79,7 +78,7 @@ class _HomePageState extends State<HomePage> {
                 ],
               ),
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 10), 
           ],
         ),
       ),
