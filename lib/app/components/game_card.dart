@@ -15,6 +15,7 @@ class GameCard extends StatelessWidget {
     return AspectRatio(
       aspectRatio: 2.8,
       child: Card(
+        margin: EdgeInsets.all(10),
         clipBehavior: Clip.antiAliasWithSaveLayer,
         elevation: 20,
         shape: RoundedRectangleBorder(

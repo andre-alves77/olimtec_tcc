@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/components/game_card.dart';
 import 'package:olimtec_tcc/app/components/main_card.dart';
-import 'package:olimtec_tcc/app/components/test_widget.dart';
+import 'package:olimtec_tcc/app/components/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
 import '../components/card_carousel.dart';
@@ -18,36 +18,69 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
-          'HOMEPAGE',
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 28),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+        automaticallyImplyLeading: false,
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            Theme.of(context).brightness == Brightness.light
+                ? 'assets/images/LOGO_LIGHT_MODE.png'
+                : 'assets/images/LOGO_DARK_MODE.png',
+            width: 300,
+            height: 200,
+            fit: BoxFit.cover,
+          ),
+        ),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'OLIM',
+              style: TextStyle(
+                fontFamily: 'Lato',
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            Text(
+              'TEC',
+              style: TextStyle(
+                  fontFamily: 'Lato',
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.primary),
+            ),
+          ],
         ),
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            constraints: BoxConstraints(maxWidth: 400, minWidth: 200),
-            child: CardCarousel(),
-          ),
-          Container(
-            constraints: BoxConstraints(maxWidth: 400),
-            child: Column(
-              children: [
-                GameCard(gametest),
-              ],
+      body: Center(
+        child: Column(
+          children: [
+            Container(
+              constraints: BoxConstraints(maxWidth: 400, minWidth: 200),
+              child: CardCarousel(),
             ),
-          ),
-          SizedBox(height: 10),
-          Container(
-            constraints: BoxConstraints(maxWidth: 400),
-            child: Column(
-              children: [
-                SportItemTest(Icons.sports_basketball, 'BASQUETE MASCULINO'),
-              ],
+            FittedBox(
+                child: Text(
+              'RESULTADOS',
+              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+            )),
+            Expanded(
+              child: Container(
+                constraints: BoxConstraints(maxWidth: 400),
+                child: ListView.builder(
+                    itemCount: games.length,
+                    itemBuilder: (context, index) {
+                      return GameCard(games[index]);
+                    }),
+              ),
             ),
-          ),
-        ],
+            SizedBox(height: 10),
+          ],
+        ),
       ),
     );
   }

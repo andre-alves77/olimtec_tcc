@@ -14,6 +14,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'OLIMTEC',
       theme: ThemeData(
           useMaterial3: true,
           visualDensity: VisualDensity.adaptivePlatformDensity,
@@ -26,7 +27,7 @@ class App extends StatelessWidget {
         fontFamily: 'Lato',
       ),
       themeMode: ThemeMode.system,
-      home: ResultadoPage(),
+      home: HomePage(),
     );
   }
 }
