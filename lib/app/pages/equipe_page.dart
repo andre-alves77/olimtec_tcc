@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/components/game_card.dart';
-import 'package:olimtec_tcc/app/components/main_card.dart';
-import 'package:olimtec_tcc/app/components/test_widget.dart';
-import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'dart:math';
 
 class MainEquipe extends StatefulWidget {
@@ -43,32 +39,33 @@ class _MainEquipeState extends State<MainEquipe> {
           backgroundColor: Theme.of(context).colorScheme.primaryContainer,
           iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
           automaticallyImplyLeading: false,
-          leading: Container(
-            width: 200,
-            height: 100,
-            decoration: BoxDecoration(),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
-                Theme.of(context).brightness == Brightness.light
-                    ? 'assets/images/LOGO_LIGHT_MODE.png'
-                    : 'assets/images/LOGO_DARK_MODE.png',
-                width: 300,
-                height: 200,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          centerTitle: true,
-          title: Text(
-            'EQUIPES',
-            style: TextStyle(
-              fontFamily: 'Lato',
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-            ),
+          leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            Theme.of(context).brightness == Brightness.light
+                ? 'assets/images/LOGO_LIGHT_MODE.png'
+                : 'assets/images/LOGO_DARK_MODE.png',
+            width: 300,
+            height: 200,
+            fit: BoxFit.cover,
           ),
         ),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'EQUIPES',
+              style: TextStyle(
+                fontFamily: 'Lato',
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
+        ),
+      ),
         body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(mainAxisSize: MainAxisSize.max, children: [
@@ -88,20 +85,22 @@ class _MainEquipeState extends State<MainEquipe> {
                       )
                     ],
                   ),
-                  Container(
-                    width: 210,
-                    height: 210,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    alignment: AlignmentDirectional(0, 0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: Image.asset(
-                        'assets/images/LOGO_2DSB_EXAMPLE.png',
-                        width: 170,
-                        height: 170,
-                        fit: BoxFit.fitHeight,
+                  FittedBox(
+                    child: Container(
+                      width: 210,
+                      height: 210,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                      ),
+                      alignment: AlignmentDirectional(0, 0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(50),
+                        child: Image.asset(
+                          'assets/images/LOGO_2DSB_EXAMPLE.png',
+                          width: 170,
+                          height: 170,
+                          fit: BoxFit.fitHeight,
+                        ),
                       ),
                     ),
                   ),
@@ -126,56 +125,60 @@ class _MainEquipeState extends State<MainEquipe> {
                   ),
                 ],
               ),
-              Container(
-                margin: EdgeInsets.all(8),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Text(
-                      'PARTICIPANTES',
-                      style: TextStyle(
-                        fontFamily: 'Lato',
-                        fontSize: 26,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Theme.of(context).colorScheme.primaryContainer,
-                  borderRadius: BorderRadius.circular(20),
-                  border: Border.all(
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                    width: 2,
+              FittedBox(
+                child: Container(
+                  margin: EdgeInsets.all(8),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'PARTICIPANTES',
+                        style: TextStyle(
+                          fontFamily: 'Lato',
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      )
+                    ],
                   ),
                 ),
-                margin: EdgeInsets.only(bottom: 10),
-                constraints: BoxConstraints(maxWidth: sizeWidth),
-                height: 400,
-                child: ListView(
-                  children: [
-                    _CardJogador(),
-                    Divider(
-                        height: 2,
-                        thickness: 1.5,
-                        color:
-                            Theme.of(context).colorScheme.onPrimaryContainer),
-                    _CardJogador(),
-                    Divider(
-                        height: 2,
-                        thickness: 1.5,
-                        color:
-                            Theme.of(context).colorScheme.onPrimaryContainer),
-                    _CardJogador(),
-                    Divider(
-                        height: 2,
-                        thickness: 1.5,
-                        color:
-                            Theme.of(context).colorScheme.onPrimaryContainer),
-                  ],
+              ),
+              FittedBox(
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primaryContainer,
+                    borderRadius: BorderRadius.circular(20),
+                    border: Border.all(
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                      width: 2,
+                    ),
+                  ),
+                  margin: EdgeInsets.only(bottom: 10),
+                  constraints: BoxConstraints(maxWidth: sizeWidth),
+                  height: 400,
+                  child: ListView(
+                    children: [
+                      _CardJogador(),
+                      Divider(
+                          height: 2,
+                          thickness: 1.5,
+                          color:
+                              Theme.of(context).colorScheme.onPrimaryContainer),
+                      _CardJogador(),
+                      Divider(
+                          height: 2,
+                          thickness: 1.5,
+                          color:
+                              Theme.of(context).colorScheme.onPrimaryContainer),
+                      _CardJogador(),
+                      Divider(
+                          height: 2,
+                          thickness: 1.5,
+                          color:
+                              Theme.of(context).colorScheme.onPrimaryContainer),
+                    ],
+                  ),
                 ),
               ),
             ])));
