@@ -42,6 +42,37 @@ class ResultadoPage extends StatelessWidget {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+          iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+          automaticallyImplyLeading: false,
+          leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            Theme.of(context).brightness == Brightness.light
+                ? 'assets/images/LOGO_LIGHT_MODE.png'
+                : 'assets/images/LOGO_DARK_MODE.png',
+            width: 300,
+            height: 200,
+            fit: BoxFit.cover,
+          ),
+        ),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'RESULTADO',
+              style: TextStyle(
+                fontFamily: 'Lato',
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
+        ),
+      ),
       body: Center(
         child: Column(
           children: <Widget>[
@@ -86,22 +117,34 @@ class ResultadoPage extends StatelessWidget {
                             Theme.of(context).colorScheme.onPrimaryContainer),
                     color: Theme.of(context).colorScheme.primaryContainer,
                   ),
-                  child: Column(
-                    children: <Widget>[
-                      _rowzinha('LOCAL', 'QUADRA 02'),
-                      Divider(
-                        height: 2,
-                        thickness: 1,
-                        color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  child: Container(
+                    width: sizeWidth / 2,
+                    child: FittedBox(
+                      fit: BoxFit.scaleDown,
+                      child: Column(
+                        children: <Widget>[
+                          _rowzinha('LOCAL', 'QUADRA 02'),
+                          SizedBox(
+                            width: sizeWidth,
+                            child: Divider(
+                              height: 2,
+                              thickness: 1,
+                              color: Theme.of(context).colorScheme.onPrimaryContainer,
+                            ),
+                          ),
+                          _rowzinha('HORÁRIO', '8:45'),
+                          SizedBox(
+                            width: sizeWidth,
+                            child: Divider(
+                              height: 2,
+                              thickness: 1,
+                              color: Theme.of(context).colorScheme.onPrimaryContainer,
+                            ),
+                          ),
+                          _rowzinha('DATA', '01/08'),
+                        ],
                       ),
-                      _rowzinha('HORÁRIO', '8:45'),
-                      Divider(
-                        height: 2,
-                        thickness: 1,
-                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                      ),
-                      _rowzinha('DATA', '01/08'),
-                    ],
+                    ),
                   ),
                 ),
               ),
