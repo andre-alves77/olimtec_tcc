@@ -48,6 +48,14 @@ class _CadastroTabBarState extends State<CadastroTabBar> {
                                                 borderRadius:
                                                     BorderRadius.circular(20),
                                               ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
@@ -81,6 +89,14 @@ class _CadastroTabBarState extends State<CadastroTabBar> {
                                               ),
                                               enabledBorder:
                                                   OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
                                                 borderSide: const BorderSide(
                                                   color: Color(0x00000000),
                                                   width: 1,
@@ -129,9 +145,16 @@ class _CadastroTabBarState extends State<CadastroTabBar> {
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          20),
+                                                      BorderRadius.circular(20),
                                                 ),
+                                                focusedBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
                                                 filled: true,
                                                 fillColor: Colors.white,
                                                 contentPadding:
@@ -168,18 +191,27 @@ class _CadastroTabBarState extends State<CadastroTabBar> {
                                                     width: 1,
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.circular(
-                                                          20),
+                                                      BorderRadius.circular(20),
                                                 ),
+                                                focusedBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
                                                 filled: true,
                                                 fillColor: Colors.white,
                                                 contentPadding:
                                                     const EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                        20, 24, 20, 24),
+                                                            .fromSTEB(20, 24, 20, 24),
                                                 suffixIcon: Icon(
-                                                    Icons.visibility_off),
-                                              )),
+                                                  Icons.visibility_off
+                                                ),
+                                              ),
+                                              focusNode: FocusNode(skipTraversal: true),
+                                            ),
                                         ),
                                         Padding(
                                           padding:
