@@ -28,7 +28,6 @@ class _PerfilPageState extends State<PerfilPage> {
           ),
         ),
         centerTitle: true,
-        elevation: 2,
       ),
       body: SafeArea(
         top: true,
