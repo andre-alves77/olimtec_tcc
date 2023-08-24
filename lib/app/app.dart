@@ -4,6 +4,7 @@ import 'package:olimtec_tcc/app/components/main_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/models/teamList.dart';
 import 'package:olimtec_tcc/app/pages/resultado_page.dart';
+import 'package:olimtec_tcc/app/pages/settings_page.dart';
 
 import 'pages/home_page.dart';
 import 'theme/color_schemes.g.dart';
@@ -27,7 +28,8 @@ class App extends StatelessWidget {
         fontFamily: 'Lato',
       ),
       themeMode: ThemeMode.system,
-      home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      home: SettingsPage(),
     );
   }
 }
