@@ -7,6 +7,7 @@ import 'package:olimtec_tcc/app/pages/aovivo_page.dart';
 import 'package:olimtec_tcc/app/pages/equipe_page.dart';
 import 'package:olimtec_tcc/app/pages/landing_page/landing_page.dart';
 import 'package:olimtec_tcc/app/pages/resultado_page.dart';
+import 'package:olimtec_tcc/app/pages/settings_page.dart';
 
 import 'pages/cronograma_page.dart';
 import 'pages/home_page.dart';
@@ -31,7 +32,8 @@ class App extends StatelessWidget {
         fontFamily: 'Lato',
       ),
       themeMode: ThemeMode.system,
-      home: HomePage(),
+      debugShowCheckedModeBanner: false,
+      home: SettingsPage(),
     );
   }
 }
