@@ -39,32 +39,33 @@ class _MainEquipeState extends State<MainEquipe> {
           backgroundColor: Theme.of(context).colorScheme.primaryContainer,
           iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
           automaticallyImplyLeading: false,
-          leading: Container(
-            width: 200,
-            height: 100,
-            decoration: BoxDecoration(),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              child: Image.asset(
-                Theme.of(context).brightness == Brightness.light
-                    ? 'assets/images/LOGO_LIGHT_MODE.png'
-                    : 'assets/images/LOGO_DARK_MODE.png',
-                width: 300,
-                height: 200,
-                fit: BoxFit.cover,
-              ),
-            ),
-          ),
-          centerTitle: true,
-          title: Text(
-            'EQUIPES',
-            style: TextStyle(
-              fontFamily: 'Lato',
-              fontSize: 28,
-              fontWeight: FontWeight.bold,
-            ),
+          leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            Theme.of(context).brightness == Brightness.light
+                ? 'assets/images/LOGO_LIGHT_MODE.png'
+                : 'assets/images/LOGO_DARK_MODE.png',
+            width: 300,
+            height: 200,
+            fit: BoxFit.cover,
           ),
         ),
+        centerTitle: true,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'EQUIPES',
+              style: TextStyle(
+                fontFamily: 'Lato',
+                fontSize: 28,
+                fontWeight: FontWeight.bold,
+              ),
+            )
+          ],
+        ),
+      ),
         body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(mainAxisSize: MainAxisSize.max, children: [

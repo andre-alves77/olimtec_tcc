@@ -46,6 +46,14 @@ class _LoginTabBarViewState extends State<LoginTabBarView> {
                                                 borderRadius:
                                                     BorderRadius.circular(20),
                                               ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
                                               filled: true,
                                               fillColor: Colors.white,
                                               contentPadding:
@@ -89,6 +97,14 @@ class _LoginTabBarViewState extends State<LoginTabBarView> {
                                                       BorderRadius.circular(
                                                           20),
                                                 ),
+                                                focusedBorder: OutlineInputBorder(
+                                                borderSide: const BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 1,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(20),
+                                              ),
                                                 filled: true,
                                                 fillColor: Colors.white,
                                                 contentPadding:
@@ -101,7 +117,9 @@ class _LoginTabBarViewState extends State<LoginTabBarView> {
                                                     setState(() {
                                                     });
                                                   },
-                                                )),
+                                                ),
+                                              ),
+                                              focusNode: FocusNode(skipTraversal: true),
                                             style: TextStyle(
                                               fontFamily: "Lato",
                                               color: Theme.of(context)
