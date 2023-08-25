@@ -17,7 +17,6 @@ class _LandingTabBarState extends State<LandingTabBar>
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
 
     _tabController = TabController(length: 2, vsync: this);
