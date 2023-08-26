@@ -66,7 +66,7 @@ class _HomePageState extends State<HomePage> {
             FittedBox(
                 child: Text(
               'RESULTADOS',
-              style: TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
+              style: TextStyle(fontSize: 26.1, fontWeight: FontWeight.bold),
             )),
             Expanded(
               child: Container(
