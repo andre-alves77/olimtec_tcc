@@ -11,6 +11,8 @@ import 'package:olimtec_tcc/app/pages/resultado_page.dart';
 import 'package:olimtec_tcc/app/pages/settings_page.dart';
 import 'package:olimtec_tcc/app/pages/about_us_page.dart';
 
+import 'pages/modalities_page.dart';
+import 'utils/app_routes.dart';
 import 'pages/cronograma_page.dart';
 import 'pages/home_page.dart';
 
@@ -36,7 +38,18 @@ class App extends StatelessWidget {
       ),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: SettingsPage(),
+      initialRoute: '/',
+      routes: {
+        AppRoute.HOME: (ctx) => HomePage(),
+        AppRoute.MODALITIES: (ctx) => ModalitiesPage(),
+        AppRoute.TV_LIVE: (ctx) => MainAoVivo(),
+        AppRoute.SETTINGS: (ctx) => SettingsPage(),
+        AppRoute.RESULTADO: (ctx) => ResultadoPage(),
+        AppRoute.MODALITY_PAGE: (ctx) => SportModalityPage(),
+        AppRoute.CRONOGRAMA: (ctx) => CronogramaPage(),
+        AppRoute.ABOUT_US: (ctx) => AboutUsPage(),
+        AppRoute.EQUIPE: (ctx) => MainEquipe(),
+      },
     );
   }
 }

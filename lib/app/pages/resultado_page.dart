@@ -43,20 +43,7 @@ class ResultadoPage extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-          iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-          automaticallyImplyLeading: false,
-          leading: ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: Image.asset(
-            Theme.of(context).brightness == Brightness.light
-                ? 'assets/images/LOGO_LIGHT_MODE.png'
-                : 'assets/images/LOGO_DARK_MODE.png',
-            width: 300,
-            height: 200,
-            fit: BoxFit.cover,
-          ),
-        ),
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -129,7 +116,9 @@ class ResultadoPage extends StatelessWidget {
                             child: Divider(
                               height: 2,
                               thickness: 1,
-                              color: Theme.of(context).colorScheme.onPrimaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                           _rowzinha('HORÁRIO', '8:45'),
@@ -138,7 +127,9 @@ class ResultadoPage extends StatelessWidget {
                             child: Divider(
                               height: 2,
                               thickness: 1,
-                              color: Theme.of(context).colorScheme.onPrimaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                           _rowzinha('DATA', '01/08'),
