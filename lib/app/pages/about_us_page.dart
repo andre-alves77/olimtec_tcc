@@ -13,8 +13,6 @@ class _AboutUsPage extends State<AboutUsPage> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-        automaticallyImplyLeading: false,
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,

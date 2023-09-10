@@ -57,13 +57,48 @@ class _MainAoVivoState extends State<MainAoVivo> {
                       constraints: BoxConstraints(maxWidth: 400),
                       child: Column(
                         children: [
-                          GameCard(gametest),
-                          GameCard(gametest),
-                          GameCard(gametest),
-                          GameCard(gametest),
-                          GameCard(gametest),
-                          GameCard(gametest),
-                          GameCard(gametest),
+                          GestureDetector(
+                            child: GameCard(gametest),
+                            onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                          ),
+                           GestureDetector(
+                            child: GameCard(gametest),
+                            onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                          ),
+                           GestureDetector(
+                            child: GameCard(gametest),
+                            onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                          ),
+                           GestureDetector(
+                            child: GameCard(gametest),
+                            onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                          ),
+                           GestureDetector(
+                            child: GameCard(gametest),
+                            onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                          ),
+                           GestureDetector(
+                            child: GameCard(gametest),
+                            onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                          ),
+                           GestureDetector(
+                            child: GameCard(gametest),
+                            onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                          ),
                         ],
                       ),
                     ),

@@ -90,18 +90,34 @@ class _SportModalityPageState extends State<SportModalityPage>
                   children: [
                     ListView(
                       children: [
-                        InkWell(
+                        GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, '/cronograma_page');
+                          },
+                        ),
+                        GestureDetector(
+                          child: GameCard(gametest),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/cronograma_page');
                           },
                         ),
                       ],
                     ),
                     ListView(
                       children: [
-                        GameCard(gametest),
-                        GameCard(gametest),
+                        GestureDetector(
+                          child: GameCard(gametest),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                        ),
+                        GestureDetector(
+                          child: GameCard(gametest),
+                          onTap: () {
+                            Navigator.pushNamed(context, '/resultado_page');
+                          },
+                        ),
                       ],
                     ),
                   ],

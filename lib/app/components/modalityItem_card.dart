@@ -14,35 +14,42 @@ class ModalityItemCard extends StatelessWidget {
 
     return AspectRatio(
       aspectRatio: 4.5,
-      child: Card(
-        elevation: 5,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        surfaceTintColor: Theme.of(context).colorScheme.primaryContainer,
-        child: FittedBox(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            width: sizeWidth,
-            child: ListTile(
-              leading: Icon(
-                _modality.icon,
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-                size: sizeWidth / 9,
-              ),
-              title: FittedBox(
-                alignment: Alignment.centerLeft,
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  _modality.name,
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                    fontSize: 24,
+      child: GestureDetector(
+        child: Card(
+          elevation: 5,
+          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          surfaceTintColor: Theme.of(context).colorScheme.primaryContainer,
+          child: FittedBox(
+            alignment: Alignment.centerLeft,
+            child: Container(
+              width: sizeWidth,
+              child: ListTile(
+                leading: Icon(
+                  _modality.icon,
+                  color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  size: sizeWidth / 9,
+                ),
+                title: FittedBox(
+                  alignment: Alignment.centerLeft,
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    _modality.name,
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                      fontSize: 24,
+                    ),
                   ),
                 ),
               ),
             ),
           ),
         ),
+         onTap: () {
+          Navigator.pushNamed(
+            context, '/modality_page'
+          );
+        },
       ),
     );
   }

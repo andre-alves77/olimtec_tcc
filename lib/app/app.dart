@@ -7,6 +7,7 @@ import 'package:olimtec_tcc/app/pages/aovivo_page.dart';
 import 'package:olimtec_tcc/app/pages/equipe_page.dart';
 import 'package:olimtec_tcc/app/pages/landing_page/landing_page.dart';
 import 'package:olimtec_tcc/app/pages/modality_page/sport_modalitiy_page.dart';
+import 'package:olimtec_tcc/app/pages/perfil_page.dart';
 import 'package:olimtec_tcc/app/pages/resultado_page.dart';
 import 'package:olimtec_tcc/app/pages/settings_page.dart';
 import 'package:olimtec_tcc/app/pages/about_us_page.dart';
@@ -38,8 +39,9 @@ class App extends StatelessWidget {
       ),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
+      initialRoute: '/landing_page',
       routes: {
+        AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.HOME: (ctx) => HomePage(),
         AppRoute.MODALITIES: (ctx) => ModalitiesPage(),
         AppRoute.TV_LIVE: (ctx) => MainAoVivo(),
@@ -49,6 +51,7 @@ class App extends StatelessWidget {
         AppRoute.CRONOGRAMA: (ctx) => CronogramaPage(),
         AppRoute.ABOUT_US: (ctx) => AboutUsPage(),
         AppRoute.EQUIPE: (ctx) => MainEquipe(),
+        AppRoute.PERFIL: (ctx) => PerfilPage(),
       },
     );
   }

@@ -43,32 +43,39 @@ class SettingsPage extends StatelessWidget {
           width: sizeWidth,
           child: Column(
             children: [
-              ListTile(
-                contentPadding:
-                    EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                leading: Container(
-                  width: sizeWidth / 5,
-                  child: FittedBox(
-                    fit: BoxFit.fitWidth,
-                    child: CircleAvatar(
-                      backgroundColor:
-                          Theme.of(context).colorScheme.primaryContainer,
-                      child: Icon(Icons.person, size: 30),
+              GestureDetector(
+                child: ListTile(
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  leading: Container(
+                    width: sizeWidth / 5,
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: CircleAvatar(
+                        backgroundColor:
+                            Theme.of(context).colorScheme.primaryContainer,
+                        child: Icon(Icons.person, size: 30),
+                      ),
                     ),
                   ),
-                ),
-                title: Text(
-                  'André',
-                  style: TextStyle(
-                    fontSize: 24,
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                  title: Text(
+                    'André',
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    ),
                   ),
+                  subtitle: Text('Visualizar perfil',
+                      style: TextStyle(color: Colors.grey)),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined,
+                      size: 30,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer),
                 ),
-                subtitle: Text('Visualizar perfil',
-                    style: TextStyle(color: Colors.grey)),
-                trailing: Icon(Icons.arrow_forward_ios_outlined,
-                    size: 30,
-                    color: Theme.of(context).colorScheme.onPrimaryContainer),
+                 onTap: () {
+                   Navigator.pushNamed(
+                    context, '/perfil_page'
+                  );
+                 },
               ),
               const Divider(),
               ListTile(
@@ -108,18 +115,23 @@ class SettingsPage extends StatelessWidget {
       required Function function}) {
     return InkWell(
       onTap: () => function,
-      child: ListTile(
-        leading: Icon(
-          icon,
+      child: GestureDetector(
+        child: ListTile(
+          leading: Icon(
+            icon,
+          ),
+          title: Text(
+            title,
+          ),
+          trailing: Icon(Icons.arrow_forward_ios_outlined,
+              color: Theme.of(context).colorScheme.onPrimaryContainer),
+          iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
+          textColor: Theme.of(context).colorScheme.onPrimaryContainer,
+          hoverColor: Theme.of(context).colorScheme.primary,
         ),
-        title: Text(
-          title,
-        ),
-        trailing: Icon(Icons.arrow_forward_ios_outlined,
-            color: Theme.of(context).colorScheme.onPrimaryContainer),
-        iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
-        textColor: Theme.of(context).colorScheme.onPrimaryContainer,
-        hoverColor: Theme.of(context).colorScheme.primary,
+        onTap: () {
+          Navigator.pushNamed(context, '/aboutus_page');
+        },
       ),
     );
   }

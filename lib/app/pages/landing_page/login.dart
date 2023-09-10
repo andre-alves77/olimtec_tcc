@@ -156,7 +156,11 @@ class _LoginTabBarViewState extends State<LoginTabBarView> {
                                                   ),
                                                 ),
                                               ),
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                Navigator.pushNamedAndRemoveUntil(
+                                                  context, '/', (route) => false
+                                                );
+                                              },
                                             ),
                                           ),
                                         ),

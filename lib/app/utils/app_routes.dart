@@ -8,4 +8,6 @@ class AppRoute {
   static const CRONOGRAMA = '/cronograma_page';
   static const EQUIPE = '/equipe_page';
   static const RESULTADO = '/resultado_page';
+  static const LANDING = '/landing_page';
+  static const PERFIL = '/perfil_page';
 }

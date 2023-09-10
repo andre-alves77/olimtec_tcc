@@ -241,7 +241,11 @@ class _CadastroTabBarState extends State<CadastroTabBar> {
                                                   ),
                                                 ),
                                               ),
-                                              onPressed: () {},
+                                              onPressed: () {
+                                                Navigator.pushNamedAndRemoveUntil(
+                                                  context, '/', (route) => false
+                                                );
+                                              },
                                             ),
                                           ),
                                         )
