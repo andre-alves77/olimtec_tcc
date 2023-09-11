@@ -45,19 +45,13 @@ class ResultadoPage extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'RESULTADO',
-              style: TextStyle(
-                fontFamily: 'Lato',
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
+        title: Text(
+          'RESULTADO',
+          style: TextStyle(
+            fontFamily: 'Lato',
+            fontSize: 28,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
       body: Center(

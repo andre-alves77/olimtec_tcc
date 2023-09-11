@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/components/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
-import 'package:olimtec_tcc/app/pages/modality_page/result_card.dart';
 
 class SportModalityPage extends StatefulWidget {
   const SportModalityPage({super.key});
