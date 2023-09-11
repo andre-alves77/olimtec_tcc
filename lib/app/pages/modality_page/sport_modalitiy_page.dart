@@ -3,7 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/components/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
-import 'package:olimtec_tcc/app/pages/modality_page/result_card.dart';
 
 class SportModalityPage extends StatefulWidget {
   const SportModalityPage({super.key});
@@ -12,8 +11,8 @@ class SportModalityPage extends StatefulWidget {
   State<SportModalityPage> createState() => _SportModalityPageState();
 }
 
-class _SportModalityPageState extends State<SportModalityPage> 
-    with TickerProviderStateMixin{
+class _SportModalityPageState extends State<SportModalityPage>
+    with TickerProviderStateMixin {
   TabController? _tabController;
 
   @override
@@ -26,7 +25,7 @@ class _SportModalityPageState extends State<SportModalityPage>
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
@@ -35,9 +34,9 @@ class _SportModalityPageState extends State<SportModalityPage>
             "BASQUETE MASCULINO",
             style: TextStyle(
               fontFamily: 'Lato',
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                    fontSize: 24,
-                    fontWeight: FontWeight.bold,
+              color: Theme.of(context).colorScheme.onPrimaryContainer,
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
             ),
           ),
         ),
@@ -66,8 +65,10 @@ class _SportModalityPageState extends State<SportModalityPage>
                         )
                       ],
                       controller: _tabController,
-                      labelColor: Theme.of(context).colorScheme.onPrimaryContainer,
-                      unselectedLabelColor: Theme.of(context).colorScheme.onSecondaryContainer,
+                      labelColor:
+                          Theme.of(context).colorScheme.onPrimaryContainer,
+                      unselectedLabelColor:
+                          Theme.of(context).colorScheme.onSecondaryContainer,
                       labelStyle: const TextStyle(
                         fontFamily: 'Lato',
                         fontSize: 20,
@@ -117,7 +118,9 @@ class _SportModalityPageState extends State<SportModalityPage>
                           child: Text(
                             "Chaveamento",
                             style: TextStyle(
-                              color: Theme.of(context).colorScheme.onPrimaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                               fontFamily: "Lato",
                               fontSize: 28,
                               fontWeight: FontWeight.bold,
@@ -143,7 +146,8 @@ class _SportModalityPageState extends State<SportModalityPage>
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
                               backgroundColor: Colors.red[400],
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)),
                             ),
                             onPressed: () {},
                             child: const FittedBox(
@@ -177,8 +181,10 @@ class _SportModalityPageState extends State<SportModalityPage>
                           height: 50,
                           child: ElevatedButton(
                             style: ElevatedButton.styleFrom(
-                              backgroundColor: Theme.of(context).colorScheme.primary,
-                              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+                              backgroundColor:
+                                  Theme.of(context).colorScheme.primary,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(15)),
                             ),
                             onPressed: () {},
                             child: const FittedBox(

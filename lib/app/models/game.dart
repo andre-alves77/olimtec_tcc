@@ -8,11 +8,11 @@ enum GameState {
 }
 
 class Game {
-  Team team1;
-  Team team2;
-  String local;
-  String time;
-  String modalidade;
+  final Team team1;
+  final Team team2;
+  final String local;
+  final String time;
+  final String modalidade;
   GameState gameState;
 
   Game({

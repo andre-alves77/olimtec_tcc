@@ -1,10 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:olimtec_tcc/app/components/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
-import 'package:olimtec_tcc/app/models/modality/modalities.dart';
 
 class ModalitiesPage extends StatelessWidget {
   const ModalitiesPage({super.key});
@@ -61,20 +57,12 @@ class ModalitiesPage extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(
-              'OLIM',
+              'MODALIDADES',
               style: TextStyle(
                 fontFamily: 'Lato',
                 fontSize: 28,
                 fontWeight: FontWeight.bold,
               ),
-            ),
-            Text(
-              'TEC',
-              style: TextStyle(
-                  fontFamily: 'Lato',
-                  fontSize: 28,
-                  fontWeight: FontWeight.bold,
-                  color: Theme.of(context).colorScheme.primary),
             ),
           ],
         ),

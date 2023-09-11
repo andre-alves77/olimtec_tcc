@@ -6,7 +6,7 @@ import 'package:olimtec_tcc/app/models/game.dart';
 class GameCard extends StatelessWidget {
   GameCard(this.game, {super.key});
 
-  Game game;
+  final Game game;
 
   @override
   Widget build(BuildContext context) {

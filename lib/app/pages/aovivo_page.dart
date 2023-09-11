@@ -18,32 +18,32 @@ class _MainAoVivoState extends State<MainAoVivo> {
           iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
           automaticallyImplyLeading: false,
           leading: ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: Image.asset(
-            Theme.of(context).brightness == Brightness.light
-                ? 'assets/images/LOGO_LIGHT_MODE.png'
-                : 'assets/images/LOGO_DARK_MODE.png',
-            width: 300,
-            height: 200,
-            fit: BoxFit.cover,
+            borderRadius: BorderRadius.circular(8),
+            child: Image.asset(
+              Theme.of(context).brightness == Brightness.light
+                  ? 'assets/images/LOGO_LIGHT_MODE.png'
+                  : 'assets/images/LOGO_DARK_MODE.png',
+              width: 300,
+              height: 200,
+              fit: BoxFit.cover,
+            ),
+          ),
+          centerTitle: true,
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Text(
+                'AO VIVO',
+                style: TextStyle(
+                  fontFamily: 'Lato',
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
+              )
+            ],
           ),
         ),
-        centerTitle: true,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(
-              'AO VIVO',
-              style: TextStyle(
-                fontFamily: 'Lato',
-                fontSize: 28,
-                fontWeight: FontWeight.bold,
-              ),
-            )
-          ],
-        ),
-      ),
         body: Center(
           child: ListView(
               padding: EdgeInsets.zero,
