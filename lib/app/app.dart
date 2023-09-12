@@ -1,7 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_view.dart';
+import 'package:olimtec_tcc/app/pages/about_us_page.dart';
 import 'package:olimtec_tcc/app/pages/aovivo_page.dart';
+import 'package:olimtec_tcc/app/pages/cronograma_page.dart';
+import 'package:olimtec_tcc/app/pages/equipe_page.dart';
+import 'package:olimtec_tcc/app/pages/landing_page/landing_page.dart';
+import 'package:olimtec_tcc/app/pages/modality_page/sport_modalitiy_page.dart';
+import 'package:olimtec_tcc/app/pages/perfil_page.dart';
+import 'package:olimtec_tcc/app/pages/resultado_page.dart';
 import 'package:olimtec_tcc/app/pages/settings_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 import 'pages/modalities_page.dart';
@@ -47,14 +54,15 @@ class _AppState extends State<App> {
       title: 'OLIMTEC',
       themeMode: ThemeMode.dark,
       debugShowCheckedModeBanner: false,
-      routes: AppRoute.LANDING: (ctx) => LandingPage(),
+      routes: {
+        AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
         AppRoute.MODALITY_PAGE: (ctx) => SportModalityPage(),
         AppRoute.CRONOGRAMA: (ctx) => CronogramaPage(),
         AppRoute.ABOUT_US: (ctx) => AboutUsPage(),
         AppRoute.EQUIPE: (ctx) => MainEquipe(),
         AppRoute.PERFIL: (ctx) => PerfilPage(),
-
+      },
       home: Scaffold(
         extendBody: true,
         bottomNavigationBar: BottomBar(bottomStore: _bottomBarStore),

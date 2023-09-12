@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/components/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
-import 'package:olimtec_tcc/navigation/navigation_view.dart';
 
 import '../components/card_carousel.dart';
 
@@ -17,7 +16,6 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
-      bottomNavigationBar: GBottom(),
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
