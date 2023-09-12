@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/components/game_card.dart';
+import 'package:olimtec_tcc/app/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
-import '../components/card_carousel.dart';
+import '../shared/card_carousel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

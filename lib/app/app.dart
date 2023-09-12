@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_view.dart';
-import 'package:olimtec_tcc/app/pages/about_us_page.dart';
-import 'package:olimtec_tcc/app/pages/aovivo_page.dart';
-import 'package:olimtec_tcc/app/pages/cronograma_page.dart';
-import 'package:olimtec_tcc/app/pages/equipe_page.dart';
-import 'package:olimtec_tcc/app/pages/landing_page/landing_page.dart';
-import 'package:olimtec_tcc/app/pages/modality_page/sport_modalitiy_page.dart';
-import 'package:olimtec_tcc/app/pages/perfil_page.dart';
-import 'package:olimtec_tcc/app/pages/resultado_page.dart';
-import 'package:olimtec_tcc/app/pages/settings_page.dart';
+import 'package:olimtec_tcc/app/theme/theme_store.dart';
+import 'package:olimtec_tcc/app/user/settings/about_us_page.dart';
+import 'package:olimtec_tcc/app/user/live/aovivo_page.dart';
+import 'package:olimtec_tcc/app/user/modalities/cronograma_page.dart';
+import 'package:olimtec_tcc/app/user/modalities/equipe_page.dart';
+import 'package:olimtec_tcc/app/user/landing_page/landing_page.dart';
+import 'package:olimtec_tcc/app/user/modalities/sport_modalitiy_page.dart';
+import 'package:olimtec_tcc/app/user/settings/perfil_page.dart';
+import 'package:olimtec_tcc/app/user/shared/resultado_page.dart';
+import 'package:olimtec_tcc/app/user/settings/settings_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
-import 'pages/modalities_page.dart';
-import 'pages/home_page.dart';
+import 'package:provider/provider.dart';
+import 'user/modalities/modalities_page.dart';
+import 'user/home/home_page.dart';
 
 import 'theme/color_schemes.g.dart';
 
@@ -25,7 +27,6 @@ class App extends StatefulWidget {
 
 class _AppState extends State<App> {
   final BottomBarStore _bottomBarStore = BottomBarStore();
-
   @override
   void initState() {
     // TODO: implement initState
@@ -37,6 +38,8 @@ class _AppState extends State<App> {
 
   @override
   Widget build(BuildContext context) {
+    final themeStore = context.watch<ThemeStore>();
+
     return MaterialApp(
       theme: ThemeData(
           brightness: Brightness.light,
@@ -52,7 +55,7 @@ class _AppState extends State<App> {
         fontFamily: 'Lato',
       ),
       title: 'OLIMTEC',
-      themeMode: ThemeMode.dark,
+      themeMode: themeStore.value,
       debugShowCheckedModeBanner: false,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),

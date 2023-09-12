@@ -45,25 +45,18 @@ packages:
     dependency: transitive
     description:
       name: collection
-<<<<<<< HEAD
-      sha256: "4a07be6cb69c84d677a6c3096fcf960cc3285a8330b4603e0d463d15d9bd934c"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.17.1"
-=======
       sha256: f092b211a4319e98e5ff58223576de6c2803db36221657b46c82574721240687
       url: "https://pub.dev"
     source: hosted
     version: "1.17.2"
->>>>>>> main
   cupertino_icons:
     dependency: "direct main"
     description:
       name: cupertino_icons
-      sha256: e35129dc44c9118cee2a5603506d823bab99c68393879edb440e0090d07586be
+      sha256: d57953e10f9f8327ce64a508a355f0b1ec902193f66288e8cb5070e7c47eeb2d
       url: "https://pub.dev"
     source: hosted
-    version: "1.0.5"
+    version: "1.0.6"
   fake_async:
     dependency: transitive
     description:
@@ -81,57 +74,31 @@ packages:
     dependency: "direct dev"
     description:
       name: flutter_lints
-      sha256: "2118df84ef0c3ca93f96123a616ae8540879991b8b57af2f81b76a7ada49b2a4"
+      sha256: a25a15ebbdfc33ab1cd26c63a6ee519df92338a9c10f122adda92938253bef04
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.2"
+    version: "2.0.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
     source: sdk
     version: "0.0.0"
-<<<<<<< HEAD
-  google_nav_bar:
-    dependency: "direct main"
-    description:
-      name: google_nav_bar
-      sha256: "1c8e3882fa66ee7b74c24320668276ca23affbd58f0b14a24c1e5590f4d07ab0"
-      url: "https://pub.dev"
-    source: hosted
-    version: "5.0.6"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      sha256: f2c445dce49627136094980615a031419f7f3eb393237e4ecd97ac15dea343f3
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.6.7"
-=======
->>>>>>> main
   lints:
     dependency: transitive
     description:
       name: lints
-      sha256: "5e4a9cd06d447758280a8ac2405101e0e2094d2a1dbdd3756aec3fe7775ba593"
+      sha256: "0a217c6c989d21039f1498c3ed9f3ed71b354e69873f13a8dfc3c9fe76f1b452"
       url: "https://pub.dev"
     source: hosted
-    version: "2.0.1"
+    version: "2.1.1"
   matcher:
     dependency: transitive
     description:
       name: matcher
-<<<<<<< HEAD
-      sha256: "6501fbd55da300384b768785b83e5ce66991266cec21af89ab9ae7f5ce1c4cbb"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.12.15"
-=======
       sha256: "1803e76e6653768d64ed8ff2e1e67bea3ad4b923eb5c56a295c3e634bad5960e"
       url: "https://pub.dev"
     source: hosted
     version: "0.12.16"
->>>>>>> main
   material_color_utilities:
     dependency: transitive
     description:
@@ -148,6 +115,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.9.1"
+  nested:
+    dependency: transitive
+    description:
+      name: nested
+      sha256: "03bac4c528c64c95c722ec99280375a6f2fc708eec17c7b3f07253b626cd2a20"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.0"
   path:
     dependency: transitive
     description:
@@ -156,16 +131,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.8.3"
-<<<<<<< HEAD
-  responsive_navigation_bar:
+  provider:
     dependency: "direct main"
     description:
-      name: responsive_navigation_bar
-      sha256: "62d639b7538bb1f56940e965297980446329c90c47b301ffbee5543150e4dfc3"
+      name: provider
+      sha256: cdbe7530b12ecd9eb455bdaa2fcb8d4dad22e80b8afb4798b41479d5ce26847f
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.3"
-=======
+    version: "6.0.5"
   salomon_bottom_bar:
     dependency: "direct main"
     description:
@@ -174,7 +147,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.3.2"
->>>>>>> main
   sky_engine:
     dependency: transitive
     description: flutter
@@ -224,17 +196,10 @@ packages:
     dependency: transitive
     description:
       name: test_api
-<<<<<<< HEAD
-      sha256: eb6ac1540b26de412b3403a163d919ba86f6a973fe6cc50ae3541b80092fdcfb
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.5.1"
-=======
       sha256: "75760ffd7786fffdfb9597c35c5b27eaeec82be8edfb6d71d32651128ed7aab8"
       url: "https://pub.dev"
     source: hosted
     version: "0.6.0"
->>>>>>> main
   vector_math:
     dependency: transitive
     description:
@@ -252,9 +217,5 @@ packages:
     source: hosted
     version: "0.1.4-beta"
 sdks:
-<<<<<<< HEAD
-  dart: ">=3.0.0-0 <4.0.0"
-  flutter: ">=2.0.0"
-=======
   dart: ">=3.1.0-185.0.dev <4.0.0"
->>>>>>> main
+  flutter: ">=1.16.0"

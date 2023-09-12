@@ -1,8 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/pages/landing_page/cadastro.dart';
-import 'package:olimtec_tcc/app/pages/landing_page/login.dart';
+import 'package:olimtec_tcc/app/user/landing_page/cadastro.dart';
+import 'package:olimtec_tcc/app/user/landing_page/login.dart';
 
 class LandingTabBar extends StatefulWidget {
   const LandingTabBar({super.key});
