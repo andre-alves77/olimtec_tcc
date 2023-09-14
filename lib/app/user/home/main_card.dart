@@ -14,15 +14,13 @@ class MainCard extends StatelessWidget {
 
     return AspectRatio(
       aspectRatio: 1.7,
-      child: Card(
-        shape: RoundedRectangleBorder(
+      child: Container(
+        decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
+          color: Theme.of(context).colorScheme.primaryContainer,
         ),
-        elevation: 20,
         child: Container(
-          decoration: BoxDecoration(
-              color: Theme.of(context).colorScheme.primaryContainer,
-              borderRadius: BorderRadius.circular(20)),
+          padding: const EdgeInsets.symmetric(vertical: 6),
           width: sizeWidth,
           child: FittedBox(
             child: Column(
@@ -32,7 +30,7 @@ class MainCard extends StatelessWidget {
                   mainAxisSize: MainAxisSize.max,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Container(
+                    SizedBox(
                       width: sizeWidth / 1.4,
                       child: FittedBox(
                         child: Row(
@@ -45,7 +43,7 @@ class MainCard extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                               ),
                             ),
-                            Text(' - '),
+                            const Text(' - '),
                             Text(
                               game.modalidade,
                               style: const TextStyle(
@@ -84,71 +82,73 @@ class MainCard extends StatelessWidget {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          game.team1.image,
-                          width: sizeWidth / 4,
-                          fit: BoxFit.cover,
+                      Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              game.team1.image,
+                              width: sizeWidth / 4,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(top: 5),
+                            width: sizeWidth / 7,
+                            child: FittedBox(
+                              child: Text(
+                                game.team1.name,
+                                style: const TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.only(bottom: 20),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(8),
+                          child: Image.asset(
+                            Theme.of(context).brightness == Brightness.dark
+                                ? 'assets/images/IMAGE_VS_L.png'
+                                : 'assets/images/IMAGE_VS.png',
+                            width: sizeWidth / 4,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          Theme.of(context).brightness == Brightness.dark
-                              ? 'assets/images/IMAGE_VS_L.png'
-                              : 'assets/images/IMAGE_VS.png',
-                          width: sizeWidth / 4,
-                          fit: BoxFit.cover,
-                        ),
-                      ),
-                      ClipRRect(
-                        borderRadius: BorderRadius.circular(8),
-                        child: Image.asset(
-                          game.team2.image,
-                          width: sizeWidth / 4,
-                          fit: BoxFit.cover,
-                        ),
+                      Column(
+                        children: [
+                          ClipRRect(
+                            borderRadius: BorderRadius.circular(8),
+                            child: Image.asset(
+                              game.team2.image,
+                              width: sizeWidth / 4,
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                          Container(
+                            padding: EdgeInsets.only(top: 5),
+                            width: sizeWidth / 7,
+                            child: FittedBox(
+                              child: Text(
+                                game.team2.name,
+                                style: const TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 16,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
                       ),
                     ],
                   ),
-                ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
-                  child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children: [
-                        Container(
-                          width: sizeWidth / 7,
-                          child: FittedBox(
-                            child: Text(
-                              game.team1.name,
-                              style: const TextStyle(
-                                fontFamily: 'Lato',
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(
-                          width: sizeWidth / 10,
-                        ),
-                        Container(
-                          width: sizeWidth / 7,
-                          child: FittedBox(
-                            child: Text(
-                              game.team2.name,
-                              style: const TextStyle(
-                                fontFamily: 'Lato',
-                                fontSize: 16,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ]),
                 ),
               ],
             ),

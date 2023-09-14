@@ -2,10 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/models/game.dart';
 import 'package:olimtec_tcc/app/models/modality/modality.dart';
 import 'package:olimtec_tcc/app/models/modality/modality_category.dart';
+import 'package:olimtec_tcc/app/models/modality/modality_team.model.dart';
 import 'package:olimtec_tcc/app/models/team.dart';
 
 List<Team> teamList_dummy = [
   Team(name: '3ºEAA', image: 'assets/images/LOGO_3EAA_EXAMPLE.png'),
+  Team(name: '3ºEAA', image: 'assets/images/LOGO_3EAA_EXAMPLE.png'),
+  Team(name: '2ºEAA', image: 'assets/images/LOGO_3EAA_EXAMPLE.png'),
+  Team(name: '1ºEAA', image: 'assets/images/LOGO_3EAA_EXAMPLE.png'),
+  Team(name: "2ºEAB", image: 'assets/images/LOGO_1EAA_EXAMPLE.png'),
   Team(name: "1ºEAB", image: 'assets/images/LOGO_1EAA_EXAMPLE.png'),
 ];
 

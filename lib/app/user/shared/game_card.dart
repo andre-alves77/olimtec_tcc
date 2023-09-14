@@ -17,7 +17,7 @@ class GameCard extends StatelessWidget {
       child: Card(
         margin: EdgeInsets.all(10),
         clipBehavior: Clip.antiAliasWithSaveLayer,
-        elevation: 20,
+        elevation: 12,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(20),
         ),

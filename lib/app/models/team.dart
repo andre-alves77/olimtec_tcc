@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class Team {
   String name;
   String image;
+  List<String>? players;
 
   Team({
     required this.name,

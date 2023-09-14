@@ -43,8 +43,8 @@ class _SportModalityPageState extends State<SportModalityPage>
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 15),
+        child: Container(
+          constraints: BoxConstraints(maxWidth: 400),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -82,8 +82,7 @@ class _SportModalityPageState extends State<SportModalityPage>
                 ),
               ),
               Container(
-                height: 300,
-                constraints: BoxConstraints(maxWidth: 400),
+                constraints: BoxConstraints(maxWidth: 400, maxHeight: 300),
                 child: TabBarView(
                   controller: _tabController,
                   children: [

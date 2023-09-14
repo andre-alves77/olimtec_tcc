@@ -113,7 +113,7 @@ class AboutUsSingleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return AspectRatio(
       aspectRatio: 1.05,
-      child: Card(
+      child: Container(
         color: Theme.of(context).colorScheme.background,
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 7),
         child: Container(

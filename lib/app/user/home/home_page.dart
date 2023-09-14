@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:provider/provider.dart';
 
-import '../shared/card_carousel.dart';
+import 'card_carousel.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -17,6 +19,17 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
+        actions: [
+          IconButton(
+            onPressed: (() => context.read<ThemeStore>().toggle()),
+            icon: context.read<ThemeStore>().value == ThemeMode.dark
+                ? Icon(
+                    Icons.nightlight_outlined,
+                    color: Theme.of(context).colorScheme.onBackground,
+                  )
+                : const Icon(Icons.light_mode_outlined),
+          )
+        ],
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
         automaticallyImplyLeading: false,
@@ -57,38 +70,40 @@ class _HomePageState extends State<HomePage> {
       ),
       body: SafeArea(
         bottom: false,
-        child: Center(
-          child: Column(
-            children: [
-              Container(
-                constraints: BoxConstraints(maxWidth: 400, minWidth: 200),
-                child: CardCarousel(),
+        child: SingleChildScrollView(
+          child: Center(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+              child: Column(
+                children: [
+                  Container(
+                    constraints:
+                        const BoxConstraints(maxWidth: 400, minWidth: 200),
+                    child: const CardCarousel(),
+                  ),
+                  const FittedBox(
+                      child: Text(
+                    'RESULTADOS',
+                    style:
+                        TextStyle(fontSize: 26.1, fontWeight: FontWeight.bold),
+                  )),
+                  Container(
+                    constraints: const BoxConstraints(maxWidth: 400),
+                    child: Column(
+                      children: [
+                        GameCard(gametest),
+                        GameCard(gametest),
+                        GameCard(gametest),
+                        GameCard(gametest),
+                        GameCard(gametest),
+                        GameCard(gametest),
+                      ],
+                    ),
+                  ),
+                  const SizedBox(height: 10),
+                ],
               ),
-              FittedBox(
-                  child: Text(
-                'RESULTADOS',
-                style: TextStyle(fontSize: 26.1, fontWeight: FontWeight.bold),
-              )),
-              Expanded(
-                child: Container(
-                  constraints: BoxConstraints(maxWidth: 400),
-                  child: ListView.builder(
-                      itemCount: games.length,
-                      itemBuilder: (context, index) {
-                        return GestureDetector(
-                          child: GameCard(games[index]),
-                          onTap: () {
-                            Navigator.pushNamed(
-                              context,
-                              '/resultado_page',
-                            );
-                          },
-                        );
-                      }),
-                ),
-              ),
-              SizedBox(height: 10),
-            ],
+            ),
           ),
         ),
       ),
