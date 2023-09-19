@@ -10,4 +10,5 @@ class AppRoute {
   static const RESULTADO = '/resultado_page';
   static const LANDING = '/landing_page';
   static const PERFIL = '/perfil_page';
+  static const ADD_PLAYER = '/addplayer_page';
 }
