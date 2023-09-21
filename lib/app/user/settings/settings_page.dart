@@ -1,15 +1,18 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/app.dart';
 import 'package:olimtec_tcc/app/theme/theme_store.dart';
 import 'package:provider/provider.dart';
 
-class SettingsPage extends StatelessWidget {
+class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    var themeStore = context.read<ThemeStore>();
+    final themeStore = ref.read(themeProvider.notifier);
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
@@ -77,7 +80,7 @@ class SettingsPage extends StatelessWidget {
               ),
               const Divider(),
               ListTile(
-                selected: themeStore.value == ThemeMode.dark ? true : false,
+                selected: themeStore.state == ThemeMode.dark ? true : false,
                 onTap: () => themeStore.toggle(),
                 leading: const Icon(
                   Icons.nights_stay_sharp,
@@ -86,9 +89,7 @@ class SettingsPage extends StatelessWidget {
                   'Modo Noturno',
                 ),
                 trailing: Switch(
-                  value: ThemeMode.dark == context.read<ThemeStore>().value
-                      ? true
-                      : false,
+                  value: ThemeMode.dark == themeStore.state ? true : false,
                   onChanged: (value) {
                     themeStore.toggle();
                   },

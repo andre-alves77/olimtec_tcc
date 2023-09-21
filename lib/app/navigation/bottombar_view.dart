@@ -1,23 +1,24 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/app.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
 import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 
-class BottomBar extends StatelessWidget {
+class BottomBar extends ConsumerWidget {
   BottomBar({
     Key? key,
-    required this.bottomStore,
   }) : super(key: key);
 
-  final BottomBarStore bottomStore;
-
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final bottomBarStore = ref.watch(bottomBarProvider.notifier);
     return SalomonBottomBar(
-      currentIndex: bottomStore.index,
+      currentIndex: bottomBarStore.state,
       onTap: (newIndex) {
-        bottomStore.setIndex(newIndex);
+        bottomBarStore.setIndex(newIndex);
+        print(bottomBarStore.state);
       },
       items: [
         bottombaritem(
