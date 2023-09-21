@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_view.dart';
+import 'package:olimtec_tcc/app/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/team/add_player.dart';
+import 'package:olimtec_tcc/app/team/main_team.dart';
 import 'package:olimtec_tcc/app/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/user/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/user/live/aovivo_page.dart';
@@ -58,6 +61,7 @@ class _AppState extends State<App> {
       title: 'OLIMTEC',
       themeMode: themeStore.value,
       debugShowCheckedModeBanner: false,
+      initialRoute: '/landing_page',
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -66,7 +70,10 @@ class _AppState extends State<App> {
         AppRoute.ABOUT_US: (ctx) => AboutUsPage(),
         AppRoute.EQUIPE: (ctx) => MainEquipe(),
         AppRoute.PERFIL: (ctx) => PerfilPage(),
+        AppRoute.MAIN_TEAM: (ctx) => MainTeam(), 
         AppRoute.ADD_PLAYER: (ctx) => AddPlayerPage(),
+        AppRoute.MAIN_ORGANIZATION: (ctx) => MainOrgnization(),
+        AppRoute.MAIN_ADMIN: (ctx) => MainAdmin(),
       },
       home: Scaffold(
         extendBody: true,

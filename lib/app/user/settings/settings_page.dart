@@ -108,6 +108,42 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
       ),
+      floatingActionButton: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        children: [
+          FloatingActionButton(
+            child: Icon(Icons.star_border),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                context, '/main_team', (route) => false
+              );
+            },
+          ),
+          FloatingActionButton(
+            child: Icon(Icons.star_half),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                context, '/main_organization', (route) => false
+              );
+            },
+          ),
+          FloatingActionButton(
+            child: Icon(Icons.star),
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
+            onPressed: () {
+              Navigator.pushNamedAndRemoveUntil(
+                context, '/main_admin', (route) => false
+              );
+            },
+          ),
+        ],
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
