@@ -31,9 +31,23 @@ class _MainTeamState extends State<MainTeam> {
           padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
           child: Column(
             children: [
-              OptionConfig(Icons.person_add, "EQUIPES ", "(INSERIR ALUNOS NAS EQUIPES)"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context, '/modality_team'
+                  );
+                },
+                child: OptionConfig(Icons.person_add, "EQUIPES ", "(INSERIR ALUNOS NAS EQUIPES)"),
+              ),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(Icons.settings, "CONFIGURAR TIME ", "(MODIFICAR O TIME)"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(
+                    context, '/createteam_page'
+                  );
+                },
+                child: OptionConfig(Icons.settings, "CONFIGURAR TIME ", "(MODIFICAR O TIME)")
+              ),
             ],
           ),
         ),

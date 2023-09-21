@@ -4,7 +4,10 @@ import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/team/add_player.dart';
+import 'package:olimtec_tcc/app/team/createteam_page.dart';
 import 'package:olimtec_tcc/app/team/main_team.dart';
+import 'package:olimtec_tcc/app/team/modality_team.dart';
+import 'package:olimtec_tcc/app/team/team_players.dart';
 import 'package:olimtec_tcc/app/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/user/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/user/live/aovivo_page.dart';
@@ -71,7 +74,10 @@ class _AppState extends State<App> {
         AppRoute.EQUIPE: (ctx) => MainEquipe(),
         AppRoute.PERFIL: (ctx) => PerfilPage(),
         AppRoute.MAIN_TEAM: (ctx) => MainTeam(), 
+        AppRoute.MODALITY_TEAM: (ctx) => TeamModality(),
+        AppRoute.TEAM_PLAYER: (ctx) => TeamPlayers(),
         AppRoute.ADD_PLAYER: (ctx) => AddPlayerPage(),
+        AppRoute.CREATE_TEAM: (ctx) => CreateTeam(),
         AppRoute.MAIN_ORGANIZATION: (ctx) => MainOrgnization(),
         AppRoute.MAIN_ADMIN: (ctx) => MainAdmin(),
       },

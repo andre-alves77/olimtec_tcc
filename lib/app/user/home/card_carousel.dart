@@ -29,7 +29,6 @@ List<T> map<T>(List list, Function handler) {
 class _CardCarouselState extends State<CardCarousel> {
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
 
     return Column(
       children: <Widget>[

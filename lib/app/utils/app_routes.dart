@@ -11,7 +11,10 @@ class AppRoute {
   static const LANDING = '/landing_page';
   static const PERFIL = '/perfil_page';
   static const MAIN_TEAM = '/main_team';
+  static const MODALITY_TEAM = '/modality_team';
+  static const TEAM_PLAYER = '/team_player';
   static const ADD_PLAYER = '/addplayer_page';
+  static const CREATE_TEAM = '/createteam_page';
   static const MAIN_ORGANIZATION = '/main_organization';
   static const MAIN_ADMIN = '/main_admin';
 }
