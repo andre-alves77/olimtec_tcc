@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/app.dart';
+import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
@@ -6,21 +9,17 @@ import 'package:provider/provider.dart';
 
 import 'card_carousel.dart';
 
-class HomePage extends StatefulWidget {
+class HomePage extends ConsumerWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final _bottomBarStore = ref.watch(bottomBarProvider);
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
         actions: [
-          IconButton(
+          /* IconButton(
             onPressed: (() => context.read<ThemeStore>().toggle()),
             icon: context.read<ThemeStore>().value == ThemeMode.dark
                 ? Icon(
@@ -28,7 +27,7 @@ class _HomePageState extends State<HomePage> {
                     color: Theme.of(context).colorScheme.onBackground,
                   )
                 : const Icon(Icons.light_mode_outlined),
-          )
+          ) */
         ],
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),

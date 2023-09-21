@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/theme/theme_store.dart';
@@ -18,27 +19,18 @@ import 'user/home/home_page.dart';
 
 import 'theme/color_schemes.g.dart';
 
-class App extends StatefulWidget {
-  const App({super.key});
+final themeProvider = StateNotifierProvider<ThemeStore, ThemeMode>((ref) {
+  return ThemeStore();
+});
 
-  @override
-  State<App> createState() => _AppState();
-}
+final bottomBarProvider =
+    StateNotifierProvider<BottomBarStore, int>((ref) => BottomBarStore());
 
-class _AppState extends State<App> {
-  final BottomBarStore _bottomBarStore = BottomBarStore();
+class App extends ConsumerWidget {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _bottomBarStore.addListener(() {
-      setState(() {});
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final themeStore = context.watch<ThemeStore>();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeModeStore = ref.watch(themeProvider);
+    final bottomBarStore = ref.watch(bottomBarProvider);
 
     return MaterialApp(
       theme: ThemeData(
@@ -55,7 +47,7 @@ class _AppState extends State<App> {
         fontFamily: 'Lato',
       ),
       title: 'OLIMTEC',
-      themeMode: themeStore.value,
+      themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
@@ -68,7 +60,7 @@ class _AppState extends State<App> {
       },
       home: Scaffold(
         extendBody: true,
-        bottomNavigationBar: BottomBar(bottomStore: _bottomBarStore),
+        bottomNavigationBar: BottomBar(),
         body: SafeArea(
           child: IndexedStack(
             children: [
@@ -77,7 +69,7 @@ class _AppState extends State<App> {
               MainAoVivo(),
               SettingsPage(),
             ],
-            index: _bottomBarStore.index,
+            index: bottomBarStore,
           ),
         ),
       ),
