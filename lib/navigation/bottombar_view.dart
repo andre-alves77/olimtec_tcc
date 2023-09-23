@@ -18,7 +18,6 @@ class BottomBar extends ConsumerWidget {
       currentIndex: bottomBarStore.state,
       onTap: (newIndex) {
         bottomBarStore.setIndex(newIndex);
-        print(bottomBarStore.state);
       },
       items: [
         bottombaritem(
