@@ -14,45 +14,46 @@ class CardItem extends StatelessWidget {
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
-    return AspectRatio(
-      aspectRatio: 3.2,
-      child: GestureDetector(
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: cor,
-          ),
+    return GestureDetector(
+      child: Container(
+        width: sizeWidth / 1.1,
+        height: 90,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
           color: cor,
-          child: FittedBox(
-            alignment: Alignment.centerLeft,
-            child: Container(
-              width: sizeWidth,
-              child: ListTile(
-                leading: Image.asset(
-                  image
-                ),
-                title: FittedBox(
-                  alignment: Alignment.centerLeft,
-                  fit: BoxFit.scaleDown,
-                  child: Text(
-                    name,
-                    style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onPrimaryContainer,
-                      fontSize: 24,
-                    ),
+        ),
+        child: FittedBox(
+          alignment: Alignment.centerLeft,
+          child: Container(
+            width: sizeWidth,
+            child: ListTile(
+              leading: Image.asset(
+                image,
+                fit: BoxFit.fill,
+                height: 80,
+                width: sizeWidth / 5.5,
+              ),
+              title: FittedBox(
+                alignment: Alignment.centerLeft,
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  name,
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    fontSize: 24,
                   ),
                 ),
               ),
             ),
           ),
         ),
-         onTap: () {
-          Navigator.pushNamed(
-            context, route,
-          );
-        },
       ),
+       onTap: () {
+        Navigator.pushNamed(
+          context, route,
+        );
+      },
     );
   }
 }
