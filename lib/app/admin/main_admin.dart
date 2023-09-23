@@ -34,7 +34,7 @@ class _MainAdminState extends State<MainAdmin> {
               Padding(padding: EdgeInsets.all(15)),
               OptionConfig(Icons.library_books, "GERENCIAMENTO ", "(DE CADA MODALIDADE)"),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(Icons.sports_basketball, "JOGOS     ", "(DE CADA MODALIDADE)"),
+              OptionConfig(Icons.sports_basketball, "MODALIDADES     ", "(TODAS AS MODALIDADES)"),
               Padding(padding: EdgeInsets.all(15)),
               OptionConfig(Icons.settings, "CONFIGURAÇÕES ", "(GERAIS DAS OLÍMPIADAS)"),
             ],
