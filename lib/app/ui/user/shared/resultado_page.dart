@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 import 'game_card.dart';
-import '../../data/dummy_data.dart';
+import '../../../data/dummy_data.dart';
 
 class ResultadoPage extends StatelessWidget {
   const ResultadoPage({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/user/shared/game_card.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
 class MainAoVivo extends StatefulWidget {

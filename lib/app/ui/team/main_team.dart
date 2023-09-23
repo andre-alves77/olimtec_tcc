@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../shared/option_config.dart';
+import '../../shared/option_config.dart';
 
 class MainTeam extends StatefulWidget {
   const MainTeam({super.key});
@@ -33,21 +33,18 @@ class _MainTeamState extends State<MainTeam> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(
-                    context, '/modality_team'
-                  );
+                  Navigator.pushNamed(context, '/modality_team');
                 },
-                child: OptionConfig(Icons.person_add, "EQUIPES ", "(INSERIR ALUNOS NAS EQUIPES)"),
+                child: OptionConfig(Icons.person_add, "EQUIPES ",
+                    "(INSERIR ALUNOS NAS EQUIPES)"),
               ),
               Padding(padding: EdgeInsets.all(15)),
               GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(
-                    context, '/createteam_page'
-                  );
-                },
-                child: OptionConfig(Icons.settings, "CONFIGURAR TIME ", "(MODIFICAR O TIME)")
-              ),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/createteam_page');
+                  },
+                  child: OptionConfig(Icons.settings, "CONFIGURAR TIME ",
+                      "(MODIFICAR O TIME)")),
             ],
           ),
         ),
@@ -57,9 +54,7 @@ class _MainTeamState extends State<MainTeam> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
         onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(
-            context, '/', (route) => false
-          );
+          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

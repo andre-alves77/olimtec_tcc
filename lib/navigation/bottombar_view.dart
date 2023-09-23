@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
 
-import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
+import 'package:olimtec_tcc/navigation/bottombar_store.dart';
 
 class BottomBar extends ConsumerWidget {
   BottomBar({
@@ -18,7 +18,6 @@ class BottomBar extends ConsumerWidget {
       currentIndex: bottomBarStore.state,
       onTap: (newIndex) {
         bottomBarStore.setIndex(newIndex);
-        print(bottomBarStore.state);
       },
       items: [
         bottombaritem(

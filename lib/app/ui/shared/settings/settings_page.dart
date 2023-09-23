@@ -2,8 +2,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
-import 'package:olimtec_tcc/app/theme/theme_store.dart';
-import 'package:provider/provider.dart';
 
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
@@ -118,8 +116,7 @@ class SettingsPage extends ConsumerWidget {
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                context, '/main_team', (route) => false
-              );
+                  context, '/main_team', (route) => false);
             },
           ),
           FloatingActionButton(
@@ -128,8 +125,7 @@ class SettingsPage extends ConsumerWidget {
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                context, '/main_organization', (route) => false
-              );
+                  context, '/main_organization', (route) => false);
             },
           ),
           FloatingActionButton(
@@ -138,8 +134,7 @@ class SettingsPage extends ConsumerWidget {
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                context, '/main_admin', (route) => false
-              );
+                  context, '/main_admin', (route) => false);
             },
           ),
         ],

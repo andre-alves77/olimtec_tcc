@@ -1,8 +1,6 @@
-
-
 import 'package:flutter/material.dart';
 
-import '../shared/option_config.dart';
+import '../../shared/option_config.dart';
 
 class MainOrgnization extends StatefulWidget {
   const MainOrgnization({super.key});
@@ -14,7 +12,6 @@ class MainOrgnization extends StatefulWidget {
 class _MainOrgnizationState extends State<MainOrgnization> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -34,11 +31,14 @@ class _MainOrgnizationState extends State<MainOrgnization> {
           padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
           child: Column(
             children: [
-              OptionConfig(Icons.add, "ADICIONAR JOGOS ", "(CRONOGRAMA DO CHAVEAMENTO)"),
+              OptionConfig(
+                  Icons.add, "ADICIONAR JOGOS ", "(CRONOGRAMA DO CHAVEAMENTO)"),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(Icons.mode, "MODIFICAR REGULAMENTO ", "(DE CADA MODALIDADE)"),
+              OptionConfig(
+                  Icons.mode, "MODIFICAR REGULAMENTO ", "(DE CADA MODALIDADE)"),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(Icons.add_photo_alternate_outlined, "ADICIONAR MÍDIA ", "(DE CADA MODALIDADE)"),
+              OptionConfig(Icons.add_photo_alternate_outlined,
+                  "ADICIONAR MÍDIA ", "(DE CADA MODALIDADE)"),
             ],
           ),
         ),
@@ -48,9 +48,7 @@ class _MainOrgnizationState extends State<MainOrgnization> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
         onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(
-            context, '/', (route) => false
-          );
+          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
