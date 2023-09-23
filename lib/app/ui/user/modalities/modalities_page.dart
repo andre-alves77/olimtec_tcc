@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/ui/user/shared/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 
 class ModalitiesPage extends StatelessWidget {
   const ModalitiesPage({super.key});
