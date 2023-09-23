@@ -31,7 +31,7 @@ class CardItem extends StatelessWidget {
                 image,
                 fit: BoxFit.fill,
                 height: 80,
-                width: sizeWidth / 5.5,
+                width: sizeWidth / 5.8,
               ),
               title: FittedBox(
                 alignment: Alignment.centerLeft,
