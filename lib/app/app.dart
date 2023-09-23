@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/admin/privileges/main_privileges_admin.dart';
+import 'package:olimtec_tcc/app/admin/privileges/privileges_teams.dart';
 
 import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_view.dart';
@@ -75,6 +76,7 @@ class App extends ConsumerWidget {
         AppRoute.MAIN_ORGANIZATION: (ctx) => MainOrgnization(),
         AppRoute.MAIN_ADMIN: (ctx) => MainAdmin(),
         AppRoute.MAIN_PRIVILEGES: (ctx) => MainPrivilege(),
+        AppRoute.PRIVILEGES_TEAM: (ctx) => PrivilegesTeam(),
       },
       home: Scaffold(
         extendBody: true,

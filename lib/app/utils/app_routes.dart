@@ -18,4 +18,5 @@ class AppRoute {
   static const MAIN_ORGANIZATION = '/main_organization';
   static const MAIN_ADMIN = '/main_admin';
   static const MAIN_PRIVILEGES = '/main_privileges';
+  static const PRIVILEGES_TEAM = '/privileges_team';
 }
