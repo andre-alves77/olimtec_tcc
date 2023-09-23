@@ -30,7 +30,12 @@ class _MainAdminState extends State<MainAdmin> {
           padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
           child: Column(
             children: [
-              OptionConfig(Icons.star, "PRIVILÉGIOS ", "(UNICOS DO ADMINISTRADOR)"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/main_privileges');
+                },
+                child: OptionConfig(Icons.star, "PRIVILÉGIOS ", "(UNICOS DO ADMINISTRADOR)"),
+              ),
               Padding(padding: EdgeInsets.all(15)),
               OptionConfig(Icons.library_books, "GERENCIAMENTO ", "(DE CADA MODALIDADE)"),
               Padding(padding: EdgeInsets.all(15)),
