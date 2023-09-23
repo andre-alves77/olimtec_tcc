@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/user/landing_page/tabbar.dart';
+import 'package:olimtec_tcc/app/ui/user/landing_page/tabbar.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});

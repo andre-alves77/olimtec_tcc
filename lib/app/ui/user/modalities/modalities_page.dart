@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/user/shared/modalityItem_card.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
 class ModalitiesPage extends StatelessWidget {
