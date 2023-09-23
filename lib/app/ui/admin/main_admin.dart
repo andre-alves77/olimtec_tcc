@@ -34,14 +34,26 @@ class _MainAdminState extends State<MainAdmin> {
                 onTap: () {
                   Navigator.pushNamed(context, '/main_privileges');
                 },
-                child: OptionConfig(Icons.star, "PRIVILÉGIOS ", "(UNICOS DO ADMINISTRADOR)"),
+                child: OptionConfig(
+                    icone: Icons.star,
+                    text1: "PRIVILÉGIOS ",
+                    text2: "(UNICOS DO ADMINISTRADOR)"),
               ),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(Icons.library_books, "GERENCIAMENTO ", "(DE CADA MODALIDADE)"),
+              OptionConfig(
+                  icone: Icons.library_books,
+                  text1: "GERENCIAMENTO ",
+                  text2: "(DE CADA MODALIDADE)"),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(Icons.sports_basketball, "MODALIDADES     ", "(TODAS AS MODALIDADES)"),
+              OptionConfig(
+                  icone: Icons.sports_basketball,
+                  text1: "MODALIDADES",
+                  text2: "(TODAS AS MODALIDADES)"),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(Icons.settings, "CONFIGURAÇÕES ", "(GERAIS DAS OLÍMPIADAS)"),
+              OptionConfig(
+                  icone: Icons.settings,
+                  text1: "CONFIGURAÇÕES ",
+                  text2: "(GERAIS DAS OLÍMPIADAS)"),
             ],
           ),
         ),
@@ -51,9 +63,7 @@ class _MainAdminState extends State<MainAdmin> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
         onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(
-            context, '/', (route) => false
-          );
+          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

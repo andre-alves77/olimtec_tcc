@@ -1,3 +1,5 @@
+import 'package:olimtec_tcc/app/ui/admin/basketball_modality_page.dart';
+
 class AppRoute {
   static const HOME = '/';
   static const MODALITIES = '/modalities_page';
@@ -19,4 +21,5 @@ class AppRoute {
   static const MAIN_ADMIN = '/main_admin';
   static const MAIN_PRIVILEGES = '/main_privileges';
   static const PRIVILEGES_TEAM = '/privileges_team';
+  static const MODALITY_ADMIN = '/modality_admin';
 }

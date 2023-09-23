@@ -32,13 +32,19 @@ class _MainOrgnizationState extends State<MainOrgnization> {
           child: Column(
             children: [
               OptionConfig(
-                  Icons.add, "ADICIONAR JOGOS ", "(CRONOGRAMA DO CHAVEAMENTO)"),
+                  icone: Icons.add,
+                  text1: "ADICIONAR JOGOS ",
+                  text2: "(CRONOGRAMA DO CHAVEAMENTO)"),
               Padding(padding: EdgeInsets.all(15)),
               OptionConfig(
-                  Icons.mode, "MODIFICAR REGULAMENTO ", "(DE CADA MODALIDADE)"),
+                  icone: Icons.mode,
+                  text1: "MODIFICAR REGULAMENTO ",
+                  text2: "(DE CADA MODALIDADE)"),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(Icons.add_photo_alternate_outlined,
-                  "ADICIONAR MÍDIA ", "(DE CADA MODALIDADE)"),
+              OptionConfig(
+                  icone: Icons.add_photo_alternate_outlined,
+                  text1: "ADICIONAR MÍDIA ",
+                  text2: "(DE CADA MODALIDADE)"),
             ],
           ),
         ),
