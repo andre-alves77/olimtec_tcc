@@ -25,16 +25,27 @@ class _PrivilegesTeamState extends State<PrivilegesTeam> {
         centerTitle: true,
       ),
       body: SafeArea(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          mainAxisSize: MainAxisSize.max,
-          children: [
-            ListView(
+        top: true,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: SingleChildScrollView(
+            child: Column(
               children: [
-                
+                ListView(
+                  padding: EdgeInsets.zero,
+                  shrinkWrap: true,
+                  scrollDirection: Axis.vertical,
+                  children: [
+                    Column(
+                      children: [
+                        CardItem("2ºDSB", "/", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_2DSB_EXAMPLE.png"),
+                      ],
+                    )
+                  ],
+                )
               ],
-            )
-          ],
+            ),
+          ),
         ),
       ),
     );
