@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/admin/main_admin.dart';
+
 import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/organization/main_organization.dart';
@@ -19,33 +21,24 @@ import 'package:olimtec_tcc/app/user/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/user/shared/resultado_page.dart';
 import 'package:olimtec_tcc/app/user/settings/settings_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
-import 'package:provider/provider.dart';
+
 import 'user/modalities/modalities_page.dart';
 import 'user/home/home_page.dart';
 
 import 'theme/color_schemes.g.dart';
 
-class App extends StatefulWidget {
-  const App({super.key});
+final themeProvider = StateNotifierProvider<ThemeStore, ThemeMode>((ref) {
+  return ThemeStore();
+});
 
-  @override
-  State<App> createState() => _AppState();
-}
+final bottomBarProvider =
+    StateNotifierProvider<BottomBarStore, int>((ref) => BottomBarStore());
 
-class _AppState extends State<App> {
-  final BottomBarStore _bottomBarStore = BottomBarStore();
+class App extends ConsumerWidget {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    _bottomBarStore.addListener(() {
-      setState(() {});
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    final themeStore = context.watch<ThemeStore>();
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeModeStore = ref.watch(themeProvider);
+    final bottomBarStore = ref.watch(bottomBarProvider);
 
     return MaterialApp(
       theme: ThemeData(
@@ -62,7 +55,7 @@ class _AppState extends State<App> {
         fontFamily: 'Lato',
       ),
       title: 'OLIMTEC',
-      themeMode: themeStore.value,
+      themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
       initialRoute: '/landing_page',
       routes: {
@@ -73,7 +66,7 @@ class _AppState extends State<App> {
         AppRoute.ABOUT_US: (ctx) => AboutUsPage(),
         AppRoute.EQUIPE: (ctx) => MainEquipe(),
         AppRoute.PERFIL: (ctx) => PerfilPage(),
-        AppRoute.MAIN_TEAM: (ctx) => MainTeam(), 
+        AppRoute.MAIN_TEAM: (ctx) => MainTeam(),
         AppRoute.MODALITY_TEAM: (ctx) => TeamModality(),
         AppRoute.TEAM_PLAYER: (ctx) => TeamPlayers(),
         AppRoute.ADD_PLAYER: (ctx) => AddPlayerPage(),
@@ -83,20 +76,10 @@ class _AppState extends State<App> {
       },
       home: Scaffold(
         extendBody: true,
-        bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(10.0),
-          child: Container(
-            margin: const EdgeInsetsDirectional.fromSTEB(0, 0, 0, 0),
-            decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 23, 23, 23),
-               borderRadius: BorderRadius.circular(20),
-            ),
-            child: BottomBar(bottomStore: _bottomBarStore)
-          ),
-        ),
+        bottomNavigationBar: BottomBar(),
         body: SafeArea(
           child: IndexedStack(
-            index: _bottomBarStore.index,
+            index: bottomBarStore,
             children: const [
               HomePage(),
               ModalitiesPage(),
