@@ -1,31 +1,32 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/admin/privileges/main_privileges_admin.dart';
 import 'package:olimtec_tcc/app/admin/privileges/privileges_teams.dart';
+import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
+import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
 
-import 'package:olimtec_tcc/app/navigation/bottombar_store.dart';
-import 'package:olimtec_tcc/app/navigation/bottombar_view.dart';
-import 'package:olimtec_tcc/app/organization/main_organization.dart';
-import 'package:olimtec_tcc/app/team/add_player.dart';
-import 'package:olimtec_tcc/app/team/createteam_page.dart';
-import 'package:olimtec_tcc/app/team/main_team.dart';
-import 'package:olimtec_tcc/app/team/modality_team.dart';
-import 'package:olimtec_tcc/app/team/team_players.dart';
+import 'package:olimtec_tcc/navigation/bottombar_store.dart';
+import 'package:olimtec_tcc/navigation/bottombar_view.dart';
+import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
+import 'package:olimtec_tcc/app/ui/team/add_player.dart';
+import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
+import 'package:olimtec_tcc/app/ui/team/main_team.dart';
+import 'package:olimtec_tcc/app/ui/team/modality_team.dart';
+import 'package:olimtec_tcc/app/ui/team/team_players.dart';
 import 'package:olimtec_tcc/app/theme/theme_store.dart';
-import 'package:olimtec_tcc/app/user/settings/about_us_page.dart';
-import 'package:olimtec_tcc/app/user/live/aovivo_page.dart';
-import 'package:olimtec_tcc/app/user/modalities/cronograma_page.dart';
-import 'package:olimtec_tcc/app/user/modalities/equipe_page.dart';
-import 'package:olimtec_tcc/app/user/landing_page/landing_page.dart';
-import 'package:olimtec_tcc/app/user/modalities/sport_modalitiy_page.dart';
-import 'package:olimtec_tcc/app/user/settings/perfil_page.dart';
-import 'package:olimtec_tcc/app/user/shared/resultado_page.dart';
-import 'package:olimtec_tcc/app/user/settings/settings_page.dart';
+import 'package:olimtec_tcc/app/ui/shared/settings/about_us_page.dart';
+import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
+import 'package:olimtec_tcc/app/ui/user/landing_page/landing_page.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
+import 'package:olimtec_tcc/app/ui/shared/settings/perfil_page.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
+
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
-import 'user/modalities/modalities_page.dart';
-import 'user/home/home_page.dart';
+import 'ui/user/modalities/modalities_page.dart';
+import 'ui/user/home/home_page.dart';
 
 import 'theme/color_schemes.g.dart';
 
