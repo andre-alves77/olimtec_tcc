@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_organization.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
 
@@ -60,7 +62,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/modality_admin',
+      initialRoute: '/landing_page',
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -78,6 +80,8 @@ class App extends ConsumerWidget {
         AppRoute.MAIN_ADMIN: (ctx) => MainAdmin(),
         AppRoute.MAIN_PRIVILEGES: (ctx) => MainPrivilege(),
         AppRoute.PRIVILEGES_TEAM: (ctx) => PrivilegesTeam(),
+        AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
+        AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
       },
       home: Scaffold(
         extendBody: true,
