@@ -5,6 +5,8 @@ import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/restart_champioship.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_organization.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
 
@@ -63,7 +65,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/management_account',
+      initialRoute: '/modality_admin',
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -84,7 +86,8 @@ class App extends ConsumerWidget {
         AppRoute.MAIN_MANAGEMENT: (ctx) => MainManagement(),
         AppRoute.RESTART_CHAMPIOSHIP:(ctx) => RestartChampioship(),
         AppRoute.MANAGEMENT_ACCOUNT:(ctx) => ManagementAccount(),
-        
+        AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
+        AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
       },
       home: Scaffold(
         extendBody: true,
