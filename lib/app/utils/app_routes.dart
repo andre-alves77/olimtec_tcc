@@ -22,4 +22,7 @@ class AppRoute {
   static const MAIN_PRIVILEGES = '/main_privileges';
   static const PRIVILEGES_TEAM = '/privileges_team';
   static const MODALITY_ADMIN = '/modality_admin';
+  static const MAIN_MANAGEMENT = '/main_management';
+  static const RESTART_CHAMPIOSHIP = '/restart_champioship';
+  static const MANAGEMENT_ACCOUNT = '/management_account';
 }
