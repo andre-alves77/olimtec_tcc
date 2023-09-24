@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/basketball_modality_page.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_games.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/modality_team_view.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/regulation_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
 import 'package:olimtec_tcc/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/navigation/bottombar_view.dart';
@@ -60,7 +65,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/modality_admin',
+      initialRoute: 'regulation_admin',
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -78,6 +83,12 @@ class App extends ConsumerWidget {
         AppRoute.MAIN_ADMIN: (ctx) => MainAdmin(),
         AppRoute.MAIN_PRIVILEGES: (ctx) => MainPrivilege(),
         AppRoute.PRIVILEGES_TEAM: (ctx) => PrivilegesTeam(),
+        AppRoute.MODALITY_ADMIN: (ctx) => ModalityAdminPage(),
+        AppRoute.MODALITIES_ADMIN: (ctx) => ModalitiesPage(),
+        AppRoute.TEAM_ADMIN: (ctx) => TeamAdmin(),
+        AppRoute.TEAM_VIEW_ADMIN: (ctx) => ModalityTeamViewAdmin(),
+        AppRoute.MODALITIES_GAMES: (ctx) => ModalitiesGames(),
+        AppRoute.REGULATION_ADMIN: (ctx) => RegulationPageAdmin(),
       },
       home: Scaffold(
         extendBody: true,
