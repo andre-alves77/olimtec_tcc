@@ -17,7 +17,7 @@ class CardItem extends StatelessWidget {
     return GestureDetector(
       child: Container(
         width: sizeWidth / 1.1,
-        height: 90,
+        height: 120,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           color: cor,
@@ -25,13 +25,12 @@ class CardItem extends StatelessWidget {
         child: FittedBox(
           alignment: Alignment.centerLeft,
           child: Container(
-            width: sizeWidth,
+            width: sizeWidth / 1.8,
             child: ListTile(
               leading: Image.asset(
                 image,
-                fit: BoxFit.fill,
                 height: 80,
-                width: sizeWidth / 5.8,
+                width: sizeWidth / 8.8,
               ),
               title: FittedBox(
                 alignment: Alignment.centerLeft,

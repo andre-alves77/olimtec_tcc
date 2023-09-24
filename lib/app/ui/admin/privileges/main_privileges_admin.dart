@@ -34,7 +34,7 @@ class _MainPrivilegeState extends State<MainPrivilege> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               PrivilegeOption(Icons.switch_account_rounded, "REPRESENTANTES", "/privileges_team",),
-              PrivilegeOption(Icons.people, "ORGANIZADORES", "",),
+              PrivilegeOption(Icons.people, "ORGANIZADORES", "/privilege_organization",),
             ],
           ),
         ),

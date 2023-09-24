@@ -111,6 +111,7 @@ class SettingsPage extends ConsumerWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           FloatingActionButton(
+            heroTag: "btn01",
             child: Icon(Icons.star_border),
             backgroundColor: Theme.of(context).colorScheme.primary,
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -120,6 +121,7 @@ class SettingsPage extends ConsumerWidget {
             },
           ),
           FloatingActionButton(
+            heroTag: "btn02",
             child: Icon(Icons.star_half),
             backgroundColor: Theme.of(context).colorScheme.primary,
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -129,6 +131,7 @@ class SettingsPage extends ConsumerWidget {
             },
           ),
           FloatingActionButton(
+            heroTag: "btn03",
             child: Icon(Icons.star),
             backgroundColor: Theme.of(context).colorScheme.primary,
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
