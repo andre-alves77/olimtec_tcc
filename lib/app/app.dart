@@ -3,8 +3,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_organization.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organization_addmodality.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/privilge_organization_page.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
 
 import 'package:olimtec_tcc/navigation/bottombar_store.dart';
@@ -82,6 +84,8 @@ class App extends ConsumerWidget {
         AppRoute.PRIVILEGES_TEAM: (ctx) => PrivilegesTeam(),
         AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
         AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
+        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
+        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
       },
       home: Scaffold(
         extendBody: true,

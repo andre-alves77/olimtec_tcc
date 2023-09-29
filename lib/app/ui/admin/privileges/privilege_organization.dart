@@ -31,13 +31,18 @@ class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
           padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
           child: Column(
             children: [
-              OptionConfig(icone: Icons.add, text1: "ADICIONAR MODALIDAES", text2: "(AOS SEGUNDOS ANOS)",),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/privilege_organization_addmodality');
+                },
+                child: OptionConfig(icone: Icons.add, text1: "ADICIONAR MODALIDAES", text2: "(AOS SEGUNDOS ANOS)",)
+                ),
               Padding(padding: EdgeInsetsDirectional.all(8)),
-              CardItem("2ºDSB", "", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_2DSB_EXAMPLE.png"),
+              CardItem("2ºDSB", "/privilege_organization_page", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_2DSB_EXAMPLE.png"),
               Padding(padding: EdgeInsetsDirectional.all(8)),
-              CardItem("3ºEAA", "", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_3EAA_EXAMPLE.png"),
+              CardItem("2ºEAA", "", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_3EAA_EXAMPLE.png"),
               Padding(padding: EdgeInsetsDirectional.all(8)),
-              CardItem("1ºEAB", "", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_1EAA_EXAMPLE.png"),
+              CardItem("2ºEAB", "", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_1EAA_EXAMPLE.png"),
             ],
           ),
         ),

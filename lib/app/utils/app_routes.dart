@@ -21,5 +21,7 @@ class AppRoute {
   static const PRIVILEGES_TEAM = '/privileges_team';
   static const PRIVILEGES_TEAM_PAGE = '/privileges_team_page';
   static const PRIVILEGE_ORGANIZATION = '/privilege_organization';
+  static const PRIVILEGE_ORGANIZATION_PAGE = '/privilege_organization_page';
+  static const PRIVILEGE_ORGANIZATION_ADDMODALITY = '/privilege_organization_addmodality';
   static const MODALITY_ADMIN = '/modality_admin';
 }

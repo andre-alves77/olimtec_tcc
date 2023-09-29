@@ -2,14 +2,14 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PrivilegeTeamPage extends StatefulWidget {
-  const PrivilegeTeamPage({super.key});
+class PrivilegeOrganizationPage extends StatefulWidget {
+  const PrivilegeOrganizationPage({super.key});
 
   @override
-  State<PrivilegeTeamPage> createState() => _PrivilegeTeamPageState();
+  State<PrivilegeOrganizationPage> createState() => _PrivilegeOrganizationPageState();
 }
 
-class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
+class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
   
   _ModalityCard() {
 
@@ -109,7 +109,7 @@ class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "REPRESENTANTES - 2ºDSB",
+          "ORGANIZADORES - 2ºDSB",
           style: TextStyle(
             fontFamily: 'Lato',
             fontSize: 24,
@@ -149,7 +149,7 @@ class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
                             width: sizeWidth / 4.2,
                             child: const FittedBox(
                               child: Text(
-                                "3DSB",
+                                "2DSB",
                                 style: TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 28,
@@ -165,10 +165,62 @@ class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
                               color: Theme.of(context).colorScheme.onPrimaryContainer,
                             ),
                           ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Column(
+                                children: [
+                                  Container(
+                                    width: sizeWidth / 1.5,
+                                    child: const FittedBox(
+                                      child: Text(
+                                        "RESPONSÁVEIS PELAS ",
+                                        style: TextStyle(
+                                          fontFamily: 'Lato',
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    width: sizeWidth / 1.9,
+                                    child: FittedBox(
+                                      child: Text(
+                                        "MODALIDADES",
+                                        style: TextStyle(
+                                          fontFamily: 'Lato',
+                                          color: Theme.of(context).colorScheme.primary,
+                                          fontSize: 22,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
                         ],
                       ),
                     ],
                   ),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Container(
+                      width: sizeWidth / 1.2,
+                      height: sizeHeight * 0.45,
+                      child: ListView(
+                        children: [
+                          _ModalityCard(),
+                          Padding(padding: EdgeInsets.all(8)),
+                          _ModalityCard(),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
