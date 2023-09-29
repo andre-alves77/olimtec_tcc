@@ -5,6 +5,7 @@ import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account_add.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/restart_champioship.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/main_modalidades_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_games.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_team_view.dart';
@@ -71,7 +72,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.MODALITY_ADMIN,
+      initialRoute: AppRoute.LANDING,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),

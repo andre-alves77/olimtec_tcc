@@ -32,7 +32,7 @@ class AppRoute {
   static const MODALITIES_GAMES = '/modalities_games';
   static const REGULATION_ADMIN = 'regulation_admin';
   static const MAIN_MANAGEMENT = '/main_management';
-  static const RESTART_CHAMPIOSHIP = '/restart_champioship';
+  static const RESTART_CHAMPIOSHIP = '/restart_championship';
   static const MANAGEMENT_ACCOUNT = '/management_account';
   static const MANAGEMENT_ACCOUNT_ADD = '/management_account_add';
 }

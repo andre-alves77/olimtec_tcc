@@ -25,7 +25,9 @@ class MainModalitiesAdmin extends StatelessWidget {
         if (element.category == category) {
           widgets.add(
             Padding(
-                padding: EdgeInsets.all(5), child: ModalityItemCard(element)),
+                padding: EdgeInsets.all(5), child: GestureDetector(
+                  child: ModalityItemCard(element)
+                )),
           );
         }
       });

@@ -27,34 +27,37 @@ class ModalityAdminPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(12),
-        child: Center(
-          child: FittedBox(
-            child: Column(
-              children: [
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/team_admin');
-                  },
-                  child: OptionConfig(
-                      icone: Icons.shield_outlined,
-                      text1: "VISUALIZAR EQUIPES",
-                      text2: "(PARTICIPANTES)"),
-                ),
-                OptionConfig(
-                    icone: Icons.rule, text1: "VISUALIZAR REGULAMENTO"),
-                OptionConfig(
-                    icone: Icons.account_tree, text1: "VISUALIZAR CHAVEAMENTO"),
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/modalities_games');
-                  },
-                  child: OptionConfig(
-                      icone: Icons.remove_red_eye, text1: "VISUALIZAR JOGOS"),
-                ),
-                OptionConfig(icone: Icons.photo, text1: "VISUALIZAR MÍDIA"),
-              ],
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            FittedBox(
+              child: Column(
+                children: [
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/team_admin');
+                    },
+                    child: OptionConfig(
+                        icone: Icons.shield_outlined,
+                        text1: "VISUALIZAR EQUIPES",
+                        text2: "(PARTICIPANTES)"),
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/modalities_games');
+                    },
+                    child: OptionConfig(
+                        icone: Icons.remove_red_eye, text1: "VISUALIZAR JOGOS"),
+                  ),
+                  OptionConfig(
+                      icone: Icons.rule, text1: "VISUALIZAR REGULAMENTO"),
+                  OptionConfig(
+                      icone: Icons.account_tree, text1: "VISUALIZAR CHAVEAMENTO"),
+
+                ],
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );

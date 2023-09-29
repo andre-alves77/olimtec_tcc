@@ -22,7 +22,7 @@ class _LandingPageState extends State<LandingPage> {
         height: size.height * 1,
         decoration: BoxDecoration(
           image: DecorationImage(
-            fit: BoxFit.cover,
+            fit: BoxFit.fill,
             image: Image.asset(
               'assets/images/trio_absurdo_login.jpg',
             ).image,

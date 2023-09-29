@@ -89,8 +89,11 @@ class _CronogramaPageState extends State<CronogramaPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: GameCard(gametest),
+                  Flexible(
+                    child: Container(
+                      width: sizeWidth,
+                      child: GameCard(gametest)
+                    ),
                   ),
                 ],
               ),
@@ -193,8 +196,11 @@ class _CronogramaPageState extends State<CronogramaPage> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Expanded(
-                    child: GameCard(gametest),
+                  Flexible(
+                    child: Container(
+                      width: sizeWidth,
+                      child: GameCard(gametest)
+                    ),
                   )
                 ],
               ),

@@ -35,7 +35,7 @@ class ManagementAccountAdd extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        CardItem("2ºDSB", "/privileges_team_page", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_2DSB_EXAMPLE.png"),
+                        CardItem("2ºDSB", "/management_account", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_2DSB_EXAMPLE.png"),
                         Padding(padding: EdgeInsetsDirectional.all(8)),
                         CardItem("3ºEAA", "", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_3EAA_EXAMPLE.png"),
                         Padding(padding: EdgeInsetsDirectional.all(8)),
