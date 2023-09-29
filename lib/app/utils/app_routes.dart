@@ -1,3 +1,5 @@
+
+
 class AppRoute {
   static const HOME = '/';
   static const MODALITIES = '/modalities_page';
@@ -22,6 +24,11 @@ class AppRoute {
   static const PRIVILEGES_TEAM_PAGE = '/privileges_team_page';
   static const PRIVILEGE_ORGANIZATION = '/privilege_organization';
   static const MODALITY_ADMIN = '/modality_admin';
+  static const MODALITIES_ADMIN = '/modalities_admin';
+  static const TEAM_ADMIN = '/team_admin';
+  static const TEAM_VIEW_ADMIN = '/team_view_admin';
+  static const MODALITIES_GAMES = '/modalities_games';
+  static const REGULATION_ADMIN = 'regulation_admin';
   static const MAIN_MANAGEMENT = '/main_management';
   static const RESTART_CHAMPIOSHIP = '/restart_champioship';
   static const MANAGEMENT_ACCOUNT = '/management_account';
