@@ -48,29 +48,43 @@ class _LandingTabBarState extends ConsumerState<LandingTabBar>
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final store = ref.read(formUserSignInProvider.notifier);
+    bool isLoading = false;
     ref.listen(authNotifierProvider, (previous, next) {
       next.maybeWhen(
-        orElse: () => null,
-        initial: (() {
-          Navigator.pushReplacementNamed(context, AppRoute.LANDING);
-        }),
-        authenticated: (user) {
-          Navigator.pushReplacementNamed(context, AppRoute.HOME);
-          // Navigate to any screen
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Usuário autenticado'),
+          orElse: () => null,
+          initial: (() {
+            setState(() {
+              isLoading = false;
+            });
+            Navigator.pushReplacementNamed(context, AppRoute.LANDING);
+          }),
+          authenticated: (user) {
+            setState(() {
+              isLoading = false;
+            });
+            Navigator.pushReplacementNamed(context, AppRoute.HOME);
+            // Navigate to any screen
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Usuário autenticado'),
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
+          },
+          unauthenticated: (message) {
+            setState(() {
+              isLoading = false;
+            });
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text(message!),
               behavior: SnackBarBehavior.floating,
-            ),
-          );
-        },
-        unauthenticated: (message) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(message!),
-            behavior: SnackBarBehavior.floating,
-          ));
-        },
-      );
+            ));
+          },
+          loading: () {
+            setState(() {
+              isLoading = true;
+            });
+          });
     });
     return Expanded(
       child: Padding(
@@ -109,22 +123,20 @@ class _LandingTabBarState extends ConsumerState<LandingTabBar>
               ),
             ),
             Expanded(
-              child: Container(
-                constraints: BoxConstraints(maxWidth: 400),
-                child: store.isLoading == false
-                    ? TabBarView(
-                        controller: _tabController,
-                        children: [
-                          SignInFor(),
-                          SignUpForm(),
-                        ],
-                      )
-                    : Container(
-                        padding: EdgeInsets.all(70),
-                        alignment: Alignment.topCenter,
-                        child: CircularProgressIndicator()),
-              ),
-            ),
+                child: Container(
+                    constraints: BoxConstraints(maxWidth: 400),
+                    child: !isLoading
+                        ? TabBarView(
+                            controller: _tabController,
+                            children: const [
+                              SignInFor(),
+                              SignUpForm(),
+                            ],
+                          )
+                        : Container(
+                            padding: const EdgeInsets.all(70),
+                            alignment: Alignment.topCenter,
+                            child: CircularProgressIndicator()))),
           ],
         ),
       ),
