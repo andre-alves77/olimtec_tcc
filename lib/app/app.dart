@@ -3,13 +3,13 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
+import 'package:olimtec_tcc/app/ui/admin/management/management_account_add.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/restart_champioship.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_organization.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
-
 import 'package:olimtec_tcc/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
@@ -27,9 +27,7 @@ import 'package:olimtec_tcc/app/ui/user/landing_page/landing_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
-
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
-
 import 'ui/user/modalities/modalities_page.dart';
 import 'ui/user/home/home_page.dart';
 
@@ -65,7 +63,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: '/modality_admin',
+      initialRoute: '/management_account_add',
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -88,6 +86,7 @@ class App extends ConsumerWidget {
         AppRoute.MANAGEMENT_ACCOUNT:(ctx) => ManagementAccount(),
         AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
         AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
+        AppRoute.MANAGEMENT_ACCOUNT_ADD:(ctx) => ManagementAccountAdd(),
       },
       home: Scaffold(
         extendBody: true,
