@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/auth/providers/state/auth_state.dart';
 import 'package:olimtec_tcc/app/auth/ui/sign_up.ui.dart';
 import 'package:olimtec_tcc/app/auth/ui/sign_in.ui.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
@@ -125,7 +126,8 @@ class _LandingTabBarState extends ConsumerState<LandingTabBar>
             Expanded(
                 child: Container(
                     constraints: BoxConstraints(maxWidth: 400),
-                    child: !isLoading
+                    child: ref.watch(authNotifierProvider.notifier).state !=
+                            const AuthenticationState.loading()
                         ? TabBarView(
                             controller: _tabController,
                             children: const [
