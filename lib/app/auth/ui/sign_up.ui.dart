@@ -16,7 +16,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    final aiuth = ref.read(formUserSignInProvider);
+    final aiuth = ref.watch(formUserSignInProvider);
     return Form(
       key: aiuth.formAuthKeySignUp,
       child: Padding(
@@ -70,9 +70,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                 padding: const EdgeInsetsDirectional.fromSTEB(0, 12, 0, 0),
                 child: TextFormField(
                   onChanged: (value) {
-                    aiuth.email = value;
-                    value.trim();
-                    debugPrint(value);
+                    aiuth.email = value.trim();
                   },
                   validator: (val) {
                     String value = val ?? "";

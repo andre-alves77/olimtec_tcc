@@ -33,11 +33,6 @@ class FormSignInStore extends ChangeNotifier {
     return _isLoading;
   }
 
-  void submit() async {
-    toggleLoading();
-    toggleLoading();
-  }
-
   submitIn() {
     ref
         .read(authNotifierProvider.notifier)
@@ -45,7 +40,6 @@ class FormSignInStore extends ChangeNotifier {
   }
 
   submitUp() {
-    debugPrint(email);
     debugPrint(password);
     ref
         .read(authNotifierProvider.notifier)
