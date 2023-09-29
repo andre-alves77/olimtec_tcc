@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "46227408025",
+    "project_id": "olimtec-59335",
+    "storage_bucket": "olimtec-59335.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:46227408025:android:6ee6ea2ba65dd2a0506408",
+        "android_client_info": {
+          "package_name": "com.example.olimtec_tcc"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBFl64teJLoLLet3dAm0P88mxreFgw1Ovg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

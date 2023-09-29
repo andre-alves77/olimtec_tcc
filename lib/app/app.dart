@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/auth/lading.store.dart';
+import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/auth/ui/auth_page.ui.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
@@ -28,7 +31,6 @@ import 'package:olimtec_tcc/app/ui/shared/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
-import 'package:olimtec_tcc/app/ui/user/landing_page/landing_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
@@ -52,6 +54,33 @@ class App extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final themeModeStore = ref.watch(themeProvider);
     final bottomBarStore = ref.watch(bottomBarProvider);
+    ref.listen(authNotifierProvider, (previous, next) {
+      next.maybeWhen(
+          orElse: () => null,
+          initial: (() {
+            Navigator.pushReplacementNamed(context, AppRoute.LANDING);
+          }),
+          authenticated: (user) {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Usuário autenticado'),
+                behavior: SnackBarBehavior.floating,
+              ),
+            );
+            Navigator.pushReplacementNamed(context, AppRoute.HOME);
+            // Navigate to any screen
+          },
+          unauthenticated: (message) =>
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(
+                  content: Text(message!),
+                  behavior: SnackBarBehavior.floating,
+                ),
+              ),
+          loading: () {}
+          //   ref.read(formUserSignInProvider.notifier).toggleLoading(),
+          );
+    });
 
     return MaterialApp(
       theme: ThemeData(
@@ -70,7 +99,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: 'regulation_admin',
+      initialRoute: AppRoute.LANDING,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),

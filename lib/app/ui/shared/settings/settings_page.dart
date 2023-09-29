@@ -2,6 +2,9 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
+import 'package:olimtec_tcc/app/auth/lading.store.dart';
+import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
@@ -10,7 +13,33 @@ class SettingsPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final themeStore = ref.read(themeProvider.notifier);
-
+    ref.listen(authNotifierProvider, (previous, next) {
+      next.maybeWhen(
+        orElse: () => null,
+        initial: (() {
+          Navigator.pushReplacementNamed(context, AppRoute.LANDING);
+        }),
+        authenticated: (user) {
+          Navigator.pushReplacementNamed(context, AppRoute.HOME);
+          // Navigate to any screen
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Usuário autenticado'),
+              behavior: SnackBarBehavior.floating,
+            ),
+          );
+        },
+        unauthenticated: (message) =>
+            ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text(message!),
+            behavior: SnackBarBehavior.floating,
+          ),
+        ),
+        loading: () =>
+            ref.read(formUserSignInProvider.notifier).toggleLoading(),
+      );
+    });
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
@@ -101,8 +130,17 @@ class SettingsPage extends ConsumerWidget {
                   context: context,
                   title: 'Sobre nós',
                   icon: Icons.people_alt,
-                  function: () {}),
+                  function: () {
+                    Navigator.pushNamed(context, AppRoute.ABOUT_US);
+                  }),
               const Divider(),
+              _listTile(
+                  context: context,
+                  title: "Sair",
+                  icon: Icons.exit_to_app,
+                  function: () {
+                    ref.read(authNotifierProvider.notifier).signout();
+                  })
             ],
           ),
         ),
@@ -150,7 +188,7 @@ class SettingsPage extends ConsumerWidget {
       {required BuildContext context,
       required String title,
       required IconData icon,
-      required Function function}) {
+      required Function() function}) {
     return InkWell(
       onTap: () => function,
       child: GestureDetector(
@@ -167,9 +205,7 @@ class SettingsPage extends ConsumerWidget {
           textColor: Theme.of(context).colorScheme.onPrimaryContainer,
           hoverColor: Theme.of(context).colorScheme.primary,
         ),
-        onTap: () {
-          Navigator.pushNamed(context, '/aboutus_page');
-        },
+        onTap: function,
       ),
     );
   }
