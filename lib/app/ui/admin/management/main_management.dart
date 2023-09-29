@@ -28,13 +28,25 @@ class MainManagement extends StatelessWidget {
             FittedBox(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: FittedBox(child: OptionConfig(icone: Icons.manage_accounts, text1: 'GERENCIAR CONTAS')),
+                child: FittedBox(
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.pushNamed(context, "/management_account_add");
+                    },
+                    child: OptionConfig(icone: Icons.manage_accounts, text1: 'GERENCIAR CONTAS')
+                    ),
+                ),
               ),
             ),
             FittedBox(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: OptionConfig(icone: Icons.emoji_events, text1: 'REINICIAR CAMPEONATO'),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/restart_championship');
+                  },
+                  child: OptionConfig(icone: Icons.emoji_events, text1: 'REINICIAR CAMPEONATO')
+                ),
               ),
             )
           ],

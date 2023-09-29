@@ -40,20 +40,31 @@ class _MainAdminState extends State<MainAdmin> {
                     text2: "(UNICOS DO ADMINISTRADOR)"),
               ),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(
-                  icone: Icons.library_books,
-                  text1: "GERENCIAMENTO ",
-                  text2: "(DE CADA MODALIDADE)"),
+              GestureDetector(
+                onTap: () {
+                   Navigator.pushNamed(context, '/');
+                },
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/main_management');
+                  },
+                  child: OptionConfig(
+                      icone: Icons.library_books,
+                      text1: "GERENCIAMENTO ",
+                      text2: "(DE CADA MODALIDADE)"),
+                ),
+              ),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(
-                  icone: Icons.sports_basketball,
-                  text1: "MODALIDADES",
-                  text2: "(TODAS AS MODALIDADES)"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, '/modality_admin');
+                },
+                child: OptionConfig(
+                    icone: Icons.sports_basketball,
+                    text1: "MODALIDADES",
+                    text2: "(TODAS AS MODALIDADES)"),
+              ),
               Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(
-                  icone: Icons.settings,
-                  text1: "CONFIGURAÇÕES ",
-                  text2: "(GERAIS DAS OLÍMPIADAS)"),
             ],
           ),
         ),

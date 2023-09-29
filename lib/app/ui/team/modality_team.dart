@@ -90,11 +90,14 @@ class _TeamModalityState extends State<TeamModality> {
             Flexible(
               child: Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
-                child: ListView(
-                  children: [
-                    ModalityItem(Icons.sports_basketball, "BASQUETE MASCULINO"),
-                    ModalityItem(Icons.sports_basketball, "BASQUETE FEMININO"),
-                  ],
+                child: Container(
+                  width: sizeWidth,
+                  child: ListView(
+                    children: [
+                      ModalityItem(Icons.sports_basketball, "BASQUETE MASCULINO"),
+                      ModalityItem(Icons.sports_basketball, "BASQUETE FEMININO"),
+                    ],
+                  ),
                 ),
               ),
             )

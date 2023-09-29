@@ -6,15 +6,19 @@ import 'package:olimtec_tcc/app/auth/ui/auth_page.ui.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
+import 'package:olimtec_tcc/app/ui/admin/management/management_account_add.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/restart_champioship.dart';
-import 'package:olimtec_tcc/app/ui/admin/modalities/basketball_modality_page.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/main_modalidades_admin.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_games.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_team_view.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/regulation_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_organization.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organization_addmodality.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/privilge_organization_page.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
@@ -34,9 +38,7 @@ import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
-
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
-
 import 'ui/user/modalities/modalities_page.dart';
 import 'ui/user/home/home_page.dart';
 
@@ -128,6 +130,9 @@ class App extends ConsumerWidget {
         AppRoute.MANAGEMENT_ACCOUNT: (ctx) => ManagementAccount(),
         AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
         AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
+        AppRoute.MANAGEMENT_ACCOUNT_ADD:(ctx) => ManagementAccountAdd(),
+        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
+        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
       },
       home: Scaffold(
         extendBody: true,
