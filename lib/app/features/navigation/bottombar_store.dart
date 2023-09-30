@@ -28,6 +28,9 @@ BottomBarStore() : super()
   }
 } */
 
+final bottomBarProvider =
+    StateNotifierProvider<BottomBarStore, int>((ref) => BottomBarStore());
+
 class BottomBarStore extends StateNotifier<int> {
   BottomBarStore() : super(0);
 

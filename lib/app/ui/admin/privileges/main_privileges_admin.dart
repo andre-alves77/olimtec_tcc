@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/shared/Privilege_item.dart';
+import 'package:olimtec_tcc/app/shared/views/Privilege_item.dart';
 
 class MainPrivilege extends StatefulWidget {
   const MainPrivilege({super.key});
@@ -14,7 +14,7 @@ class _MainPrivilegeState extends State<MainPrivilege> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -33,8 +33,16 @@ class _MainPrivilegeState extends State<MainPrivilege> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              PrivilegeOption(Icons.switch_account_rounded, "REPRESENTANTES", "/privileges_team",),
-              PrivilegeOption(Icons.people, "ORGANIZADORES", "/privilege_organization",),
+              PrivilegeOption(
+                Icons.switch_account_rounded,
+                "REPRESENTANTES",
+                "/privileges_team",
+              ),
+              PrivilegeOption(
+                Icons.people,
+                "ORGANIZADORES",
+                "/privilege_organization",
+              ),
             ],
           ),
         ),

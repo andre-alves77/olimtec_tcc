@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/shared/option_config.dart';
+import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
 class ModalityAdminPage extends StatelessWidget {
   const ModalityAdminPage({super.key});
@@ -57,8 +57,8 @@ class ModalityAdminPage extends StatelessWidget {
                         icone: Icons.rule, text1: "VISUALIZAR REGULAMENTO"),
                   ),
                   OptionConfig(
-                      icone: Icons.account_tree, text1: "VISUALIZAR CHAVEAMENTO"),
-
+                      icone: Icons.account_tree,
+                      text1: "VISUALIZAR CHAVEAMENTO"),
                 ],
               ),
             ),

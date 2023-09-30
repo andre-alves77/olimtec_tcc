@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/shared/option_config.dart';
+import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
 class MainAdmin extends StatefulWidget {
   const MainAdmin({super.key});
@@ -42,7 +42,7 @@ class _MainAdminState extends State<MainAdmin> {
               Padding(padding: EdgeInsets.all(15)),
               GestureDetector(
                 onTap: () {
-                   Navigator.pushNamed(context, '/');
+                  Navigator.pushNamed(context, '/');
                 },
                 child: GestureDetector(
                   onTap: () {

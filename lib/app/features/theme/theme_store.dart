@@ -13,6 +13,10 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
   }
 } */
 
+final themeProvider = StateNotifierProvider<ThemeStore, ThemeMode>((ref) {
+  return ThemeStore();
+});
+
 class ThemeStore extends StateNotifier<ThemeMode> {
   ThemeStore() : super(ThemeMode.dark);
 
