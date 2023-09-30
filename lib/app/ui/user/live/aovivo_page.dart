@@ -45,66 +45,62 @@ class _MainAoVivoState extends State<MainAoVivo> {
           ),
         ),
         body: Center(
-          child: ListView(
-              padding: EdgeInsets.zero,
-              primary: false,
-              scrollDirection: Axis.vertical,
+          child: ListView(padding: EdgeInsets.zero, primary: false, children: [
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    Container(
-                      constraints: BoxConstraints(maxWidth: 400),
-                      child: Column(
-                        children: [
-                          GestureDetector(
-                            child: GameCard(gametest),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
-                            },
-                          ),
-                          GestureDetector(
-                            child: GameCard(gametest),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
-                            },
-                          ),
-                          GestureDetector(
-                            child: GameCard(gametest),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
-                            },
-                          ),
-                          GestureDetector(
-                            child: GameCard(gametest),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
-                            },
-                          ),
-                          GestureDetector(
-                            child: GameCard(gametest),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
-                            },
-                          ),
-                          GestureDetector(
-                            child: GameCard(gametest),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
-                            },
-                          ),
-                          GestureDetector(
-                            child: GameCard(gametest),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
-                            },
-                          ),
-                        ],
+                Container(
+                  constraints: BoxConstraints(maxWidth: 400),
+                  child: Column(
+                    children: [
+                      GestureDetector(
+                        child: GameCard(gametest),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/resultado_page');
+                        },
                       ),
-                    ),
-                  ],
+                      GestureDetector(
+                        child: GameCard(gametest),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/resultado_page');
+                        },
+                      ),
+                      GestureDetector(
+                        child: GameCard(gametest),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/resultado_page');
+                        },
+                      ),
+                      GestureDetector(
+                        child: GameCard(gametest),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/resultado_page');
+                        },
+                      ),
+                      GestureDetector(
+                        child: GameCard(gametest),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/resultado_page');
+                        },
+                      ),
+                      GestureDetector(
+                        child: GameCard(gametest),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/resultado_page');
+                        },
+                      ),
+                      GestureDetector(
+                        child: GameCard(gametest),
+                        onTap: () {
+                          Navigator.pushNamed(context, '/resultado_page');
+                        },
+                      ),
+                    ],
+                  ),
                 ),
-              ]),
+              ],
+            ),
+          ]),
         ));
   }
 }
