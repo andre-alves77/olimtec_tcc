@@ -45,26 +45,13 @@ import 'ui/user/home/home_page.dart';
 import 'features/theme/color_schemes.g.dart';
 
 class App extends ConsumerWidget {
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final themeModeStore = ref.watch(themeProvider);
-    final bottomBarStore = ref.watch(bottomBarProvider);
+  Widget vv(BuildContext context, WidgetRef ref, Widget child) {
     ref.listen(authNotifierProvider, (previous, next) {
       next.maybeWhen(
           orElse: () => null,
           initial: (() {
             Navigator.pushReplacementNamed(context, AppRoute.LANDING);
           }),
-          authenticated: (user) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Usuário autenticado'),
-                behavior: SnackBarBehavior.floating,
-              ),
-            );
-            Navigator.pushReplacementNamed(context, AppRoute.HOME);
-            // Navigate to any screen
-          },
           unauthenticated: (message) =>
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -76,6 +63,13 @@ class App extends ConsumerWidget {
           //   ref.read(formUserSignInProvider.notifier).toggleLoading(),
           );
     });
+    return child;
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeModeStore = ref.watch(themeProvider);
+    final bottomBarStore = ref.watch(bottomBarProvider);
 
     return MaterialApp(
       theme: ThemeData(
@@ -133,14 +127,18 @@ class App extends ConsumerWidget {
         extendBody: true,
         bottomNavigationBar: BottomBar(),
         body: SafeArea(
-          child: IndexedStack(
-            index: bottomBarStore,
-            children: const [
-              HomePage(),
-              ModalitiesPage(),
-              MainAoVivo(),
-              SettingsPage(),
-            ],
+          child: vv(
+            context,
+            ref,
+            IndexedStack(
+              index: bottomBarStore,
+              children: const [
+                HomePage(),
+                ModalitiesPage(),
+                MainAoVivo(),
+                SettingsPage(),
+              ],
+            ),
           ),
         ),
       ),
