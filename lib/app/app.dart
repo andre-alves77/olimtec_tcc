@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/auth/lading.store.dart';
-import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
-import 'package:olimtec_tcc/app/auth/ui/auth_page.ui.dart';
+
+import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
@@ -19,37 +19,30 @@ import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organi
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilge_organization_page.dart';
-import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
+import 'package:olimtec_tcc/app/features/settings/settings_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
-import 'package:olimtec_tcc/navigation/bottombar_store.dart';
-import 'package:olimtec_tcc/navigation/bottombar_view.dart';
+import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
+import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
 import 'package:olimtec_tcc/app/ui/team/main_team.dart';
 import 'package:olimtec_tcc/app/ui/team/modality_team.dart';
 import 'package:olimtec_tcc/app/ui/team/team_players.dart';
-import 'package:olimtec_tcc/app/theme/theme_store.dart';
-import 'package:olimtec_tcc/app/ui/shared/settings/about_us_page.dart';
+import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
+import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
-import 'package:olimtec_tcc/app/ui/shared/settings/perfil_page.dart';
+import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 import 'ui/user/modalities/modalities_page.dart';
 import 'ui/user/home/home_page.dart';
 
-import 'theme/color_schemes.g.dart';
-
-final themeProvider = StateNotifierProvider<ThemeStore, ThemeMode>((ref) {
-  return ThemeStore();
-});
-
-final bottomBarProvider =
-    StateNotifierProvider<BottomBarStore, int>((ref) => BottomBarStore());
+import 'features/theme/color_schemes.g.dart';
 
 class App extends ConsumerWidget {
   @override
@@ -130,9 +123,11 @@ class App extends ConsumerWidget {
         AppRoute.MANAGEMENT_ACCOUNT: (ctx) => ManagementAccount(),
         AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
         AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
-        AppRoute.MANAGEMENT_ACCOUNT_ADD:(ctx) => ManagementAccountAdd(),
-        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
-        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
+        AppRoute.MANAGEMENT_ACCOUNT_ADD: (ctx) => ManagementAccountAdd(),
+        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) =>
+            PrivilegeOrganizationPage(),
+        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) =>
+            OrganizationAddModality(),
       },
       home: Scaffold(
         extendBody: true,

@@ -2,11 +2,11 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/auth/lading.store.dart';
-import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
-import 'package:olimtec_tcc/app/auth/providers/state/auth_state.dart';
-import 'package:olimtec_tcc/app/auth/ui/sign_up.ui.dart';
-import 'package:olimtec_tcc/app/auth/ui/sign_in.ui.dart';
+import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
+import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/features/auth/providers/state/auth_state.dart';
+import 'package:olimtec_tcc/app/features/auth/view/widgets/sign_in.view.dart';
+import 'package:olimtec_tcc/app/features/auth/view/widgets/sign_up.view.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class LandingTabBar extends ConsumerStatefulWidget {
@@ -131,7 +131,7 @@ class _LandingTabBarState extends ConsumerState<LandingTabBar>
                         ? TabBarView(
                             controller: _tabController,
                             children: const [
-                              SignInFor(),
+                              SignInForm(),
                               SignUpForm(),
                             ],
                           )

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/auth/ui/form_auth.ui.dart';
+import 'package:olimtec_tcc/app/features/auth/view/widgets/form_auth.view.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});

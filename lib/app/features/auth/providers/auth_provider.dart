@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/auth/providers/state/auth_state.dart';
-import 'package:olimtec_tcc/app/auth/remote_data_source/auth.repository.dart';
 import 'package:olimtec_tcc/app/core/providers/firebase.provider.dart';
+import 'package:olimtec_tcc/app/features/auth/providers/state/auth_state.dart';
+import 'package:olimtec_tcc/app/features/auth/remote_data_source/auth.data_source.dart';
 
 final authDataSourceProvider = Provider<AuthDataSource>((ref) {
   return AuthDataSource(ref.read(firebaseAuthProvider), ref);
