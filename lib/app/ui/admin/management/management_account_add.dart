@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/shared/CardItem.dart';
+import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 
 class ManagementAccountAdd extends StatelessWidget {
   const ManagementAccountAdd({super.key});
@@ -35,11 +35,23 @@ class ManagementAccountAdd extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        CardItem("2ºDSB", "/management_account", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_2DSB_EXAMPLE.png"),
+                        CardItem(
+                            "2ºDSB",
+                            "/management_account",
+                            Theme.of(context).colorScheme.primaryContainer,
+                            "assets/images/LOGO_2DSB_EXAMPLE.png"),
                         Padding(padding: EdgeInsetsDirectional.all(8)),
-                        CardItem("3ºEAA", "", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_3EAA_EXAMPLE.png"),
+                        CardItem(
+                            "3ºEAA",
+                            "",
+                            Theme.of(context).colorScheme.primaryContainer,
+                            "assets/images/LOGO_3EAA_EXAMPLE.png"),
                         Padding(padding: EdgeInsetsDirectional.all(8)),
-                        CardItem("1ºEAB", "", Theme.of(context).colorScheme.primaryContainer, "assets/images/LOGO_1EAA_EXAMPLE.png"),
+                        CardItem(
+                            "1ºEAB",
+                            "",
+                            Theme.of(context).colorScheme.primaryContainer,
+                            "assets/images/LOGO_1EAA_EXAMPLE.png"),
                       ],
                     )
                   ],

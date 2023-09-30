@@ -2,17 +2,17 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/auth/lading.store.dart';
-import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
 
-class SignInFor extends ConsumerStatefulWidget {
-  const SignInFor({super.key});
+import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
+
+class SignInForm extends ConsumerStatefulWidget {
+  const SignInForm({super.key});
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => SignInForState();
 }
 
-class SignInForState extends ConsumerState<SignInFor> {
+class SignInForState extends ConsumerState<SignInForm> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();

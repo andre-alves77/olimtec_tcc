@@ -2,8 +2,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
-import 'package:olimtec_tcc/app/auth/lading.store.dart';
-import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
+
+import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class SettingsPage extends ConsumerWidget {

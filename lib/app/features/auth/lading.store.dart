@@ -3,7 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
 
 final formUserSignInProvider =
     ChangeNotifierProvider.autoDispose<FormSignInStore>((ref) {

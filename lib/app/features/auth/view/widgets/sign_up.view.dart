@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/auth/lading.store.dart';
+import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:provider/provider.dart';
 
 class SignUpForm extends ConsumerStatefulWidget {
