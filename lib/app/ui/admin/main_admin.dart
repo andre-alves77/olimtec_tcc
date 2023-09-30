@@ -57,7 +57,7 @@ class _MainAdminState extends State<MainAdmin> {
               Padding(padding: EdgeInsets.all(15)),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/modality_admin');
+                  Navigator.pushNamed(context, '/modalities_admin');
                 },
                 child: OptionConfig(
                     icone: Icons.sports_basketball,
