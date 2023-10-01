@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/modlityitemadmin.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
-import 'package:olimtec_tcc/app/shared/option_config.dart';
+import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+
 
 class InsertModalities extends StatelessWidget {
   const InsertModalities({super.key});
