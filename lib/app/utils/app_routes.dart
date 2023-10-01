@@ -36,4 +36,7 @@ class AppRoute {
   static const MANAGEMENT_ACCOUNT = '/management_account';
   static const MANAGEMENT_ACCOUNT_ADD = '/management_account_add';
   static const ADD_TEAMS_ADMIN = '/add_teams_admin';
+  static const CHAMPIOSHIP_PAGE = '/champioship_page';
+  static const INSERT_MODALITIES = '/insert_modalities';
+  static const STARTGAME =  '/StarGame';
 }

@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
 
 final formUserSignInProvider =
@@ -17,6 +18,17 @@ class FormSignInStore extends ChangeNotifier {
   String name = "";
   String email = "";
   String password = "";
+  String password2 = "";
+  String nameError = "";
+  String emailError = "";
+  String password2Error = "";
+  String passwordError = "";
+
+  String pass = "";
+  String mail = "";
+  String passError = "";
+  String mailError = "";
+
   FormUserState mode = FormUserState.SignIn;
   final formAuthKeySignIn = GlobalKey<FormState>();
   final formAuthKeySignUp = GlobalKey<FormState>();
@@ -34,18 +46,79 @@ class FormSignInStore extends ChangeNotifier {
   }
 
   submitIn() {
-    ref
-        .read(authNotifierProvider.notifier)
-        .login(email: email, password: password);
+    passError = "";
+    mailError = "";
+    if (pass.isEmpty) {
+      passError = "Insira a senha";
+    }
+    if (mail.isEmpty &&
+        !RegExp(r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$').hasMatch(mail)) {
+      mailError = "Insira um email válido";
+    }
+    notifyListeners();
+    if (passError.isEmpty && mailError.isEmpty) {
+      ref
+          .read(authNotifierProvider.notifier)
+          .login(email: email, password: password);
+    }
   }
 
   submitUp() {
-    debugPrint(password);
-    ref
-        .read(authNotifierProvider.notifier)
-        .signup(email: email, password: password);
+    emailError = "";
+    passwordError = "";
+    password2Error = "";
+    nameError = "";
+
+    if (!RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
+      nameError += "Insira somente letras.\n";
+    }
+    if (!RegExp(r'^\w+\s+\w+$').hasMatch(name)) {
+      nameError += "Insira no máximo duas palavras";
+    }
+    if (password.length < 8) {
+      passwordError += "8 caracteres.";
+    }
+
+    // Verifica se há pelo menos uma letra maiúscula.
+    if (!password.contains(RegExp(r'[A-Z]'))) {
+      passwordError += " Uma letra maiúscula.";
+    }
+
+    // Verifica se há pelo menos um número.
+    if (!password.contains(RegExp(r'[0-9]'))) {
+      passwordError += " Um número.";
+    }
+
+    if (password != password2) {
+      password2Error += " As senhas estão diferentes";
+    }
+
+    if (!RegExp(r'^[\w-]+(\.[\w-]+)*@[\w-]+(\.[\w-]+)+$').hasMatch(email)) {
+      emailError += "Insira um email válido. ";
+    }
+    if (!email.contains("@etec.sp.gov.br")) {
+      emailError += "Use seu email institucional da ETEC";
+    }
+
+    if (passwordError.isNotEmpty) {
+      passwordError = "Deve haver pelo menos:\n" + passwordError;
+    }
+
+    notifyListeners();
+
+    if (emailError.isEmpty && passwordError.isEmpty) {
+      ref
+          .read(authNotifierProvider.notifier)
+          .signup(email: email, password: password);
+    }
   }
 }
+
+
+
+
+  
+
 
 /* class FormSignInStore extends ChangeNotifier {
   String name = "";
