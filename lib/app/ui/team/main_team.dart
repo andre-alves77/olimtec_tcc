@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../shared/option_config.dart';
+import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
 class MainTeam extends StatefulWidget {
   const MainTeam({super.key});

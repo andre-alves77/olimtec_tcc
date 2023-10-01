@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/auth/lading.store.dart';
-import 'package:olimtec_tcc/app/auth/providers/auth_provider.dart';
-import 'package:olimtec_tcc/app/auth/ui/auth_page.ui.dart';
+import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
+import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
+import 'package:olimtec_tcc/app/ui/admin/before_config/add_teams.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account_add.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/restart_champioship.dart';
-import 'package:olimtec_tcc/app/ui/admin/modalities/main_modalidades_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_games.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_team_view.dart';
@@ -21,59 +20,39 @@ import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilge_organization_page.dart';
 import 'package:olimtec_tcc/app/ui/champioship_page.dart';
 import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
-import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
+import 'package:olimtec_tcc/app/features/settings/settings_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
-import 'package:olimtec_tcc/navigation/bottombar_store.dart';
-import 'package:olimtec_tcc/navigation/bottombar_view.dart';
+import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
+import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
 import 'package:olimtec_tcc/app/ui/team/main_team.dart';
 import 'package:olimtec_tcc/app/ui/team/modality_team.dart';
 import 'package:olimtec_tcc/app/ui/team/team_players.dart';
-import 'package:olimtec_tcc/app/theme/theme_store.dart';
-import 'package:olimtec_tcc/app/ui/shared/settings/about_us_page.dart';
+import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
+import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
-import 'package:olimtec_tcc/app/ui/shared/settings/perfil_page.dart';
+import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
-import 'ui/user/modalities/modalities_page.dart';
+import 'ui/admin/modalities/modalities_page.dart';
 import 'ui/user/home/home_page.dart';
 
-import 'theme/color_schemes.g.dart';
-
-final themeProvider = StateNotifierProvider<ThemeStore, ThemeMode>((ref) {
-  return ThemeStore();
-});
-
-final bottomBarProvider =
-    StateNotifierProvider<BottomBarStore, int>((ref) => BottomBarStore());
+import 'features/theme/color_schemes.g.dart';
 
 class App extends ConsumerWidget {
-  @override
-  Widget build(BuildContext context, WidgetRef ref) {
-    final themeModeStore = ref.watch(themeProvider);
-    final bottomBarStore = ref.watch(bottomBarProvider);
+  Widget vv(BuildContext context, WidgetRef ref, Widget child) {
     ref.listen(authNotifierProvider, (previous, next) {
       next.maybeWhen(
           orElse: () => null,
           initial: (() {
             Navigator.pushReplacementNamed(context, AppRoute.LANDING);
           }),
-          authenticated: (user) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Usuário autenticado'),
-                behavior: SnackBarBehavior.floating,
-              ),
-            );
-            Navigator.pushReplacementNamed(context, AppRoute.HOME);
-            // Navigate to any screen
-          },
           unauthenticated: (message) =>
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
@@ -85,6 +64,13 @@ class App extends ConsumerWidget {
           //   ref.read(formUserSignInProvider.notifier).toggleLoading(),
           );
     });
+    return child;
+  }
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final themeModeStore = ref.watch(themeProvider);
+    final bottomBarStore = ref.watch(bottomBarProvider);
 
     return MaterialApp(
       theme: ThemeData(
@@ -103,7 +89,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.LANDING,
+      initialRoute: AppRoute.ADD_TEAMS_ADMIN,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -135,6 +121,7 @@ class App extends ConsumerWidget {
         AppRoute.MANAGEMENT_ACCOUNT_ADD:(ctx) => ManagementAccountAdd(),
         AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
         AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
+        AppRoute.ADD_TEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
         AppRoute.CHAMPIOSHIP_PAGE:(ctx) => ChampioshipPage(),
         AppRoute.INSERT_MODALITIES:(ctx) => InsertModalities(),
         
@@ -143,14 +130,18 @@ class App extends ConsumerWidget {
         extendBody: true,
         bottomNavigationBar: BottomBar(),
         body: SafeArea(
-          child: IndexedStack(
-            index: bottomBarStore,
-            children: const [
-              HomePage(),
-              ModalitiesPage(),
-              MainAoVivo(),
-              SettingsPage(),
-            ],
+          child: vv(
+            context,
+            ref,
+            IndexedStack(
+              index: bottomBarStore,
+              children: const [
+                HomePage(),
+                ModalitiesPage(),
+                MainAoVivo(),
+                SettingsPage(),
+              ],
+            ),
           ),
         ),
       ),

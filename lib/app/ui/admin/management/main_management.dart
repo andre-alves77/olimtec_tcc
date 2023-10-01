@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
-import 'package:olimtec_tcc/app/shared/option_config.dart';
+import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
 class MainManagement extends StatelessWidget {
   const MainManagement({super.key});
@@ -30,11 +30,12 @@ class MainManagement extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: FittedBox(
                   child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, "/management_account_add");
-                    },
-                    child: OptionConfig(icone: Icons.manage_accounts, text1: 'GERENCIAR CONTAS')
-                    ),
+                      onTap: () {
+                        Navigator.pushNamed(context, "/management_account_add");
+                      },
+                      child: OptionConfig(
+                          icone: Icons.manage_accounts,
+                          text1: 'GERENCIAR CONTAS')),
                 ),
               ),
             ),
@@ -42,11 +43,12 @@ class MainManagement extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/restart_championship');
-                  },
-                  child: OptionConfig(icone: Icons.emoji_events, text1: 'REINICIAR CAMPEONATO')
-                ),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/restart_championship');
+                    },
+                    child: OptionConfig(
+                        icone: Icons.emoji_events,
+                        text1: 'REINICIAR CAMPEONATO')),
               ),
             )
           ],

@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/shared/option_config.dart';
+import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
 class RestartChampioship extends StatelessWidget {
   const RestartChampioship({super.key});
@@ -28,17 +28,19 @@ class RestartChampioship extends StatelessWidget {
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-             Column(
+            Column(
               mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    OptionConfig(icone: Icons.emoji_events, text1: 'REINICIAR CAMPEONATO',),
-                  ],
-                )
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                OptionConfig(
+                  icone: Icons.emoji_events,
+                  text1: 'REINICIAR CAMPEONATO',
+                ),
+              ],
+            )
           ],
         ),
       ),
     );
   }
-} 
-         
+}

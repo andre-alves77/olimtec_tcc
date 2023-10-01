@@ -4,9 +4,10 @@ import 'dart:math';
 import 'package:olimtec_tcc/app/models/modality/modality.dart';
 
 class ModalityItemCard extends StatelessWidget {
-  const ModalityItemCard(this._modality, {super.key});
+  const ModalityItemCard({required this.modality, required this.routes, super.key});
 
-  final Modality _modality;
+  final Modality modality;
+  final String routes;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +26,7 @@ class ModalityItemCard extends StatelessWidget {
               width: sizeWidth,
               child: ListTile(
                 leading: Icon(
-                  _modality.icon,
+                  modality.icon,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                   size: sizeWidth / 9,
                 ),
@@ -33,7 +34,7 @@ class ModalityItemCard extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    _modality.name,
+                    modality.name,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -47,7 +48,7 @@ class ModalityItemCard extends StatelessWidget {
         ),
          onTap: () {
           Navigator.pushNamed(
-            context, '/modality_page'
+            context, routes,
           );
         },
       ),
