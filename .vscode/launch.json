@@ -8,8 +8,7 @@
             "name": "olimtec_tcc",
             "request": "launch",
             "type": "dart",
-            "program": "lib/main.dart"
-        },
+c        },
         {
             "name": "olimtec_tcc (profile mode)",
             "request": "launch",
