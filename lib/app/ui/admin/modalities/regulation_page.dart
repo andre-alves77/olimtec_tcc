@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class RegulationPageAdmin extends StatelessWidget {
   const RegulationPageAdmin({super.key});
@@ -64,11 +63,7 @@ class RegulationPageAdmin extends StatelessWidget {
                   width: 332,
                   height: 450,
                   decoration: BoxDecoration(),
-                  child: SafeArea(
-                    child: SfPdfViewer.network(
-                      'http://www.pdf995.com/samples/pdf.pdf',
-                    ),
-                  ),
+                  child: Placeholder(),
                 ),
               ],
             ),
@@ -80,21 +75,21 @@ class RegulationPageAdmin extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Material(
-                child: Ink(
-                  decoration: BoxDecoration(
+                  child: Ink(
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                       border: Border.all(width: 1),
                       color: Colors.green,
                     ),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Icon(
+                    child: InkWell(
+                      onTap: () {},
+                      child: Icon(
                         Icons.add,
                         size: 48,
+                      ),
                     ),
                   ),
                 ),
-              ),
                 Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -124,15 +119,15 @@ class RegulationPageAdmin extends StatelessWidget {
                 Material(
                   child: Ink(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        border: Border.all(width: 1),
-                        color: Theme.of(context).colorScheme.error,
-                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                      border: Border.all(width: 1),
+                      color: Theme.of(context).colorScheme.error,
+                    ),
                     child: InkWell(
                       onTap: () {},
                       child: Icon(
-                          Icons.remove,
-                          size: 48,
+                        Icons.remove,
+                        size: 48,
                       ),
                     ),
                   ),
