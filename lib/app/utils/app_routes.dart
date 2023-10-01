@@ -39,4 +39,7 @@ class AppRoute {
   static const CHAMPIOSHIP_PAGE = '/champioship_page';
   static const INSERT_MODALITIES = '/insert_modalities';
   static const STARTGAME =  '/StarGame';
+  static const DETAILS_GAME_ORG =  '/details-game-organization';
+  static const INSERT_RULE_ORG =  '/insert-rule-organization';
+  static const MAIN_MODALITIES_ORG =  '/main-modalities-organization';
 }
