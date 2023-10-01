@@ -19,6 +19,8 @@ import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organi
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilge_organization_page.dart';
+import 'package:olimtec_tcc/app/ui/champioship_page.dart';
+import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
 import 'package:olimtec_tcc/app/ui/shared/settings/settings_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
@@ -133,6 +135,9 @@ class App extends ConsumerWidget {
         AppRoute.MANAGEMENT_ACCOUNT_ADD:(ctx) => ManagementAccountAdd(),
         AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
         AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
+        AppRoute.CHAMPIOSHIP_PAGE:(ctx) => ChampioshipPage(),
+        AppRoute.INSERT_MODALITIES:(ctx) => InsertModalities(),
+        
       },
       home: Scaffold(
         extendBody: true,
