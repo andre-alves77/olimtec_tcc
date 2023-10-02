@@ -5,6 +5,7 @@ import 'package:olimtec_tcc/app/models/game.dart';
 import 'dart:math';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/resulttimeline_card.dart';
 
 
 class DetailsGameOrganization extends StatefulWidget {
@@ -103,7 +104,7 @@ class _DetailsGameOrganizationState extends State<DetailsGameOrganization> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Expanded(
-                          child: GameCard(gametest)
+                          child: ResultTimelineCard(gametest),
                         ),
                       ],
                     ),
