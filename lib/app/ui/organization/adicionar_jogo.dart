@@ -28,33 +28,35 @@ class _AddGameState extends State<AddGame> {
       ),
       body: SafeArea(
         top: true,
-        child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Column(
-                    children: [
-                      const Text(
-                        "CONFIRMAR JOGOS",
-                        style: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 22,
-                          fontWeight: FontWeight.bold,
-                          color: Colors.orange,
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        const Text(
+                          "CONFIRMAR JOGOS",
+                          style: TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.orange,
+                          ),
                         ),
-                      ),
-                      Padding(padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0)),
-                      AddGameCard(gametest),
-                      Padding(padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0)),
-                      AddGameCard(gametest),
-                    ],
-                  ),
-                ],
-              ),
-            ],
+                        Padding(padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0)),
+                        AddGameCard(gametest),
+                        Padding(padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0)),
+                        AddGameCard(gametest),
+                      ],
+                    ),
+                  ],
+                ),
+              ],
+            ),
           ),
         ),
       ),

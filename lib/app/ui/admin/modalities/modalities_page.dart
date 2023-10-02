@@ -41,19 +41,6 @@ class ModalitiesPageAdmin extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-        automaticallyImplyLeading: false,
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(8),
-          child: Image.asset(
-            Theme.of(context).brightness == Brightness.light
-                ? 'assets/images/LOGO_LIGHT_MODE.png'
-                : 'assets/images/LOGO_DARK_MODE.png',
-            width: 300,
-            height: 200,
-            fit: BoxFit.cover,
-          ),
-        ),
         centerTitle: true,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.center,
