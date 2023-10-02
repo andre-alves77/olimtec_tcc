@@ -20,12 +20,17 @@ import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organi
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilge_organization_page.dart';
+import 'package:olimtec_tcc/app/ui/champioship_page.dart';
+import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
 import 'package:olimtec_tcc/app/features/settings/settings_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
+import 'package:olimtec_tcc/app/ui/organization/details_game_org.dart';
+import 'package:olimtec_tcc/app/ui/organization/insert_modality_rule_org.dart';
+import 'package:olimtec_tcc/app/ui/organization/main_modalities_org.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
@@ -126,6 +131,11 @@ class App extends ConsumerWidget {
         AppRoute.START_CHAMPIONSHIP: (ctx) => StartChampionship(),
         AppRoute.ADD_MODALITY_SCREEN: (ctx) => AddModalityScreen(),
         AppRoute.ADD_GAME: (ctx) => AddGame(),
+AppRoute.CHAMPIOSHIP_PAGE:(ctx) => ChampioshipPage(),
+        AppRoute.INSERT_MODALITIES:(ctx) => InsertModalities(),
+        AppRoute.DETAILS_GAME_ORG:(ctx) => DetailsGameOrganization(),
+        AppRoute.INSERT_RULE_ORG:(ctx) => InsertModalityRuleOrganization(),
+        AppRoute.MAIN_MODALITIES_ORG:(ctx) => ModalidadesOrganization(),
       },
       home: Scaffold(
         extendBody: true,
