@@ -1,8 +1,5 @@
 {
   "image": "cirrusci/flutter:beta",
-  "build": {
-    "dockerfile": "Dockerfile"
-  },
   "forwardPorts": [3000],
   "name": "Flutter",
   "customizations": {
