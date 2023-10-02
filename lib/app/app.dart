@@ -34,6 +34,7 @@ import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/modalities_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
 import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
@@ -97,6 +98,7 @@ class App extends ConsumerWidget {
         AppRoute.EQUIPE: (ctx) => MainEquipe(),
         AppRoute.PERFIL: (ctx) => PerfilPage(),
         AppRoute.MAIN_TEAM: (ctx) => MainTeam(),
+        AppRoute.MODALITIES: (context) => ModalitiesPage(),
         AppRoute.MODALITY_TEAM: (ctx) => TeamModality(),
         AppRoute.TEAM_PLAYER: (ctx) => TeamPlayers(),
         AppRoute.ADD_PLAYER: (ctx) => AddPlayerPage(),
@@ -106,7 +108,7 @@ class App extends ConsumerWidget {
         AppRoute.MAIN_PRIVILEGES: (ctx) => MainPrivilege(),
         AppRoute.PRIVILEGES_TEAM: (ctx) => PrivilegesTeam(),
         AppRoute.MODALITY_ADMIN: (ctx) => ModalityAdminPage(),
-        AppRoute.MODALITIES_ADMIN: (ctx) => ModalitiesPage(),
+        AppRoute.MODALITIES_ADMIN: (ctx) => ModalitiesPageAdmin(),
         AppRoute.TEAM_ADMIN: (ctx) => TeamAdmin(),
         AppRoute.TEAM_VIEW_ADMIN: (ctx) => ModalityTeamViewAdmin(),
         AppRoute.MODALITIES_GAMES: (ctx) => ModalitiesGames(),
@@ -116,9 +118,11 @@ class App extends ConsumerWidget {
         AppRoute.MANAGEMENT_ACCOUNT: (ctx) => ManagementAccount(),
         AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
         AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
-        AppRoute.MANAGEMENT_ACCOUNT_ADD:(ctx) => ManagementAccountAdd(),
-        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
-        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
+        AppRoute.MANAGEMENT_ACCOUNT_ADD: (ctx) => ManagementAccountAdd(),
+        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) =>
+            PrivilegeOrganizationPage(),
+        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) =>
+            OrganizationAddModality(),
         AppRoute.ADD_TEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
       },
       home: Scaffold(

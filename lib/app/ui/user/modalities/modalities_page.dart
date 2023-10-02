@@ -3,8 +3,8 @@ import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
-class ModalitiesPageAdmin extends StatelessWidget {
-  const ModalitiesPageAdmin({super.key});
+class ModalitiesPage extends StatelessWidget {
+  const ModalitiesPage({super.key});
 
   List<Widget> _categoryFODASE() {
     List<Widget> widgets = [];
@@ -28,7 +28,7 @@ class ModalitiesPageAdmin extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.all(5),
                 child: ModalityItemCard(
-                    modality: element, routes: AppRoute.MODALITY_ADMIN)),
+                    modality: element, routes: AppRoute.MODALITY_PAGE)),
           );
         }
       });
