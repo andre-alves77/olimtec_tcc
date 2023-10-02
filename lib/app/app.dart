@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
 import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
+import 'package:olimtec_tcc/app/ui/admin/before_config/add_modality_component.dart';
 import 'package:olimtec_tcc/app/ui/admin/before_config/add_teams.dart';
+import 'package:olimtec_tcc/app/ui/admin/before_config/start_championship.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
@@ -23,6 +25,7 @@ import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
+import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
@@ -87,7 +90,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.ADD_TEAMS_ADMIN,
+      initialRoute: AppRoute.LANDING,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -120,6 +123,9 @@ class App extends ConsumerWidget {
         AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
         AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
         AppRoute.ADD_TEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
+        AppRoute.START_CHAMPIONSHIP: (ctx) => StartChampionship(),
+        AppRoute.ADD_MODALITY_SCREEN: (ctx) => AddModalityScreen(),
+        AppRoute.ADD_GAME: (ctx) => AddGame(),
       },
       home: Scaffold(
         extendBody: true,
