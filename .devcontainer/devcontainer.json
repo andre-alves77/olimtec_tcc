@@ -1,4 +1,5 @@
 {
+  "image": "cirrusci/flutter:beta",
   "build": {
     "dockerfile": "Dockerfile"
   },
