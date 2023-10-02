@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainOrgnization extends StatefulWidget {
   const MainOrgnization({super.key});
@@ -30,10 +31,15 @@ class _MainOrgnizationState extends State<MainOrgnization> {
           padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
           child: Column(
             children: [
-              OptionConfig(
-                  icone: Icons.add,
-                  text1: "ADICIONAR JOGOS ",
-                  text2: "(CRONOGRAMA DO CHAVEAMENTO)"),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, AppRoute.ADD_GAME);
+                },
+                child: OptionConfig(
+                    icone: Icons.add,
+                    text1: "ADICIONAR JOGOS ",
+                    text2: "(CRONOGRAMA DO CHAVEAMENTO)"),
+              ),
               Padding(padding: EdgeInsets.all(15)),
               OptionConfig(
                   icone: Icons.mode,
