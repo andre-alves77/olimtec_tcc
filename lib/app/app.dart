@@ -26,6 +26,8 @@ import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
+import 'package:olimtec_tcc/app/ui/organization/modality_page_organization.dart';
+import 'package:olimtec_tcc/app/ui/shared/StartGame.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
 import 'package:olimtec_tcc/app/ui/team/main_team.dart';
@@ -89,7 +91,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.ADD_TEAMS_ADMIN,
+      initialRoute: AppRoute.MODALITY_PAGE_ORGANIZATION,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -124,6 +126,8 @@ class App extends ConsumerWidget {
         AppRoute.ADD_TEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
         AppRoute.CHAMPIOSHIP_PAGE:(ctx) => ChampioshipPage(),
         AppRoute.INSERT_MODALITIES:(ctx) => InsertModalities(),
+        AppRoute.STARTGAME:(ctx) => StartGame(),
+        AppRoute.MODALITY_PAGE_ORGANIZATION: (ctx) => ModalityPageOrganization(),
         
       },
       home: Scaffold(
