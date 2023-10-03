@@ -4,6 +4,7 @@ import 'dart:math';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
+
 class ChampioshipPage extends StatelessWidget {
   const ChampioshipPage({super.key});
 

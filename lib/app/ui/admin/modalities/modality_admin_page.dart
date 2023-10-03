@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class ModalityAdminPage extends StatelessWidget {
   const ModalityAdminPage({super.key});
@@ -44,7 +45,7 @@ class ModalityAdminPage extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/modalities_games');
+                      Navigator.pushNamed(context, AppRoute.MODALITIES_GAMES);
                     },
                     child: OptionConfig(
                         icone: Icons.remove_red_eye, text1: "VISUALIZAR JOGOS"),
