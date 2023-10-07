@@ -1,31 +1,30 @@
-
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/ui/shared/StartGame.dart';
+import 'package:olimtec_tcc/app/models/team.dart';
+import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
+
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
-
-
 
 class ModalityPageOrganization extends StatefulWidget {
   const ModalityPageOrganization({super.key});
 
   @override
-  State<ModalityPageOrganization> createState() => _ModalityPageOrganizationState();
+  State<ModalityPageOrganization> createState() =>
+      _ModalityPageOrganizationState();
 }
 
 class _ModalityPageOrganizationState extends State<ModalityPageOrganization>
-with TickerProviderStateMixin{
+    with TickerProviderStateMixin {
   TabController? _tabController;
-  
-  @override
- void initState(){
-  super.initState();
-  _tabController = TabController(length: 2, vsync: this);
- }
-  
 
-   @override
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 2, vsync: this);
+  }
+
+  @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
@@ -90,21 +89,24 @@ with TickerProviderStateMixin{
                   child: TabBarView(
                     controller: _tabController,
                     children: [
-                      ListView(
-                        children: [
-                          GestureDetector(
-                            child: StartGame(),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/cronograma_page');
-                            },
-                          ),
-                          GestureDetector(
-                            child:StartGame(),
-                            onTap: () {
-                              Navigator.pushNamed(context, '/cronograma_page');
-                            },
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical:8.0),
+                        child: ListView(
+                          children: [
+                            GestureDetector(
+                              child: StartGame(game: gametest),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/cronograma_page');
+                              },
+                            ),
+                            GestureDetector(
+                              child:StartGame(game: gametest),
+                              onTap: () {
+                                Navigator.pushNamed(context, '/cronograma_page');
+                              },
+                            ),
+                          ],
+                        ),
                       ),
                       ListView(
                         children: [
@@ -181,7 +183,6 @@ with TickerProviderStateMixin{
                                     fontSize: 20,
                                     fontFamily: 'Lato',
                                     fontWeight: FontWeight.bold,
-                                    
                                   ),
                                 ),
                               ),
@@ -192,7 +193,6 @@ with TickerProviderStateMixin{
                     ],
                   ),
                 ),
-               
               ],
             ),
           ),
