@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:olimtec_tcc/app/models/game.dart';
+import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
 import 'dart:math';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resulttimeline_card.dart';
-
 
 class DetailsGameOrganization extends StatefulWidget {
   const DetailsGameOrganization({super.key});
@@ -15,8 +15,6 @@ class DetailsGameOrganization extends StatefulWidget {
   State<DetailsGameOrganization> createState() =>
       _DetailsGameOrganizationState();
 }
-
-
 
 class _DetailsGameOrganizationState extends State<DetailsGameOrganization> {
   Widget _rowInfo(String head, String info) {
@@ -138,7 +136,8 @@ class _DetailsGameOrganizationState extends State<DetailsGameOrganization> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           elevation: 5,
-                          backgroundColor: Theme.of(context).colorScheme.primary,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
                           foregroundColor: const Color(0xFFEDEDED),
                         ),
                         child: const FittedBox(
@@ -208,7 +207,8 @@ class _DetailsGameOrganizationState extends State<DetailsGameOrganization> {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -228,11 +228,23 @@ class _DetailsGameOrganizationState extends State<DetailsGameOrganization> {
                       ],
                     ),
                   ),
+                  ListView(children: [
+                    GestureDetector(
+                      child: StartGame(game: gametest),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/cronograma_page');
+                      },
+                    ),
+                    GestureDetector(
+                      child: StartGame(game: gametest),
+                      onTap: () {
+                        Navigator.pushNamed(context, '/cronograma_page');
+                      },
+                    ),
+                  ])
                 ],
               ),
             ),
-
-            
           ),
         ),
       ),
