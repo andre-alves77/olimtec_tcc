@@ -99,7 +99,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.MODALITY_PAGE_ORGANIZATION,
+      initialRoute: AppRoute.LANDING,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO: (ctx) => ResultadoPage(),
@@ -130,15 +130,18 @@ class App extends ConsumerWidget {
         AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
         AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
         AppRoute.MANAGEMENT_ACCOUNT_ADD: (ctx) => ManagementAccountAdd(),
-        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
-        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
+        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) =>
+            PrivilegeOrganizationPage(),
+        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) =>
+            OrganizationAddModality(),
         AppRoute.ADD_TEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
         AppRoute.START_CHAMPIONSHIP: (ctx) => StartChampionship(),
         AppRoute.ADD_MODALITY_SCREEN: (ctx) => AddModalityScreen(),
         AppRoute.ADD_GAME: (ctx) => AddGame(),
         AppRoute.CHAMPIOSHIP_PAGE: (ctx) => ChampioshipPage(),
         AppRoute.INSERT_MODALITIES: (ctx) => InsertModalities(),
-        AppRoute.MODALITY_PAGE_ORGANIZATION: (ctx) => ModalityPageOrganization(),
+        AppRoute.MODALITY_PAGE_ORGANIZATION: (ctx) =>
+            ModalityPageOrganization(),
         AppRoute.DETAILS_GAME_ORG: (ctx) => DetailsGameOrganization(),
         AppRoute.INSERT_RULE_ORG: (ctx) => InsertModalityRuleOrganization(),
         AppRoute.MAIN_MODALITIES_ORG: (ctx) => ModalidadesOrganization(),
