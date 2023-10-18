@@ -2,13 +2,15 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class StartChampionship extends StatelessWidget {
-  const StartChampionship({super.key});
+class StartChampionshipAdmin extends StatelessWidget {
+  const StartChampionshipAdmin({super.key});
+
+  static String route = "/startchampionship-admin";
 
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    
+
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
@@ -62,20 +64,20 @@ class StartChampionship extends StatelessWidget {
                 ],
               ),
               ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              Theme.of(context).brightness == Brightness.light
-                  ? 'assets/images/LOGO_LIGHT_MODE.png'
-                  : 'assets/images/LOGO_DARK_MODE.png',
-              width: 300,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text(
+                borderRadius: BorderRadius.circular(8),
+                child: Image.asset(
+                  Theme.of(context).brightness == Brightness.light
+                      ? 'assets/images/LOGO_LIGHT_MODE.png'
+                      : 'assets/images/LOGO_DARK_MODE.png',
+                  width: 300,
+                  height: 200,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text(
                     "OLIM",
                     style: TextStyle(
                       fontFamily: 'Lato',
@@ -92,50 +94,49 @@ class StartChampionship extends StatelessWidget {
                       color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
-            ],
-          ),
-          Text(
-                    "DÊ INICÍO AO MAIOR EVENTO DE ESPORTE",
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.error,
+                ],
+              ),
+              Text(
+                "DÊ INICÍO AO MAIOR EVENTO DE ESPORTE",
+                style: TextStyle(
+                  fontFamily: 'Lato',
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.error,
+                ),
+              ),
+              Text(
+                "DA ETEC JARDIM ÂNGELA ABAIXO:",
+                style: TextStyle(
+                  fontFamily: 'Lato',
+                  fontSize: 22,
+                  fontWeight: FontWeight.bold,
+                  color: Theme.of(context).colorScheme.error,
+                ),
+              ),
+              Padding(padding: EdgeInsets.all(8)),
+              SizedBox(
+                width: sizeWidth / 1.3,
+                height: 80,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    elevation: 5,
+                    backgroundColor: Theme.of(context).colorScheme.primary,
+                    foregroundColor: const Color(0xFFEDEDED),
+                  ),
+                  child: FittedBox(
+                    child: Text(
+                      "INICIAR OLÍMPIADAS",
+                      style: const TextStyle(
+                        fontFamily: 'Lato',
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
-                  Text(
-                    "DA ETEC JARDIM ÂNGELA ABAIXO:",
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.error,
-                    ),
-                  ),
-                  Padding(padding: EdgeInsets.all(8)),
-                  SizedBox(
-      width: sizeWidth / 1.3,
-      height: 80,
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-        elevation: 5,
-        backgroundColor:
-          Theme.of(context).colorScheme.primary,
-          foregroundColor:const Color(0xFFEDEDED),
-        ),
-        child: FittedBox(
-          child: Text(
-             "INICIAR OLÍMPIADAS",
-             style: const TextStyle(
-              fontFamily: 'Lato',
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-        ),
-        onPressed: () {},
-      ),
-    ),
+                  onPressed: () {},
+                ),
+              ),
             ],
           ),
         ),

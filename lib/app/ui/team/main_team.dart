@@ -5,6 +5,8 @@ import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 class MainTeam extends StatefulWidget {
   const MainTeam({super.key});
 
+  static String route = "/main_team";
+
   @override
   State<MainTeam> createState() => _MainTeamState();
 }

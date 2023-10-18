@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class MainEquipe extends StatefulWidget {
-  const MainEquipe({super.key});
+class EquipeUser extends StatefulWidget {
+  const EquipeUser({super.key});
+
+  static String route = "/equipe-user";
 
   @override
-  State<MainEquipe> createState() => _MainEquipeState();
+  State<EquipeUser> createState() => _EquipeUserState();
 }
 
-class _MainEquipeState extends State<MainEquipe> {
+class _EquipeUserState extends State<EquipeUser> {
   _CardJogador() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),

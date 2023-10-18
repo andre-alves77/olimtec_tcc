@@ -5,6 +5,8 @@ import 'package:olimtec_tcc/app/utils/app_routes.dart';
 class MainOrgnization extends StatefulWidget {
   const MainOrgnization({super.key});
 
+  static String route = "/main-organization";
+
   @override
   State<MainOrgnization> createState() => _MainOrgnizationState();
 }
@@ -33,7 +35,7 @@ class _MainOrgnizationState extends State<MainOrgnization> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, AppRoute.ADD_GAME);
+                  Navigator.pushNamed(context, AppRoute.ADDGAME_ORGANIZATION);
                 },
                 child: OptionConfig(
                     icone: Icons.add,

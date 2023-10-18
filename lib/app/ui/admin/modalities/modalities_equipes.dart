@@ -4,6 +4,8 @@ import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 class TeamAdmin extends StatelessWidget {
   const TeamAdmin({super.key});
 
+  static String route = "/team-admin";
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

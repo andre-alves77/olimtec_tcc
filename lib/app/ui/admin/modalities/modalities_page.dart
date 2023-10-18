@@ -6,6 +6,8 @@ import 'package:olimtec_tcc/app/utils/app_routes.dart';
 class ModalitiesPageAdmin extends StatelessWidget {
   const ModalitiesPageAdmin({super.key});
 
+  static String route = "/modalities-admin";
+
   List<Widget> _categoryFODASE() {
     List<Widget> widgets = [];
     modalityCategoryList_dummy.forEach((category) {

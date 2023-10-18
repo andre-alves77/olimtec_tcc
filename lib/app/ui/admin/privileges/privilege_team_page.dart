@@ -2,26 +2,25 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PrivilegeTeamPage extends StatefulWidget {
-  const PrivilegeTeamPage({super.key});
+class PrivilegeTeamPageAdmin extends StatefulWidget {
+  const PrivilegeTeamPageAdmin({super.key});
+
+  static String route = "/privilegesteampage-admin";
 
   @override
-  State<PrivilegeTeamPage> createState() => _PrivilegeTeamPageState();
+  State<PrivilegeTeamPageAdmin> createState() => _PrivilegeTeamPageAdminState();
 }
 
-class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
-  
+class _PrivilegeTeamPageAdminState extends State<PrivilegeTeamPageAdmin> {
   _ModalityCard() {
-
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return AspectRatio(
       aspectRatio: 4.5,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Theme.of(context).colorScheme.primaryContainer
-        ),
+            borderRadius: BorderRadius.circular(20),
+            color: Theme.of(context).colorScheme.primaryContainer),
         child: FittedBox(
           alignment: Alignment.centerLeft,
           child: Container(
@@ -53,12 +52,10 @@ class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
         ),
       ),
     );
-
   }
 
   _CardJogador2() {
-
-  final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+    final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -75,7 +72,7 @@ class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-            width: sizeWidth / 2.8,
+              width: sizeWidth / 2.8,
               child: FittedBox(
                 child: const Text(
                   'Fulano de tal',
@@ -100,7 +97,7 @@ class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
       ),
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
@@ -162,7 +159,9 @@ class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
                             width: sizeWidth / 1.2,
                             child: Divider(
                               thickness: 2,
-                              color: Theme.of(context).colorScheme.onPrimaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                         ],
@@ -205,51 +204,59 @@ class _PrivilegeTeamPageState extends State<PrivilegeTeamPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Card(
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: Theme.of(context).colorScheme.primaryContainer,
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Container(
-                          width: sizeWidth / 1.1,
-                          height: sizeHeight * 0.6,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primaryContainer,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: Theme.of(context).colorScheme.onPrimaryContainer,
-                              width: 2,
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color:
+                                Theme.of(context).colorScheme.primaryContainer,
+                            elevation: 10,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                          ),
-                          child: ListView(
-                            padding: EdgeInsets.zero,
-                            scrollDirection: Axis.vertical,
-                            children: [
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                            child: Container(
+                              width: sizeWidth / 1.1,
+                              height: sizeHeight * 0.6,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .primaryContainer,
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                                  width: 2,
+                                ),
+                              ),
+                              child: ListView(
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.vertical,
+                                children: [
+                                  Divider(
+                                      height: 2,
+                                      thickness: 1.5,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer),
+                                  _CardJogador2(),
+                                  Divider(
+                                      height: 2,
+                                      thickness: 1.5,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer),
+                                  _CardJogador2(),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 )
               ],

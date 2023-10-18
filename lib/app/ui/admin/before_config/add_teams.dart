@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class AddTeamsAdmin extends StatelessWidget {
   const AddTeamsAdmin({super.key});
 
+  static String route = "/addteams_admin";
+
   Widget _addTeams(BuildContext context, String text) {
     return FittedBox(
       child: Container(
@@ -47,7 +49,7 @@ class AddTeamsAdmin extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
-          Center( 
+          Center(
             child: FittedBox(
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -82,8 +84,9 @@ class AddTeamsAdmin extends StatelessWidget {
                         hintText: '1ºEAA',
                         enabledBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color:
-                                Theme.of(context).colorScheme.onPrimaryContainer,
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onPrimaryContainer,
                             width: 2,
                           ),
                           borderRadius: BorderRadius.circular(20),

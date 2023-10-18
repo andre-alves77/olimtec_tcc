@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-class InsertModalityRuleOrganization extends StatelessWidget {
-  const InsertModalityRuleOrganization({super.key});
+class InsertRuleOrganization extends StatelessWidget {
+  const InsertRuleOrganization({super.key});
 
+  static String route = "/insertrule-organization";
 
   @override
   Widget build(BuildContext context) {
@@ -156,5 +157,5 @@ class InsertModalityRuleOrganization extends StatelessWidget {
         ],
       ),
     );
-}
+  }
 }

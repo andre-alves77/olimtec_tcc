@@ -2,14 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class TeamPlayers extends StatefulWidget {
-  const TeamPlayers({super.key});
+class PlayerTeam extends StatefulWidget {
+  const PlayerTeam({super.key});
+
+  static String route = "/player-team";
 
   @override
-  State<TeamPlayers> createState() => _TeamPlayersState();
+  State<PlayerTeam> createState() => _PlayerTeamState();
 }
 
-class _TeamPlayersState extends State<TeamPlayers> {
+class _PlayerTeamState extends State<PlayerTeam> {
   _CardJogador2() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -176,38 +178,43 @@ class _TeamPlayersState extends State<TeamPlayers> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(
-                                 context, '/addplayer_page'
-                                );
+                                Navigator.pushNamed(context, '/addplayer_page');
                               },
                               child: Container(
                                 width: sizeWidth / 1.2,
                                 height: 70,
                                 child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      5, 0, 5, 0),
                                   child: Row(
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            10, 0, 0, 0),
                                         child: Icon(
                                           Icons.add,
-                                          color: Theme.of(context).colorScheme.onSecondaryContainer,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .onSecondaryContainer,
                                           size: 50,
                                         ),
                                       ),
                                       FittedBox(
                                         child: Padding(
-                                          padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
-                                          child: Text(
-                                            "ADICIONAR JOGADOR",
-                                            style: TextStyle(
-                                              fontFamily: 'Lato',
-                                              color: Theme.of(context).colorScheme.onSecondaryContainer,
-                                              fontSize: 20,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          )
-                                        ),
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    10, 0, 0, 0),
+                                            child: Text(
+                                              "ADICIONAR JOGADOR",
+                                              style: TextStyle(
+                                                fontFamily: 'Lato',
+                                                color: Theme.of(context)
+                                                    .colorScheme
+                                                    .onSecondaryContainer,
+                                                fontSize: 20,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            )),
                                       )
                                     ],
                                   ),

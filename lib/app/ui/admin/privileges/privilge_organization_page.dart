@@ -5,23 +5,23 @@ import 'package:flutter/material.dart';
 class PrivilegeOrganizationPage extends StatefulWidget {
   const PrivilegeOrganizationPage({super.key});
 
+  static String route = "/privilegeorganizationpage-admin";
+
   @override
-  State<PrivilegeOrganizationPage> createState() => _PrivilegeOrganizationPageState();
+  State<PrivilegeOrganizationPage> createState() =>
+      _PrivilegeOrganizationPageState();
 }
 
 class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
-  
   _ModalityCard() {
-
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return AspectRatio(
       aspectRatio: 4.5,
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20),
-          color: Theme.of(context).colorScheme.primaryContainer
-        ),
+            borderRadius: BorderRadius.circular(20),
+            color: Theme.of(context).colorScheme.primaryContainer),
         child: FittedBox(
           alignment: Alignment.centerLeft,
           child: Container(
@@ -53,12 +53,10 @@ class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
         ),
       ),
     );
-
   }
 
   _CardJogador2() {
-
-  final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+    final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -75,7 +73,7 @@ class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-            width: sizeWidth / 2.8,
+              width: sizeWidth / 2.8,
               child: FittedBox(
                 child: const Text(
                   'Fulano de tal',
@@ -100,7 +98,7 @@ class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
       ),
     );
   }
-  
+
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
@@ -162,7 +160,9 @@ class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
                             width: sizeWidth / 1.2,
                             child: Divider(
                               thickness: 2,
-                              color: Theme.of(context).colorScheme.onPrimaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                             ),
                           ),
                           Row(
@@ -176,10 +176,9 @@ class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
                                       child: Text(
                                         "RESPONSÁVEIS PELAS ",
                                         style: TextStyle(
-                                          fontFamily: 'Lato',
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.bold
-                                        ),
+                                            fontFamily: 'Lato',
+                                            fontSize: 22,
+                                            fontWeight: FontWeight.bold),
                                       ),
                                     ),
                                   ),
@@ -190,7 +189,9 @@ class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
                                         "MODALIDADES",
                                         style: TextStyle(
                                           fontFamily: 'Lato',
-                                          color: Theme.of(context).colorScheme.primary,
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
                                           fontSize: 22,
                                           fontWeight: FontWeight.bold,
                                         ),
@@ -257,51 +258,59 @@ class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Card(
-                        clipBehavior: Clip.antiAliasWithSaveLayer,
-                        color: Theme.of(context).colorScheme.primaryContainer,
-                        elevation: 10,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Container(
-                          width: sizeWidth / 1.1,
-                          height: sizeHeight * 0.6,
-                          decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primaryContainer,
-                            borderRadius: BorderRadius.circular(20),
-                            border: Border.all(
-                              color: Theme.of(context).colorScheme.onPrimaryContainer,
-                              width: 2,
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Card(
+                            clipBehavior: Clip.antiAliasWithSaveLayer,
+                            color:
+                                Theme.of(context).colorScheme.primaryContainer,
+                            elevation: 10,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
                             ),
-                          ),
-                          child: ListView(
-                            padding: EdgeInsets.zero,
-                            scrollDirection: Axis.vertical,
-                            children: [
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                            ],
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
+                            child: Container(
+                              width: sizeWidth / 1.1,
+                              height: sizeHeight * 0.6,
+                              decoration: BoxDecoration(
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .primaryContainer,
+                                borderRadius: BorderRadius.circular(20),
+                                border: Border.all(
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer,
+                                  width: 2,
+                                ),
+                              ),
+                              child: ListView(
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.vertical,
+                                children: [
+                                  Divider(
+                                      height: 2,
+                                      thickness: 1.5,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer),
+                                  _CardJogador2(),
+                                  Divider(
+                                      height: 2,
+                                      thickness: 1.5,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer),
+                                  _CardJogador2(),
+                                ],
+                              ),
+                            ),
+                          )
+                        ],
+                      ),
+                    ),
                   ],
                 )
               ],

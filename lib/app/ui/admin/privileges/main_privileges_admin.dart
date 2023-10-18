@@ -3,14 +3,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/Privilege_item.dart';
 
-class MainPrivilege extends StatefulWidget {
-  const MainPrivilege({super.key});
+class MainPrivilegeAdmin extends StatefulWidget {
+  const MainPrivilegeAdmin({super.key});
+
+  static String route = "/mainprivilegeAdmin-admin";
 
   @override
-  State<MainPrivilege> createState() => _MainPrivilegeState();
+  State<MainPrivilegeAdmin> createState() => _MainPrivilegeAdminState();
 }
 
-class _MainPrivilegeState extends State<MainPrivilege> {
+class _MainPrivilegeAdminState extends State<MainPrivilegeAdmin> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();

@@ -3,8 +3,10 @@ import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
-class ModalidadesOrganization extends StatelessWidget {
-  const ModalidadesOrganization({super.key});
+class MainModalitiesOrganization extends StatelessWidget {
+  const MainModalitiesOrganization({super.key});
+
+  static String route = "/mainmodalities-organization";
 
   List<Widget> _categoryFODASE() {
     List<Widget> widgets = [];

@@ -1,17 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class RegulationPageAdmin extends StatefulWidget {
-   const RegulationPageAdmin({super.key});
+class RegulationAdmin extends StatefulWidget {
+  const RegulationAdmin({super.key});
+
+  static String route = "/regulation-admin";
 
   @override
-  State<RegulationPageAdmin> createState() => _RegulationPageAdminState();
+  State<RegulationAdmin> createState() => _RegulationAdminState();
 }
 
-class _RegulationPageAdminState extends State<RegulationPageAdmin> {
-    late PdfViewerController _pdfViewerController;
+class _RegulationAdminState extends State<RegulationAdmin> {
+  late PdfViewerController _pdfViewerController;
 
-    @override
+  @override
   void initState() {
     _pdfViewerController = PdfViewerController();
     super.initState();
@@ -80,7 +82,7 @@ class _RegulationPageAdminState extends State<RegulationPageAdmin> {
                   child: SafeArea(
                     child: SfPdfViewer.network(
                       'https://fapesp.br/eventos/2013/04/bioma-pantanal/Jose_sabino.pdf',
-                       controller: _pdfViewerController,
+                      controller: _pdfViewerController,
                     ),
                   ),
                 ),
@@ -94,21 +96,21 @@ class _RegulationPageAdminState extends State<RegulationPageAdmin> {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Material(
-                child: Ink(
-                  decoration: BoxDecoration(
+                  child: Ink(
+                    decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(30)),
                       border: Border.all(width: 1),
                       color: Colors.green,
                     ),
-                  child: InkWell(
-                    onTap: () {},
-                    child: Icon(
+                    child: InkWell(
+                      onTap: () {},
+                      child: Icon(
                         Icons.add,
                         size: 48,
+                      ),
                     ),
                   ),
                 ),
-              ),
                 Column(
                   mainAxisSize: MainAxisSize.max,
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -138,15 +140,15 @@ class _RegulationPageAdminState extends State<RegulationPageAdmin> {
                 Material(
                   child: Ink(
                     decoration: BoxDecoration(
-                        borderRadius: BorderRadius.all(Radius.circular(30)),
-                        border: Border.all(width: 1),
-                        color: Theme.of(context).colorScheme.error,
-                      ),
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                      border: Border.all(width: 1),
+                      color: Theme.of(context).colorScheme.error,
+                    ),
                     child: InkWell(
                       onTap: () {},
                       child: Icon(
-                          Icons.remove,
-                          size: 48,
+                        Icons.remove,
+                        size: 48,
                       ),
                     ),
                   ),

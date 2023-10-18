@@ -1,31 +1,33 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class ManagementAccount extends StatelessWidget {
-  const ManagementAccount({super.key});
+class ManagementAccountAdmin extends StatelessWidget {
+  const ManagementAccountAdmin({super.key});
+
+  static String route = "/managementaccount-admin";
+
   _CardJogador() {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: ListTile(
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(50),
-          child: Image.asset(
-            'assets/images/LOGO_USUARIO.png',
-            fit: BoxFit.cover,
-          ),
-        ),
-        title: Text(
-          'Fulano de tal',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          ),
-        ),
-       trailing: IconButton(onPressed: (){}, icon: Icon(Icons.remove, color: Colors.red),
-       )
-      )
-    );
-
+        padding: const EdgeInsets.symmetric(vertical: 8),
+        child: ListTile(
+            leading: ClipRRect(
+              borderRadius: BorderRadius.circular(50),
+              child: Image.asset(
+                'assets/images/LOGO_USUARIO.png',
+                fit: BoxFit.cover,
+              ),
+            ),
+            title: Text(
+              'Fulano de tal',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+            trailing: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.remove, color: Colors.red),
+            )));
   }
 
   @override

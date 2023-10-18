@@ -11,6 +11,8 @@ import 'package:olimtec_tcc/app/utils/app_routes.dart';
 class SettingsPage extends ConsumerWidget {
   const SettingsPage({super.key});
 
+  static String route = "/settings-user";
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
@@ -22,7 +24,7 @@ class SettingsPage extends ConsumerWidget {
           Navigator.pushReplacementNamed(context, AppRoute.LANDING);
         }),
         authenticated: (user) {
-          Navigator.pushReplacementNamed(context, AppRoute.HOME);
+          Navigator.pushReplacementNamed(context, AppRoute.HOME_USER);
           // Navigate to any screen
           ScaffoldMessenger.of(context).showSnackBar(
             const SnackBar(
@@ -133,7 +135,7 @@ class SettingsPage extends ConsumerWidget {
                   title: 'Sobre nós',
                   icon: Icons.people_alt,
                   function: () {
-                    Navigator.pushNamed(context, AppRoute.ABOUT_US);
+                    Navigator.pushNamed(context, AppRoute.ABOUTUS_USER);
                   }),
               const Divider(),
               _listTile(

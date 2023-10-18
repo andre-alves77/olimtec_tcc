@@ -11,6 +11,8 @@ import 'package:olimtec_tcc/app/ui/user/shared/resulttimeline_card.dart';
 class DetailsGameOrganization extends StatefulWidget {
   const DetailsGameOrganization({super.key});
 
+  static String route = "/detailsgame-organization";
+
   @override
   State<DetailsGameOrganization> createState() =>
       _DetailsGameOrganizationState();

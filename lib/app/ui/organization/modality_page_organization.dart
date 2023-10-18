@@ -9,6 +9,8 @@ import 'package:olimtec_tcc/app/data/dummy_data.dart';
 class ModalityPageOrganization extends StatefulWidget {
   const ModalityPageOrganization({super.key});
 
+  static String route = "/modalitypage-organization";
+
   @override
   State<ModalityPageOrganization> createState() =>
       _ModalityPageOrganizationState();
@@ -90,19 +92,21 @@ class _ModalityPageOrganizationState extends State<ModalityPageOrganization>
                     controller: _tabController,
                     children: [
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical:8.0),
+                        padding: const EdgeInsets.symmetric(vertical: 8.0),
                         child: ListView(
                           children: [
                             GestureDetector(
                               child: StartGame(game: gametest),
                               onTap: () {
-                                Navigator.pushNamed(context, '/cronograma_page');
+                                Navigator.pushNamed(
+                                    context, '/cronograma_page');
                               },
                             ),
                             GestureDetector(
-                              child:StartGame(game: gametest),
+                              child: StartGame(game: gametest),
                               onTap: () {
-                                Navigator.pushNamed(context, '/cronograma_page');
+                                Navigator.pushNamed(
+                                    context, '/cronograma_page');
                               },
                             ),
                           ],

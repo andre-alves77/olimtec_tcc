@@ -2,14 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PerfilPage extends StatefulWidget {
-  const PerfilPage({super.key});
+class PerfilUser extends StatefulWidget {
+  const PerfilUser({super.key});
+
+  static String route = "/perfil-user";
 
   @override
-  State<PerfilPage> createState() => _PerfilPageState();
+  State<PerfilUser> createState() => _PerfilUserState();
 }
 
-class _PerfilPageState extends State<PerfilPage> {
+class _PerfilUserState extends State<PerfilUser> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
@@ -62,7 +64,8 @@ class _PerfilPageState extends State<PerfilPage> {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           elevation: 3,
-                          backgroundColor: Theme.of(context).colorScheme.primary,
+                          backgroundColor:
+                              Theme.of(context).colorScheme.primary,
                         ),
                         onPressed: () {},
                         child: const FittedBox(
@@ -103,208 +106,238 @@ class _PerfilPageState extends State<PerfilPage> {
                 ),
               ),
               Column(
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                    child: Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: sizeWidth / 5.2,
-                                child: const FittedBox(
-                                  child: Text(
-                                    'NOME:',
-                                    style: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize:20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
+                        Container(
+                          width: sizeWidth / 5.2,
+                          child: const FittedBox(
+                            child: Text(
+                              'NOME:',
+                              style: TextStyle(
+                                fontFamily: 'Lato',
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
                               ),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                                child: Container(
-                                  width: sizeWidth / 2,
-                                  child: TextFormField(
-                                    autofocus: true,
-                                    readOnly: true,
-                                    decoration: InputDecoration(
-                                      isDense: true,
-                                      labelStyle: TextStyle(
-                                        fontFamily: 'Lato',
-                                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                                        fontSize: 16,
-                                      ),
-                                      hintStyle: TextStyle(
-                                        fontFamily: 'Lato',
-                                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                                        fontSize: 16,
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context).colorScheme.primary,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context).colorScheme.secondary,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      contentPadding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: sizeWidth / 5.2,
-                                child: const FittedBox(
-                                  child: Text(
-                                    '       RM:',
-                                    style: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize:20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                            child: Container(
+                              width: sizeWidth / 2,
+                              child: TextFormField(
+                                autofocus: true,
+                                readOnly: true,
+                                decoration: InputDecoration(
+                                  isDense: true,
+                                  labelStyle: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onPrimaryContainer,
+                                    fontSize: 16,
                                   ),
+                                  hintStyle: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onPrimaryContainer,
+                                    fontSize: 16,
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  contentPadding:
+                                      EdgeInsetsDirectional.fromSTEB(
+                                          15, 15, 15, 15),
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 16,
                                 ),
                               ),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                                child: Container(
-                                  width: sizeWidth / 2,
-                                  child: TextFormField(
-                                    autofocus: true,
-                                    readOnly: true,
-                                    decoration: InputDecoration(
-                                      isDense: true,
-                                      labelStyle: TextStyle(
-                                        fontFamily: 'Lato',
-                                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                                        fontSize: 16,
-                                      ),
-                                      hintStyle: TextStyle(
-                                        fontFamily: 'Lato',
-                                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                                        fontSize: 16,
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context).colorScheme.primary,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context).colorScheme.secondary,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      contentPadding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                          child: Row(
-                            mainAxisSize: MainAxisSize.max,
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Container(
-                                width: sizeWidth / 5.2,
-                                child: const FittedBox(
-                                  child: Text(
-                                    'EMAIL:',
-                                    style: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize:20,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Expanded(
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                                child: Container(
-                                  width: sizeWidth / 2,
-                                  child: TextFormField(
-                                    autofocus: true,
-                                    readOnly: true,
-                                    decoration: InputDecoration(
-                                      isDense: true,
-                                      labelStyle: TextStyle(
-                                        fontFamily: 'Lato',
-                                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                                        fontSize: 16,
-                                      ),
-                                      hintStyle: TextStyle(
-                                        fontFamily: 'Lato',
-                                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                                        fontSize: 16,
-                                      ),
-                                      enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context).colorScheme.primary,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context).colorScheme.secondary,
-                                          width: 2,
-                                        ),
-                                        borderRadius: BorderRadius.circular(15),
-                                      ),
-                                      contentPadding: EdgeInsetsDirectional.fromSTEB(15, 15, 15, 15),
-                                    ),
-                                    style: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize: 16,
-                                    ),
-                                  ),
-                                ),
-                                ),
-                              ),
-                            ],
+                            ),
                           ),
                         ),
                       ],
-                    )
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: sizeWidth / 5.2,
+                          child: const FittedBox(
+                            child: Text(
+                              '       RM:',
+                              style: TextStyle(
+                                fontFamily: 'Lato',
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                            child: Container(
+                              width: sizeWidth / 2,
+                              child: TextFormField(
+                                autofocus: true,
+                                readOnly: true,
+                                decoration: InputDecoration(
+                                  isDense: true,
+                                  labelStyle: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onPrimaryContainer,
+                                    fontSize: 16,
+                                  ),
+                                  hintStyle: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onPrimaryContainer,
+                                    fontSize: 16,
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  contentPadding:
+                                      EdgeInsetsDirectional.fromSTEB(
+                                          15, 15, 15, 15),
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Padding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Container(
+                          width: sizeWidth / 5.2,
+                          child: const FittedBox(
+                            child: Text(
+                              'EMAIL:',
+                              style: TextStyle(
+                                fontFamily: 'Lato',
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ),
+                        ),
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                            child: Container(
+                              width: sizeWidth / 2,
+                              child: TextFormField(
+                                autofocus: true,
+                                readOnly: true,
+                                decoration: InputDecoration(
+                                  isDense: true,
+                                  labelStyle: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onPrimaryContainer,
+                                    fontSize: 16,
+                                  ),
+                                  hintStyle: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onPrimaryContainer,
+                                    fontSize: 16,
+                                  ),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .secondary,
+                                      width: 2,
+                                    ),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  contentPadding:
+                                      EdgeInsetsDirectional.fromSTEB(
+                                          15, 15, 15, 15),
+                                ),
+                                style: TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 16,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
             ],
           ),
         ),

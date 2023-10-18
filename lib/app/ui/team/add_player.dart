@@ -2,14 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class AddPlayerPage extends StatefulWidget {
-  const AddPlayerPage({super.key});
+class AddPlayerTeam extends StatefulWidget {
+  const AddPlayerTeam({super.key});
+
+  static String route = "/addplayer-team";
 
   @override
-  State<AddPlayerPage> createState() => _AddPlayerPageState();
+  State<AddPlayerTeam> createState() => _AddPlayerTeamState();
 }
 
-class _AddPlayerPageState extends State<AddPlayerPage> {
+class _AddPlayerTeamState extends State<AddPlayerTeam> {
   _CardJogador() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -158,21 +160,28 @@ class _AddPlayerPageState extends State<AddPlayerPage> {
                             width: sizeWidth / 1,
                             height: 60,
                             decoration: BoxDecoration(
-                              color: Theme.of(context).colorScheme.primaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .primaryContainer,
                               borderRadius: BorderRadius.circular(20),
                               border: Border.all(
-                                color: Theme.of(context).colorScheme.onPrimaryContainer,
+                                color: Theme.of(context)
+                                    .colorScheme
+                                    .onPrimaryContainer,
                                 width: 2,
                               ),
                             ),
                             child: Padding(
-                              padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  10, 0, 10, 0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Expanded(
                                     child: Padding(
-                                      padding: const EdgeInsetsDirectional.fromSTEB(10, 0, 10, 0),
+                                      padding:
+                                          const EdgeInsetsDirectional.fromSTEB(
+                                              10, 0, 10, 0),
                                       child: TextFormField(
                                         autofocus: true,
                                         decoration: InputDecoration(
@@ -215,10 +224,13 @@ class _AddPlayerPageState extends State<AddPlayerPage> {
                           width: sizeWidth / 1.1,
                           height: 590,
                           decoration: BoxDecoration(
-                            color: Theme.of(context).colorScheme.primaryContainer,
+                            color:
+                                Theme.of(context).colorScheme.primaryContainer,
                             borderRadius: BorderRadius.circular(20),
                             border: Border.all(
-                              color: Theme.of(context).colorScheme.onPrimaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .onPrimaryContainer,
                               width: 2,
                             ),
                           ),
@@ -226,78 +238,90 @@ class _AddPlayerPageState extends State<AddPlayerPage> {
                             padding: EdgeInsets.zero,
                             scrollDirection: Axis.vertical,
                             children: [
-                               _CardJogador(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                               _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                               _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                               _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
+                              _CardJogador(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
+                              _CardJogador2(),
+                              Divider(
+                                  height: 2,
+                                  thickness: 1.5,
+                                  color: Theme.of(context)
+                                      .colorScheme
+                                      .onPrimaryContainer),
                             ],
                           ),
                         ),

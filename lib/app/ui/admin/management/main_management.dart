@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
-class MainManagement extends StatelessWidget {
-  const MainManagement({super.key});
+class MainManagementAdmin extends StatelessWidget {
+  const MainManagementAdmin({super.key});
+
+  static String route = "/mainamanagement-admin";
 
   @override
   Widget build(BuildContext context) {

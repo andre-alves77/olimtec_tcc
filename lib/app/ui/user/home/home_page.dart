@@ -9,8 +9,10 @@ import 'package:provider/provider.dart';
 
 import 'card_carousel.dart';
 
-class HomePage extends ConsumerWidget {
-  const HomePage({super.key});
+class HomeUser extends ConsumerWidget {
+  const HomeUser({super.key});
+
+  static String route = "/";
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {

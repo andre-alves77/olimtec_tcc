@@ -5,9 +5,10 @@ import 'package:olimtec_tcc/app/ui/modlityitemadmin.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
+class InsertModalitiesAdmin extends StatelessWidget {
+  const InsertModalitiesAdmin({super.key});
 
-class InsertModalities extends StatelessWidget {
-  const InsertModalities({super.key});
+  static String route = "/insertmodalities-admin";
 
   List<Widget> _categoryFODASE() {
     List<Widget> widgets = [];

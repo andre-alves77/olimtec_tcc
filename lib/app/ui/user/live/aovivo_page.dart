@@ -2,14 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
-class MainAoVivo extends StatefulWidget {
-  const MainAoVivo({super.key});
+class AoVivoUser extends StatefulWidget {
+  const AoVivoUser({super.key});
+
+  static String route = "/aovivo-user";
 
   @override
-  State<MainAoVivo> createState() => _MainAoVivoState();
+  State<AoVivoUser> createState() => _AoVivoUserState();
 }
 
-class _MainAoVivoState extends State<MainAoVivo> {
+class _AoVivoUserState extends State<AoVivoUser> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

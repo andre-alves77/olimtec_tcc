@@ -4,9 +4,10 @@ import 'dart:math';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
+class ChampioshipPageAdmin extends StatelessWidget {
+  const ChampioshipPageAdmin({super.key});
 
-class ChampioshipPage extends StatelessWidget {
-  const ChampioshipPage({super.key});
+  static String route = "/champioshippage-admin";
 
   @override
   Widget build(BuildContext context) {

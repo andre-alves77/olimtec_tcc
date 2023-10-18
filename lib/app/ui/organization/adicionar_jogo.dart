@@ -2,16 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/shared/addgame_card.dart';
 
-class AddGame extends StatefulWidget {
-  const AddGame({super.key});
+class AddGameOrganization extends StatefulWidget {
+  const AddGameOrganization({super.key});
+
+  static String route = "/addgame-organization";
 
   @override
-  State<AddGame> createState() => _AddGameState();
+  State<AddGameOrganization> createState() => _AddGameOrganizationState();
 }
 
-class _AddGameState extends State<AddGame> {
-
-
+class _AddGameOrganizationState extends State<AddGameOrganization> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,10 +19,7 @@ class _AddGameState extends State<AddGame> {
         title: Text(
           "ADICIONAR JOGO",
           style: TextStyle(
-            fontFamily: 'Lato',
-            fontSize: 22,
-            fontWeight: FontWeight.bold
-          ),
+              fontFamily: 'Lato', fontSize: 22, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
@@ -47,9 +44,13 @@ class _AddGameState extends State<AddGame> {
                             color: Colors.orange,
                           ),
                         ),
-                        Padding(padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0)),
+                        Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0)),
                         AddGameCard(gametest),
-                        Padding(padding: EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0)),
+                        Padding(
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0)),
                         AddGameCard(gametest),
                       ],
                     ),
