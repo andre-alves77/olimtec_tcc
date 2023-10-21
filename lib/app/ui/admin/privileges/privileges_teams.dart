@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 
-class PrivilegesTeam extends StatefulWidget {
-  const PrivilegesTeam({super.key});
+class PrivilegesTeamAdmin extends StatefulWidget {
+  const PrivilegesTeamAdmin({super.key});
+
+  static String route = "/privilegesteamAdmin-admin";
 
   @override
-  State<PrivilegesTeam> createState() => _PrivilegesTeamState();
+  State<PrivilegesTeamAdmin> createState() => _PrivilegesTeamAdminState();
 }
 
-class _PrivilegesTeamState extends State<PrivilegesTeam> {
+class _PrivilegesTeamAdminState extends State<PrivilegesTeamAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

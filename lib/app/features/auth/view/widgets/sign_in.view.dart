@@ -31,7 +31,7 @@ class SignInForState extends ConsumerState<SignInForm> {
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                   child: CustomTextField(
                     hintText: 'Email',
-                    onChanged: (email) => authNoti.mail,
+                    onChanged: (email) => authNoti.mail = email,
                     errorMessage: authNoti.mailError,
                   )),
               Padding(

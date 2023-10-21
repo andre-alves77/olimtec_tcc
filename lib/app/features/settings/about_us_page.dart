@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({super.key});
 
+  static String route = "/aboutus_user";
+
   @override
   State<AboutUsPage> createState() => _AboutUsPage();
 }

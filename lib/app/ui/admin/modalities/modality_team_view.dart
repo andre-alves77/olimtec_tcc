@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 
-class ModalityTeamViewAdmin extends StatefulWidget {
-  const ModalityTeamViewAdmin({super.key});
+class TeamViewAdmin extends StatefulWidget {
+  const TeamViewAdmin({super.key});
+
+  static String route = "/teamview-admin";
 
   @override
-  State<ModalityTeamViewAdmin> createState() => _ModalityTeamViewAdminState();
+  State<TeamViewAdmin> createState() => _TeamViewAdminState();
 }
 
-class _ModalityTeamViewAdminState extends State<ModalityTeamViewAdmin> {
+class _TeamViewAdminState extends State<TeamViewAdmin> {
   _CardJogador() {
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8),
@@ -36,16 +38,16 @@ class _ModalityTeamViewAdminState extends State<ModalityTeamViewAdmin> {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     return Scaffold(
         appBar: AppBar(
-        title: const Text(
-          "EQUIPE - BASQUETE MASC",
-          style: TextStyle(
-            fontFamily: 'Lato',
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+          title: const Text(
+            "EQUIPE - BASQUETE MASC",
+            style: TextStyle(
+              fontFamily: 'Lato',
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
         body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(mainAxisSize: MainAxisSize.max, children: [

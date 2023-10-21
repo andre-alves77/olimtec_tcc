@@ -2,14 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
-class PrivilegeOrganization extends StatefulWidget {
-  const PrivilegeOrganization({super.key});
+class PrivilegeOrganizationAdmin extends StatefulWidget {
+  const PrivilegeOrganizationAdmin({super.key});
+
+  static String route = "/privilegeorganization-admin";
 
   @override
-  State<PrivilegeOrganization> createState() => _PrivilegeOrganizationState();
+  State<PrivilegeOrganizationAdmin> createState() =>
+      _PrivilegeOrganizationAdminState();
 }
 
-class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
+class _PrivilegeOrganizationAdminState
+    extends State<PrivilegeOrganizationAdmin> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
-class RestartChampioship extends StatelessWidget {
-  const RestartChampioship({super.key});
+class RestartChampioshipAdmin extends StatelessWidget {
+  const RestartChampioshipAdmin({super.key});
+
+  static String route = "/restartchampionship-admin";
 
   @override
   Widget build(BuildContext context) {

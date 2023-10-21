@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
 import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
+import 'package:olimtec_tcc/app/ui/admin/before_config/add_modality_component.dart';
 import 'package:olimtec_tcc/app/ui/admin/before_config/add_teams.dart';
+import 'package:olimtec_tcc/app/ui/admin/before_config/start_championship.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
@@ -25,8 +28,13 @@ import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
+import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
+import 'package:olimtec_tcc/app/ui/organization/details_game_org.dart';
 import 'package:olimtec_tcc/app/ui/organization/game_score.dart';
+import 'package:olimtec_tcc/app/ui/organization/insert_modality_rule_org.dart';
+import 'package:olimtec_tcc/app/ui/organization/main_modalities_org.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
+import 'package:olimtec_tcc/app/ui/organization/modality_page_organization.dart';
 import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
@@ -38,6 +46,7 @@ import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/modalities_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
 import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
@@ -91,44 +100,55 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.ADD_TEAMS_ADMIN,
+      initialRoute: AppRoute.LANDING,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
-        AppRoute.RESULTADO: (ctx) => ResultadoPage(),
-        AppRoute.MODALITY_PAGE: (ctx) => SportModalityPage(),
-        AppRoute.CRONOGRAMA: (ctx) => CronogramaPage(),
-        AppRoute.ABOUT_US: (ctx) => AboutUsPage(),
-        AppRoute.EQUIPE: (ctx) => MainEquipe(),
-        AppRoute.PERFIL: (ctx) => PerfilPage(),
+        AppRoute.RESULTADO_USER: (ctx) => ResultadoPage(),
+        AppRoute.MODALITY_USER: (ctx) => SportModalityPage(),
+        AppRoute.CRONOGRAMA_USER: (ctx) => CronogramaPage(),
+        AppRoute.ABOUTUS_USER: (ctx) => AboutUsPage(),
+        AppRoute.EQUIPE_USER: (ctx) => EquipeUser(),
+        AppRoute.PERFIL_USER: (ctx) => PerfilUser(),
         AppRoute.MAIN_TEAM: (ctx) => MainTeam(),
-        AppRoute.MODALITY_TEAM: (ctx) => TeamModality(),
-        AppRoute.TEAM_PLAYER: (ctx) => TeamPlayers(),
-        AppRoute.ADD_PLAYER: (ctx) => AddPlayerPage(),
-        AppRoute.CREATE_TEAM: (ctx) => CreateTeam(),
+        AppRoute.MODALITIES_USER: (context) => ModalitiesUserPage(),
+        AppRoute.MODALITY_TEAM: (ctx) => ModalityTeam(),
+        AppRoute.PLAYER_TEAM: (ctx) => PlayerTeam(),
+        AppRoute.ADDPLAYER_TEAM: (ctx) => AddPlayerTeam(),
+        AppRoute.CREATETEAM_TEAM: (ctx) => CreateTeamPage(),
         AppRoute.MAIN_ORGANIZATION: (ctx) => MainOrgnization(),
         AppRoute.MAIN_ADMIN: (ctx) => MainAdmin(),
-        AppRoute.MAIN_PRIVILEGES: (ctx) => MainPrivilege(),
-        AppRoute.PRIVILEGES_TEAM: (ctx) => PrivilegesTeam(),
-        AppRoute.MODALITY_ADMIN: (ctx) => ModalityAdminPage(),
-        AppRoute.MODALITIES_ADMIN: (ctx) => ModalitiesPage(),
+        AppRoute.MAINPRIVILEGES_ADMIN: (ctx) => MainPrivilegeAdmin(),
+        AppRoute.PRIVILEGESTEAM_ADMIN: (ctx) => PrivilegesTeamAdmin(),
+        AppRoute.MODALITY_ADMIN: (ctx) => ModalityAdmin(),
+        AppRoute.MODALITIES_ADMIN: (ctx) => ModalitiesPageAdmin(),
         AppRoute.TEAM_ADMIN: (ctx) => TeamAdmin(),
-        AppRoute.TEAM_VIEW_ADMIN: (ctx) => ModalityTeamViewAdmin(),
-        AppRoute.MODALITIES_GAMES: (ctx) => ModalitiesGames(),
-        AppRoute.REGULATION_ADMIN: (ctx) => RegulationPageAdmin(),
-        AppRoute.MAIN_MANAGEMENT: (ctx) => MainManagement(),
-        AppRoute.RESTART_CHAMPIOSHIP: (ctx) => RestartChampioship(),
-        AppRoute.MANAGEMENT_ACCOUNT: (ctx) => ManagementAccount(),
-        AppRoute.PRIVILEGES_TEAM_PAGE: (ctx) => PrivilegeTeamPage(),
-        AppRoute.PRIVILEGE_ORGANIZATION: (ctx) => PrivilegeOrganization(),
-        AppRoute.MANAGEMENT_ACCOUNT_ADD:(ctx) => ManagementAccountAdd(),
-        AppRoute.PRIVILEGE_ORGANIZATION_PAGE: (ctx) => PrivilegeOrganizationPage(),
-        AppRoute.PRIVILEGE_ORGANIZATION_ADDMODALITY: (ctx) => OrganizationAddModality(),
-        AppRoute.ADD_TEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
-        AppRoute.CHAMPIOSHIP_PAGE:(ctx) => ChampioshipPage(),
-        AppRoute.INSERT_MODALITIES:(ctx) => InsertModalities(),
-        AppRoute.GAME_SCORE: (ctx) => GameScore(),
-        AppRoute.SCOREBOARD_WITHOUT_POINTS: (ctx) => ScoreBoardWithoutPoints(), 
-        
+        AppRoute.TEAMVIEW_ADMIN: (ctx) => TeamViewAdmin(),
+        AppRoute.MODALITIESGAMES_ADMIN: (ctx) => ModalitiesGamesAdmin(),
+        AppRoute.REGULATION_ADMIN: (ctx) => RegulationAdmin(),
+        AppRoute.MAINMANAGEMENT_ADMIN: (ctx) => MainManagementAdmin(),
+        AppRoute.RESTARTCHAMPIOSHIP_ADMIN: (ctx) => RestartChampioshipAdmin(),
+        AppRoute.MANAGEMENTACCOUNT_ADMIN: (ctx) => ManagementAccountAdmin(),
+        AppRoute.PRIVILEGESTEAMPAGE_ADMIN: (ctx) => PrivilegeTeamPageAdmin(),
+        AppRoute.PRIVILEGEORGANIZATION_ADMIN: (ctx) =>
+            PrivilegeOrganizationAdmin(),
+        AppRoute.MANAGEMENTACCOUNTADD_ADMIN: (ctx) =>
+            ManagementAccountAddAdmin(),
+        AppRoute.PRIVILEGEORGANIZATIONPAGE_ADMIN: (ctx) =>
+            PrivilegeOrganizationPage(),
+        AppRoute.PRIVILEGEORGANIZATIONADDMODALITY_ADMIN: (ctx) =>
+            OrganizationAddModalityAdmin(),
+        AppRoute.ADDTEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
+        AppRoute.STARTCHAMPIONSHIP_ADMIN: (ctx) => StartChampionshipAdmin(),
+        AppRoute.ADDMODALITY_ADMIN: (ctx) => AddModalityAdmin(),
+        AppRoute.ADDGAME_ORGANIZATION: (ctx) => AddGameOrganization(),
+        AppRoute.CHAMPIOSHIPPAGE_ADMIN: (ctx) => ChampioshipPageAdmin(),
+        AppRoute.INSERTMODALITIES_ADMIN: (ctx) => InsertModalitiesAdmin(),
+        AppRoute.MODALITYPAGE_ORGANIZATION: (ctx) => ModalityPageOrganization(),
+        AppRoute.DETAILSGAME_ORGANIZATION: (ctx) => DetailsGameOrganization(),
+        AppRoute.INSERTRULE_ORGANIZATION: (ctx) => InsertRuleOrganization(),
+        AppRoute.MAINMODALITIES_ORGANIZATION: (ctx) => MainModalitiesOrganization(),
+        AppRoute.GAME_SCORE_ADMIN: (ctx) => GameScore(),
+        AppRoute.SCOREBOARD_WITHOUT_POINTS_ORGANIZATION: (ctx) => ScoreBoardWithoutPoints(),  
       },
       home: Scaffold(
         extendBody: true,
@@ -140,9 +160,9 @@ class App extends ConsumerWidget {
             IndexedStack(
               index: bottomBarStore,
               children: const [
-                HomePage(),
-                ModalitiesPage(),
-                MainAoVivo(),
+                HomeUser(),
+                ModalitiesUserPage(),
+                AoVivoUser(),
                 SettingsPage(),
               ],
             ),

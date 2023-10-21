@@ -3,14 +3,16 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/ui/team/shared/modality_item.dart';
 
-class TeamModality extends StatefulWidget {
-  const TeamModality({super.key});
+class ModalityTeam extends StatefulWidget {
+  const ModalityTeam({super.key});
+
+  static String route = "/modality-team";
 
   @override
-  State<TeamModality> createState() => _TeamModalityState();
+  State<ModalityTeam> createState() => _ModalityTeamState();
 }
 
-class _TeamModalityState extends State<TeamModality> {
+class _ModalityTeamState extends State<ModalityTeam> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
@@ -94,8 +96,10 @@ class _TeamModalityState extends State<TeamModality> {
                   width: sizeWidth,
                   child: ListView(
                     children: [
-                      ModalityItem(Icons.sports_basketball, "BASQUETE MASCULINO"),
-                      ModalityItem(Icons.sports_basketball, "BASQUETE FEMININO"),
+                      ModalityItem(
+                          Icons.sports_basketball, "BASQUETE MASCULINO"),
+                      ModalityItem(
+                          Icons.sports_basketball, "BASQUETE FEMININO"),
                     ],
                   ),
                 ),

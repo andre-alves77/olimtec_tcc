@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class AddTeamsAdmin extends StatelessWidget {
   const AddTeamsAdmin({super.key});
 
+  static String route = "/addteams_admin";
+
   Widget _addTeams(BuildContext context, String text) {
     return FittedBox(
       child: Container(

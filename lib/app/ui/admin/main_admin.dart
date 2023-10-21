@@ -4,6 +4,8 @@ import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 class MainAdmin extends StatefulWidget {
   const MainAdmin({super.key});
 
+  static String route = "/main-admin";
+
   @override
   State<MainAdmin> createState() => _MainAdminState();
 }

@@ -59,7 +59,7 @@ class FormSignInStore extends ChangeNotifier {
     if (passError.isEmpty && mailError.isEmpty) {
       ref
           .read(authNotifierProvider.notifier)
-          .login(email: email, password: password);
+          .login(email: mail, password: pass);
     }
   }
 

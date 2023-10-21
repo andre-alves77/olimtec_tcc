@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 
-class ModalitiesGames extends StatelessWidget {
-  const ModalitiesGames({super.key});
+class ModalitiesGamesAdmin extends StatelessWidget {
+  const ModalitiesGamesAdmin({super.key});
+
+  static String route = "/modalitiesgames-admin";
 
   @override
   Widget build(BuildContext context) {
@@ -163,8 +165,8 @@ class ModalitiesGames extends StatelessWidget {
               ],
             ),
             SizedBox(
-            height: 10,
-          ),
+              height: 10,
+            ),
             ExpansionTile(
               title: Center(
                 child: Padding(

@@ -4,9 +4,10 @@ import 'dart:math';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 
+class ChampioshipPageAdmin extends StatelessWidget {
+  const ChampioshipPageAdmin({super.key});
 
-class ChampioshipPage extends StatelessWidget {
-  const ChampioshipPage({super.key});
+  static String route = "/champioshippage-admin";
 
   @override
   Widget build(BuildContext context) {
@@ -34,7 +35,7 @@ class ChampioshipPage extends StatelessWidget {
                 child: FittedBox(
                   child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, "/management_account_add");
+                        Navigator.pushNamed(context, "/insert_modalities");
                       },
                       child: OptionConfig(
                           icone: Icons.sports, text1: 'DEFINIR MODALIDADES')),
@@ -44,13 +45,8 @@ class ChampioshipPage extends StatelessWidget {
             FittedBox(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/restart_championship');
-                    },
-                    child: OptionConfig(
-                        icone: Icons.shield_sharp, text1: 'ADICIONAR TIMES'),
-                        ),
+                child: OptionConfig(
+                    icone: Icons.shield_sharp, text1: 'ADICIONAR TIMES'),
               ),
             ),
             Padding(

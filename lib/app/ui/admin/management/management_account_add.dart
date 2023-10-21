@@ -3,8 +3,10 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 
-class ManagementAccountAdd extends StatelessWidget {
-  const ManagementAccountAdd({super.key});
+class ManagementAccountAddAdmin extends StatelessWidget {
+  const ManagementAccountAddAdmin({super.key});
+
+  static String route = "/managementaccountadd-admin";
 
   @override
   Widget build(BuildContext context) {
