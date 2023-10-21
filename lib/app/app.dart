@@ -25,7 +25,9 @@ import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
+import 'package:olimtec_tcc/app/ui/organization/game_score.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
+import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
 import 'package:olimtec_tcc/app/ui/team/main_team.dart';
@@ -124,6 +126,8 @@ class App extends ConsumerWidget {
         AppRoute.ADD_TEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
         AppRoute.CHAMPIOSHIP_PAGE:(ctx) => ChampioshipPage(),
         AppRoute.INSERT_MODALITIES:(ctx) => InsertModalities(),
+        AppRoute.GAME_SCORE: (ctx) => GameScore(),
+        AppRoute.SCOREBOARD_WITHOUT_POINTS: (ctx) => ScoreBoardWithoutPoints(), 
         
       },
       home: Scaffold(

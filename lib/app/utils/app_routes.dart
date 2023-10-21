@@ -39,4 +39,6 @@ class AppRoute {
   static const CHAMPIOSHIP_PAGE = '/champioship_page';
   static const INSERT_MODALITIES = '/insert_modalities';
   static const STARTGAME =  '/StarGame';
+  static const GAME_SCORE = '/game_score';
+  static const SCOREBOARD_WITHOUT_POINTS = '/scoreboard_without_points';
 }
