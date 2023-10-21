@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/data/dummy_data.dart';
-import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
 import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 import 'package:olimtec_tcc/app/ui/admin/before_config/add_modality_component.dart';
 import 'package:olimtec_tcc/app/ui/admin/before_config/add_teams.dart';
@@ -57,27 +55,6 @@ import 'ui/user/home/home_page.dart';
 import 'features/theme/color_schemes.g.dart';
 
 class App extends ConsumerWidget {
-  Widget vv(BuildContext context, WidgetRef ref, Widget child) {
-    ref.listen(authNotifierProvider, (previous, next) {
-      next.maybeWhen(
-          orElse: () => null,
-          initial: (() {
-            Navigator.pushReplacementNamed(context, AppRoute.LANDING);
-          }),
-          unauthenticated: (message) =>
-              ScaffoldMessenger.of(context).showSnackBar(
-                SnackBar(
-                  content: Text(message!),
-                  behavior: SnackBarBehavior.floating,
-                ),
-              ),
-          loading: () {}
-          //   ref.read(formUserSignInProvider.notifier).toggleLoading(),
-          );
-    });
-    return child;
-  }
-
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeModeStore = ref.watch(themeProvider);
@@ -100,7 +77,7 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.LANDING,
+      initialRoute: AppRoute.HOME_USER,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO_USER: (ctx) => ResultadoPage(),
@@ -154,18 +131,14 @@ class App extends ConsumerWidget {
         extendBody: true,
         bottomNavigationBar: BottomBar(),
         body: SafeArea(
-          child: vv(
-            context,
-            ref,
-            IndexedStack(
-              index: bottomBarStore,
-              children: const [
-                HomeUser(),
-                ModalitiesUserPage(),
-                AoVivoUser(),
-                SettingsPage(),
-              ],
-            ),
+          child: IndexedStack(
+            index: bottomBarStore,
+            children: const [
+              HomeUser(),
+              ModalitiesUserPage(),
+              AoVivoUser(),
+              SettingsPage(),
+            ],
           ),
         ),
       ),
