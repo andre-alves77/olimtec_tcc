@@ -41,6 +41,7 @@ import 'package:olimtec_tcc/app/ui/team/modality_team.dart';
 import 'package:olimtec_tcc/app/ui/team/team_players.dart';
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
+import 'package:olimtec_tcc/app/ui/user/index_home_user.dart';
 import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
@@ -50,15 +51,15 @@ import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 import 'ui/admin/modalities/modalities_page.dart';
-import 'ui/user/home/home_page.dart';
 
 import 'features/theme/color_schemes.g.dart';
 
 class App extends ConsumerWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeModeStore = ref.watch(themeProvider);
-    final bottomBarStore = ref.watch(bottomBarProvider);
 
     return MaterialApp(
       theme: ThemeData(
@@ -77,7 +78,6 @@ class App extends ConsumerWidget {
       title: 'OLIMTEC',
       themeMode: themeModeStore,
       debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.HOME_USER,
       routes: {
         AppRoute.LANDING: (ctx) => LandingPage(),
         AppRoute.RESULTADO_USER: (ctx) => ResultadoPage(),
@@ -123,25 +123,10 @@ class App extends ConsumerWidget {
         AppRoute.MODALITYPAGE_ORGANIZATION: (ctx) => ModalityPageOrganization(),
         AppRoute.DETAILSGAME_ORGANIZATION: (ctx) => DetailsGameOrganization(),
         AppRoute.INSERTRULE_ORGANIZATION: (ctx) => InsertRuleOrganization(),
-        AppRoute.MAINMODALITIES_ORGANIZATION: (ctx) => MainModalitiesOrganization(),
-        AppRoute.GAME_SCORE_ADMIN: (ctx) => GameScore(),
-        AppRoute.SCOREBOARD_WITHOUT_POINTS_ORGANIZATION: (ctx) => ScoreBoardWithoutPoints(),  
+        AppRoute.MAINMODALITIES_ORGANIZATION: (ctx) =>
+            MainModalitiesOrganization(),
       },
-      home: Scaffold(
-        extendBody: true,
-        bottomNavigationBar: BottomBar(),
-        body: SafeArea(
-          child: IndexedStack(
-            index: bottomBarStore,
-            children: const [
-              HomeUser(),
-              ModalitiesUserPage(),
-              AoVivoUser(),
-              SettingsPage(),
-            ],
-          ),
-        ),
-      ),
+      home: const IndexHomeUser(),
     );
   }
 }
