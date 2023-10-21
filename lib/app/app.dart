@@ -40,6 +40,7 @@ import 'package:olimtec_tcc/app/ui/team/modality_team.dart';
 import 'package:olimtec_tcc/app/ui/team/team_players.dart';
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
+import 'package:olimtec_tcc/app/ui/user/index_home_user.dart';
 import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
@@ -49,97 +50,89 @@ import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 import 'ui/admin/modalities/modalities_page.dart';
-import 'ui/user/home/home_page.dart';
 
 import 'features/theme/color_schemes.g.dart';
 
 class App extends ConsumerWidget {
+  const App({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeModeStore = ref.watch(themeProvider);
-    final bottomBarStore = ref.watch(bottomBarProvider);
 
     return MaterialApp(
-      theme: ThemeData(
-          brightness: Brightness.light,
+        theme: ThemeData(
+            brightness: Brightness.light,
+            useMaterial3: true,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+            colorScheme: lightColorScheme,
+            fontFamily: 'Lato'),
+        darkTheme: ThemeData(
+          brightness: Brightness.dark,
           useMaterial3: true,
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          colorScheme: lightColorScheme,
-          fontFamily: 'Lato'),
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-        useMaterial3: true,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-        colorScheme: darkColorScheme,
-        fontFamily: 'Lato',
-      ),
-      title: 'OLIMTEC',
-      themeMode: themeModeStore,
-      debugShowCheckedModeBanner: false,
-      initialRoute: AppRoute.HOME_USER,
-      routes: {
-        AppRoute.LANDING: (ctx) => LandingPage(),
-        AppRoute.RESULTADO_USER: (ctx) => ResultadoPage(),
-        AppRoute.MODALITY_USER: (ctx) => SportModalityPage(),
-        AppRoute.CRONOGRAMA_USER: (ctx) => CronogramaPage(),
-        AppRoute.ABOUTUS_USER: (ctx) => AboutUsPage(),
-        AppRoute.EQUIPE_USER: (ctx) => EquipeUser(),
-        AppRoute.PERFIL_USER: (ctx) => PerfilUser(),
-        AppRoute.MAIN_TEAM: (ctx) => MainTeam(),
-        AppRoute.MODALITIES_USER: (context) => ModalitiesUserPage(),
-        AppRoute.MODALITY_TEAM: (ctx) => ModalityTeam(),
-        AppRoute.PLAYER_TEAM: (ctx) => PlayerTeam(),
-        AppRoute.ADDPLAYER_TEAM: (ctx) => AddPlayerTeam(),
-        AppRoute.CREATETEAM_TEAM: (ctx) => CreateTeamPage(),
-        AppRoute.MAIN_ORGANIZATION: (ctx) => MainOrgnization(),
-        AppRoute.MAIN_ADMIN: (ctx) => MainAdmin(),
-        AppRoute.MAINPRIVILEGES_ADMIN: (ctx) => MainPrivilegeAdmin(),
-        AppRoute.PRIVILEGESTEAM_ADMIN: (ctx) => PrivilegesTeamAdmin(),
-        AppRoute.MODALITY_ADMIN: (ctx) => ModalityAdmin(),
-        AppRoute.MODALITIES_ADMIN: (ctx) => ModalitiesPageAdmin(),
-        AppRoute.TEAM_ADMIN: (ctx) => TeamAdmin(),
-        AppRoute.TEAMVIEW_ADMIN: (ctx) => TeamViewAdmin(),
-        AppRoute.MODALITIESGAMES_ADMIN: (ctx) => ModalitiesGamesAdmin(),
-        AppRoute.REGULATION_ADMIN: (ctx) => RegulationAdmin(),
-        AppRoute.MAINMANAGEMENT_ADMIN: (ctx) => MainManagementAdmin(),
-        AppRoute.RESTARTCHAMPIOSHIP_ADMIN: (ctx) => RestartChampioshipAdmin(),
-        AppRoute.MANAGEMENTACCOUNT_ADMIN: (ctx) => ManagementAccountAdmin(),
-        AppRoute.PRIVILEGESTEAMPAGE_ADMIN: (ctx) => PrivilegeTeamPageAdmin(),
-        AppRoute.PRIVILEGEORGANIZATION_ADMIN: (ctx) =>
-            PrivilegeOrganizationAdmin(),
-        AppRoute.MANAGEMENTACCOUNTADD_ADMIN: (ctx) =>
-            ManagementAccountAddAdmin(),
-        AppRoute.PRIVILEGEORGANIZATIONPAGE_ADMIN: (ctx) =>
-            PrivilegeOrganizationPage(),
-        AppRoute.PRIVILEGEORGANIZATIONADDMODALITY_ADMIN: (ctx) =>
-            OrganizationAddModalityAdmin(),
-        AppRoute.ADDTEAMS_ADMIN: (ctx) => AddTeamsAdmin(),
-        AppRoute.STARTCHAMPIONSHIP_ADMIN: (ctx) => StartChampionshipAdmin(),
-        AppRoute.ADDMODALITY_ADMIN: (ctx) => AddModalityAdmin(),
-        AppRoute.ADDGAME_ORGANIZATION: (ctx) => AddGameOrganization(),
-        AppRoute.CHAMPIOSHIPPAGE_ADMIN: (ctx) => ChampioshipPageAdmin(),
-        AppRoute.INSERTMODALITIES_ADMIN: (ctx) => InsertModalitiesAdmin(),
-        AppRoute.MODALITYPAGE_ORGANIZATION: (ctx) => ModalityPageOrganization(),
-        AppRoute.DETAILSGAME_ORGANIZATION: (ctx) => DetailsGameOrganization(),
-        AppRoute.INSERTRULE_ORGANIZATION: (ctx) => InsertRuleOrganization(),
-        AppRoute.MAINMODALITIES_ORGANIZATION: (ctx) =>
-            MainModalitiesOrganization(),
-      },
-      home: Scaffold(
-        extendBody: true,
-        bottomNavigationBar: BottomBar(),
-        body: SafeArea(
-          child: IndexedStack(
-            index: bottomBarStore,
-            children: const [
-              HomeUser(),
-              ModalitiesUserPage(),
-              AoVivoUser(),
-              SettingsPage(),
-            ],
-          ),
+          colorScheme: darkColorScheme,
+          fontFamily: 'Lato',
         ),
-      ),
-    );
+        title: 'OLIMTEC',
+        themeMode: themeModeStore,
+        debugShowCheckedModeBanner: false,
+        routes: {
+          AppRoute.LANDING: (ctx) => const LandingPage(),
+          AppRoute.RESULTADO_USER: (ctx) => const ResultadoPage(),
+          AppRoute.MODALITY_USER: (ctx) => const SportModalityPage(),
+          AppRoute.CRONOGRAMA_USER: (ctx) => const CronogramaPage(),
+          AppRoute.ABOUTUS_USER: (ctx) => const AboutUsPage(),
+          AppRoute.EQUIPE_USER: (ctx) => const EquipeUser(),
+          AppRoute.PERFIL_USER: (ctx) => const PerfilUser(),
+          AppRoute.MAIN_TEAM: (ctx) => const MainTeam(),
+          AppRoute.MODALITIES_USER: (context) => const ModalitiesUserPage(),
+          AppRoute.MODALITY_TEAM: (ctx) => const ModalityTeam(),
+          AppRoute.PLAYER_TEAM: (ctx) => const PlayerTeam(),
+          AppRoute.ADDPLAYER_TEAM: (ctx) => const AddPlayerTeam(),
+          AppRoute.CREATETEAM_TEAM: (ctx) => const CreateTeamPage(),
+          AppRoute.MAIN_ORGANIZATION: (ctx) => const MainOrgnization(),
+          AppRoute.MAIN_ADMIN: (ctx) => const MainAdmin(),
+          AppRoute.MAINPRIVILEGES_ADMIN: (ctx) => const MainPrivilegeAdmin(),
+          AppRoute.PRIVILEGESTEAM_ADMIN: (ctx) => const PrivilegesTeamAdmin(),
+          AppRoute.MODALITY_ADMIN: (ctx) => const ModalityAdmin(),
+          AppRoute.MODALITIES_ADMIN: (ctx) => const ModalitiesPageAdmin(),
+          AppRoute.TEAM_ADMIN: (ctx) => const TeamAdmin(),
+          AppRoute.TEAMVIEW_ADMIN: (ctx) => const TeamViewAdmin(),
+          AppRoute.MODALITIESGAMES_ADMIN: (ctx) => const ModalitiesGamesAdmin(),
+          AppRoute.REGULATION_ADMIN: (ctx) => const RegulationAdmin(),
+          AppRoute.MAINMANAGEMENT_ADMIN: (ctx) => const MainManagementAdmin(),
+          AppRoute.RESTARTCHAMPIOSHIP_ADMIN: (ctx) =>
+              const RestartChampioshipAdmin(),
+          AppRoute.MANAGEMENTACCOUNT_ADMIN: (ctx) =>
+              const ManagementAccountAdmin(),
+          AppRoute.PRIVILEGESTEAMPAGE_ADMIN: (ctx) =>
+              const PrivilegeTeamPageAdmin(),
+          AppRoute.PRIVILEGEORGANIZATION_ADMIN: (ctx) =>
+              const PrivilegeOrganizationAdmin(),
+          AppRoute.MANAGEMENTACCOUNTADD_ADMIN: (ctx) =>
+              const ManagementAccountAddAdmin(),
+          AppRoute.PRIVILEGEORGANIZATIONPAGE_ADMIN: (ctx) =>
+              const PrivilegeOrganizationPage(),
+          AppRoute.PRIVILEGEORGANIZATIONADDMODALITY_ADMIN: (ctx) =>
+              const OrganizationAddModalityAdmin(),
+          AppRoute.ADDTEAMS_ADMIN: (ctx) => const AddTeamsAdmin(),
+          AppRoute.STARTCHAMPIONSHIP_ADMIN: (ctx) =>
+              const StartChampionshipAdmin(),
+          AppRoute.ADDMODALITY_ADMIN: (ctx) => const AddModalityAdmin(),
+          AppRoute.ADDGAME_ORGANIZATION: (ctx) => const AddGameOrganization(),
+          AppRoute.CHAMPIOSHIPPAGE_ADMIN: (ctx) => const ChampioshipPageAdmin(),
+          AppRoute.INSERTMODALITIES_ADMIN: (ctx) =>
+              const InsertModalitiesAdmin(),
+          AppRoute.MODALITYPAGE_ORGANIZATION: (ctx) =>
+              const ModalityPageOrganization(),
+          AppRoute.DETAILSGAME_ORGANIZATION: (ctx) =>
+              const DetailsGameOrganization(),
+          AppRoute.INSERTRULE_ORGANIZATION: (ctx) =>
+              const InsertRuleOrganization(),
+          AppRoute.MAINMODALITIES_ORGANIZATION: (ctx) =>
+              const MainModalitiesOrganization(),
+        },
+        home: const IndexHomeUser());
   }
 }
