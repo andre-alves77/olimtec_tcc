@@ -4,8 +4,6 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
-
 final formUserSignInProvider =
     ChangeNotifierProvider.autoDispose<FormSignInStore>((ref) {
   return FormSignInStore(ref);
@@ -57,9 +55,7 @@ class FormSignInStore extends ChangeNotifier {
     }
     notifyListeners();
     if (passError.isEmpty && mailError.isEmpty) {
-      ref
-          .read(authNotifierProvider.notifier)
-          .login(email: mail, password: pass);
+      //login
     }
   }
 
@@ -107,9 +103,7 @@ class FormSignInStore extends ChangeNotifier {
     notifyListeners();
 
     if (emailError.isEmpty && passwordError.isEmpty) {
-      ref
-          .read(authNotifierProvider.notifier)
-          .signup(email: email, password: password);
+      //signup
     }
   }
 }

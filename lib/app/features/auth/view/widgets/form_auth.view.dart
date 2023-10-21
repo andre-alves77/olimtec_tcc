@@ -3,8 +3,6 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
-import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
-import 'package:olimtec_tcc/app/features/auth/providers/state/auth_state.dart';
 import 'package:olimtec_tcc/app/features/auth/view/widgets/sign_in.view.dart';
 import 'package:olimtec_tcc/app/features/auth/view/widgets/sign_up.view.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
@@ -50,43 +48,7 @@ class _LandingTabBarState extends ConsumerState<LandingTabBar>
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final store = ref.read(formUserSignInProvider.notifier);
     bool isLoading = false;
-    ref.listen(authNotifierProvider, (previous, next) {
-      next.maybeWhen(
-          orElse: () => null,
-          initial: (() {
-            setState(() {
-              isLoading = false;
-            });
-            Navigator.pushReplacementNamed(context, AppRoute.LANDING);
-          }),
-          authenticated: (user) {
-            setState(() {
-              isLoading = false;
-            });
-            Navigator.pushReplacementNamed(context, AppRoute.HOME);
-            // Navigate to any screen
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Usuário autenticado'),
-                behavior: SnackBarBehavior.floating,
-              ),
-            );
-          },
-          unauthenticated: (message) {
-            setState(() {
-              isLoading = false;
-            });
-            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text(message!),
-              behavior: SnackBarBehavior.floating,
-            ));
-          },
-          loading: () {
-            setState(() {
-              isLoading = true;
-            });
-          });
-    });
+
     return Expanded(
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
@@ -126,8 +88,7 @@ class _LandingTabBarState extends ConsumerState<LandingTabBar>
             Expanded(
                 child: Container(
                     constraints: BoxConstraints(maxWidth: 400),
-                    child: ref.watch(authNotifierProvider.notifier).state !=
-                            const AuthenticationState.loading()
+                    child: true
                         ? TabBarView(
                             controller: _tabController,
                             children: const [

@@ -4,7 +4,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 
-import 'package:olimtec_tcc/app/features/auth/providers/auth_provider.dart';
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
@@ -17,33 +16,7 @@ class SettingsPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final themeStore = ref.read(themeProvider.notifier);
-    ref.listen(authNotifierProvider, (previous, next) {
-      next.maybeWhen(
-        orElse: () => null,
-        initial: (() {
-          Navigator.pushReplacementNamed(context, AppRoute.LANDING);
-        }),
-        authenticated: (user) {
-          Navigator.pushReplacementNamed(context, AppRoute.HOME_USER);
-          // Navigate to any screen
-          ScaffoldMessenger.of(context).showSnackBar(
-            const SnackBar(
-              content: Text('Usuário autenticado'),
-              behavior: SnackBarBehavior.floating,
-            ),
-          );
-        },
-        unauthenticated: (message) =>
-            ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(
-            content: Text(message!),
-            behavior: SnackBarBehavior.floating,
-          ),
-        ),
-        loading: () =>
-            ref.read(formUserSignInProvider.notifier).toggleLoading(),
-      );
-    });
+
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
@@ -143,7 +116,7 @@ class SettingsPage extends ConsumerWidget {
                   title: "Sair",
                   icon: Icons.exit_to_app,
                   function: () {
-                    ref.read(authNotifierProvider.notifier).signout();
+                    //signout
                   })
             ],
           ),
