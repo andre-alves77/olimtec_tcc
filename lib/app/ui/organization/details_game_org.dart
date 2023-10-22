@@ -3,6 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:olimtec_tcc/app/models/game.dart';
 import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'dart:math';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
@@ -234,13 +235,13 @@ class _DetailsGameOrganizationState extends State<DetailsGameOrganization> {
                     GestureDetector(
                       child: StartGame(game: gametest),
                       onTap: () {
-                        Navigator.pushNamed(context, '/cronograma_page');
+                        Navigator.pushNamed(context, CronogramaUser.route);
                       },
                     ),
                     GestureDetector(
                       child: StartGame(game: gametest),
                       onTap: () {
-                        Navigator.pushNamed(context, '/cronograma_page');
+                        Navigator.pushNamed(context, CronogramaUser.route);
                       },
                     ),
                   ])

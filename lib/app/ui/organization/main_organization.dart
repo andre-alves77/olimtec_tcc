@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainOrgnization extends StatefulWidget {
@@ -35,7 +36,7 @@ class _MainOrgnizationState extends State<MainOrgnization> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, AppRoute.ADDGAME_ORGANIZATION);
+                  Navigator.pushNamed(context, AddGameOrganization.route);
                 },
                 child: OptionConfig(
                     icone: Icons.add,

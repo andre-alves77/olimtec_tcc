@@ -1,8 +1,11 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class ModalityUser extends StatefulWidget {
@@ -96,14 +99,14 @@ class _ModalityUserState extends State<ModalityUser>
                             child: GameCard(gametest),
                             onTap: () {
                               Navigator.pushNamed(
-                                  context, AppRoute.CRONOGRAMA_USER);
+                                  context, CronogramaUser.route);
                             },
                           ),
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
                               Navigator.pushNamed(
-                                  context, AppRoute.CRONOGRAMA_USER);
+                                  context, CronogramaUser.route);
                             },
                           ),
                         ],
@@ -113,15 +116,13 @@ class _ModalityUserState extends State<ModalityUser>
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(
-                                  context, AppRoute.RESULTADO_USER);
+                              Navigator.pushNamed(context, ResultadoUser.route);
                             },
                           ),
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(
-                                  context, AppRoute.RESULTADO_USER);
+                              Navigator.pushNamed(context, ResultadoUser.route);
                             },
                           ),
                         ],
@@ -214,8 +215,7 @@ class _ModalityUserState extends State<ModalityUser>
                                     borderRadius: BorderRadius.circular(15)),
                               ),
                               onPressed: () {
-                                Navigator.pushNamed(
-                                    context, AppRoute.EQUIPE_USER);
+                                Navigator.pushNamed(context, EquipeUser.route);
                               },
                               child: const FittedBox(
                                 child: Text(

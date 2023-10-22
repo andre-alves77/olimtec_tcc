@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'package:olimtec_tcc/app/ui/admin/management/management_account_add.dart';
+import 'package:olimtec_tcc/app/ui/admin/management/restart_champioship.dart';
 
 class MainManagementAdmin extends StatelessWidget {
   const MainManagementAdmin({super.key});
@@ -33,7 +35,8 @@ class MainManagementAdmin extends StatelessWidget {
                 child: FittedBox(
                   child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, "/management_account_add");
+                        Navigator.pushNamed(
+                            context, ManagementAccountAddAdmin.route);
                       },
                       child: OptionConfig(
                           icone: Icons.manage_accounts,
@@ -46,7 +49,8 @@ class MainManagementAdmin extends StatelessWidget {
                 padding: const EdgeInsets.all(8.0),
                 child: GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/restart_championship');
+                      Navigator.pushNamed(
+                          context, RestartChampioshipAdmin.route);
                     },
                     child: OptionConfig(
                         icone: Icons.emoji_events,

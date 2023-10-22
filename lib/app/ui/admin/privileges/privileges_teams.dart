@@ -42,19 +42,19 @@ class _PrivilegesTeamAdminState extends State<PrivilegesTeamAdmin> {
                       children: [
                         CardItem(
                             "2ºDSB",
-                            AppRoute.PRIVILEGESTEAMPAGE_ADMIN,
+                            PrivilegesTeamAdmin.route,
                             Theme.of(context).colorScheme.primaryContainer,
                             "assets/images/LOGO_2DSB_EXAMPLE.png"),
                         Padding(padding: EdgeInsetsDirectional.all(8)),
                         CardItem(
                             "3ºEAA",
-                            "",
+                            PrivilegesTeamAdmin.route,
                             Theme.of(context).colorScheme.primaryContainer,
                             "assets/images/LOGO_3EAA_EXAMPLE.png"),
                         Padding(padding: EdgeInsetsDirectional.all(8)),
                         CardItem(
                             "1ºEAB",
-                            "",
+                            PrivilegesTeamAdmin.route,
                             Theme.of(context).colorScheme.primaryContainer,
                             "assets/images/LOGO_1EAA_EXAMPLE.png"),
                       ],

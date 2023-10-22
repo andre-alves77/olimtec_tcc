@@ -3,8 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
+import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
+import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
+import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
+import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
+import 'package:olimtec_tcc/app/ui/team/main_team.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class SettingsPage extends ConsumerWidget {
@@ -79,7 +84,7 @@ class SettingsPage extends ConsumerWidget {
                       color: Theme.of(context).colorScheme.onPrimaryContainer),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, '/perfil_page');
+                  Navigator.pushNamed(context, PerfilUser.route);
                 },
               ),
               const Divider(),
@@ -108,7 +113,7 @@ class SettingsPage extends ConsumerWidget {
                   title: 'Sobre nós',
                   icon: Icons.people_alt,
                   function: () {
-                    Navigator.pushNamed(context, AppRoute.ABOUTUS_USER);
+                    Navigator.pushNamed(context, AboutUsPage.route);
                   }),
               const Divider(),
               _listTile(
@@ -132,7 +137,7 @@ class SettingsPage extends ConsumerWidget {
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                  context, '/main_team', (route) => false);
+                  context, MainTeam.route, (route) => false);
             },
           ),
           FloatingActionButton(
@@ -142,7 +147,7 @@ class SettingsPage extends ConsumerWidget {
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                  context, '/main_organization', (route) => false);
+                  context, MainOrgnization.route, (route) => false);
             },
           ),
           FloatingActionButton(
@@ -152,7 +157,7 @@ class SettingsPage extends ConsumerWidget {
             foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
             onPressed: () {
               Navigator.pushNamedAndRemoveUntil(
-                  context, '/main_admin', (route) => false);
+                  context, MainAdmin.route, (route) => false);
             },
           ),
         ],

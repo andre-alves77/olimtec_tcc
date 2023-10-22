@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 
 class AoVivoUser extends StatefulWidget {
   const AoVivoUser({super.key});
@@ -58,43 +59,43 @@ class _AoVivoUserState extends State<AoVivoUser> {
                       GestureDetector(
                         child: GameCard(gametest),
                         onTap: () {
-                          Navigator.pushNamed(context, '/resultado_page');
+                          Navigator.pushNamed(context, ResultadoUser.route);
                         },
                       ),
                       GestureDetector(
                         child: GameCard(gametest),
                         onTap: () {
-                          Navigator.pushNamed(context, '/resultado_page');
+                          Navigator.pushNamed(context, ResultadoUser.route);
                         },
                       ),
                       GestureDetector(
                         child: GameCard(gametest),
                         onTap: () {
-                          Navigator.pushNamed(context, '/resultado_page');
+                          Navigator.pushNamed(context, ResultadoUser.route);
                         },
                       ),
                       GestureDetector(
                         child: GameCard(gametest),
                         onTap: () {
-                          Navigator.pushNamed(context, '/resultado_page');
+                          Navigator.pushNamed(context, ResultadoUser.route);
                         },
                       ),
                       GestureDetector(
                         child: GameCard(gametest),
                         onTap: () {
-                          Navigator.pushNamed(context, '/resultado_page');
+                          Navigator.pushNamed(context, ResultadoUser.route);
                         },
                       ),
                       GestureDetector(
                         child: GameCard(gametest),
                         onTap: () {
-                          Navigator.pushNamed(context, '/resultado_page');
+                          Navigator.pushNamed(context, ResultadoUser.route);
                         },
                       ),
                       GestureDetector(
                         child: GameCard(gametest),
                         onTap: () {
-                          Navigator.pushNamed(context, '/resultado_page');
+                          Navigator.pushNamed(context, ResultadoUser.route);
                         },
                       ),
                     ],

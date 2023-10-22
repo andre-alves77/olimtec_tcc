@@ -2,9 +2,11 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/models/team.dart';
 import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 
 class ModalityOrganization extends StatefulWidget {
   const ModalityOrganization({super.key});
@@ -98,14 +100,14 @@ class _ModalityOrganizationState extends State<ModalityOrganization>
                               child: StartGame(game: gametest),
                               onTap: () {
                                 Navigator.pushNamed(
-                                    context, '/cronograma_page');
+                                    context, CronogramaUser.route);
                               },
                             ),
                             GestureDetector(
                               child: StartGame(game: gametest),
                               onTap: () {
                                 Navigator.pushNamed(
-                                    context, '/cronograma_page');
+                                    context, CronogramaUser.route);
                               },
                             ),
                           ],
@@ -116,13 +118,13 @@ class _ModalityOrganizationState extends State<ModalityOrganization>
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
+                              Navigator.pushNamed(context, ResultadoUser.route);
                             },
                           ),
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
+                              Navigator.pushNamed(context, ResultadoUser.route);
                             },
                           ),
                         ],
