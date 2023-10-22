@@ -3,8 +3,8 @@ import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
-class ModalitiesPageAdmin extends StatelessWidget {
-  const ModalitiesPageAdmin({super.key});
+class ModalitiesAdmin extends StatelessWidget {
+  const ModalitiesAdmin({super.key});
 
   static String route = "/modalities-admin";
 

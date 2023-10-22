@@ -6,17 +6,16 @@ import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
-class ModalityPageOrganization extends StatefulWidget {
-  const ModalityPageOrganization({super.key});
+class ModalityOrganization extends StatefulWidget {
+  const ModalityOrganization({super.key});
 
   static String route = "/modalitypage-organization";
 
   @override
-  State<ModalityPageOrganization> createState() =>
-      _ModalityPageOrganizationState();
+  State<ModalityOrganization> createState() => _ModalityOrganizationState();
 }
 
-class _ModalityPageOrganizationState extends State<ModalityPageOrganization>
+class _ModalityOrganizationState extends State<ModalityOrganization>
     with TickerProviderStateMixin {
   TabController? _tabController;
 

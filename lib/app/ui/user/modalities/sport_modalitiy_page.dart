@@ -3,15 +3,18 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
-class SportModalityPage extends StatefulWidget {
-  const SportModalityPage({super.key});
+class ModalityUser extends StatefulWidget {
+  const ModalityUser({super.key});
+
+  static String route = "/modality-user";
 
   @override
-  State<SportModalityPage> createState() => _SportModalityPageState();
+  State<ModalityUser> createState() => _ModalityUserState();
 }
 
-class _SportModalityPageState extends State<SportModalityPage>
+class _ModalityUserState extends State<ModalityUser>
     with TickerProviderStateMixin {
   TabController? _tabController;
 
@@ -92,13 +95,15 @@ class _SportModalityPageState extends State<SportModalityPage>
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(context, '/cronograma_page');
+                              Navigator.pushNamed(
+                                  context, AppRoute.CRONOGRAMA_USER);
                             },
                           ),
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(context, '/cronograma_page');
+                              Navigator.pushNamed(
+                                  context, AppRoute.CRONOGRAMA_USER);
                             },
                           ),
                         ],
@@ -108,13 +113,15 @@ class _SportModalityPageState extends State<SportModalityPage>
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
+                              Navigator.pushNamed(
+                                  context, AppRoute.RESULTADO_USER);
                             },
                           ),
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
+                              Navigator.pushNamed(
+                                  context, AppRoute.RESULTADO_USER);
                             },
                           ),
                         ],
@@ -207,7 +214,8 @@ class _SportModalityPageState extends State<SportModalityPage>
                                     borderRadius: BorderRadius.circular(15)),
                               ),
                               onPressed: () {
-                                Navigator.pushNamed(context, '/equipe_page');
+                                Navigator.pushNamed(
+                                    context, AppRoute.EQUIPE_USER);
                               },
                               child: const FittedBox(
                                 child: Text(

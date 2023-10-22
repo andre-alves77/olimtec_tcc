@@ -38,7 +38,7 @@ class ModalityAdmin extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, '/team_admin');
+                      Navigator.pushNamed(context, AppRoute.TEAM_ADMIN);
                     },
                     child: OptionConfig(
                         icone: Icons.shield_outlined,
@@ -55,7 +55,7 @@ class ModalityAdmin extends StatelessWidget {
                   ),
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, 'regulation_admin');
+                      Navigator.pushNamed(context, AppRoute.REGULATION_ADMIN);
                     },
                     child: OptionConfig(
                         icone: Icons.rule, text1: "VISUALIZAR REGULAMENTO"),

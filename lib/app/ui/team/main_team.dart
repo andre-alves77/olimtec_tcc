@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainTeam extends StatefulWidget {
   const MainTeam({super.key});
@@ -35,7 +36,7 @@ class _MainTeamState extends State<MainTeam> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/modality_team');
+                  Navigator.pushNamed(context, AppRoute.MODALITY_TEAM);
                 },
                 child: OptionConfig(
                     icone: Icons.person_add,
@@ -45,7 +46,7 @@ class _MainTeamState extends State<MainTeam> {
               Padding(padding: EdgeInsets.all(15)),
               GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/createteam_page');
+                    Navigator.pushNamed(context, AppRoute.CREATETEAM_TEAM);
                   },
                   child: OptionConfig(
                       icone: Icons.settings,

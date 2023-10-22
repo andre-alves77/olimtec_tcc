@@ -1,5 +1,5 @@
 class AppRoute {
-   static const HOME_USER = '/';
+  static const HOME_USER = '/';
   static const MODALITIES_USER = '/modalities-user';
   static const AOVIVO_USER = '/aovivo-user';
   static const SETTINGS_USER = '/settings-user';
@@ -22,7 +22,7 @@ class AppRoute {
   static const PRIVILEGESTEAMPAGE_ADMIN = '/privilegesteampage-admin';
   static const PRIVILEGEORGANIZATION_ADMIN = '/privilegeorganization-admin';
   static const PRIVILEGEORGANIZATIONPAGE_ADMIN =
-      '/privilegeorganizationpage-admin';
+      '/privilegeorganizationPAGE-admin';
   static const PRIVILEGEORGANIZATIONADDMODALITY_ADMIN =
       '/privilegeorganizationaddmodality-admin';
   static const MODALITY_ADMIN = '/modality-admin';
@@ -46,6 +46,7 @@ class AppRoute {
   static const ADDMODALITY_ADMIN = '/addmodality-admin';
   static const ADDGAME_ORGANIZATION = '/addgame-organization';
   static const MODALITYPAGE_ORGANIZATION = '/modalitypage-organization';
-  static const GAME_SCORE_ADMIN = '/game-score-admin';
-  static const SCOREBOARD_WITHOUT_POINTS_ORGANIZATION = '/scoreboard-without-points-organization';
+  static const GAMESCORE_ORGANIZATION = '/gamescore-organization';
+  static const SCOREBOARDWITHOUTPOINTS_ORGANIZATION =
+      '/scoreboardwithoutpoints-organization';
 }

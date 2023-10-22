@@ -3,6 +3,8 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class GameScore extends StatefulWidget {
+  static String route = "/gamescore-organization";
+
   @override
   _GameScoreState createState() => _GameScoreState();
 }
@@ -66,7 +68,7 @@ class _GameScoreState extends State<GameScore> {
     });
   }
 
-    void _incrementFoulsTime1() {
+  void _incrementFoulsTime1() {
     setState(() {
       _foulsTime1++;
     });
@@ -78,7 +80,7 @@ class _GameScoreState extends State<GameScore> {
     });
   }
 
-      void _incrementFoulsTime2() {
+  void _incrementFoulsTime2() {
     setState(() {
       _foulsTime2++;
     });
@@ -183,15 +185,18 @@ class _GameScoreState extends State<GameScore> {
                                   ),
                                 ),
                                 Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(40, 0, 10, 0),
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      40, 0, 10, 0),
                                   child: Container(
                                     width: 80,
                                     decoration: BoxDecoration(
-                                      color: Theme.of(context).colorScheme.primary,
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
                                       borderRadius: BorderRadius.circular(50),
                                     ),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Text(
@@ -208,7 +213,7 @@ class _GameScoreState extends State<GameScore> {
                                 ),
                                 Padding(
                                   padding: EdgeInsets.only(left: 22),
-                                  child: Row(                                
+                                  child: Row(
                                     children: [
                                       ClipRRect(
                                         borderRadius: BorderRadius.circular(20),
@@ -244,7 +249,8 @@ class _GameScoreState extends State<GameScore> {
                             ),
                           ),
                           Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
+                            padding:
+                                EdgeInsetsDirectional.fromSTEB(10, 0, 0, 0),
                             child: Text(
                               'Em andamento',
                               textAlign: TextAlign.center,
@@ -512,7 +518,9 @@ class _GameScoreState extends State<GameScore> {
                             onPressed: () {},
                             icon: Icon(
                               Icons.pause,
-                              color: Theme.of(context).colorScheme.primaryContainer,
+                              color: Theme.of(context)
+                                  .colorScheme
+                                  .primaryContainer,
                               size: 50,
                             ),
                           ),

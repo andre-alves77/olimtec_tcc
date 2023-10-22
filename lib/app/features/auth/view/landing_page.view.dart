@@ -6,6 +6,8 @@ import 'package:olimtec_tcc/app/features/auth/view/widgets/form_auth.view.dart';
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
 
+  static String route = "/landing";
+
   @override
   State<LandingPage> createState() => _LandingPageState();
 }

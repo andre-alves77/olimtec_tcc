@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 class ScoreBoardWithoutPoints extends StatelessWidget {
   const ScoreBoardWithoutPoints({super.key});
 
+  static String route = "/scoreboardwithoutpoints-organization";
+
   Widget _rowzinha(String head, String info) {
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -226,7 +228,8 @@ class ScoreBoardWithoutPoints extends StatelessWidget {
                               padding: EdgeInsets.only(left: 105),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceAround,
                                 children: [
                                   Container(
                                     height: 40,

@@ -2,16 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PrivilegeTeamPageAdmin extends StatefulWidget {
-  const PrivilegeTeamPageAdmin({super.key});
+class PrivilegeTeamAdmin extends StatefulWidget {
+  const PrivilegeTeamAdmin({super.key});
 
   static String route = "/privilegesteampage-admin";
 
   @override
-  State<PrivilegeTeamPageAdmin> createState() => _PrivilegeTeamPageAdminState();
+  State<PrivilegeTeamAdmin> createState() => _PrivilegeTeamAdminState();
 }
 
-class _PrivilegeTeamPageAdminState extends State<PrivilegeTeamPageAdmin> {
+class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
   _ModalityCard() {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
