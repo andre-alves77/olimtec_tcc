@@ -1,11 +1,10 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 
-final formUserSignInProvider =
-    ChangeNotifierProvider.autoDispose<FormSignInStore>((ref) {
+final formUserSignInProvider = ChangeNotifierProvider<FormSignInStore>((ref) {
   return FormSignInStore(ref);
 });
 
@@ -30,18 +29,9 @@ class FormSignInStore extends ChangeNotifier {
   FormUserState mode = FormUserState.SignIn;
   final formAuthKeySignIn = GlobalKey<FormState>();
   final formAuthKeySignUp = GlobalKey<FormState>();
-  bool _isLoading = false;
+  bool isLoading = false;
 
   FormSignInStore(this.ref);
-
-  void toggleLoading() {
-    _isLoading == true ? _isLoading = false : _isLoading = true;
-    notifyListeners();
-  }
-
-  bool get isLoading {
-    return _isLoading;
-  }
 
   submitIn() {
     passError = "";
@@ -56,6 +46,8 @@ class FormSignInStore extends ChangeNotifier {
     notifyListeners();
     if (passError.isEmpty && mailError.isEmpty) {
       //login
+
+      ref.read(authRepositoryProvider).signInWithEmailAndPassword(mail, pass);
     }
   }
 
@@ -100,11 +92,10 @@ class FormSignInStore extends ChangeNotifier {
       passwordError = "Deve haver pelo menos:\n" + passwordError;
     }
 
-    notifyListeners();
-
     if (emailError.isEmpty && passwordError.isEmpty) {
       //signup
     }
+    notifyListeners();
   }
 }
 

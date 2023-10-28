@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/features/auth/view/widgets/form_auth.view.dart';
+import 'package:olimtec_tcc/app/features/auth/view/widgets/landing_tab_bar.dart';
 
 class LandingPage extends StatefulWidget {
   const LandingPage({super.key});
@@ -44,7 +44,7 @@ class _LandingPageState extends State<LandingPage> {
                   height: 155,
                   fit: BoxFit.cover,
                 ),
-                Container(
+                SizedBox(
                   width: sizeWidth / 2,
                   child: FittedBox(
                     child: Row(
@@ -74,9 +74,9 @@ class _LandingPageState extends State<LandingPage> {
                 ),
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                  child: Container(
+                  child: SizedBox(
                     width: sizeWidth / 1.2,
-                    child: FittedBox(
+                    child: const FittedBox(
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
                         children: [

@@ -3,6 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/custom_text_field.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 

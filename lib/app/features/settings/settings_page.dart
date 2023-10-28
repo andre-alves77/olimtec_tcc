@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth_checker.dart';
+import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
@@ -16,6 +19,7 @@ class SettingsPage extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final themeStore = ref.read(themeProvider.notifier);
+    final auth = ref.read(authRepositoryProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -117,6 +121,8 @@ class SettingsPage extends ConsumerWidget {
                   icon: Icons.exit_to_app,
                   function: () {
                     //signout
+                    print("signoutt");
+                    auth.signOut();
                   })
             ],
           ),

@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/features/auth/view/widgets/sign_in.view.dart';
 import 'package:olimtec_tcc/app/features/auth/view/widgets/sign_up.view.dart';
-import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class LandingTabBar extends ConsumerStatefulWidget {
   const LandingTabBar({super.key});
@@ -44,10 +43,11 @@ class _LandingTabBarState extends ConsumerState<LandingTabBar>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final store = ref.read(formUserSignInProvider.notifier);
-    bool isLoading = false;
+    bool isLoading = ref.watch(formUserSignInProvider).isLoading;
 
     return Expanded(
       child: Padding(
@@ -87,19 +87,20 @@ class _LandingTabBarState extends ConsumerState<LandingTabBar>
             ),
             Expanded(
                 child: Container(
-                    constraints: BoxConstraints(maxWidth: 400),
-                    child: true
-                        ? TabBarView(
-                            controller: _tabController,
-                            children: const [
-                              SignInForm(),
-                              SignUpForm(),
-                            ],
-                          )
-                        : Container(
-                            padding: const EdgeInsets.all(70),
-                            alignment: Alignment.topCenter,
-                            child: CircularProgressIndicator()))),
+              constraints: BoxConstraints(maxWidth: 400),
+              child: isLoading
+                  ? Container(
+                      padding: const EdgeInsets.all(70),
+                      alignment: Alignment.topCenter,
+                      child: CircularProgressIndicator())
+                  : TabBarView(
+                      controller: _tabController,
+                      children: const [
+                        SignInForm(),
+                        SignUpForm(),
+                      ],
+                    ),
+            )),
           ],
         ),
       ),
