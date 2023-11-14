@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class RegulationAdmin extends StatefulWidget {
   const RegulationAdmin({super.key});
@@ -11,11 +10,8 @@ class RegulationAdmin extends StatefulWidget {
 }
 
 class _RegulationAdminState extends State<RegulationAdmin> {
-  late PdfViewerController _pdfViewerController;
-
   @override
   void initState() {
-    _pdfViewerController = PdfViewerController();
     super.initState();
   }
 
@@ -79,12 +75,7 @@ class _RegulationAdminState extends State<RegulationAdmin> {
                   width: 332,
                   height: 450,
                   decoration: BoxDecoration(),
-                  child: SafeArea(
-                    child: SfPdfViewer.network(
-                      'https://fapesp.br/eventos/2013/04/bioma-pantanal/Jose_sabino.pdf',
-                      controller: _pdfViewerController,
-                    ),
-                  ),
+                  child: Placeholder(),
                 ),
               ],
             ),

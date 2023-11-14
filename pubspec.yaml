@@ -44,7 +44,7 @@ dependencies:
   firebase_auth: ^4.10.0
   dartz: ^0.10.1
   firebase_storage: ^11.2.7
-  syncfusion_flutter_pdfviewer: ^22.2.8
+  
 
 
 dev_dependencies:
