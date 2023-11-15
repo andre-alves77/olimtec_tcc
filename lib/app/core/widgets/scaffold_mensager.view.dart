@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 
 /// A provider whose value is the global scaffold messenger key passed to
 /// [MaterialApp].
@@ -14,23 +15,34 @@ final scaffoldMessengerPod = Provider((ref) {
   return ref.watch(scaffoldMessengerKeyPod).currentState!;
 });
 
+
 enum ScaffoldAlert { error, information }
 
-class CustomSnackBar extends SnackBar {
-  const CustomSnackBar({super.key, required super.content, required this.type});
 
-  final ScaffoldAlert type;
+class CustomSnackBar{
+  final String message;
+final ScaffoldAlert type;
+  CustomSnackBar({required this.message, required Ref ref, this.type = ScaffoldAlert.information,}) : super() {
 
-  Widget build(BuildContext context, WidgetRef ref) {
-    return SnackBar(
-      content: const Text("Some Content"),
-      backgroundColor: type == ScaffoldAlert.error ? Colors.red : null,
+Future.delayed(Duration(seconds: 10));
+     final scaffoldMessenger = ref.read(scaffoldMessengerPod);
+     final context = ref.read(navigtorkeyProvider).currentContext;
+
+    scaffoldMessenger.showSnackBar(
+      SnackBar(
+        behavior: SnackBarBehavior.floating,
+        content: Text(message, style: TextStyle(color:Theme.of(context!).colorScheme.onPrimaryContainer)),
+        backgroundColor: Theme.of(context!).colorScheme.primaryContainer,
+        
+      ),
     );
   }
+
+  @override
+  String toString() {
+    return message;
+  }
 }
-
-
-
 
 
 

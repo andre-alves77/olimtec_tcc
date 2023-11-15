@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/features/auth/repository/auth.repository.dart';
 import 'package:olimtec_tcc/app/ui/user/index_home_user.dart';
@@ -26,15 +27,17 @@ final isLoggedProvider = StateProvider<bool>((ref) {
     },
     data: (user) {
       ref.read(formUserSignInProvider).isLoading = false;
+      final context = ref.read(navigtorkeyProvider).currentContext;
       if (user != null) {
         debugPrint("logado");
 
-        final context = ref.read(navigtorkeyProvider).currentContext;
+
+        
         Navigator.pushReplacementNamed(context!, IndexHomeUser.route);
+        
         return true;
       }
       debugPrint("não logado");
-      final context = ref.read(navigtorkeyProvider).currentContext;
       Navigator.pushReplacementNamed(context!, AppRoute.LANDING);
 
       return false;
@@ -47,3 +50,4 @@ final isLoggedProvider = StateProvider<bool>((ref) {
     },
   );
 });
+

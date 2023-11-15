@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 
@@ -19,6 +20,9 @@ class AuthRepository {
         email: email,
         password: password,
       );
+
+CustomSnackBar(message: 'Login efetuado', ref: ref);
+
       return result.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
