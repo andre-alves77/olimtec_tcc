@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 
 final formUserSignInProvider = ChangeNotifierProvider<FormSignInStore>((ref) {
@@ -57,7 +58,7 @@ class FormSignInStore extends ChangeNotifier {
     password2Error = "";
     nameError = "";
 
-    if (!RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
+ /*   if (!RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
       nameError += "Insira somente letras.\n";
     }
     if (!RegExp(r'^\w+\s+\w+$').hasMatch(name)) {
@@ -94,7 +95,11 @@ class FormSignInStore extends ChangeNotifier {
 
     if (emailError.isEmpty && passwordError.isEmpty) {
       //signup
+
     }
+    */
+    CustomSnackBar(message: "email: $email, senha: $password, nome: $name", ref: ref);
+    ref.read(authRepositoryProvider).createUser(email, password, name);
     notifyListeners();
   }
 }

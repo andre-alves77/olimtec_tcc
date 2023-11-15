@@ -1,6 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/core/providers/firebase.provider.dart';
 import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
@@ -41,6 +43,21 @@ CustomSnackBar(message: 'Login efetuado', ref: ref);
             'Ops, um erro aconteceu. Tente novamente.', ref);
       }
     }
+  }
+
+  Future<User?> createUser(String email, String password, String name) async {
+try{
+  _auth.createUserWithEmailAndPassword(email: email, password: password);
+  ref.read(firebaseFirestoreProvider).collection('users').add({    
+'avatar': '',
+'email':email,
+'name':name,
+'teamName':'3DSB',
+  });
+  
+}on FirebaseAuthException catch (e){
+  throw AuthException.snackbar(e.message.toString(), ref);
+}
   }
 
   Future<void> signOut() async {
