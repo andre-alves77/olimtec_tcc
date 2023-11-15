@@ -58,12 +58,10 @@ class FormSignInStore extends ChangeNotifier {
     password2Error = "";
     nameError = "";
 
- /*   if (!RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
-      nameError += "Insira somente letras.\n";
+    if (name.split(' ').length > 2 && !RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
+      nameError += "Insira somente letras e no máximo duas palavras.\n";
     }
-    if (!RegExp(r'^\w+\s+\w+$').hasMatch(name)) {
-      nameError += "Insira no máximo duas palavras";
-    }
+
     if (password.length < 8) {
       passwordError += "8 caracteres.";
     }
@@ -95,10 +93,10 @@ class FormSignInStore extends ChangeNotifier {
 
     if (emailError.isEmpty && passwordError.isEmpty) {
       //signup
-
     }
-    */
-    CustomSnackBar(message: "email: $email, senha: $password, nome: $name", ref: ref);
+
+    CustomSnackBar(
+        message: "email: $email, senha: $password, nome: $name", ref: ref);
     ref.read(authRepositoryProvider).createUser(email, password, name);
     notifyListeners();
   }
