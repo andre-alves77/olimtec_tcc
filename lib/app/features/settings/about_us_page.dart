@@ -70,7 +70,7 @@ class _AboutUsPage extends State<AboutUsPage> {
                           image: "assets/images/LOGO_USUARIO.png",
                           name: 'Vinicius Vitoriano',
                           role: 'Full Stack',
-                          pix: '248.654.456-45'),
+                          pix: '546.829.358-79'),
                     ),
                   ],
                 ),

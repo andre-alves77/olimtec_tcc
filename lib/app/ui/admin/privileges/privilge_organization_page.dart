@@ -2,17 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PrivilegeOrganizationPage extends StatefulWidget {
-  const PrivilegeOrganizationPage({super.key});
+class PrivilegeOrganization extends StatefulWidget {
+  const PrivilegeOrganization({super.key});
 
-  static String route = "/privilegeorganizationpage-admin";
+  static String route = "/privilegeorganization-admin";
 
   @override
-  State<PrivilegeOrganizationPage> createState() =>
-      _PrivilegeOrganizationPageState();
+  State<PrivilegeOrganization> createState() => _PrivilegeOrganizationState();
 }
 
-class _PrivilegeOrganizationPageState extends State<PrivilegeOrganizationPage> {
+class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
   _ModalityCard() {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 

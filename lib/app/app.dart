@@ -29,10 +29,12 @@ import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
 import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
 import 'package:olimtec_tcc/app/ui/organization/details_game_org.dart';
+import 'package:olimtec_tcc/app/ui/organization/game_score.dart';
 import 'package:olimtec_tcc/app/ui/organization/insert_modality_rule_org.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_modalities_org.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/ui/organization/modality_page_organization.dart';
+import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
 
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
@@ -83,59 +85,50 @@ class App extends ConsumerWidget {
       debugShowCheckedModeBanner: false,
       routes: {
         IndexHomeUser.route: (ctx) => const IndexHomeUser(),
-        AppRoute.LANDING: (ctx) => const LandingPage(),
-        AppRoute.RESULTADO_USER: (ctx) => const ResultadoPage(),
-        AppRoute.MODALITY_USER: (ctx) => const SportModalityPage(),
-        AppRoute.CRONOGRAMA_USER: (ctx) => const CronogramaPage(),
-        AppRoute.ABOUTUS_USER: (ctx) => const AboutUsPage(),
-        AppRoute.EQUIPE_USER: (ctx) => const EquipeUser(),
-        AppRoute.PERFIL_USER: (ctx) => const PerfilUser(),
-        AppRoute.MAIN_TEAM: (ctx) => const MainTeam(),
-        AppRoute.MODALITIES_USER: (context) => const ModalitiesUserPage(),
-        AppRoute.MODALITY_TEAM: (ctx) => const ModalityTeam(),
-        AppRoute.PLAYER_TEAM: (ctx) => const PlayerTeam(),
-        AppRoute.ADDPLAYER_TEAM: (ctx) => const AddPlayerTeam(),
-        AppRoute.CREATETEAM_TEAM: (ctx) => const CreateTeamPage(),
-        AppRoute.MAIN_ORGANIZATION: (ctx) => const MainOrgnization(),
-        AppRoute.MAIN_ADMIN: (ctx) => const MainAdmin(),
-        AppRoute.MAINPRIVILEGES_ADMIN: (ctx) => const MainPrivilegeAdmin(),
-        AppRoute.PRIVILEGESTEAM_ADMIN: (ctx) => const PrivilegesTeamAdmin(),
-        AppRoute.MODALITY_ADMIN: (ctx) => const ModalityAdmin(),
-        AppRoute.MODALITIES_ADMIN: (ctx) => const ModalitiesPageAdmin(),
-        AppRoute.TEAM_ADMIN: (ctx) => const TeamAdmin(),
-        AppRoute.TEAMVIEW_ADMIN: (ctx) => const TeamViewAdmin(),
-        AppRoute.MODALITIESGAMES_ADMIN: (ctx) => const ModalitiesGamesAdmin(),
-        AppRoute.REGULATION_ADMIN: (ctx) => const RegulationAdmin(),
-        AppRoute.MAINMANAGEMENT_ADMIN: (ctx) => const MainManagementAdmin(),
-        AppRoute.RESTARTCHAMPIOSHIP_ADMIN: (ctx) =>
-            const RestartChampioshipAdmin(),
-        AppRoute.MANAGEMENTACCOUNT_ADMIN: (ctx) =>
-            const ManagementAccountAdmin(),
-        AppRoute.PRIVILEGESTEAMPAGE_ADMIN: (ctx) =>
-            const PrivilegeTeamPageAdmin(),
-        AppRoute.PRIVILEGEORGANIZATION_ADMIN: (ctx) =>
-            const PrivilegeOrganizationAdmin(),
-        AppRoute.MANAGEMENTACCOUNTADD_ADMIN: (ctx) =>
-            const ManagementAccountAddAdmin(),
-        AppRoute.PRIVILEGEORGANIZATIONPAGE_ADMIN: (ctx) =>
-            const PrivilegeOrganizationPage(),
-        AppRoute.PRIVILEGEORGANIZATIONADDMODALITY_ADMIN: (ctx) =>
-            const OrganizationAddModalityAdmin(),
-        AppRoute.ADDTEAMS_ADMIN: (ctx) => const AddTeamsAdmin(),
-        AppRoute.STARTCHAMPIONSHIP_ADMIN: (ctx) =>
-            const StartChampionshipAdmin(),
-        AppRoute.ADDMODALITY_ADMIN: (ctx) => const AddModalityAdmin(),
-        AppRoute.ADDGAME_ORGANIZATION: (ctx) => const AddGameOrganization(),
-        AppRoute.CHAMPIOSHIPPAGE_ADMIN: (ctx) => const ChampioshipPageAdmin(),
-        AppRoute.INSERTMODALITIES_ADMIN: (ctx) => const InsertModalitiesAdmin(),
-        AppRoute.MODALITYPAGE_ORGANIZATION: (ctx) =>
-            const ModalityPageOrganization(),
-        AppRoute.DETAILSGAME_ORGANIZATION: (ctx) =>
-            const DetailsGameOrganization(),
-        AppRoute.INSERTRULE_ORGANIZATION: (ctx) =>
-            const InsertRuleOrganization(),
-        AppRoute.MAINMODALITIES_ORGANIZATION: (ctx) =>
-            const MainModalitiesOrganization(),
+        LandingPage.route: (ctx) => LandingPage(),
+        ResultadoUser.route: (ctx) => ResultadoUser(),
+        ModalityUser.route: (ctx) => ModalityUser(),
+        CronogramaUser.route: (ctx) => CronogramaUser(),
+        AboutUsPage.route: (ctx) => AboutUsPage(),
+        EquipeUser.route: (ctx) => EquipeUser(),
+        PerfilUser.route: (ctx) => PerfilUser(),
+        MainTeam.route: (ctx) => MainTeam(),
+        ModalitiesUser.route: (context) => ModalitiesUser(),
+        ModalityTeam.route: (ctx) => ModalityTeam(),
+        PlayerTeam.route: (ctx) => PlayerTeam(),
+        AddPlayerTeam.route: (ctx) => AddPlayerTeam(),
+        CreateTeam.route: (ctx) => CreateTeam(),
+        MainOrgnization.route: (ctx) => MainOrgnization(),
+        MainAdmin.route: (ctx) => MainAdmin(),
+        MainPrivilegeAdmin.route: (ctx) => MainPrivilegeAdmin(),
+        PrivilegesTeamAdmin.route: (ctx) => PrivilegesTeamAdmin(),
+        ModalityAdmin.route: (ctx) => ModalityAdmin(),
+        ModalitiesAdmin.route: (ctx) => ModalitiesAdmin(),
+        TeamAdmin.route: (ctx) => TeamAdmin(),
+        TeamViewAdmin.route: (ctx) => TeamViewAdmin(),
+        ModalitiesGamesAdmin.route: (ctx) => ModalitiesGamesAdmin(),
+        RegulationAdmin.route: (ctx) => RegulationAdmin(),
+        MainManagementAdmin.route: (ctx) => MainManagementAdmin(),
+        RestartChampioshipAdmin.route: (ctx) => RestartChampioshipAdmin(),
+        ManagementAccountAdmin.route: (ctx) => ManagementAccountAdmin(),
+        PrivilegeTeamAdmin.route: (ctx) => PrivilegeTeamAdmin(),
+        PrivilegeOrganizationAdmin.route: (ctx) => PrivilegeOrganizationAdmin(),
+        ManagementAccountAddAdmin.route: (ctx) => ManagementAccountAddAdmin(),
+        PrivilegeOrganization.route: (ctx) => PrivilegeOrganization(),
+        OrganizationAddModalityAdmin.route: (ctx) =>
+            OrganizationAddModalityAdmin(),
+        AddTeamsAdmin.route: (ctx) => AddTeamsAdmin(),
+        StartChampionshipAdmin.route: (ctx) => StartChampionshipAdmin(),
+        AddModalityAdmin.route: (ctx) => AddModalityAdmin(),
+        AddGameOrganization.route: (ctx) => AddGameOrganization(),
+        ChampioshipPageAdmin.route: (ctx) => ChampioshipPageAdmin(),
+        InsertModalitiesAdmin.route: (ctx) => InsertModalitiesAdmin(),
+        ModalityOrganization.route: (ctx) => ModalityOrganization(),
+        DetailsGameOrganization.route: (ctx) => DetailsGameOrganization(),
+        InsertRuleOrganization.route: (ctx) => InsertRuleOrganization(),
+        MainModalitiesOrganization.route: (ctx) => MainModalitiesOrganization(),
+        GameScore.route: (ctx) => GameScore(),
+        ScoreBoardWithoutPoints.route: (ctx) => ScoreBoardWithoutPoints(),
       },
       home: const LandingPage(),
     );

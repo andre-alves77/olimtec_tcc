@@ -2,6 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/models/game.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 
 class GameCard extends StatelessWidget {
   GameCard(this.game, {super.key});
@@ -14,7 +15,7 @@ class GameCard extends StatelessWidget {
 
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, "/cronograma_page");
+        Navigator.pushNamed(context, CronogramaUser.route);
       },
       child: AspectRatio(
         aspectRatio: 2.8,

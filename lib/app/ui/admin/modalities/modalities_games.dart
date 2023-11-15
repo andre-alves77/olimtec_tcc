@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 
 class ModalitiesGamesAdmin extends StatelessWidget {
   const ModalitiesGamesAdmin({super.key});
@@ -48,19 +49,19 @@ class ModalitiesGamesAdmin extends StatelessWidget {
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                       ],
@@ -95,19 +96,19 @@ class ModalitiesGamesAdmin extends StatelessWidget {
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                       ],
@@ -143,19 +144,19 @@ class ModalitiesGamesAdmin extends StatelessWidget {
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                       ],
@@ -191,19 +192,19 @@ class ModalitiesGamesAdmin extends StatelessWidget {
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                         GestureDetector(
                           child: GameCard(gametest),
                           onTap: () {
-                            Navigator.pushNamed(context, '/resultado_page');
+                            Navigator.pushNamed(context, ResultadoUser.route);
                           },
                         ),
                       ],

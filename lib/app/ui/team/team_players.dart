@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 
 class PlayerTeam extends StatefulWidget {
   const PlayerTeam({super.key});
@@ -178,7 +179,8 @@ class _PlayerTeamState extends State<PlayerTeam> {
                           children: [
                             GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(context, '/addplayer_page');
+                                Navigator.pushNamed(
+                                    context, AddPlayerTeam.route);
                               },
                               child: Container(
                                 width: sizeWidth / 1.2,

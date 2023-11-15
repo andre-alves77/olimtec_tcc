@@ -2,21 +2,22 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/models/team.dart';
 import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
 
-class ModalityPageOrganization extends StatefulWidget {
-  const ModalityPageOrganization({super.key});
+class ModalityOrganization extends StatefulWidget {
+  const ModalityOrganization({super.key});
 
   static String route = "/modalitypage-organization";
 
   @override
-  State<ModalityPageOrganization> createState() =>
-      _ModalityPageOrganizationState();
+  State<ModalityOrganization> createState() => _ModalityOrganizationState();
 }
 
-class _ModalityPageOrganizationState extends State<ModalityPageOrganization>
+class _ModalityOrganizationState extends State<ModalityOrganization>
     with TickerProviderStateMixin {
   TabController? _tabController;
 
@@ -99,14 +100,14 @@ class _ModalityPageOrganizationState extends State<ModalityPageOrganization>
                               child: StartGame(game: gametest),
                               onTap: () {
                                 Navigator.pushNamed(
-                                    context, '/cronograma_page');
+                                    context, CronogramaUser.route);
                               },
                             ),
                             GestureDetector(
                               child: StartGame(game: gametest),
                               onTap: () {
                                 Navigator.pushNamed(
-                                    context, '/cronograma_page');
+                                    context, CronogramaUser.route);
                               },
                             ),
                           ],
@@ -117,13 +118,13 @@ class _ModalityPageOrganizationState extends State<ModalityPageOrganization>
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
+                              Navigator.pushNamed(context, ResultadoUser.route);
                             },
                           ),
                           GestureDetector(
                             child: GameCard(gametest),
                             onTap: () {
-                              Navigator.pushNamed(context, '/resultado_page');
+                              Navigator.pushNamed(context, ResultadoUser.route);
                             },
                           ),
                         ],

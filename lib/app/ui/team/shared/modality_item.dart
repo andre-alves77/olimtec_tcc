@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/ui/team/team_players.dart';
 
 class ModalityItem extends StatelessWidget {
   const ModalityItem(this.icone, this.name, {super.key});
@@ -17,7 +18,8 @@ class ModalityItem extends StatelessWidget {
       child: GestureDetector(
         child: Card(
           elevation: 5,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
           color: Theme.of(context).colorScheme.primary,
           child: FittedBox(
             alignment: Alignment.centerLeft,
@@ -45,10 +47,8 @@ class ModalityItem extends StatelessWidget {
             ),
           ),
         ),
-         onTap: () {
-          Navigator.pushNamed(
-            context, '/team_player'
-          );
+        onTap: () {
+          Navigator.pushNamed(context, PlayerTeam.route);
         },
       ),
     );

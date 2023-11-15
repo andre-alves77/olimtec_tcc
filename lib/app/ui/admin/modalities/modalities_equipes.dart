@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/modality_team_view.dart';
 
 class TeamAdmin extends StatelessWidget {
   const TeamAdmin({super.key});
@@ -37,43 +38,43 @@ class TeamAdmin extends StatelessWidget {
                         children: [
                           CardItem(
                               "2ºDSB",
-                              "/team_view_admin",
+                              TeamViewAdmin.route,
                               Theme.of(context).colorScheme.primaryContainer,
                               "assets/images/LOGO_2DSB_EXAMPLE.png"),
                           Padding(padding: EdgeInsetsDirectional.all(8)),
                           CardItem(
                               "3ºEAA",
-                              "/team_view_admin",
+                              TeamViewAdmin.route,
                               Theme.of(context).colorScheme.primaryContainer,
                               "assets/images/LOGO_3EAA_EXAMPLE.png"),
                           Padding(padding: EdgeInsetsDirectional.all(8)),
                           CardItem(
                               "1ºEAB",
-                              "/team_view_admin",
+                              TeamViewAdmin.route,
                               Theme.of(context).colorScheme.primaryContainer,
                               "assets/images/LOGO_1EAA_EXAMPLE.png"),
                           Padding(padding: EdgeInsetsDirectional.all(8)),
                           CardItem(
                               "2ºDSB",
-                              "/team_view_admin",
+                              TeamViewAdmin.route,
                               Theme.of(context).colorScheme.primaryContainer,
                               "assets/images/LOGO_2DSB_EXAMPLE.png"),
                           Padding(padding: EdgeInsetsDirectional.all(8)),
                           CardItem(
                               "3ºEAA",
-                              "/team_view_admin",
+                              TeamViewAdmin.route,
                               Theme.of(context).colorScheme.primaryContainer,
                               "assets/images/LOGO_3EAA_EXAMPLE.png"),
                           Padding(padding: EdgeInsetsDirectional.all(8)),
                           CardItem(
                               "1ºEAB",
-                              "/team_view_admin",
+                              TeamViewAdmin.route,
                               Theme.of(context).colorScheme.primaryContainer,
                               "assets/images/LOGO_1EAA_EXAMPLE.png"),
                           Padding(padding: EdgeInsetsDirectional.all(8)),
                           CardItem(
                               "2ºDSB",
-                              "/team_view_admin",
+                              TeamViewAdmin.route,
                               Theme.of(context).colorScheme.primaryContainer,
                               "assets/images/LOGO_2DSB_EXAMPLE.png"),
                         ],

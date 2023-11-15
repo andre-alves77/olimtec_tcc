@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'dart:math';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
 
 class ChampioshipPageAdmin extends StatelessWidget {
   const ChampioshipPageAdmin({super.key});
@@ -35,7 +36,8 @@ class ChampioshipPageAdmin extends StatelessWidget {
                 child: FittedBox(
                   child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, "/insert_modalities");
+                        Navigator.pushNamed(
+                            context, InsertModalitiesAdmin.route);
                       },
                       child: OptionConfig(
                           icone: Icons.sports, text1: 'DEFINIR MODALIDADES')),

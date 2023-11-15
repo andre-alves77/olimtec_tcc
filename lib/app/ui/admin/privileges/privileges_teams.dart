@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
+import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class PrivilegesTeamAdmin extends StatefulWidget {
   const PrivilegesTeamAdmin({super.key});
@@ -41,19 +42,19 @@ class _PrivilegesTeamAdminState extends State<PrivilegesTeamAdmin> {
                       children: [
                         CardItem(
                             "2ºDSB",
-                            "/privileges_team_page",
+                            PrivilegesTeamAdmin.route,
                             Theme.of(context).colorScheme.primaryContainer,
                             "assets/images/LOGO_2DSB_EXAMPLE.png"),
                         Padding(padding: EdgeInsetsDirectional.all(8)),
                         CardItem(
                             "3ºEAA",
-                            "",
+                            PrivilegesTeamAdmin.route,
                             Theme.of(context).colorScheme.primaryContainer,
                             "assets/images/LOGO_3EAA_EXAMPLE.png"),
                         Padding(padding: EdgeInsetsDirectional.all(8)),
                         CardItem(
                             "1ºEAB",
-                            "",
+                            PrivilegesTeamAdmin.route,
                             Theme.of(context).colorScheme.primaryContainer,
                             "assets/images/LOGO_1EAA_EXAMPLE.png"),
                       ],

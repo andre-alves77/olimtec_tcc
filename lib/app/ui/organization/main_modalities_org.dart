@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
@@ -30,7 +31,7 @@ class MainModalitiesOrganization extends StatelessWidget {
             Padding(
                 padding: EdgeInsets.all(5),
                 child: ModalityItemCard(
-                    modality: element, routes: AppRoute.MODALITY_ADMIN)),
+                    modality: element, routes: ModalityAdmin.route)),
           );
         }
       });

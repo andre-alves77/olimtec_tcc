@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organization_addmodality.dart';
 
 class PrivilegeOrganizationAdmin extends StatefulWidget {
   const PrivilegeOrganizationAdmin({super.key});
@@ -37,7 +38,7 @@ class _PrivilegeOrganizationAdminState
               GestureDetector(
                   onTap: () {
                     Navigator.pushNamed(
-                        context, '/privilege_organization_addmodality');
+                        context, OrganizationAddModalityAdmin.route);
                   },
                   child: OptionConfig(
                     icone: Icons.add,
@@ -47,19 +48,19 @@ class _PrivilegeOrganizationAdminState
               Padding(padding: EdgeInsetsDirectional.all(8)),
               CardItem(
                   "2ºDSB",
-                  "/privilege_organization_page",
+                  PrivilegeOrganizationAdmin.route,
                   Theme.of(context).colorScheme.primaryContainer,
                   "assets/images/LOGO_2DSB_EXAMPLE.png"),
               Padding(padding: EdgeInsetsDirectional.all(8)),
               CardItem(
                   "2ºEAA",
-                  "",
+                  PrivilegeOrganizationAdmin.route,
                   Theme.of(context).colorScheme.primaryContainer,
                   "assets/images/LOGO_3EAA_EXAMPLE.png"),
               Padding(padding: EdgeInsetsDirectional.all(8)),
               CardItem(
                   "2ºEAB",
-                  "",
+                  PrivilegeOrganizationAdmin.route,
                   Theme.of(context).colorScheme.primaryContainer,
                   "assets/images/LOGO_1EAA_EXAMPLE.png"),
             ],

@@ -27,7 +27,7 @@ class IndexHomeUser extends ConsumerWidget {
           index: bottomBarStore,
           children: const [
             HomeUser(),
-            ModalitiesUserPage(),
+            ModalitiesUser(),
             AoVivoUser(),
             SettingsPage(),
           ],

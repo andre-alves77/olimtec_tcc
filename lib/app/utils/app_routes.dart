@@ -22,7 +22,7 @@ class AppRoute {
   static const PRIVILEGESTEAMPAGE_ADMIN = '/privilegesteampage-admin';
   static const PRIVILEGEORGANIZATION_ADMIN = '/privilegeorganization-admin';
   static const PRIVILEGEORGANIZATIONPAGE_ADMIN =
-      '/privilegeorganizationpage-admin';
+      '/privilegeorganizationPAGE-admin';
   static const PRIVILEGEORGANIZATIONADDMODALITY_ADMIN =
       '/privilegeorganizationaddmodality-admin';
   static const MODALITY_ADMIN = '/modality-admin';
@@ -38,7 +38,7 @@ class AppRoute {
   static const ADDTEAMS_ADMIN = '/addteams-admin';
   static const CHAMPIOSHIPPAGE_ADMIN = '/champioshippage-admin';
   static const INSERTMODALITIES_ADMIN = '/insertmodalities-admin';
-  static const STARTGAME_ORGANIZATION = '/StartGame-organization';
+  static const STARTGAME_ORGANIZATION = '/startGame-organization';
   static const DETAILSGAME_ORGANIZATION = '/detailsgame-organization';
   static const INSERTRULE_ORGANIZATION = '/insertrule-organization';
   static const MAINMODALITIES_ORGANIZATION = '/mainmodalities-organization';
@@ -46,4 +46,7 @@ class AppRoute {
   static const ADDMODALITY_ADMIN = '/addmodality-admin';
   static const ADDGAME_ORGANIZATION = '/addgame-organization';
   static const MODALITYPAGE_ORGANIZATION = '/modalitypage-organization';
+  static const GAMESCORE_ORGANIZATION = '/gamescore-organization';
+  static const SCOREBOARDWITHOUTPOINTS_ORGANIZATION =
+      '/scoreboardwithoutpoints-organization';
 }

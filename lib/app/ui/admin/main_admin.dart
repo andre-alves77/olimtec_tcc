@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
+import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_page.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
+import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainAdmin extends StatefulWidget {
   const MainAdmin({super.key});
@@ -34,7 +38,7 @@ class _MainAdminState extends State<MainAdmin> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/main_privileges');
+                  Navigator.pushNamed(context, MainPrivilegeAdmin.route);
                 },
                 child: OptionConfig(
                     icone: Icons.star,
@@ -48,7 +52,7 @@ class _MainAdminState extends State<MainAdmin> {
                 },
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, '/main_management');
+                    Navigator.pushNamed(context, MainManagementAdmin.route);
                   },
                   child: OptionConfig(
                       icone: Icons.library_books,
@@ -59,7 +63,7 @@ class _MainAdminState extends State<MainAdmin> {
               Padding(padding: EdgeInsets.all(15)),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, '/modalities_admin');
+                  Navigator.pushNamed(context, ModalitiesAdmin.route);
                 },
                 child: OptionConfig(
                     icone: Icons.sports_basketball,

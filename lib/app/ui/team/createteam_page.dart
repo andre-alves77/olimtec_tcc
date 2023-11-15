@@ -2,8 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class CreateTeamPage extends StatelessWidget {
-  const CreateTeamPage({super.key});
+class CreateTeam extends StatelessWidget {
+  const CreateTeam({super.key});
 
   static String route = "/createteam-team";
 

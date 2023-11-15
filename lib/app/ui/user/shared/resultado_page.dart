@@ -5,8 +5,10 @@ import 'package:flutter/material.dart';
 import 'game_card.dart';
 import '../../../data/dummy_data.dart';
 
-class ResultadoPage extends StatelessWidget {
-  const ResultadoPage({super.key});
+class ResultadoUser extends StatelessWidget {
+  const ResultadoUser({super.key});
+
+  static String route = "/resultado-user";
 
   Widget _rowzinha(String head, String info) {
     return Row(

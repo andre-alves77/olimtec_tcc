@@ -2,6 +2,9 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/Privilege_item.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
+import 'package:olimtec_tcc/app/ui/admin/privileges/privilge_organization_page.dart';
+import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainPrivilegeAdmin extends StatefulWidget {
   const MainPrivilegeAdmin({super.key});
@@ -38,12 +41,12 @@ class _MainPrivilegeAdminState extends State<MainPrivilegeAdmin> {
               PrivilegeOption(
                 Icons.switch_account_rounded,
                 "REPRESENTANTES",
-                "/privileges_team",
+                PrivilegeTeamAdmin.route,
               ),
               PrivilegeOption(
                 Icons.people,
                 "ORGANIZADORES",
-                "/privilege_organization",
+                PrivilegeOrganization.route,
               ),
             ],
           ),

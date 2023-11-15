@@ -4,14 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
-class CronogramaPage extends StatefulWidget {
-  const CronogramaPage({super.key});
+class CronogramaUser extends StatefulWidget {
+  const CronogramaUser({super.key});
+
+  static String route = "/cronograma-user";
 
   @override
-  State<CronogramaPage> createState() => _CronogramaPageState();
+  State<CronogramaUser> createState() => _CronogramaUserState();
 }
 
-class _CronogramaPageState extends State<CronogramaPage> {
+class _CronogramaUserState extends State<CronogramaUser> {
   Widget _rowzinha(String head, String info) {
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -90,10 +92,8 @@ class _CronogramaPageState extends State<CronogramaPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Flexible(
-                    child: Container(
-                      width: sizeWidth,
-                      child: GameCard(gametest)
-                    ),
+                    child:
+                        Container(width: sizeWidth, child: GameCard(gametest)),
                   ),
                 ],
               ),
@@ -197,10 +197,8 @@ class _CronogramaPageState extends State<CronogramaPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Flexible(
-                    child: Container(
-                      width: sizeWidth,
-                      child: GameCard(gametest)
-                    ),
+                    child:
+                        Container(width: sizeWidth, child: GameCard(gametest)),
                   )
                 ],
               ),
