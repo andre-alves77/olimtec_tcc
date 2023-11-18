@@ -76,7 +76,7 @@ class FormSignInStore extends ChangeNotifier {
       passwordError += " Um número.";
     }
 
-    if (password != password2) {
+    if (password.toString() != password2.toString()) {
       password2Error += " As senhas estão diferentes";
     }
 

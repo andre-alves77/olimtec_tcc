@@ -1,3 +1,6 @@
+import 'dart:convert';
+import 'dart:html';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -6,25 +9,39 @@ import 'package:olimtec_tcc/app/core/providers/firebase.provider.dart';
 import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
+import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 
-class AuthRepository {
-  const AuthRepository(this._auth, this.ref);
+class AuthRepository extends ChangeNotifier {
+   AuthRepository({required this.auth, required this.ref});
 
-  final FirebaseAuth _auth;
+  final FirebaseAuth auth;
   final Ref ref;
+  static AppUser? user;
 
-  Stream<User?> get authStateChange => _auth.authStateChanges();
+  Stream<User?> get authStateChange => auth.authStateChanges();
 
   Future<User?> signInWithEmailAndPassword(
       String email, String password) async {
     try {
-      final result = await _auth.signInWithEmailAndPassword(
+      final firebasestore = ref.read(firebaseFirestoreProvider);
+      final result = await auth.signInWithEmailAndPassword(
         email: email,
         password: password,
       );
 
-CustomSnackBar(message: 'Login efetuado', ref: ref);
+        final userMap = await firebasestore.collection('users').where("id", isEqualTo: auth.currentUser!.uid).get();
 
+Map users = {};
+for(var x in userMap.docs){
+users[x.id] = x.data();
+}
+users.forEach((key, value){
+AuthRepository.user = AppUser.fromMap(value);
+});
+notifyListeners();
+      
+
+CustomSnackBar(message: 'Login efetuado', ref: ref);
       return result.user;
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
@@ -47,21 +64,38 @@ CustomSnackBar(message: 'Login efetuado', ref: ref);
 
   Future<User?> createUser(String email, String password, String name) async {
 try{
-  _auth.createUserWithEmailAndPassword(email: email, password: password);
-  ref.read(firebaseFirestoreProvider).collection('users').add({    
+
+  await auth.createUserWithEmailAndPassword(email: email, password: password);
+      final firebasestore = ref.read(firebaseFirestoreProvider);
+
+  await firebasestore.collection('users').add({    
 'avatar': '',
-'email':email,
+'id': auth.currentUser?.uid,
+"isAdmin": false,
+"isLeader": false,
+'isOrganization' : false,
 'name':name,
 'teamName':'3DSB',
   });
-  
+
+final userMap = await firebasestore.collection('users').where("id", isEqualTo: auth.currentUser!.uid).get();
+
+Map users = {};
+for(var x in userMap.docs){
+users[x.id] = x.data();
+}
+users.forEach((key, value){
+AuthRepository.user = AppUser.fromMap(value);
+});
+
+
 }on FirebaseAuthException catch (e){
   throw AuthException.snackbar(e.message.toString(), ref);
 }
   }
 
   Future<void> signOut() async {
-    await _auth.signOut();
+    await auth.signOut();
   }
 }
 
