@@ -10,6 +10,7 @@ import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 
 class AuthRepository extends ChangeNotifier {
    AuthRepository({required this.auth, required this.ref});
@@ -25,8 +26,8 @@ class AuthRepository extends ChangeNotifier {
     try {
       final firebasestore = ref.read(firebaseFirestoreProvider);
       final result = await auth.signInWithEmailAndPassword(
-        email: email,
-        password: password,
+        email: 'luansoares@etec.sp.gov.br',
+        password: 'A1234567',
       );
 
         final userMap = await firebasestore.collection('users').where("id", isEqualTo: auth.currentUser!.uid).get();
@@ -36,7 +37,9 @@ for(var x in userMap.docs){
 users[x.id] = x.data();
 }
 users.forEach((key, value){
-AuthRepository.user = AppUser.fromMap(value);
+ref.read(appUserProvider.notifier).state = AppUser.fromMap(value);
+        
+
 });
 notifyListeners();
       
@@ -85,13 +88,14 @@ for(var x in userMap.docs){
 users[x.id] = x.data();
 }
 users.forEach((key, value){
-AuthRepository.user = AppUser.fromMap(value);
+ref.read(appUserProvider.notifier).state = AppUser.fromMap(value);
 });
 
 
 }on FirebaseAuthException catch (e){
   throw AuthException.snackbar(e.message.toString(), ref);
 }
+return null;
   }
 
   Future<void> signOut() async {

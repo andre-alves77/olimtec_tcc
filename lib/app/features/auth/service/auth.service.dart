@@ -1,9 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/core/providers/firebase.provider.dart';
 import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
-import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/repository/auth.repository.dart';
@@ -33,18 +31,15 @@ final isLoggedProvider = StateProvider<bool>((ref) {
       final context = ref.read(navigtorkeyProvider).currentContext;
       if (user != null) {
         debugPrint("logado");
-        
+        var appuser = ref.watch(appUserProvider);
 
+while(appuser == null){}
 
-
-     
-
-
-//if(appuser!.isAdmin == true){
-//Navigator.pushReplacementNamed(context!, MainAdmin.route);
-//}else{
-//Navigator.pushReplacementNamed(context!, IndexHomeUser.route);
-//}
+if(appuser.isAdmin == true){
+Navigator.pushReplacementNamed(context!, MainAdmin.route);
+}else{
+  Navigator.pushReplacementNamed(context!, IndexHomeUser.route);
+}
         return true;
       }
       debugPrint("não logado");
@@ -61,3 +56,6 @@ final isLoggedProvider = StateProvider<bool>((ref) {
   );
 });
 
+final appUserProvider = StateProvider<AppUser?>((ref) {
+  return null;
+});

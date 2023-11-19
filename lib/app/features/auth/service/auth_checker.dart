@@ -1,10 +1,3 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
-import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
-import 'package:olimtec_tcc/app/ui/user/index_home_user.dart';
-import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 /* class AuthChecker extends ConsumerWidget {
   const AuthChecker(this.child, {super.key});
