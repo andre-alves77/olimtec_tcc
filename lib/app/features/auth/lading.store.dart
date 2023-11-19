@@ -91,13 +91,16 @@ class FormSignInStore extends ChangeNotifier {
       passwordError = "Deve haver pelo menos:\n" + passwordError;
     }
 
-    if (emailError.isEmpty && passwordError.isEmpty) {
+    if (nameError.isEmpty &&
+        emailError.isEmpty &&
+        passwordError.isEmpty &&
+        password2Error.isEmpty) {
       //signup
+      ref.read(authRepositoryProvider).createUser(email, password, name);
     }
 
     CustomSnackBar(
         message: "email: $email, senha: $password, nome: $name", ref: ref);
-    ref.read(authRepositoryProvider).createUser(email, password, name);
     notifyListeners();
   }
 }

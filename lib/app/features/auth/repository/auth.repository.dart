@@ -23,7 +23,7 @@ class AuthRepository {
         password: password,
       );
 
-CustomSnackBar(message: 'Login efetuado', ref: ref);
+      CustomSnackBar(message: 'Login efetuado', ref: ref);
 
       return result.user;
     } on FirebaseAuthException catch (e) {
@@ -46,18 +46,17 @@ CustomSnackBar(message: 'Login efetuado', ref: ref);
   }
 
   Future<User?> createUser(String email, String password, String name) async {
-try{
-  _auth.createUserWithEmailAndPassword(email: email, password: password);
-  ref.read(firebaseFirestoreProvider).collection('users').add({    
-'avatar': '',
-'email':email,
-'name':name,
-'teamName':'3DSB',
-  });
-  
-}on FirebaseAuthException catch (e){
-  throw AuthException.snackbar(e.message.toString(), ref);
-}
+    try {
+      _auth.createUserWithEmailAndPassword(email: email, password: password);
+      ref.read(firebaseFirestoreProvider).collection('users').add({
+        'avatar': '',
+        'email': email,
+        'name': name,
+        'teamName': '3DSB',
+      });
+    } on FirebaseAuthException catch (e) {
+      throw AuthException.snackbar(e.message.toString(), ref);
+    }
   }
 
   Future<void> signOut() async {

@@ -54,7 +54,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                 child: CustomTextField(
                   errorMessage: aiuth.password2Error,
                   hintText: 'Confirmar senha',
-                  onChanged: (value) => aiuth.password2,
+                  onChanged: (value) => aiuth.password2 = value,
                 ),
               ),
               Padding(
