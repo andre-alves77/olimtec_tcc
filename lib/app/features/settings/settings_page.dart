@@ -1,11 +1,7 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/app.dart';
-import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
-import 'package:olimtec_tcc/app/features/auth/service/auth_checker.dart';
-import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
@@ -128,42 +124,6 @@ class SettingsPage extends ConsumerWidget {
           ),
         ),
       ),
-      floatingActionButton: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          FloatingActionButton(
-            heroTag: "btn01",
-            child: Icon(Icons.star_border),
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-            onPressed: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/main_team', (route) => false);
-            },
-          ),
-          FloatingActionButton(
-            heroTag: "btn02",
-            child: Icon(Icons.star_half),
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-            onPressed: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/main_organization', (route) => false);
-            },
-          ),
-          FloatingActionButton(
-            heroTag: "btn03",
-            child: Icon(Icons.star),
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
-            onPressed: () {
-              Navigator.pushNamedAndRemoveUntil(
-                  context, '/main_admin', (route) => false);
-            },
-          ),
-        ],
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 
