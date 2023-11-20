@@ -2,57 +2,16 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PrivilegeTeamAdmin extends StatefulWidget {
-  const PrivilegeTeamAdmin({super.key});
+class PrivilegeOrganization extends StatefulWidget {
+  const PrivilegeOrganization({super.key});
 
-  static String route = "/privilegesteampage-admin";
+  static String route = "/privilegeorganization-admin";
 
   @override
-  State<PrivilegeTeamAdmin> createState() => _PrivilegeTeamAdminState();
+  State<PrivilegeOrganization> createState() => _PrivilegeOrganizationState();
 }
 
-class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
-  _ModalityCard() {
-    final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-
-    return AspectRatio(
-      aspectRatio: 4.5,
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Theme.of(context).colorScheme.primaryContainer),
-        child: FittedBox(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            width: sizeWidth,
-            child: ListTile(
-              leading: Icon(
-                Icons.sports_basketball,
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-                size: sizeWidth / 9,
-              ),
-              title: FittedBox(
-                alignment: Alignment.centerLeft,
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  "BASQUETE MASCULINO",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
-              trailing: Icon(
-                Icons.remove,
-                color: Theme.of(context).colorScheme.error,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
 
   _CardJogador2() {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
@@ -106,7 +65,7 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "REPRESENTANTES - 2ºDSB",
+          "ORGANIZADORES - 2ºDSB",
           style: TextStyle(
             fontFamily: 'Lato',
             fontSize: 24,
@@ -146,7 +105,7 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
                             width: sizeWidth / 4.2,
                             child: const FittedBox(
                               child: Text(
-                                "3DSB",
+                                "2DSB",
                                 style: TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 28,
@@ -169,6 +128,7 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
                     ],
                   ),
                 ),
+               
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -186,7 +146,7 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
                               ),
                             ),
                             Text(
-                              "INSIRA OS REPRESENTANTES ABAIXO",
+                              "INSIRA OS ORGANIZADORES ABAIXO",
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 18,

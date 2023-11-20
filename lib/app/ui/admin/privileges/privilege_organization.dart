@@ -13,6 +13,8 @@ class PrivilegeOrganizationAdmin extends StatefulWidget {
       _PrivilegeOrganizationAdminState();
 }
 
+//TELA COM ATRIBUIR MODALIDADES, FUNÇÃO QUE SERÁ DESCARTADA 
+
 class _PrivilegeOrganizationAdminState
     extends State<PrivilegeOrganizationAdmin> {
   @override

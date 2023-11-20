@@ -1,0 +1,1484 @@
+!! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.76.1
+Flutter extension: 3.76.0 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+
+Logging Categories:
+    General
+
+Mon Nov 20 2023 [13:00:11 GMT-0300 (Brasilia Standard Time)] Log file started
+[1:00:11 PM] [General] [Info] Searching for SDKs...
+[1:00:11 PM] [General] [Info] Environment PATH:
+[1:00:11 PM] [General] [Info]     C:\Program Files\Common Files\Oracle\Java\javapath
+[1:00:11 PM] [General] [Info]     C:\Windows\system32
+[1:00:11 PM] [General] [Info]     C:\Windows
+[1:00:11 PM] [General] [Info]     C:\Windows\System32\Wbem
+[1:00:11 PM] [General] [Info]     C:\Windows\System32\WindowsPowerShell\v1.0\
+[1:00:11 PM] [General] [Info]     C:\Windows\System32\OpenSSH\
+[1:00:11 PM] [General] [Info]     C:\Program Files\Microsoft SQL Server\110\Tools\Binn\
+[1:00:11 PM] [General] [Info]     C:\Program Files\dotnet\
+[1:00:11 PM] [General] [Info]     C:\Program Files\Microsoft SQL Server\130\Tools\Binn\
+[1:00:11 PM] [General] [Info]     C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\
+[1:00:11 PM] [General] [Info]     C:\Wineclt\MySQL\bin
+[1:00:11 PM] [General] [Info]     C:\Program Files (x86)\dotnet\
+[1:00:11 PM] [General] [Info]     C:\Program Files\nodejs\
+[1:00:11 PM] [General] [Info]     C:\WINDOWS\system32
+[1:00:11 PM] [General] [Info]     C:\WINDOWS
+[1:00:11 PM] [General] [Info]     C:\WINDOWS\System32\Wbem
+[1:00:11 PM] [General] [Info]     C:\WINDOWS\System32\WindowsPowerShell\v1.0\
+[1:00:11 PM] [General] [Info]     C:\WINDOWS\System32\OpenSSH\
+[1:00:11 PM] [General] [Info]     C:\Program Files\Git\cmd
+[1:00:11 PM] [General] [Info]     C:\ProgramData\chocolatey\bin
+[1:00:11 PM] [General] [Info]     C:\flutter\bin
+[1:00:11 PM] [General] [Info]     C:\Users\Gabriel\AppData\Local\Microsoft\WindowsApps
+[1:00:11 PM] [General] [Info]     C:\Users\Gabriel\AppData\Local\Programs\Microsoft VS Code\bin
+[1:00:11 PM] [General] [Info]     C:\Users\Gabriel\.dotnet\tools
+[1:00:11 PM] [General] [Info]     C:\Users\Gabriel\AppData\Roaming\npm
+[1:00:11 PM] [General] [Info]     C:\Users\Gabriel\AppData\Local\Programs\Microsoft VS Code\bin
+[1:00:11 PM] [General] [Info]     C:\tools\dart-sdk\bin
+[1:00:11 PM] [General] [Info]     C:\Users\Gabriel\AppData\Roaming\Pub\Cache\bin
+[1:00:12 PM] [General] [Info] Took 919ms to search for projects (5 levels)
+[1:00:12 PM] [General] [Info] Took 15ms to filter out excluded projects (0 exclusion rules)
+[1:00:12 PM] [General] [Info] Found Flutter project at C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR:
+			Mobile? true
+			Web? false
+			Create Trigger? false
+			Flutter Repo? false
+[1:00:12 PM] [General] [Info] Searching for flutter.bat
+[1:00:12 PM] [General] [Info]     Looking for flutter.bat in:
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR -> C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\bin
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\.flutter
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\.flutter -> C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\.flutter\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\vendor\flutter
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\vendor\flutter -> C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\vendor\flutter\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\flutter-sdk
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\flutter-sdk -> C:\Users\Gabriel\flutter-sdk\bin
+[1:00:12 PM] [General] [Info]         /google/flutter
+[1:00:12 PM] [General] [Info]         /google/flutter -> \google\flutter\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
+[1:00:12 PM] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
+[1:00:12 PM] [General] [Info]         C:\Windows\system32
+[1:00:12 PM] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
+[1:00:12 PM] [General] [Info]         C:\Windows
+[1:00:12 PM] [General] [Info]         C:\Windows -> C:\Windows\bin
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\Wbem
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\OpenSSH\
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\110\Tools\Binn\
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\110\Tools\Binn\ -> C:\Program Files\Microsoft SQL Server\110\Tools\Binn\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\dotnet\
+[1:00:12 PM] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\130\Tools\Binn\
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\130\Tools\Binn\ -> C:\Program Files\Microsoft SQL Server\130\Tools\Binn\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\ -> C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\bin
+[1:00:12 PM] [General] [Info]         C:\Wineclt\MySQL\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files (x86)\dotnet\
+[1:00:12 PM] [General] [Info]         C:\Program Files (x86)\dotnet\ -> C:\Program Files (x86)\dotnet\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\nodejs\
+[1:00:12 PM] [General] [Info]         C:\Program Files\nodejs\ -> C:\Program Files\nodejs\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\system32
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\system32 -> C:\WINDOWS\system32\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS
+[1:00:12 PM] [General] [Info]         C:\WINDOWS -> C:\WINDOWS\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\Wbem
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\Wbem -> C:\WINDOWS\System32\Wbem\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\ -> C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\ -> C:\WINDOWS\System32\OpenSSH\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Git\cmd
+[1:00:12 PM] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
+[1:00:12 PM] [General] [Info]         C:\ProgramData\chocolatey\bin
+[1:00:12 PM] [General] [Info]         C:\flutter\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Local\Microsoft\WindowsApps
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Local\Microsoft\WindowsApps -> C:\Users\Gabriel\AppData\Local\Microsoft\WindowsApps\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Local\Programs\Microsoft VS Code\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\.dotnet\tools
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\.dotnet\tools -> C:\Users\Gabriel\.dotnet\tools\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Roaming\npm
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Roaming\npm -> C:\Users\Gabriel\AppData\Roaming\npm\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Local\Programs\Microsoft VS Code\bin
+[1:00:12 PM] [General] [Info]         C:\tools\dart-sdk\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Roaming\Pub\Cache\bin
+[1:00:12 PM] [General] [Info]     Found at:
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\
+[1:00:12 PM] [General] [Info]         C:\flutter\bin
+[1:00:12 PM] [General] [Info]     Candidate paths to be post-filtered:
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\ -> C:\flutter
+[1:00:12 PM] [General] [Info]         C:\flutter\bin -> C:\flutter
+[1:00:12 PM] [General] [Info]     Found at C:\flutter\bin\ -> C:\flutter
+[1:00:12 PM] [General] [Info]     Returning SDK path C:\flutter for flutter.bat
+[1:00:12 PM] [General] [Info] Searching for dart.exe
+[1:00:12 PM] [General] [Info]     Looking for dart.exe in:
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
+[1:00:12 PM] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
+[1:00:12 PM] [General] [Info]         C:\Windows\system32
+[1:00:12 PM] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
+[1:00:12 PM] [General] [Info]         C:\Windows
+[1:00:12 PM] [General] [Info]         C:\Windows -> C:\Windows\bin
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\Wbem
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\OpenSSH\
+[1:00:12 PM] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\110\Tools\Binn\
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\110\Tools\Binn\ -> C:\Program Files\Microsoft SQL Server\110\Tools\Binn\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\dotnet\
+[1:00:12 PM] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\130\Tools\Binn\
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\130\Tools\Binn\ -> C:\Program Files\Microsoft SQL Server\130\Tools\Binn\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\
+[1:00:12 PM] [General] [Info]         C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\ -> C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\bin
+[1:00:12 PM] [General] [Info]         C:\Wineclt\MySQL\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files (x86)\dotnet\
+[1:00:12 PM] [General] [Info]         C:\Program Files (x86)\dotnet\ -> C:\Program Files (x86)\dotnet\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\nodejs\
+[1:00:12 PM] [General] [Info]         C:\Program Files\nodejs\ -> C:\Program Files\nodejs\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\system32
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\system32 -> C:\WINDOWS\system32\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS
+[1:00:12 PM] [General] [Info]         C:\WINDOWS -> C:\WINDOWS\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\Wbem
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\Wbem -> C:\WINDOWS\System32\Wbem\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\WindowsPowerShell\v1.0\ -> C:\WINDOWS\System32\WindowsPowerShell\v1.0\bin
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\
+[1:00:12 PM] [General] [Info]         C:\WINDOWS\System32\OpenSSH\ -> C:\WINDOWS\System32\OpenSSH\bin
+[1:00:12 PM] [General] [Info]         C:\Program Files\Git\cmd
+[1:00:12 PM] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
+[1:00:12 PM] [General] [Info]         C:\ProgramData\chocolatey\bin
+[1:00:12 PM] [General] [Info]         C:\flutter\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Local\Microsoft\WindowsApps
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Local\Microsoft\WindowsApps -> C:\Users\Gabriel\AppData\Local\Microsoft\WindowsApps\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Local\Programs\Microsoft VS Code\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\.dotnet\tools
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\.dotnet\tools -> C:\Users\Gabriel\.dotnet\tools\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Roaming\npm
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Roaming\npm -> C:\Users\Gabriel\AppData\Roaming\npm\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Local\Programs\Microsoft VS Code\bin
+[1:00:12 PM] [General] [Info]         C:\tools\dart-sdk\bin
+[1:00:12 PM] [General] [Info]         C:\Users\Gabriel\AppData\Roaming\Pub\Cache\bin
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[1:00:12 PM] [General] [Info]     Found at:
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[1:00:12 PM] [General] [Info]         C:\tools\dart-sdk\bin
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[1:00:12 PM] [General] [Info]     Candidate paths to be post-filtered:
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[1:00:12 PM] [General] [Info]         C:\tools\dart-sdk\bin -> C:\tools\dart-sdk
+[1:00:12 PM] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[1:00:12 PM] [General] [Info]     Found at C:\flutter\bin\cache\dart-sdk
+[1:00:12 PM] [General] [Info]     Returning SDK path C:\flutter\bin\cache\dart-sdk for dart.exe
+[1:00:12 PM] [General] [Info] Experiment random number is 5 for experiment 'sdkDaps'. Experiment is enabled for <= 100
+[1:00:12 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[1:00:12 PM] [General] [Info] Experiment random number is 5 for experiment 'sdkDaps'. Experiment is enabled for <= 50
+[1:00:12 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[1:00:12 PM] [General] [Info] Experiment random number is 5 for experiment 'sdkDaps'. Experiment is enabled for <= 10
+[1:00:12 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[1:00:12 PM] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.76.1
+Flutter extension: 3.76.0 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+Workspace type: Flutter (LSP)
+
+Dart (3.1.3): C:\flutter\bin\cache\dart-sdk
+Flutter (3.13.6): C:\flutter (No device)
+[1:00:12 PM] [General] [Info] Returning cached results for project search
+[1:00:12 PM] [General] [Info] Activating Flutter extension for Flutter project...
+[1:00:12 PM] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
+[1:00:12 PM] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
+    C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR (get: true, upgrade: false, reason: pubspec.lock was modified (Mon Nov 20 2023 12:59:07 GMT-0300 (Brasilia Standard Time)) more recently than package_config.json (Mon Nov 20 2023 10:07:01 GMT-0300 (Brasilia Standard Time)))
+[1:00:12 PM] [General] [Info] Loaded 20000 package names from vscode-userdata:/c%3A/Users/Gabriel/AppData/Roaming/Code/User/globalStorage/dart-code.dart-code/package_cache.json
+[1:00:15 PM] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.76.1
+Flutter extension: 3.76.0 (activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+Workspace type: Flutter (LSP)
+
+Dart (3.1.3): C:\flutter\bin\cache\dart-sdk
+Flutter (3.13.6): C:\flutter (No device)
+[1:00:15 PM] [General] [Info] Returning cached results for project search
+[1:00:19 PM] [General] [Info] Returning cached results for project search
+[1:00:19 PM] [General] [Info] Checking 1 projects for supported platforms
+[1:00:19 PM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[1:00:20 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[1:00:23 PM] [General] [Info] Returning cached results for project search
+[1:07:36 PM] [General] [Info] Starting debug session...
+[1:07:36 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:07:36 PM] [General] [Info]     program  : lib/main.dart
+[1:07:36 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:07:36 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[1:07:36 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:07:36 PM] [General] [Info] Detected launch project as Flutter
+[1:07:36 PM] [General] [Info] Using Flutter debug adapter for this session
+[1:07:36 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[1:07:36 PM] [General] [Info] Checking for errors before launching
+[1:07:36 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-23faf",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[1:07:36 PM] [General] [Info] Using flutter debugger for Flutter
+[1:07:36 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[1:07:36 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[1:07:36 PM] [General] [Info] Did not find session 7768a6ae-3512-4ff0-b208-c285dcb6fca0 to handle dart.progressStart. There were 0 sessions:
+[1:07:36 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[1:07:36 PM] [General] [Info] Processing delayed event dart.progressStart for session 7768a6ae-3512-4ff0-b208-c285dcb6fca0
+[1:08:43 PM] [General] [Info] Exposing URL: ws://127.0.0.1:50280/MUyray8o444%3D/ws
+[1:08:43 PM] [General] [Info] Mapping URI: http://127.0.0.1:50280/MUyray8o444%3D/ws
+[1:08:43 PM] [General] [Info] Mapped URI: http://127.0.0.1:50280/MUyray8o444%3D/ws
+[1:08:43 PM] [General] [Info] Mapped URL: http://127.0.0.1:50280/MUyray8o444%3D/ws
+[1:08:43 PM] [General] [Info] Final URL: ws://127.0.0.1:50280/MUyray8o444=/ws
+[1:11:17 PM] [General] [Info] Starting debug session...
+[1:11:17 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:11:17 PM] [General] [Info]     program  : lib/main.dart
+[1:11:17 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:11:17 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[1:11:17 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:11:17 PM] [General] [Info] Detected launch project as Flutter
+[1:11:17 PM] [General] [Info] Using Flutter debug adapter for this session
+[1:11:17 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[1:11:17 PM] [General] [Info] Checking for errors before launching
+[1:11:17 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-5702b",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[1:11:17 PM] [General] [Info] Using flutter debugger for Flutter
+[1:11:17 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[1:11:17 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[1:11:18 PM] [General] [Info] Did not find session 3ad314ea-55c9-4cb2-acab-2ee4da5ec814 to handle dart.progressStart. There were 0 sessions:
+[1:11:18 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[1:11:18 PM] [General] [Info] Processing delayed event dart.progressStart for session 3ad314ea-55c9-4cb2-acab-2ee4da5ec814
+[1:12:29 PM] [General] [Info] Exposing URL: ws://127.0.0.1:50500/WhMn8cwvvmI%3D/ws
+[1:12:29 PM] [General] [Info] Mapping URI: http://127.0.0.1:50500/WhMn8cwvvmI%3D/ws
+[1:12:29 PM] [General] [Info] Mapped URI: http://127.0.0.1:50500/WhMn8cwvvmI%3D/ws
+[1:12:29 PM] [General] [Info] Mapped URL: http://127.0.0.1:50500/WhMn8cwvvmI%3D/ws
+[1:12:29 PM] [General] [Info] Final URL: ws://127.0.0.1:50500/WhMn8cwvvmI=/ws
+[1:14:51 PM] [General] [Info] Starting debug session...
+[1:14:51 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:14:51 PM] [General] [Info]     program  : lib/main.dart
+[1:14:51 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:14:51 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[1:14:51 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:14:51 PM] [General] [Info] Detected launch project as Flutter
+[1:14:51 PM] [General] [Info] Using Flutter debug adapter for this session
+[1:14:51 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[1:14:51 PM] [General] [Info] Checking for errors before launching
+[1:14:51 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-4a211",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[1:14:51 PM] [General] [Info] Using flutter debugger for Flutter
+[1:14:51 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[1:14:51 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[1:14:52 PM] [General] [Info] Did not find session 9a2d627c-64ea-410d-8718-32c76130dd62 to handle dart.progressStart. There were 0 sessions:
+[1:14:52 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[1:14:52 PM] [General] [Info] Processing delayed event dart.progressStart for session 9a2d627c-64ea-410d-8718-32c76130dd62
+[1:15:59 PM] [General] [Info] Exposing URL: ws://127.0.0.1:50704/UkhZcTsiFbc%3D/ws
+[1:15:59 PM] [General] [Info] Mapping URI: http://127.0.0.1:50704/UkhZcTsiFbc%3D/ws
+[1:15:59 PM] [General] [Info] Mapped URI: http://127.0.0.1:50704/UkhZcTsiFbc%3D/ws
+[1:15:59 PM] [General] [Info] Mapped URL: http://127.0.0.1:50704/UkhZcTsiFbc%3D/ws
+[1:15:59 PM] [General] [Info] Final URL: ws://127.0.0.1:50704/UkhZcTsiFbc=/ws
+[1:18:34 PM] [General] [Info] Caching Pub package names from https://pub.dev...
+[1:18:35 PM] [General] [Info] Saved 20000 in vscode-userdata:/c%3A/Users/Gabriel/AppData/Roaming/Code/User/globalStorage/dart-code.dart-code/package_cache.json
+[1:22:20 PM] [General] [Info] Starting debug session...
+[1:22:20 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:22:20 PM] [General] [Info]     program  : lib/main.dart
+[1:22:20 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:22:20 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[1:22:20 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:22:20 PM] [General] [Info] Detected launch project as Flutter
+[1:22:20 PM] [General] [Info] Using Flutter debug adapter for this session
+[1:22:20 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[1:22:20 PM] [General] [Info] Checking for errors before launching
+[1:22:20 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-b692c",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[1:22:20 PM] [General] [Info] Using flutter debugger for Flutter
+[1:22:20 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[1:22:20 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[1:22:21 PM] [General] [Info] Did not find session c0c5317b-843c-4975-90a7-a42fae709664 to handle dart.progressStart. There were 0 sessions:
+[1:22:21 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[1:22:21 PM] [General] [Info] Processing delayed event dart.progressStart for session c0c5317b-843c-4975-90a7-a42fae709664
+[1:24:47 PM] [General] [Info] Starting debug session...
+[1:24:47 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:24:47 PM] [General] [Info]     program  : lib/main.dart
+[1:24:47 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:24:47 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[1:24:47 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[1:24:47 PM] [General] [Info] Detected launch project as Flutter
+[1:24:47 PM] [General] [Info] Using Flutter debug adapter for this session
+[1:24:47 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[1:24:47 PM] [General] [Info] Checking for errors before launching
+[1:24:47 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-81f5c",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[1:24:47 PM] [General] [Info] Using flutter debugger for Flutter
+[1:24:47 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[1:24:47 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[1:24:48 PM] [General] [Info] Did not find session f2ffe2ec-1131-425c-9a09-0623f1b6c133 to handle dart.progressStart. There were 0 sessions:
+[1:24:48 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[1:24:48 PM] [General] [Info] Processing delayed event dart.progressStart for session f2ffe2ec-1131-425c-9a09-0623f1b6c133
+[1:25:57 PM] [General] [Info] Exposing URL: ws://127.0.0.1:51536/2cFaQXarfb0%3D/ws
+[1:25:57 PM] [General] [Info] Mapping URI: http://127.0.0.1:51536/2cFaQXarfb0%3D/ws
+[1:25:58 PM] [General] [Info] Mapped URI: http://127.0.0.1:51536/2cFaQXarfb0%3D/ws
+[1:25:58 PM] [General] [Info] Mapped URL: http://127.0.0.1:51536/2cFaQXarfb0%3D/ws
+[1:25:58 PM] [General] [Info] Final URL: ws://127.0.0.1:51536/2cFaQXarfb0=/ws
+[2:12:49 PM] [General] [Info] Starting debug session...
+[2:12:49 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:12:49 PM] [General] [Info]     program  : lib/main.dart
+[2:12:49 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:12:49 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:12:49 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:12:49 PM] [General] [Info] Detected launch project as Flutter
+[2:12:49 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:12:49 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:12:49 PM] [General] [Info] Checking for errors before launching
+[2:12:49 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-b91cd",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:12:49 PM] [General] [Info] Using flutter debugger for Flutter
+[2:12:49 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:12:49 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:12:50 PM] [General] [Info] Did not find session d57c2783-4347-455d-aaea-8a0e6dc613fc to handle dart.progressStart. There were 0 sessions:
+[2:12:50 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:12:50 PM] [General] [Info] Processing delayed event dart.progressStart for session d57c2783-4347-455d-aaea-8a0e6dc613fc
+[2:13:52 PM] [General] [Info] Exposing URL: ws://127.0.0.1:53885/KDR-xXWFXho%3D/ws
+[2:13:52 PM] [General] [Info] Mapping URI: http://127.0.0.1:53885/KDR-xXWFXho%3D/ws
+[2:13:52 PM] [General] [Info] Mapped URI: http://127.0.0.1:53885/KDR-xXWFXho%3D/ws
+[2:13:52 PM] [General] [Info] Mapped URL: http://127.0.0.1:53885/KDR-xXWFXho%3D/ws
+[2:13:52 PM] [General] [Info] Final URL: ws://127.0.0.1:53885/KDR-xXWFXho=/ws
+[2:21:32 PM] [General] [Info] Starting debug session...
+[2:21:32 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:21:32 PM] [General] [Info]     program  : lib/main.dart
+[2:21:32 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:21:32 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:21:32 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:21:32 PM] [General] [Info] Detected launch project as Flutter
+[2:21:32 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:21:32 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:21:32 PM] [General] [Info] Checking for errors before launching
+[2:21:32 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-eaa23",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:21:32 PM] [General] [Info] Using flutter debugger for Flutter
+[2:21:32 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:21:32 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:21:33 PM] [General] [Info] Did not find session f9b082e4-76c2-4871-8457-d4c8f8de35e0 to handle dart.progressStart. There were 0 sessions:
+[2:21:33 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:21:33 PM] [General] [Info] Processing delayed event dart.progressStart for session f9b082e4-76c2-4871-8457-d4c8f8de35e0
+[2:22:47 PM] [General] [Info] Exposing URL: ws://127.0.0.1:54773/e-zmhMxLolg%3D/ws
+[2:22:47 PM] [General] [Info] Mapping URI: http://127.0.0.1:54773/e-zmhMxLolg%3D/ws
+[2:22:47 PM] [General] [Info] Mapped URI: http://127.0.0.1:54773/e-zmhMxLolg%3D/ws
+[2:22:47 PM] [General] [Info] Mapped URL: http://127.0.0.1:54773/e-zmhMxLolg%3D/ws
+[2:22:47 PM] [General] [Info] Final URL: ws://127.0.0.1:54773/e-zmhMxLolg=/ws
+[2:25:32 PM] [General] [Info] Starting debug session...
+[2:25:32 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:25:32 PM] [General] [Info]     program  : lib/main.dart
+[2:25:32 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:25:32 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:25:32 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:25:32 PM] [General] [Info] Detected launch project as Flutter
+[2:25:32 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:25:32 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:25:32 PM] [General] [Info] Checking for errors before launching
+[2:25:32 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-1d6a0",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:25:32 PM] [General] [Info] Using flutter debugger for Flutter
+[2:25:32 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:25:32 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:25:32 PM] [General] [Info] Did not find session c105f593-78df-49d0-a155-4a3813c062be to handle dart.progressStart. There were 0 sessions:
+[2:25:32 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:25:32 PM] [General] [Info] Processing delayed event dart.progressStart for session c105f593-78df-49d0-a155-4a3813c062be
+[2:26:39 PM] [General] [Info] Exposing URL: ws://127.0.0.1:55257/ikYq1d7JtZo%3D/ws
+[2:26:39 PM] [General] [Info] Mapping URI: http://127.0.0.1:55257/ikYq1d7JtZo%3D/ws
+[2:26:39 PM] [General] [Info] Mapped URI: http://127.0.0.1:55257/ikYq1d7JtZo%3D/ws
+[2:26:39 PM] [General] [Info] Mapped URL: http://127.0.0.1:55257/ikYq1d7JtZo%3D/ws
+[2:26:39 PM] [General] [Info] Final URL: ws://127.0.0.1:55257/ikYq1d7JtZo=/ws
+[2:31:04 PM] [General] [Info] Starting debug session...
+[2:31:04 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:31:04 PM] [General] [Info]     program  : lib/main.dart
+[2:31:04 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:31:04 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:31:04 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:31:04 PM] [General] [Info] Detected launch project as Flutter
+[2:31:04 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:31:04 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:31:04 PM] [General] [Info] Checking for errors before launching
+[2:31:04 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-94a5b",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:31:04 PM] [General] [Info] Using flutter debugger for Flutter
+[2:31:04 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:31:04 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:31:04 PM] [General] [Info] Did not find session f1d02eda-4985-4d42-b044-d985fcb7d84b to handle dart.progressStart. There were 0 sessions:
+[2:31:04 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:31:04 PM] [General] [Info] Processing delayed event dart.progressStart for session f1d02eda-4985-4d42-b044-d985fcb7d84b
+[2:32:05 PM] [General] [Info] Exposing URL: ws://127.0.0.1:55623/WGwcHifUUok%3D/ws
+[2:32:05 PM] [General] [Info] Mapping URI: http://127.0.0.1:55623/WGwcHifUUok%3D/ws
+[2:32:06 PM] [General] [Info] Mapped URI: http://127.0.0.1:55623/WGwcHifUUok%3D/ws
+[2:32:06 PM] [General] [Info] Mapped URL: http://127.0.0.1:55623/WGwcHifUUok%3D/ws
+[2:32:06 PM] [General] [Info] Final URL: ws://127.0.0.1:55623/WGwcHifUUok=/ws
+[2:34:11 PM] [General] [Info] Starting debug session...
+[2:34:11 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:34:11 PM] [General] [Info]     program  : lib/main.dart
+[2:34:11 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:34:11 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:34:11 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:34:11 PM] [General] [Info] Detected launch project as Flutter
+[2:34:11 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:34:11 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:34:11 PM] [General] [Info] Checking for errors before launching
+[2:34:11 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-99a76",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:34:11 PM] [General] [Info] Using flutter debugger for Flutter
+[2:34:11 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:34:11 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:34:12 PM] [General] [Info] Did not find session 68e106b4-959f-4a1f-8e13-763745dad63b to handle dart.progressStart. There were 0 sessions:
+[2:34:12 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:34:12 PM] [General] [Info] Processing delayed event dart.progressStart for session 68e106b4-959f-4a1f-8e13-763745dad63b
+[2:35:14 PM] [General] [Info] Exposing URL: ws://127.0.0.1:56040/dKXuPyL_dqo%3D/ws
+[2:35:14 PM] [General] [Info] Mapping URI: http://127.0.0.1:56040/dKXuPyL_dqo%3D/ws
+[2:35:14 PM] [General] [Info] Mapped URI: http://127.0.0.1:56040/dKXuPyL_dqo%3D/ws
+[2:35:14 PM] [General] [Info] Mapped URL: http://127.0.0.1:56040/dKXuPyL_dqo%3D/ws
+[2:35:14 PM] [General] [Info] Final URL: ws://127.0.0.1:56040/dKXuPyL_dqo=/ws
+[2:36:58 PM] [General] [Info] Starting debug session...
+[2:36:58 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:36:58 PM] [General] [Info]     program  : lib/main.dart
+[2:36:58 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:36:58 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:36:58 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:36:58 PM] [General] [Info] Detected launch project as Flutter
+[2:36:58 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:36:58 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:36:58 PM] [General] [Info] Checking for errors before launching
+[2:36:58 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-fe969",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:36:58 PM] [General] [Info] Using flutter debugger for Flutter
+[2:36:58 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:36:58 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:36:59 PM] [General] [Info] Did not find session df9276b4-9c01-49b7-a213-4eb9a499e566 to handle dart.progressStart. There were 0 sessions:
+[2:36:59 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:36:59 PM] [General] [Info] Processing delayed event dart.progressStart for session df9276b4-9c01-49b7-a213-4eb9a499e566
+[2:38:01 PM] [General] [Info] Exposing URL: ws://127.0.0.1:56227/agVm2HkzWMc%3D/ws
+[2:38:01 PM] [General] [Info] Mapping URI: http://127.0.0.1:56227/agVm2HkzWMc%3D/ws
+[2:38:01 PM] [General] [Info] Mapped URI: http://127.0.0.1:56227/agVm2HkzWMc%3D/ws
+[2:38:01 PM] [General] [Info] Mapped URL: http://127.0.0.1:56227/agVm2HkzWMc%3D/ws
+[2:38:01 PM] [General] [Info] Final URL: ws://127.0.0.1:56227/agVm2HkzWMc=/ws
+[2:39:46 PM] [General] [Info] Starting debug session...
+[2:39:46 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:39:46 PM] [General] [Info]     program  : lib/main.dart
+[2:39:46 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:39:46 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:39:46 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:39:46 PM] [General] [Info] Detected launch project as Flutter
+[2:39:46 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:39:46 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:39:46 PM] [General] [Info] Checking for errors before launching
+[2:39:46 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-8fe82",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:39:46 PM] [General] [Info] Using flutter debugger for Flutter
+[2:39:46 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:39:46 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:39:47 PM] [General] [Info] Did not find session e21db0be-a3c7-4286-a2ce-c35d123deb5b to handle dart.progressStart. There were 0 sessions:
+[2:39:47 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:39:47 PM] [General] [Info] Processing delayed event dart.progressStart for session e21db0be-a3c7-4286-a2ce-c35d123deb5b
+[2:40:49 PM] [General] [Info] Exposing URL: ws://127.0.0.1:56446/h52WM04u9v8%3D/ws
+[2:40:49 PM] [General] [Info] Mapping URI: http://127.0.0.1:56446/h52WM04u9v8%3D/ws
+[2:40:50 PM] [General] [Info] Mapped URI: http://127.0.0.1:56446/h52WM04u9v8%3D/ws
+[2:40:50 PM] [General] [Info] Mapped URL: http://127.0.0.1:56446/h52WM04u9v8%3D/ws
+[2:40:50 PM] [General] [Info] Final URL: ws://127.0.0.1:56446/h52WM04u9v8=/ws
+[2:43:16 PM] [General] [Info] Starting debug session...
+[2:43:16 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:43:16 PM] [General] [Info]     program  : lib/main.dart
+[2:43:16 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:43:16 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:43:16 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:43:16 PM] [General] [Info] Detected launch project as Flutter
+[2:43:16 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:43:16 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:43:16 PM] [General] [Info] Checking for errors before launching
+[2:43:16 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-82d81",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:43:16 PM] [General] [Info] Using flutter debugger for Flutter
+[2:43:16 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:43:16 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:43:17 PM] [General] [Info] Did not find session 10b478b8-55f2-4e6f-9001-ab653d5acad6 to handle dart.progressStart. There were 0 sessions:
+[2:43:17 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:43:17 PM] [General] [Info] Processing delayed event dart.progressStart for session 10b478b8-55f2-4e6f-9001-ab653d5acad6
+[2:44:20 PM] [General] [Info] Exposing URL: ws://127.0.0.1:56852/vj7D5fcAvOc%3D/ws
+[2:44:20 PM] [General] [Info] Mapping URI: http://127.0.0.1:56852/vj7D5fcAvOc%3D/ws
+[2:44:20 PM] [General] [Info] Mapped URI: http://127.0.0.1:56852/vj7D5fcAvOc%3D/ws
+[2:44:20 PM] [General] [Info] Mapped URL: http://127.0.0.1:56852/vj7D5fcAvOc%3D/ws
+[2:44:20 PM] [General] [Info] Final URL: ws://127.0.0.1:56852/vj7D5fcAvOc=/ws
+[2:49:26 PM] [General] [Info] Starting debug session...
+[2:49:26 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:49:26 PM] [General] [Info]     program  : lib/main.dart
+[2:49:26 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:49:26 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:49:26 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:49:26 PM] [General] [Info] Detected launch project as Flutter
+[2:49:26 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:49:26 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:49:26 PM] [General] [Info] Checking for errors before launching
+[2:49:26 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-79825",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:49:26 PM] [General] [Info] Using flutter debugger for Flutter
+[2:49:26 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:49:26 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:49:27 PM] [General] [Info] Did not find session a58ceb2e-646a-4ae6-8e55-5332e89a2ec2 to handle dart.progressStart. There were 0 sessions:
+[2:49:27 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:49:27 PM] [General] [Info] Processing delayed event dart.progressStart for session a58ceb2e-646a-4ae6-8e55-5332e89a2ec2
+[2:50:28 PM] [General] [Info] Exposing URL: ws://127.0.0.1:57139/b6Ifx2pC5Ao%3D/ws
+[2:50:28 PM] [General] [Info] Mapping URI: http://127.0.0.1:57139/b6Ifx2pC5Ao%3D/ws
+[2:50:29 PM] [General] [Info] Mapped URI: http://127.0.0.1:57139/b6Ifx2pC5Ao%3D/ws
+[2:50:29 PM] [General] [Info] Mapped URL: http://127.0.0.1:57139/b6Ifx2pC5Ao%3D/ws
+[2:50:29 PM] [General] [Info] Final URL: ws://127.0.0.1:57139/b6Ifx2pC5Ao=/ws
+[2:54:58 PM] [General] [Info] Starting debug session...
+[2:54:58 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:54:58 PM] [General] [Info]     program  : lib/main.dart
+[2:54:58 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:54:58 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:54:58 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:54:58 PM] [General] [Info] Detected launch project as Flutter
+[2:54:58 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:54:58 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:54:58 PM] [General] [Info] Checking for errors before launching
+[2:54:58 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-bccc3",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:54:58 PM] [General] [Info] Using flutter debugger for Flutter
+[2:54:58 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:54:58 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:54:59 PM] [General] [Info] Did not find session d7be425b-a74b-4890-9d86-b82f5c6ad187 to handle dart.progressStart. There were 0 sessions:
+[2:54:59 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:54:59 PM] [General] [Info] Processing delayed event dart.progressStart for session d7be425b-a74b-4890-9d86-b82f5c6ad187
+[2:56:05 PM] [General] [Info] Exposing URL: ws://127.0.0.1:57419/VJtwqDuI0bk%3D/ws
+[2:56:05 PM] [General] [Info] Mapping URI: http://127.0.0.1:57419/VJtwqDuI0bk%3D/ws
+[2:56:05 PM] [General] [Info] Mapped URI: http://127.0.0.1:57419/VJtwqDuI0bk%3D/ws
+[2:56:05 PM] [General] [Info] Mapped URL: http://127.0.0.1:57419/VJtwqDuI0bk%3D/ws
+[2:56:05 PM] [General] [Info] Final URL: ws://127.0.0.1:57419/VJtwqDuI0bk=/ws
+[2:57:33 PM] [General] [Info] Starting debug session...
+[2:57:33 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:57:33 PM] [General] [Info]     program  : lib/main.dart
+[2:57:33 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:57:33 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[2:57:33 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[2:57:33 PM] [General] [Info] Detected launch project as Flutter
+[2:57:33 PM] [General] [Info] Using Flutter debug adapter for this session
+[2:57:33 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[2:57:33 PM] [General] [Info] Checking for errors before launching
+[2:57:33 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-317fe",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[2:57:33 PM] [General] [Info] Using flutter debugger for Flutter
+[2:57:33 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[2:57:33 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[2:57:34 PM] [General] [Info] Did not find session d2c71fea-d8f2-45b5-840b-751b2c534990 to handle dart.progressStart. There were 0 sessions:
+[2:57:34 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[2:57:34 PM] [General] [Info] Processing delayed event dart.progressStart for session d2c71fea-d8f2-45b5-840b-751b2c534990
+[2:58:40 PM] [General] [Info] Exposing URL: ws://127.0.0.1:57603/NLaBu4COUoA%3D/ws
+[2:58:40 PM] [General] [Info] Mapping URI: http://127.0.0.1:57603/NLaBu4COUoA%3D/ws
+[2:58:40 PM] [General] [Info] Mapped URI: http://127.0.0.1:57603/NLaBu4COUoA%3D/ws
+[2:58:40 PM] [General] [Info] Mapped URL: http://127.0.0.1:57603/NLaBu4COUoA%3D/ws
+[2:58:40 PM] [General] [Info] Final URL: ws://127.0.0.1:57603/NLaBu4COUoA=/ws
+[3:02:09 PM] [General] [Info] Starting debug session...
+[3:02:09 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[3:02:09 PM] [General] [Info]     program  : lib/main.dart
+[3:02:09 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[3:02:09 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[3:02:09 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[3:02:09 PM] [General] [Info] Detected launch project as Flutter
+[3:02:09 PM] [General] [Info] Using Flutter debug adapter for this session
+[3:02:09 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[3:02:09 PM] [General] [Info] Checking for errors before launching
+[3:02:09 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-e2ec6",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[3:02:09 PM] [General] [Info] Using flutter debugger for Flutter
+[3:02:09 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[3:02:09 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[3:02:09 PM] [General] [Info] Did not find session 4eb6eac9-724a-4d5c-844b-a181cc5b0dfe to handle dart.progressStart. There were 0 sessions:
+[3:02:09 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[3:02:09 PM] [General] [Info] Processing delayed event dart.progressStart for session 4eb6eac9-724a-4d5c-844b-a181cc5b0dfe
+[3:03:12 PM] [General] [Info] Exposing URL: ws://127.0.0.1:58213/ZF1yphAnKdk%3D/ws
+[3:03:12 PM] [General] [Info] Mapping URI: http://127.0.0.1:58213/ZF1yphAnKdk%3D/ws
+[3:03:12 PM] [General] [Info] Mapped URI: http://127.0.0.1:58213/ZF1yphAnKdk%3D/ws
+[3:03:12 PM] [General] [Info] Mapped URL: http://127.0.0.1:58213/ZF1yphAnKdk%3D/ws
+[3:03:12 PM] [General] [Info] Final URL: ws://127.0.0.1:58213/ZF1yphAnKdk=/ws
+[3:05:43 PM] [General] [Info] Starting debug session...
+[3:05:43 PM] [General] [Info]     workspace: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[3:05:43 PM] [General] [Info]     program  : lib/main.dart
+[3:05:43 PM] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[3:05:43 PM] [General] [Info] Converted program to absolute path: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR\lib\main.dart
+[3:05:43 PM] [General] [Info] Using workspace as cwd: C:\Users\Gabriel\Desktop\OLIMTEC_PARTE_3_ROCHAR
+[3:05:43 PM] [General] [Info] Detected launch project as Flutter
+[3:05:43 PM] [General] [Info] Using Flutter debug adapter for this session
+[3:05:43 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[3:05:43 PM] [General] [Info] Checking for errors before launching
+[3:05:43 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-a0bac",
+        "cwd": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Gabriel\\Desktop\\OLIMTEC_PARTE_3_ROCHAR\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[3:05:43 PM] [General] [Info] Using flutter debugger for Flutter
+[3:05:43 PM] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[3:05:43 PM] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[3:05:44 PM] [General] [Info] Did not find session e3e27cd9-4281-4fbc-a2d1-e5a07a533f9f to handle dart.progressStart. There were 0 sessions:
+[3:05:44 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[3:05:44 PM] [General] [Info] Processing delayed event dart.progressStart for session e3e27cd9-4281-4fbc-a2d1-e5a07a533f9f
+[3:06:47 PM] [General] [Info] Exposing URL: ws://127.0.0.1:58658/cxWm5h1MFbQ%3D/ws
+[3:06:47 PM] [General] [Info] Mapping URI: http://127.0.0.1:58658/cxWm5h1MFbQ%3D/ws
+[3:06:47 PM] [General] [Info] Mapped URI: http://127.0.0.1:58658/cxWm5h1MFbQ%3D/ws
+[3:06:47 PM] [General] [Info] Mapped URL: http://127.0.0.1:58658/cxWm5h1MFbQ%3D/ws
+[3:06:47 PM] [General] [Info] Final URL: ws://127.0.0.1:58658/cxWm5h1MFbQ=/ws

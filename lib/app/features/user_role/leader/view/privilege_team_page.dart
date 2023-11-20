@@ -2,57 +2,17 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-class PrivilegeOrganization extends StatefulWidget {
-  const PrivilegeOrganization({super.key});
+class PrivilegeTeamAdmin extends StatefulWidget {
+  const PrivilegeTeamAdmin({super.key});
 
-  static String route = "/privilegeorganization-admin";
+  static String route = "/privilegesteampage-admin";
 
   @override
-  State<PrivilegeOrganization> createState() => _PrivilegeOrganizationState();
+  State<PrivilegeTeamAdmin> createState() => _PrivilegeTeamAdminState();
 }
 
-class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
-  _ModalityCard() {
-    final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-
-    return AspectRatio(
-      aspectRatio: 4.5,
-      child: Container(
-        decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            color: Theme.of(context).colorScheme.primaryContainer),
-        child: FittedBox(
-          alignment: Alignment.centerLeft,
-          child: Container(
-            width: sizeWidth,
-            child: ListTile(
-              leading: Icon(
-                Icons.sports_basketball,
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-                size: sizeWidth / 9,
-              ),
-              title: FittedBox(
-                alignment: Alignment.centerLeft,
-                fit: BoxFit.scaleDown,
-                child: Text(
-                  "BASQUETE MASCULINO",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                    fontSize: 24,
-                  ),
-                ),
-              ),
-              trailing: Icon(
-                Icons.remove,
-                color: Theme.of(context).colorScheme.error,
-              ),
-            ),
-          ),
-        ),
-      ),
-    );
-  }
+class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
+ 
 
   _CardJogador2() {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
@@ -106,7 +66,7 @@ class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "ORGANIZADORES - 2ºDSB",
+          "REPRESENTANTES - 2ºDSB",
           style: TextStyle(
             fontFamily: 'Lato',
             fontSize: 24,
@@ -164,63 +124,10 @@ class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
                                   .onPrimaryContainer,
                             ),
                           ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Column(
-                                children: [
-                                  Container(
-                                    width: sizeWidth / 1.5,
-                                    child: const FittedBox(
-                                      child: Text(
-                                        "RESPONSÁVEIS PELAS ",
-                                        style: TextStyle(
-                                            fontFamily: 'Lato',
-                                            fontSize: 22,
-                                            fontWeight: FontWeight.bold),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    width: sizeWidth / 1.9,
-                                    child: FittedBox(
-                                      child: Text(
-                                        "MODALIDADES",
-                                        style: TextStyle(
-                                          fontFamily: 'Lato',
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                          fontSize: 22,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
                         ],
                       ),
                     ],
                   ),
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Container(
-                      width: sizeWidth / 1.2,
-                      height: sizeHeight * 0.45,
-                      child: ListView(
-                        children: [
-                          _ModalityCard(),
-                          Padding(padding: EdgeInsets.all(8)),
-                          _ModalityCard(),
-                        ],
-                      ),
-                    ),
-                  ],
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

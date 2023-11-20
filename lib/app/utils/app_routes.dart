@@ -49,4 +49,7 @@ class AppRoute {
   static const GAMESCORE_ORGANIZATION = '/gamescore-organization';
   static const SCOREBOARDWITHOUTPOINTS_ORGANIZATION =
       '/scoreboardwithoutpoints-organization';
+  static const LEADERTEAMSPRIVILEGES_ADMIN = '/leader-teams-privileges-admin';
+  static const ORGANIZATIONTEAMSPRIVILEGES_ADMIN = '/organization-teams-privileges-admin';
+      
 }

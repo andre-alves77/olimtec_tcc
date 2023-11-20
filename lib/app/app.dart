@@ -17,12 +17,14 @@ import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_games.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_team_view.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/regulation_page.dart';
+import 'package:olimtec_tcc/app/features/user_role/leader/view/leader_teams_privileges.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
+import 'package:olimtec_tcc/app/features/user_role/organization/view/organization_teams_privileges%20copy.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_organization.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organization_addmodality.dart';
-import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_team_page.dart';
+import 'package:olimtec_tcc/app/features/user_role/leader/view/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
-import 'package:olimtec_tcc/app/ui/admin/privileges/privilge_organization_page.dart';
+import 'package:olimtec_tcc/app/features/user_role/organization/view/privilge_organization_page.dart';
 import 'package:olimtec_tcc/app/ui/champioship_page.dart';
 import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
@@ -129,7 +131,10 @@ class App extends ConsumerWidget {
         MainModalitiesOrganization.route: (ctx) => MainModalitiesOrganization(),
         GameScore.route: (ctx) => GameScore(),
         ScoreBoardWithoutPoints.route: (ctx) => ScoreBoardWithoutPoints(),
+        LeaderTeamsPrivilegesAdmin.route: (ctx) => LeaderTeamsPrivilegesAdmin(),
+        OrganizationTeamsPrivilegesAdmin.route: (ctx) => OrganizationTeamsPrivilegesAdmin(),
       },
+        
       home: const LandingPage(),
     );
   }
