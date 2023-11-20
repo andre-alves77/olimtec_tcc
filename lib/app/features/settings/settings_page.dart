@@ -1,21 +1,48 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
+import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
+import 'package:olimtec_tcc/app/ui/team/main_team.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class SettingsPage extends ConsumerWidget {
-  const SettingsPage({super.key});
+   SettingsPage({super.key});
 
   static String route = "/settings-user";
-
+List<Widget> _userrole(AppUser user, BuildContext context){
+List<Widget> _list= [];
+if(user.isOrganization){
+_list.add(const Divider());
+_list.add(              _listTile(
+                  context: context,
+                  title: 'Organização',
+                  icon: Icons.people_alt,
+                  function: () {
+                    Navigator.pushNamed(context, MainOrgnization.route);
+                  }),);
+}
+if(user.isLeader){
+_list.add(const Divider());
+_list.add(              _listTile(
+                  context: context,
+                  title: 'Representante',
+                  icon: Icons.people_alt,
+                  function: () {
+                    Navigator.pushNamed(context, MainTeam.route);
+                  }),);
+}
+return _list;
+}
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final themeStore = ref.read(themeProvider.notifier);
     final auth = ref.read(authRepositoryProvider);
+    final appuser = ref.read(appUserProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -102,6 +129,7 @@ class SettingsPage extends ConsumerWidget {
                 iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
                 textColor: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
+              ..._userrole(appuser!, context),
               const Divider(),
               _listTile(
                   context: context,

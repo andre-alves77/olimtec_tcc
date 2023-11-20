@@ -25,10 +25,10 @@ class IndexHomeUser extends ConsumerWidget {
       body: SafeArea(
         child: IndexedStack(
           index: bottomBarStore,
-          children: const [
-            HomeUser(),
-            ModalitiesUser(),
-            AoVivoUser(),
+          children: [
+            const HomeUser(),
+            const ModalitiesUser(),
+            const AoVivoUser(),
             SettingsPage(),
           ],
         ),
