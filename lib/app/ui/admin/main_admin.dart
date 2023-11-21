@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
-import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
-class MainAdmin extends StatefulWidget {
+
+class MainAdmin extends ConsumerWidget {
   const MainAdmin({super.key});
 
   static String route = "/main-admin";
 
   @override
-  State<MainAdmin> createState() => _MainAdminState();
-}
-
-class _MainAdminState extends State<MainAdmin> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -80,8 +77,8 @@ class _MainAdminState extends State<MainAdmin> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
         onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
-        },
+          ref.read(authRepositoryProvider).signOut();
+                  },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

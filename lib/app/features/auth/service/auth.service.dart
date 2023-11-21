@@ -35,12 +35,14 @@ final isLoggedProvider = StateProvider<bool>((ref) {
       }
       debugPrint("não logado");
       final context = ref.read(navigtorkeyProvider).currentContext;
-      Navigator.pushReplacementNamed(context!, AppRoute.LANDING);
+          ref.read(formUserSignInProvider.notifier).turnOffLoading();
 
+      Navigator.pushReplacementNamed(context!, AppRoute.LANDING);
       return false;
     },
     error: (error, stackTrace) {
-      ref.read(formUserSignInProvider).isLoading = false;
+          ref.read(formUserSignInProvider.notifier).turnOffLoading();
+
       debugPrint("erro no login");
 
       return false;
@@ -49,8 +51,8 @@ final isLoggedProvider = StateProvider<bool>((ref) {
 });
 
 final appUserProvider = StateProvider<AppUser?>((ref) {
-  ref.watch(appUserStream).whenOrNull(data: (appuser){
-    ref.read(formUserSignInProvider.notifier).isLoading = false;
+  ref.watch(appUserStream).maybeWhen(data: (appuser){
+    ref.read(formUserSignInProvider.notifier).turnOffLoading();
     
       final context = ref.read(navigtorkeyProvider).currentContext;
 
@@ -65,9 +67,13 @@ CustomSnackBar(message: "Admin", ref: ref);
     return appuser;
   },
    error: (e, s){
+    ref.read(formUserSignInProvider.notifier).turnOffLoading();
 CustomSnackBar(message: "Um erro aconteceu. Tente novamente", ref: ref);
   }, 
   loading: (){},
+orElse: (){
+  ref.read(formUserSignInProvider.notifier).turnOffLoading();
+}
 
   );
   return null;

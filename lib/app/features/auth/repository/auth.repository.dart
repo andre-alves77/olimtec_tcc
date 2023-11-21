@@ -87,9 +87,10 @@ users[x.id] = x.data();
 }
 users.forEach((key, value){
 ref.read(appUserProvider.notifier).state = AppUser.fromMap(value);
-        
+
 
 });
+
 notifyListeners();
       
 
@@ -97,7 +98,7 @@ CustomSnackBar(message: 'Login efetuado', ref: ref);
 
       return result.user;
     } on FirebaseAuthException catch (e) {
-      ref.read(formUserSignInProvider.notifier).isLoading = false;
+          ref.read(formUserSignInProvider.notifier).turnOffLoading();
       if (e.code == 'user-not-found') {
         throw AuthException.snackbar('Senha e/ou email incorretos.', ref);
       } else if (e.code == 'invalid-login-credentials') {
@@ -141,9 +142,10 @@ users[x.id] = x.data();
 users.forEach((key, value){
 ref.read(appUserProvider.notifier).state = AppUser.fromMap(value);
 });
-
+notifyListeners();
 
 }on FirebaseAuthException catch (e){
+    ref.read(formUserSignInProvider.notifier).turnOffLoading();
   throw AuthException.snackbar(e.message.toString(), ref);
 }
 return null;
