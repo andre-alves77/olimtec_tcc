@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
@@ -11,6 +12,7 @@ class OrganizationTeamsPrivilegesAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final teamRef = FirebaseFirestore.instance.collection('team');
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     return Scaffold(
       appBar: AppBar(
@@ -31,33 +33,38 @@ class OrganizationTeamsPrivilegesAdmin extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                ListView(
-                  padding: EdgeInsets.zero,
-                  shrinkWrap: true,
-                  scrollDirection: Axis.vertical,
-                  children: [
-                    Column(
-                      children: [
-                        CardItem(
-                            "2ºDSB",
-                            AppRoute.PRIVILEGEORGANIZATION_ADMIN,
-                            Theme.of(context).colorScheme.primaryContainer,
-                            "assets/images/LOGO_2DSB_EXAMPLE.png"),
-                        Padding(padding: EdgeInsetsDirectional.all(8)),
-                        CardItem(
-                            "3ºEAA",
-                            AppRoute.PRIVILEGEORGANIZATION_ADMIN,
-                            Theme.of(context).colorScheme.primaryContainer,
-                            "assets/images/LOGO_3EAA_EXAMPLE.png"),
-                        Padding(padding: EdgeInsetsDirectional.all(8)),
-                        CardItem(
-                            "1ºEAB",
-                            AppRoute.PRIVILEGEORGANIZATION_ADMIN,
-                            Theme.of(context).colorScheme.primaryContainer,
-                            "assets/images/LOGO_1EAA_EXAMPLE.png"),
-                      ],
-                    )
-                  ],
+                StreamBuilder<QuerySnapshot>(
+                  stream: teamRef.snapshots(),
+                  builder: (context, snapshot) {
+                    if (!snapshot.hasData) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    } else {
+                      return ListView(
+                        padding: EdgeInsets.zero,
+                        shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
+                        children: snapshot.data!.docs
+                            .map((DocumentSnapshot document) {
+                          Map<String, dynamic> data =
+                              document.data() as Map<String, dynamic>;
+                          return Column(
+                            children: [
+                              CardItem(
+                                  data['name'],
+                                  AppRoute.PRIVILEGESTEAMPAGE_ADMIN,
+                                  Theme.of(context)
+                                      .colorScheme
+                                      .primaryContainer,
+                                  data['image']),
+                              Padding(padding: EdgeInsetsDirectional.all(8)),
+                            ],
+                          );
+                        }).toList(),
+                      );
+                    }
+                  },
                 )
               ],
             ),
