@@ -1,4 +1,4 @@
-import 'dart:html';
+
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -17,7 +17,7 @@ class ChampioshipPageAdmin extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'CAMPEONATO',
           style: TextStyle(
             fontFamily: 'Lato',
@@ -51,8 +51,8 @@ class ChampioshipPageAdmin extends StatelessWidget {
                     icone: Icons.shield_sharp, text1: 'ADICIONAR TIMES'),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'AO CLICAR NO BOTÃO ABAIXO O CAMPEONATO\nDE TODAS AS MODALIDADES SERÁ INICIADO',
                 textAlign: TextAlign.justify,
@@ -65,7 +65,7 @@ class ChampioshipPageAdmin extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
+              padding: const EdgeInsetsDirectional.fromSTEB(0, 24, 0, 0),
               child: SizedBox(
                 width: sizeWidth / 1.3,
                 height: 65,

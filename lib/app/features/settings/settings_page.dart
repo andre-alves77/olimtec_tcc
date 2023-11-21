@@ -13,8 +13,10 @@ class SettingsPage extends ConsumerWidget {
    SettingsPage({super.key});
 
   static String route = "/settings-user";
-List<Widget> _userrole(AppUser user, BuildContext context){
+List<Widget> _userrole(AppUser? user, BuildContext context){
 List<Widget> _list= [];
+if(user != null){
+
 if(user.isOrganization){
 _list.add(const Divider());
 _list.add(              _listTile(
@@ -35,6 +37,7 @@ _list.add(              _listTile(
                     Navigator.pushNamed(context, MainTeam.route);
                   }),);
 }
+}
 return _list;
 }
   @override
@@ -42,7 +45,7 @@ return _list;
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final themeStore = ref.read(themeProvider.notifier);
     final auth = ref.read(authRepositoryProvider);
-    final appuser = ref.read(appUserProvider);
+    final appuser = ref.watch(appUserProvider);
 
     return Scaffold(
       appBar: AppBar(
@@ -129,7 +132,7 @@ return _list;
                 iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
                 textColor: Theme.of(context).colorScheme.onPrimaryContainer,
               ),
-              ..._userrole(appuser!, context),
+              ..._userrole(appuser, context),
               const Divider(),
               _listTile(
                   context: context,

@@ -1,6 +1,9 @@
 import 'dart:convert';
 import 'dart:html';
 
+
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz_unsafe.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +12,7 @@ import 'package:olimtec_tcc/app/core/providers/firebase.provider.dart';
 import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
+import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 
@@ -20,6 +24,51 @@ class AuthRepository extends ChangeNotifier {
   static AppUser? user;
 
   Stream<User?> get authStateChange => auth.authStateChanges();
+  
+
+Stream<AppUser> streamUserdata() async*{
+
+if(auth.currentUser != null) {
+// ignore: unused_local_variable
+dynamic documentId;
+var value = await FirebaseFirestore.instance.collection('users').where("id", isEqualTo: auth.currentUser!.uid);
+
+yield* value.snapshots().map((snap) {
+if(snap.docChanges.isNotEmpty){
+var y = snap.docs.first.data();
+return AppUser.fromMap(y);
+}else{
+  throw CustomSnackBar(ref: ref, message: 'Um erro aconteceu. Tente novamente.');
+}
+});
+
+
+
+
+}
+
+}
+
+
+  getUserdata() async {
+
+  final firebasestore = ref.read(firebaseFirestoreProvider);
+
+  final userMap = await firebasestore.collection('users').where("id", isEqualTo: auth.currentUser!.uid).get();
+
+Map users = {};
+AppUser? usertmp;
+
+for(var x in userMap.docs){
+users[x.id] = x.data();
+}
+users.forEach((key, value){
+usertmp = AppUser.fromMap(value);
+
+});
+
+ ref.read(appUserProvider.notifier).state = usertmp;
+  }
 
   Future<User?> signInWithEmailAndPassword(
       String email, String password) async {
@@ -48,6 +97,7 @@ CustomSnackBar(message: 'Login efetuado', ref: ref);
 
       return result.user;
     } on FirebaseAuthException catch (e) {
+      ref.read(formUserSignInProvider.notifier).isLoading = false;
       if (e.code == 'user-not-found') {
         throw AuthException.snackbar('Senha e/ou email incorretos.', ref);
       } else if (e.code == 'invalid-login-credentials') {

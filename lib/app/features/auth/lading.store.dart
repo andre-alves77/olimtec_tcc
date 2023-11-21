@@ -49,6 +49,9 @@ class FormSignInStore extends ChangeNotifier {
       //login
 
       ref.read(authRepositoryProvider).signInWithEmailAndPassword(mail, pass);
+      isLoading = true;
+      notifyListeners();
+      
     }
   }
 
@@ -97,6 +100,8 @@ class FormSignInStore extends ChangeNotifier {
         password2Error.isEmpty) {
       //signup
       ref.read(authRepositoryProvider).createUser(email, password, name);
+      isLoading = true;
+      
     }
 
     CustomSnackBar(
