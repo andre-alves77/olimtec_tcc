@@ -10,8 +10,7 @@
 			 "Dart-Code.flutter"
 		  ]
 	   }
-	},
-	"postCreateCommand": "flutter doctor --android-licenses && flutter config --android-sdk /usr/lib/android-sdk"
+	}
   }
 
   

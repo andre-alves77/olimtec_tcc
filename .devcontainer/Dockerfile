@@ -6,9 +6,6 @@ RUN apt-get autoremove -y \
    && apt-get clean -y \
    && rm -rf /var/lib/apt/lists/*
 
-# Install Android SDK
-RUN apt-get install -y android-sdk
-
 RUN mkdir /home/codespace
 WORKDIR /home/codespace
 
