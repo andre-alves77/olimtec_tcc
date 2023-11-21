@@ -32,6 +32,11 @@ class FormSignInStore extends ChangeNotifier {
   final formAuthKeySignUp = GlobalKey<FormState>();
   bool isLoading = false;
 
+  turnOffLoading(){
+    isLoading = false;
+    notifyListeners();
+      }
+
   FormSignInStore(this.ref);
 
   submitIn() {
@@ -48,8 +53,8 @@ class FormSignInStore extends ChangeNotifier {
     if (passError.isEmpty && mailError.isEmpty) {
       //login
 
-      ref.read(authRepositoryProvider).signInWithEmailAndPassword(mail, pass);
       isLoading = true;
+      ref.read(authRepositoryProvider).signInWithEmailAndPassword(mail, pass);
       notifyListeners();
       
     }
@@ -99,8 +104,8 @@ class FormSignInStore extends ChangeNotifier {
         passwordError.isEmpty &&
         password2Error.isEmpty) {
       //signup
-      ref.read(authRepositoryProvider).createUser(email, password, name);
       isLoading = true;
+      ref.read(authRepositoryProvider).createUser(email, password, name);
       
     }
 
