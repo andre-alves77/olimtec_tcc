@@ -12,129 +12,89 @@ Version: linux 1.84.2
 Logging Categories:
     General
 
-Tue Nov 21 2023 [15:48:26 GMT+0000 (Coordinated Universal Time)] Log file started
-[3:48:26 PM] [General] [Info] Dart/Flutter tooling telemetry is opted-out, disabling for Dart Code
-[3:48:26 PM] [General] [Info] Searching for SDKs...
-[3:48:26 PM] [General] [Info] Environment PATH:
-[3:48:26 PM] [General] [Info]     /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli
-[3:48:26 PM] [General] [Info]     /home/codespace/flutter/bin
-[3:48:26 PM] [General] [Info]     /usr/local/sbin
-[3:48:26 PM] [General] [Info]     /usr/local/bin
-[3:48:26 PM] [General] [Info]     /usr/sbin
-[3:48:26 PM] [General] [Info]     /usr/bin
-[3:48:26 PM] [General] [Info]     /sbin
-[3:48:26 PM] [General] [Info]     /bin
-[3:48:26 PM] [General] [Info] Took 77ms to search for projects (5 levels)
-[3:48:26 PM] [General] [Info] Took 7ms to filter out excluded projects (0 exclusion rules)
-[3:48:26 PM] [General] [Info] Found Flutter project at /workspaces/olimtec_tcc:
+Tue Nov 21 2023 [19:10:09 GMT+0000 (Coordinated Universal Time)] Log file started
+[7:10:09 PM] [General] [Info] Dart/Flutter tooling telemetry is opted-out, disabling for Dart Code
+[7:10:09 PM] [General] [Info] Searching for SDKs...
+[7:10:09 PM] [General] [Info] Environment PATH:
+[7:10:09 PM] [General] [Info]     /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli
+[7:10:09 PM] [General] [Info]     /home/codespace/flutter/bin
+[7:10:09 PM] [General] [Info]     /usr/local/sbin
+[7:10:09 PM] [General] [Info]     /usr/local/bin
+[7:10:09 PM] [General] [Info]     /usr/sbin
+[7:10:09 PM] [General] [Info]     /usr/bin
+[7:10:09 PM] [General] [Info]     /sbin
+[7:10:09 PM] [General] [Info]     /bin
+[7:10:09 PM] [General] [Info] Took 100ms to search for projects (5 levels)
+[7:10:09 PM] [General] [Info] Took 8ms to filter out excluded projects (0 exclusion rules)
+[7:10:09 PM] [General] [Info] Found Flutter project at /workspaces/olimtec_tcc:
 			Mobile? true
 			Web? false
 			Create Trigger? false
 			Flutter Repo? false
-[3:48:27 PM] [General] [Info] Searching for flutter
-[3:48:27 PM] [General] [Info]     Looking for flutter in:
-[3:48:27 PM] [General] [Info]         /workspaces/olimtec_tcc
-[3:48:27 PM] [General] [Info]         /workspaces/olimtec_tcc -> /workspaces/olimtec_tcc/bin
-[3:48:27 PM] [General] [Info]         /home/codespace/flutter/bin/
-[3:48:27 PM] [General] [Info]         /workspaces/olimtec_tcc/.flutter
-[3:48:27 PM] [General] [Info]         /workspaces/olimtec_tcc/.flutter -> /workspaces/olimtec_tcc/.flutter/bin
-[3:48:27 PM] [General] [Info]         /workspaces/olimtec_tcc/vendor/flutter
-[3:48:27 PM] [General] [Info]         /workspaces/olimtec_tcc/vendor/flutter -> /workspaces/olimtec_tcc/vendor/flutter/bin
-[3:48:27 PM] [General] [Info]         /root/snap/flutter/common/flutter
-[3:48:27 PM] [General] [Info]         /root/snap/flutter/common/flutter -> /root/snap/flutter/common/flutter/bin
-[3:48:27 PM] [General] [Info]         /root/flutter-sdk
-[3:48:27 PM] [General] [Info]         /root/flutter-sdk -> /root/flutter-sdk/bin
-[3:48:27 PM] [General] [Info]         /google/flutter
-[3:48:27 PM] [General] [Info]         /google/flutter -> /google/flutter/bin
-[3:48:27 PM] [General] [Info]         /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli
-[3:48:27 PM] [General] [Info]         /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli -> /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/bin
-[3:48:27 PM] [General] [Info]         /home/codespace/flutter/bin
-[3:48:27 PM] [General] [Info]         /usr/local/sbin
-[3:48:27 PM] [General] [Info]         /usr/local/bin
-[3:48:27 PM] [General] [Info]         /usr/sbin
-[3:48:27 PM] [General] [Info]         /usr/bin
-[3:48:27 PM] [General] [Info]         /sbin
-[3:48:27 PM] [General] [Info]         /bin
-[3:48:27 PM] [General] [Info]     Found at:
-[3:48:27 PM] [General] [Info]         /home/codespace/flutter/bin/
-[3:48:27 PM] [General] [Info]         /home/codespace/flutter/bin
-[3:48:27 PM] [General] [Info]     Candidate paths to be post-filtered:
-[3:48:27 PM] [General] [Info]         /home/codespace/flutter/bin/ -> /home/codespace/flutter
-[3:48:27 PM] [General] [Info]         /home/codespace/flutter/bin -> /home/codespace/flutter
-[3:48:27 PM] [General] [Info]     Found at /home/codespace/flutter/bin/ -> /home/codespace/flutter
-[3:48:27 PM] [General] [Info]     Returning SDK path /home/codespace/flutter for flutter
-[3:48:27 PM] [General] [Info] Flutter is not initialized, running 'flutter doctor' to force...
-[3:48:27 PM] [General] [Info] (PROC 389) Logging data for process...
-[3:48:32 PM] [General] [Info] (PROC 389) [✓] Flutter (Channel master, 3.17.0-12.0.pre.17, on Debian GNU/Linux 12 (bookworm) 6.2.0-1016-azure, locale en_US)
-[3:48:32 PM] [General] [Info] (PROC 389)     • Flutter version 3.17.0-12.0.pre.17 on channel master at /home/codespace/flutter
-    • Upstream repository https://github.com/flutter/flutter
-    • Framework revision 0858ea2ce8 (2 days ago), 2023-11-19 11:55:23 -0500
-    • Engine revision 31059cccee
-    • Dart version 3.3.0 (build 3.3.0-149.0.dev)
-[3:48:32 PM] [General] [Info] (PROC 389)     • DevTools version 2.30.0-dev.4
-[3:48:32 PM] [General] [Info] (PROC 389) [✗] Android toolchain - develop for Android devices
-[3:48:32 PM] [General] [Info] (PROC 389)     ✗ Unable to locate Android SDK.
-      Install Android Studio from: https://developer.android.com/studio/index.html
-[3:48:32 PM] [General] [Info] (PROC 389)       On first launch it will assist you in installing the Android SDK components.
-      (or visit https://flutter.dev/docs/get-started/install/linux#android-setup for detailed instructions).
-[3:48:32 PM] [General] [Info] (PROC 389)       If the Android SDK has been installed to a custom location, please use
-      `flutter config --android-sdk` to update to that location.
-[3:48:32 PM] [General] [Info] (PROC 389)
-[3:48:32 PM] [General] [Info] (PROC 389) [✗] Chrome - develop for the web (Cannot find Chrome executable at google-chrome)
-[3:48:32 PM] [General] [Info] (PROC 389)     ! Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
-[3:48:32 PM] [General] [Info] (PROC 389) [✗] Linux toolchain - develop for Linux desktop
-[3:48:32 PM] [General] [Info] (PROC 389)     ✗ clang++ is required for Linux development.
-      It is likely available from your distribution (e.g.: apt install clang), or can be downloaded from https://releases.llvm.org/
-[3:48:32 PM] [General] [Info] (PROC 389)     ✗ CMake is required for Linux development.
-      It is likely available from your distribution (e.g.: apt install cmake), or can be downloaded from https://cmake.org/download/
-[3:48:32 PM] [General] [Info] (PROC 389)     ✗ ninja is required for Linux development.
-[3:48:32 PM] [General] [Info] (PROC 389)       It is likely available from your distribution (e.g.: apt install ninja-build), or can be downloaded from https://github.com/ninja-build/ninja/releases
-[3:48:32 PM] [General] [Info] (PROC 389)     ✗ pkg-config is required for Linux development.
-[3:48:32 PM] [General] [Info] (PROC 389)       It is likely available from your distribution (e.g.: apt install pkg-config), or can be downloaded from https://www.freedesktop.org/wiki/Software/pkg-config/
-[3:48:32 PM] [General] [Info] (PROC 389) [!] Android Studio (not installed)
-[3:48:32 PM] [General] [Info] (PROC 389)     • Android Studio not found; download from https://developer.android.com/studio/index.html
-[3:48:32 PM] [General] [Info] (PROC 389)       (or visit https://flutter.dev/docs/get-started/install/linux#android-setup for detailed instructions).
-[3:48:32 PM] [General] [Info] (PROC 389) [✓] Connected device (1 available)
-[3:48:32 PM] [General] [Info] (PROC 389)     • Linux (desktop) • linux • linux-x64 • Debian GNU/Linux 12 (bookworm) 6.2.0-1016-azure
-[3:48:32 PM] [General] [Info] (PROC 389) [✓] Network resources
-[3:48:32 PM] [General] [Info] (PROC 389)     • All expected network resources are available.
-
-! Doctor found issues in 4 categories.
-[3:48:32 PM] [General] [Info] (PROC 389) exited (0, null)
-[3:48:32 PM] [General] [Info] (PROC 389) closed (0, null)
-[3:48:32 PM] [General] [Info] Flutter initialized!
-[3:48:32 PM] [General] [Info] Searching for dart
-[3:48:32 PM] [General] [Info]     Looking for dart in:
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk -> /home/codespace/flutter/bin/cache/dart-sdk/bin
-[3:48:32 PM] [General] [Info]         /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli
-[3:48:32 PM] [General] [Info]         /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli -> /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/bin
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin
-[3:48:32 PM] [General] [Info]         /usr/local/sbin
-[3:48:32 PM] [General] [Info]         /usr/local/bin
-[3:48:32 PM] [General] [Info]         /usr/sbin
-[3:48:32 PM] [General] [Info]         /usr/bin
-[3:48:32 PM] [General] [Info]         /sbin
-[3:48:32 PM] [General] [Info]         /bin
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk -> /home/codespace/flutter/bin/cache/dart-sdk/bin
-[3:48:32 PM] [General] [Info]     Found at:
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk -> /home/codespace/flutter/bin/cache/dart-sdk/bin
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk -> /home/codespace/flutter/bin/cache/dart-sdk/bin
-[3:48:32 PM] [General] [Info]     Candidate paths to be post-filtered:
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin -> /home/codespace/flutter
-[3:48:32 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk
-[3:48:32 PM] [General] [Info]     Found at /home/codespace/flutter/bin/cache/dart-sdk
-[3:48:32 PM] [General] [Info]     Returning SDK path /home/codespace/flutter/bin/cache/dart-sdk for dart
-[3:48:32 PM] [General] [Info] Experiment random number is 16 for experiment 'sdkDaps'. Experiment is enabled for <= 100
-[3:48:32 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
-[3:48:32 PM] [General] [Info] Experiment random number is 16 for experiment 'sdkDaps'. Experiment is enabled for <= 50
-[3:48:32 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
-[3:48:32 PM] [General] [Info] Experiment random number is 16 for experiment 'sdkDaps'. Experiment is enabled for <= 10
-[3:48:32 PM] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
-[3:48:32 PM] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+[7:10:09 PM] [General] [Info] Searching for flutter
+[7:10:09 PM] [General] [Info]     Looking for flutter in:
+[7:10:09 PM] [General] [Info]         /workspaces/olimtec_tcc
+[7:10:09 PM] [General] [Info]         /workspaces/olimtec_tcc -> /workspaces/olimtec_tcc/bin
+[7:10:09 PM] [General] [Info]         /home/codespace/flutter/bin/
+[7:10:09 PM] [General] [Info]         /workspaces/olimtec_tcc/.flutter
+[7:10:09 PM] [General] [Info]         /workspaces/olimtec_tcc/.flutter -> /workspaces/olimtec_tcc/.flutter/bin
+[7:10:09 PM] [General] [Info]         /workspaces/olimtec_tcc/vendor/flutter
+[7:10:09 PM] [General] [Info]         /workspaces/olimtec_tcc/vendor/flutter -> /workspaces/olimtec_tcc/vendor/flutter/bin
+[7:10:09 PM] [General] [Info]         /root/snap/flutter/common/flutter
+[7:10:09 PM] [General] [Info]         /root/snap/flutter/common/flutter -> /root/snap/flutter/common/flutter/bin
+[7:10:09 PM] [General] [Info]         /root/flutter-sdk
+[7:10:09 PM] [General] [Info]         /root/flutter-sdk -> /root/flutter-sdk/bin
+[7:10:09 PM] [General] [Info]         /google/flutter
+[7:10:09 PM] [General] [Info]         /google/flutter -> /google/flutter/bin
+[7:10:09 PM] [General] [Info]         /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli
+[7:10:09 PM] [General] [Info]         /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli -> /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/bin
+[7:10:09 PM] [General] [Info]         /home/codespace/flutter/bin
+[7:10:09 PM] [General] [Info]         /usr/local/sbin
+[7:10:09 PM] [General] [Info]         /usr/local/bin
+[7:10:09 PM] [General] [Info]         /usr/sbin
+[7:10:09 PM] [General] [Info]         /usr/bin
+[7:10:09 PM] [General] [Info]         /sbin
+[7:10:09 PM] [General] [Info]         /bin
+[7:10:09 PM] [General] [Info]     Found at:
+[7:10:09 PM] [General] [Info]         /home/codespace/flutter/bin/
+[7:10:09 PM] [General] [Info]         /home/codespace/flutter/bin
+[7:10:09 PM] [General] [Info]     Candidate paths to be post-filtered:
+[7:10:09 PM] [General] [Info]         /home/codespace/flutter/bin/ -> /home/codespace/flutter
+[7:10:09 PM] [General] [Info]         /home/codespace/flutter/bin -> /home/codespace/flutter
+[7:10:09 PM] [General] [Info]     Found at /home/codespace/flutter/bin/ -> /home/codespace/flutter
+[7:10:09 PM] [General] [Info]     Returning SDK path /home/codespace/flutter for flutter
+[7:10:10 PM] [General] [Info] Searching for dart
+[7:10:10 PM] [General] [Info]     Looking for dart in:
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk -> /home/codespace/flutter/bin/cache/dart-sdk/bin
+[7:10:10 PM] [General] [Info]         /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli
+[7:10:10 PM] [General] [Info]         /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli -> /vscode/bin/linux-x64/1a5daa3a0231a0fbba4f14db7ec463cf99d7768e/bin/remote-cli/bin
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin
+[7:10:10 PM] [General] [Info]         /usr/local/sbin
+[7:10:10 PM] [General] [Info]         /usr/local/bin
+[7:10:10 PM] [General] [Info]         /usr/sbin
+[7:10:10 PM] [General] [Info]         /usr/bin
+[7:10:10 PM] [General] [Info]         /sbin
+[7:10:10 PM] [General] [Info]         /bin
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk -> /home/codespace/flutter/bin/cache/dart-sdk/bin
+[7:10:10 PM] [General] [Info]     Found at:
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk -> /home/codespace/flutter/bin/cache/dart-sdk/bin
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk -> /home/codespace/flutter/bin/cache/dart-sdk/bin
+[7:10:10 PM] [General] [Info]     Candidate paths to be post-filtered:
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin -> /home/codespace/flutter
+[7:10:10 PM] [General] [Info]         /home/codespace/flutter/bin/cache/dart-sdk
+[7:10:10 PM] [General] [Info]     Found at /home/codespace/flutter/bin/cache/dart-sdk
+[7:10:10 PM] [General] [Info]     Returning SDK path /home/codespace/flutter/bin/cache/dart-sdk for dart
+[7:10:10 PM] [General] [Info] Experiment random number is 16 for experiment 'sdkDaps'. Experiment is enabled for <= 100
+[7:10:10 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[7:10:10 PM] [General] [Info] Experiment random number is 16 for experiment 'sdkDaps'. Experiment is enabled for <= 50
+[7:10:10 PM] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[7:10:10 PM] [General] [Info] Experiment random number is 16 for experiment 'sdkDaps'. Experiment is enabled for <= 10
+[7:10:10 PM] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
+[7:10:10 PM] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.76.1
 Flutter extension: 3.76.0 (not activated)
 
@@ -146,16 +106,13 @@ Version: linux 1.84.2
 
 Workspace type: Flutter (LSP)
 
-Dart (3.3.0-149.0.dev): /home/codespace/flutter/bin/cache/dart-sdk
-Flutter (undefined): /home/codespace/flutter (No device)
-[3:48:32 PM] [General] [Info] Returning cached results for project search
-[3:48:32 PM] [General] [Info] Activating Flutter extension for Flutter project...
-[3:48:32 PM] [General] [Info] Version last used for Pub is 3.3.0-149.0.dev (3.3.0), current is 3.3.0-149.0.dev (3.3.0)
-[3:48:32 PM] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
-[3:48:32 PM] [General] [Info] Returning cached results for project search
-[3:48:32 PM] [General] [Info] Checking 1 projects for supported platforms
-[3:48:33 PM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
-[3:48:34 PM] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart (3.3.0-152.0.dev): /home/codespace/flutter/bin/cache/dart-sdk
+Flutter (3.17.0-12.0.pre.40): /home/codespace/flutter (No device)
+[7:10:10 PM] [General] [Info] Returning cached results for project search
+[7:10:10 PM] [General] [Info] Activating Flutter extension for Flutter project...
+[7:10:10 PM] [General] [Info] Version last used for Pub is 3.3.0-152.0.dev (3.3.0), current is 3.3.0-152.0.dev (3.3.0)
+[7:10:10 PM] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[7:10:13 PM] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.76.1
 Flutter extension: 3.76.0 (activated)
 
@@ -167,7 +124,10 @@ Version: linux 1.84.2
 
 Workspace type: Flutter (LSP)
 
-Dart (3.3.0-149.0.dev): /home/codespace/flutter/bin/cache/dart-sdk
-Flutter (undefined): /home/codespace/flutter (Linux (linux-x64/linux))
-[3:48:34 PM] [General] [Info] Loaded 20000 package names from file:///root/.vscode-remote/data/User/globalStorage/dart-code.dart-code/package_cache.json
-[3:49:32 PM] [General] [Info] Returning cached results for project search
+Dart (3.3.0-152.0.dev): /home/codespace/flutter/bin/cache/dart-sdk
+Flutter (3.17.0-12.0.pre.40): /home/codespace/flutter (No device)
+[7:10:13 PM] [General] [Info] Returning cached results for project search
+[7:10:13 PM] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[7:10:13 PM] [General] [Info] Checking 1 projects for supported platforms
+[7:10:13 PM] [General] [Info] Loaded 20000 package names from file:///root/.vscode-remote/data/User/globalStorage/dart-code.dart-code/package_cache.json
+[7:10:13 PM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
