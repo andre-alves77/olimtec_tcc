@@ -84,9 +84,9 @@ users[x.id] = x.data();
 }
 users.forEach((key, value){
 ref.read(appUserProvider.notifier).state = AppUser.fromMap(value);
-        
-
+      
 });
+
 notifyListeners();
       
 
@@ -142,8 +142,9 @@ users.forEach((key, value){
 ref.read(appUserProvider.notifier).state = AppUser.fromMap(value);
 });
 
-
+          ref.read(formUserSignInProvider.notifier).turnOffLoading();
 }on FirebaseAuthException catch (e){
+            ref.read(formUserSignInProvider.notifier).turnOffLoading();
   throw AuthException.snackbar(e.message.toString(), ref);
 }
 return null;
