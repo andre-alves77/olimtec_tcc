@@ -260,4 +260,321 @@ Flutter (3.17.0-12.0.pre.40): /home/codespace/flutter (No device)
 [7:10:13 PM] [General] [Info] Checking 1 projects for supported platforms
 [7:10:13 PM] [General] [Info] Loaded 20000 package names from file:///root/.vscode-remote/data/User/globalStorage/dart-code.dart-code/package_cache.json
 [7:10:13 PM] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+<<<<<<< HEAD
 >>>>>>> e792aacf5ab64745b98e879f35fb7d5b08a2a94b
+=======
+[7:12:08 PM] [General] [Info] Starting debug session...
+[7:12:08 PM] [General] [Info]     workspace: /workspaces/olimtec_tcc
+[7:12:08 PM] [General] [Info]     program  : lib/main.dart
+[7:12:08 PM] [General] [Info] Setting cwd based on active workspace folder: /workspaces/olimtec_tcc
+[7:12:08 PM] [General] [Info] Converted program to absolute path: /workspaces/olimtec_tcc/lib/main.dart
+[7:12:08 PM] [General] [Info] Using workspace as cwd: /workspaces/olimtec_tcc
+[7:12:08 PM] [General] [Info] Detected launch project as Flutter
+[7:12:08 PM] [General] [Info] Using Flutter debug adapter for this session
+[7:12:09 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[7:12:09 PM] [General] [Info] Checking for errors before launching
+[7:12:09 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Web Server)",
+        "request": "launch",
+        "type": "dart",
+        "program": "/workspaces/olimtec_tcc/lib/main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-eb79a",
+        "cwd": "/workspaces/olimtec_tcc",
+        "deviceId": "web-server",
+        "deviceName": "Web Server (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "/home/codespace/flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "/workspaces/olimtec_tcc"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "web-server",
+            "--web-server-debug-protocol",
+            "ws",
+            "--web-server-debug-backend-protocol",
+            "ws",
+            "--web-server-debug-injected-client-protocol",
+            "ws",
+            "--web-allow-expose-url",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/codespace/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/workspaces/olimtec_tcc/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/codespace/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/workspaces/olimtec_tcc/logs/flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[7:12:09 PM] [General] [Info] Using flutter debugger for Flutter
+[7:12:09 PM] [General] [Info] SDK DAP setting is true, set by canDefaultToSdkDap and using pre-release SDK
+[7:12:09 PM] [General] [Info] Running SDK DAP Dart VM in undefined: /home/codespace/flutter/bin/flutter debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"/home/codespace/flutter"}}
+[7:12:10 PM] [General] [Info] Did not find session 38370d3b-2b3a-4e2d-b0b4-79da88700515 to handle dart.progressStart. There were 0 sessions:
+[7:12:10 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[7:12:10 PM] [General] [Info] Processing delayed event dart.progressStart for session 38370d3b-2b3a-4e2d-b0b4-79da88700515
+[7:12:10 PM] [General] [Info] Exposing URL: ws://[::]:43071/%24debug
+[7:12:10 PM] [General] [Info] Mapping URI: http://localhost:43071/%24debug
+[7:12:12 PM] [General] [Info] Mapped URI: https://miniature-broccoli-x6jj75p999wh6p4r-43071.app.github.dev/
+[7:12:12 PM] [General] [Info] Mapped URL: https://miniature-broccoli-x6jj75p999wh6p4r-43071.app.github.dev/
+[7:12:12 PM] [General] [Info] Final URL: wss://miniature-broccoli-x6jj75p999wh6p4r-43071.app.github.dev/$debug
+[7:12:31 PM] [General] [Info] Opening external URL: http://localhost:38993
+[7:44:26 PM] [General] [Info] Starting debug session...
+[7:44:26 PM] [General] [Info]     workspace: /workspaces/olimtec_tcc
+[7:44:26 PM] [General] [Info]     program  : lib/main.dart
+[7:44:26 PM] [General] [Info] Setting cwd based on active workspace folder: /workspaces/olimtec_tcc
+[7:44:26 PM] [General] [Info] Converted program to absolute path: /workspaces/olimtec_tcc/lib/main.dart
+[7:44:26 PM] [General] [Info] Using workspace as cwd: /workspaces/olimtec_tcc
+[7:44:26 PM] [General] [Info] Detected launch project as Flutter
+[7:44:26 PM] [General] [Info] Using Flutter debug adapter for this session
+[7:44:26 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[7:44:26 PM] [General] [Info] Checking for errors before launching
+[7:44:26 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Web Server)",
+        "request": "launch",
+        "type": "dart",
+        "program": "/workspaces/olimtec_tcc/lib/main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-68860",
+        "cwd": "/workspaces/olimtec_tcc",
+        "deviceId": "web-server",
+        "deviceName": "Web Server (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "/home/codespace/flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "/workspaces/olimtec_tcc"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "web-server",
+            "--web-server-debug-protocol",
+            "ws",
+            "--web-server-debug-backend-protocol",
+            "ws",
+            "--web-server-debug-injected-client-protocol",
+            "ws",
+            "--web-allow-expose-url",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/codespace/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/workspaces/olimtec_tcc/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/codespace/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/workspaces/olimtec_tcc/logs/flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[7:44:26 PM] [General] [Info] Using flutter debugger for Flutter
+[7:44:26 PM] [General] [Info] SDK DAP setting is true, set by canDefaultToSdkDap and using pre-release SDK
+[7:44:26 PM] [General] [Info] Running SDK DAP Dart VM in undefined: /home/codespace/flutter/bin/flutter debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"/home/codespace/flutter"}}
+[7:44:27 PM] [General] [Info] Did not find session bca2c965-fc66-4a36-b731-852f202e9151 to handle dart.progressStart. There were 0 sessions:
+[7:44:27 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[7:44:27 PM] [General] [Info] Processing delayed event dart.progressStart for session bca2c965-fc66-4a36-b731-852f202e9151
+[7:44:28 PM] [General] [Info] Exposing URL: ws://[::]:41887/%24debug
+[7:44:28 PM] [General] [Info] Mapping URI: http://localhost:41887/%24debug
+[7:44:28 PM] [General] [Info] Mapped URI: https://miniature-broccoli-x6jj75p999wh6p4r-41887.app.github.dev/
+[7:44:28 PM] [General] [Info] Mapped URL: https://miniature-broccoli-x6jj75p999wh6p4r-41887.app.github.dev/
+[7:44:28 PM] [General] [Info] Final URL: wss://miniature-broccoli-x6jj75p999wh6p4r-41887.app.github.dev/$debug
+[7:44:47 PM] [General] [Info] Opening external URL: http://localhost:46029
+[7:59:57 PM] [General] [Info] Starting debug session...
+[7:59:57 PM] [General] [Info]     workspace: /workspaces/olimtec_tcc
+[7:59:57 PM] [General] [Info]     program  : lib/main.dart
+[7:59:57 PM] [General] [Info] Setting cwd based on active workspace folder: /workspaces/olimtec_tcc
+[7:59:57 PM] [General] [Info] Converted program to absolute path: /workspaces/olimtec_tcc/lib/main.dart
+[7:59:57 PM] [General] [Info] Using workspace as cwd: /workspaces/olimtec_tcc
+[7:59:57 PM] [General] [Info] Detected launch project as Flutter
+[7:59:57 PM] [General] [Info] Using Flutter debug adapter for this session
+[7:59:57 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[7:59:57 PM] [General] [Info] Checking for errors before launching
+[7:59:57 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Web Server)",
+        "request": "launch",
+        "type": "dart",
+        "program": "/workspaces/olimtec_tcc/lib/main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-87486",
+        "cwd": "/workspaces/olimtec_tcc",
+        "deviceId": "web-server",
+        "deviceName": "Web Server (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "/home/codespace/flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "/workspaces/olimtec_tcc"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "web-server",
+            "--web-server-debug-protocol",
+            "ws",
+            "--web-server-debug-backend-protocol",
+            "ws",
+            "--web-server-debug-injected-client-protocol",
+            "ws",
+            "--web-allow-expose-url",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/codespace/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/workspaces/olimtec_tcc/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/codespace/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/workspaces/olimtec_tcc/logs/flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[7:59:57 PM] [General] [Info] Using flutter debugger for Flutter
+[7:59:57 PM] [General] [Info] SDK DAP setting is true, set by canDefaultToSdkDap and using pre-release SDK
+[7:59:57 PM] [General] [Info] Running SDK DAP Dart VM in undefined: /home/codespace/flutter/bin/flutter debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"/home/codespace/flutter"}}
+[7:59:58 PM] [General] [Info] Did not find session 1d60c7e2-8d48-4963-8b10-a2bdb551af80 to handle dart.progressStart. There were 0 sessions:
+[7:59:58 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[7:59:58 PM] [General] [Info] Processing delayed event dart.progressStart for session 1d60c7e2-8d48-4963-8b10-a2bdb551af80
+[7:59:59 PM] [General] [Info] Exposing URL: ws://[::]:45473/%24debug
+[7:59:59 PM] [General] [Info] Mapping URI: http://localhost:45473/%24debug
+[8:00:00 PM] [General] [Info] Mapped URI: https://miniature-broccoli-x6jj75p999wh6p4r-45473.app.github.dev/
+[8:00:00 PM] [General] [Info] Mapped URL: https://miniature-broccoli-x6jj75p999wh6p4r-45473.app.github.dev/
+[8:00:00 PM] [General] [Info] Final URL: wss://miniature-broccoli-x6jj75p999wh6p4r-45473.app.github.dev/$debug
+[8:00:18 PM] [General] [Info] Opening external URL: http://localhost:41325
+[8:13:11 PM] [General] [Info] Took 30ms to search for projects (5 levels)
+[8:13:11 PM] [General] [Info] Took 3ms to filter out excluded projects (0 exclusion rules)
+[8:22:09 PM] [General] [Info] Starting debug session...
+[8:22:09 PM] [General] [Info]     workspace: /workspaces/olimtec_tcc
+[8:22:09 PM] [General] [Info]     program  : lib/main.dart
+[8:22:09 PM] [General] [Info] Setting cwd based on active workspace folder: /workspaces/olimtec_tcc
+[8:22:09 PM] [General] [Info] Converted program to absolute path: /workspaces/olimtec_tcc/lib/main.dart
+[8:22:09 PM] [General] [Info] Using workspace as cwd: /workspaces/olimtec_tcc
+[8:22:09 PM] [General] [Info] Detected launch project as Flutter
+[8:22:09 PM] [General] [Info] Using Flutter debug adapter for this session
+[8:22:09 PM] [General] [Info] Getting DevTools server address to pass to Flutter...
+[8:22:09 PM] [General] [Info] Checking for errors before launching
+[8:22:09 PM] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Web Server)",
+        "request": "launch",
+        "type": "dart",
+        "program": "/workspaces/olimtec_tcc/lib/main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-572d8",
+        "cwd": "/workspaces/olimtec_tcc",
+        "deviceId": "web-server",
+        "deviceName": "Web Server (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "/home/codespace/flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "/workspaces/olimtec_tcc"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "web-server",
+            "--web-server-debug-protocol",
+            "ws",
+            "--web-server-debug-backend-protocol",
+            "ws",
+            "--web-server-debug-injected-client-protocol",
+            "ws",
+            "--web-allow-expose-url",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "/home/codespace/flutter/bin/cache/dart-sdk",
+        "vmServiceLogFile": "/workspaces/olimtec_tcc/logs/observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": false,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "/home/codespace/flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "/workspaces/olimtec_tcc/logs/flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[8:22:10 PM] [General] [Info] Using flutter debugger for Flutter
+[8:22:10 PM] [General] [Info] SDK DAP setting is true, set by canDefaultToSdkDap and using pre-release SDK
+[8:22:10 PM] [General] [Info] Running SDK DAP Dart VM in undefined: /home/codespace/flutter/bin/flutter debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"/home/codespace/flutter"}}
+[8:22:10 PM] [General] [Info] Did not find session 8cccf4ea-d300-4acc-b6c0-1a943ad0dc1e to handle dart.progressStart. There were 0 sessions:
+[8:22:10 PM] [General] [Info] Event will be queued and processed when the session start event fires
+[8:22:10 PM] [General] [Info] Processing delayed event dart.progressStart for session 8cccf4ea-d300-4acc-b6c0-1a943ad0dc1e
+[8:22:11 PM] [General] [Info] Exposing URL: ws://[::]:35367/%24debug
+[8:22:11 PM] [General] [Info] Mapping URI: http://localhost:35367/%24debug
+[8:22:12 PM] [General] [Info] Mapped URI: https://miniature-broccoli-x6jj75p999wh6p4r-35367.app.github.dev/
+[8:22:12 PM] [General] [Info] Mapped URL: https://miniature-broccoli-x6jj75p999wh6p4r-35367.app.github.dev/
+[8:22:12 PM] [General] [Info] Final URL: wss://miniature-broccoli-x6jj75p999wh6p4r-35367.app.github.dev/$debug
+[8:22:30 PM] [General] [Info] Opening external URL: http://localhost:41415
+>>>>>>> 24c56b2 (auth new)

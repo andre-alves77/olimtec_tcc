@@ -43,27 +43,6 @@ class AuthRepository extends ChangeNotifier {
     }
   }
 
-  getUserdata() async {
-    final firebasestore = ref.read(firebaseFirestoreProvider);
-
-    final userMap = await firebasestore
-        .collection('users')
-        .where("id", isEqualTo: auth.currentUser!.uid)
-        .get();
-
-    Map users = {};
-    AppUser? usertmp;
-
-    for (var x in userMap.docs) {
-      users[x.id] = x.data();
-    }
-    users.forEach((key, value) {
-      usertmp = AppUser.fromMap(value);
-    });
-
-    ref.read(appUserProvider.notifier).state = usertmp;
-  }
-
   Future<User?> signInWithEmailAndPassword(
       String email, String password) async {
     try {
@@ -78,15 +57,10 @@ class AuthRepository extends ChangeNotifier {
           .where("id", isEqualTo: auth.currentUser!.uid)
           .get();
 
-Map users = {};
-for(var x in userMap.docs){
-users[x.id] = x.data();
-}
-users.forEach((key, value){
-ref.read(appUserProvider.notifier).state = AppUser.fromMap(value);
-      
-});
 
+          Future.delayed(const Duration(seconds: 2), (){
+          ref.read(formUserSignInProvider.notifier).turnOffLoading();
+          });
 notifyListeners();
       
 
@@ -94,7 +68,7 @@ notifyListeners();
 
       return result.user;
     } on FirebaseAuthException catch (e) {
-          ref.read(formUserSignInProvider.notifier).turnOffLoading();
+           ref.read(formUserSignInProvider.notifier).turnOffLoading();
       if (e.code == 'user-not-found') {
         throw AuthException.snackbar('Senha e/ou email incorretos.', ref);
       } else if (e.code == 'invalid-login-credentials') {
@@ -128,23 +102,13 @@ notifyListeners();
         'name': name,
         'teamName': '3DSB',
       });
+      signInWithEmailAndPassword(email, password);
 
-      final userMap = await firebasestore
-          .collection('users')
-          .where("id", isEqualTo: auth.currentUser!.uid)
-          .get();
-
-Map users = {};
-for(var x in userMap.docs){
-users[x.id] = x.data();
-}
-users.forEach((key, value){
-ref.read(appUserProvider.notifier).state = AppUser.fromMap(value);
-});
-
+          Future.delayed(const Duration(seconds: 2), (){
           ref.read(formUserSignInProvider.notifier).turnOffLoading();
+          });
 }on FirebaseAuthException catch (e){
-            ref.read(formUserSignInProvider.notifier).turnOffLoading();
+             ref.read(formUserSignInProvider.notifier).turnOffLoading();
   throw AuthException.snackbar(e.message.toString(), ref);
 }
 return null;

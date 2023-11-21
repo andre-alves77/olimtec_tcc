@@ -35,13 +35,13 @@ final isLoggedProvider = StateProvider<bool>((ref) {
       }
       debugPrint("não logado");
       final context = ref.read(navigtorkeyProvider).currentContext;
-          ref.read(formUserSignInProvider.notifier).turnOffLoading();
+          
 
       Navigator.pushReplacementNamed(context!, AppRoute.LANDING);
       return false;
     },
     error: (error, stackTrace) {
-          ref.read(formUserSignInProvider.notifier).turnOffLoading();
+          
 
       debugPrint("erro no login");
 
@@ -52,7 +52,7 @@ final isLoggedProvider = StateProvider<bool>((ref) {
 
 final appUserProvider = StateProvider<AppUser?>((ref) {
   ref.watch(appUserStream).maybeWhen(data: (appuser){
-    ref.read(formUserSignInProvider.notifier).turnOffLoading();
+    
     
       final context = ref.read(navigtorkeyProvider).currentContext;
 
@@ -67,12 +67,12 @@ CustomSnackBar(message: "Admin", ref: ref);
     return appuser;
   },
    error: (e, s){
-    ref.read(formUserSignInProvider.notifier).turnOffLoading();
+    
 CustomSnackBar(message: "Um erro aconteceu. Tente novamente", ref: ref);
   }, 
   loading: (){},
 orElse: (){
-  ref.read(formUserSignInProvider.notifier).turnOffLoading();
+  
 }
 
   );
