@@ -3,12 +3,14 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class CardItem extends StatelessWidget {
-  const CardItem(this.name, this.route, this.cor, this.image, {super.key});
+  const CardItem(this.name, this.route, this.cor, this.image,
+      {this.routeArg, super.key});
 
   final String image;
   final String name;
   final String route;
   final Color cor;
+  final String? routeArg;
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +26,7 @@ class CardItem extends StatelessWidget {
         ),
         child: FittedBox(
           alignment: Alignment.centerLeft,
-          child: Container(
+          child: SizedBox(
             width: sizeWidth / 1.8,
             child: ListTile(
               leading: Image.asset(
@@ -48,9 +50,11 @@ class CardItem extends StatelessWidget {
           ),
         ),
       ),
-       onTap: () {
+      onTap: () {
         Navigator.pushNamed(
-          context, route,
+          context,
+          route,
+          arguments: routeArg,
         );
       },
     );

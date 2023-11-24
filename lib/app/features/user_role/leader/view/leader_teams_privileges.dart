@@ -1,6 +1,7 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/features/user_role/leader/view/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
@@ -36,8 +37,13 @@ class LeaderTeamsPrivilegesAdmin extends StatelessWidget {
                     stream: teamRef.snapshots(),
                     builder: (context, snapshot) {
                       if (!snapshot.hasData) {
-                        return const Center(
-                          child: CircularProgressIndicator(),
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                          ],
                         );
                       } else {
                         return ListView(
@@ -52,11 +58,12 @@ class LeaderTeamsPrivilegesAdmin extends StatelessWidget {
                               children: [
                                 CardItem(
                                     data['name'],
-                                    AppRoute.PRIVILEGESTEAMPAGE_ADMIN,
+                                    PrivilegeTeamAdmin.route,
                                     Theme.of(context)
                                         .colorScheme
                                         .primaryContainer,
-                                    data['image']),
+                                    data['image'],
+                                    routeArg: data["name"]),
                                 Padding(padding: EdgeInsetsDirectional.all(8)),
                               ],
                             );

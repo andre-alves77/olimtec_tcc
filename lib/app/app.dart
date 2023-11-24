@@ -3,7 +3,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
-import 'package:olimtec_tcc/app/features/auth/service/auth_checker.dart';
 import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 import 'package:olimtec_tcc/app/ui/admin/before_config/add_modality_component.dart';
 import 'package:olimtec_tcc/app/ui/admin/before_config/add_teams.dart';
@@ -20,10 +19,8 @@ import 'package:olimtec_tcc/app/ui/admin/modalities/regulation_page.dart';
 import 'package:olimtec_tcc/app/features/user_role/leader/view/leader_teams_privileges.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
 import 'package:olimtec_tcc/app/features/user_role/organization/view/organization_teams_privileges%20copy.dart';
-import 'package:olimtec_tcc/app/ui/admin/privileges/privilege_organization.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organization_addmodality.dart';
 import 'package:olimtec_tcc/app/features/user_role/leader/view/privilege_team_page.dart';
-import 'package:olimtec_tcc/app/ui/admin/privileges/privileges_teams.dart';
 import 'package:olimtec_tcc/app/features/user_role/organization/view/privilge_organization_page.dart';
 import 'package:olimtec_tcc/app/ui/champioship_page.dart';
 import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
@@ -52,7 +49,6 @@ import 'package:olimtec_tcc/app/ui/user/modalities/modalities_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/sport_modalitiy_page.dart';
 import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
-import 'package:olimtec_tcc/app/utils/app_routes.dart';
 import 'ui/admin/modalities/modalities_page.dart';
 
 import 'features/theme/color_schemes.g.dart';
@@ -104,7 +100,6 @@ class App extends ConsumerWidget {
         MainOrgnization.route: (ctx) => const MainOrgnization(),
         MainAdmin.route: (ctx) => const MainAdmin(),
         MainPrivilegeAdmin.route: (ctx) => const MainPrivilegeAdmin(),
-        PrivilegesTeamAdmin.route: (ctx) => const PrivilegesTeamAdmin(),
         ModalityAdmin.route: (ctx) => const ModalityAdmin(),
         ModalitiesAdmin.route: (ctx) => const ModalitiesAdmin(),
         TeamAdmin.route: (ctx) => const TeamAdmin(),
@@ -115,8 +110,8 @@ class App extends ConsumerWidget {
         RestartChampioshipAdmin.route: (ctx) => const RestartChampioshipAdmin(),
         ManagementAccountAdmin.route: (ctx) => const ManagementAccountAdmin(),
         PrivilegeTeamAdmin.route: (ctx) => const PrivilegeTeamAdmin(),
-        PrivilegeOrganizationAdmin.route: (ctx) => const PrivilegeOrganizationAdmin(),
-        ManagementAccountAddAdmin.route: (ctx) => const ManagementAccountAddAdmin(),
+        ManagementAccountAddAdmin.route: (ctx) =>
+            const ManagementAccountAddAdmin(),
         PrivilegeOrganization.route: (ctx) => const PrivilegeOrganization(),
         OrganizationAddModalityAdmin.route: (ctx) =>
             const OrganizationAddModalityAdmin(),
@@ -129,13 +124,15 @@ class App extends ConsumerWidget {
         ModalityOrganization.route: (ctx) => const ModalityOrganization(),
         DetailsGameOrganization.route: (ctx) => const DetailsGameOrganization(),
         InsertRuleOrganization.route: (ctx) => const InsertRuleOrganization(),
-        MainModalitiesOrganization.route: (ctx) => const MainModalitiesOrganization(),
+        MainModalitiesOrganization.route: (ctx) =>
+            const MainModalitiesOrganization(),
         GameScore.route: (ctx) => GameScore(),
         ScoreBoardWithoutPoints.route: (ctx) => const ScoreBoardWithoutPoints(),
-        LeaderTeamsPrivilegesAdmin.route: (ctx) => const LeaderTeamsPrivilegesAdmin(),
-        OrganizationTeamsPrivilegesAdmin.route: (ctx) => const OrganizationTeamsPrivilegesAdmin(),
+        LeaderTeamsPrivilegesAdmin.route: (ctx) =>
+            const LeaderTeamsPrivilegesAdmin(),
+        OrganizationTeamsPrivilegesAdmin.route: (ctx) =>
+            const OrganizationTeamsPrivilegesAdmin(),
       },
-        
       home: const LandingPage(),
     );
   }

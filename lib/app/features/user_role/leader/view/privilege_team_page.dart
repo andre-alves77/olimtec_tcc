@@ -1,6 +1,8 @@
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 
 class PrivilegeTeamAdmin extends StatefulWidget {
   const PrivilegeTeamAdmin({super.key});
@@ -12,61 +14,20 @@ class PrivilegeTeamAdmin extends StatefulWidget {
 }
 
 class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
- 
-
-  _CardJogador2() {
-    final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: ListTile(
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(50),
-          child: Image.asset(
-            'assets/images/LOGO_USUARIO.png',
-            fit: BoxFit.cover,
-          ),
-        ),
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              width: sizeWidth / 2.8,
-              child: FittedBox(
-                child: const Text(
-                  'Fulano de tal',
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ),
-          ],
-        ),
-        trailing: Container(
-          width: sizeWidth / 7.8,
-          child: FittedBox(
-            child: Icon(
-              Icons.check,
-              color: Theme.of(context).colorScheme.primary,
-            ),
-          ),
-        ),
-      ),
-    );
-  }
-
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final sizeHeight = min(MediaQuery.of(context).size.height, 400).toDouble();
 
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
+    final usersRef = FirebaseFirestore.instance
+        .collection("users")
+        .where('teamName', isEqualTo: arg);
+
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "REPRESENTANTES - 2ºDSB",
+          "REPRESENTANTES - $arg",
           style: TextStyle(
             fontFamily: 'Lato',
             fontSize: 24,
@@ -83,18 +44,6 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
             child: Column(
               mainAxisSize: MainAxisSize.max,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.circular(50),
-                      child: Image.asset(
-                        "assets/images/LOGO_2DSB_EXAMPLE.png",
-                        width: sizeWidth / 2,
-                      ),
-                    ),
-                  ],
-                ),
                 Padding(
                   padding: const EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                   child: Row(
@@ -104,9 +53,9 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
                         children: [
                           Container(
                             width: sizeWidth / 4.2,
-                            child: const FittedBox(
+                            child: FittedBox(
                               child: Text(
-                                "2DSB",
+                                arg ?? 'TIME',
                                 style: TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 28,
@@ -192,26 +141,103 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
                                   width: 2,
                                 ),
                               ),
-                              child: ListView(
-                                padding: EdgeInsets.zero,
-                                scrollDirection: Axis.vertical,
-                                children: [
-                                  Divider(
-                                      height: 2,
-                                      thickness: 1.5,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onPrimaryContainer),
-                                  _CardJogador2(),
-                                  Divider(
-                                      height: 2,
-                                      thickness: 1.5,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onPrimaryContainer),
-                                  _CardJogador2(),
-                                ],
-                              ),
+                              child: StreamBuilder<QuerySnapshot>(
+                                  stream: usersRef.snapshots(),
+                                  builder: (context, snapshot) {
+                                    if (snapshot.hasError) {
+                                      return Text('Deu ruim');
+                                    }
+
+                                    if (snapshot.connectionState ==
+                                        ConnectionState.waiting) {
+                                      return Column(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Center(
+                                              child:
+                                                  CircularProgressIndicator()),
+                                        ],
+                                      );
+                                    }
+
+                                    List<DocumentSnapshot> leaders = [];
+                                    List<DocumentSnapshot> others = [];
+                                    snapshot.data!.docs.forEach((document) {
+                                      var data = document.data()
+                                          as Map<String, dynamic>;
+                                      if (data['isLeader'] ?? false) {
+                                        leaders.add(document);
+                                      } else {
+                                        others.add(document);
+                                      }
+                                      print("DJ MEC MEC");
+                                    });
+
+                                    // Concatenar as duas listas
+                                    List<DocumentSnapshot> sortedDocs = [
+                                      ...leaders,
+                                      ...others
+                                    ];
+
+                                    return ListView(
+                                      children: sortedDocs
+                                          .map((DocumentSnapshot document) {
+                                        Map<String, dynamic> data = document
+                                            .data() as Map<String, dynamic>;
+
+                                        return Column(
+                                          children: [
+                                            ListTile(
+                                              leading: ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(50),
+                                                child: Image.asset(
+                                                  'assets/images/LOGO_USUARIO.png',
+                                                  fit: BoxFit.cover,
+                                                ),
+                                              ),
+                                              title: Text(data['name']),
+                                              trailing: Container(
+                                                width: sizeWidth / 7.8,
+                                                child: FittedBox(
+                                                  child: IconButton(
+                                                      onPressed: () {
+                                                        final appUser =
+                                                            AppUser.fromMap(
+                                                                data);
+                                                        if (data['isLeader'] ==
+                                                            true) {
+                                                          appUser.isLeader =
+                                                              false;
+                                                        } else {
+                                                          appUser.isLeader =
+                                                              true;
+                                                        }
+                                                        FirebaseFirestore
+                                                            .instance
+                                                            .collection("users")
+                                                            .doc(document.id)
+                                                            .set(appUser
+                                                                .toMap());
+                                                        setState(() {});
+                                                      },
+                                                      icon: data['isLeader'] ==
+                                                              true
+                                                          ? Icon(
+                                                              Icons.remove,
+                                                              color: Colors.red,
+                                                            )
+                                                          : Icon(Icons.add)),
+                                                ),
+                                              ),
+                                            ),
+                                            Divider(),
+                                          ],
+                                        );
+                                      }).toList(),
+                                    );
+                                  }),
                             ),
                           )
                         ],
