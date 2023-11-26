@@ -6,6 +6,7 @@ import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/repository/auth.repository.dart';
+import 'package:olimtec_tcc/app/splashscreen/splash_screen.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/user/index_home_user.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
@@ -37,7 +38,7 @@ final isLoggedProvider = StateProvider<bool>((ref) {
       final context = ref.read(navigtorkeyProvider).currentContext;
           
 
-      Navigator.pushReplacementNamed(context!, AppRoute.LANDING);
+      Navigator.pushReplacementNamed(context!, SplashScreen.route);
       return false;
     },
     error: (error, stackTrace) {
