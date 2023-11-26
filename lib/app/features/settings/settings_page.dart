@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
+import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
@@ -10,36 +12,40 @@ import 'package:olimtec_tcc/app/ui/team/main_team.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class SettingsPage extends ConsumerWidget {
-   SettingsPage({super.key});
+  SettingsPage({super.key});
 
   static String route = "/settings-user";
-List<Widget> _userrole(AppUser? user, BuildContext context){
-List<Widget> _list= [];
-if(user != null){
+  List<Widget> _userrole(AppUser? user, BuildContext context) {
+    List<Widget> _list = [];
+    if (user != null) {
+      if (user.isOrganization) {
+        _list.add(const Divider());
+        _list.add(
+          _listTile(
+              context: context,
+              title: 'Organização',
+              icon: Icons.people_alt,
+              function: () {
+                Navigator.pushNamed(context, MainOrgnization.route);
+              }),
+        );
+      }
+      if (user.isLeader) {
+        _list.add(const Divider());
+        _list.add(
+          _listTile(
+              context: context,
+              title: 'Representante',
+              icon: Icons.people_alt,
+              function: () {
+                Navigator.pushNamed(context, MainTeam.route);
+              }),
+        );
+      }
+    }
+    return _list;
+  }
 
-if(user.isOrganization){
-_list.add(const Divider());
-_list.add(              _listTile(
-                  context: context,
-                  title: 'Organização',
-                  icon: Icons.people_alt,
-                  function: () {
-                    Navigator.pushNamed(context, MainOrgnization.route);
-                  }),);
-}
-if(user.isLeader){
-_list.add(const Divider());
-_list.add(              _listTile(
-                  context: context,
-                  title: 'Representante',
-                  icon: Icons.people_alt,
-                  function: () {
-                    Navigator.pushNamed(context, MainTeam.route);
-                  }),);
-}
-}
-return _list;
-}
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
@@ -109,7 +115,7 @@ return _list;
                       color: Theme.of(context).colorScheme.onPrimaryContainer),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, '/perfil_page');
+                  Navigator.pushNamed(context, PerfilUser.route);
                 },
               ),
               const Divider(),
@@ -139,7 +145,7 @@ return _list;
                   title: 'Sobre nós',
                   icon: Icons.people_alt,
                   function: () {
-                    Navigator.pushNamed(context, AppRoute.ABOUTUS_USER);
+                    Navigator.pushNamed(context, AboutUsPage.route);
                   }),
               const Divider(),
               _listTile(

@@ -21,7 +21,7 @@ class SignInForState extends ConsumerState<SignInForm> {
     final authNoti = ref.watch(formUserSignInProvider);
 
     return Form(
-      key: authNoti.formAuthKeySignIn,
+
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(44, 0, 44, 0),
         child: SingleChildScrollView(
