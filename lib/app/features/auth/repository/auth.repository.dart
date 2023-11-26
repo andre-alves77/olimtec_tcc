@@ -52,10 +52,13 @@ class AuthRepository extends ChangeNotifier {
         password: password,
       );
 
-      final userMap = await firebasestore
+      /*final userMap = await firebasestore
           .collection('users')
           .where("id", isEqualTo: auth.currentUser!.uid)
           .get();
+        */
+
+        
 
 
           Future.delayed(const Duration(seconds: 2), (){
