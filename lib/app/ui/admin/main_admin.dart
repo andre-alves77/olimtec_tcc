@@ -19,19 +19,13 @@ class MainAdmin extends ConsumerWidget {
 
 ref.watch(championshipStreamProvider).when(data: ((data) {
       if(data == null){
-        return const CircularProgressIndicator();
+            return const Scaffold(body:Center(child:CircularProgressIndicator()));  
       }
  if(data.isCreated == false){
 
 Navigator.pushReplacementNamed(context, StartChampionshipAdmin.route);
-    }
-    }), error: (e, s){
-      return const CircularProgressIndicator();
-    }, loading: (){
-      return const CircularProgressIndicator();
-    });
-
-return Scaffold(
+    }else{
+       return Scaffold(
       appBar: AppBar(
         title: Text(
           'ADMIN',
@@ -99,5 +93,12 @@ return Scaffold(
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+  
+    }
+    }), error: (e, s){
+    }, loading: (){
+    });
+      return const Scaffold(body:Center(child:CircularProgressIndicator()));
+  
   }
 }

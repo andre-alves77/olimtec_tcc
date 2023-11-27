@@ -17,7 +17,7 @@ class ChampionshipRepository{
   Championship? championship;
 
   ChampionshipRepository({required this.ref}):super() {
-getChampionship();
+
   }
 
 
@@ -54,8 +54,6 @@ yield* query.snapshots().map((snap) {
 var y = snap.docs.first.data();
 return Championship.fromMap(y);
   }else{
-    
-
     throw CustomSnackBar(
               ref: ref, message: 'Um erro aconteceu. Tente novamente.',type: ScaffoldAlert.error);
   }
