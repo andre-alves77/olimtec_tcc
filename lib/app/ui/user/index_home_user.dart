@@ -16,9 +16,9 @@ class IndexHomeUser extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bottomBarStore = ref.watch(bottomBarProvider);
-    final appuser = ref.watch(appUserProvider);
 
-    if(appuser is AppUser){
+
+
           return Scaffold(
       extendBody: true,
       bottomNavigationBar: BottomBar(),
@@ -34,9 +34,7 @@ class IndexHomeUser extends ConsumerWidget {
         ),
       ),
     );
-    }else{
-      return Center(child: CircularProgressIndicator());
-    }
+   
 
 
   }
