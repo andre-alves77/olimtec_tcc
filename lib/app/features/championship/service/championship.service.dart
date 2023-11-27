@@ -14,15 +14,15 @@ return repo.getChampionshipStream();
 );
 
 
-final championshipProvider = StateProvider<Championship?>((ref) {
-  ref.watch(championshipStreamProvider).when(
-    data: (data){
-return data;
-  },
-   error: (e, s){
-return null;
-  }, 
-  loading: (){
-    return null;
-  });
-});
+// final championshipProvider = StateProvider<Championship?>((ref) {
+//   ref.watch(championshipStreamProvider).when(
+//     data: (data){
+// return data;
+//   },
+//    error: (e, s){
+// return null;
+//   }, 
+//   loading: (){
+//     return null;
+//   });
+// });

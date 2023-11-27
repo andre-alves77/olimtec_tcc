@@ -8,6 +8,7 @@ import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_m
 
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_teams.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/start_championship.dart';
+import 'package:olimtec_tcc/app/splashscreen/splash_screen.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
@@ -133,6 +134,7 @@ class App extends ConsumerWidget {
             const LeaderTeamsPrivilegesAdmin(),
         OrganizationTeamsPrivilegesAdmin.route: (ctx) =>
             const OrganizationTeamsPrivilegesAdmin(),
+            SplashScreen.route: (ctx)=> const SplashScreen(),
       },
       home: const LandingPage(),
     );
