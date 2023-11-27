@@ -1,12 +1,36 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 import 'package:olimtec_tcc/app/features/championship/service/championship.service.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/start_championship.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
+
+final mainAdminProvider = StateProvider((ref) {
+  final champs = ref.watch(championshipStreamProvider);
+final context = ref.read(navigtorkeyProvider).currentContext;
+
+  champs.when(data: (value) {
+    if(value == null){
+      Navigator.popAndPushNamed(context!, LandingPage.route);
+    }
+    if(value!.isCreated){
+      Navigator.popAndPushNamed(context!, MainAdmin2.route);
+    }
+    if(value.isCreated == false){
+      Navigator.popAndPushNamed(context!, StartChampionshipAdmin.route);
+    }
+  },error: (e, s){
+
+  },loading:(){
+    
+  } ,);
+
+});
 
 
 class MainAdmin extends ConsumerWidget {
@@ -16,16 +40,20 @@ class MainAdmin extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+ref.watch(mainAdminProvider);
 
-ref.watch(championshipStreamProvider).when(data: ((data) {
-      if(data == null){
-            return const Scaffold(body:Center(child:CircularProgressIndicator()));  
-      }
- if(data.isCreated == false){
+ return Scaffold(body:Center(child:CircularProgressIndicator()));
+}
+}
 
-Navigator.pushReplacementNamed(context, StartChampionshipAdmin.route);
-    }else{
-       return Scaffold(
+class MainAdmin2 extends ConsumerWidget {
+  const MainAdmin2({super.key});
+
+static String route = "/main-admin2";
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    return  Scaffold(
       appBar: AppBar(
         title: Text(
           'ADMIN',
@@ -93,12 +121,6 @@ Navigator.pushReplacementNamed(context, StartChampionshipAdmin.route);
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
-  
-    }
-    }), error: (e, s){
-    }, loading: (){
-    });
-      return const Scaffold(body:Center(child:CircularProgressIndicator()));
-  
+
   }
 }

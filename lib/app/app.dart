@@ -135,6 +135,7 @@ class App extends ConsumerWidget {
         OrganizationTeamsPrivilegesAdmin.route: (ctx) =>
             const OrganizationTeamsPrivilegesAdmin(),
             SplashScreen.route: (ctx)=> const SplashScreen(),
+            MainAdmin2.route:(ctx)=>const MainAdmin2(),
       },
       home: const LandingPage(),
     );
