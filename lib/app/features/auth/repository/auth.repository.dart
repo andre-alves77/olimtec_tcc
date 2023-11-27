@@ -37,7 +37,7 @@ class AuthRepository extends ChangeNotifier {
           return AppUser.fromMap(y);
         } else {
           throw CustomSnackBar(
-              ref: ref, message: 'Um erro aconteceu. Tente novamente.');
+              ref: ref, message: 'Um erro aconteceu. Tente novamente.',type: ScaffoldAlert.error);
         }
       });
     }

@@ -51,5 +51,5 @@ class AppRoute {
       '/scoreboardwithoutpoints-organization';
   static const LEADERTEAMSPRIVILEGES_ADMIN = '/leader-teams-privileges-admin';
   static const ORGANIZATIONTEAMSPRIVILEGES_ADMIN = '/organization-teams-privileges-admin';
-      
+  static const SPLASH_SCREEN = 'splash_screen';
 }

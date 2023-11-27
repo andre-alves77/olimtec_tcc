@@ -19,7 +19,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final aiuth = ref.watch(formUserSignInProvider);
     return Form(
-      key: aiuth.formAuthKeySignUp,
+
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(44, 0, 44, 0),
         child: SingleChildScrollView(

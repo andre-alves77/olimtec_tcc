@@ -32,7 +32,7 @@ Future.delayed(Duration(seconds: 10));
       SnackBar(
         behavior: SnackBarBehavior.floating,
         content: Text(message, style: TextStyle(color:Theme.of(context!).colorScheme.onPrimaryContainer)),
-        backgroundColor: Theme.of(context!).colorScheme.primaryContainer,
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         
       ),
     );

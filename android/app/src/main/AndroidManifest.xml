@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.olimtec_tcc">
    <application
-        android:label="olimtec_tcc"
+        android:label="OlimTec"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
