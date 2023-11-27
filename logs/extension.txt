@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.77.20231116
 Flutter extension: 3.76.0 (not activated)
@@ -349,6 +351,7 @@ Flutter (3.17.0-15.0.pre.27): /home/codespace/flutter (Web Server (web-javascrip
         "evaluateToStringInDebugViews": true,
         "flutterSdkPath": "/home/codespace/flutter",
         "useInspectorNotificationsForWidgetErrors": true,
+<<<<<<< HEAD
         "flutterRunLogFile": "/workspaces/olimtec_tcc/logs/flutter_run.txt",
         "showMemoryUsage": …
 [12:18:12 AM] [General] [Info] Using flutter debugger for Flutter
@@ -363,3 +366,20 @@ Flutter (3.17.0-15.0.pre.27): /home/codespace/flutter (Web Server (web-javascrip
 [12:18:15 AM] [General] [Info] Mapped URL: https://fantastic-waddle-69966vxv9w5h5q55-39687.app.github.dev/
 [12:18:15 AM] [General] [Info] Final URL: wss://fantastic-waddle-69966vxv9w5h5q55-39687.app.github.dev/$debug
 [12:18:39 AM] [General] [Info] Opening external URL: http://localhost:41233
+=======
+        "flutterRunLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[21:55:55] [General] [Info] Using flutter debugger for Flutter
+[21:55:55] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[21:55:55] [General] [Info] Running debugger via node with c:\Users\Vinicius Vitoriano\.vscode\extensions\dart-code.dart-code-3.76.1\out\dist\debug.js    flutter
+[21:55:56] [General] [Info] Did not find session d5de1eb8-e88b-4823-b6da-fc17ec083039 to handle dart.progressStart. There were 0 sessions:
+[21:55:56] [General] [Info] Event will be queued and processed when the session start event fires
+[21:55:56] [General] [Info] Processing delayed event dart.progressStart for session d5de1eb8-e88b-4823-b6da-fc17ec083039
+[21:58:11] [General] [Info] Took 469ms to search for projects (5 levels)
+[21:58:11] [General] [Info] Took 3ms to filter out excluded projects (0 exclusion rules)
+[21:59:20] [General] [Info] Returning cached results for project search
+[22:01:16] [General] [Info] Returning cached results for project search
+>>>>>>> e7d550a5be35ae5bc0061ca7b5878487542adcf3
+>>>>>>> 6e09aafdd8dc2927d48745213487f273ebdefc2a
