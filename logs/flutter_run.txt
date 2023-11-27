@@ -1,417 +1,83 @@
-[23:10:42]: Spawning C:\flutter\bin\flutter.bat with args ["run","--machine","--start-paused","-d","chrome","--devtools-server-address","http://127.0.0.1:9100/","--target","lib\\main.dart","--web-hostname","any"]
-[23:10:42]: ..  in C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[23:10:42]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
-[23:10:42]: PID: 4032
-[23:10:51]: <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":7708}}]
-[23:10:53]: <== [{"event":"app.start","params":{"appId":"af43b105-80fa-4ef8-ab25-8a117042fe4a","deviceId":"chrome","directory":"C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
-[23:10:53]: <== Launching lib\main.dart on Chrome in debug mode...
-[23:10:56]: <== [{"event":"app.progress","params":{"appId":"af43b105-80fa-4ef8-ab25-8a117042fe4a","id":"0","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
-[23:13:43]: <== [{"event":"app.progress","params":{"appId":"af43b105-80fa-4ef8-ab25-8a117042fe4a","id":"0","progressId":null,"finished":true}}]
-[23:13:54]: <== [{"event":"app.webLaunchUrl","params":{"url":"http://localhost:51535","launched":true}}]
-[23:14:23]: <== This app is linked to the debug service: ws://127.0.0.1:51679/rYcUxGd_sZM=/ws
-[23:14:23]: <== Debug service listening on ws://127.0.0.1:51679/rYcUxGd_sZM=/ws
-[23:14:23]: <== [{"event":"app.started","params":{"appId":"af43b105-80fa-4ef8-ab25-8a117042fe4a"}}]
-[23:14:23]: <== [{"event":"app.debugPort","params":{"appId":"af43b105-80fa-4ef8-ab25-8a117042fe4a","port":51679,"wsUri":"ws://127.0.0.1:51679/rYcUxGd_sZM=/ws"}}]
-[23:14:27]: <== carregando login state
-[23:14:29]: <== não logado
-[23:14:33]: <== Error: Could not find a generator for route RouteSettings("/splash_screen", null) in the _WidgetsAppState.
-[23:14:33]: <== Make sure your root app widget has provided a way to generate
-[23:14:33]: <== this route.
-[23:14:33]: <== Generators for routes are searched for in the following order:
-[23:14:33]: <==  1. For the "/" route, the "home" property, if non-null, is used.
-[23:14:33]: <==  2. Otherwise, the "routes" table is used, if it has an entry for the route.
-[23:14:33]: <==  3. Otherwise, onGenerateRoute is called. It should return a non-null value for any valid route not handled by "home" and "routes".
-[23:14:33]: <==  4. Finally if all else fails onUnknownRoute is called.
-[23:14:33]: <== Unfortunately, onUnknownRoute was not set.
-[23:14:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49  throw_
-[23:14:33]: <== packages/flutter/src/widgets/app.dart 1438:9                                  <fn>
-[23:14:33]: <== packages/flutter/src/widgets/app.dart 1452:14                                 [_onUnknownRoute]
-[23:14:33]: <== packages/flutter/src/widgets/navigator.dart 4231:22                           [_routeNamed]
-[23:14:33]: <== packages/flutter/src/widgets/navigator.dart 4344:36                           pushReplacementNamed
-[23:14:33]: <== packages/flutter/src/widgets/navigator.dart 1819:32                           pushReplacementNamed
-[23:14:33]: <== packages/olimtec_tcc/app/features/auth/service/auth.service.dart 42:17        <fn>
-[23:14:33]: <== packages/riverpod/src/common.dart 720:16                                      AsyncValueX.when
-[23:14:33]: <== packages/olimtec_tcc/app/features/auth/service/auth.service.dart 24:39        <fn>
-[23:14:33]: <== packages/riverpod/src/state_provider/base.dart 81:54                          [_create]
-[23:14:33]: <== packages/riverpod/src/state_provider/base.dart 132:34                         create
-[23:14:33]: <== packages/riverpod/src/framework/element.dart 424:7                            buildState
-[23:14:33]: <== packages/riverpod/src/framework/element.dart 363:5                            [_performBuild]
-[23:14:33]: <== packages/riverpod/src/framework/element.dart 326:7                            flush
-[23:14:33]: <== packages/riverpod/src/framework/scheduler.dart 94:40                          [_performRefresh]
-[23:14:33]: <== packages/riverpod/src/framework/scheduler.dart 82:5                           [_task]
-[23:14:33]: <== packages/riverpod/src/framework/scheduler.dart 41:15                          invoke
-[23:14:33]: <== packages/flutter_riverpod/src/framework.dart 390:12                           build
-[23:14:33]: <== packages/flutter/src/widgets/framework.dart 5297:15                           performRebuild
-[23:14:33]: <== packages/flutter/src/widgets/framework.dart 5016:7                            rebuild
-[23:14:33]: <== packages/flutter/src/widgets/framework.dart 2779:18                           buildScope
-[23:14:33]: <== packages/flutter/src/widgets/binding.dart 916:9                               drawFrame
-[23:14:33]: <== packages/flutter/src/rendering/binding.dart 360:5                             [_handlePersistentFrameCallback]
-[23:14:33]: <== packages/flutter/src/scheduler/binding.dart 1297:15                           [_invokeFrameCallback]
-[23:14:33]: <== packages/flutter/src/scheduler/binding.dart 1227:9                            handleDrawFrame
-[23:14:33]: <== packages/flutter/src/scheduler/binding.dart 952:7                             <fn>
-[23:14:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/isolate_helper.dart 48:19       internalCallback
-[23:14:52]: <== logado
-[23:15:28]: <== carregando login state
-[23:15:28]: <== logado
-[23:15:31]: <== ══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
-[23:15:31]: <== The following assertion was thrown building IndexHomeUser(dirty, dependencies:
-[23:15:31]: <== [UncontrolledProviderScope], state: _ConsumerState#aba0e):
-[23:15:31]: <== Assertion failed: file:///C:/flutter/packages/flutter/lib/src/material/scaffold.dart:289:7
-[23:15:31]: <== _scaffolds.isNotEmpty
-[23:15:31]: <== "ScaffoldMessenger.showSnackBar was called, but there are currently no descendant Scaffolds to
-[23:15:32]: <== present to."
-[23:15:32]: <== The relevant error-causing widget was:
-[23:15:32]: <==   IndexHomeUser
-[23:15:32]: <==   IndexHomeUser:file:///C:/Users/Vinicius%20Vitoriano/Desktop/TCC/olimtec_tcc/lib/app/app.dart:87:45
-[23:15:32]: <== When the exception was thrown, this was the stack:
-[23:15:32]: <== #1      <anonymous closure> (http://localhost:51535/packages/riverpod/src/stack_trace.dart:9:11)
-[23:15:32]: <== #2      when (http://localhost:51535/packages/riverpod/src/result.dart:129:17)
-[23:15:32]: <== #3      get requireState (http://localhost:51535/packages/riverpod/src/framework/element.dart:199:17)
-[23:15:32]: <== #4      readSelf (http://localhost:51535/packages/riverpod/src/framework/element.dart:813:12)
-[23:15:32]: <== #5      read (http://localhost:51535/packages/riverpod/src/framework/provider_base.dart:179:29)
-[23:15:32]: <== #6      watch (http://localhost:51535/packages/flutter_riverpod/src/consumer.dart:569:20)
-[23:15:32]: <== #7      build (http://localhost:51535/packages/olimtec_tcc/app/ui/user/index_home_user.dart:19:24)
-[23:15:32]: <== #8      build (http://localhost:51535/packages/flutter_riverpod/src/consumer.dart:479:19)
-[23:15:32]: <== #9      build (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5409:27)
-[23:15:32]: <== #10     build (http://localhost:51535/packages/flutter_riverpod/src/consumer.dart:542:20)
-[23:15:32]: <== #11     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5297:15)
-[23:15:32]: <== #12     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #13     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #14     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #15     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #16     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #17     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #18     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #19     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:32]: <== #20     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #21     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #22     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #23     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #24     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #25     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #26     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #27     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #28     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:32]: <== #29     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #30     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #31     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:32]: <== #32     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #33     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #34     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #35     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #36     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #37     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #38     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #39     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #40     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #41     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #42     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:32]: <== #43     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #44     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #45     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #46     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #47     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #48     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #49     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #50     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #51     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #52     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #53     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:32]: <== #54     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #55     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #56     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #57     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #58     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #59     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #60     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #61     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #62     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #63     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #64     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #65     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #66     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #67     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #68     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #69     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #70     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #71     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #72     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:32]: <== #73     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #74     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #75     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #76     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #77     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #78     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #79     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #80     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #81     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #82     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #83     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:32]: <== #84     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #85     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #86     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #87     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #88     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #89     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #90     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #91     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #92     inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #93     updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #94     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #95     performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #96     rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #97     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #98     [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #99     mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #100    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #101    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #102    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #103    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #104    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #105    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #106    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #107    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #108    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #109    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:32]: <== #110    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #111    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #112    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:32]: <== #113    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #114    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #115    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #116    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:32]: <== #117    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:32]: <== #118    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:32]: <== #119    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:32]: <== #120    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:32]: <== #121    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:32]: <== #122    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:32]: <== #123    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== Error: Assertion failed: file:///C:/flutter/packages/flutter/lib/src/material/scaffold.dart:289:7
-[23:15:33]: <== _scaffolds.isNotEmpty
-[23:15:33]: <== "ScaffoldMessenger.showSnackBar was called, but there are currently no descendant Scaffolds to present to."
-[23:15:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49      throw_
-[23:15:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 35:3        assertFailed
-[23:15:33]: <== packages/flutter/src/material/scaffold.dart 289:18                                showSnackBar
-[23:15:33]: <== packages/olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart 31:22           new
-[23:15:33]: <== packages/olimtec_tcc/app/features/auth/service/auth.service.dart 68:3             <fn>
-[23:15:33]: <== packages/riverpod/src/common.dart 720:16                                          AsyncValueX.when
-[23:15:33]: <== packages/olimtec_tcc/app/features/auth/service/auth.service.dart 56:28            <fn>
-[23:15:33]: <== packages/riverpod/src/state_provider/base.dart 81:54                              [_create]
-[23:15:33]: <== packages/riverpod/src/state_provider/base.dart 132:34                             create
-[23:15:33]: <== packages/riverpod/src/framework/element.dart 424:7                                buildState
-[23:15:33]: <== packages/riverpod/src/framework/element.dart 363:5                                [_performBuild]
-[23:15:33]: <== packages/riverpod/src/framework/element.dart 326:7                                flush
-[23:15:33]: <== packages/riverpod/src/framework/scheduler.dart 94:40                              [_performRefresh]
-[23:15:33]: <== packages/riverpod/src/framework/scheduler.dart 82:5                               [_task]
-[23:15:33]: <== packages/riverpod/src/framework/scheduler.dart 41:15                              invoke
-[23:15:33]: <== packages/flutter_riverpod/src/framework.dart 390:12                               build
-[23:15:33]: <== packages/flutter/src/widgets/framework.dart 5297:15                               performRebuild
-[23:15:33]: <== packages/flutter/src/widgets/framework.dart 5016:7                                rebuild
-[23:15:33]: <== packages/flutter/src/widgets/framework.dart 2779:18                               buildScope
-[23:15:33]: <== packages/flutter/src/widgets/binding.dart 916:9                                   drawFrame
-[23:15:33]: <== packages/flutter/src/rendering/binding.dart 360:5                                 [_handlePersistentFrameCallback]
-[23:15:33]: <== packages/flutter/src/scheduler/binding.dart 1297:15                               [_invokeFrameCallback]
-[23:15:33]: <== packages/flutter/src/scheduler/binding.dart 1227:9                                handleDrawFrame
-[23:15:33]: <== packages/flutter/src/scheduler/binding.dart 1085:5                                [_handleDrawFrame]
-[23:15:33]: <== lib/_engine/engine/platform_dispatcher.dart 1304:13                               invoke
-[23:15:33]: <== lib/_engine/engine/platform_dispatcher.dart 278:5                                 invokeOnDrawFrame
-[23:15:33]: <== lib/_engine/engine/initialization.dart 185:45                                     <fn>
-[23:15:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 574:37  _checkAndCall
-[23:15:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 579:39  dcall
-[23:15:33]: <== Error: Assertion failed: file:///C:/flutter/packages/flutter/lib/src/material/scaffold.dart:289:7
-[23:15:33]: <== _scaffolds.isNotEmpty
-[23:15:33]: <== "ScaffoldMessenger.showSnackBar was called, but there are currently no descendant Scaffolds to present to."
-[23:15:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49      throw_
-[23:15:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 35:3        assertFailed
-[23:15:33]: <== packages/flutter/src/material/scaffold.dart 289:18                                showSnackBar
-[23:15:33]: <== packages/olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart 31:22           new
-[23:15:33]: <== packages/olimtec_tcc/app/features/auth/service/auth.service.dart 68:3             <fn>
-[23:15:33]: <== packages/riverpod/src/common.dart 720:16                                          AsyncValueX.when
-[23:15:33]: <== packages/olimtec_tcc/app/features/auth/service/auth.service.dart 56:28            <fn>
-[23:15:33]: <== packages/riverpod/src/state_provider/base.dart 81:54                              [_create]
-[23:15:33]: <== packages/riverpod/src/state_provider/base.dart 132:34                             create
-[23:15:33]: <== packages/riverpod/src/framework/element.dart 424:7                                buildState
-[23:15:33]: <== packages/riverpod/src/framework/element.dart 363:5                                [_performBuild]
-[23:15:33]: <== packages/riverpod/src/framework/element.dart 326:7                                flush
-[23:15:33]: <== packages/riverpod/src/framework/scheduler.dart 94:40                              [_performRefresh]
-[23:15:33]: <== packages/riverpod/src/framework/scheduler.dart 82:5                               [_task]
-[23:15:33]: <== packages/riverpod/src/framework/scheduler.dart 41:15                              invoke
-[23:15:33]: <== packages/flutter_riverpod/src/framework.dart 390:12                               build
-[23:15:33]: <== packages/flutter/src/widgets/framework.dart 5297:15                               performRebuild
-[23:15:33]: <== packages/flutter/src/widgets/framework.dart 5016:7                                rebuild
-[23:15:33]: <== packages/flutter/src/widgets/framework.dart 2779:18                               buildScope
-[23:15:33]: <== packages/flutter/src/widgets/binding.dart 916:9                                   drawFrame
-[23:15:33]: <== packages/flutter/src/rendering/binding.dart 360:5                                 [_handlePersistentFrameCallback]
-[23:15:33]: <== packages/flutter/src/scheduler/binding.dart 1297:15                               [_invokeFrameCallback]
-[23:15:33]: <== packages/flutter/src/scheduler/binding.dart 1227:9                                handleDrawFrame
-[23:15:33]: <== packages/flutter/src/scheduler/binding.dart 1085:5                                [_handleDrawFrame]
-[23:15:33]: <== lib/_engine/engine/platform_dispatcher.dart 1304:13                               invoke
-[23:15:33]: <== lib/_engine/engine/platform_dispatcher.dart 278:5                                 invokeOnDrawFrame
-[23:15:33]: <== lib/_engine/engine/initialization.dart 185:45                                     <fn>
-[23:15:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 574:37  _checkAndCall
-[23:15:33]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 579:39  dcall
-[23:15:33]: <== #124    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #125    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:33]: <== #126    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #127    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #128    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #129    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:33]: <== #130    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #131    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #132    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:33]: <== #133    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #134    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #135    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #136    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #137    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #138    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #139    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #140    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #141    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #142    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #143    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #144    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #145    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #146    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #147    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #148    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #149    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:33]: <== #150    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #151    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #152    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:33]: <== #153    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #154    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #155    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #156    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #157    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #158    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #159    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #160    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #161    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #162    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #163    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #164    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #165    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #166    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #167    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #168    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:33]: <== #169    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #170    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #171    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #172    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #173    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #174    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #175    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #176    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #177    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #178    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #179    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #180    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #181    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #182    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #183    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #184    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:33]: <== #185    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #186    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #187    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:33]: <== #188    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #189    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #190    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #191    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #192    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:33]: <== #193    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #194    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #195    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:33]: <== #196    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #197    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #198    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #199    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #200    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:33]: <== #201    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #202    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #203    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:33]: <== #204    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #205    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #206    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #207    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6434:14)
-[23:15:33]: <== #208    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #209    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #210    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #211    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #212    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #213    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #214    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #215    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #216    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #217    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #218    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #219    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #220    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #221    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #222    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #223    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:33]: <== #224    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #225    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #226    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:33]: <== #227    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #228    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #229    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #230    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #231    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:33]: <== #232    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #233    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5279:5)
-[23:15:33]: <== #234    [_firstBuild] (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5453:11)
-[23:15:33]: <== #235    mount (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5273:5)
-[23:15:33]: <== #236    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:4182:15)
-[23:15:33]: <== #237    inflateWidget (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6569:36)
-[23:15:33]: <== #238    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3707:18)
-[23:15:33]: <== #239    updateChildren (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3894:32)
-[23:15:33]: <== #240    update (http://localhost:51535/packages/flutter/src/widgets/framework.dart:6594:17)
-[23:15:33]: <== #241    updateChild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:3685:14)
-[23:15:33]: <== #242    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5322:16)
-[23:15:33]: <== #243    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5462:11)
-[23:15:33]: <== #244    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:33]: <== #245    buildScope (http://localhost:51535/packages/flutter/src/widgets/framework.dart:2779:18)
-[23:15:33]: <== #246    drawFrame (http://localhost:51535/packages/flutter/src/widgets/binding.dart:916:9)
-[23:15:33]: <== #247    [_handlePersistentFrameCallback] (http://localhost:51535/packages/flutter/src/rendering/binding.dart:360:5)
-[23:15:33]: <== #248    [_invokeFrameCallback] (http://localhost:51535/packages/flutter/src/scheduler/binding.dart:1297:15)
-[23:15:33]: <== #249    handleDrawFrame (http://localhost:51535/packages/flutter/src/scheduler/binding.dart:1227:9)
-[23:15:33]: <== #250    [_handleDrawFrame] (http://localhost:51535/packages/flutter/src/scheduler/binding.dart:1085:5)
-[23:15:33]: <== #251    invoke (http://localhost:51535/lib/_engine/engine/platform_dispatcher.dart:1304:13)
-[23:15:33]: <== #252    invokeOnDrawFrame (http://localhost:51535/lib/_engine/engine/platform_dispatcher.dart:278:5)
-[23:15:34]: <== #253    <anonymous closure> (http://localhost:51535/lib/_engine/engine/initialization.dart:185:45)
-[23:15:34]: <== #254    _checkAndCall (http://localhost:51535/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart:574:37)
-[23:15:34]: <== #255    dcall (http://localhost:51535/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart:579:39)
-[23:15:34]: <== #256    throw_ (http://localhost:51535/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart:294:49)
-[23:15:34]: <== #257    assertFailed (http://localhost:51535/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart:35:3)
-[23:15:34]: <== #258    showSnackBar (http://localhost:51535/packages/flutter/src/material/scaffold.dart:289:18)
-[23:15:34]: <== #259    new (http://localhost:51535/packages/olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart:31:22)
-[23:15:34]: <== #260    <anonymous closure> (http://localhost:51535/packages/olimtec_tcc/app/features/auth/service/auth.service.dart:68:3)
-[23:15:34]: <== #261    AsyncValueX.when (http://localhost:51535/packages/riverpod/src/common.dart:720:16)
-[23:15:34]: <== #262    <anonymous closure> (http://localhost:51535/packages/olimtec_tcc/app/features/auth/service/auth.service.dart:56:28)
-[23:15:34]: <== #263    [_create] (http://localhost:51535/packages/riverpod/src/state_provider/base.dart:81:54)
-[23:15:34]: <== #264    create (http://localhost:51535/packages/riverpod/src/state_provider/base.dart:132:34)
-[23:15:34]: <== #265    buildState (http://localhost:51535/packages/riverpod/src/framework/element.dart:424:7)
-[23:15:34]: <== #266    [_performBuild] (http://localhost:51535/packages/riverpod/src/framework/element.dart:363:5)
-[23:15:34]: <== #267    flush (http://localhost:51535/packages/riverpod/src/framework/element.dart:326:7)
-[23:15:34]: <== #268    [_performRefresh] (http://localhost:51535/packages/riverpod/src/framework/scheduler.dart:94:40)
-[23:15:34]: <== #269    [_task] (http://localhost:51535/packages/riverpod/src/framework/scheduler.dart:82:5)
-[23:15:34]: <== #270    invoke (http://localhost:51535/packages/riverpod/src/framework/scheduler.dart:41:15)
-[23:15:34]: <== #271    build (http://localhost:51535/packages/flutter_riverpod/src/framework.dart:390:12)
-[23:15:34]: <== #272    performRebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5297:15)
-[23:15:34]: <== #273    rebuild (http://localhost:51535/packages/flutter/src/widgets/framework.dart:5016:7)
-[23:15:34]: <== #274    buildScope (http://localhost:51535/packages/flutter/src/widgets/framework.dart:2779:18)
-[23:15:34]: <== #275    drawFrame (http://localhost:51535/packages/flutter/src/widgets/binding.dart:916:9)
-[23:15:34]: <== #276    [_handlePersistentFrameCallback] (http://localhost:51535/packages/flutter/src/rendering/binding.dart:360:5)
-[23:15:34]: <== #277    [_invokeFrameCallback] (http://localhost:51535/packages/flutter/src/scheduler/binding.dart:1297:15)
-[23:15:34]: <== #278    handleDrawFrame (http://localhost:51535/packages/flutter/src/scheduler/binding.dart:1227:9)
-[23:15:34]: <== #279    [_handleDrawFrame] (http://localhost:51535/packages/flutter/src/scheduler/binding.dart:1085:5)
-[23:15:34]: <== #280    invoke (http://localhost:51535/lib/_engine/engine/platform_dispatcher.dart:1304:13)
-[23:15:34]: <== #281    invokeOnDrawFrame (http://localhost:51535/lib/_engine/engine/platform_dispatcher.dart:278:5)
-[23:15:34]: <== #282    <anonymous closure> (http://localhost:51535/lib/_engine/engine/initialization.dart:185:45)
-[23:15:34]: <== #283    _checkAndCall (http://localhost:51535/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart:574:37)
-[23:15:34]: <== #284    dcall (http://localhost:51535/dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart:579:39)
-[23:15:34]: <== ════════════════════════════════════════════════════════════════════════════════════════════════════
-[23:16:03]: ==> [{"id":"1","method":"app.stop","params":{"appId":"af43b105-80fa-4ef8-ab25-8a117042fe4a"}}]
-[23:16:06]: Process C:\flutter\bin\flutter.bat terminated! 1, null
+[00:23:30]: Spawning C:\flutter\bin\flutter.bat with args ["run","--machine","--start-paused","-d","chrome","--devtools-server-address","http://127.0.0.1:9100/","--target","lib\\main.dart","--web-hostname","any"]
+[00:23:30]: ..  in C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[00:23:30]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[00:23:30]: PID: 11160
+[00:23:36]: <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":6036}}]
+[00:23:37]: <== [{"event":"app.start","params":{"appId":"7676f15b-cb70-4174-a296-3a70203782df","deviceId":"chrome","directory":"C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
+[00:23:37]: <== Launching lib\main.dart on Chrome in debug mode...
+[00:23:38]: <== [{"event":"app.progress","params":{"appId":"7676f15b-cb70-4174-a296-3a70203782df","id":"0","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[00:25:12]: <== [{"event":"app.progress","params":{"appId":"7676f15b-cb70-4174-a296-3a70203782df","id":"0","progressId":null,"finished":true}}]
+[00:25:25]: <== [{"event":"app.webLaunchUrl","params":{"url":"http://localhost:54112","launched":true}}]
+[00:25:49]: <== This app is linked to the debug service: ws://127.0.0.1:54234/MWVVoFmXFaE=/ws
+[00:25:49]: <== Debug service listening on ws://127.0.0.1:54234/MWVVoFmXFaE=/ws
+[00:25:49]: <== [{"event":"app.started","params":{"appId":"7676f15b-cb70-4174-a296-3a70203782df"}}]
+[00:25:49]: <== [{"event":"app.debugPort","params":{"appId":"7676f15b-cb70-4174-a296-3a70203782df","port":54234,"wsUri":"ws://127.0.0.1:54234/MWVVoFmXFaE=/ws"}}]
+[00:25:52]: <== carregando login state
+[00:25:53]: <== não logado
+[00:26:10]: <== logado
+[00:26:13]: <== ══╡ EXCEPTION CAUGHT BY WIDGETS LIBRARY ╞═══════════════════════════════════════════════════════════
+[00:26:13]: <== The following assertion was thrown building MainAdmin(dirty, dependencies:
+[00:26:13]: <== [UncontrolledProviderScope], state: _ConsumerState#5d01a):
+[00:26:13]: <== setState() or markNeedsBuild() called during build.
+[00:26:13]: <== This Overlay widget cannot be marked as needing to build because the framework is already in the
+[00:26:13]: <== process of building widgets. A widget can be marked as needing to be built during the build phase
+[00:26:13]: <== only if one of its ancestors is currently building. This exception is allowed because the framework
+[00:26:13]: <== builds parent widgets before children, which means a dirty descendant will always be built.
+[00:26:13]: <== Otherwise, the framework might not visit this widget during this build phase.
+[00:26:13]: <== The widget on which setState() or markNeedsBuild() was called was:
+[00:26:13]: <==   Overlay-[LabeledGlobalKey<OverlayState>#51a5d]
+[00:26:13]: <== The widget which was currently being built when the offending call was made was:
+[00:26:13]: <==   MainAdmin
+[00:26:13]: <== The relevant error-causing widget was:
+[00:26:13]: <==   MainAdmin
+[00:26:13]: <==   MainAdmin:file:///C:/Users/Vinicius%20Vitoriano/Desktop/TCC/olimtec_tcc/lib/app/app.dart:103:41
+[00:26:13]: <== When the exception was thrown, this was the stack:
+[00:26:13]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49      throw_
+[00:26:13]: <== packages/flutter/src/widgets/framework.dart 4862:9                                <fn>
+[00:26:13]: <== packages/flutter/src/widgets/framework.dart 4873:14                               markNeedsBuild
+[00:26:13]: <== packages/flutter/src/widgets/framework.dart 1158:5                                setState
+[00:26:13]: <== packages/flutter/src/widgets/overlay.dart 646:5                                   rearrange
+[00:26:13]: <== packages/flutter/src/widgets/navigator.dart 4125:16                               [_flushHistoryUpdates]
+[00:26:13]: <== packages/flutter/src/widgets/navigator.dart 4721:5                                [_pushReplacementEntry]
+[00:26:13]: <== packages/flutter/src/widgets/navigator.dart 4675:5                                pushReplacement
+[00:26:13]: <== packages/flutter/src/widgets/navigator.dart 4344:12                               pushReplacementNamed
+[00:26:13]: <== packages/flutter/src/widgets/navigator.dart 1819:32                               pushReplacementNamed
+[00:26:13]: <== packages/olimtec_tcc/app/ui/admin/main_admin.dart 26:11                           <fn>
+[00:26:13]: <== packages/riverpod/src/common.dart 720:16                                          AsyncValueX.when
+[00:26:13]: <== packages/olimtec_tcc/app/ui/admin/main_admin.dart 20:39                           build
+[00:26:13]: <== packages/flutter_riverpod/src/consumer.dart 479:19                                build
+[00:26:13]: <== packages/flutter/src/widgets/framework.dart 5409:27                               build
+[00:26:13]: <== packages/flutter_riverpod/src/consumer.dart 542:20                                build
+[00:26:13]: <== packages/flutter/src/widgets/framework.dart 5297:15                               performRebuild
+[00:26:13]: <== packages/flutter/src/widgets/framework.dart 5462:11                               performRebuild
+[00:26:13]: <== packages/flutter/src/widgets/framework.dart 5016:7                                rebuild
+[00:26:13]: <== packages/flutter/src/widgets/framework.dart 2779:18                               buildScope
+[00:26:13]: <== packages/flutter/src/widgets/binding.dart 916:9                                   drawFrame
+[00:26:13]: <== packages/flutter/src/rendering/binding.dart 360:5                                 [_handlePersistentFrameCallback]
+[00:26:13]: <== packages/flutter/src/scheduler/binding.dart 1297:15                               [_invokeFrameCallback]
+[00:26:13]: <== packages/flutter/src/scheduler/binding.dart 1227:9                                handleDrawFrame
+[00:26:13]: <== packages/flutter/src/scheduler/binding.dart 1085:5                                [_handleDrawFrame]
+[00:26:13]: <== lib/_engine/engine/platform_dispatcher.dart 1304:13                               invoke
+[00:26:13]: <== lib/_engine/engine/platform_dispatcher.dart 278:5                                 invokeOnDrawFrame
+[00:26:13]: <== lib/_engine/engine/initialization.dart 185:45                                     <fn>
+[00:26:13]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 574:37  _checkAndCall
+[00:26:13]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 579:39  dcall
+[00:26:13]: <== ════════════════════════════════════════════════════════════════════════════════════════════════════
+[00:26:14]: <== Error: Assertion failed: file:///C:/flutter/packages/flutter/lib/src/widgets/navigator.dart:2924:18
+[00:26:14]: <== !navigator._debugLocked
+[00:26:14]: <== is not true
+[00:26:14]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49  throw_
+[00:26:14]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 35:3    assertFailed
+[00:26:14]: <== packages/flutter/src/widgets/navigator.dart 2924:28                           <fn>
+[00:26:14]: <== packages/flutter/src/scheduler/ticker.dart 420:15                             thunk
+[00:26:14]: <== dart-sdk/lib/async/zone.dart 1661:54                                          runUnary
+[00:26:14]: <== dart-sdk/lib/async/future_impl.dart 156:18                                    handleValue
+[00:26:14]: <== dart-sdk/lib/async/future_impl.dart 840:44                                    handleValueCallback
+[00:26:14]: <== dart-sdk/lib/async/future_impl.dart 869:13                                    _propagateToListeners
+[00:26:14]: <== dart-sdk/lib/async/future_impl.dart 641:5                                     [_completeWithValue]
+[00:26:14]: <== dart-sdk/lib/async/future_impl.dart 715:7                                     callback
+[00:26:14]: <== dart-sdk/lib/async/schedule_microtask.dart 40:11                              _microtaskLoop
+[00:26:14]: <== dart-sdk/lib/async/schedule_microtask.dart 49:5                               _startMicrotaskLoop
+[00:26:14]: <== dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 181:15           <fn>
+[00:26:26]: ==> [{"id":"1","method":"app.stop","params":{"appId":"7676f15b-cb70-4174-a296-3a70203782df"}}]
+[00:26:29]: Process C:\flutter\bin\flutter.bat terminated! 1, null
