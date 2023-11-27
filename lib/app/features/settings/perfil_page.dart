@@ -15,8 +15,6 @@ class PerfilUser extends ConsumerWidget {
   static String route = "/perfil-user";
 
   static const String imageUrl = '';
-  static CollectionReference _reference =
-      FirebaseFirestore.instance.collection('users');
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
