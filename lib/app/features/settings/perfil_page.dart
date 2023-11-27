@@ -2,9 +2,11 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:image_picker_web/image_picker_web.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cached_network_image/cached_network_image.dart';
@@ -80,12 +82,18 @@ class PerfilUser extends ConsumerWidget {
                               Theme.of(context).colorScheme.primary,
                         ),
                         onPressed: () async {
-                          ImagePicker imagePicker = ImagePicker();
-                          XFile? file = await imagePicker.pickImage(
-                              source: ImageSource.gallery);
-                          print('${file?.path}');
+                          ImagePicker? _picker;
 
+                          if (kIsWeb) {
+                            _picker = ImagePickerWeb() as ImagePicker?;
+                          } else {
+                            _picker = ImagePicker();
+                          }
+                          XFile? file = await _picker?.pickImage(
+                              source: ImageSource.gallery);
                           if (file == null) return;
+                          print('${file.path}');
+
                           //Import dart:core
                           String uniqueFileName =
                               DateTime.now().millisecondsSinceEpoch.toString();
