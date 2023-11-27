@@ -10,114 +10,114 @@ Version: win 1.84.2
 Logging Categories:
     General
 
-Sat Nov 25 2023 [20:32:04 GMT-0300 (Horário Padrão de Brasília)] Log file started
-[20:32:04] [General] [Info] Searching for SDKs...
-[20:32:04] [General] [Info] Environment PATH:
-[20:32:04] [General] [Info]     C:\Program Files\Common Files\Oracle\Java\javapath
-[20:32:04] [General] [Info]     C:\Windows\system32
-[20:32:04] [General] [Info]     C:\Windows
-[20:32:04] [General] [Info]     C:\Windows\System32\Wbem
-[20:32:04] [General] [Info]     C:\Windows\System32\WindowsPowerShell\v1.0\
-[20:32:04] [General] [Info]     C:\Windows\System32\OpenSSH\
-[20:32:04] [General] [Info]     C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
-[20:32:04] [General] [Info]     C:\Program Files\Git\cmd
-[20:32:04] [General] [Info]     C:\flutter\bin
-[20:32:04] [General] [Info]     C:\Program Files\dotnet\
-[20:32:04] [General] [Info]     C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
-[20:32:04] [General] [Info]     C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
-[20:32:06] [General] [Info] Took 1920ms to search for projects (5 levels)
-[20:32:06] [General] [Info] Took 39ms to filter out excluded projects (0 exclusion rules)
-[20:32:06] [General] [Info] Found Flutter project at C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc:
+Sun Nov 26 2023 [21:26:13 GMT-0300 (Horário Padrão de Brasília)] Log file started
+[21:26:13] [General] [Info] Searching for SDKs...
+[21:26:13] [General] [Info] Environment PATH:
+[21:26:13] [General] [Info]     C:\Program Files\Common Files\Oracle\Java\javapath
+[21:26:13] [General] [Info]     C:\Windows\system32
+[21:26:13] [General] [Info]     C:\Windows
+[21:26:13] [General] [Info]     C:\Windows\System32\Wbem
+[21:26:13] [General] [Info]     C:\Windows\System32\WindowsPowerShell\v1.0\
+[21:26:13] [General] [Info]     C:\Windows\System32\OpenSSH\
+[21:26:13] [General] [Info]     C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
+[21:26:13] [General] [Info]     C:\Program Files\Git\cmd
+[21:26:13] [General] [Info]     C:\flutter\bin
+[21:26:13] [General] [Info]     C:\Program Files\dotnet\
+[21:26:13] [General] [Info]     C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
+[21:26:13] [General] [Info]     C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
+[21:26:18] [General] [Info] Took 4815ms to search for projects (5 levels)
+[21:26:18] [General] [Info] Took 21ms to filter out excluded projects (0 exclusion rules)
+[21:26:18] [General] [Info] Found Flutter project at C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc:
 			Mobile? true
 			Web? false
 			Create Trigger? false
 			Flutter Repo? false
-[20:32:06] [General] [Info] Searching for flutter.bat
-[20:32:06] [General] [Info]     Looking for flutter.bat in:
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\bin
-[20:32:06] [General] [Info]         C:\flutter\bin\
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter\bin
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter\bin
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\flutter-sdk
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\flutter-sdk -> C:\Users\Vinicius Vitoriano\flutter-sdk\bin
-[20:32:06] [General] [Info]         /google/flutter
-[20:32:06] [General] [Info]         /google/flutter -> \google\flutter\bin
-[20:32:06] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
-[20:32:06] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
-[20:32:06] [General] [Info]         C:\Windows\system32
-[20:32:06] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
-[20:32:06] [General] [Info]         C:\Windows
-[20:32:06] [General] [Info]         C:\Windows -> C:\Windows\bin
-[20:32:06] [General] [Info]         C:\Windows\System32\Wbem
-[20:32:06] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
-[20:32:06] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
-[20:32:06] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
-[20:32:06] [General] [Info]         C:\Windows\System32\OpenSSH\
-[20:32:06] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
-[20:32:06] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
-[20:32:06] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static -> C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static\bin
-[20:32:06] [General] [Info]         C:\Program Files\Git\cmd
-[20:32:06] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
-[20:32:06] [General] [Info]         C:\flutter\bin
-[20:32:06] [General] [Info]         C:\Program Files\dotnet\
-[20:32:06] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps -> C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps\bin
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
-[20:32:06] [General] [Info]     Found at:
-[20:32:06] [General] [Info]         C:\flutter\bin\
-[20:32:06] [General] [Info]         C:\flutter\bin
-[20:32:06] [General] [Info]     Candidate paths to be post-filtered:
-[20:32:06] [General] [Info]         C:\flutter\bin\ -> C:\flutter
-[20:32:06] [General] [Info]         C:\flutter\bin -> C:\flutter
-[20:32:06] [General] [Info]     Found at C:\flutter\bin\ -> C:\flutter
-[20:32:06] [General] [Info]     Returning SDK path C:\flutter for flutter.bat
-[20:32:06] [General] [Info] Searching for dart.exe
-[20:32:06] [General] [Info]     Looking for dart.exe in:
-[20:32:06] [General] [Info]         C:\flutter\bin\cache\dart-sdk
-[20:32:06] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
-[20:32:06] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
-[20:32:06] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
-[20:32:06] [General] [Info]         C:\Windows\system32
-[20:32:06] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
-[20:32:06] [General] [Info]         C:\Windows
-[20:32:06] [General] [Info]         C:\Windows -> C:\Windows\bin
-[20:32:06] [General] [Info]         C:\Windows\System32\Wbem
-[20:32:06] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
-[20:32:06] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
-[20:32:06] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
-[20:32:06] [General] [Info]         C:\Windows\System32\OpenSSH\
-[20:32:06] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
-[20:32:06] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
-[20:32:06] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static -> C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static\bin
-[20:32:06] [General] [Info]         C:\Program Files\Git\cmd
-[20:32:06] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
-[20:32:06] [General] [Info]         C:\flutter\bin
-[20:32:06] [General] [Info]         C:\Program Files\dotnet\
-[20:32:06] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps -> C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps\bin
-[20:32:06] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
-[20:32:06] [General] [Info]         C:\flutter\bin\cache\dart-sdk
-[20:32:06] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
-[20:32:06] [General] [Info]     Found at:
-[20:32:06] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
-[20:32:06] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
-[20:32:06] [General] [Info]     Candidate paths to be post-filtered:
-[20:32:06] [General] [Info]         C:\flutter\bin\cache\dart-sdk
-[20:32:06] [General] [Info]         C:\flutter\bin\cache\dart-sdk
-[20:32:06] [General] [Info]     Found at C:\flutter\bin\cache\dart-sdk
-[20:32:06] [General] [Info]     Returning SDK path C:\flutter\bin\cache\dart-sdk for dart.exe
-[20:32:06] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 100
-[20:32:06] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
-[20:32:06] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 50
-[20:32:06] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
-[20:32:06] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 10
-[20:32:06] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
-[20:32:06] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+[21:26:18] [General] [Info] Searching for flutter.bat
+[21:26:18] [General] [Info]     Looking for flutter.bat in:
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\bin
+[21:26:18] [General] [Info]         C:\flutter\bin\
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter\bin
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter\bin
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\flutter-sdk
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\flutter-sdk -> C:\Users\Vinicius Vitoriano\flutter-sdk\bin
+[21:26:18] [General] [Info]         /google/flutter
+[21:26:18] [General] [Info]         /google/flutter -> \google\flutter\bin
+[21:26:18] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
+[21:26:18] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
+[21:26:18] [General] [Info]         C:\Windows\system32
+[21:26:18] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
+[21:26:18] [General] [Info]         C:\Windows
+[21:26:18] [General] [Info]         C:\Windows -> C:\Windows\bin
+[21:26:18] [General] [Info]         C:\Windows\System32\Wbem
+[21:26:18] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
+[21:26:18] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
+[21:26:18] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
+[21:26:18] [General] [Info]         C:\Windows\System32\OpenSSH\
+[21:26:18] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
+[21:26:18] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
+[21:26:18] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static -> C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static\bin
+[21:26:18] [General] [Info]         C:\Program Files\Git\cmd
+[21:26:18] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
+[21:26:18] [General] [Info]         C:\flutter\bin
+[21:26:18] [General] [Info]         C:\Program Files\dotnet\
+[21:26:18] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps -> C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps\bin
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
+[21:26:18] [General] [Info]     Found at:
+[21:26:18] [General] [Info]         C:\flutter\bin\
+[21:26:18] [General] [Info]         C:\flutter\bin
+[21:26:18] [General] [Info]     Candidate paths to be post-filtered:
+[21:26:18] [General] [Info]         C:\flutter\bin\ -> C:\flutter
+[21:26:18] [General] [Info]         C:\flutter\bin -> C:\flutter
+[21:26:18] [General] [Info]     Found at C:\flutter\bin\ -> C:\flutter
+[21:26:18] [General] [Info]     Returning SDK path C:\flutter for flutter.bat
+[21:26:18] [General] [Info] Searching for dart.exe
+[21:26:18] [General] [Info]     Looking for dart.exe in:
+[21:26:18] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[21:26:18] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[21:26:18] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
+[21:26:18] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
+[21:26:18] [General] [Info]         C:\Windows\system32
+[21:26:18] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
+[21:26:18] [General] [Info]         C:\Windows
+[21:26:18] [General] [Info]         C:\Windows -> C:\Windows\bin
+[21:26:18] [General] [Info]         C:\Windows\System32\Wbem
+[21:26:18] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
+[21:26:18] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
+[21:26:18] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
+[21:26:18] [General] [Info]         C:\Windows\System32\OpenSSH\
+[21:26:18] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
+[21:26:18] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
+[21:26:18] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static -> C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static\bin
+[21:26:18] [General] [Info]         C:\Program Files\Git\cmd
+[21:26:18] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
+[21:26:18] [General] [Info]         C:\flutter\bin
+[21:26:18] [General] [Info]         C:\Program Files\dotnet\
+[21:26:18] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps -> C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps\bin
+[21:26:18] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
+[21:26:18] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[21:26:18] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[21:26:18] [General] [Info]     Found at:
+[21:26:18] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[21:26:18] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[21:26:18] [General] [Info]     Candidate paths to be post-filtered:
+[21:26:18] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[21:26:18] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[21:26:18] [General] [Info]     Found at C:\flutter\bin\cache\dart-sdk
+[21:26:18] [General] [Info]     Returning SDK path C:\flutter\bin\cache\dart-sdk for dart.exe
+[21:26:19] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 100
+[21:26:19] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[21:26:19] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 50
+[21:26:19] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
+[21:26:19] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 10
+[21:26:19] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
+[21:26:19] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.76.1
 Flutter extension: 3.76.0 (not activated)
 
@@ -129,13 +129,13 @@ Workspace type: Flutter (LSP)
 
 Dart (3.1.3): C:\flutter\bin\cache\dart-sdk
 Flutter (3.13.6): C:\flutter (No device)
-[20:32:07] [General] [Info] Returning cached results for project search
-[20:32:07] [General] [Info] Activating Flutter extension for Flutter project...
-[20:32:07] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
-[20:32:07] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
-[20:32:13] [General] [Info] Loaded 20000 package names from vscode-userdata:/c%3A/Users/Vinicius%20Vitoriano/AppData/Roaming/Code/User/globalStorage/dart-code.dart-code/package_cache.json
-[20:32:13] [General] [Info] Caching Pub package names from https://pub.dev...
-[20:32:14] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+[21:26:19] [General] [Info] Returning cached results for project search
+[21:26:19] [General] [Info] Activating Flutter extension for Flutter project...
+[21:26:19] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
+[21:26:19] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[21:26:22] [General] [Info] Loaded 20000 package names from vscode-userdata:/c%3A/Users/Vinicius%20Vitoriano/AppData/Roaming/Code/User/globalStorage/dart-code.dart-code/package_cache.json
+[21:26:23] [General] [Info] Caching Pub package names from https://pub.dev...
+[21:26:23] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.76.1
 Flutter extension: 3.76.0 (activated)
 
@@ -147,22 +147,23 @@ Workspace type: Flutter (LSP)
 
 Dart (3.1.3): C:\flutter\bin\cache\dart-sdk
 Flutter (3.13.6): C:\flutter (No device)
-[20:32:30] [General] [Info] Returning cached results for project search
-[20:32:30] [General] [Info] Checking 1 projects for supported platforms
-[20:32:31] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
-[20:32:33] [General] [Info] Saved 20000 in vscode-userdata:/c%3A/Users/Vinicius%20Vitoriano/AppData/Roaming/Code/User/globalStorage/dart-code.dart-code/package_cache.json
-[20:32:35] [General] [Info] Returning cached promise for getSupportedPlatforms()
-[20:36:47] [General] [Info] Starting debug session...
-[20:36:47] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[20:36:47] [General] [Info]     program  : lib/main.dart
-[20:36:47] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[20:36:47] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
-[20:36:47] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[20:36:47] [General] [Info] Detected launch project as Flutter
-[20:36:47] [General] [Info] Using Flutter debug adapter for this session
-[20:36:47] [General] [Info] Getting DevTools server address to pass to Flutter...
-[20:36:47] [General] [Info] Checking for errors before launching
-[20:36:47] [General] [Info] Debug session starting...
+[21:26:33] [General] [Info] Saved 20000 in vscode-userdata:/c%3A/Users/Vinicius%20Vitoriano/AppData/Roaming/Code/User/globalStorage/dart-code.dart-code/package_cache.json
+[21:26:37] [General] [Info] Returning cached results for project search
+[21:26:37] [General] [Info] Checking 1 projects for supported platforms
+[21:26:37] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[21:26:40] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[21:26:58] [General] [Info] Returning cached results for project search
+[22:16:46] [General] [Info] Starting debug session...
+[22:16:46] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:16:46] [General] [Info]     program  : lib/main.dart
+[22:16:46] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:16:46] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
+[22:16:46] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:16:46] [General] [Info] Detected launch project as Flutter
+[22:16:46] [General] [Info] Using Flutter debug adapter for this session
+[22:16:46] [General] [Info] Getting DevTools server address to pass to Flutter...
+[22:16:46] [General] [Info] Checking for errors before launching
+[22:16:46] [General] [Info] Debug session starting...
     {
         "name": "Flutter (Chrome)",
         "request": "launch",
@@ -174,7 +175,7 @@ Flutter (3.13.6): C:\flutter (No device)
         ],
         "__configurationTarget": 6,
         "noDebug": true,
-        "dartCodeDebugSessionID": "session-2a186",
+        "dartCodeDebugSessionID": "session-85d9b",
         "cwd": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
         "deviceId": "chrome",
         "deviceName": "Chrome (web-javascript)",
@@ -211,30 +212,25 @@ Flutter (3.13.6): C:\flutter (No device)
         "showMemoryUsage": false,
         "debuggerType": 2
     }
-[20:36:47] [General] [Info] Using flutter debugger for Flutter
-[20:36:47] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
-[20:36:47] [General] [Info] Running debugger via node with c:\Users\Vinicius Vitoriano\.vscode\extensions\dart-code.dart-code-3.76.1\out\dist\debug.js    flutter
-[20:36:48] [General] [Info] Did not find session 4810ca3d-5ac4-40fe-ad3c-5f49a3da0013 to handle dart.progressStart. There were 0 sessions:
-[20:36:48] [General] [Info] Event will be queued and processed when the session start event fires
-[20:36:48] [General] [Info] Processing delayed event dart.progressStart for session 4810ca3d-5ac4-40fe-ad3c-5f49a3da0013
-[20:40:04] [General] [Info] Took 611ms to search for projects (5 levels)
-[20:40:04] [General] [Info] Took 9ms to filter out excluded projects (0 exclusion rules)
-[20:43:33] [General] [Info] Returning cached results for project search
-[20:44:46] [General] [Info] Returning cached results for project search
-[20:59:55] [General] [Info] Took 727ms to search for projects (5 levels)
-[20:59:55] [General] [Info] Took 27ms to filter out excluded projects (0 exclusion rules)
-[21:01:55] [General] [Info] Returning cached results for project search
-[21:14:12] [General] [Info] Starting debug session...
-[21:14:12] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[21:14:12] [General] [Info]     program  : lib/main.dart
-[21:14:12] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[21:14:12] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
-[21:14:12] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[21:14:12] [General] [Info] Detected launch project as Flutter
-[21:14:12] [General] [Info] Using Flutter debug adapter for this session
-[21:14:12] [General] [Info] Getting DevTools server address to pass to Flutter...
-[21:14:12] [General] [Info] Checking for errors before launching
-[21:14:12] [General] [Info] Debug session starting...
+[22:16:46] [General] [Info] Using flutter debugger for Flutter
+[22:16:46] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[22:16:46] [General] [Info] Running debugger via node with c:\Users\Vinicius Vitoriano\.vscode\extensions\dart-code.dart-code-3.76.1\out\dist\debug.js    flutter
+[22:16:47] [General] [Info] Did not find session 39abbb93-5bca-412c-88bd-2d5e8c5a1840 to handle dart.progressStart. There were 0 sessions:
+[22:16:47] [General] [Info] Event will be queued and processed when the session start event fires
+[22:16:47] [General] [Info] Processing delayed event dart.progressStart for session 39abbb93-5bca-412c-88bd-2d5e8c5a1840
+[22:19:18] [General] [Info] Took 1040ms to search for projects (5 levels)
+[22:19:18] [General] [Info] Took 43ms to filter out excluded projects (0 exclusion rules)
+[22:37:33] [General] [Info] Starting debug session...
+[22:37:33] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:37:33] [General] [Info]     program  : lib/main.dart
+[22:37:33] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:37:33] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
+[22:37:33] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:37:33] [General] [Info] Detected launch project as Flutter
+[22:37:33] [General] [Info] Using Flutter debug adapter for this session
+[22:37:33] [General] [Info] Getting DevTools server address to pass to Flutter...
+[22:37:33] [General] [Info] Checking for errors before launching
+[22:37:33] [General] [Info] Debug session starting...
     {
         "name": "Flutter (Chrome)",
         "request": "launch",
@@ -246,7 +242,7 @@ Flutter (3.13.6): C:\flutter (No device)
         ],
         "__configurationTarget": 6,
         "noDebug": true,
-        "dartCodeDebugSessionID": "session-be793",
+        "dartCodeDebugSessionID": "session-625e4",
         "cwd": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
         "deviceId": "chrome",
         "deviceName": "Chrome (web-javascript)",
@@ -283,73 +279,29 @@ Flutter (3.13.6): C:\flutter (No device)
         "showMemoryUsage": false,
         "debuggerType": 2
     }
-[21:14:12] [General] [Info] Using flutter debugger for Flutter
-[21:14:12] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
-[21:14:12] [General] [Info] Running debugger via node with c:\Users\Vinicius Vitoriano\.vscode\extensions\dart-code.dart-code-3.76.1\out\dist\debug.js    flutter
-[21:14:13] [General] [Info] Did not find session 08fbd694-0e31-4abd-af60-be6b16c87c42 to handle dart.progressStart. There were 0 sessions:
-[21:14:13] [General] [Info] Event will be queued and processed when the session start event fires
-[21:14:13] [General] [Info] Processing delayed event dart.progressStart for session 08fbd694-0e31-4abd-af60-be6b16c87c42
-[21:46:11] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:46:11] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:46:11] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:46:12] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:46:14] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:46:16] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:46:16] [General] [Info] Took 753ms to search for projects (5 levels)
-[21:46:16] [General] [Info] Took 11ms to filter out excluded projects (0 exclusion rules)
-[21:46:16] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
-[21:46:16] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
-    C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc (get: true, upgrade: false, reason: pubspec.yaml was modified (Sat Nov 25 2023 21:46:15 GMT-0300 (Horário Padrão de Brasília)) more recently than pubspec.lock (Sat Nov 25 2023 11:46:04 GMT-0300 (Horário Padrão de Brasília)))
-[21:46:17] [General] [Info] Already running pub get, skipping!
-[21:48:39] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:48:40] [General] [Info] Returning cached results for project search
-[21:48:40] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
-[21:48:40] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
-    C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc (get: true, upgrade: false, reason: pubspec.yaml was modified (Sat Nov 25 2023 21:48:39 GMT-0300 (Horário Padrão de Brasília)) more recently than pubspec.lock (Sat Nov 25 2023 11:46:04 GMT-0300 (Horário Padrão de Brasília)))
-[21:49:51] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:49:52] [General] [Info] Returning cached results for project search
-[21:49:52] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
-[21:49:52] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
-    C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc (get: true, upgrade: false, reason: pubspec.yaml was modified (Sat Nov 25 2023 21:49:51 GMT-0300 (Horário Padrão de Brasília)) more recently than pubspec.lock (Sat Nov 25 2023 11:46:04 GMT-0300 (Horário Padrão de Brasília)))
-[21:50:24] [General] [Info] Returning cached results for project search
-[21:50:31] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:50:34] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:50:36] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:50:39] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:50:41] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:50:41] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:50:42] [General] [Info] Returning cached results for project search
-[21:50:42] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
-[21:50:42] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
-    C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc (get: true, upgrade: false, reason: pubspec.yaml was modified (Sat Nov 25 2023 21:50:41 GMT-0300 (Horário Padrão de Brasília)) more recently than pubspec.lock (Sat Nov 25 2023 21:50:02 GMT-0300 (Horário Padrão de Brasília)))
-[21:51:04] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:51:04] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:51:05] [General] [Info] Returning cached results for project search
-[21:51:05] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
-[21:51:05] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
-    C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc (get: true, upgrade: false, reason: pubspec.yaml was modified (Sat Nov 25 2023 21:51:04 GMT-0300 (Horário Padrão de Brasília)) more recently than pubspec.lock (Sat Nov 25 2023 21:50:02 GMT-0300 (Horário Padrão de Brasília)))
-[21:51:19] [General] [Info] Took 404ms to search for projects (5 levels)
-[21:51:19] [General] [Info] Took 14ms to filter out excluded projects (0 exclusion rules)
-[21:52:35] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:52:38] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:52:46] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:52:47] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:52:53] [General] [Info] Pubspec C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\pubspec.yaml was modified
-[21:52:54] [General] [Info] Returning cached results for project search
-[21:52:54] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
-[21:52:54] [General] [Info] Found 1 folders requiring "pub get" or "pub upgrade":
-    C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc (get: true, upgrade: false, reason: pubspec.yaml was modified (Sat Nov 25 2023 21:52:53 GMT-0300 (Horário Padrão de Brasília)) more recently than pubspec.lock (Sat Nov 25 2023 21:51:10 GMT-0300 (Horário Padrão de Brasília)))
-[21:55:55] [General] [Info] Starting debug session...
-[21:55:55] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[21:55:55] [General] [Info]     program  : lib/main.dart
-[21:55:55] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[21:55:55] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
-[21:55:55] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[21:55:55] [General] [Info] Detected launch project as Flutter
-[21:55:55] [General] [Info] Using Flutter debug adapter for this session
-[21:55:55] [General] [Info] Getting DevTools server address to pass to Flutter...
-[21:55:55] [General] [Info] Checking for errors before launching
-[21:55:55] [General] [Info] Debug session starting...
+[22:37:33] [General] [Info] Using flutter debugger for Flutter
+[22:37:33] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[22:37:33] [General] [Info] Running debugger via node with c:\Users\Vinicius Vitoriano\.vscode\extensions\dart-code.dart-code-3.76.1\out\dist\debug.js    flutter
+[22:37:33] [General] [Info] Did not find session 4fb79fe4-afb0-4021-a8ad-da38389505b1 to handle dart.progressStart. There were 0 sessions:
+[22:37:33] [General] [Info] Event will be queued and processed when the session start event fires
+[22:37:33] [General] [Info] Processing delayed event dart.progressStart for session 4fb79fe4-afb0-4021-a8ad-da38389505b1
+[22:40:03] [General] [Info] Took 836ms to search for projects (5 levels)
+[22:40:03] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[22:40:12] [General] [Error] Canceled
+Canceled: Canceled
+    at u.Q (vscode-file://vscode-app/c:/Users/Vinicius%20Vitoriano/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:918:38732)
+    at vscode-file://vscode-app/c:/Users/Vinicius%20Vitoriano/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:918:38659
+[22:40:30] [General] [Info] Starting debug session...
+[22:40:30] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:40:30] [General] [Info]     program  : lib/main.dart
+[22:40:30] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:40:30] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
+[22:40:30] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:40:30] [General] [Info] Detected launch project as Flutter
+[22:40:30] [General] [Info] Using Flutter debug adapter for this session
+[22:40:30] [General] [Info] Getting DevTools server address to pass to Flutter...
+[22:40:30] [General] [Info] Checking for errors before launching
+[22:40:30] [General] [Info] Debug session starting...
     {
         "name": "Flutter (Chrome)",
         "request": "launch",
@@ -361,7 +313,7 @@ Flutter (3.13.6): C:\flutter (No device)
         ],
         "__configurationTarget": 6,
         "noDebug": true,
-        "dartCodeDebugSessionID": "session-f3f9f",
+        "dartCodeDebugSessionID": "session-5674c",
         "cwd": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
         "deviceId": "chrome",
         "deviceName": "Chrome (web-javascript)",
@@ -398,13 +350,12 @@ Flutter (3.13.6): C:\flutter (No device)
         "showMemoryUsage": false,
         "debuggerType": 2
     }
-[21:55:55] [General] [Info] Using flutter debugger for Flutter
-[21:55:55] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
-[21:55:55] [General] [Info] Running debugger via node with c:\Users\Vinicius Vitoriano\.vscode\extensions\dart-code.dart-code-3.76.1\out\dist\debug.js    flutter
-[21:55:56] [General] [Info] Did not find session d5de1eb8-e88b-4823-b6da-fc17ec083039 to handle dart.progressStart. There were 0 sessions:
-[21:55:56] [General] [Info] Event will be queued and processed when the session start event fires
-[21:55:56] [General] [Info] Processing delayed event dart.progressStart for session d5de1eb8-e88b-4823-b6da-fc17ec083039
-[21:58:11] [General] [Info] Took 469ms to search for projects (5 levels)
-[21:58:11] [General] [Info] Took 3ms to filter out excluded projects (0 exclusion rules)
-[21:59:20] [General] [Info] Returning cached results for project search
-[22:01:16] [General] [Info] Returning cached results for project search
+[22:40:30] [General] [Info] Using flutter debugger for Flutter
+[22:40:30] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[22:40:30] [General] [Info] Running debugger via node with c:\Users\Vinicius Vitoriano\.vscode\extensions\dart-code.dart-code-3.76.1\out\dist\debug.js    flutter
+[22:40:31] [General] [Info] Did not find session 56b5bf3d-5db6-4754-8879-0cfa56d01625 to handle dart.progressStart. There were 0 sessions:
+[22:40:31] [General] [Info] Event will be queued and processed when the session start event fires
+[22:40:31] [General] [Info] Processing delayed event dart.progressStart for session 56b5bf3d-5db6-4754-8879-0cfa56d01625
+[22:42:44] [General] [Info] Returning cached results for project search
+[22:43:53] [General] [Info] Returning cached results for project search
+[22:44:52] [General] [Info] Returning cached results for project search

@@ -21,6 +21,7 @@ class PerfilUser extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+    final sizeHeight = min(MediaQuery.of(context).size.height, 400).toDouble();
     final appuser = ref.watch(appUserStream).when(
         data: (data) {
           return data;
@@ -60,6 +61,7 @@ class PerfilUser extends ConsumerWidget {
                     child: CachedNetworkImage(
                       imageUrl: appuser!.avatar,
                       width: sizeWidth / 2,
+                      height: sizeHeight / 2,
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -173,7 +175,47 @@ class PerfilUser extends ConsumerWidget {
                           backgroundColor: Theme.of(context).colorScheme.error,
                         ),
                         onPressed: () async {
-                          
+                          FirebaseFirestore db = FirebaseFirestore.instance;
+
+                          var doc;
+                          print(appuser?.id);
+                          var query = await FirebaseFirestore.instance
+                              .collection('users')
+                              .where("id", isEqualTo: appuser?.id)
+                              .get();
+
+                          for (var x in query.docs) {
+                            doc = x.id;
+                          }
+
+                          String uniqueFileName =
+                              DateTime.now().millisecondsSinceEpoch.toString();
+                          Reference referenceRoot =
+                              FirebaseStorage.instance.ref();
+                          Reference referenceDirImages =
+                              referenceRoot.child('avatar');
+
+                          DocumentReference docRef =
+                              db.collection('users').doc(doc);
+                          //Get a reference to the image to be deleted
+                          Reference referenceImageToDelete =
+                              referenceDirImages.child(uniqueFileName);
+
+                          //Delete the image from Firebase Storage
+                          try {
+                            await referenceImageToDelete.delete();
+                          } catch (error) {
+                            print(error);
+                          }
+
+                          //Update Firestore to reflect the deletion of the photo
+                          try {
+                            await docRef.update({
+                              'avatar': 'assets/images/LOGO_USUARIO.png',
+                            });
+                          } catch (error) {
+                            print(error);
+                          }
                         },
                         child: const FittedBox(
                           child: Text(
