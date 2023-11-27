@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
@@ -60,10 +61,8 @@ class SettingsPage extends ConsumerWidget {
         automaticallyImplyLeading: false,
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(8),
-          child: Image.asset(
-            Theme.of(context).brightness == Brightness.light
-                ? 'assets/images/LOGO_LIGHT_MODE.png'
-                : 'assets/images/LOGO_DARK_MODE.png',
+          child: CachedNetworkImage(
+            imageUrl: appuser!.avatar,
             width: 300,
             height: 200,
             fit: BoxFit.cover,
