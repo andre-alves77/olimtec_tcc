@@ -1,8 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/features/championship/game.dart';
-import 'package:olimtec_tcc/app/features/championship/team.dart';
+import 'package:olimtec_tcc/app/features/championship/models/game.dart';
+import 'package:olimtec_tcc/app/features/championship/models/team.dart';
 
 class Modality {
   final String name;

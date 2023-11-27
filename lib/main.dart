@@ -5,8 +5,8 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
-import 'package:olimtec_tcc/app/features/championship/modality.dart';
-import 'package:olimtec_tcc/app/features/championship/team.dart';
+import 'package:olimtec_tcc/app/features/championship/models/modality.dart';
+import 'package:olimtec_tcc/app/features/championship/models/team.dart';
 import 'package:olimtec_tcc/firebase_options.dart';
 
 Future<void> main() async {

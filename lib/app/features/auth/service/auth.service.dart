@@ -6,6 +6,9 @@ import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/repository/auth.repository.dart';
+import 'package:olimtec_tcc/app/features/championship/models/championship.dart';
+import 'package:olimtec_tcc/app/features/championship/service/championship.service.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/start_championship.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/user/index_home_user.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
@@ -51,16 +54,17 @@ final isLoggedProvider = StateProvider<bool>((ref) {
 });
 
 final appUserProvider = StateProvider<AppUser?>((ref) {
-  ref.watch(appUserStream).maybeWhen(data: (appuser){
-    
+  ref.watch(appUserStream).when(data: (appuser){
     
       final context = ref.read(navigtorkeyProvider).currentContext;
 
  if(appuser.isAdmin == true){
+
 Navigator.pushReplacementNamed(context!, MainAdmin.route);
 CustomSnackBar(message: "Admin", ref: ref);
 
 }else if(appuser.isAdmin == false){
+
   Navigator.pushReplacementNamed(context!, IndexHomeUser.route);
   CustomSnackBar(message: "Comum", ref: ref);
 }
@@ -68,13 +72,9 @@ CustomSnackBar(message: "Admin", ref: ref);
   },
    error: (e, s){
     
-CustomSnackBar(message: "Um erro aconteceu. Tente novamente", ref: ref);
+CustomSnackBar(message: "Um erro aconteceu. Tente novamente. cod: appuser not loaded", ref: ref);
   }, 
   loading: (){},
-orElse: (){
-  
-}
-
   );
   return null;
 });

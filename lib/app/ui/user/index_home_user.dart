@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/features/settings/settings_page.dart';
@@ -14,8 +16,10 @@ class IndexHomeUser extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bottomBarStore = ref.watch(bottomBarProvider);
+    final appuser = ref.watch(appUserProvider);
 
-    return Scaffold(
+    if(appuser is AppUser){
+          return Scaffold(
       extendBody: true,
       bottomNavigationBar: BottomBar(),
       body: SafeArea(
@@ -30,5 +34,10 @@ class IndexHomeUser extends ConsumerWidget {
         ),
       ),
     );
+    }else{
+      return Center(child: CircularProgressIndicator());
+    }
+
+
   }
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+import 'package:olimtec_tcc/app/features/championship/service/championship.service.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/start_championship.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_page.dart';
@@ -14,7 +16,22 @@ class MainAdmin extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Scaffold(
+
+ref.watch(championshipStreamProvider).when(data: ((data) {
+      if(data == null){
+        return const CircularProgressIndicator();
+      }
+ if(data.isCreated == false){
+
+Navigator.pushReplacementNamed(context, StartChampionshipAdmin.route);
+    }
+    }), error: (e, s){
+      return const CircularProgressIndicator();
+    }, loading: (){
+      return const CircularProgressIndicator();
+    });
+
+return Scaffold(
       appBar: AppBar(
         title: Text(
           'ADMIN',

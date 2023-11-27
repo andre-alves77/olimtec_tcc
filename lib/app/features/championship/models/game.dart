@@ -1,4 +1,4 @@
-import 'package:olimtec_tcc/app/features/championship/team.dart';
+import 'package:olimtec_tcc/app/features/championship/models/team.dart';
 
 enum GameState {
   notConfigured,
