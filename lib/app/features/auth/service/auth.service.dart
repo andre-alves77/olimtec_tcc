@@ -37,8 +37,7 @@ final isLoggedProvider = StateProvider<bool>((ref) {
       }
       debugPrint("não logado");
       final context = ref.read(navigtorkeyProvider).currentContext;
-          
-
+      
       Navigator.pushReplacementNamed(context!, SplashScreen.route);
       return false;
     },

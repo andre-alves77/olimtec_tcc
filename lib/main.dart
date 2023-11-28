@@ -19,7 +19,7 @@ Future<void> main() async {
       child: App(),
     ),
   );
-
+logic();
 
 }
 
@@ -34,7 +34,7 @@ logic() {
 
   var modality = Modality(teams,
       category: "QUADRA", name: "BASQUETE", icon: Icons.sports_basketball,);
-
+print("minha");
   modality.generateBracket();
 }
 

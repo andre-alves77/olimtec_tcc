@@ -44,6 +44,8 @@ class Modality {
 
 int teamCounter = _teams.length - 1;
     int teamCounter2 = _teams.length;
+
+
 if (teamCounter != 4 ||
           teamCounter != 8 ||
           teamCounter != 16 ||
@@ -51,11 +53,12 @@ if (teamCounter != 4 ||
           teamCounter != 64) {
 
     while (i == 0) {
-      if (teamCounter2 != 4 ||
-          teamCounter2 != 8 ||
-          teamCounter2 != 16 ||
-          teamCounter2 != 32 ||
-          teamCounter2 != 64) {
+      if (teamCounter2 != 4 &&
+          teamCounter2 != 8 &&
+          teamCounter2 != 16 &&
+          teamCounter2 != 32 &&
+          teamCounter2 != 64 && teamCounter != 0) {
+
 print(teamCounter);
         team1 = _teams[teamCounter];
         team2 = _teams[teamCounter-1];
