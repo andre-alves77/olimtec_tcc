@@ -61,8 +61,8 @@ class SettingsPage extends ConsumerWidget {
         automaticallyImplyLeading: false,
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(8),
-          child: CachedNetworkImage(
-            imageUrl: appuser!.avatar,
+          child: Image.asset(
+            'assets/images/logo_principal_dark_mode.png',
             width: 300,
             height: 200,
             fit: BoxFit.cover,

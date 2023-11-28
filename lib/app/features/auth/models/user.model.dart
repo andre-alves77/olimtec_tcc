@@ -2,6 +2,9 @@
 import 'dart:convert';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:path/path.dart' as Path;
 
 class AppUser {
   String id;
@@ -62,5 +65,27 @@ class AppUser {
       doc = x.id;
     }
     return doc;
+  }
+
+  Future<FilePickerResult?> pickImage() async {
+    return await FilePicker.platform.pickFiles(type: FileType.image);
+  }
+
+  Future<String> uploadImageToStorage(PlatformFile file) async {
+    var uploadedPhotoUrl;
+    Reference _reference = FirebaseStorage.instance
+        .ref()
+        .child('avatar/${Path.basename(file.name)}');
+    await _reference
+        .putData(
+      file.bytes!,
+      SettableMetadata(contentType: 'image/jpeg'),
+    )
+        .whenComplete(() async {
+      await _reference.getDownloadURL().then((value) {
+        uploadedPhotoUrl = value;
+      });
+    });
+    return uploadedPhotoUrl;
   }
 }

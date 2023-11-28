@@ -2,14 +2,15 @@ import 'dart:io';
 import 'dart:math';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:image_picker_web/image_picker_web.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class PerfilUser extends ConsumerWidget {
   const PerfilUser({super.key});
@@ -22,6 +23,7 @@ class PerfilUser extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final sizeHeight = min(MediaQuery.of(context).size.height, 400).toDouble();
+    final email = ref.read(authRepositoryProvider).auth.currentUser?.email;
     final appuser = ref.watch(appUserStream).when(
         data: (data) {
           return data;
@@ -83,81 +85,114 @@ class PerfilUser extends ConsumerWidget {
                         ),
                         onPressed: () async {
                           ImagePicker? _picker;
-
+                          dynamic file;
+                          dynamic ob;
                           if (kIsWeb) {
-                            _picker = ImagePickerWeb() as ImagePicker?;
+                            FilePickerResult? result =
+                                await appuser?.pickImage();
+                            if (result != null) {
+                              PlatformFile file = result.files.first;
+                              String? imageUrl =
+                                  await appuser?.uploadImageToStorage(file);
+                              print('Image uploaded to: $imageUrl');
+
+                              var doc;
+                              var query = await FirebaseFirestore.instance
+                                  .collection('users')
+                                  .where("id", isEqualTo: appuser?.id)
+                                  .get();
+
+                              for (var x in query.docs) {
+                                doc = x.id;
+                              }
+
+                              try {
+                                FirebaseFirestore db =
+                                    FirebaseFirestore.instance;
+                                DocumentReference docRef =
+                                    db.collection('users').doc(doc);
+
+                                await docRef.update({
+                                  'avatar': imageUrl,
+                                });
+                              } catch (error) {
+                                print(error);
+                              }
+                            }
                           } else {
+                            //MOBILE
                             _picker = ImagePicker();
-                          }
-                          XFile? file = await _picker?.pickImage(
-                              source: ImageSource.gallery);
-                          if (file == null) return;
-                          print('${file.path}');
+                            file = await _picker?.pickImage(
+                                source: ImageSource.gallery);
+                            if (file == null) return;
+                            print('${file.path}');
 
-                          //Import dart:core
-                          String uniqueFileName =
-                              DateTime.now().millisecondsSinceEpoch.toString();
+                            //Import dart:core
+                            String uniqueFileName = DateTime.now()
+                                .millisecondsSinceEpoch
+                                .toString();
 
-                          /*Step 2: Upload to Firebase storage*/
-                          //Install firebase_storage
-                          //Import the library
+                            /*Step 2: Upload to Firebase storage*/
+                            //Install firebase_storage
+                            //Import the library
 
-                          //Get a reference to storage root
-                          Reference referenceRoot =
-                              FirebaseStorage.instance.ref();
-                          Reference referenceDirImages =
-                              referenceRoot.child('avatar');
+                            //Get a reference to storage root
+                            Reference referenceRoot =
+                                FirebaseStorage.instance.ref();
+                            Reference referenceDirImages =
+                                referenceRoot.child('avatar');
 
-                          //Create a reference for the image to be stored
-                          Reference referenceImageToUpload =
-                              referenceDirImages.child(uniqueFileName);
+                            //Create a reference for the image to be stored
+                            Reference referenceImageToUpload =
+                                referenceDirImages.child(uniqueFileName);
 
-                          //Handle errors/success
-                          try {
-                            //Store the file
-                            await referenceImageToUpload
-                                .putFile(File(file!.path));
-                            //Success: get the download URL
-                            imageUrl =
-                                await referenceImageToUpload.getDownloadURL();
-                          } catch (error) {
-                            //Some error occurred
-                            print(error);
-                          }
+                            //Handle errors/success
+                            try {
+                              //Store the file
+                              await referenceImageToUpload
+                                  .putFile(File(file!.path));
+                              //Success: get the download URL
+                              imageUrl =
+                                  await referenceImageToUpload.getDownloadURL();
+                            } catch (error) {
+                              //Some error occurred
+                              print(error);
+                            }
 
-                          File _file = File(file!.path);
+                            File _file = File(file!.path);
 
-                          try {
-                            await referenceImageToUpload.putFile(
-                                _file,
-                                SettableMetadata(
-                                  contentType: "image/jpeg",
-                                ));
-                          } catch (error) {
-                            print(error);
-                          }
+                            try {
+                              await referenceImageToUpload.putFile(
+                                  _file,
+                                  SettableMetadata(
+                                    contentType: "image/jpeg",
+                                  ));
+                            } catch (error) {
+                              print(error);
+                            }
 
-                          var doc;
-                          print(appuser?.id);
-                          var query = await FirebaseFirestore.instance
-                              .collection('users')
-                              .where("id", isEqualTo: appuser?.id)
-                              .get();
+                            var doc;
+                            print(appuser?.id);
+                            var query = await FirebaseFirestore.instance
+                                .collection('users')
+                                .where("id", isEqualTo: appuser?.id)
+                                .get();
 
-                          for (var x in query.docs) {
-                            doc = x.id;
-                          }
+                            for (var x in query.docs) {
+                              doc = x.id;
+                            }
 
-                          try {
-                            FirebaseFirestore db = FirebaseFirestore.instance;
-                            DocumentReference docRef =
-                                db.collection('users').doc(doc);
+                            try {
+                              FirebaseFirestore db = FirebaseFirestore.instance;
+                              DocumentReference docRef =
+                                  db.collection('users').doc(doc);
 
-                            await docRef.update({
-                              'avatar': imageUrl,
-                            });
-                          } catch (error) {
-                            print(error);
+                              await docRef.update({
+                                'avatar': imageUrl,
+                              });
+                            } catch (error) {
+                              print(error);
+                            }
                           }
                         },
                         child: const FittedBox(
@@ -268,6 +303,7 @@ class PerfilUser extends ConsumerWidget {
                             child: Container(
                               width: sizeWidth / 2,
                               child: TextFormField(
+                                initialValue: appuser?.name,
                                 autofocus: true,
                                 readOnly: true,
                                 decoration: InputDecoration(
@@ -296,85 +332,8 @@ class PerfilUser extends ConsumerWidget {
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          15, 15, 15, 15),
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Lato',
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: sizeWidth / 5.2,
-                          child: const FittedBox(
-                            child: Text(
-                              '       RM:',
-                              style: TextStyle(
-                                fontFamily: 'Lato',
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                            child: Container(
-                              width: sizeWidth / 2,
-                              child: TextFormField(
-                                autofocus: true,
-                                readOnly: true,
-                                decoration: InputDecoration(
-                                  isDense: true,
-                                  labelStyle: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onPrimaryContainer,
-                                    fontSize: 16,
-                                  ),
-                                  hintStyle: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onPrimaryContainer,
-                                    fontSize: 16,
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
                                       color:
                                           Theme.of(context).colorScheme.primary,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
                                       width: 2,
                                     ),
                                     borderRadius: BorderRadius.circular(15),
@@ -420,6 +379,7 @@ class PerfilUser extends ConsumerWidget {
                             child: Container(
                               width: sizeWidth / 2,
                               child: TextFormField(
+                                initialValue: email,
                                 autofocus: true,
                                 readOnly: true,
                                 decoration: InputDecoration(
@@ -448,9 +408,8 @@ class PerfilUser extends ConsumerWidget {
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .secondary,
+                                      color:
+                                          Theme.of(context).colorScheme.primary,
                                       width: 2,
                                     ),
                                     borderRadius: BorderRadius.circular(15),

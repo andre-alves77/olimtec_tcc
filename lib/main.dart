@@ -37,3 +37,19 @@ logic() {
 
   modality.generateBracket();
 }
+
+
+//gcloud init
+
+//FILE NAME: cors.json
+// [
+//   {
+//     "origin": ["*"],
+//     "method": ["GET"],
+//     "maxAgeSeconds": 3600
+//   }
+// ]
+
+//gsutil cors set cors.json gs://olimtec-59335.appspot.com
+
+//https://www.phind.com/agent?cache=clphm5ynx000xl6083eetyndb
