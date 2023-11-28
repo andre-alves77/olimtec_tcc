@@ -50,9 +50,15 @@ class SettingsPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+    final sizeHeight = min(MediaQuery.of(context).size.height, 400).toDouble();
     final themeStore = ref.read(themeProvider.notifier);
     final auth = ref.read(authRepositoryProvider);
-    final appuser = ref.watch(appUserProvider);
+    final appuser = ref.watch(appUserStream).when(
+        data: (data) {
+          return data;
+        },
+        error: (error, stackTrace) {},
+        loading: () {});
 
     return Scaffold(
       appBar: AppBar(
@@ -93,15 +99,19 @@ class SettingsPage extends ConsumerWidget {
                     width: sizeWidth / 5,
                     child: FittedBox(
                       fit: BoxFit.fitWidth,
-                      child: CircleAvatar(
-                        backgroundColor:
-                            Theme.of(context).colorScheme.primaryContainer,
-                        child: Icon(Icons.person, size: 30),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(80),
+                        child: CachedNetworkImage(
+                        imageUrl: appuser!.avatar,
+                        width: sizeWidth / 2,
+                        height: sizeHeight / 2,
+                        fit: BoxFit.cover,
+                                          ),
                       ),
                     ),
                   ),
                   title: Text(
-                    'André',
+                    appuser!.name,
                     style: TextStyle(
                       fontSize: 24,
                       color: Theme.of(context).colorScheme.onPrimaryContainer,
