@@ -1,6 +1,3 @@
-
-
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -13,14 +10,12 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
 
-
   runApp(
     const ProviderScope(
       child: App(),
     ),
   );
-logic();
-
+  logic();
 }
 
 logic() {
@@ -30,11 +25,20 @@ logic() {
     Team(name: "OPA3", image: "3"),
     Team(name: "OPA4", image: "4"),
     Team(name: "OPA5", image: "5"),
+    Team(name: "OPA6", image: "6"),
+    Team(name: "OPA7", image: "7"),
+    Team(name: "OPA8", image: "8"),
+    Team(name: "OPA9", image: "9"),
+    Team(name: "OPA10", image: "10"),
+    Team(name: "OPA11", image: "11"),
   ];
 
-  var modality = Modality(teams,
-      category: "QUADRA", name: "BASQUETE", icon: Icons.sports_basketball,);
-print("minha");
+  var modality = Modality(
+    teams,
+    category: "QUADRA",
+    name: "BASQUETE",
+    icon: Icons.sports_basketball,
+  );
   modality.generateBracket();
 }
 

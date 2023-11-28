@@ -26,61 +26,93 @@ class Modality {
     Map<int, List<Game>> _bracket = {};
     List<Game> gameList = [];
     List<Team> _teams = teams;
-    
+
     int gamesId = 1;
     int qtdround = 1;
 
-    _teams.shuffle();
 //ADICIONA UM TIME FALSO PARA FICAR PAR
-    if (_teams.length % 2 == 0) {
-      _teams.add(
-        Team(name: 'PASSOU', image: "assets/images/PG13.png", players: null),
-      );
+
+    if (teams.length % 2 != 0) {
       teams.add(
-        Team(name: 'PASSOU', image: "assets/images/PG13.png", players: null),
+        Team(name: 'Passou', image: "assets/images/PG13.png", players: null),
       );
     }
-//
+    teams.shuffle();
+    int teamCounter = teams.length;
 
-int teamCounter = _teams.length - 1;
-    int teamCounter2 = _teams.length;
+    if (teamCounter != 4 ||
+        teamCounter != 8 ||
+        teamCounter != 16 ||
+        teamCounter != 32 ||
+        teamCounter != 64) {
+      int qtdFirstRoundTeams = 0;
+      if (teamCounter < 4) {
+        qtdFirstRoundTeams = 4 - teamCounter;
+      } else if (teamCounter < 8) {
+        qtdFirstRoundTeams = 8 - teamCounter;
+      } else if (teamCounter < 16) {
+        qtdFirstRoundTeams = 16 - teamCounter;
+      } else if (teamCounter < 32) {
+        qtdFirstRoundTeams = 32 - teamCounter;
+      } else if (teamCounter < 64) {
+        qtdFirstRoundTeams = 64 - teamCounter;
+      }
 
-
-if (teamCounter != 4 ||
-          teamCounter != 8 ||
-          teamCounter != 16 ||
-          teamCounter != 32 ||
-          teamCounter != 64) {
-
-    while (i == 0) {
-      if (teamCounter2 != 4 &&
-          teamCounter2 != 8 &&
-          teamCounter2 != 16 &&
-          teamCounter2 != 32 &&
-          teamCounter2 != 64 && teamCounter != 0) {
-
-print(teamCounter);
-        team1 = _teams[teamCounter];
-        team2 = _teams[teamCounter-1];
-
-        // Game(
-        //   id: gamesId,
-        //   nextGame: gamesId,
-        //   round: qtdround,
-        //   modalidade: name,
-        //   team1: team1,
-        //   team2: team2,
-        // );
-
+      teamCounter -= 1;
+      while ((qtdFirstRoundTeams) > i) {
+        print("JOGO $gamesId");
+        team1 = teams[teamCounter];
+        print(team1.name);
+        team2 = teams[teamCounter - 1];
+        print(team2.name);
+        Game(
+          id: gamesId,
+          nextGame: gamesId,
+          round: qtdround,
+          modalidade: name,
+          team1: team1,
+          team2: team2,
+        );
         gamesId++;
+        i++;
         teamCounter -= 2;
-        teamCounter2 -= 2;
-      } else {
-        i = 1;
-        qtdround++;
       }
     }
-          }
+
+    // if (teamCounter != 4 ||
+    //     teamCounter != 8 ||
+    //     teamCounter != 16 ||
+    //     teamCounter != 32 ||
+    //     teamCounter != 64) {
+    //   while (i == 0) {
+    //     if (teamCounter2 != 4 &&
+    //         teamCounter2 != 8 &&
+    //         teamCounter2 != 16 &&
+    //         teamCounter2 != 32 &&
+    //         teamCounter2 != 64 &&
+    //         teamCounter != 0) {
+    //       print(teamCounter);
+    //       team1 = _teams[teamCounter];
+    //       team2 = _teams[teamCounter - 1];
+
+    //       // Game(
+    //       //   id: gamesId,
+    //       //   nextGame: gamesId,
+    //       //   round: qtdround,
+    //       //   modalidade: name,
+    //       //   team1: team1,
+    //       //   team2: team2,
+    //       // );
+
+    //       gamesId++;
+    //       teamCounter -= 2;
+    //       teamCounter2 -= 2;
+    //     } else {
+    //       i = 1;
+    //       qtdround++;
+    //     }
+    //   }
+    // }
 
     // if (_teams.length != 4 ||
     //     _teams.length != 8 ||

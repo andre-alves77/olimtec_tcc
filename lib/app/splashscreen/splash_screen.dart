@@ -14,10 +14,13 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
-    Future.delayed(Duration(seconds: 4), () {
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LandingPage()));
+    Future.delayed(Duration(seconds: 2), () {
+      Navigator.pushReplacementNamed(context, LandingPage.route);
     });
+  }
+
+  void dispose() {
+    super.dispose();
   }
 
   @override
@@ -33,8 +36,9 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 350,
             ),
             Center(
-              child: Lottie.network("https://lottie.host/f193890d-1c55-4afb-a04c-9506a1125c91/v1WaxGT1zd.json",
-              height: 200,
+              child: Lottie.network(
+                "https://lottie.host/f193890d-1c55-4afb-a04c-9506a1125c91/v1WaxGT1zd.json",
+                height: 200,
               ),
             ),
           ],
