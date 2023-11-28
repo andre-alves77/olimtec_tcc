@@ -22,7 +22,7 @@ enum ScaffoldAlert { error, information }
 class CustomSnackBar{
   final String message;
 final ScaffoldAlert type;
-  CustomSnackBar({required this.message, required Ref ref, this.type = ScaffoldAlert.information,}) : super() {
+  CustomSnackBar({required this.message, required ref, this.type = ScaffoldAlert.information,}) : super() {
 
 Future.delayed(Duration(seconds: 10));
      final scaffoldMessenger = ref.read(scaffoldMessengerPod);
