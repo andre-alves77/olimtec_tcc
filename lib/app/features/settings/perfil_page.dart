@@ -7,6 +7,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -19,84 +21,89 @@ class PerfilUser extends ConsumerWidget {
 
   static String route = "/perfil-user";
 
-  static const String imageUrl = '';
+  static String imageUrl = '';
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final sizeHeight = min(MediaQuery.of(context).size.height, 400).toDouble();
     final email = ref.read(authRepositoryProvider).auth.currentUser?.email;
-    final appuser = ref.watch(appUserStream).when(
-        data: (data) {
-          return data;
-        },
-        error: (error, stackTrace) {},
-        loading: () {});
-    String imageUrl = '';
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-        title: Text(
-          "MEU PERFIL",
-          style: TextStyle(
-            fontFamily: 'Lato',
-            color: Theme.of(context).colorScheme.onPrimaryContainer,
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
+    final appuser = ref.watch(appUserStream).when(data: (data) {
+      return data;
+    }, error: (error, stackTrace) {
+      CustomSnackBar(
+          message: "Um erro aconteceu. Tente novamente",
+          ref: ref,
+          type: ScaffoldAlert.error);
+      return null;
+    }, loading: () {
+      return null;
+    });
+    if (appuser is AppUser) {
+      return Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        appBar: AppBar(
+          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+          title: Text(
+            "MEU PERFIL",
+            style: TextStyle(
+              fontFamily: 'Lato',
+              color: Theme.of(context).colorScheme.onPrimaryContainer,
+              fontSize: 28,
+              fontWeight: FontWeight.bold,
+            ),
           ),
+          centerTitle: true,
         ),
-        centerTitle: true,
-      ),
-      body: SafeArea(
-        top: true,
-        child: Padding(
-          padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 15),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  ClipRRect(
-                    borderRadius: BorderRadius.circular(80),
-                    child: CachedNetworkImage(
-                      imageUrl: appuser!.avatar,
-                      width: sizeWidth / 2,
-                      height: sizeHeight / 2,
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                ],
-              ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
-                child: Row(
+        body: SafeArea(
+          top: true,
+          child: Padding(
+            padding: const EdgeInsetsDirectional.fromSTEB(0, 15, 0, 15),
+            child: Column(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                Row(
                   mainAxisSize: MainAxisSize.max,
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(
-                      width: sizeWidth / 2.2,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          elevation: 3,
-                          backgroundColor:
-                              Theme.of(context).colorScheme.primary,
-                        ),
-                        onPressed: () async {
-                          ImagePicker? _picker;
-                          dynamic file;
-                          dynamic ob;
-                          if (kIsWeb) {
-                            FilePickerResult? result =
-                                await appuser?.pickImage();
-                            if (result != null) {
-                              PlatformFile file = result.files.first;
-                              String? imageUrl =
-                                  await appuser?.uploadImageToStorage(file);
-                              print('Image uploaded to: $imageUrl');
+                    ClipRRect(
+                      borderRadius: BorderRadius.circular(80),
+                      child: CachedNetworkImage(
+                        imageUrl: appuser!.avatar,
+                        width: sizeWidth / 2,
+                        height: sizeHeight / 2,
+                        fit: BoxFit.cover,
+                      ),
+                    ),
+                  ],
+                ),
+                Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      SizedBox(
+                        width: sizeWidth / 2.2,
+                        child: ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            elevation: 3,
+                            backgroundColor:
+                                Theme.of(context).colorScheme.primary,
+                          ),
+                          onPressed: () async {
+                            ImagePicker? _picker;
+                            dynamic file;
+                            dynamic ob;
+                            if (kIsWeb) {
+                              FilePickerResult? result =
+                                  await appuser?.pickImage();
+                              if (result != null) {
+                                PlatformFile file = result.files.first;
+                                String? imageUrl =
+                                    await appuser?.uploadImageToStorage(file);
+                                print('Image uploaded to: $imageUrl');
 
                                 var doc;
                                 var query = await FirebaseFirestore.instance
@@ -254,270 +261,280 @@ class PerfilUser extends ConsumerWidget {
                               print(error);
                             }
 
-                          //Update Firestore to reflect the deletion of the photo
-                          try {
-                            await docRef.update({
-                              'avatar': 'assets/images/LOGO_USUARIO.png',
-                            });
-                          } catch (error) {
-                            print(error);
-                          }
-                        },
-                        child: const FittedBox(
-                          child: Text(
-                            "Remover Foto",
-                            style: TextStyle(
-                              fontFamily: 'Lato',
-                              color: Colors.white,
-                              fontSize: 24,
-                              fontWeight: FontWeight.bold,
+                            //Update Firestore to reflect the deletion of the photo
+                            try {
+                              await docRef.update({
+                                'avatar': 'assets/images/LOGO_USUARIO.png',
+                              });
+                            } catch (error) {
+                              print(error);
+                            }
+                          },
+                          child: const FittedBox(
+                            child: Text(
+                              "Remover Foto",
+                              style: TextStyle(
+                                fontFamily: 'Lato',
+                                color: Colors.white,
+                                fontSize: 24,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                         ),
                       ),
+                    ],
+                  ),
+                ),
+                Column(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: sizeWidth / 5.2,
+                            child: const FittedBox(
+                              child: Text(
+                                'NOME:',
+                                style: TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                              child: Container(
+                                width: sizeWidth / 2,
+                                child: TextFormField(
+                                  initialValue: appuser?.name,
+                                  autofocus: true,
+                                  readOnly: true,
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    labelStyle: TextStyle(
+                                      fontFamily: 'Lato',
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer,
+                                      fontSize: 16,
+                                    ),
+                                    hintStyle: TextStyle(
+                                      fontFamily: 'Lato',
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer,
+                                      fontSize: 16,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        width: 2,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        width: 2,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            15, 15, 15, 15),
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: sizeWidth / 5.2,
+                            child: const FittedBox(
+                              child: Text(
+                                'EMAIL:',
+                                style: TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                              child: Container(
+                                width: sizeWidth / 2,
+                                child: TextFormField(
+                                  initialValue: email,
+                                  autofocus: true,
+                                  readOnly: true,
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    labelStyle: TextStyle(
+                                      fontFamily: 'Lato',
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer,
+                                      fontSize: 16,
+                                    ),
+                                    hintStyle: TextStyle(
+                                      fontFamily: 'Lato',
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer,
+                                      fontSize: 16,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        width: 2,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        width: 2,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            15, 15, 15, 15),
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Container(
+                            width: sizeWidth / 5.2,
+                            child: const FittedBox(
+                              child: Text(
+                                'SALA:',
+                                style: TextStyle(
+                                  fontFamily: 'Lato',
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              ),
+                            ),
+                          ),
+                          Expanded(
+                            child: Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
+                              child: Container(
+                                width: sizeWidth / 2,
+                                child: TextFormField(
+                                  initialValue: appuser.teamName,
+                                  autofocus: true,
+                                  readOnly: true,
+                                  decoration: InputDecoration(
+                                    isDense: true,
+                                    labelStyle: TextStyle(
+                                      fontFamily: 'Lato',
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer,
+                                      fontSize: 16,
+                                    ),
+                                    hintStyle: TextStyle(
+                                      fontFamily: 'Lato',
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer,
+                                      fontSize: 16,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        width: 2,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .primary,
+                                        width: 2,
+                                      ),
+                                      borderRadius: BorderRadius.circular(15),
+                                    ),
+                                    contentPadding:
+                                        EdgeInsetsDirectional.fromSTEB(
+                                            15, 15, 15, 15),
+                                  ),
+                                  style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ],
-                ),
-              ),
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: sizeWidth / 5.2,
-                          child: const FittedBox(
-                            child: Text(
-                              'NOME:',
-                              style: TextStyle(
-                                fontFamily: 'Lato',
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                            child: Container(
-                              width: sizeWidth / 2,
-                              child: TextFormField(
-                                initialValue: appuser?.name,
-                                autofocus: true,
-                                readOnly: true,
-                                decoration: InputDecoration(
-                                  isDense: true,
-                                  labelStyle: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onPrimaryContainer,
-                                    fontSize: 16,
-                                  ),
-                                  hintStyle: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onPrimaryContainer,
-                                    fontSize: 16,
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          15, 15, 15, 15),
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Lato',
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: sizeWidth / 5.2,
-                          child: const FittedBox(
-                            child: Text(
-                              'EMAIL:',
-                              style: TextStyle(
-                                fontFamily: 'Lato',
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                            child: Container(
-                              width: sizeWidth / 2,
-                              child: TextFormField(
-                                initialValue: email,
-                                autofocus: true,
-                                readOnly: true,
-                                decoration: InputDecoration(
-                                  isDense: true,
-                                  labelStyle: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onPrimaryContainer,
-                                    fontSize: 16,
-                                  ),
-                                  hintStyle: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onPrimaryContainer,
-                                    fontSize: 16,
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          15, 15, 15, 15),
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Lato',
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: sizeWidth / 5.2,
-                          child: const FittedBox(
-                            child: Text(
-                              'SALA:',
-                              style: TextStyle(
-                                fontFamily: 'Lato',
-                                fontSize: 20,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                          ),
-                        ),
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                            child: Container(
-                              width: sizeWidth / 2,
-                              child: TextFormField(
-                                initialValue: appuser.teamName,
-                                autofocus: true,
-                                readOnly: true,
-                                decoration: InputDecoration(
-                                  isDense: true,
-                                  labelStyle: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onPrimaryContainer,
-                                    fontSize: 16,
-                                  ),
-                                  hintStyle: TextStyle(
-                                    fontFamily: 'Lato',
-                                    color: Theme.of(context)
-                                        .colorScheme
-                                        .onPrimaryContainer,
-                                    fontSize: 16,
-                                  ),
-                                  enabledBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  focusedBorder: OutlineInputBorder(
-                                    borderSide: BorderSide(
-                                      color:
-                                          Theme.of(context).colorScheme.primary,
-                                      width: 2,
-                                    ),
-                                    borderRadius: BorderRadius.circular(15),
-                                  ),
-                                  contentPadding:
-                                      EdgeInsetsDirectional.fromSTEB(
-                                          15, 15, 15, 15),
-                                ),
-                                style: TextStyle(
-                                  fontFamily: 'Lato',
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        
-                      ],
-                    ),
-                  ),
-                ],
-              )
-            ],
+                )
+              ],
+            ),
           ),
         ),
-      ),
-    );
+      );}else {
+      return LoadingPage();
+    }
+    }
   }
-}
+

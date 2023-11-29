@@ -11,7 +11,7 @@ class LoadingPage extends StatelessWidget {
     return Scaffold(
       body: Center(
         child: Lottie.asset(
-          'assets/lottie/Animation_Splash_Screen.json',
+          'assets/lottie/animation_loading.json',
           height: 200,
         ),
       ),
