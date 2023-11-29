@@ -93,6 +93,7 @@ flutter_launcher_icons:
 # The following section is specific to Flutter packages.
 flutter:
   assets:
+        - assets/lottie/
         - assets/images/
         - assets/images/logo_principal_dark_mode.png
 

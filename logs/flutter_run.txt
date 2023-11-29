@@ -1,22 +1,109 @@
-[13:18:00]: Spawning C:\flutter\bin\flutter.bat with args ["run","--machine","--start-paused","-d","chrome","--devtools-server-address","http://127.0.0.1:9100/","--target","lib\\main.dart","--web-hostname","any"]
-[13:18:00]: ..  in C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[13:18:00]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
-[13:18:00]: PID: 7780
-[13:18:03]: <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":10224}}]
-[13:18:03]: <== [{"event":"app.start","params":{"appId":"0897f221-c978-46a6-8b07-642f5c8b36d7","deviceId":"chrome","directory":"C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
-[13:18:03]: <== Launching lib\main.dart on Chrome in debug mode...
-[13:18:04]: <== [{"event":"app.progress","params":{"appId":"0897f221-c978-46a6-8b07-642f5c8b36d7","id":"0","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
-[13:19:12]: <== [{"event":"app.progress","params":{"appId":"0897f221-c978-46a6-8b07-642f5c8b36d7","id":"0","progressId":null,"finished":true}}]
-[13:19:20]: <== [{"event":"app.webLaunchUrl","params":{"url":"http://localhost:56740","launched":true}}]
-[13:19:35]: <== This app is linked to the debug service: ws://127.0.0.1:56820/npTL8Gx8sME=/ws
-[13:19:35]: <== Debug service listening on ws://127.0.0.1:56820/npTL8Gx8sME=/ws
-[13:19:35]: <== [{"event":"app.started","params":{"appId":"0897f221-c978-46a6-8b07-642f5c8b36d7"}}]
-[13:19:35]: <== [{"event":"app.debugPort","params":{"appId":"0897f221-c978-46a6-8b07-642f5c8b36d7","port":56820,"wsUri":"ws://127.0.0.1:56820/npTL8Gx8sME=/ws"}}]
-[13:19:37]: <== minha
-[13:19:37]: <== 4
-[13:19:37]: <== 2
-[13:19:37]: <== carregando login state
-[13:19:37]: <== não logado
-[13:20:35]: <== logado
-[13:21:03]: ==> [{"id":"1","method":"app.stop","params":{"appId":"0897f221-c978-46a6-8b07-642f5c8b36d7"}}]
-[13:21:06]: Process C:\flutter\bin\flutter.bat terminated! 1, null
+[20:41:34]: Spawning C:\flutter\bin\flutter.bat with args ["run","--machine","--start-paused","-d","chrome","--devtools-server-address","http://127.0.0.1:9100/","--target","lib\\main.dart","--web-hostname","any"]
+[20:41:34]: ..  in C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[20:41:34]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[20:41:34]: PID: 11436
+[20:41:40]: <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":4588}}]
+[20:41:40]: <== [{"event":"app.start","params":{"appId":"32f772ae-d950-4728-bc09-70b7fca8312b","deviceId":"chrome","directory":"C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
+[20:41:40]: <== Launching lib\main.dart on Chrome in debug mode...
+[20:41:42]: <== [{"event":"app.progress","params":{"appId":"32f772ae-d950-4728-bc09-70b7fca8312b","id":"0","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[20:43:56]: <== [{"event":"app.progress","params":{"appId":"32f772ae-d950-4728-bc09-70b7fca8312b","id":"0","progressId":null,"finished":true}}]
+[20:44:18]: <== [{"event":"app.webLaunchUrl","params":{"url":"http://localhost:55997","launched":true}}]
+[20:44:43]: <== This app is linked to the debug service: ws://127.0.0.1:56127/oJmSCTn1Ve0=/ws
+[20:44:43]: <== Debug service listening on ws://127.0.0.1:56127/oJmSCTn1Ve0=/ws
+[20:44:43]: <== [{"event":"app.started","params":{"appId":"32f772ae-d950-4728-bc09-70b7fca8312b"}}]
+[20:44:43]: <== [{"event":"app.debugPort","params":{"appId":"32f772ae-d950-4728-bc09-70b7fca8312b","port":56127,"wsUri":"ws://127.0.0.1:56127/oJmSCTn1Ve0=/ws"}}]
+[20:44:49]: <== JOGO 1
+[20:44:49]: <== Passou
+[20:44:49]: <== OPA6
+[20:44:49]: <== JOGO 2
+[20:44:49]: <== OPA11
+[20:44:49]: <== OPA3
+[20:44:49]: <== JOGO 3
+[20:44:49]: <== OPA8
+[20:44:49]: <== OPA10
+[20:44:49]: <== JOGO 4
+[20:44:49]: <== OPA4
+[20:44:49]: <== OPA1
+[20:44:49]: <== carregando login state
+[20:44:50]: <== não logado
+[20:45:28]: <== logado
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:45:33]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:12]: <== DJ MEC MEC
+[20:46:26]: ==> [{"id":"1","method":"app.stop","params":{"appId":"32f772ae-d950-4728-bc09-70b7fca8312b"}}]
+[20:46:28]: Process C:\flutter\bin\flutter.bat terminated! 1, null

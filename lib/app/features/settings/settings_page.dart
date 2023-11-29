@@ -56,133 +56,124 @@ class SettingsPage extends ConsumerWidget {
     final sizeHeight = min(MediaQuery.of(context).size.height, 400).toDouble();
     final themeStore = ref.read(themeProvider.notifier);
     final auth = ref.read(authRepositoryProvider);
-    final appuser = ref.watch(appUserStream).when(data: (data) {
-      return data;
-    }, error: (error, stackTrace) {
-      CustomSnackBar(
-          message: "Um erro aconteceu. Tente novamente",
-          ref: ref,
-          type: ScaffoldAlert.error);
-      return null;
-    }, loading: () {
-      return null;
-    });
-    if (appuser is AppUser) {
-      return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.primaryContainer,
-          iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
-          automaticallyImplyLeading: false,
-          leading: ClipRRect(
-            borderRadius: BorderRadius.circular(8),
-            child: Image.asset(
-              'assets/images/logo_principal_dark_mode.png',
-              width: 300,
-              height: 200,
-              fit: BoxFit.cover,
-            ),
-          ),
-          centerTitle: true,
-          title: const Text(
-            'CONFIGURAÇÕES',
-            style: TextStyle(
-              fontFamily: 'Lato',
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
+    final appuser = ref.watch(appUserStream).when(
+        data: (data) {
+          return data;
+        },
+        error: (error, stackTrace) {},
+        loading: () {});
+
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        iconTheme: IconThemeData(color: Theme.of(context).primaryColor),
+        automaticallyImplyLeading: false,
+        leading: ClipRRect(
+          borderRadius: BorderRadius.circular(8),
+          child: Image.asset(
+            'assets/images/logo_principal_dark_mode.png',
+            width: 300,
+            height: 200,
+            fit: BoxFit.cover,
           ),
         ),
-        body: Center(
-          child: Container(
-            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
-            constraints: const BoxConstraints(maxWidth: 400),
-            width: sizeWidth,
-            child: Column(
-              children: [
-                GestureDetector(
-                  child: ListTile(
-                    contentPadding:
-                        EdgeInsets.symmetric(vertical: 10, horizontal: 10),
-                    leading: Container(
-                      width: sizeWidth / 5,
-                      child: FittedBox(
-                        fit: BoxFit.fitWidth,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(80),
-                          child: CachedNetworkImage(
-                            imageUrl: appuser.avatar,
-                            width: sizeWidth / 2,
-                            height: sizeHeight / 2,
-                            fit: BoxFit.cover,
-                          ),
-                        ),
+        centerTitle: true,
+        title: const Text(
+          'CONFIGURAÇÕES',
+          style: TextStyle(
+            fontFamily: 'Lato',
+            fontSize: 24,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+      body: Center(
+        child: Container(
+          padding: EdgeInsets.symmetric(vertical: 20, horizontal: 10),
+          constraints: const BoxConstraints(maxWidth: 400),
+          width: sizeWidth,
+          child: Column(
+            children: [
+              GestureDetector(
+                child: ListTile(
+                  contentPadding:
+                      EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                  leading: Container(
+                    width: sizeWidth / 5,
+                    child: FittedBox(
+                      fit: BoxFit.fitWidth,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(80),
+                        child: CachedNetworkImage(
+                        imageUrl: appuser!.avatar,
+                        width: sizeWidth / 2,
+                        height: sizeHeight / 2,
+                        fit: BoxFit.cover,
+                                          ),
                       ),
                     ),
-                    title: Text(
-                      appuser.name,
-                      style: TextStyle(
-                        fontSize: 24,
-                        color: Theme.of(context).colorScheme.onPrimaryContainer,
-                      ),
-                    ),
-                    subtitle: Text('Visualizar perfil',
-                        style: TextStyle(color: Colors.grey)),
-                    trailing: Icon(Icons.arrow_forward_ios_outlined,
-                        size: 30,
-                        color:
-                            Theme.of(context).colorScheme.onPrimaryContainer),
                   ),
-                  onTap: () {
-                    Navigator.pushNamed(context, PerfilUser.route);
+                  title: Text(
+                    appuser!.name,
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer,
+                    ),
+                  ),
+                  subtitle: Text('Visualizar perfil',
+                      style: TextStyle(color: Colors.grey)),
+                  trailing: Icon(Icons.arrow_forward_ios_outlined,
+                      size: 30,
+                      color: Theme.of(context).colorScheme.onPrimaryContainer),
+                ),
+                onTap: () {
+                  Navigator.pushNamed(context, PerfilUser.route);
+                },
+              ),
+              const Divider(),
+              ListTile(
+                selected: themeStore.state == ThemeMode.dark ? true : false,
+                onTap: () => themeStore.toggle(),
+                leading: const Icon(
+                  Icons.nights_stay_sharp,
+                ),
+                title: const Text(
+                  'Modo Noturno',
+                ),
+                trailing: Switch(
+                  value: ThemeMode.dark == themeStore.state ? true : false,
+                  onChanged: (value) {
+                    themeStore.toggle();
                   },
+                  activeColor: Theme.of(context).colorScheme.primary,
                 ),
-                const Divider(),
-                ListTile(
-                  selected: themeStore.state == ThemeMode.dark ? true : false,
-                  onTap: () => themeStore.toggle(),
-                  leading: const Icon(
-                    Icons.nights_stay_sharp,
-                  ),
-                  title: const Text(
-                    'Modo Noturno',
-                  ),
-                  trailing: Switch(
-                    value: ThemeMode.dark == themeStore.state ? true : false,
-                    onChanged: (value) {
-                      themeStore.toggle();
-                    },
-                    activeColor: Theme.of(context).colorScheme.primary,
-                  ),
-                  iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
-                  textColor: Theme.of(context).colorScheme.onPrimaryContainer,
-                ),
-                ..._userrole(appuser, context),
-                const Divider(),
-                _listTile(
-                    context: context,
-                    title: 'Sobre nós',
-                    icon: Icons.people_alt,
-                    function: () {
-                      Navigator.pushNamed(context, AboutUsPage.route);
-                    }),
-                const Divider(),
-                _listTile(
-                    context: context,
-                    title: "Sair",
-                    icon: Icons.exit_to_app,
-                    function: () {
-                      //signout
-                      print("signoutt");
-                      auth.signOut();
-                    })
-              ],
-            ),
+                iconColor: Theme.of(context).colorScheme.onPrimaryContainer,
+                textColor: Theme.of(context).colorScheme.onPrimaryContainer,
+              ),
+              ..._userrole(appuser, context),
+              const Divider(),
+              _listTile(
+                  context: context,
+                  title: 'Sobre nós',
+                  icon: Icons.people_alt,
+                  function: () {
+                    Navigator.pushNamed(context, AboutUsPage.route);
+                  }),
+              const Divider(),
+              _listTile(
+                  context: context,
+                  title: "Sair",
+                  icon: Icons.exit_to_app,
+                  function: () {
+                    //signout
+                    print("signoutt");
+                    auth.signOut();
+                  })
+            ],
           ),
         ),
-      );
-    } else {
-      return LoadingPage();
-    }
+      ),
+    );
   }
 
   InkWell _listTile(

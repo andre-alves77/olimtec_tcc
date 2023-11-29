@@ -1,21 +1,19 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 
-class PrivilegeTeamAdmin extends StatefulWidget {
+class PrivilegeTeamAdmin extends ConsumerWidget {
   const PrivilegeTeamAdmin({super.key});
 
   static String route = "/privilegesteampage-admin";
 
   @override
-  State<PrivilegeTeamAdmin> createState() => _PrivilegeTeamAdminState();
-}
-
-class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final sizeHeight = min(MediaQuery.of(context).size.height, 400).toDouble();
 
@@ -23,6 +21,13 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
     final usersRef = FirebaseFirestore.instance
         .collection("users")
         .where('teamName', isEqualTo: arg);
+
+    final appuser = ref.watch(appUserStream).when(
+        data: (data) {
+          return data;
+        },
+        error: (error, stackTrace) {},
+        loading: () {});
 
     return Scaffold(
       appBar: AppBar(
@@ -190,13 +195,21 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
                                           children: [
                                             ListTile(
                                               leading: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(50),
-                                                child: Image.asset(
-                                                  'assets/images/LOGO_USUARIO.png',
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(80),
+                                                  child: CachedNetworkImage(
+                                                      imageUrl: data['avatar'],
+                                                      width: 60,
+                                                      height: 60,
+                                                      fit: BoxFit.cover,
+                                                      placeholder: (context,
+                                                              url) =>
+                                                          Center(
+                                                              child:
+                                                                  CircularProgressIndicator()),
+                                                      errorWidget: (context,
+                                                              url, error) =>
+                                                          Icon(Icons.person, size: 60))),
                                               title: Text(data['name']),
                                               trailing: Container(
                                                 width: sizeWidth / 7.8,
@@ -220,7 +233,6 @@ class _PrivilegeTeamAdminState extends State<PrivilegeTeamAdmin> {
                                                             .doc(document.id)
                                                             .set(appUser
                                                                 .toMap());
-                                                        setState(() {});
                                                       },
                                                       icon: data['isLeader'] ==
                                                               true
