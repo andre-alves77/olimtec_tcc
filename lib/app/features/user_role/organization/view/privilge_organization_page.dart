@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
@@ -95,7 +96,7 @@ class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
                               ),
                             ),
                             Text(
-                              "INSIRA OS REPRESENTANTES ABAIXO",
+                              "INSIRA OS ORGANIZADORES ABAIXO",
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 18,
@@ -190,13 +191,21 @@ class _PrivilegeOrganizationState extends State<PrivilegeOrganization> {
                                           children: [
                                             ListTile(
                                               leading: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(50),
-                                                child: Image.asset(
-                                                  'assets/images/LOGO_USUARIO.png',
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
+                                                  borderRadius:
+                                                      BorderRadius.circular(80),
+                                                  child: CachedNetworkImage(
+                                                      imageUrl: data['avatar'],
+                                                      width: 60,
+                                                      height: 60,
+                                                      fit: BoxFit.cover,
+                                                      placeholder: (context,
+                                                              url) =>
+                                                          Center(
+                                                              child:
+                                                                  CircularProgressIndicator()),
+                                                      errorWidget: (context,
+                                                              url, error) =>
+                                                          Icon(Icons.person, size: 60))),
                                               title: Text(data['name']),
                                               trailing: Container(
                                                 width: sizeWidth / 7.8,

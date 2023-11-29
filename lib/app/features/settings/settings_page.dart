@@ -102,11 +102,14 @@ class SettingsPage extends ConsumerWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(80),
                         child: CachedNetworkImage(
-                        imageUrl: appuser!.avatar,
-                        width: sizeWidth / 2,
-                        height: sizeHeight / 2,
-                        fit: BoxFit.cover,
-                                          ),
+                            imageUrl: appuser!.avatar,
+                            width: sizeWidth / 2,
+                            height: sizeHeight / 2,
+                            fit: BoxFit.cover,
+                            placeholder: (context, url) =>
+                                CircularProgressIndicator(),
+                            errorWidget: (context, url, error) =>
+                                Icon(Icons.person, size: 60)),
                       ),
                     ),
                   ),
