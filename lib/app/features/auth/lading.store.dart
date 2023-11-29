@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
@@ -12,6 +13,21 @@ final formUserSignInProvider = ChangeNotifierProvider<FormSignInStore>((ref) {
 enum FormUserState { SignUp, SignIn }
 
 class FormSignInStore extends ChangeNotifier {
+  Future<List<String>> _getTeams() async {
+    List<String> fieldValues = [];
+    QuerySnapshot querySnapshot =
+        await FirebaseFirestore.instance.collection("team").get();
+    for (var doc in querySnapshot.docs) {
+      fieldValues.add(doc["name"]);
+    }
+    return fieldValues;
+  }
+
+  getTeams() async {
+    await _getTeams().then((value) => value);
+    return teams;
+  }
+
   final Ref ref;
   String name = "";
   String email = "";
@@ -31,11 +47,12 @@ class FormSignInStore extends ChangeNotifier {
   final formAuthKeySignIn = GlobalKey<FormState>();
   final formAuthKeySignUp = GlobalKey<FormState>();
   bool isLoading = false;
+  List<String> teams = [];
 
-  turnOffLoading(){
+  turnOffLoading() {
     isLoading = false;
     notifyListeners();
-      }
+  }
 
   FormSignInStore(this.ref);
 
@@ -56,11 +73,10 @@ class FormSignInStore extends ChangeNotifier {
       isLoading = true;
       ref.read(authRepositoryProvider).signInWithEmailAndPassword(mail, pass);
       notifyListeners();
-      
     }
   }
 
-  submitUp() {
+  submitUp() async {
     emailError = "";
     passwordError = "";
     password2Error = "";
@@ -106,7 +122,6 @@ class FormSignInStore extends ChangeNotifier {
       //signup
       isLoading = true;
       ref.read(authRepositoryProvider).createUser(email, password, name);
-      
     }
 
     CustomSnackBar(

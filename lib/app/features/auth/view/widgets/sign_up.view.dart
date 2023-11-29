@@ -1,5 +1,7 @@
+import 'dart:core';
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/custom_text_field.dart';
@@ -18,8 +20,8 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final aiuth = ref.watch(formUserSignInProvider);
+    print(aiuth.teams);
     return Form(
-
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(44, 0, 44, 0),
         child: SingleChildScrollView(
