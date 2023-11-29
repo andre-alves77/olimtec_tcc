@@ -5,6 +5,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/custom_text_field.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +21,8 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final aiuth = ref.watch(formUserSignInProvider);
-    print(aiuth.teams);
+    final teams = ref.watch(getTeamsProvider);
+
     return Form(
       child: Padding(
         padding: EdgeInsetsDirectional.fromSTEB(44, 0, 44, 0),
@@ -28,6 +30,36 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
+              teams.when(
+                data: (data) {
+                  if (data != null) {
+                    var items =
+                        data.map<DropdownMenuEntry<String>>((String value) {
+                      return DropdownMenuEntry<String>(
+                          value: value, label: value);
+                    }).toList();
+                    return Padding(
+                      padding: const EdgeInsets.only(top: 12.0),
+                      child: DropdownMenu(
+                        label: Text("TIME"),
+                       
+                          dropdownMenuEntries: items,
+                          onSelected: (value) {
+                            aiuth.setTeam(value!.toString());
+                          }),
+                    );
+                  }
+                  return CircularProgressIndicator();
+                },
+                loading: () {
+                  return CircularProgressIndicator();
+                },
+                error: (e, s) {
+                  CustomSnackBar(
+                      message: "Um erro aconteceu. Tente novamente.", ref: ref);
+                  return Placeholder();
+                },
+              ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 20, 0, 0),
                 child: CustomTextField(

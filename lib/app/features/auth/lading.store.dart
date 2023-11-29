@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+import 'package:olimtec_tcc/app/features/championship/models/team.dart';
 
 final formUserSignInProvider = ChangeNotifierProvider<FormSignInStore>((ref) {
   return FormSignInStore(ref);
@@ -12,22 +13,26 @@ final formUserSignInProvider = ChangeNotifierProvider<FormSignInStore>((ref) {
 
 enum FormUserState { SignUp, SignIn }
 
-class FormSignInStore extends ChangeNotifier {
-  Future<List<String>> _getTeams() async {
-    List<String> fieldValues = [];
-    QuerySnapshot querySnapshot =
-        await FirebaseFirestore.instance.collection("team").get();
-    for (var doc in querySnapshot.docs) {
-      fieldValues.add(doc["name"]);
+final getTeamsProvider = FutureProvider((ref) async {
+  try {
+    Future<List<String>> getTeams() async {
+      List<String> fieldValues = [];
+
+      QuerySnapshot querySnapshot =
+          await FirebaseFirestore.instance.collection("team").get();
+      for (var doc in querySnapshot.docs) {
+        fieldValues.add(doc["name"]);
+      }
+      return fieldValues;
     }
-    return fieldValues;
-  }
 
-  getTeams() async {
-    await _getTeams().then((value) => value);
-    return teams;
+    return getTeams();
+  } catch (e) {
+    CustomSnackBar(message: 'Error', ref: ref);
   }
+});
 
+class FormSignInStore extends ChangeNotifier {
   final Ref ref;
   String name = "";
   String email = "";
@@ -37,6 +42,7 @@ class FormSignInStore extends ChangeNotifier {
   String emailError = "";
   String password2Error = "";
   String passwordError = "";
+  String team = "";
 
   String pass = "";
   String mail = "";
@@ -82,6 +88,10 @@ class FormSignInStore extends ChangeNotifier {
     password2Error = "";
     nameError = "";
 
+    if (team.isEmpty) {
+      CustomSnackBar(message: "Preencha o campo de time", ref: ref, type: ScaffoldAlert.error);
+    }
+
     if (name.split(' ').length > 2 && !RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
       nameError += "Insira somente letras e no máximo duas palavras.\n";
     }
@@ -121,11 +131,16 @@ class FormSignInStore extends ChangeNotifier {
         password2Error.isEmpty) {
       //signup
       isLoading = true;
-      ref.read(authRepositoryProvider).createUser(email, password, name);
+      ref.read(authRepositoryProvider).createUser(email, password, name, team);
     }
 
     CustomSnackBar(
         message: "email: $email, senha: $password, nome: $name", ref: ref);
+    notifyListeners();
+  }
+
+  setTeam(String value) {
+    team = value;
     notifyListeners();
   }
 }

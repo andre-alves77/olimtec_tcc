@@ -90,7 +90,7 @@ notifyListeners();
     }
   }
 
-  Future<User?> createUser(String email, String password, String name) async {
+  Future<User?> createUser(String email, String password, String name, String team) async {
     try {
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -103,7 +103,7 @@ notifyListeners();
         "isLeader": false,
         'isOrganization': false,
         'name': name,
-        'teamName': '3DSB',
+        'teamName': team,
       });
       signInWithEmailAndPassword(email, password);
 
