@@ -23,6 +23,12 @@ class CustomTextField extends StatefulWidget {
 class _CustomTextFieldState extends State<CustomTextField> {
   bool _obscureText = true;
 
+  @override
+  void initState() {
+    super.initState();
+    _obscureText = widget.isPassword;
+  }
+
   void _toggle() {
     setState(() {
       _obscureText = !_obscureText;
@@ -55,7 +61,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
                 : IconButton(
                     icon: Icon(
                       !_obscureText ? Icons.visibility_off : Icons.visibility,
-                      color: Colors.purple,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                     onPressed: () {
                       _toggle();

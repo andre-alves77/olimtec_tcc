@@ -6,6 +6,7 @@ import 'package:olimtec_tcc/app/core/widgets/custom_text_field.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
+import 'package:olimtec_tcc/app/features/auth/view/reset_password.view.dart';
 
 class SignInForm extends ConsumerStatefulWidget {
   const SignInForm({super.key});
@@ -21,7 +22,6 @@ class SignInForState extends ConsumerState<SignInForm> {
     final authNoti = ref.watch(formUserSignInProvider);
 
     return Form(
-
       child: Padding(
         padding: const EdgeInsetsDirectional.fromSTEB(44, 0, 44, 0),
         child: SingleChildScrollView(
@@ -40,6 +40,7 @@ class SignInForState extends ConsumerState<SignInForm> {
                 child: CustomTextField(
                   errorMessage: authNoti.passError,
                   hintText: 'Senha',
+                  isPassword: true,
                   onChanged: (password) => authNoti.pass = password,
                 ),
               ),
@@ -80,7 +81,9 @@ class SignInForState extends ConsumerState<SignInForm> {
                     ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, ResetPasswordForm.route);
+                },
               ),
             ],
           ),

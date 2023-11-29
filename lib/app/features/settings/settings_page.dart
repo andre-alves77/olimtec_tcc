@@ -112,7 +112,7 @@ class SettingsPage extends ConsumerWidget {
                             placeholder: (context, url) =>
                                 Center(child: CircularProgressIndicator()),
                             errorWidget: (context, url, error) =>
-                                Icon(Icons.person, size: 60)),
+                                Icon(Icons.person, size: 200)),
                       ),
                     ),
                   ),

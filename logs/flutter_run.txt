@@ -1,51 +1,1145 @@
-[17:12:32]: Spawning C:\flutter\bin\flutter.bat with args ["run","--machine","--start-paused","-d","chrome","--devtools-server-address","http://127.0.0.1:9100/","--target","lib\\main.dart","--web-hostname","any"]
-[17:12:32]: ..  in C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
-[17:12:32]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
-[17:12:32]: PID: 7680
-[17:12:37]: <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":7240}}]
-[17:12:38]: <== [{"event":"app.start","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729","deviceId":"chrome","directory":"C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
-[17:12:38]: <== Launching lib\main.dart on Chrome in debug mode...
-[17:12:39]: <== [{"event":"app.progress","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729","id":"0","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
-[17:14:46]: <== [{"event":"app.progress","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729","id":"0","progressId":null,"finished":true}}]
-[17:15:06]: <== [{"event":"app.webLaunchUrl","params":{"url":"http://localhost:55047","launched":true}}]
-[17:15:32]: <== This app is linked to the debug service: ws://127.0.0.1:55200/qMtyfCzeNzg=/ws
-[17:15:32]: <== Debug service listening on ws://127.0.0.1:55200/qMtyfCzeNzg=/ws
-[17:15:32]: <== [{"event":"app.started","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729"}}]
-[17:15:32]: <== [{"event":"app.debugPort","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729","port":55200,"wsUri":"ws://127.0.0.1:55200/qMtyfCzeNzg=/ws"}}]
-[17:15:37]: <== ROUND 1 >>> JOGO 1 >>> 5
-[17:15:37]: <== ROUND 1 >>> JOGO 2 >>> 6
-[17:15:37]: <== ROUND 1 >>> JOGO 3 >>> 7
-[17:15:37]: <== ROUND 1 >>> JOGO 4 >>> 8
-[17:15:37]: <== 8
-[17:15:37]: <== ROUND 2 >>> JOGO 5 >>> 9
-[17:15:37]: <== opa2
-[17:15:37]: <== ROUND 2 >>> JOGO 6 >>> 10
-[17:15:37]: <== opa2
-[17:15:37]: <== opa1
-[17:15:37]: <== ROUND 2 >>> JOGO 7 >>> 11
-[17:15:37]: <== opa1
-[17:15:37]: <== ROUND 2 >>> JOGO 8 >>> 12
-[17:15:37]: <== opa1
-[17:15:37]: <== ROUND 2 >>> JOGO 9 >>> 13
-[17:15:37]: <== opa1
-[17:15:37]: <== ROUND 2 >>> JOGO 10 >>> 14
-[17:15:37]: <== opa1
-[17:15:37]: <== ROUND 2 >>> JOGO 11 >>> 15
-[17:15:37]: <== opa1
-[17:15:37]: <== ROUND 2 >>> JOGO 12 >>> 16
-[17:15:37]: <== carregando login state
-[17:15:38]: <== não logado
-[17:15:51]: <== false
-[17:15:51]: <== true
-[17:16:01]: <== false
-[17:16:01]: <== true
-[17:16:01]: <== false
-[17:16:01]: <== true
-[17:16:01]: <== false
-[17:16:02]: <== true
-[17:16:02]: <== false
-[17:16:02]: <== true
-[17:16:02]: <== false
-[17:16:02]: <== true
-[17:16:47]: ==> [{"id":"1","method":"app.stop","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729"}}]
-[17:16:50]: Process C:\flutter\bin\flutter.bat terminated! 1, null
+[18:01:20]: Spawning C:\flutter\bin\flutter.bat with args ["run","--machine","--start-paused","-d","chrome","--devtools-server-address","http://127.0.0.1:9100/","--target","lib\\main.dart","--web-hostname","any"]
+[18:01:20]: ..  in C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[18:01:20]: ..  with {"toolEnv":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[18:01:20]: PID: 12684
+[18:01:24]: <== [{"event":"daemon.connected","params":{"version":"0.6.1","pid":6712}}]
+[18:01:24]: <== [{"event":"app.start","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","deviceId":"chrome","directory":"C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
+[18:01:24]: <== Launching lib\main.dart on Chrome in debug mode...
+[18:01:25]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"0","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:02:57]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"0","progressId":null,"finished":true}}]
+[18:03:08]: <== [{"event":"app.webLaunchUrl","params":{"url":"http://localhost:56830","launched":true}}]
+[18:03:29]: <== This app is linked to the debug service: ws://127.0.0.1:56925/tqQhHk0v66w=/ws
+[18:03:29]: <== Debug service listening on ws://127.0.0.1:56925/tqQhHk0v66w=/ws
+[18:03:29]: <== [{"event":"app.started","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509"}}]
+[18:03:29]: <== [{"event":"app.debugPort","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","port":56925,"wsUri":"ws://127.0.0.1:56925/tqQhHk0v66w=/ws"}}]
+[18:03:32]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:03:32]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:03:32]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:03:32]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:03:32]: <== 8
+[18:03:32]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:03:32]: <== opa2
+[18:03:32]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:03:32]: <== opa2
+[18:03:32]: <== opa1
+[18:03:32]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:03:32]: <== opa1
+[18:03:32]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:03:32]: <== opa1
+[18:03:32]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:03:32]: <== opa1
+[18:03:32]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:03:32]: <== opa1
+[18:03:32]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:03:32]: <== opa1
+[18:03:32]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:03:32]: <== carregando login state
+[18:03:33]: <== não logado
+[18:06:39]: ==> [{"id":"1","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:06:39]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"1","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:06:39]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"2","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:06:41]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"2","progressId":null,"finished":true}}]
+[18:06:53]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"1","progressId":"hot.restart","finished":true}}]
+[18:06:53]: <== Restarted application in 13.822ms.
+[18:06:53]: <== [{"id":"1","result":{"code":0,"message":""}}]
+[18:06:54]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:06:54]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:06:54]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:06:54]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:06:54]: <== 8
+[18:06:54]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:06:54]: <== opa2
+[18:06:54]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:06:54]: <== opa2
+[18:06:54]: <== opa1
+[18:06:54]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:06:54]: <== opa1
+[18:06:54]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:06:54]: <== opa1
+[18:06:54]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:06:54]: <== opa1
+[18:06:54]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:06:54]: <== opa1
+[18:06:54]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:06:54]: <== opa1
+[18:06:54]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:06:54]: <== carregando login state
+[18:06:55]: <== não logado
+[18:14:06]: ==> [{"id":"2","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:14:06]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"3","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:14:07]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"4","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:14:07]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"4","progressId":null,"finished":true}}]
+[18:14:30]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"3","progressId":"hot.restart","finished":true}}]
+[18:14:30]: <== Restarted application in 23.605ms.
+[18:14:30]: <== [{"id":"2","result":{"code":0,"message":""}}]
+[18:14:31]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:14:31]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:14:31]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:14:31]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:14:31]: <== 8
+[18:14:31]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:14:31]: <== opa2
+[18:14:32]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:14:32]: <== opa2
+[18:14:32]: <== opa1
+[18:14:32]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:14:32]: <== opa1
+[18:14:32]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:14:32]: <== opa1
+[18:14:32]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:14:32]: <== opa1
+[18:14:32]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:14:32]: <== opa1
+[18:14:32]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:14:32]: <== opa1
+[18:14:32]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:14:32]: <== carregando login state
+[18:14:33]: <== não logado
+[18:15:03]: ==> [{"id":"3","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:15:03]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"5","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:15:03]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"6","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:15:04]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"6","progressId":null,"finished":true}}]
+[18:15:05]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"5","progressId":"hot.restart","finished":true}}]
+[18:15:05]: <== Restarted application in 1.858ms.
+[18:15:05]: <== [{"id":"3","result":{"code":0,"message":""}}]
+[18:15:05]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:15:05]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:15:05]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:15:05]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:15:05]: <== 8
+[18:15:05]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:15:05]: <== opa2
+[18:15:05]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:15:05]: <== opa2
+[18:15:05]: <== opa1
+[18:15:05]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:15:05]: <== opa1
+[18:15:05]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:15:05]: <== opa1
+[18:15:05]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:15:05]: <== opa1
+[18:15:05]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:15:05]: <== opa1
+[18:15:05]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:15:05]: <== opa1
+[18:15:05]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:15:05]: <== carregando login state
+[18:15:06]: <== não logado
+[18:15:43]: ==> [{"id":"4","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:15:43]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"7","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:15:43]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"8","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:15:44]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"8","progressId":null,"finished":true}}]
+[18:15:45]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"7","progressId":"hot.restart","finished":true}}]
+[18:15:45]: <== Restarted application in 1.969ms.
+[18:15:45]: <== [{"id":"4","result":{"code":0,"message":""}}]
+[18:15:45]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:15:45]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:15:45]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:15:45]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:15:45]: <== 8
+[18:15:45]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:15:45]: <== opa2
+[18:15:45]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:15:45]: <== opa2
+[18:15:45]: <== opa1
+[18:15:45]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:15:45]: <== opa1
+[18:15:45]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:15:45]: <== opa1
+[18:15:45]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:15:45]: <== opa1
+[18:15:45]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:15:45]: <== opa1
+[18:15:45]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:15:45]: <== opa1
+[18:15:45]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:15:45]: <== carregando login state
+[18:15:46]: <== não logado
+[18:16:13]: ==> [{"id":"5","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:16:13]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"9","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:16:13]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"10","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:16:15]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"10","progressId":null,"finished":true}}]
+[18:16:16]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"9","progressId":"hot.restart","finished":true}}]
+[18:16:16]: <== Restarted application in 3.008ms.
+[18:16:16]: <== [{"id":"5","result":{"code":0,"message":""}}]
+[18:16:16]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:16:16]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:16:16]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:16:16]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:16:16]: <== 8
+[18:16:16]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:16:16]: <== opa2
+[18:16:16]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:16:16]: <== opa2
+[18:16:16]: <== opa1
+[18:16:16]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:16:16]: <== opa1
+[18:16:16]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:16:16]: <== opa1
+[18:16:16]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:16:16]: <== opa1
+[18:16:16]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:16:16]: <== opa1
+[18:16:16]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:16:16]: <== opa1
+[18:16:16]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:16:16]: <== carregando login state
+[18:16:17]: <== não logado
+[18:16:53]: ==> [{"id":"6","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:16:53]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"11","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:16:53]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"12","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:16:54]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"12","progressId":null,"finished":true}}]
+[18:16:56]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"11","progressId":"hot.restart","finished":true}}]
+[18:16:56]: <== Restarted application in 2.538ms.
+[18:16:56]: <== [{"id":"6","result":{"code":0,"message":""}}]
+[18:16:56]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:16:56]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:16:56]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:16:56]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:16:56]: <== 8
+[18:16:56]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:16:56]: <== opa2
+[18:16:56]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:16:56]: <== opa2
+[18:16:56]: <== opa1
+[18:16:56]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:16:57]: <== opa1
+[18:16:57]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:16:57]: <== opa1
+[18:16:57]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:16:57]: <== opa1
+[18:16:57]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:16:57]: <== opa1
+[18:16:57]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:16:57]: <== opa1
+[18:16:57]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:16:57]: <== carregando login state
+[18:16:57]: <== não logado
+[18:17:14]: ==> [{"id":"7","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:17:14]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"13","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:17:15]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"14","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:17:16]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"14","progressId":null,"finished":true}}]
+[18:17:17]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"13","progressId":"hot.restart","finished":true}}]
+[18:17:17]: <== Restarted application in 2.613ms.
+[18:17:17]: <== [{"id":"7","result":{"code":0,"message":""}}]
+[18:17:17]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:17:17]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:17:17]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:17:17]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:17:17]: <== 8
+[18:17:18]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:17:18]: <== opa2
+[18:17:18]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:17:18]: <== opa2
+[18:17:18]: <== opa1
+[18:17:18]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:17:18]: <== opa1
+[18:17:18]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:17:18]: <== opa1
+[18:17:18]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:17:18]: <== opa1
+[18:17:18]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:17:18]: <== opa1
+[18:17:18]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:17:18]: <== opa1
+[18:17:18]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:17:18]: <== carregando login state
+[18:17:18]: <== não logado
+[18:24:16]: ==> [{"id":"8","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:24:16]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"15","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:24:17]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"16","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:24:18]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"16","progressId":null,"finished":true}}]
+[18:24:19]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"15","progressId":"hot.restart","finished":true}}]
+[18:24:19]: <== Restarted application in 3.054ms.
+[18:24:19]: <== [{"id":"8","result":{"code":0,"message":""}}]
+[18:24:21]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:24:21]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:24:21]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:24:21]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:24:21]: <== 8
+[18:24:21]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:24:21]: <== opa2
+[18:24:21]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:24:21]: <== opa2
+[18:24:21]: <== opa1
+[18:24:21]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:24:21]: <== opa1
+[18:24:21]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:24:21]: <== opa1
+[18:24:21]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:24:21]: <== opa1
+[18:24:21]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:24:21]: <== opa1
+[18:24:21]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:24:21]: <== opa1
+[18:24:21]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:24:21]: <== carregando login state
+[18:24:22]: <== não logado
+[18:39:57]: ==> [{"id":"9","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:39:57]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"17","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:39:58]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"18","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:39:59]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"18","progressId":null,"finished":true}}]
+[18:40:01]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"17","progressId":"hot.restart","finished":true}}]
+[18:40:01]: <== Restarted application in 3.319ms.
+[18:40:01]: <== [{"id":"9","result":{"code":0,"message":""}}]
+[18:40:03]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:40:03]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:40:03]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:40:03]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:40:03]: <== 8
+[18:40:03]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:40:03]: <== opa2
+[18:40:03]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:40:03]: <== opa2
+[18:40:03]: <== opa1
+[18:40:03]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:40:03]: <== opa1
+[18:40:03]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:40:03]: <== opa1
+[18:40:03]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:40:03]: <== opa1
+[18:40:03]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:40:03]: <== opa1
+[18:40:03]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:40:03]: <== opa1
+[18:40:03]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:40:03]: <== carregando login state
+[18:40:03]: <== não logado
+[18:43:02]: ==> [{"id":"10","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:43:02]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"19","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:43:02]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"20","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:43:06]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"20","progressId":null,"finished":true}}]
+[18:43:07]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"19","progressId":"hot.restart","finished":true}}]
+[18:43:07]: <== Restarted application in 4.916ms.
+[18:43:07]: <== [{"id":"10","result":{"code":0,"message":""}}]
+[18:43:07]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:43:07]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:43:08]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:43:08]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:43:08]: <== 8
+[18:43:08]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:43:08]: <== opa2
+[18:43:08]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:43:08]: <== opa2
+[18:43:08]: <== opa1
+[18:43:08]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:43:08]: <== opa1
+[18:43:08]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:43:08]: <== opa1
+[18:43:08]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:43:08]: <== opa1
+[18:43:08]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:43:08]: <== opa1
+[18:43:08]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:43:08]: <== opa1
+[18:43:08]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:43:08]: <== carregando login state
+[18:43:08]: <== não logado
+[18:43:12]: <== true
+[18:43:14]: <== false
+[18:43:14]: <== true
+[18:43:15]: <== false
+[18:43:16]: <== true
+[18:43:17]: <== false
+[18:43:21]: ==> [{"id":"11","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:43:21]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"21","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:43:21]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"22","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:43:22]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"22","progressId":null,"finished":true}}]
+[18:43:24]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"21","progressId":"hot.restart","finished":true}}]
+[18:43:24]: <== Restarted application in 3.113ms.
+[18:43:24]: <== [{"id":"11","result":{"code":0,"message":""}}]
+[18:43:25]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:43:25]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:43:25]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:43:25]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:43:25]: <== 8
+[18:43:25]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:43:25]: <== opa2
+[18:43:25]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:43:25]: <== opa2
+[18:43:25]: <== opa1
+[18:43:25]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:43:25]: <== opa1
+[18:43:25]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:43:25]: <== opa1
+[18:43:25]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:43:25]: <== opa1
+[18:43:25]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:43:25]: <== opa1
+[18:43:25]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:43:25]: <== opa1
+[18:43:25]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:43:25]: <== carregando login state
+[18:43:25]: <== não logado
+[18:43:32]: <== true
+[18:43:33]: <== false
+[18:43:37]: <== true
+[18:43:40]: <== false
+[18:44:45]: ==> [{"id":"12","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:44:45]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"23","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:44:45]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"24","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:44:47]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"24","progressId":null,"finished":true}}]
+[18:44:48]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"23","progressId":"hot.restart","finished":true}}]
+[18:44:48]: <== Restarted application in 3.356ms.
+[18:44:48]: <== [{"id":"12","result":{"code":0,"message":""}}]
+[18:44:49]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:44:49]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:44:49]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:44:49]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:44:49]: <== 8
+[18:44:49]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:44:49]: <== opa2
+[18:44:49]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:44:49]: <== opa2
+[18:44:49]: <== opa1
+[18:44:49]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:44:49]: <== opa1
+[18:44:49]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:44:49]: <== opa1
+[18:44:49]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:44:49]: <== opa1
+[18:44:49]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:44:49]: <== opa1
+[18:44:49]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:44:49]: <== opa1
+[18:44:49]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:44:50]: <== carregando login state
+[18:44:50]: <== não logado
+[18:50:04]: ==> [{"id":"13","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:50:04]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"25","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:50:05]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"26","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:50:10]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"26","progressId":null,"finished":true}}]
+[18:50:11]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"25","progressId":"hot.restart","finished":true}}]
+[18:50:11]: <== Restarted application in 6.375ms.
+[18:50:11]: <== [{"id":"13","result":{"code":0,"message":""}}]
+[18:50:11]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:50:11]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:50:11]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:50:11]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:50:11]: <== 8
+[18:50:11]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:50:11]: <== opa2
+[18:50:11]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:50:11]: <== opa2
+[18:50:11]: <== opa1
+[18:50:11]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:50:11]: <== opa1
+[18:50:11]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:50:11]: <== opa1
+[18:50:11]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:50:11]: <== opa1
+[18:50:11]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:50:11]: <== opa1
+[18:50:11]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:50:11]: <== opa1
+[18:50:11]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:50:11]: <== carregando login state
+[18:50:11]: <== não logado
+[18:50:30]: ==> [{"id":"14","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:50:30]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"27","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:50:30]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"28","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:50:32]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"28","progressId":null,"finished":true}}]
+[18:50:33]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"27","progressId":"hot.restart","finished":true}}]
+[18:50:33]: <== Restarted application in 3.046ms.
+[18:50:33]: <== [{"id":"14","result":{"code":0,"message":""}}]
+[18:50:34]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:50:34]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:50:34]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:50:34]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:50:34]: <== 8
+[18:50:34]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:50:34]: <== opa2
+[18:50:34]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:50:34]: <== opa2
+[18:50:34]: <== opa1
+[18:50:34]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:50:34]: <== opa1
+[18:50:34]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:50:34]: <== opa1
+[18:50:34]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:50:34]: <== opa1
+[18:50:34]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:50:34]: <== opa1
+[18:50:34]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:50:34]: <== opa1
+[18:50:34]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:50:34]: <== carregando login state
+[18:50:35]: <== não logado
+[18:50:48]: ==> [{"id":"15","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:50:48]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"29","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:50:49]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"30","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:50:51]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"30","progressId":null,"finished":true}}]
+[18:50:53]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"29","progressId":"hot.restart","finished":true}}]
+[18:50:53]: <== Restarted application in 4.301ms.
+[18:50:53]: <== [{"id":"15","result":{"code":0,"message":""}}]
+[18:50:54]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:50:54]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:50:54]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:50:54]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:50:54]: <== 8
+[18:50:54]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:50:54]: <== opa2
+[18:50:54]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:50:54]: <== opa2
+[18:50:54]: <== opa1
+[18:50:54]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:50:54]: <== opa1
+[18:50:54]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:50:54]: <== opa1
+[18:50:54]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:50:54]: <== opa1
+[18:50:54]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:50:54]: <== opa1
+[18:50:54]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:50:54]: <== opa1
+[18:50:54]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:50:54]: <== carregando login state
+[18:50:54]: <== não logado
+[18:50:59]: <== false
+[18:51:00]: <== true
+[18:51:00]: <== false
+[18:51:02]: <== true
+[18:51:13]: <== [firebase_auth/missing-email] Error
+[18:52:13]: ==> [{"id":"16","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:52:13]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"31","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:52:13]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"32","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:52:17]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"32","progressId":null,"finished":true}}]
+[18:52:17]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"31","progressId":"hot.restart","finished":true}}]
+[18:52:17]: <== Restarted application in 4.589ms.
+[18:52:17]: <== [{"id":"16","result":{"code":0,"message":""}}]
+[18:52:18]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:52:18]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:52:18]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:52:18]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:52:18]: <== 8
+[18:52:18]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:52:18]: <== opa2
+[18:52:18]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:52:18]: <== opa2
+[18:52:18]: <== opa1
+[18:52:18]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:52:18]: <== opa1
+[18:52:18]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:52:18]: <== opa1
+[18:52:18]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:52:18]: <== opa1
+[18:52:18]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:52:18]: <== opa1
+[18:52:18]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:52:18]: <== opa1
+[18:52:18]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:52:18]: <== carregando login state
+[18:52:18]: <== não logado
+[18:54:16]: <== false
+[18:54:16]: <== true
+[18:54:18]: <== false
+[18:54:18]: <== true
+[18:54:21]: <== logado
+[18:54:55]: <== signoutt
+[18:54:55]: <== não logado
+[18:55:14]: ==> [{"id":"17","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:55:14]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"33","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:55:15]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"34","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:55:17]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"34","progressId":null,"finished":true}}]
+[18:55:19]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"33","progressId":"hot.restart","finished":true}}]
+[18:55:19]: <== Restarted application in 4.521ms.
+[18:55:19]: <== [{"id":"17","result":{"code":0,"message":""}}]
+[18:55:20]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:55:20]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:55:20]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:55:20]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:55:20]: <== 8
+[18:55:20]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:55:20]: <== opa2
+[18:55:20]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:55:20]: <== opa2
+[18:55:20]: <== opa1
+[18:55:20]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:55:20]: <== opa1
+[18:55:20]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:55:20]: <== opa1
+[18:55:20]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:55:20]: <== opa1
+[18:55:20]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:55:20]: <== opa1
+[18:55:20]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:55:20]: <== opa1
+[18:55:20]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:55:20]: <== carregando login state
+[18:55:20]: <== não logado
+[18:57:07]: <== false
+[18:57:09]: <== Error: Senha e/ou email incorretos.
+[18:57:09]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49  throw_
+[18:57:09]: <== packages/olimtec_tcc/app/features/auth/repository/auth.repository.dart 86:9   signInWithEmailAndPassword
+[18:57:09]: <== dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 60:31            <fn>
+[18:57:09]: <== dart-sdk/lib/async/zone.dart 1666:54                                          runBinary
+[18:57:09]: <== dart-sdk/lib/async/future_impl.dart 171:22                                    handleError
+[18:57:09]: <== dart-sdk/lib/async/future_impl.dart 852:46                                    handleError
+[18:57:09]: <== dart-sdk/lib/async/future_impl.dart 873:13                                    _propagateToListeners
+[18:57:09]: <== dart-sdk/lib/async/future_impl.dart 649:5                                     [_completeError]
+[18:57:09]: <== dart-sdk/lib/async/future_impl.dart 739:7                                     callback
+[18:57:09]: <== dart-sdk/lib/async/schedule_microtask.dart 40:11                              _microtaskLoop
+[18:57:09]: <== dart-sdk/lib/async/schedule_microtask.dart 49:5                               _startMicrotaskLoop
+[18:57:09]: <== dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 181:15           <fn>
+[18:57:23]: <== false
+[18:57:25]: <== logado
+[18:57:46]: ==> [{"id":"18","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:57:46]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"35","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:57:46]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"36","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:57:49]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"36","progressId":null,"finished":true}}]
+[18:57:50]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"35","progressId":"hot.restart","finished":true}}]
+[18:57:50]: <== Restarted application in 4.469ms.
+[18:57:50]: <== [{"id":"18","result":{"code":0,"message":""}}]
+[18:57:52]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:57:52]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:57:52]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:57:52]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:57:52]: <== 8
+[18:57:52]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:57:52]: <== opa2
+[18:57:52]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:57:52]: <== opa2
+[18:57:52]: <== opa1
+[18:57:52]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:57:52]: <== opa1
+[18:57:52]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:57:52]: <== opa1
+[18:57:52]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:57:52]: <== opa1
+[18:57:52]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:57:52]: <== opa1
+[18:57:52]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:57:52]: <== opa1
+[18:57:52]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:57:52]: <== carregando login state
+[18:57:52]: <== logado
+[18:58:23]: ==> [{"id":"19","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:58:23]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"37","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:58:23]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"38","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:58:25]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"38","progressId":null,"finished":true}}]
+[18:58:26]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"37","progressId":"hot.restart","finished":true}}]
+[18:58:26]: <== Restarted application in 3.243ms.
+[18:58:26]: <== [{"id":"19","result":{"code":0,"message":""}}]
+[18:58:27]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:58:27]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:58:27]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:58:27]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:58:27]: <== 8
+[18:58:27]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:58:27]: <== opa2
+[18:58:27]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:58:27]: <== opa2
+[18:58:27]: <== opa1
+[18:58:27]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:58:27]: <== opa1
+[18:58:27]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:58:27]: <== opa1
+[18:58:27]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:58:27]: <== opa1
+[18:58:27]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:58:27]: <== opa1
+[18:58:27]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:58:27]: <== opa1
+[18:58:27]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:58:27]: <== carregando login state
+[18:58:27]: <== logado
+[18:58:40]: ==> [{"id":"20","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:58:40]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"39","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:58:40]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"40","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:58:42]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"40","progressId":null,"finished":true}}]
+[18:58:43]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"39","progressId":"hot.restart","finished":true}}]
+[18:58:43]: <== Restarted application in 2.798ms.
+[18:58:43]: <== [{"id":"20","result":{"code":0,"message":""}}]
+[18:58:43]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:58:43]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:58:43]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:58:44]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:58:44]: <== 8
+[18:58:44]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:58:44]: <== opa2
+[18:58:44]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:58:44]: <== opa2
+[18:58:44]: <== opa1
+[18:58:44]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:58:44]: <== opa1
+[18:58:44]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:58:44]: <== opa1
+[18:58:44]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:58:44]: <== opa1
+[18:58:44]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:58:44]: <== opa1
+[18:58:44]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:58:44]: <== opa1
+[18:58:44]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:58:44]: <== carregando login state
+[18:58:44]: <== logado
+[18:59:03]: ==> [{"id":"21","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[18:59:03]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"41","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[18:59:03]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"42","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[18:59:05]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"42","progressId":null,"finished":true}}]
+[18:59:06]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"41","progressId":"hot.restart","finished":true}}]
+[18:59:06]: <== Restarted application in 3.508ms.
+[18:59:06]: <== [{"id":"21","result":{"code":0,"message":""}}]
+[18:59:07]: <== ROUND 1 >>> JOGO 1 >>> 5
+[18:59:07]: <== ROUND 1 >>> JOGO 2 >>> 6
+[18:59:07]: <== ROUND 1 >>> JOGO 3 >>> 7
+[18:59:07]: <== ROUND 1 >>> JOGO 4 >>> 8
+[18:59:07]: <== 8
+[18:59:07]: <== ROUND 2 >>> JOGO 5 >>> 9
+[18:59:07]: <== opa2
+[18:59:07]: <== ROUND 2 >>> JOGO 6 >>> 10
+[18:59:07]: <== opa2
+[18:59:07]: <== opa1
+[18:59:07]: <== ROUND 2 >>> JOGO 7 >>> 11
+[18:59:07]: <== opa1
+[18:59:07]: <== ROUND 2 >>> JOGO 8 >>> 12
+[18:59:07]: <== opa1
+[18:59:07]: <== ROUND 2 >>> JOGO 9 >>> 13
+[18:59:07]: <== opa1
+[18:59:07]: <== ROUND 2 >>> JOGO 10 >>> 14
+[18:59:07]: <== opa1
+[18:59:07]: <== ROUND 2 >>> JOGO 11 >>> 15
+[18:59:07]: <== opa1
+[18:59:07]: <== ROUND 2 >>> JOGO 12 >>> 16
+[18:59:08]: <== carregando login state
+[18:59:08]: <== logado
+[19:05:25]: ==> [{"id":"22","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:05:25]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"43","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:05:25]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"44","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:05:27]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"44","progressId":null,"finished":true}}]
+[19:05:29]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"43","progressId":"hot.restart","finished":true}}]
+[19:05:29]: <== Restarted application in 3.937ms.
+[19:05:29]: <== [{"id":"22","result":{"code":0,"message":""}}]
+[19:05:29]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:05:29]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:05:29]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:05:30]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:05:30]: <== 8
+[19:05:30]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:05:30]: <== opa2
+[19:05:30]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:05:30]: <== opa2
+[19:05:30]: <== opa1
+[19:05:30]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:05:30]: <== opa1
+[19:05:30]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:05:30]: <== opa1
+[19:05:30]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:05:30]: <== opa1
+[19:05:30]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:05:30]: <== opa1
+[19:05:30]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:05:30]: <== opa1
+[19:05:30]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:05:31]: <== carregando login state
+[19:05:31]: <== logado
+[19:05:31]: <== Error: Assertion failed: org-dartlang-sdk:///lib/_engine/engine/canvaskit/surface_factory.dart:149:12
+[19:05:31]: <== _cache.contains(surface)
+[19:05:31]: <== is not true
+[19:05:31]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49      throw_
+[19:05:31]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 35:3        assertFailed
+[19:05:31]: <== lib/_engine/engine/canvaskit/surface_factory.dart 149:35                          isLive
+[19:05:31]: <== lib/_engine/engine/canvaskit/surface.dart 277:16                                  [_contextLostListener]
+[19:05:31]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 574:37  _checkAndCall
+[19:05:31]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 579:39  dcall
+[19:06:03]: <== signoutt
+[19:06:03]: <== não logado
+[19:08:52]: ==> [{"id":"23","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:08:52]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"45","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:08:53]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"46","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:08:54]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"46","progressId":null,"finished":true}}]
+[19:08:56]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"45","progressId":"hot.restart","finished":true}}]
+[19:08:56]: <== Restarted application in 3.518ms.
+[19:08:56]: <== [{"id":"23","result":{"code":0,"message":""}}]
+[19:08:57]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:08:57]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:08:57]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:08:57]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:08:57]: <== 8
+[19:08:57]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:08:57]: <== opa2
+[19:08:57]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:08:57]: <== opa2
+[19:08:57]: <== opa1
+[19:08:57]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:08:57]: <== opa1
+[19:08:57]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:08:57]: <== opa1
+[19:08:57]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:08:57]: <== opa1
+[19:08:57]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:08:57]: <== opa1
+[19:08:57]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:08:57]: <== opa1
+[19:08:57]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:08:57]: <== carregando login state
+[19:08:57]: <== não logado
+[19:10:42]: ==> [{"id":"24","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:10:42]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"47","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:10:43]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"48","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:10:47]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"48","progressId":null,"finished":true}}]
+[19:10:49]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"47","progressId":"hot.restart","finished":true}}]
+[19:10:49]: <== Restarted application in 7.036ms.
+[19:10:49]: <== [{"id":"24","result":{"code":0,"message":""}}]
+[19:10:50]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:10:50]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:10:50]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:10:50]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:10:51]: <== 8
+[19:10:51]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:10:51]: <== opa2
+[19:10:51]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:10:51]: <== opa2
+[19:10:51]: <== opa1
+[19:10:51]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:10:51]: <== opa1
+[19:10:51]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:10:51]: <== opa1
+[19:10:51]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:10:51]: <== opa1
+[19:10:51]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:10:51]: <== opa1
+[19:10:51]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:10:51]: <== opa1
+[19:10:51]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:10:51]: <== carregando login state
+[19:10:52]: <== não logado
+[19:11:03]: ==> [{"id":"25","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:11:03]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"49","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:11:04]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"50","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:11:06]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"50","progressId":null,"finished":true}}]
+[19:11:08]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"49","progressId":"hot.restart","finished":true}}]
+[19:11:08]: <== Restarted application in 4.407ms.
+[19:11:08]: <== [{"id":"25","result":{"code":0,"message":""}}]
+[19:11:09]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:11:09]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:11:09]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:11:09]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:11:09]: <== 8
+[19:11:09]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:11:09]: <== opa2
+[19:11:09]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:11:09]: <== opa2
+[19:11:09]: <== opa1
+[19:11:09]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:11:09]: <== opa1
+[19:11:09]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:11:09]: <== opa1
+[19:11:09]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:11:09]: <== opa1
+[19:11:09]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:11:09]: <== opa1
+[19:11:09]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:11:09]: <== opa1
+[19:11:09]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:11:09]: <== carregando login state
+[19:11:09]: <== não logado
+[19:11:31]: ==> [{"id":"26","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:11:31]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"51","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:11:32]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"52","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:11:34]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"52","progressId":null,"finished":true}}]
+[19:11:35]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"51","progressId":"hot.restart","finished":true}}]
+[19:11:35]: <== Restarted application in 4.632ms.
+[19:11:35]: <== [{"id":"26","result":{"code":0,"message":""}}]
+[19:11:37]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:11:37]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:11:37]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:11:37]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:11:37]: <== 8
+[19:11:37]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:11:37]: <== opa2
+[19:11:37]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:11:37]: <== opa2
+[19:11:37]: <== opa1
+[19:11:37]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:11:37]: <== opa1
+[19:11:37]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:11:37]: <== opa1
+[19:11:37]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:11:37]: <== opa1
+[19:11:37]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:11:37]: <== opa1
+[19:11:37]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:11:37]: <== opa1
+[19:11:37]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:11:37]: <== carregando login state
+[19:11:37]: <== não logado
+[19:12:06]: <== Error: Expected a value of type 'String', but got one of type 'CustomSnackBar'
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49      throw_
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 127:3       castError
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 742:12  cast
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/patch/core_patch.dart 674:17                as
+[19:12:06]: <== packages/olimtec_tcc/app/features/auth/lading.store.dart 105:7                    submitUp
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 84:54                runBody
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 127:5                _async
+[19:12:06]: <== packages/olimtec_tcc/app/features/auth/lading.store.dart 92:89                    submitUp
+[19:12:06]: <== packages/olimtec_tcc/app/features/auth/view/widgets/sign_up.view.dart 118:55      <fn>
+[19:12:06]: <== packages/flutter/src/material/ink_well.dart 1154:21                               handleTap
+[19:12:06]: <== packages/flutter/src/gestures/recognizer.dart 275:24                              invokeCallback
+[19:12:06]: <== packages/flutter/src/gestures/tap.dart 654:11                                     handleTapUp
+[19:12:06]: <== packages/flutter/src/gestures/tap.dart 311:5                                      [_checkUp]
+[19:12:06]: <== packages/flutter/src/gestures/tap.dart 244:7                                      handlePrimaryPointer
+[19:12:06]: <== packages/flutter/src/gestures/recognizer.dart 630:9                               handleEvent
+[19:12:06]: <== packages/flutter/src/gestures/pointer_router.dart 98:12                           [_dispatch]
+[19:12:06]: <== packages/flutter/src/gestures/pointer_router.dart 143:9                           <fn>
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/private/linked_hash_map.dart 21:13          forEach
+[19:12:06]: <== packages/flutter/src/gestures/pointer_router.dart 141:17                          [_dispatchEventToRoutes]
+[19:12:06]: <== packages/flutter/src/gestures/pointer_router.dart 127:7                           route
+[19:12:06]: <== packages/flutter/src/gestures/binding.dart 488:19                                 handleEvent
+[19:12:06]: <== packages/flutter/src/gestures/binding.dart 468:14                                 dispatchEvent
+[19:12:06]: <== packages/flutter/src/rendering/binding.dart 333:11                                dispatchEvent
+[19:12:06]: <== packages/flutter/src/gestures/binding.dart 413:7                                  [_handlePointerEventImmediately]
+[19:12:06]: <== packages/flutter/src/gestures/binding.dart 376:5                                  handlePointerEvent
+[19:12:06]: <== packages/flutter/src/gestures/binding.dart 323:7                                  [_flushPointerEventQueue]
+[19:12:06]: <== packages/flutter/src/gestures/binding.dart 292:9                                  [_handlePointerDataPacket]
+[19:12:06]: <== lib/_engine/engine/platform_dispatcher.dart 1319:13                               invoke1
+[19:12:06]: <== lib/_engine/engine/platform_dispatcher.dart 303:5                                 invokeOnPointerDataPacket
+[19:12:06]: <== lib/_engine/engine/pointer_binding.dart 168:39                                    [_onPointerData]
+[19:12:06]: <== lib/_engine/engine/pointer_binding.dart 791:20                                    <fn>
+[19:12:06]: <== lib/_engine/engine/pointer_binding.dart 720:14                                    <fn>
+[19:12:06]: <== lib/_engine/engine/pointer_binding.dart 317:16                                    loggedHandler
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 574:37  _checkAndCall
+[19:12:06]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 579:39  dcall
+[19:12:28]: <== [firebase_auth/missing-email] Error
+[19:16:35]: ==> [{"id":"27","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:16:36]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"53","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:16:36]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"54","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:16:37]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"54","progressId":null,"finished":true}}]
+[19:16:39]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"53","progressId":"hot.restart","finished":true}}]
+[19:16:39]: <== Restarted application in 3.592ms.
+[19:16:39]: <== [{"id":"27","result":{"code":0,"message":""}}]
+[19:16:40]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:16:40]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:16:40]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:16:40]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:16:40]: <== 8
+[19:16:40]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:16:40]: <== opa2
+[19:16:40]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:16:40]: <== opa2
+[19:16:40]: <== opa1
+[19:16:40]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:16:40]: <== opa1
+[19:16:40]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:16:40]: <== opa1
+[19:16:40]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:16:40]: <== opa1
+[19:16:40]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:16:40]: <== opa1
+[19:16:40]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:16:40]: <== opa1
+[19:16:40]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:16:40]: <== carregando login state
+[19:16:41]: <== não logado
+[19:16:44]: <== Error: Assertion failed: org-dartlang-sdk:///lib/_engine/engine/canvaskit/surface_factory.dart:149:12
+[19:16:44]: <== _cache.contains(surface)
+[19:16:44]: <== is not true
+[19:16:44]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49      throw_
+[19:16:44]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 35:3        assertFailed
+[19:16:44]: <== lib/_engine/engine/canvaskit/surface_factory.dart 149:35                          isLive
+[19:16:44]: <== lib/_engine/engine/canvaskit/surface.dart 277:16                                  [_contextLostListener]
+[19:16:44]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 574:37  _checkAndCall
+[19:16:44]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 579:39  dcall
+[19:19:04]: <== false
+[19:19:05]: <== true
+[19:19:05]: <== false
+[19:19:05]: <== true
+[19:19:06]: <== false
+[19:19:06]: <== true
+[19:19:07]: <== false
+[19:19:07]: <== true
+[19:19:07]: <== false
+[19:19:07]: <== true
+[19:19:07]: <== false
+[19:19:08]: <== true
+[19:19:11]: <== false
+[19:19:12]: <== true
+[19:19:14]: <== false
+[19:19:14]: <== true
+[19:19:15]: <== false
+[19:19:15]: <== true
+[19:19:17]: <== Error: Senha e/ou email incorretos.
+[19:19:17]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49  throw_
+[19:19:17]: <== packages/olimtec_tcc/app/features/auth/repository/auth.repository.dart 85:19  signInWithEmailAndPassword
+[19:19:17]: <== dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 60:31            <fn>
+[19:19:17]: <== dart-sdk/lib/async/zone.dart 1666:54                                          runBinary
+[19:19:17]: <== dart-sdk/lib/async/future_impl.dart 171:22                                    handleError
+[19:19:17]: <== dart-sdk/lib/async/future_impl.dart 852:46                                    handleError
+[19:19:17]: <== dart-sdk/lib/async/future_impl.dart 873:13                                    _propagateToListeners
+[19:19:17]: <== dart-sdk/lib/async/future_impl.dart 649:5                                     [_completeError]
+[19:19:17]: <== dart-sdk/lib/async/future_impl.dart 739:7                                     callback
+[19:19:17]: <== dart-sdk/lib/async/schedule_microtask.dart 40:11                              _microtaskLoop
+[19:19:17]: <== dart-sdk/lib/async/schedule_microtask.dart 49:5                               _startMicrotaskLoop
+[19:19:17]: <== dart-sdk/lib/_internal/js_dev_runtime/patch/async_patch.dart 181:15           <fn>
+[19:19:32]: <== logado
+[19:19:58]: <== signoutt
+[19:19:59]: <== não logado
+[19:20:05]: <== false
+[19:20:05]: <== true
+[19:20:05]: <== false
+[19:20:06]: <== true
+[19:20:06]: <== false
+[19:20:07]: <== true
+[19:20:07]: <== false
+[19:20:08]: <== true
+[19:20:50]: ==> [{"id":"28","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:20:50]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"55","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:20:50]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"56","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:20:51]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"56","progressId":null,"finished":true}}]
+[19:20:53]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"55","progressId":"hot.restart","finished":true}}]
+[19:20:53]: <== Restarted application in 2.544ms.
+[19:20:53]: <== [{"id":"28","result":{"code":0,"message":""}}]
+[19:20:53]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:20:53]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:20:53]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:20:53]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:20:53]: <== 8
+[19:20:53]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:20:53]: <== opa2
+[19:20:53]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:20:53]: <== opa2
+[19:20:53]: <== opa1
+[19:20:53]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:20:53]: <== opa1
+[19:20:53]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:20:53]: <== opa1
+[19:20:53]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:20:53]: <== opa1
+[19:20:53]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:20:53]: <== opa1
+[19:20:53]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:20:53]: <== opa1
+[19:20:53]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:20:53]: <== carregando login state
+[19:20:53]: <== não logado
+[19:21:06]: ==> [{"id":"29","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:21:06]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"57","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:21:07]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"58","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:21:08]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"58","progressId":null,"finished":true}}]
+[19:21:08]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"57","progressId":"hot.restart","finished":true}}]
+[19:21:08]: <== Restarted application in 1.651ms.
+[19:21:08]: <== [{"id":"29","result":{"code":0,"message":""}}]
+[19:21:09]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:21:09]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:21:09]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:21:09]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:21:09]: <== 8
+[19:21:09]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:21:09]: <== opa2
+[19:21:09]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:21:09]: <== opa2
+[19:21:09]: <== opa1
+[19:21:09]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:21:09]: <== opa1
+[19:21:09]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:21:09]: <== opa1
+[19:21:09]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:21:09]: <== opa1
+[19:21:09]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:21:09]: <== opa1
+[19:21:09]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:21:09]: <== opa1
+[19:21:09]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:21:09]: <== carregando login state
+[19:21:09]: <== não logado
+[19:21:18]: ==> [{"id":"30","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:21:18]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"59","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:21:18]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"60","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:21:19]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"60","progressId":null,"finished":true}}]
+[19:21:20]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"59","progressId":"hot.restart","finished":true}}]
+[19:21:20]: <== Restarted application in 1.446ms.
+[19:21:20]: <== [{"id":"30","result":{"code":0,"message":""}}]
+[19:21:20]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:21:20]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:21:20]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:21:20]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:21:20]: <== 8
+[19:21:20]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:21:20]: <== opa2
+[19:21:20]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:21:20]: <== opa2
+[19:21:20]: <== opa1
+[19:21:20]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:21:20]: <== opa1
+[19:21:20]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:21:20]: <== opa1
+[19:21:20]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:21:20]: <== opa1
+[19:21:20]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:21:20]: <== opa1
+[19:21:20]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:21:20]: <== opa1
+[19:21:20]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:21:20]: <== carregando login state
+[19:21:21]: <== não logado
+[19:21:22]: ==> [{"id":"31","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:21:22]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"61","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:21:22]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"62","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:21:23]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"62","progressId":null,"finished":true}}]
+[19:21:24]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"61","progressId":"hot.restart","finished":true}}]
+[19:21:24]: <== Restarted application in 2.629ms.
+[19:21:24]: <== [{"id":"31","result":{"code":0,"message":""}}]
+[19:21:25]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:21:25]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:21:25]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:21:25]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:21:25]: <== 8
+[19:21:25]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:21:25]: <== opa2
+[19:21:25]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:21:25]: <== opa2
+[19:21:25]: <== opa1
+[19:21:25]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:21:25]: <== opa1
+[19:21:25]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:21:25]: <== opa1
+[19:21:25]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:21:25]: <== opa1
+[19:21:25]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:21:25]: <== opa1
+[19:21:25]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:21:25]: <== opa1
+[19:21:25]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:21:25]: <== carregando login state
+[19:21:25]: <== não logado
+[19:21:27]: <== Error: Assertion failed: org-dartlang-sdk:///lib/_engine/engine/canvaskit/surface_factory.dart:149:12
+[19:21:27]: <== _cache.contains(surface)
+[19:21:27]: <== is not true
+[19:21:27]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 294:49      throw_
+[19:21:27]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/errors.dart 35:3        assertFailed
+[19:21:27]: <== lib/_engine/engine/canvaskit/surface_factory.dart 149:35                          isLive
+[19:21:27]: <== lib/_engine/engine/canvaskit/surface.dart 277:16                                  [_contextLostListener]
+[19:21:27]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 574:37  _checkAndCall
+[19:21:27]: <== dart-sdk/lib/_internal/js_dev_runtime/private/ddc_runtime/operations.dart 579:39  dcall
+[19:21:32]: ==> [{"id":"32","method":"app.restart","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","fullRestart":false,"pause":false,"reason":"save","debounce":true}}]
+[19:21:32]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"63","progressId":"hot.restart","message":"Performing hot restart...","finished":false}}]
+[19:21:33]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"64","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[19:21:33]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"64","progressId":null,"finished":true}}]
+[19:21:34]: <== [{"event":"app.progress","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509","id":"63","progressId":"hot.restart","finished":true}}]
+[19:21:34]: <== Restarted application in 1.354ms.
+[19:21:34]: <== [{"id":"32","result":{"code":0,"message":""}}]
+[19:21:35]: <== ROUND 1 >>> JOGO 1 >>> 5
+[19:21:35]: <== ROUND 1 >>> JOGO 2 >>> 6
+[19:21:35]: <== ROUND 1 >>> JOGO 3 >>> 7
+[19:21:35]: <== ROUND 1 >>> JOGO 4 >>> 8
+[19:21:35]: <== 8
+[19:21:35]: <== ROUND 2 >>> JOGO 5 >>> 9
+[19:21:35]: <== opa2
+[19:21:35]: <== ROUND 2 >>> JOGO 6 >>> 10
+[19:21:35]: <== opa2
+[19:21:35]: <== opa1
+[19:21:35]: <== ROUND 2 >>> JOGO 7 >>> 11
+[19:21:35]: <== opa1
+[19:21:35]: <== ROUND 2 >>> JOGO 8 >>> 12
+[19:21:35]: <== opa1
+[19:21:35]: <== ROUND 2 >>> JOGO 9 >>> 13
+[19:21:35]: <== opa1
+[19:21:35]: <== ROUND 2 >>> JOGO 10 >>> 14
+[19:21:35]: <== opa1
+[19:21:35]: <== ROUND 2 >>> JOGO 11 >>> 15
+[19:21:35]: <== opa1
+[19:21:35]: <== ROUND 2 >>> JOGO 12 >>> 16
+[19:21:35]: <== carregando login state
+[19:21:35]: <== não logado
+[19:26:10]: ==> [{"id":"33","method":"app.stop","params":{"appId":"e5136fba-645c-4bfd-9ac3-54a584a81509"}}]
+[19:26:12]: Process C:\flutter\bin\flutter.bat terminated! 1, null

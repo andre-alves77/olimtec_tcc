@@ -4,6 +4,7 @@ import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
+import 'package:olimtec_tcc/app/features/auth/view/reset_password.view.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_modality_component.dart';
 
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_teams.dart';
@@ -88,6 +89,7 @@ class App extends ConsumerWidget {
       routes: {
         IndexHomeUser.route: (ctx) => const IndexHomeUser(),
         LandingPage.route: (ctx) => const LandingPage(),
+        ResetPasswordForm.route: (ctx) => const ResetPasswordForm(),
         ResultadoUser.route: (ctx) => const ResultadoUser(),
         ModalityUser.route: (ctx) => const ModalityUser(),
         CronogramaUser.route: (ctx) => const CronogramaUser(),
@@ -135,9 +137,9 @@ class App extends ConsumerWidget {
             const LeaderTeamsPrivilegesAdmin(),
         OrganizationTeamsPrivilegesAdmin.route: (ctx) =>
             const OrganizationTeamsPrivilegesAdmin(),
-            SplashScreen.route: (ctx)=> const SplashScreen(),
-            MainAdmin2.route:(ctx)=>const MainAdmin2(),
-            LoadingPage.route:(ctx)=>const LoadingPage(),
+        SplashScreen.route: (ctx) => const SplashScreen(),
+        MainAdmin2.route: (ctx) => const MainAdmin2(),
+        LoadingPage.route: (ctx) => const LoadingPage(),
       },
       home: const LandingPage(),
     );

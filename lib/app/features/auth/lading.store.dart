@@ -43,6 +43,7 @@ class FormSignInStore extends ChangeNotifier {
   String password2Error = "";
   String passwordError = "";
   String team = "";
+  String teamError = "";
 
   String pass = "";
   String mail = "";
@@ -87,9 +88,14 @@ class FormSignInStore extends ChangeNotifier {
     passwordError = "";
     password2Error = "";
     nameError = "";
+    teamError = "";
 
     if (team.isEmpty) {
-      CustomSnackBar(message: "Preencha o campo de time", ref: ref, type: ScaffoldAlert.error);
+      teamError = "Preencha o campo de time";
+      CustomSnackBar(
+          message: "Preencha o campo de time",
+          ref: ref,
+          type: ScaffoldAlert.error) as String;
     }
 
     if (name.split(' ').length > 2 && !RegExp(r'^[a-zA-Z]+$').hasMatch(name)) {
@@ -128,7 +134,8 @@ class FormSignInStore extends ChangeNotifier {
     if (nameError.isEmpty &&
         emailError.isEmpty &&
         passwordError.isEmpty &&
-        password2Error.isEmpty) {
+        password2Error.isEmpty &&
+        teamError.isEmpty) {
       //signup
       isLoading = true;
       ref.read(authRepositoryProvider).createUser(email, password, name, team);

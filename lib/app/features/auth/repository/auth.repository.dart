@@ -37,10 +37,20 @@ class AuthRepository extends ChangeNotifier {
           return AppUser.fromMap(y);
         } else {
           throw CustomSnackBar(
-              ref: ref, message: 'Um erro aconteceu. Tente novamente.',type: ScaffoldAlert.error);
+              ref: ref,
+              message: 'Um erro aconteceu. Tente novamente.',
+              type: ScaffoldAlert.error);
         }
       });
     }
+  }
+
+  Future<void> sendPasswordResetEmail(String email) async {
+    await auth.sendPasswordResetEmail(email: email).then((_) {
+      CustomSnackBar(message: 'Email enviado', ref: ref);
+    }).catchError((error) {
+      print(error);
+    });
   }
 
   Future<User?> signInWithEmailAndPassword(
@@ -58,20 +68,16 @@ class AuthRepository extends ChangeNotifier {
           .get();
         */
 
-        
-
-
-          Future.delayed(const Duration(seconds: 2), (){
-          ref.read(formUserSignInProvider.notifier).turnOffLoading();
-          });
-notifyListeners();
-      
+      Future.delayed(const Duration(seconds: 2), () {
+        ref.read(formUserSignInProvider.notifier).turnOffLoading();
+      });
+      notifyListeners();
 
       CustomSnackBar(message: 'Login efetuado', ref: ref);
 
       return result.user;
     } on FirebaseAuthException catch (e) {
-           ref.read(formUserSignInProvider.notifier).turnOffLoading();
+      ref.read(formUserSignInProvider.notifier).turnOffLoading();
       if (e.code == 'user-not-found') {
         throw AuthException.snackbar('Senha e/ou email incorretos.', ref);
       } else if (e.code == 'invalid-login-credentials') {
@@ -90,7 +96,8 @@ notifyListeners();
     }
   }
 
-  Future<User?> createUser(String email, String password, String name, String team) async {
+  Future<User?> createUser(
+      String email, String password, String name, String team) async {
     try {
       await auth.createUserWithEmailAndPassword(
           email: email, password: password);
@@ -107,14 +114,14 @@ notifyListeners();
       });
       signInWithEmailAndPassword(email, password);
 
-          Future.delayed(const Duration(seconds: 2), (){
-          ref.read(formUserSignInProvider.notifier).turnOffLoading();
-          });
-}on FirebaseAuthException catch (e){
-             ref.read(formUserSignInProvider.notifier).turnOffLoading();
-  throw AuthException.snackbar(e.message.toString(), ref);
-}
-return null;
+      Future.delayed(const Duration(seconds: 2), () {
+        ref.read(formUserSignInProvider.notifier).turnOffLoading();
+      });
+    } on FirebaseAuthException catch (e) {
+      ref.read(formUserSignInProvider.notifier).turnOffLoading();
+      throw AuthException.snackbar(e.message.toString(), ref);
+    }
+    return null;
   }
 
   Future<void> signOut() async {
