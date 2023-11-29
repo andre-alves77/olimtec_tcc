@@ -41,8 +41,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                     return Padding(
                       padding: const EdgeInsets.only(top: 12.0),
                       child: DropdownMenu(
-                        label: Text("TIME"),
-                       
+                          label: Text("TIME"),
                           dropdownMenuEntries: items,
                           onSelected: (value) {
                             aiuth.setTeam(value!.toString());
@@ -80,6 +79,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                 child: CustomTextField(
                   errorMessage: aiuth.passwordError,
                   hintText: 'Senha',
+                  isPassword: true,
                   onChanged: (value) => aiuth.password = value,
                 ),
               ),
@@ -88,6 +88,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                 child: CustomTextField(
                   errorMessage: aiuth.password2Error,
                   hintText: 'Confirmar senha',
+                  isPassword: true,
                   onChanged: (value) => aiuth.password2 = value,
                 ),
               ),
