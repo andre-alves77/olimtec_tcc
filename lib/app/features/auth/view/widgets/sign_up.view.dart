@@ -42,7 +42,8 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                       padding: const EdgeInsets.only(top: 12.0),
                       child: DropdownMenu(
                         label: Text("TIME"),
-                       
+                        
+                       requestFocusOnTap: false,
                           dropdownMenuEntries: items,
                           onSelected: (value) {
                             aiuth.setTeam(value!.toString());
