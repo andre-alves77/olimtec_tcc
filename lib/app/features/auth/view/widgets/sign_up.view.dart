@@ -21,7 +21,7 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final aiuth = ref.watch(formUserSignInProvider);
-    final teams = ref.watch(getTeamsProvider);
+    final teams = ref.watch(getTeamStringProvider);
 
     return Form(
       child: Padding(

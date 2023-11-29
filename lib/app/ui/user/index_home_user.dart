@@ -6,6 +6,7 @@ import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/features/settings/settings_page.dart';
+import 'package:olimtec_tcc/app/features/test.dart';
 import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 import 'package:olimtec_tcc/app/ui/user/home/home_page.dart';
 import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
@@ -27,7 +28,7 @@ class IndexHomeUser extends ConsumerWidget {
           type: ScaffoldAlert.error);
       return null;
     }, loading: () {
-      return null;
+      return LoadingPage();
     });
     if (appuser is AppUser) {
       return Scaffold(

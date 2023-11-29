@@ -13,7 +13,7 @@ final formUserSignInProvider = ChangeNotifierProvider<FormSignInStore>((ref) {
 
 enum FormUserState { SignUp, SignIn }
 
-final getTeamsProvider = FutureProvider((ref) async {
+final getTeamStringProvider = FutureProvider((ref) async {
   try {
     Future<List<String>> getTeams() async {
       List<String> fieldValues = [];
