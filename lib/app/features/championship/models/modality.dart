@@ -62,7 +62,7 @@ class Modality {
       }
 
 //ROUND 1
-      nextGame = qtdFirstRoundTeams + (qtdFirstRoundTeams / 2 as int)+10;
+      nextGame = qtdFirstRoundTeams +1;
       teamCounter -= 1;
       while (qtdFirstRoundTeams > i) {
         print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
@@ -89,7 +89,7 @@ class Modality {
       int roundreserved = 0;
       print(brackertype);
       while (i < brackertype) {
-        if (roundreserved < qtdFirstRoundTeams) {
+        if (teamCounter > 0) {
           print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
           print("opa2");
           gameList.add(Game(
