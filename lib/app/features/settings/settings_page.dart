@@ -2,12 +2,14 @@ import 'dart:math';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/features/settings/perfil_page.dart';
 
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
+import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/ui/team/main_team.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
@@ -16,7 +18,8 @@ class SettingsPage extends ConsumerWidget {
   SettingsPage({super.key});
 
   static String route = "/settings-user";
-  List<Widget> _userrole(AppUser? user, BuildContext context) {
+
+  List<Widget> _userrole(AppUser user, BuildContext context) {
     List<Widget> _list = [];
     if (user != null) {
       if (user.isOrganization) {
@@ -102,14 +105,11 @@ class SettingsPage extends ConsumerWidget {
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(80),
                         child: CachedNetworkImage(
-                            imageUrl: appuser!.avatar,
-                            width: sizeWidth / 2,
-                            height: sizeHeight / 2,
-                            fit: BoxFit.cover,
-                            placeholder: (context, url) =>
-                                CircularProgressIndicator(),
-                            errorWidget: (context, url, error) =>
-                                Icon(Icons.person, size: 60)),
+                        imageUrl: appuser!.avatar,
+                        width: sizeWidth / 2,
+                        height: sizeHeight / 2,
+                        fit: BoxFit.cover,
+                                          ),
                       ),
                     ),
                   ),

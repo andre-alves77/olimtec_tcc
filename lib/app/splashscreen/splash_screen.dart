@@ -36,8 +36,8 @@ class _SplashScreenState extends State<SplashScreen> {
               width: 350,
             ),
             Center(
-              child: Lottie.network(
-                "https://lottie.host/f193890d-1c55-4afb-a04c-9506a1125c91/v1WaxGT1zd.json",
+              child: Lottie.asset(
+                'assets/lottie/animation_loading.json',
                 height: 200,
               ),
             ),

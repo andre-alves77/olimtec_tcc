@@ -16,10 +16,18 @@ class IndexHomeUser extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bottomBarStore = ref.watch(bottomBarProvider);
+      final appuser = ref.watch(appUserStream).when(
+        data: (data) {
+          if(data != null){
 
-
-
-          return Scaffold(
+          return data;
+          }
+          return Center(child: CircularProgressIndicator(),);
+        },
+        error: (error, stackTrace) {},
+        loading: () {return Center(child: CircularProgressIndicator(),);},);
+    
+    return Scaffold(
       extendBody: true,
       bottomNavigationBar: BottomBar(),
       body: SafeArea(
@@ -34,8 +42,5 @@ class IndexHomeUser extends ConsumerWidget {
         ),
       ),
     );
-   
-
-
   }
 }
