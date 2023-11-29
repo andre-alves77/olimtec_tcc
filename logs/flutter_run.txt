@@ -6,3 +6,46 @@
 [17:12:38]: <== [{"event":"app.start","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729","deviceId":"chrome","directory":"C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc","supportsRestart":true,"launchMode":"run","mode":"debug"}}]
 [17:12:38]: <== Launching lib\main.dart on Chrome in debug mode...
 [17:12:39]: <== [{"event":"app.progress","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729","id":"0","progressId":null,"message":"Waiting for connection from debug service on Chrome...","finished":false}}]
+[17:14:46]: <== [{"event":"app.progress","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729","id":"0","progressId":null,"finished":true}}]
+[17:15:06]: <== [{"event":"app.webLaunchUrl","params":{"url":"http://localhost:55047","launched":true}}]
+[17:15:32]: <== This app is linked to the debug service: ws://127.0.0.1:55200/qMtyfCzeNzg=/ws
+[17:15:32]: <== Debug service listening on ws://127.0.0.1:55200/qMtyfCzeNzg=/ws
+[17:15:32]: <== [{"event":"app.started","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729"}}]
+[17:15:32]: <== [{"event":"app.debugPort","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729","port":55200,"wsUri":"ws://127.0.0.1:55200/qMtyfCzeNzg=/ws"}}]
+[17:15:37]: <== ROUND 1 >>> JOGO 1 >>> 5
+[17:15:37]: <== ROUND 1 >>> JOGO 2 >>> 6
+[17:15:37]: <== ROUND 1 >>> JOGO 3 >>> 7
+[17:15:37]: <== ROUND 1 >>> JOGO 4 >>> 8
+[17:15:37]: <== 8
+[17:15:37]: <== ROUND 2 >>> JOGO 5 >>> 9
+[17:15:37]: <== opa2
+[17:15:37]: <== ROUND 2 >>> JOGO 6 >>> 10
+[17:15:37]: <== opa2
+[17:15:37]: <== opa1
+[17:15:37]: <== ROUND 2 >>> JOGO 7 >>> 11
+[17:15:37]: <== opa1
+[17:15:37]: <== ROUND 2 >>> JOGO 8 >>> 12
+[17:15:37]: <== opa1
+[17:15:37]: <== ROUND 2 >>> JOGO 9 >>> 13
+[17:15:37]: <== opa1
+[17:15:37]: <== ROUND 2 >>> JOGO 10 >>> 14
+[17:15:37]: <== opa1
+[17:15:37]: <== ROUND 2 >>> JOGO 11 >>> 15
+[17:15:37]: <== opa1
+[17:15:37]: <== ROUND 2 >>> JOGO 12 >>> 16
+[17:15:37]: <== carregando login state
+[17:15:38]: <== não logado
+[17:15:51]: <== false
+[17:15:51]: <== true
+[17:16:01]: <== false
+[17:16:01]: <== true
+[17:16:01]: <== false
+[17:16:01]: <== true
+[17:16:01]: <== false
+[17:16:02]: <== true
+[17:16:02]: <== false
+[17:16:02]: <== true
+[17:16:02]: <== false
+[17:16:02]: <== true
+[17:16:47]: ==> [{"id":"1","method":"app.stop","params":{"appId":"d595dc71-595d-4271-8db3-1197307cc729"}}]
+[17:16:50]: Process C:\flutter\bin\flutter.bat terminated! 1, null
