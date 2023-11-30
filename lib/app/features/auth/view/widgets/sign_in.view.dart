@@ -74,7 +74,7 @@ class SignInForState extends ConsumerState<SignInForm> {
               TextButton(
                 child: const FittedBox(
                   child: Text(
-                    "Esqueceu a senha?",
+                    "Redefinir a senha",
                     style: TextStyle(
                       color: Color(0xFFEDEDED),
                       fontFamily: 'Lato',

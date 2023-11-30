@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_teams.dart';
 
 class StartChampionshipAdmin extends StatelessWidget {
   const StartChampionshipAdmin({super.key});
@@ -134,7 +135,10 @@ class StartChampionshipAdmin extends StatelessWidget {
                       ),
                     ),
                   ),
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(
+                        context, AddTeamsAdmin.route);
+                  },
                 ),
               ),
             ],
