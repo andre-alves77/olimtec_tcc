@@ -70,11 +70,14 @@ class PerfilUser extends ConsumerWidget {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(80),
                       child: CachedNetworkImage(
-                        imageUrl: appuser!.avatar,
-                        width: sizeWidth / 2,
-                        height: sizeHeight / 2,
-                        fit: BoxFit.cover,
-                      ),
+                          imageUrl: appuser!.avatar,
+                          width: sizeWidth / 2,
+                          height: sizeHeight / 2,
+                          fit: BoxFit.cover,
+                          placeholder: (context, url) =>
+                              Center(child: CircularProgressIndicator()),
+                          errorWidget: (context, url, error) =>
+                              Icon(Icons.person, size: 200)),
                     ),
                   ],
                 ),
@@ -240,9 +243,6 @@ class PerfilUser extends ConsumerWidget {
                               doc = x.id;
                             }
 
-                            String uniqueFileName = DateTime.now()
-                                .millisecondsSinceEpoch
-                                .toString();
                             Reference referenceRoot =
                                 FirebaseStorage.instance.ref();
                             Reference referenceDirImages =
@@ -251,12 +251,12 @@ class PerfilUser extends ConsumerWidget {
                             DocumentReference docRef =
                                 db.collection('users').doc(doc);
                             //Get a reference to the image to be deleted
-                            Reference referenceImageToDelete =
-                                referenceDirImages.child(uniqueFileName);
 
                             //Delete the image from Firebase Storage
                             try {
-                              await referenceImageToDelete.delete();
+                              FirebaseStorage.instance
+                                  .refFromURL(appuser.avatar)
+                                  .delete();
                             } catch (error) {
                               print(error);
                             }
@@ -532,9 +532,9 @@ class PerfilUser extends ConsumerWidget {
             ),
           ),
         ),
-      );}else {
+      );
+    } else {
       return LoadingPage();
     }
-    }
   }
-
+}

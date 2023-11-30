@@ -9,6 +9,7 @@ class AppRoute {
   static const EQUIPE_USER = '/equipe-user';
   static const RESULTADO_USER = '/resultado-user';
   static const LANDING = '/landing';
+  static const RESETPASSWORD = 'resetpassword';
   static const PERFIL_USER = '/perfil-user';
   static const MAIN_TEAM = '/main-team';
   static const MODALITY_TEAM = '/modality-team';
@@ -50,6 +51,7 @@ class AppRoute {
   static const SCOREBOARDWITHOUTPOINTS_ORGANIZATION =
       '/scoreboardwithoutpoints-organization';
   static const LEADERTEAMSPRIVILEGES_ADMIN = '/leader-teams-privileges-admin';
-  static const ORGANIZATIONTEAMSPRIVILEGES_ADMIN = '/organization-teams-privileges-admin';
+  static const ORGANIZATIONTEAMSPRIVILEGES_ADMIN =
+      '/organization-teams-privileges-admin';
   static const SPLASH_SCREEN = 'splash_screen';
 }
