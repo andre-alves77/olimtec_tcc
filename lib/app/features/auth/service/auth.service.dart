@@ -6,7 +6,7 @@ import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/repository/auth.repository.dart';
-import 'package:olimtec_tcc/app/splashscreen/splash_screen.dart';
+import 'package:olimtec_tcc/app/features/splashscreen/splash_screen.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/user/index_home_user.dart';
 

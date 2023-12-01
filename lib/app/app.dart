@@ -5,12 +5,13 @@ import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 import 'package:olimtec_tcc/app/features/auth/view/reset_password.view.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_locals.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_modality_component.dart';
 
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_teams.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/start_championship.dart';
+import 'package:olimtec_tcc/app/features/splashscreen/splash_screen.dart';
 import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
-import 'package:olimtec_tcc/app/splashscreen/splash_screen.dart';
 import 'package:olimtec_tcc/app/ui/admin/main_admin.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
@@ -121,6 +122,7 @@ class App extends ConsumerWidget {
         OrganizationAddModalityAdmin.route: (ctx) =>
             const OrganizationAddModalityAdmin(),
         AddTeamsAdmin.route: (ctx) => const AddTeamsAdmin(),
+        AddLocalsAdmin.route: (ctx) => AddLocalsAdmin(),
         StartChampionshipAdmin.route: (ctx) => const StartChampionshipAdmin(),
         AddModalityAdmin.route: (ctx) => const AddModalityAdmin(),
         AddGameOrganization.route: (ctx) => const AddGameOrganization(),

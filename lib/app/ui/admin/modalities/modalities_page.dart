@@ -4,7 +4,7 @@ import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
-import 'package:olimtec_tcc/app/utils/app_routes.dart';
+
 
 class ModalitiesAdmin extends StatelessWidget {
   const ModalitiesAdmin({super.key});

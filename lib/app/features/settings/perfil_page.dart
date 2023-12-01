@@ -243,9 +243,6 @@ class PerfilUser extends ConsumerWidget {
                               doc = x.id;
                             }
 
-                            String uniqueFileName = DateTime.now()
-                                .millisecondsSinceEpoch
-                                .toString();
                             Reference referenceRoot =
                                 FirebaseStorage.instance.ref();
                             Reference referenceDirImages =
@@ -254,12 +251,12 @@ class PerfilUser extends ConsumerWidget {
                             DocumentReference docRef =
                                 db.collection('users').doc(doc);
                             //Get a reference to the image to be deleted
-                            Reference referenceImageToDelete =
-                                referenceDirImages.child(uniqueFileName);
 
                             //Delete the image from Firebase Storage
                             try {
-                              await referenceImageToDelete.delete();
+                              FirebaseStorage.instance
+                                  .refFromURL(appuser.avatar)
+                                  .delete();
                             } catch (error) {
                               print(error);
                             }
