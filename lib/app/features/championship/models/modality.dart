@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'package:dartz/dartz_unsafe.dart';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/features/championship/models/game.dart';
 import 'package:olimtec_tcc/app/features/championship/models/team.dart';
@@ -23,10 +24,15 @@ class Modality {
     int i = 0;
     Map<int, List<Game>> _bracket = {};
     List<Game> gameList = [];
-    int nextGame = 0;
+    int nextGame = 1;
     int brackertype = 4;
     int gamesId = 1;
     int qtdround = 1;
+    bool nextGameCounter = false;
+    
+
+  
+
 
 //ADICIONA UM TIME FALSO PARA FICAR PAR
 
@@ -38,36 +44,58 @@ class Modality {
     teams.shuffle();
     int teamCounter = teams.length;
 
-    if (teamCounter != 4 ||
-        teamCounter != 8 ||
-        teamCounter != 16 ||
-        teamCounter != 32 ||
-        teamCounter != 64) {
+
       int qtdFirstRoundTeams = 0;
       if (teamCounter < 8) {
         qtdFirstRoundTeams = teamCounter - 4;
         brackertype = 4;
-      } else if (teamCounter > 8 && teamCounter < 16) {
+      } else if (teamCounter >= 8 && teamCounter < 16) {
         qtdFirstRoundTeams = teamCounter - 8;
         brackertype = 8;
-      } else if (teamCounter > 16 && teamCounter < 32) {
+      } else if (teamCounter >= 16 && teamCounter < 32) {
         qtdFirstRoundTeams = teamCounter - 16;
         brackertype = 16;
-      } else if (teamCounter > 32 && teamCounter < 64) {
+      } else if (teamCounter >= 32 && teamCounter < 64) {
         qtdFirstRoundTeams = teamCounter - 32;
         brackertype = 32;
-      } else if (teamCounter > 64 && teamCounter < 128) {
+      } else if (teamCounter >= 64 && teamCounter < 128) {
         qtdFirstRoundTeams = teamCounter - 64;
         brackertype = 64;
       }
+nextGame = brackertype;
+
+int _generate_nextGame(){
+int myint = nextGame;
+if(nextGameCounter){
+nextGame++;
+}
+nextGameCounter = !nextGameCounter;
+print(myint);
+  return myint;
+}
+_generate_nextGame();
+_generate_nextGame();
+_generate_nextGame();
+_generate_nextGame();
+_generate_nextGame();
+_generate_nextGame();
+
+
+    if (teamCounter != 4 &&
+        teamCounter != 8 &&
+        teamCounter != 16 &&
+        teamCounter != 32 &&
+        teamCounter != 64) {
+
 
 //ROUND 1
-      nextGame = qtdFirstRoundTeams +1;
+      nextGame = qtdFirstRoundTeams + 1;
       teamCounter -= 1;
       while (qtdFirstRoundTeams > i) {
         print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
         team1 = teams[teamCounter];
         team2 = teams[teamCounter - 1];
+        print("${teams[teamCounter].name} X ${teams[teamCounter - 1].name}");
         gameList.add(Game(
           id: gamesId,
           nextGame: gamesId,
@@ -86,75 +114,137 @@ class Modality {
 //ROUND 2
       gameList = [];
       i = 0;
-      int roundreserved = 0;
+      nextGame = qtdFirstRoundTeams + brackertype * (qtdround - 1) + 1;
       print(brackertype);
       while (i < brackertype) {
         if (teamCounter > 0) {
           print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
+          print("${teams[teamCounter].name} X ${teams[teamCounter - 1].name}");
           print("opa2");
           gameList.add(Game(
               id: gamesId,
-              nextGame: gamesId,
+              nextGame: _generate_nextGame(),
               round: qtdround,
               modalidade: name,
               team1: teams[teamCounter],
               team2: teams[teamCounter - 1]));
           teamCounter -= 2;
-          roundreserved++;
         } else {
           print("opa1");
           print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
           gameList.add(Game(
               id: gamesId,
-              nextGame: gamesId,
+              nextGame:  _generate_nextGame(),
               round: qtdround,
-              modalidade: name));
+              modalidade: name,));
         }
         nextGame++;
         i++;
         gamesId++;
-      }
+      
       bracket.addAll({qtdround: gameList});
     }
 
-// //ROUND 1
-//       teamCounter -= 1;
-//       while ((qtdFirstRoundTeams) > i) {
-//         print("JOGO $gamesId");
-//         team1 = teams[teamCounter];
-//         team2 = teams[teamCounter - 1];
+}
 
-//         Game(
-//           id: gamesId,
-//           nextGame: gamesId,
-//           round: qtdround,
-//           modalidade: name,
-//           team1: team1,
-//           team2: team2,
-//         );
-//         gamesId++;
-//         i++;
-//         teamCounter -= 2;
-//       }
-//       qtdround++;
+int brackerCounter = brackertype/qtdround as int;
 
-// //ROUND 2
-//       i = 1;
-//       while (brackertype > i) {
-//         if (teamCounter >= 0) {
-//           print("JOGO $gamesId");
-//           Game(
-//               id: gamesId,
-//               nextGame: gamesId,
-//               team1: teams[teamCounter],
-//               team2: teams[teamCounter - 1],
-//               round: qtdround,
-//               modalidade: name);
+if(brackertype == 4){
+i = 2;
+}else if(brackertype == 8){
+i = 4;
+}else if(brackertype == 16){
+i=8;
+}else if(brackertype == 64){
+i=16;
+}
 
-//         } else {}
-//         i++;
-//       }
+int x = 0;
+
+
+teamCounter = 0;
+while(x < i){
+int qtdteamsperround = brackerCounter/(2*i)as int;
+print(qtdround);
+print(qtdteamsperround);
+
+qtdround++;
+x++;
+}
+
+  bracket.forEach((key, value) {
+    print('\\\\\\\\');
+    print("ROUND $key");
+    value.forEach((element) {
+      print("GAME ${element.id}");
+      print(element.team1);
+      print(element.team2);
+    });
+  });
+
   }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   // if (teamCounter != 4 ||
   //     teamCounter != 8 ||
@@ -264,4 +354,3 @@ class Modality {
   //     }
   //   }
   // }
-}

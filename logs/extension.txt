@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.78.0
 Flutter extension: 3.78.0 (not activated)
@@ -225,6 +227,7 @@ Flutter (3.13.6): C:\flutter (No device)
         "showMemoryUsage": false,
         "debuggerType": 2
     }
+<<<<<<< HEAD
 [17:30:30] [General] [Info] Using flutter debugger for Flutter
 [17:30:30] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
 [17:30:30] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
@@ -298,3 +301,159 @@ Flutter (3.13.6): C:\flutter (No device)
 [17:38:10] [General] [Info] Did not find session 4e6d9e79-4b21-473d-ab6c-a4864557d139 to handle dart.progressStart. There were 0 sessions:
 [17:38:10] [General] [Info] Event will be queued and processed when the session start event fires
 [17:38:10] [General] [Info] Processing delayed event dart.progressStart for session 4e6d9e79-4b21-473d-ab6c-a4864557d139
+=======
+[00:21:16] [General] [Info] Using flutter debugger for Flutter
+[00:21:16] [General] [Info] SDK DAP setting is false, set by sdkDaps experiment
+[00:21:16] [General] [Info] Running debugger via node with c:\Users\Vinicius Vitoriano\.vscode\extensions\dart-code.dart-code-3.76.1\out\dist\debug.js    flutter
+[00:21:17] [General] [Info] Did not find session f8bd163c-365b-4352-9847-4e8f6da2bccb to handle dart.progressStart. There were 0 sessions:
+[00:21:17] [General] [Info] Event will be queued and processed when the session start event fires
+[00:21:17] [General] [Info] Processing delayed event dart.progressStart for session f8bd163c-365b-4352-9847-4e8f6da2bccb
+[00:24:38] [General] [Info] Returning cached results for project search
+[00:30:17] [General] [Info] Took 479ms to search for projects (5 levels)
+[00:30:17] [General] [Info] Took 10ms to filter out excluded projects (0 exclusion rules)
+[00:32:24] [General] [Info] Returning cached results for project search
+[00:51:27] [General] [Info] Took 761ms to search for projects (5 levels)
+[00:51:27] [General] [Info] Took 8ms to filter out excluded projects (0 exclusion rules)
+[00:53:56] [General] [Info] Returning cached results for project search
+[00:54:09] [General] [Info] Returning cached results for project search
+[01:00:21] [FlutterRun] [Error] [Flutter (Chrome)] lib/app/features/championship/views/initial_config/add_teams.dart:39:5: Error: Unexpected token 'return'.
+[01:00:21] [FlutterRun] [Error] [Flutter (Chrome)]     return Scaffold(
+    ^^^^^^
+lib/app/features/championship/views/initial_config/add_teams.dart:38:27: Error: The getter 'ref' isn't defined for the class 'AddTeamsAdmin'.
+ - 'AddTeamsAdmin' is from 'package:olimtec_tcc/app/features/championship/views/initial_config/add_teams.dart' ('lib/app/features/championship/views/initial_config/add_teams.dart').
+Try correcting the name to the name of an existing getter, or defining a getter or field named 'ref'.
+    final initialConfig = ref.watch(InitConfigStore()).
+                          ^^^
+[01:00:21] [FlutterRun] [Error] [Flutter (Chrome)] lib/app/features/championship/views/initial_config/add_teams.dart:37:10: Error: A non-null value must be returned since the return type 'Widget' doesn't allow null.
+ - 'Widget' is from 'package:flutter/src/widgets/framework.dart' ('/C:/flutter/packages/flutter/lib/src/widgets/framework.dart').
+  Widget build(BuildContext context) {
+         ^
+[01:01:49] [General] [Info] Took 529ms to search for projects (5 levels)
+[01:01:49] [General] [Info] Took 9ms to filter out excluded projects (0 exclusion rules)
+[01:07:50] [General] [Info] Took 522ms to search for projects (5 levels)
+[01:07:50] [General] [Info] Took 2ms to filter out excluded projects (0 exclusion rules)
+[01:09:08] [General] [Info] Returning cached results for project search
+[01:13:01] [General] [Info] Took 831ms to search for projects (5 levels)
+[01:13:01] [General] [Info] Took 5ms to filter out excluded projects (0 exclusion rules)
+[01:13:58] [General] [Info] Returning cached results for project search
+[01:17:29] [General] [Info] Returning cached results for project search
+[01:17:58] [General] [Info] Returning cached results for project search
+[01:20:44] [General] [Info] Took 820ms to search for projects (5 levels)
+[01:20:44] [General] [Info] Took 10ms to filter out excluded projects (0 exclusion rules)
+[01:21:21] [General] [Info] Returning cached results for project search
+[01:22:16] [General] [Info] Returning cached results for project search
+[01:23:32] [General] [Info] Returning cached results for project search
+[01:24:40] [General] [Info] Returning cached results for project search
+[01:24:55] [General] [Info] Returning cached results for project search
+[01:25:27] [General] [Info] Returning cached results for project search
+[01:32:44] [General] [Info] Took 460ms to search for projects (5 levels)
+[01:32:44] [General] [Info] Took 5ms to filter out excluded projects (0 exclusion rules)
+[01:33:10] [General] [Info] Returning cached results for project search
+[01:33:38] [General] [Info] Returning cached results for project search
+[01:34:30] [General] [Info] Returning cached results for project search
+[01:35:16] [General] [Info] Returning cached results for project search
+[01:35:35] [General] [Info] Returning cached results for project search
+[01:35:57] [General] [Info] Returning cached results for project search
+[01:36:38] [General] [Info] Returning cached results for project search
+[01:37:04] [General] [Info] Returning cached results for project search
+[01:37:23] [General] [Info] Returning cached results for project search
+[01:37:42] [General] [Info] Returning cached results for project search
+[01:37:50] [General] [Info] Took 723ms to search for projects (5 levels)
+[01:37:50] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[01:37:57] [General] [Info] Returning cached results for project search
+[01:38:12] [General] [Info] Returning cached results for project search
+[01:38:25] [General] [Info] Returning cached results for project search
+[01:38:40] [General] [Info] Returning cached results for project search
+[02:06:40] [General] [Info] Took 2014ms to search for projects (5 levels)
+[02:06:40] [General] [Info] Took 14ms to filter out excluded projects (0 exclusion rules)
+[02:07:12] [General] [Info] Returning cached results for project search
+[02:11:07] [General] [Info] Returning cached results for project search
+[02:11:55] [General] [Info] Took 1265ms to search for projects (5 levels)
+[02:11:55] [General] [Info] Took 5ms to filter out excluded projects (0 exclusion rules)
+[02:12:10] [General] [Info] Returning cached results for project search
+[02:12:19] [General] [Info] Returning cached results for project search
+[02:14:51] [General] [Info] Returning cached results for project search
+[02:15:14] [General] [Info] Returning cached results for project search
+[02:15:23] [General] [Info] Returning cached results for project search
+[02:22:33] [General] [Info] Took 1015ms to search for projects (5 levels)
+[02:22:33] [General] [Info] Took 26ms to filter out excluded projects (0 exclusion rules)
+[02:23:46] [General] [Info] Returning cached results for project search
+[02:55:32] [FlutterRun] [Error] [Flutter (Chrome)] AppInspector: Error calling Runtime.evaluate with params {expression: require('dart_sdk').developer._extensions.keys.toList();, returnByValue: true, contextId: 9}Error: WipError -32000 Cannot find context with specified id
+[02:55:32] [FlutterRun] [Error] [Flutter (Chrome)]
+[02:55:32] [FlutterRun] [Error] [Flutter (Chrome)] Utilities: Error in unawaited Future:Error: Bad state: No running isolate (inspector is not set).
+[02:56:00] [General] [Info] Took 3651ms to search for projects (5 levels)
+[02:56:00] [General] [Info] Took 150ms to filter out excluded projects (0 exclusion rules)
+[03:01:39] [General] [Info] Took 661ms to search for projects (5 levels)
+[03:01:39] [General] [Info] Took 2ms to filter out excluded projects (0 exclusion rules)
+[03:02:23] [General] [Info] Returning cached results for project search
+[03:02:35] [General] [Info] Returning cached results for project search
+[03:05:27] [General] [Info] Returning cached results for project search
+[03:06:14] [General] [Info] Returning cached results for project search
+[03:06:41] [General] [Info] Took 562ms to search for projects (5 levels)
+[03:06:41] [General] [Info] Took 5ms to filter out excluded projects (0 exclusion rules)
+[03:07:23] [General] [Info] Returning cached results for project search
+[03:07:35] [General] [Info] Returning cached results for project search
+[03:07:51] [General] [Info] Returning cached results for project search
+[03:15:42] [General] [Info] Took 442ms to search for projects (5 levels)
+[03:15:42] [General] [Info] Took 4ms to filter out excluded projects (0 exclusion rules)
+[03:19:22] [General] [Info] Returning cached results for project search
+[03:19:37] [General] [Info] Returning cached results for project search
+[03:21:33] [General] [Info] Took 618ms to search for projects (5 levels)
+[03:21:33] [General] [Info] Took 12ms to filter out excluded projects (0 exclusion rules)
+[03:21:57] [General] [Info] Returning cached results for project search
+[03:22:03] [General] [Info] Returning cached results for project search
+[03:37:57] [General] [Info] Took 492ms to search for projects (5 levels)
+[03:37:57] [General] [Info] Took 65ms to filter out excluded projects (0 exclusion rules)
+[03:40:08] [General] [Info] Returning cached results for project search
+[03:42:17] [General] [Info] Returning cached results for project search
+[03:43:09] [General] [Info] Took 677ms to search for projects (5 levels)
+[03:43:09] [General] [Info] Took 7ms to filter out excluded projects (0 exclusion rules)
+[03:45:27] [General] [Info] Returning cached results for project search
+[03:45:42] [General] [Info] Returning cached results for project search
+[03:45:44] [General] [Info] Returning cached results for project search
+[03:45:57] [General] [Info] Returning cached results for project search
+[03:46:57] [General] [Info] Returning cached results for project search
+[03:52:30] [General] [Info] Took 452ms to search for projects (5 levels)
+[03:52:30] [General] [Info] Took 5ms to filter out excluded projects (0 exclusion rules)
+[03:54:57] [General] [Info] Returning cached results for project search
+[03:58:43] [General] [Info] Took 482ms to search for projects (5 levels)
+[03:58:43] [General] [Info] Took 8ms to filter out excluded projects (0 exclusion rules)
+[03:59:41] [General] [Info] Returning cached results for project search
+[03:59:45] [General] [Info] Returning cached results for project search
+[04:01:12] [General] [Info] Returning cached results for project search
+[04:02:23] [General] [Info] Returning cached results for project search
+[04:04:22] [General] [Info] Took 706ms to search for projects (5 levels)
+[04:04:22] [General] [Info] Took 59ms to filter out excluded projects (0 exclusion rules)
+[04:04:33] [General] [Info] Returning cached results for project search
+[04:05:58] [General] [Info] Returning cached results for project search
+[04:08:10] [General] [Info] Returning cached results for project search
+[04:09:48] [General] [Info] Took 463ms to search for projects (5 levels)
+[04:09:48] [General] [Info] Took 10ms to filter out excluded projects (0 exclusion rules)
+[04:10:39] [General] [Info] Returning cached results for project search
+[04:10:49] [General] [Info] Returning cached results for project search
+[04:11:04] [General] [Info] Returning cached results for project search
+[04:11:55] [General] [Info] Returning cached results for project search
+[04:13:50] [General] [Info] Returning cached results for project search
+[04:14:36] [General] [Info] Returning cached results for project search
+[04:16:20] [General] [Info] Took 657ms to search for projects (5 levels)
+[04:16:20] [General] [Info] Took 5ms to filter out excluded projects (0 exclusion rules)
+[04:16:46] [General] [Info] Returning cached results for project search
+[04:17:45] [FlutterRun] [Error] [Flutter (Chrome)] lib/app/features/championship/views/initial_config/add_modality_component.dart:55:40: Error: Too few positional arguments: 3 required, 1 given.
+[04:17:45] [FlutterRun] [Error] [Flutter (Chrome)]                         .removeModality(dropdownvalue1);
+                                       ^
+[04:17:52] [FlutterRun] [Error] [Flutter (Chrome)] lib/app/features/championship/views/initial_config/add_modality_component.dart:55:40: Error: Too few positional arguments: 3 required, 1 given.
+[04:17:52] [FlutterRun] [Error] [Flutter (Chrome)]                         .removeModality(dropdownvalue1);
+[04:17:52] [FlutterRun] [Error] [Flutter (Chrome)]                                        ^
+[04:18:26] [General] [Info] Returning cached results for project search
+[04:19:39] [General] [Info] Returning cached results for project search
+[04:20:32] [General] [Info] Returning cached results for project search
+[04:20:51] [General] [Info] Returning cached results for project search
+[04:22:15] [General] [Info] Took 802ms to search for projects (5 levels)
+[04:22:15] [General] [Info] Took 6ms to filter out excluded projects (0 exclusion rules)
+[04:24:50] [General] [Info] Returning cached results for project search
+[04:24:55] [General] [Error] Canceled
+Canceled: Canceled
+    at u.Q (vscode-file://vscode-app/c:/Users/Vinicius%20Vitoriano/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:918:38732)
+    at vscode-file://vscode-app/c:/Users/Vinicius%20Vitoriano/AppData/Local/Programs/Microsoft%20VS%20Code/resources/app/out/vs/workbench/workbench.desktop.main.js:918:38659
+>>>>>>> f63b4b212475251bee7731f2778cd430f67c35f1
+>>>>>>> 118285e9207913e4f6fead1a9dce90ff7e1650ba
