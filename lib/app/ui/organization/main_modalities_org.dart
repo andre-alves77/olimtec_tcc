@@ -7,37 +7,7 @@ import 'package:olimtec_tcc/app/utils/app_routes.dart';
 class MainModalitiesOrganization extends StatelessWidget {
   const MainModalitiesOrganization({super.key});
 
-  static String route = "/mainmodalities-organization";
-
-  List<Widget> _categoryFODASE() {
-    List<Widget> widgets = [];
-    modalityCategoryList_dummy.forEach((category) {
-      widgets.add(
-        Padding(
-          padding: EdgeInsets.all(5),
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              category.name.toUpperCase(),
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-              textAlign: TextAlign.center,
-            ),
-          ),
-        ),
-      );
-      modalitiesList_dummy.forEach((element) {
-        if (element.category == category) {
-          widgets.add(
-            Padding(
-                padding: EdgeInsets.all(5),
-                child: ModalityItemCard(
-                    modality: element, routes: ModalityAdmin.route)),
-          );
-        }
-      });
-    });
-    return widgets;
-  }
+  static String route = "/mainmodalities-organization";   
 
   @override
   Widget build(BuildContext context) {
@@ -98,7 +68,6 @@ class MainModalitiesOrganization extends StatelessWidget {
                     fontWeight: FontWeight.bold,
                     color: Theme.of(context).colorScheme.primary),
               )),
-              ..._categoryFODASE()
             ],
           ),
         ),
