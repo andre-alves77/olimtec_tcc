@@ -5,6 +5,7 @@ import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 import 'package:olimtec_tcc/app/features/auth/view/reset_password.view.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_locals.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_modality_component.dart';
 
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_teams.dart';
@@ -121,6 +122,7 @@ class App extends ConsumerWidget {
         OrganizationAddModalityAdmin.route: (ctx) =>
             const OrganizationAddModalityAdmin(),
         AddTeamsAdmin.route: (ctx) => const AddTeamsAdmin(),
+        AddLocalsAdmin.route: (ctx) => AddLocalsAdmin(),
         StartChampionshipAdmin.route: (ctx) => const StartChampionshipAdmin(),
         AddModalityAdmin.route: (ctx) => const AddModalityAdmin(),
         AddGameOrganization.route: (ctx) => const AddGameOrganization(),

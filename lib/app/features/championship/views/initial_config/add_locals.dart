@@ -3,12 +3,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/championship/initial_config.store.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_modality_component.dart';
 
-class AddTeamsAdmin extends ConsumerWidget {
-  const AddTeamsAdmin({super.key});
+class AddLocalsAdmin extends ConsumerWidget {
+  const AddLocalsAdmin({super.key});
 
-  static String route = "/addteams_admin";
+  static String route = "/AddLocals_admin";
 
-  Widget _addTeams(BuildContext context, String text, WidgetRef ref) {
+  Widget _addLocals(BuildContext context, String text, WidgetRef ref) {
     return Stack(
       alignment: Alignment.topRight,
       children: [
@@ -39,7 +39,11 @@ class AddTeamsAdmin extends ConsumerWidget {
         ),
         IconButton(
             onPressed: () {
-              ref.read(initialConfigProvider).removeTeam(text);
+              try {
+                ref.read(initialConfigProvider).removeLocal(text);
+              } catch (error) {
+                print(error);
+              }
             },
             icon: Icon(
               Icons.remove_circle_outline,
@@ -53,17 +57,17 @@ class AddTeamsAdmin extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final formKey = GlobalKey<FormState>();
-    final teamList = ref.watch(initialConfigProvider).teamList;
-    List<Widget> teamWidgets = [];
-    teamList.forEach((element) {
-      teamWidgets.add(_addTeams(context, element.name, ref));
+    final localList = ref.watch(initialConfigProvider).localList;
+    List<Widget> localWidgets = [];
+    localList.forEach((element) {
+      localWidgets.add(_addLocals(context, element, ref));
     });
-    String teamName = "";
+    String localName = "";
     return Scaffold(
       appBar: AppBar(
         title: FittedBox(
           child: const Text(
-            "ADICIONAR TIMES",
+            "ADICIONAR LOCAIS",
             style: TextStyle(
               fontFamily: 'Lato',
               fontSize: 24,
@@ -101,17 +105,17 @@ class AddTeamsAdmin extends ConsumerWidget {
                               }
                               return null;
                             },
-                            onChanged: (value) => teamName = value,
+                            onChanged: (value) => localName = value,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Nome da sala: Ex: 2ºEAA',
+                              labelText: 'Nome do local: Ex: quadra',
                               labelStyle: TextStyle(
                                 fontFamily: 'Lato',
-                                fontSize: 18,
+                                fontSize: 14,
                                 fontWeight: FontWeight.bold,
                               ),
-                              hintText: '1ºEAA',
+                              hintText: 'quadra',
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Theme.of(context)
@@ -141,7 +145,7 @@ class AddTeamsAdmin extends ConsumerWidget {
                               if (formKey.currentState?.validate() ?? true) {
                                 ref
                                     .read(initialConfigProvider)
-                                    .addTeam(teamName);
+                                    .addLocal(localName);
                               }
                             },
                             icon: Icon(
@@ -168,7 +172,7 @@ class AddTeamsAdmin extends ConsumerWidget {
                     primary: false,
                     shrinkWrap: true,
                     scrollDirection: Axis.vertical,
-                    children: teamWidgets,
+                    children: localWidgets,
                   ),
                 ),
                 FittedBox(
@@ -185,10 +189,7 @@ class AddTeamsAdmin extends ConsumerWidget {
                             color: Theme.of(context).colorScheme.primary,
                           ),
                           child: TextButton(
-                            onPressed: () {
-                              Navigator.pushNamed(
-                                  context, AddModalityAdmin.route);
-                            },
+                            onPressed: () {},
                             child: Text(
                               'CONFIRMAR',
                               style: TextStyle(

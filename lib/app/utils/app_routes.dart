@@ -37,6 +37,7 @@ class AppRoute {
   static const MANAGEMENTACCOUNT_ADMIN = '/managementaccount-admin';
   static const MANAGEMENTACCOUNTADD_ADMIN = '/managementaccountadd-admin';
   static const ADDTEAMS_ADMIN = '/addteams-admin';
+  static const ADDLOCALS_ADMIN = "/AddLocals_admin";
   static const CHAMPIOSHIPPAGE_ADMIN = '/champioshippage-admin';
   static const INSERTMODALITIES_ADMIN = '/insertmodalities-admin';
   static const STARTGAME_ORGANIZATION = '/startGame-organization';

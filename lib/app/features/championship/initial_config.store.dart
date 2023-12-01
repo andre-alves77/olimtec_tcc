@@ -10,13 +10,9 @@ final initialConfigProvider = ChangeNotifierProvider<InitConfigStore>((ref) {
 
 class InitConfigStore extends ChangeNotifier {
   List<Team> teamList = [];
-  List<Modality> modalitiesList = [
-    Modality(
-        category: "esporte de quadra", name: "basquete", scoreType: "1 a 100"),
-    Modality(
-        category: "esporte de quadra", name: "basquete", scoreType: "1 a 100"),
-  ];
+  List<Modality> modalitiesList = [];
   List<Game> gameList = [];
+  List<String> localList = [];
 
   void addTeam(String teamName) {
     String teamImage = "";
@@ -48,6 +44,16 @@ class InitConfigStore extends ChangeNotifier {
     modalitiesList.removeWhere(
       (element) => element.name == modalityName,
     );
+    notifyListeners();
+  }
+
+  void addLocal(String localName) {
+    localList.add(localName);
+    notifyListeners();
+  }
+
+  void removeLocal(String localName) {
+    localList.removeWhere((element) => element == localName);
     notifyListeners();
   }
 }
