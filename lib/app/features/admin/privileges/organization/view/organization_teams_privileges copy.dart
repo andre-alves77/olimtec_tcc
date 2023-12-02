@@ -1,7 +1,7 @@
 import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/features/user_role/organization/view/privilge_organization_page.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/organization/view/privilge_organization_page.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/management_account.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';

@@ -6,7 +6,6 @@ import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
-import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class ModalityUser extends StatefulWidget {
   const ModalityUser({super.key});

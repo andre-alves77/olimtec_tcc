@@ -22,8 +22,7 @@ Stream<Championship?> getChampionshipStream() async* {
     for (var doc in querySnapshot.docs) {
       fieldValues.add(Modality(category: doc['category'], name: doc['name']));
     }
- 
-
+    
    return fieldValues;
   }
 }

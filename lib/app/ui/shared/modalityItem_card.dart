@@ -4,10 +4,11 @@ import 'dart:math';
 import 'package:olimtec_tcc/app/models/modality/modality.dart';
 
 class ModalityItemCard extends StatelessWidget {
-  const ModalityItemCard({required this.modality, required this.routes, super.key});
+  const ModalityItemCard({required this.routes, required this.modalityName, required this.iconName, super.key});
 
-  final Modality modality;
   final String routes;
+  final String modalityName;
+  final String iconName;
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +27,7 @@ class ModalityItemCard extends StatelessWidget {
               width: sizeWidth,
               child: ListTile(
                 leading: Icon(
-                  modality.icon,
+                 Icons.sports_basketball,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                   size: sizeWidth / 9,
                 ),
@@ -34,7 +35,7 @@ class ModalityItemCard extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    modality.name,
+                    modalityName,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.onPrimaryContainer,
