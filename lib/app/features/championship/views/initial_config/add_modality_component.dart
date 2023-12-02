@@ -412,8 +412,7 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
                                       ),
                                       child: TextButton(
                                         onPressed: () {
-                                          Navigator.pushNamed(
-                                              context, AddLocalsAdmin.route);
+                                          Navigator.pop(context);
                                         },
                                         child: Text(
                                           'CONFIRMAR',

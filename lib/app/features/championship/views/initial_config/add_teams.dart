@@ -186,8 +186,7 @@ class AddTeamsAdmin extends ConsumerWidget {
                           ),
                           child: TextButton(
                             onPressed: () {
-                              Navigator.pushNamed(
-                                  context, AddModalityAdmin.route);
+                              Navigator.pop(context);
                             },
                             child: Text(
                               'CONFIRMAR',

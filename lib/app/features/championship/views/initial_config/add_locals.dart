@@ -189,7 +189,9 @@ class AddLocalsAdmin extends ConsumerWidget {
                             color: Theme.of(context).colorScheme.primary,
                           ),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.pop(context);
+                            },
                             child: Text(
                               'CONFIRMAR',
                               style: TextStyle(
