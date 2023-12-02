@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.78.0
 Flutter extension: 3.78.0 (not activated)
@@ -295,3 +296,5 @@ Flutter (3.13.6): C:\flutter (No device)
 [19:57:53] [General] [Info] Did not find session 72bfacc3-216d-49a1-b6c4-58e5d8c67731 to handle dart.progressStart. There were 0 sessions:
 [19:57:53] [General] [Info] Event will be queued and processed when the session start event fires
 [19:57:53] [General] [Info] Processing delayed event dart.progressStart for session 72bfacc3-216d-49a1-b6c4-58e5d8c67731
+=======
+>>>>>>> b3df527e688a4c65c59f15fd96885e885e6a0628

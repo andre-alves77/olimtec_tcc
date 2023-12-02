@@ -44,25 +44,30 @@ class Modality {
     teams.shuffle();
     int teamCounter = teams.length;
 
-
+//FALTOU DEFINIR OS NEXT GAMES DE FORMA CORRETA 
       int qtdFirstRoundTeams = 0;
       if (teamCounter < 8) {
         qtdFirstRoundTeams = teamCounter - 4;
         brackertype = 4;
+nextGame = brackertype;
       } else if (teamCounter >= 8 && teamCounter < 16) {
         qtdFirstRoundTeams = teamCounter - 8;
         brackertype = 8;
+        nextGame = brackertype-1;
       } else if (teamCounter >= 16 && teamCounter < 32) {
         qtdFirstRoundTeams = teamCounter - 16;
         brackertype = 16;
+        nextGame = brackertype;
       } else if (teamCounter >= 32 && teamCounter < 64) {
         qtdFirstRoundTeams = teamCounter - 32;
         brackertype = 32;
+        nextGame = brackertype;
       } else if (teamCounter >= 64 && teamCounter < 128) {
         qtdFirstRoundTeams = teamCounter - 64;
         brackertype = 64;
+        nextGame = brackertype;
       }
-nextGame = brackertype;
+
 
 int _generate_nextGame(){
 int myint = nextGame;
@@ -70,16 +75,8 @@ if(nextGameCounter){
 nextGame++;
 }
 nextGameCounter = !nextGameCounter;
-print(myint);
   return myint;
 }
-_generate_nextGame();
-_generate_nextGame();
-_generate_nextGame();
-_generate_nextGame();
-_generate_nextGame();
-_generate_nextGame();
-
 
     if (teamCounter != 4 &&
         teamCounter != 8 &&
@@ -89,16 +86,16 @@ _generate_nextGame();
 
 
 //ROUND 1
-      nextGame = qtdFirstRoundTeams + 1;
+      //nextGame = qtdFirstRoundTeams + 1;
       teamCounter -= 1;
       while (qtdFirstRoundTeams > i) {
-        print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
+        // print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
         team1 = teams[teamCounter];
         team2 = teams[teamCounter - 1];
-        print("${teams[teamCounter].name} X ${teams[teamCounter - 1].name}");
+       // print("${teams[teamCounter].name} X ${teams[teamCounter - 1].name}");
         gameList.add(Game(
           id: gamesId,
-          nextGame: gamesId,
+          nextGame: _generate_nextGame(),
           round: qtdround,
           modalidade: name,
           team1: team1,
@@ -107,20 +104,19 @@ _generate_nextGame();
         gamesId++;
         i++;
         teamCounter -= 2;
-        nextGame++;
       }
       bracket.addAll({qtdround: gameList});
       qtdround++;
 //ROUND 2
       gameList = [];
       i = 0;
-      nextGame = qtdFirstRoundTeams + brackertype * (qtdround - 1) + 1;
-      print(brackertype);
+     //nextGame = qtdFirstRoundTeams + brackertype * (qtdround - 1) + 1;
+     nextGame = 9;
       while (i < brackertype) {
         if (teamCounter > 0) {
-          print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
-          print("${teams[teamCounter].name} X ${teams[teamCounter - 1].name}");
-          print("opa2");
+        //  print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
+        //  print("${teams[teamCounter].name} X ${teams[teamCounter - 1].name}");
+        // print("opa2");
           gameList.add(Game(
               id: gamesId,
               nextGame: _generate_nextGame(),
@@ -130,56 +126,82 @@ _generate_nextGame();
               team2: teams[teamCounter - 1]));
           teamCounter -= 2;
         } else {
-          print("opa1");
-          print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
+         // print("opa1");
+         // print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
           gameList.add(Game(
               id: gamesId,
               nextGame:  _generate_nextGame(),
               round: qtdround,
               modalidade: name,));
         }
-        nextGame++;
-        i++;
+      
+        i+=2;
         gamesId++;
       
       bracket.addAll({qtdround: gameList});
     }
+}else{
+      nextGame = qtdFirstRoundTeams + 1;
+    }
 
-}
 
 int brackerCounter = brackertype/qtdround as int;
 
 if(brackertype == 4){
-i = 2;
+i = 1;
 }else if(brackertype == 8){
-i = 4;
+i = 2;
 }else if(brackertype == 16){
-i=8;
+i=3;
 }else if(brackertype == 64){
-i=16;
+i=4;
 }
 
 int x = 0;
 
 
-teamCounter = 0;
+// int qtdteamsperround = brackerCounter/(2*i)as int;
+
+int teamsPerRound =i*2;
 while(x < i){
-int qtdteamsperround = brackerCounter/(2*i)as int;
-print(qtdround);
-print(qtdteamsperround);
+teamCounter = 0;
+  gameList= [];
+// print(qtdround);
+// print(qtdteamsperround);
+
+while(teamsPerRound > teamCounter){
+
+  if(teamsPerRound>2){
+
+
+gameList.add(Game(id: gamesId, nextGame: _generate_nextGame(), round: qtdround, modalidade: name));
+  }else{
+gameList.add(Game(id: gamesId, isfinal: true, round: qtdround, modalidade: name,));
+  }
+
+gamesId++;
+teamCounter+=2;
+}
 
 qtdround++;
 x++;
+teamsPerRound =(i-x)*2;
+
+  bracket.addAll({qtdround: gameList});
 }
 
   bracket.forEach((key, value) {
-    print('\\\\\\\\');
     print("ROUND $key");
     value.forEach((element) {
-      print("GAME ${element.id}");
+      print("GAME ${element.id} >>> NEXT GAME ${element.nextGame}");
       print(element.team1);
-      print(element.team2);
+     print(element.team2);
+     if(element.isfinal == true){
+      print(element.isfinal);
+     }
+      
     });
+     print('\\\\\\\\');
   });
 
   }

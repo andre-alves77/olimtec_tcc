@@ -29,7 +29,10 @@ logic() {
     Team(name: "OPA6", image: "6"),
     Team(name: "OPA7", image: "7"),
     Team(name: "OPA8", image: "8"),
-
+    Team(name: "OPA9", image: "9"),
+    Team(name: "OPA10", image: "10"),
+    Team(name: "OPA11", image: "11"),
+    Team(name: "OPA11", image: "12"),
   ];
 
   var modality = Modality(
