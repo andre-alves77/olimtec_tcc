@@ -1,14 +1,45 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:file_picker/file_picker.dart';
+import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+import 'package:olimtec_tcc/app/firebase/team.dart';
+import 'package:path/path.dart' as Path;
 
-class CreateTeam extends StatelessWidget {
+class CreateTeam extends ConsumerWidget {
   const CreateTeam({super.key});
 
   static String route = "/createteam-team";
 
+  static String imageUrl = '';
+
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final appuser = ref.watch(appUserStream).when(data: (data) {
+      return data;
+    }, error: (error, stackTrace) {
+      CustomSnackBar(
+          message: "Um erro aconteceu. Tente novamente",
+          ref: ref,
+          type: ScaffoldAlert.error);
+      return null;
+    }, loading: () {
+      return null;
+    });
+
+    final teamImage =
+        ref.watch(teamNameStream(appuser!.teamName)).whenOrNull(data: (data) {
+      if (data != null) return data;
+      return "minha bola";
+    });
+
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     return Scaffold(
       appBar: AppBar(
@@ -68,11 +99,18 @@ class CreateTeam extends StatelessWidget {
                             width: 2,
                           )),
                       child: FittedBox(
-                        child: Icon(
-                          Icons.add_outlined,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer,
-                          size: sizeWidth / 1.2,
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(80),
+                          child: CachedNetworkImage(
+                              imageUrl: teamImage!,
+                              //"https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/teamName%2Fchannels4_profile.jpg?alt=media&token=ebdb650a-e6c3-4856-96b3-640ed6a4c4ba",
+                              width: sizeWidth / 2,
+                              height: sizeWidth / 2,
+                              fit: BoxFit.cover,
+                              placeholder: (context, url) =>
+                                  Center(child: CircularProgressIndicator()),
+                              errorWidget: (context, url, error) =>
+                                  Icon(Icons.shield, size: 200)),
                         ),
                       ),
                     ),
@@ -108,6 +146,87 @@ class CreateTeam extends StatelessWidget {
                                 ),
                               ),
                             ),
+                          ),
+                          Container(
+                            width: sizeWidth / 1.8,
+                            child: FittedBox(
+                                child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                elevation: 3,
+                                backgroundColor:
+                                    Theme.of(context).colorScheme.primary,
+                              ),
+                              onPressed: () async {
+                                Future<String> uploadImageToStorage(
+                                    PlatformFile file) async {
+                                  var uploadedPhotoUrl;
+                                  Reference _reference =
+                                      FirebaseStorage.instance.ref().child(
+                                          'teamName/${Path.basename(file.name)}');
+                                  await _reference
+                                      .putData(
+                                    file.bytes!,
+                                    SettableMetadata(contentType: 'image/jpeg'),
+                                  )
+                                      .whenComplete(() async {
+                                    await _reference
+                                        .getDownloadURL()
+                                        .then((value) {
+                                      uploadedPhotoUrl = value;
+                                    });
+                                  });
+                                  return uploadedPhotoUrl;
+                                }
+
+                                ImagePicker? _picker;
+                                dynamic file;
+                                if (kIsWeb) {
+                                  FilePickerResult? result =
+                                      await appuser.pickImage();
+                                  if (result != null) {
+                                    PlatformFile file = result.files.first;
+                                    String? imageUrl =
+                                        await uploadImageToStorage(file);
+                                    print('Image uploaded to: $imageUrl');
+
+                                    var doc;
+                                    var query = await FirebaseFirestore.instance
+                                        .collection('team')
+                                        .where("name",
+                                            isEqualTo: appuser.teamName)
+                                        .get();
+
+                                    for (var x in query.docs) {
+                                      doc = x.id;
+                                    }
+
+                                    try {
+                                      FirebaseFirestore db =
+                                          FirebaseFirestore.instance;
+                                      DocumentReference docRef =
+                                          db.collection('team').doc(doc);
+
+                                      await docRef.update({
+                                        'image': imageUrl,
+                                      });
+                                    } catch (error) {
+                                      print(error);
+                                    }
+                                  }
+                                }
+                              },
+                              child: FittedBox(
+                                child: Text(
+                                  "Adicionar brasão",
+                                  style: TextStyle(
+                                    fontFamily: 'Lato',
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                ),
+                              ),
+                            )),
                           ),
                         ],
                       ),

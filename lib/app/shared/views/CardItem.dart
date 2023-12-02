@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 class CardItem extends StatelessWidget {
@@ -29,8 +30,8 @@ class CardItem extends StatelessWidget {
           child: SizedBox(
             width: sizeWidth / 1.8,
             child: ListTile(
-              leading: Image.asset(
-                image,
+              leading: CachedNetworkImage(
+                imageUrl: image,
                 height: 100,
                 width: sizeWidth / 8.8,
               ),
