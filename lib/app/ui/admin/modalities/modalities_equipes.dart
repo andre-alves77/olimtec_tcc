@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
-import 'package:olimtec_tcc/app/features/user_role/leader/view/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_team_view.dart';
 
