@@ -14,7 +14,7 @@ enum GameState {
 
 class Game {
   int id;
-  int nextGame;
+  int? nextGame;
   Team? team1;
   Team? team2;
   bool isfinal;
@@ -34,7 +34,7 @@ class Game {
     this.time,
     required this.date,
     required this.id,
-    required this.nextGame,
+    this.nextGame,
     this.team1,
     this.team2,
     required this.round,

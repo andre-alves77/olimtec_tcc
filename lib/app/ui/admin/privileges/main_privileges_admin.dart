@@ -2,10 +2,10 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/Privilege_item.dart';
-import 'package:olimtec_tcc/app/features/user_role/leader/view/leader_teams_privileges.dart';
-import 'package:olimtec_tcc/app/features/user_role/organization/view/organization_teams_privileges%20copy.dart';
-import 'package:olimtec_tcc/app/features/user_role/leader/view/privilege_team_page.dart';
-import 'package:olimtec_tcc/app/features/user_role/organization/view/privilge_organization_page.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/leader_teams_privileges.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/organization/view/organization_teams_privileges%20copy.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/privilege_team_page.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/organization/view/privilge_organization_page.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainPrivilegeAdmin extends StatefulWidget {

@@ -98,20 +98,19 @@ class PerfilUser extends ConsumerWidget {
                           onPressed: () async {
                             ImagePicker? _picker;
                             dynamic file;
-                            dynamic ob;
                             if (kIsWeb) {
                               FilePickerResult? result =
-                                  await appuser?.pickImage();
+                                  await appuser.pickImage();
                               if (result != null) {
                                 PlatformFile file = result.files.first;
                                 String? imageUrl =
-                                    await appuser?.uploadImageToStorage(file);
+                                    await appuser.uploadImageToStorage(file);
                                 print('Image uploaded to: $imageUrl');
 
                                 var doc;
                                 var query = await FirebaseFirestore.instance
                                     .collection('users')
-                                    .where("id", isEqualTo: appuser?.id)
+                                    .where("id", isEqualTo: appuser.id)
                                     .get();
 
                                 for (var x in query.docs) {
@@ -134,7 +133,7 @@ class PerfilUser extends ConsumerWidget {
                             } else {
                               //MOBILE
                               _picker = ImagePicker();
-                              file = await _picker?.pickImage(
+                              file = await _picker.pickImage(
                                   source: ImageSource.gallery);
                               if (file == null) return;
                               print('${file.path}');
@@ -184,10 +183,10 @@ class PerfilUser extends ConsumerWidget {
                               }
 
                               var doc;
-                              print(appuser?.id);
+                              print(appuser.id);
                               var query = await FirebaseFirestore.instance
                                   .collection('users')
-                                  .where("id", isEqualTo: appuser?.id)
+                                  .where("id", isEqualTo: appuser.id)
                                   .get();
 
                               for (var x in query.docs) {
@@ -233,10 +232,10 @@ class PerfilUser extends ConsumerWidget {
                             FirebaseFirestore db = FirebaseFirestore.instance;
 
                             var doc;
-                            print(appuser?.id);
+                            print(appuser.id);
                             var query = await FirebaseFirestore.instance
                                 .collection('users')
-                                .where("id", isEqualTo: appuser?.id)
+                                .where("id", isEqualTo: appuser.id)
                                 .get();
 
                             for (var x in query.docs) {
@@ -316,7 +315,7 @@ class PerfilUser extends ConsumerWidget {
                               child: Container(
                                 width: sizeWidth / 2,
                                 child: TextFormField(
-                                  initialValue: appuser?.name,
+                                  initialValue: appuser.name,
                                   autofocus: true,
                                   readOnly: true,
                                   decoration: InputDecoration(

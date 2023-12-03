@@ -1,5 +1,7 @@
-
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_locals.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_modality_component.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_teams.dart';
 import 'dart:math';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
@@ -36,8 +38,7 @@ class ChampioshipPageAdmin extends StatelessWidget {
                 child: FittedBox(
                   child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(
-                            context, InsertModalitiesAdmin.route);
+                        Navigator.pushNamed(context, AddModalityAdmin.route);
                       },
                       child: OptionConfig(
                           icone: Icons.sports, text1: 'DEFINIR MODALIDADES')),
@@ -47,8 +48,29 @@ class ChampioshipPageAdmin extends StatelessWidget {
             FittedBox(
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: OptionConfig(
-                    icone: Icons.shield_sharp, text1: 'ADICIONAR TIMES'),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, AddTeamsAdmin.route);
+                  },
+                  child: OptionConfig(
+                      icone: Icons.shield_sharp, text1: 'ADICIONAR TIMES'),
+                ),
+              ),
+            ),
+            FittedBox(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FittedBox(
+                  child: GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, AddLocalsAdmin.route);
+                      },
+                      child: OptionConfig(
+                        icone: Icons.map_outlined,
+                        text1: 'DEFINIR LOCAIS',
+                        text2: "QUADRA, MULTIMIDIA  E ETC",
+                      )),
+                ),
               ),
             ),
             const Padding(
