@@ -56,8 +56,13 @@ class _AddPlayerTeamState extends State<AddPlayerTeam> {
 
   @override
   Widget build(BuildContext context) {
+    
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    final usersRef = FirebaseFirestore.instance.collection('users');
+    final teamRef = FirebaseFirestore.instance.collection('team');
+    final usersRef = FirebaseFirestore.instance
+        .collection('users')
+        .where('teamName', isEqualTo: "1EAA")
+        .snapshots();
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -73,7 +78,7 @@ class _AddPlayerTeamState extends State<AddPlayerTeam> {
       ),
       body: SafeArea(
         child: StreamBuilder<QuerySnapshot>(
-            stream: usersRef.snapshots(),
+            stream: usersRef,
             builder: (context, snapshot) {
               if (!snapshot.hasData) {
                 return Column(

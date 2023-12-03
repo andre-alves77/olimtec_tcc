@@ -17,6 +17,7 @@ class MainTeam extends StatefulWidget {
 class _MainTeamState extends State<MainTeam> {
   @override
   Widget build(BuildContext context) {
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -38,7 +39,8 @@ class _MainTeamState extends State<MainTeam> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, ModalityTeam.route);
+                  Navigator.pushNamed(context, ModalityTeam.route,
+                      arguments: arg);
                 },
                 child: OptionConfig(
                     icone: Icons.person_add,
