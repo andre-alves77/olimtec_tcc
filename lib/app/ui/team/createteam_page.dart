@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -73,7 +74,7 @@ class CreateTeam extends ConsumerWidget {
                       ),
                     ),
                     Text(
-                      " 3ºDSB",
+                      " 3DSB",
                       style: TextStyle(
                           fontFamily: 'Lato',
                           fontSize: 28,
@@ -213,7 +214,88 @@ class CreateTeam extends ConsumerWidget {
                                       print(error);
                                     }
                                   }
+                                } else {
+                                  //MOBILE
+                                  _picker = ImagePicker();
+                                  file = await _picker.pickImage(
+                                      source: ImageSource.gallery);
+                                  if (file == null) return;
+                                  print('${file.path}');
+
+                                  //Import dart:core
+                                  String uniqueFileName = DateTime.now()
+                                      .millisecondsSinceEpoch
+                                      .toString();
+
+                                  /*Step 2: Upload to Firebase storage*/
+                                  //Install firebase_storage
+                                  //Import the library
+
+                                  //Get a reference to storage root
+                                  Reference referenceRoot =
+                                      FirebaseStorage.instance.ref();
+                                  Reference referenceDirImages =
+                                      referenceRoot.child('teamImage');
+
+                                  //Create a reference for the image to be stored
+                                  Reference referenceImageToUpload =
+                                      referenceDirImages.child(uniqueFileName);
+
+                                  //Handle errors/success
+                                  try {
+                                    //Store the file
+                                    await referenceImageToUpload
+                                        .putFile(File(file!.path));
+                                    //Success: get the download URL
+                                    imageUrl = await referenceImageToUpload
+                                        .getDownloadURL();
+                                  } catch (error) {
+                                    //Some error occurred
+                                    print(error);
+                                  }
+
+                                  File _file = File(file!.path);
+
+                                  try {
+                                    await referenceImageToUpload.putFile(
+                                        _file,
+                                        SettableMetadata(
+                                          contentType: "image/jpeg",
+                                        ));
+                                  } catch (error) {
+                                    print(error);
+                                  }
+
+                                  var doc;
+                                  print(appuser.id);
+                                  var query = await FirebaseFirestore.instance
+                                      .collection('team')
+                                      .where("name",
+                                          isEqualTo: appuser.teamName)
+                                      .get();
+
+                                  for (var x in query.docs) {
+                                    doc = x.id;
+                                  }
+
+                                  try {
+                                    FirebaseFirestore db =
+                                        FirebaseFirestore.instance;
+                                    DocumentReference docRef =
+                                        db.collection('team').doc(doc);
+
+                                    await docRef.update({
+                                      'image': imageUrl,
+                                    });
+                                  } catch (error) {
+                                    print(error);
+                                  }
                                 }
+                                final snackBar = SnackBar(
+                                  content: Text('Espere um instante'),
+                                );
+                                ScaffoldMessenger.of(context)
+                                    .showSnackBar(snackBar);
                               },
                               child: FittedBox(
                                 child: Text(
@@ -255,7 +337,9 @@ class CreateTeam extends ConsumerWidget {
                         ),
                       ),
                     ),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
                   ),
                 ),
               ),
