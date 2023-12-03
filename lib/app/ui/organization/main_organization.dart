@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
+import 'package:olimtec_tcc/app/ui/organization/organization_games.dart';
+import 'package:olimtec_tcc/app/ui/organization/organization_modalities.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainOrgnization extends StatefulWidget {
@@ -36,18 +38,32 @@ class _MainOrgnizationState extends State<MainOrgnization> {
             children: [
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, AddGameOrganization.route);
+                  Navigator.pushNamed(context, GamesOrganization.route);
                 },
                 child: OptionConfig(
                     icone: Icons.add,
                     text1: "ADICIONAR JOGOS ",
                     text2: "(CRONOGRAMA DO CHAVEAMENTO)"),
               ),
-              Padding(padding: EdgeInsets.all(15)),
-              OptionConfig(
-                  icone: Icons.mode,
-                  text1: "MODIFICAR REGULAMENTO ",
-                  text2: "(DE CADA MODALIDADE)"),            
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, ModalitiesOrganization.route);
+                },
+                child: OptionConfig(
+                    icone: Icons.play_circle_filled,
+                    text1: "COMEÇAR JOGOS",
+                    ),
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushNamed(context, MainOrgnization.route);
+                },
+                child: OptionConfig(
+                    icone: Icons.mode,
+                    text1: "MODIFICAR REGULAMENTO",
+                    text2: "(DE CADA MODALIDADE)"),
+              ),
+                      
             ],
           ),
         ),

@@ -38,7 +38,7 @@ logic() {
     name: "BASQUETE",
     icon: Icons.sports_basketball,
   );
-  modality.generateBracket(teams);
+  //modality.generateBracket(teams);
 }
 
 

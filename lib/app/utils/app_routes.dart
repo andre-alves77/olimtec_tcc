@@ -55,4 +55,5 @@ class AppRoute {
   static const ORGANIZATIONTEAMSPRIVILEGES_ADMIN =
       '/organization-teams-privileges-admin';
   static const SPLASH_SCREEN = 'splash_screen';
+  static const MODALITIES_ORGANIZATION = '/modalities-organization';
 }

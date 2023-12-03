@@ -3,13 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
+import 'package:olimtec_tcc/app/ui/organization/modality_page_organization.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 
 
-class ModalitiesAdmin extends StatelessWidget {
-  const ModalitiesAdmin({super.key});
+class ModalitiesOrganization extends StatelessWidget {
+  const ModalitiesOrganization({super.key});
 
-  static String route = "/modalities-admin";
+  static String route = "/modalities-organization";
 
   @override
   Widget build(BuildContext context) {
@@ -81,8 +82,8 @@ class ModalitiesAdmin extends StatelessWidget {
                               document.data() as Map<String, dynamic>;
                           if (data['category'] == "quadra") {
                             return ModalityItemCard(
-                              routesArg: data['name'],
-                              routes: ModalityAdmin.route,
+                               routesArg: data['name'],
+                              routes: ModalityOrganization.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
                             );
@@ -115,7 +116,7 @@ class ModalitiesAdmin extends StatelessWidget {
                           if (data['category'] == "dança") {
                             return ModalityItemCard(
                                routesArg: data['name'],
-                              routes: ModalityAdmin.route,
+                              routes: ModalityOrganization.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
                             );
@@ -148,7 +149,7 @@ class ModalitiesAdmin extends StatelessWidget {
                           if (data['category'] == "jogos de mesa") {
                             return ModalityItemCard(
                                routesArg: data['name'],
-                              routes: ModalityAdmin.route,
+                              routes: ModalityOrganization.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
                             );
@@ -181,7 +182,7 @@ class ModalitiesAdmin extends StatelessWidget {
                           if (data['category'] == "e-sports") {
                             return ModalityItemCard(
                                routesArg: data['name'],
-                              routes: ModalityAdmin.route,
+                              routes: ModalityOrganization.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
                             );
@@ -213,8 +214,8 @@ class ModalitiesAdmin extends StatelessWidget {
                               document.data() as Map<String, dynamic>;
                           if (data['category'] == "outros") {
                             return ModalityItemCard(
-                              routesArg: data['name'],
-                              routes: ModalityAdmin.route,
+                               routesArg: data['name'],
+                              routes: ModalityOrganization.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
                             );

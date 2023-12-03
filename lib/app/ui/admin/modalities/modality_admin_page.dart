@@ -1,4 +1,6 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_games.dart';
@@ -9,9 +11,15 @@ class ModalityAdmin extends StatelessWidget {
   const ModalityAdmin({super.key});
 
   static String route = "/modality-admin";
+  
 
   @override
   Widget build(BuildContext context) {
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
+    final gamesRef = FirebaseFirestore.instance
+        .collection("modality")
+        .where('name', isEqualTo: arg).get().then((value) => value);
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -19,7 +27,7 @@ class ModalityAdmin extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              "BASQUETE MASCULINO",
+              "$arg",
               style: TextStyle(
                 fontFamily: 'Lato',
                 color: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -41,7 +49,7 @@ class ModalityAdmin extends StatelessWidget {
                 children: [
                   GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, TeamAdmin.route);
+                      Navigator.pushNamed(context, TeamAdmin.route,  arguments: arg);
                     },
                     child: OptionConfig(
                         icone: Icons.shield_outlined,

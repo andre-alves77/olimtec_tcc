@@ -91,6 +91,7 @@ class ModalitiesUser extends StatelessWidget {
                               document.data() as Map<String, dynamic>;
                           if (data['category'] == "quadra") {
                             return ModalityItemCard(
+                              routesArg: data['name'],
                               routes: ModalityUser.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
@@ -123,6 +124,7 @@ class ModalitiesUser extends StatelessWidget {
                               document.data() as Map<String, dynamic>;
                           if (data['category'] == "dança") {
                             return ModalityItemCard(
+                               routesArg: data['name'],
                               routes: ModalityUser.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
@@ -155,6 +157,7 @@ class ModalitiesUser extends StatelessWidget {
                               document.data() as Map<String, dynamic>;
                           if (data['category'] == "jogos de mesa") {
                             return ModalityItemCard(
+                               routesArg: data['name'],
                               routes: ModalityUser.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
@@ -187,6 +190,7 @@ class ModalitiesUser extends StatelessWidget {
                               document.data() as Map<String, dynamic>;
                           if (data['category'] == "e-sports") {
                             return ModalityItemCard(
+                               routesArg: data['name'],
                               routes: ModalityUser.route,
                               modalityName: data['name'],
                               iconName: data['icon'],
@@ -219,6 +223,7 @@ class ModalitiesUser extends StatelessWidget {
                               document.data() as Map<String, dynamic>;
                           if (data['category'] == "outros") {
                             return ModalityItemCard(
+                               routesArg: data['name'],
                               routes: ModalityUser.route,
                               modalityName: data['name'],
                               iconName: data['icon'],

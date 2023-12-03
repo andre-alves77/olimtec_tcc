@@ -233,13 +233,13 @@ class _DetailsGameOrganizationState extends State<DetailsGameOrganization> {
                   ),
                   ListView(children: [
                     GestureDetector(
-                      child: StartGame(game: gametest),
+                      //child: StartGame(game: gametest),
                       onTap: () {
                         Navigator.pushNamed(context, CronogramaUser.route);
                       },
                     ),
                     GestureDetector(
-                      child: StartGame(game: gametest),
+                      //child: StartGame(game: gametest),
                       onTap: () {
                         Navigator.pushNamed(context, CronogramaUser.route);
                       },

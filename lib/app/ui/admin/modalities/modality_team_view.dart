@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'dart:math';
 
@@ -35,11 +36,17 @@ class _TeamViewAdminState extends State<TeamViewAdmin> {
 
   @override
   Widget build(BuildContext context) {
+    final teamRef = FirebaseFirestore.instance.collection('team');
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
+    final gamesRef = FirebaseFirestore.instance
+        .collection("modality")
+        .where('name', isEqualTo: arg);
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+
     return Scaffold(
         appBar: AppBar(
-          title: const Text(
-            "EQUIPE - BASQUETE MASC",
+          title:  Text(
+            "$arg",
             style: TextStyle(
               fontFamily: 'Lato',
               fontSize: 24,
@@ -58,7 +65,7 @@ class _TeamViewAdminState extends State<TeamViewAdmin> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        '2ºDSB',
+                        arg ?? 'TIME',
                         style: TextStyle(
                           fontFamily: 'Lato',
                           fontSize: 40,
@@ -122,19 +129,37 @@ class _TeamViewAdminState extends State<TeamViewAdmin> {
                   height: 400,
                   child: ListView(
                     children: [
-                      _CardJogador(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador(),
+                      StreamBuilder<QuerySnapshot>(
+                    stream: teamRef.snapshots(),
+                    builder: (context, snapshot) {
+                      if (!snapshot.hasData) {
+                        return Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            const Center(
+                              child: CircularProgressIndicator(),
+                            ),
+                          ],
+                        );
+                      } else {
+                        return ListView(
+                          padding: EdgeInsets.zero,
+                          shrinkWrap: true,
+                          scrollDirection: Axis.vertical,
+                          children: snapshot.data!.docs
+                              .map((DocumentSnapshot document) {
+                            Map<String, dynamic> data =
+                                document.data() as Map<String, dynamic>;
+                            return Column(
+                              children: [
+                                Padding(padding: EdgeInsetsDirectional.all(8)),
+                              ],
+                            );
+                          }).toList(),
+                        );
+                      }
+                    },
+                  ),
                       Divider(
                           height: 2,
                           thickness: 1.5,

@@ -1,7 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/models/game.dart';
+import 'package:olimtec_tcc/app/features/championship/models/game.dart';
+
 
 class StartGame extends StatelessWidget {
   String horario = 'HORÁRIO:';
@@ -49,7 +50,7 @@ class StartGame extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
                           Text(
-                            "$horario  " + game.time,
+                            "$horario  " + game.time!,
                             style: TextStyle(
                               fontFamily: 'Lato',
                               fontSize: 22,
@@ -85,7 +86,7 @@ class StartGame extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(50),
                             child: Image.asset(
-                              game.team1.image,
+                              game.team1!.image,
                               width: sizeWidth / 8,
                               height: 60,
                               fit: BoxFit.scaleDown,
@@ -94,7 +95,7 @@ class StartGame extends StatelessWidget {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(7, 0, 5, 0),
                             child: Text(
-                              game.team1.name,
+                              game.team1!.name,
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 22,
@@ -113,7 +114,7 @@ class StartGame extends StatelessWidget {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(7, 0, 5, 0),
                             child: Text(
-                              game.team2.name,
+                              game.team2!.name,
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 22,
@@ -124,7 +125,7 @@ class StartGame extends StatelessWidget {
                           ClipRRect(
                             borderRadius: BorderRadius.circular(50),
                             child: Image.asset(
-                              game.team2.image,
+                              game.team2!.image,
                               width: sizeWidth / 8,
                               height: 60,
                               fit: BoxFit.scaleDown,
