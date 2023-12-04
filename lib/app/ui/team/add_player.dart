@@ -56,9 +56,7 @@ class _AddPlayerTeamState extends State<AddPlayerTeam> {
 
   @override
   Widget build(BuildContext context) {
-    
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    final teamRef = FirebaseFirestore.instance.collection('team');
     final usersRef = FirebaseFirestore.instance
         .collection('users')
         .where('teamName', isEqualTo: "1EAA")

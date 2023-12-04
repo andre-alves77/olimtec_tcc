@@ -23,6 +23,7 @@ class CreateTeam extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
     final appuser = ref.watch(appUserStream).when(data: (data) {
       return data;
     }, error: (error, stackTrace) {
@@ -74,7 +75,7 @@ class CreateTeam extends ConsumerWidget {
                       ),
                     ),
                     Text(
-                      " 3DSB",
+                      " $arg",
                       style: TextStyle(
                           fontFamily: 'Lato',
                           fontSize: 28,

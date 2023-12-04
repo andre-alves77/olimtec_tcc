@@ -42,7 +42,8 @@ class SettingsPage extends ConsumerWidget {
               title: 'Representante',
               icon: Icons.people_alt,
               function: () {
-                Navigator.pushNamed(context, MainTeam.route);
+                Navigator.pushNamed(context, MainTeam.route,
+                    arguments: user.teamName);
               }),
         );
       }

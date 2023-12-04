@@ -50,7 +50,7 @@ class _MainTeamState extends State<MainTeam> {
               Padding(padding: EdgeInsets.all(15)),
               GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, CreateTeam.route);
+                    Navigator.pushNamed(context, CreateTeam.route, arguments: arg);
                   },
                   child: OptionConfig(
                       icone: Icons.settings,

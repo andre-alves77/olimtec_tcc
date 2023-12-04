@@ -4,15 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/ui/team/team_players.dart';
 
 class ModalityItem extends StatelessWidget {
-  const ModalityItem(this.icone, this.name, {super.key});
+  const ModalityItem({super.key, required this.routes, required this.modalityName, required this.iconName, required this.routesArg});
 
-  final IconData icone;
-  final String name;
+  final String routes;
+  final String modalityName;
+  final String iconName;
+  final String routesArg;
+  
 
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
     return AspectRatio(
       aspectRatio: 4.5,
       child: GestureDetector(
@@ -27,7 +30,7 @@ class ModalityItem extends StatelessWidget {
               width: sizeWidth,
               child: ListTile(
                 leading: Icon(
-                  icone,
+                  Icons.sports_basketball,
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                   size: sizeWidth / 9,
                 ),
@@ -35,7 +38,7 @@ class ModalityItem extends StatelessWidget {
                   alignment: Alignment.centerLeft,
                   fit: BoxFit.scaleDown,
                   child: Text(
-                    name,
+                    modalityName,
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       color: Theme.of(context).colorScheme.onPrimaryContainer,
@@ -48,7 +51,7 @@ class ModalityItem extends StatelessWidget {
           ),
         ),
         onTap: () {
-          Navigator.pushNamed(context, PlayerTeam.route);
+          Navigator.pushNamed(context, routes, arguments: routesArg);
         },
       ),
     );

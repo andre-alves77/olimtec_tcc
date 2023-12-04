@@ -1,53 +1,47 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+import 'package:olimtec_tcc/app/firebase/team.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
+import 'package:olimtec_tcc/app/ui/team/shared/card_jogador.dart';
 
-class PlayerTeam extends StatefulWidget {
+class PlayerTeam extends ConsumerWidget {
   const PlayerTeam({super.key});
 
   static String route = "/player-team";
 
   @override
-  State<PlayerTeam> createState() => _PlayerTeamState();
-}
-
-class _PlayerTeamState extends State<PlayerTeam> {
-  _CardJogador2() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 8),
-      child: ListTile(
-        leading: ClipRRect(
-          borderRadius: BorderRadius.circular(50),
-          child: Image.asset(
-            'assets/images/LOGO_USUARIO.png',
-            fit: BoxFit.cover,
-          ),
-        ),
-        title: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Fulano de tal',
-              style: TextStyle(
-                fontSize: 20,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        trailing: Icon(
-          Icons.remove,
-          color: Theme.of(context).colorScheme.error,
-        ),
-      ),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
+    final appuser = ref.watch(appUserStream).when(data: (data) {
+      return data;
+    }, error: (error, stackTrace) {
+      CustomSnackBar(
+          message: "Um erro aconteceu. Tente novamente",
+          ref: ref,
+          type: ScaffoldAlert.error);
+      return null;
+    }, loading: () {
+      return null;
+    });
+
+    final teamImage =
+        ref.watch(teamNameStream(appuser!.teamName)).whenOrNull(data: (data) {
+      if (data != null) return data;
+      return "minha bola";
+    });
+
+    final usersRef = FirebaseFirestore.instance
+        .collection('users')
+        .where('teamName', isEqualTo: appuser.teamName)
+        .snapshots();
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.primaryContainer,
@@ -77,7 +71,7 @@ class _PlayerTeamState extends State<PlayerTeam> {
                     mainAxisSize: MainAxisSize.max,
                     children: [
                       Text(
-                        '2ºDSB',
+                        '$arg',
                         style: TextStyle(
                           fontFamily: 'Lato',
                           fontSize: 40,
@@ -96,21 +90,16 @@ class _PlayerTeamState extends State<PlayerTeam> {
                       alignment: AlignmentDirectional(0, 0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(50),
-                        child: Image.asset(
-                          'assets/images/LOGO_2DSB_EXAMPLE.png',
-                          width: 170,
-                          height: 170,
-                          fit: BoxFit.fitHeight,
-                        ),
+                        child: CachedNetworkImage(
+                            imageUrl: teamImage!,
+                            width: 170,
+                            height: 170,
+                            fit: BoxFit.fitHeight,
+                            placeholder: (context, url) =>
+                                Center(child: CircularProgressIndicator()),
+                            errorWidget: (context, url, error) =>
+                                Icon(Icons.shield, size: 200)),
                       ),
-                    ),
-                  ),
-                  Text(
-                    'DRAGÕES DA ALVORADA',
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 22,
-                      fontWeight: FontWeight.bold,
                     ),
                   ),
                   Text(
@@ -158,76 +147,47 @@ class _PlayerTeamState extends State<PlayerTeam> {
                   margin: EdgeInsets.only(bottom: 10),
                   constraints: BoxConstraints(maxWidth: sizeWidth),
                   height: 400,
-                  child: ListView(
-                    children: [
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      _CardJogador2(),
-                      Divider(
-                          height: 2,
-                          thickness: 1.5,
-                          color:
-                              Theme.of(context).colorScheme.onPrimaryContainer),
-                      Padding(
-                        padding: EdgeInsetsDirectional.fromSTEB(5, 0, 5, 0),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                Navigator.pushNamed(
-                                    context, AddPlayerTeam.route);
-                              },
-                              child: Container(
-                                width: sizeWidth / 1.2,
-                                height: 70,
-                                child: Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      5, 0, 5, 0),
-                                  child: Row(
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10, 0, 0, 0),
-                                        child: Icon(
-                                          Icons.add,
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .onSecondaryContainer,
-                                          size: 50,
-                                        ),
-                                      ),
-                                      FittedBox(
-                                        child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    10, 0, 0, 0),
-                                            child: Text(
-                                              "ADICIONAR JOGADOR",
-                                              style: TextStyle(
-                                                fontFamily: 'Lato',
-                                                color: Theme.of(context)
-                                                    .colorScheme
-                                                    .onSecondaryContainer,
-                                                fontSize: 20,
-                                                fontWeight: FontWeight.bold,
-                                              ),
-                                            )),
-                                      )
-                                    ],
-                                  ),
-                                ),
+                  child: StreamBuilder<QuerySnapshot>(
+                      stream: usersRef,
+                      builder: (context, snapshot) {
+                        if (!snapshot.hasData) {
+                          return Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              const Center(
+                                child: CircularProgressIndicator(),
                               ),
-                            )
-                          ],
-                        ),
-                      )
-                    ],
-                  ),
+                            ],
+                          );
+                        } else {
+                          return ListView(
+                            padding: EdgeInsets.zero,
+                            shrinkWrap: true,
+                            scrollDirection: Axis.vertical,
+                            children: snapshot.data!.docs
+                                .map((DocumentSnapshot document) {
+                              Map<String, dynamic> data =
+                                  document.data() as Map<String, dynamic>;
+                              return Column(
+                                children: [
+                                  CardJogador(
+                                    text: data['name'],
+                                    image: data['avatar'],
+                                  ),
+                                  Divider(
+                                      height: 2,
+                                      thickness: 1.5,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer),
+                                  Padding(
+                                      padding: EdgeInsetsDirectional.all(8)),
+                                ],
+                              );
+                            }).toList(),
+                          );
+                        }
+                      }),
                 ),
               ),
             ])));
