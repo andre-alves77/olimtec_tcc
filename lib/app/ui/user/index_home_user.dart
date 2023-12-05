@@ -38,7 +38,6 @@ class IndexHomeUser extends ConsumerWidget {
           child: IndexedStack(
             index: bottomBarStore,
             children: [
-              const GamesScreen(),
               const HomeUser(),
               const ModalitiesUser(),
               const AoVivoUser(),

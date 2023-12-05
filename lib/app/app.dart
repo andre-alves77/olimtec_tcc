@@ -27,7 +27,7 @@ import 'package:olimtec_tcc/app/features/admin/privileges/organization/view/orga
 import 'package:olimtec_tcc/app/ui/admin/privileges/addmodality/privilege_organization_addmodality.dart';
 import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/privilege_team_page.dart';
 import 'package:olimtec_tcc/app/features/admin/privileges/organization/view/privilge_organization_page.dart';
-import 'package:olimtec_tcc/app/ui/champioship_page.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/champioship_page.dart';
 import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
