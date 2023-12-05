@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/ui/team/shared/modality_item.dart';
-import 'package:olimtec_tcc/app/ui/team/team_players.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/team_players.dart';
 
 class ModalityTeam extends StatefulWidget {
   const ModalityTeam({super.key});

@@ -42,6 +42,11 @@ class PlayerTeam extends ConsumerWidget {
         .where('teamName', isEqualTo: appuser.teamName)
         .snapshots();
 
+    final teamRef = FirebaseFirestore.instance
+        .collection('team')
+        .where('team', isEqualTo: appuser.teamName)
+        .snapshots();
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Theme.of(context).colorScheme.primaryContainer,
