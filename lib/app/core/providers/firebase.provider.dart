@@ -11,3 +11,4 @@ final firebaseFirestoreProvider =
 
 final firebaseStorageProvider =
     Provider<FirebaseStorage>((ref) => FirebaseStorage.instance);
+

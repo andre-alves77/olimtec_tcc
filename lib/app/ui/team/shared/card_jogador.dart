@@ -8,8 +8,12 @@ import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 
 class CardJogador extends ConsumerWidget {
-  const CardJogador({super.key, required this.text, required this.image});
-
+  const CardJogador(
+      {super.key,
+      required this.function,
+      required this.text,
+      required this.image});
+  final Function() function;
   final String text;
   final String image;
 
@@ -62,7 +66,7 @@ class CardJogador extends ConsumerWidget {
           ],
         ),
         trailing: IconButton(
-            onPressed: () {},
+            onPressed: function,
             icon: Icon(
               Icons.add,
             )),

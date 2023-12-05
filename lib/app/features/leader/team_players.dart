@@ -6,6 +6,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+import 'package:olimtec_tcc/app/features/championship/repository/team.service.dart';
+import 'package:olimtec_tcc/app/features/leader/modality_team.dart';
 import 'package:olimtec_tcc/app/firebase/team.dart';
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
 import 'package:olimtec_tcc/app/ui/team/shared/card_jogador.dart';
@@ -34,17 +36,17 @@ class PlayerTeam extends ConsumerWidget {
     final teamImage =
         ref.watch(teamNameStream(appuser!.teamName)).whenOrNull(data: (data) {
       if (data != null) return data;
-      return "minha bola";
+      return "Ocorreu um erro";
     });
+
+    final teamref = ref.watch(getDocIdTeamProvider(appuser.teamName));
+
+    final modalitiesTeam = ref.watch(getModalityTeam(teamref.value!));
+    
 
     final usersRef = FirebaseFirestore.instance
         .collection('users')
         .where('teamName', isEqualTo: appuser.teamName)
-        .snapshots();
-
-    final teamRef = FirebaseFirestore.instance
-        .collection('team')
-        .where('team', isEqualTo: appuser.teamName)
         .snapshots();
 
     return Scaffold(
@@ -173,9 +175,19 @@ class PlayerTeam extends ConsumerWidget {
                                 .map((DocumentSnapshot document) {
                               Map<String, dynamic> data =
                                   document.data() as Map<String, dynamic>;
+
                               return Column(
                                 children: [
                                   CardJogador(
+                                    function: () async {
+                                      print(teamref);
+                                      // await FirebaseFirestore.instance
+                                      //     .collection("team")
+                                      //     .doc(teamref.value)
+                                      //     .collection("modalityTeam")
+                                      //     .doc()
+                                      //     .set();
+                                    },
                                     text: data['name'],
                                     image: data['avatar'],
                                   ),

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
-import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/createteam_page.dart';
-import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/modality_team.dart';
+import 'package:olimtec_tcc/app/features/leader/createteam_page.dart';
+import 'package:olimtec_tcc/app/features/leader/modality_team.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainTeam extends StatefulWidget {
@@ -50,7 +50,8 @@ class _MainTeamState extends State<MainTeam> {
               Padding(padding: EdgeInsets.all(15)),
               GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, CreateTeam.route, arguments: arg);
+                    Navigator.pushNamed(context, CreateTeam.route,
+                        arguments: arg);
                   },
                   child: OptionConfig(
                       icone: Icons.settings,
