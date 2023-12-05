@@ -2,7 +2,7 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_teams.dart';
-import 'package:olimtec_tcc/app/ui/champioship_page.dart';
+import 'package:olimtec_tcc/app/features/championship/views/initial_config/champioship_page.dart';
 
 class StartChampionshipAdmin extends StatelessWidget {
   const StartChampionshipAdmin({super.key});
