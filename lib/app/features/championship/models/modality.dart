@@ -38,7 +38,7 @@ class Modality {
 
     if (teams.length % 2 != 0) {
       teams.add(
-        Team(name: 'Passou', image: "assets/images/PG13.png", players: null),
+        Team(name: 'Passou', image: "assets/images/PG13.png", playersList: null),
       );
     }
     teams.shuffle();

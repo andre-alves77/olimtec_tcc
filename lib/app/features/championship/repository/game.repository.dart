@@ -13,12 +13,15 @@ class GamesRepository {
     try{
 var query = await FirebaseFirestore.instance.collection('game').get();
 
-  query.docs.map((e) => _gamesIdList.add(e.id));
+  
+  query.docs.forEach((element) {
+     _gamesIdList.add(element.id);
+  });
 
     }catch (e){
       throw CustomSnackBar(message: "error", ref: ref);
     }
- 
+ print(_gamesIdList);
   return _gamesIdList;
   }
 

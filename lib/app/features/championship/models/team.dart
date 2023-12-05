@@ -5,19 +5,19 @@ import 'dart:convert';
 class Team {
   String name;
   String image;
-  List<String>? players = null;
+  List<String>? playersList = null;
 
   Team({
     required this.name,
     required this.image,
-    List<String>? players,
+    List<String>? playersList,
   });
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
       'image': image,
-      'players': players,
+      'playersList': playersList,
     };
   }
 
@@ -25,14 +25,11 @@ class Team {
     return Team(
       name: map['name'] as String,
       image: map['image'] as String,
-      players: map['players'] != null
-          ? List<String>.from((map['players'] as List<String>))
-          : null,
+      playersList: map['playersList'] != null ? List<String>.from((map['playersList'] as List<String>)) : null,
     );
   }
 
   String toJson() => json.encode(toMap());
 
-  factory Team.fromJson(String source) =>
-      Team.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory Team.fromJson(String source) => Team.fromMap(json.decode(source) as Map<String, dynamic>);
 }
