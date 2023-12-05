@@ -43,10 +43,10 @@ import 'package:olimtec_tcc/app/ui/organization/organization_modalities.dart';
 import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
 
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
-import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/createteam_page.dart';
 import 'package:olimtec_tcc/app/ui/team/main_team.dart';
-import 'package:olimtec_tcc/app/ui/team/modality_team.dart';
-import 'package:olimtec_tcc/app/ui/team/team_players.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/modality_team.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/team_players.dart';
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/features/settings/about_us_page.dart';
 import 'package:olimtec_tcc/app/ui/user/index_home_user.dart';

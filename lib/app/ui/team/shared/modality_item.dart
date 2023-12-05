@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/ui/team/team_players.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/team_players.dart';
 
 class ModalityItem extends StatelessWidget {
   const ModalityItem({super.key, required this.routes, required this.modalityName, required this.iconName, required this.routesArg});

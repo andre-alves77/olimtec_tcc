@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
-import 'package:olimtec_tcc/app/ui/team/createteam_page.dart';
-import 'package:olimtec_tcc/app/ui/team/modality_team.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/createteam_page.dart';
+import 'package:olimtec_tcc/app/features/admin/privileges/leader/view/modality_team.dart';
 import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainTeam extends StatefulWidget {
