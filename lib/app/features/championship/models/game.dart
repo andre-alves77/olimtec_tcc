@@ -15,8 +15,8 @@ enum GameState {
 class Game {
   int id;
   int? nextGame;
-  Team? team1;
-  Team? team2;
+  String? team1;
+  String? team2;
   int teamPts1 = 0;
   int teamSet1 = 0;
   int teamPts2 = 0;
@@ -48,8 +48,9 @@ this.teamSet2 = 0,
     required this.round,
     required this.modalidade,
     this.isfinal = false,
-    this.gameState = "inProgress",
+    this.gameState = "pendent",
   });
+
 
 
 
@@ -57,8 +58,8 @@ this.teamSet2 = 0,
     return <String, dynamic>{
       'id': id,
       'nextGame': nextGame,
-      'team1': team1?.toMap(),
-      'team2': team2?.toMap(),
+      'team1': team1,
+      'team2': team2,
       'teamPts1': teamPts1,
       'teamSet1': teamSet1,
       'teamPts2': teamPts2,
@@ -79,8 +80,8 @@ this.teamSet2 = 0,
     return Game(
       id: map['id'] as int,
       nextGame: map['nextGame'] != null ? map['nextGame'] as int : null,
-      team1: map['team1'] != null ? Team.fromMap(map['team1'] as Map<String,dynamic>) : null,
-      team2: map['team2'] != null ? Team.fromMap(map['team2'] as Map<String,dynamic>) : null,
+      team1: map['team1'] != null ? map['team1'] as String : null,
+      team2: map['team2'] != null ? map['team2'] as String : null,
       teamPts1: map['teamPts1'] as int,
       teamSet1: map['teamSet1'] as int,
       teamPts2: map['teamPts2'] as int,

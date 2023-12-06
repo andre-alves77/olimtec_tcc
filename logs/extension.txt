@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.78.0
 Flutter extension: 3.78.0 (not activated)
@@ -221,9 +223,91 @@ Flutter (3.13.6): C:\flutter (No device)
         "showMemoryUsage": false,
         "debuggerType": 2
     }
+<<<<<<< HEAD
 [15:28:34] [General] [Info] Using flutter debugger for Flutter
 [15:28:34] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
 [15:28:34] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
 [15:28:36] [General] [Info] Did not find session 4c59fa66-901f-44cc-a15a-2c9d13c1ce32 to handle dart.progressStart. There were 0 sessions:
 [15:28:36] [General] [Info] Event will be queued and processed when the session start event fires
 [15:28:36] [General] [Info] Processing delayed event dart.progressStart for session 4c59fa66-901f-44cc-a15a-2c9d13c1ce32
+=======
+[22:53:57] [General] [Info] Using flutter debugger for Flutter
+[22:53:57] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[22:53:57] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[22:54:00] [General] [Info] Did not find session 11a5aebf-3f31-47d4-90df-6c7f88d31191 to handle dart.progressStart. There were 0 sessions:
+[22:54:00] [General] [Info] Event will be queued and processed when the session start event fires
+[22:54:00] [General] [Info] Processing delayed event dart.progressStart for session 11a5aebf-3f31-47d4-90df-6c7f88d31191
+[23:38:53] [General] [Info] Took 1161ms to search for projects (5 levels)
+[23:38:53] [General] [Info] Took 66ms to filter out excluded projects (0 exclusion rules)
+[23:38:53] [General] [Info] Spawning C:\flutter\bin\flutter.bat with args ["pub","deps","--json"] in C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc with env undefined
+[00:16:59] [General] [Info] Took 1394ms to search for projects (5 levels)
+[00:16:59] [General] [Info] Took 20ms to filter out excluded projects (0 exclusion rules)
+[02:08:02] [General] [Info] Starting debug session...
+[02:08:02] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[02:08:02] [General] [Info]     program  : lib/main.dart
+[02:08:02] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[02:08:02] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
+[02:08:02] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[02:08:02] [General] [Info] Detected launch project as Flutter
+[02:08:02] [General] [Info] Using Flutter debug adapter for this session
+[02:08:02] [General] [Info] Getting DevTools server address to pass to Flutter...
+[02:08:02] [General] [Info] Checking for errors before launching
+[02:08:02] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-c2a20",
+        "projectRootPath": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
+        "cwd": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "showGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[02:08:02] [General] [Info] Using flutter debugger for Flutter
+[02:08:02] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[02:08:02] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[02:08:07] [General] [Info] Did not find session 9f559d1e-ea79-4467-91e6-ecfba61ec3f3 to handle dart.progressStart. There were 0 sessions:
+[02:08:07] [General] [Info] Event will be queued and processed when the session start event fires
+[02:08:07] [General] [Info] Processing delayed event dart.progressStart for session 9f559d1e-ea79-4467-91e6-ecfba61ec3f3
+>>>>>>> 65aeb76d8b512d085d5d5bd6128e00fed88dd316
+>>>>>>> 7376768946a7e8a71aa4218f8fed3e32e4c69998

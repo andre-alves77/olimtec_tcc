@@ -10,15 +10,15 @@ import 'package:olimtec_tcc/app/features/championship/models/team.dart';
 
 class Modality {
   final String name;
-  IconData icon;
-  final String category;
+  Map<String, dynamic> icon;
+  String category;
   Map<int, List<Game>> bracket = {};
   String? scoreType;
   Modality({
     required this.category,
     required this.name,
     this.scoreType,
-    this.icon = Icons.sports,
+    required this.icon,
   });
 
   generateBracket(List<Team> teams) {
@@ -97,13 +97,13 @@ nextGameCounter = !nextGameCounter;
         team2 = teams[teamCounter - 1];
        // print("${teams[teamCounter].name} X ${teams[teamCounter - 1].name}");
         gameList.add(Game(
-          date: name, // tirar date: name
+          date: "indefinida", // tirar date: name
           id: gamesId,
           nextGame: _generate_nextGame(),
           round: qtdround,
           modalidade: name,
-          team1: team1,
-          team2: team2,
+          team1: team1.name,
+          team2: team2.name,
         ));
         gamesId++;
         i++;
@@ -122,19 +122,19 @@ nextGameCounter = !nextGameCounter;
         //  print("${teams[teamCounter].name} X ${teams[teamCounter - 1].name}");
         // print("opa2");
           gameList.add(Game(
-            date: name, // tirar date: name
+            date: "indefinida", // tirar date: name
               id: gamesId,
               nextGame: _generate_nextGame(),
               round: qtdround,
               modalidade: name,
-              team1: teams[teamCounter],
-              team2: teams[teamCounter - 1]));
+              team1: teams[teamCounter].name,
+              team2: teams[teamCounter - 1].name));
           teamCounter -= 2;
         } else {
          // print("opa1");
          // print("ROUND $qtdround >>> JOGO $gamesId >>> $nextGame");
           gameList.add(Game(
-            date: name, // tirar date: name
+            date: "indefinida", // tirar date: name
               id: gamesId,
               nextGame:  _generate_nextGame(),
               round: qtdround,
@@ -213,22 +213,27 @@ teamsPerRound =(i-x)*2;
   }
 
 
+
+
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'name': name,
-      'icon': icon.codePoint,
+      'icon': icon,
       'category': category,
       'scoreType': scoreType,
     };
   }
 
+ 
+
   factory Modality.fromMap(Map<String, dynamic> map) {
+
     return Modality(
       name: map['name'] as String,
-      icon: IconData(map['icon'] as int, fontFamily: 'MaterialIcons'),
+      icon: Map<String, dynamic>.from((map['icon'] as Map<String, dynamic>)),
       category: map['category'] as String,
       scoreType: map['scoreType'] != null ? map['scoreType'] as String : null,
-    );
+      );
   }
 
   String toJson() => json.encode(toMap());

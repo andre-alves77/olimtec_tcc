@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
+
 import 'package:olimtec_tcc/app/features/championship/initial_config.store.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_locals.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_modality_component.dart';
@@ -8,8 +8,7 @@ import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_t
 import 'dart:math';
 
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
-import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
-import 'package:provider/provider.dart';
+
 
 class ChampioshipPageAdmin extends ConsumerWidget {
   const ChampioshipPageAdmin({super.key});

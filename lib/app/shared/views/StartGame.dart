@@ -1,7 +1,6 @@
-import 'dart:math';
+ import 'dart:math';
 
-import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/features/championship/models/game.dart';
+ import 'package:flutter/material.dart';
 
 class StartGame extends StatelessWidget {
   StartGame({

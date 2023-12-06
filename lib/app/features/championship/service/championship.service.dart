@@ -20,7 +20,7 @@ Stream<Championship?> getChampionshipStream() async* {
     QuerySnapshot querySnapshot =
         await FirebaseFirestore.instance.collection("modality").get();
     for (var doc in querySnapshot.docs) {
-      fieldValues.add(Modality(category: doc['category'], name: doc['name']));
+      fieldValues.add(Modality(category: doc['category'], name: doc['name'], icon: {"codePoint": doc['codePoint'], "fontFamily": doc['fontFamily']}));
     }
     
    return fieldValues;

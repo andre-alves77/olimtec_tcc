@@ -22,6 +22,7 @@ class HomeUser extends ConsumerWidget {
         ref.watch(finishedGamesProvider).whenData((value) => value).value;
     List<Widget> widgetList = [];
     gameList!.forEach((element) {
+      print(element);
       widgetList.add(GameCardStream(docId: element));
     });
     final _bottomBarStore = ref.watch(bottomBarProvider);
