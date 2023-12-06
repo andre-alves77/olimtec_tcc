@@ -1,0 +1,304 @@
+<<<<<<< HEAD
+=======
+!! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.78.0
+Flutter extension: 3.78.0 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+
+Logging Categories:
+    General
+
+Tue Dec 05 2023 [22:43:55 GMT-0300 (Horário Padrão de Brasília)] Log file started
+[22:43:55] [General] [Info] Searching for SDKs...
+[22:43:55] [General] [Info] Environment PATH:
+[22:43:55] [General] [Info]     C:\Program Files\Common Files\Oracle\Java\javapath
+[22:43:55] [General] [Info]     C:\Windows\system32
+[22:43:55] [General] [Info]     C:\Windows
+[22:43:55] [General] [Info]     C:\Windows\System32\Wbem
+[22:43:55] [General] [Info]     C:\Windows\System32\WindowsPowerShell\v1.0\
+[22:43:55] [General] [Info]     C:\Windows\System32\OpenSSH\
+[22:43:55] [General] [Info]     C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
+[22:43:55] [General] [Info]     C:\Program Files\Git\cmd
+[22:43:55] [General] [Info]     C:\flutter\bin
+[22:43:55] [General] [Info]     C:\Program Files\dotnet\
+[22:43:55] [General] [Info]     C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
+[22:43:55] [General] [Info]     C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
+[22:43:55] [General] [Info]     C:\Users\Vinicius Vitoriano\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin
+[22:43:58] [General] [Info] Took 2571ms to search for projects (5 levels)
+[22:43:58] [General] [Info] Took 226ms to filter out excluded projects (0 exclusion rules)
+[22:43:58] [General] [Info] Found Flutter project at C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc:
+			Mobile? true
+			Web? false
+			Create Trigger? false
+			Flutter Repo? false
+[22:43:59] [General] [Info] Searching for flutter.bat
+[22:43:59] [General] [Info]     Looking for flutter.bat in:
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\bin
+[22:43:59] [General] [Info]         C:\flutter\bin\
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\.flutter\bin
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter -> C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\vendor\flutter\bin
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\flutter-sdk
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\flutter-sdk -> C:\Users\Vinicius Vitoriano\flutter-sdk\bin
+[22:43:59] [General] [Info]         /google/flutter
+[22:43:59] [General] [Info]         /google/flutter -> \google\flutter\bin
+[22:43:59] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
+[22:43:59] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
+[22:43:59] [General] [Info]         C:\Windows\system32
+[22:43:59] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
+[22:43:59] [General] [Info]         C:\Windows
+[22:43:59] [General] [Info]         C:\Windows -> C:\Windows\bin
+[22:43:59] [General] [Info]         C:\Windows\System32\Wbem
+[22:43:59] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
+[22:43:59] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
+[22:43:59] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
+[22:43:59] [General] [Info]         C:\Windows\System32\OpenSSH\
+[22:43:59] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
+[22:43:59] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
+[22:43:59] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static -> C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static\bin
+[22:43:59] [General] [Info]         C:\Program Files\Git\cmd
+[22:43:59] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
+[22:43:59] [General] [Info]         C:\flutter\bin
+[22:43:59] [General] [Info]         C:\Program Files\dotnet\
+[22:43:59] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps -> C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps\bin
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin
+[22:43:59] [General] [Info]     Found at:
+[22:43:59] [General] [Info]         C:\flutter\bin\
+[22:43:59] [General] [Info]         C:\flutter\bin
+[22:43:59] [General] [Info]     Candidate paths to be post-filtered:
+[22:43:59] [General] [Info]         C:\flutter\bin\ -> C:\flutter
+[22:43:59] [General] [Info]         C:\flutter\bin -> C:\flutter
+[22:43:59] [General] [Info]     Found at C:\flutter\bin\ -> C:\flutter
+[22:43:59] [General] [Info]     Returning SDK path C:\flutter for flutter.bat
+[22:43:59] [General] [Info] Searching for dart.exe
+[22:43:59] [General] [Info]     Looking for dart.exe in:
+[22:43:59] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[22:43:59] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[22:43:59] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath
+[22:43:59] [General] [Info]         C:\Program Files\Common Files\Oracle\Java\javapath -> C:\Program Files\Common Files\Oracle\Java\javapath\bin
+[22:43:59] [General] [Info]         C:\Windows\system32
+[22:43:59] [General] [Info]         C:\Windows\system32 -> C:\Windows\system32\bin
+[22:43:59] [General] [Info]         C:\Windows
+[22:43:59] [General] [Info]         C:\Windows -> C:\Windows\bin
+[22:43:59] [General] [Info]         C:\Windows\System32\Wbem
+[22:43:59] [General] [Info]         C:\Windows\System32\Wbem -> C:\Windows\System32\Wbem\bin
+[22:43:59] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\
+[22:43:59] [General] [Info]         C:\Windows\System32\WindowsPowerShell\v1.0\ -> C:\Windows\System32\WindowsPowerShell\v1.0\bin
+[22:43:59] [General] [Info]         C:\Windows\System32\OpenSSH\
+[22:43:59] [General] [Info]         C:\Windows\System32\OpenSSH\ -> C:\Windows\System32\OpenSSH\bin
+[22:43:59] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static
+[22:43:59] [General] [Info]         C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static -> C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static\bin
+[22:43:59] [General] [Info]         C:\Program Files\Git\cmd
+[22:43:59] [General] [Info]         C:\Program Files\Git\cmd -> C:\Program Files\Git\cmd\bin
+[22:43:59] [General] [Info]         C:\flutter\bin
+[22:43:59] [General] [Info]         C:\Program Files\dotnet\
+[22:43:59] [General] [Info]         C:\Program Files\dotnet\ -> C:\Program Files\dotnet\bin
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps -> C:\Users\Vinicius Vitoriano\AppData\Local\Microsoft\WindowsApps\bin
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Programs\Microsoft VS Code\bin
+[22:43:59] [General] [Info]         C:\Users\Vinicius Vitoriano\AppData\Local\Google\Cloud SDK\google-cloud-sdk\bin
+[22:43:59] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[22:43:59] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[22:43:59] [General] [Info]     Found at:
+[22:43:59] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[22:43:59] [General] [Info]         C:\flutter\bin\cache\dart-sdk -> C:\flutter\bin\cache\dart-sdk\bin
+[22:43:59] [General] [Info]     Candidate paths to be post-filtered:
+[22:43:59] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[22:43:59] [General] [Info]         C:\flutter\bin\cache\dart-sdk
+[22:43:59] [General] [Info]     Found at C:\flutter\bin\cache\dart-sdk
+[22:43:59] [General] [Info]     Returning SDK path C:\flutter\bin\cache\dart-sdk for dart.exe
+[22:43:59] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 100
+[22:43:59] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[22:43:59] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 100
+[22:43:59] [General] [Info] Experiment 'sdkDaps' is activating (not first time)
+[22:43:59] [General] [Info] Experiment random number is 92 for experiment 'sdkDaps'. Experiment is enabled for <= 10
+[22:43:59] [General] [Info] Experiment 'sdkDaps' does not apply and will not be activated
+[22:43:59] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.78.0
+Flutter extension: 3.78.0 (not activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+Workspace type: Flutter (LSP)
+
+Dart (3.1.3): C:\flutter\bin\cache\dart-sdk
+Flutter (3.13.6): C:\flutter (No device)
+[22:44:00] [General] [Info] Returning cached results for project search
+[22:44:00] [General] [Info] Checking 1 projects for supported platforms
+[22:44:00] [General] [Info] Returning cached results for project search
+[22:44:00] [General] [Info] Activating Flutter extension for Flutter project...
+[22:44:00] [General] [Info] Version last used for Pub is 3.1.3 (3.1.0), current is 3.1.3 (3.1.0)
+[22:44:00] [General] [Info] Found 0 folders requiring "pub get" or "pub upgrade":
+[22:44:11] [General] [Info] Loaded 20000 package names from vscode-userdata:/c%3A/Users/Vinicius%20Vitoriano/AppData/Roaming/Code/User/globalStorage/dart-code.dart-code/package_cache.json
+[22:44:20] [General] [Info] !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
+Dart Code extension: 3.78.0
+Flutter extension: 3.78.0 (activated)
+
+App: Visual Studio Code
+App Host: desktop
+Version: win 1.84.2
+
+Workspace type: Flutter (LSP)
+
+Dart (3.1.3): C:\flutter\bin\cache\dart-sdk
+Flutter (3.13.6): C:\flutter (No device)
+[22:44:33] [General] [Info] Supported platforms for the workspace are linux, macos, windows, ios, android, web
+[22:44:35] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[22:44:37] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[22:44:37] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[22:44:37] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[22:44:39] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[22:44:39] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[22:44:39] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[22:44:39] [General] [Info] Returning cached promise for getSupportedPlatforms()
+[22:53:57] [General] [Info] Starting debug session...
+[22:53:57] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:53:57] [General] [Info]     program  : lib/main.dart
+[22:53:57] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:53:57] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
+[22:53:57] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[22:53:57] [General] [Info] Detected launch project as Flutter
+[22:53:57] [General] [Info] Using Flutter debug adapter for this session
+[22:53:57] [General] [Info] Getting DevTools server address to pass to Flutter...
+[22:53:57] [General] [Info] Checking for errors before launching
+[22:53:57] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-1810b",
+        "projectRootPath": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
+        "cwd": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "showGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[22:53:57] [General] [Info] Using flutter debugger for Flutter
+[22:53:57] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[22:53:57] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[22:54:00] [General] [Info] Did not find session 11a5aebf-3f31-47d4-90df-6c7f88d31191 to handle dart.progressStart. There were 0 sessions:
+[22:54:00] [General] [Info] Event will be queued and processed when the session start event fires
+[22:54:00] [General] [Info] Processing delayed event dart.progressStart for session 11a5aebf-3f31-47d4-90df-6c7f88d31191
+[23:38:53] [General] [Info] Took 1161ms to search for projects (5 levels)
+[23:38:53] [General] [Info] Took 66ms to filter out excluded projects (0 exclusion rules)
+[23:38:53] [General] [Info] Spawning C:\flutter\bin\flutter.bat with args ["pub","deps","--json"] in C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc with env undefined
+[00:16:59] [General] [Info] Took 1394ms to search for projects (5 levels)
+[00:16:59] [General] [Info] Took 20ms to filter out excluded projects (0 exclusion rules)
+[02:08:02] [General] [Info] Starting debug session...
+[02:08:02] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[02:08:02] [General] [Info]     program  : lib/main.dart
+[02:08:02] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[02:08:02] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
+[02:08:02] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[02:08:02] [General] [Info] Detected launch project as Flutter
+[02:08:02] [General] [Info] Using Flutter debug adapter for this session
+[02:08:02] [General] [Info] Getting DevTools server address to pass to Flutter...
+[02:08:02] [General] [Info] Checking for errors before launching
+[02:08:02] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-c2a20",
+        "projectRootPath": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
+        "cwd": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "showGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[02:08:02] [General] [Info] Using flutter debugger for Flutter
+[02:08:02] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[02:08:02] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[02:08:07] [General] [Info] Did not find session 9f559d1e-ea79-4467-91e6-ecfba61ec3f3 to handle dart.progressStart. There were 0 sessions:
+[02:08:07] [General] [Info] Event will be queued and processed when the session start event fires
+[02:08:07] [General] [Info] Processing delayed event dart.progressStart for session 9f559d1e-ea79-4467-91e6-ecfba61ec3f3
+>>>>>>> 65aeb76d8b512d085d5d5bd6128e00fed88dd316

@@ -18,8 +18,9 @@ class HomeUser extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<String>? gameList = ref.watch(finishedGamesProvider).whenData((value) => value).value;
-    List<Widget> widgetList = []; 
+    List<String>? gameList =
+        ref.watch(finishedGamesProvider).whenData((value) => value).value;
+    List<Widget> widgetList = [];
     gameList!.forEach((element) {
       print(element);
       widgetList.add(GameCardStream(docId: element));
@@ -98,7 +99,9 @@ class HomeUser extends ConsumerWidget {
                   )),
                   Container(
                     constraints: const BoxConstraints(maxWidth: 400),
-                    child: Column(children: widgetList,),
+                    child: Column(
+                      children: widgetList,
+                    ),
                   ),
                   const SizedBox(height: 10),
                 ],

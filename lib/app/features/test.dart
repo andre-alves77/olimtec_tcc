@@ -27,7 +27,7 @@ class GamesScreen extends ConsumerWidget {
               return ListView.builder(
                 itemCount: games.length,
                 itemBuilder: (_, index) {
-                  return GameCardStream(docId: games[index]); 
+                  return GameCardStream(docId: games[index]);
                 },
               );
             },
@@ -79,7 +79,8 @@ class GameCardStream extends StatelessWidget {
 class NewGameCard extends ConsumerWidget {
   NewGameCard(this.game, {super.key});
 
-  final Map<String, dynamic> game;
+  final Map<String, dynamic>
+      game; //Dentro desse map que vem do banco, vai ser game['team1']
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
