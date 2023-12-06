@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
+import 'package:flutter_pdfview/flutter_pdfview.dart';
 
 class InsertRuleOrganization extends StatelessWidget {
   const InsertRuleOrganization({super.key});
@@ -10,6 +13,7 @@ class InsertRuleOrganization extends StatelessWidget {
   Widget build(BuildContext context) {
     final String? arg = ModalRoute.of(context)?.settings.arguments as String;
 
+    var file;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -65,11 +69,19 @@ class InsertRuleOrganization extends StatelessWidget {
               mainAxisSize: MainAxisSize.max,
               children: [
                 Container(
-                  width: 332,
-                  height: 450,
-                  decoration: BoxDecoration(),
-                  child: Placeholder(),
-                ),
+                    width: 332,
+                    height: 450,
+                    decoration: BoxDecoration(),
+                    child: PDFView(
+                      filePath: file.path,
+                      enableSwipe: true,
+                      swipeHorizontal: true,
+                      autoSpacing: false,
+                      pageFling: false,
+                      onPageChanged: (int? page, int? total) {
+                        print('page change: $page/$total');
+                      },
+                    )),
               ],
             ),
           ),
@@ -87,7 +99,19 @@ class InsertRuleOrganization extends StatelessWidget {
                       color: Colors.green,
                     ),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () async {
+                        FilePickerResult? result =
+                            await FilePicker.platform.pickFiles(
+                          type: FileType.custom,
+                          allowedExtensions: ['pdf'],
+                        );
+                        if (result != null) {
+                          File file = File(result.files.single.path!);
+                          // Agora você tem o arquivo e pode exibi-lo na tela.
+                        } else {
+                          // O usuário cancelou o seletor de arquivos.
+                        }
+                      },
                       child: Icon(
                         Icons.add,
                         size: 48,
