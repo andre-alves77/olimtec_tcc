@@ -72,7 +72,9 @@ class SettingsPage extends ConsumerWidget {
         leading: ClipRRect(
           borderRadius: BorderRadius.circular(8),
           child: Image.asset(
-            'assets/images/logo_principal_dark_mode.png',
+            Theme.of(context).brightness == Brightness.light
+                ? 'assets/images/LOGO_LIGHT_MODE.png'
+                : 'assets/images/LOGO_DARK_MODE.png',
             width: 300,
             height: 200,
             fit: BoxFit.cover,
