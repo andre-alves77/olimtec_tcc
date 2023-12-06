@@ -112,6 +112,7 @@ IconData deserializeIcon(Map<String, dynamic> iconData) {
 
   void addModality(
       String modalityName, String modalityCategory, String modalityScore) {
+        setIcon(icon!);
     modalitiesList.add(Modality(
         category: modalityCategory,
         name: modalityName,

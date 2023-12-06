@@ -180,9 +180,9 @@ while(teamsPerRound > teamCounter){
   if(teamsPerRound>2){
 
 
-gameList.add(Game(id: gamesId, nextGame: _generate_nextGame(), round: qtdround, modalidade: name, date: name));// tirar date:name
+gameList.add(Game(id: gamesId, nextGame: _generate_nextGame(), round: qtdround, modalidade: name, date: "indefinda"));// tirar date:name
   }else{
-gameList.add(Game(id: gamesId, isfinal: true, round: qtdround, modalidade: name, date: name)); // tirar date:name
+gameList.add(Game(id: gamesId, isfinal: true, round: qtdround, modalidade: name, date: "indefinida")); // tirar date:name
   }
 
 gamesId++;

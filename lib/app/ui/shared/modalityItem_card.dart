@@ -8,7 +8,7 @@ class ModalityItemCard extends StatelessWidget {
 
   final String routes;
   final String modalityName;
-  final String iconName;
+  final Map<String, dynamic> iconName;
   final String? routesArg;
   
   @override
@@ -28,7 +28,7 @@ class ModalityItemCard extends StatelessWidget {
               width: sizeWidth,
               child: ListTile(
                 leading: Icon(
-                 Icons.sports_basketball,
+                 IconData(iconName['codePoint'],fontFamily: iconName['fontFamily']),
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                   size: sizeWidth / 9,
                 ),
