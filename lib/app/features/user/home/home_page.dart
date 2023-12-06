@@ -18,9 +18,10 @@ class HomeUser extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<String>? gameList = ref.watch(inProgressGamesProvider).whenData((value) => value).value;
+    List<String>? gameList = ref.watch(finishedGamesProvider).whenData((value) => value).value;
     List<Widget> widgetList = []; 
     gameList!.forEach((element) {
+      print(element);
       widgetList.add(GameCardStream(docId: element));
     });
     final _bottomBarStore = ref.watch(bottomBarProvider);

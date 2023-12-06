@@ -1,6 +1,8 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/IconPicker/icons.dart';
+import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/championship/initial_config.store.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/add_locals.dart';
@@ -16,6 +18,16 @@ class AddModalityAdmin extends ConsumerStatefulWidget {
 }
 
 class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
+
+_pickIcon() async {
+   IconData? icon = await FlutterIconPicker.showIconPicker(context,
+       iconPackModes: [IconPack.cupertino]);
+   ref.read(initialConfigProvider).setIcon(icon ?? Icons.sports_gymnastics_outlined);
+   setState(() {});
+   debugPrint('Picked Icon: $icon');
+   
+ }
+  
   String dropdownvalue1 = 'Selecione a categoria';
 
   var items1 = [
@@ -49,7 +61,12 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
             FittedBox(
               child: Column(
                 children: [
-                  Text(  "${element.name.toUpperCase()}"),
+                  Row(
+                    children: [
+                      Icon(IconData(element.icon['codePoint'], fontFamily: element.icon['fontFamily'])),
+                      Text(  "${element.name.toUpperCase()}"),
+                    ],
+                  ),
                   Text(  "   Categoria: ${element.category}"),
                   Text(  "   Placar: ${element.scoreType}"),
                 ],
@@ -121,11 +138,14 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 FloatingActionButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    _pickIcon();
+                                  },
                                   backgroundColor:
                                       Theme.of(context).colorScheme.primary,
                                   shape: CircleBorder(),
                                   child: Icon(
+                                    ref.read(initialConfigProvider).icon ??
                                     Icons.add,
                                     color: Theme.of(context)
                                         .colorScheme
@@ -221,7 +241,7 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
                                             onChanged: (String? nemValue) {
                                               setState(() {
                                                 dropdownvalue1 = nemValue!;
-                                                print(dropdownvalue1);
+                                                
                                               });
                                             },
                                             validator: (value) {

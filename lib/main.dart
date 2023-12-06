@@ -15,34 +15,34 @@ Future<void> main() async {
       child: App(),
     ),
   );
-  logic();
+  
  
 }
 
-logic() {
-  List<Team> teams = [
-    Team(name: "OPA1", image: "1"),
-    Team(name: "OPA2", image: "2"),
-    Team(name: "OPA3", image: "3"),
-    Team(name: "OPA4", image: "4"),
-    Team(name: "OPA5", image: "5"),
-    Team(name: "OPA6", image: "6"),
-    Team(name: "OPA7", image: "7"),
-    Team(name: "OPA8", image: "8"),
-    Team(name: "OPA9", image: "9"),
-    Team(name: "OPA10", image: "10"),
-    Team(name: "OPA11", image: "11"),
-    Team(name: "OPA11", image: "12"),
-  ];
+// logic() {
+//   List<Team> teams = [
+//     Team(name: "OPA1", image: "1"),
+//     Team(name: "OPA2", image: "2"),
+//     Team(name: "OPA3", image: "3"),
+//     Team(name: "OPA4", image: "4"),
+//     Team(name: "OPA5", image: "5"),
+//     Team(name: "OPA6", image: "6"),
+//     Team(name: "OPA7", image: "7"),
+//     Team(name: "OPA8", image: "8"),
+//     Team(name: "OPA9", image: "9"),
+//     Team(name: "OPA10", image: "10"),
+//     Team(name: "OPA11", image: "11"),
+//     Team(name: "OPA11", image: "12"),
+//   ];
 
-  var modality = Modality(
+//   var modality = Modality(
   
-    category: "QUADRA",
-    name: "BASQUETE",
-    icon: Icons.sports_basketball,
-  );
-  //modality.generateBracket(teams);
-}
+//     category: "QUADRA",
+//     name: "BASQUETE",
+//     icon: Icons.sports_basketball,
+//   );
+//   //modality.generateBracket(teams);
+// }
 
 
 //gcloud init

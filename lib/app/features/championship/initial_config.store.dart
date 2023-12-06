@@ -1,6 +1,9 @@
+import 'dart:js_util';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/championship/models/game.dart';
@@ -13,6 +16,8 @@ final initialConfigProvider = ChangeNotifierProvider<InitConfigStore>((ref) {
 
 class InitConfigStore extends ChangeNotifier {
   final Ref ref;
+  IconData? icon = Icons.sports_gymnastics_outlined;
+  Map<String, dynamic> serializedIcon = {};
   List<Team> teamList = [
     Team(
         name: "1DSB",
@@ -67,7 +72,26 @@ class InitConfigStore extends ChangeNotifier {
   List<Game> gameList = [];
   List<String> localList = [];
 
+
   InitConfigStore(this.ref);
+
+
+  Map<String, dynamic> serializeIcon(IconData icon) {
+ return {
+   'codePoint': icon.codePoint,
+   'fontFamily': icon.fontFamily,
+ };
+}
+
+IconData deserializeIcon(Map<String, dynamic> iconData) {
+ return IconData(iconData['codePoint'], fontFamily: iconData['fontFamily']);
+}
+
+ setIcon(IconData iconData){
+ serializedIcon = serializeIcon(iconData);
+ icon = iconData;
+ notifyListeners();
+}
 
   void addTeam(String teamName) {
     String teamImage = "";
@@ -91,7 +115,7 @@ class InitConfigStore extends ChangeNotifier {
     modalitiesList.add(Modality(
         category: modalityCategory,
         name: modalityName,
-        scoreType: modalityScore));
+        scoreType: modalityScore,icon: serializedIcon));
     notifyListeners();
   }
 
@@ -140,28 +164,46 @@ for (var doc in snapshots3.docs) {
  batch.delete(doc.reference);
 }
 
+var collection4 = instance.collection('local');
+var snapshots4 = await collection4.get();
+
+for (var doc in snapshots4.docs) {
+ batch.delete(doc.reference);
+}
+
+
 
 await batch.commit();
 
  
 
-    modalitiesList.forEach(
-      (element) async {
-        element.generateBracket(teamList);
-        await FirebaseFirestore.instance
-            .collection('modality')
-            .doc()
-            .set(element.toMap());
-      },
-    );
-teamList.forEach((element) async{
-  await FirebaseFirestore.instance.collection('team').doc().set(element.toMap());
-},);
+modalitiesList.forEach((element)async {
+  element.generateBracket(teamList);
+  await FirebaseFirestore.instance.collection('modality').doc().set(element.toMap());
+  element.bracket.forEach((key, value) {
+    value.forEach((element) async{
+      await FirebaseFirestore.instance.collection("game").doc().set(element.toMap());
+    });
+  });
+});
+
+
+
+ teamList.forEach((element) async{
+   await FirebaseFirestore.instance.collection('team').doc().set(element.toMap());
+ },);
+
 
 localList.forEach((element)async {
-  await FirebaseFirestore.instance.collection('local').doc().set({"name":element});
+
+  Map<String, String> _mymap = {"name":element};
+  await FirebaseFirestore.instance.collection('local').doc().set(_mymap);
   
-},);
+});
+
+
+
+
 }catch (e){
 CustomSnackBar(message: "Ocorreu um erro", ref: ref);
 }
