@@ -4,13 +4,13 @@ import 'dart:math';
 import 'package:olimtec_tcc/app/models/modality/modality.dart';
 
 class ModalityItemCard extends StatelessWidget {
-  const ModalityItemCard({required this.routesArg, required this.routes, required this.modalityName, required this.iconName, super.key});
+  const ModalityItemCard({this.routesArg, required this.routes, required this.modalityName, required this.iconName, super.key});
 
   final String routes;
   final String modalityName;
   final String iconName;
-  final String routesArg;
-
+  final String? routesArg;
+  
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();

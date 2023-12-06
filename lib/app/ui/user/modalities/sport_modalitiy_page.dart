@@ -11,6 +11,7 @@ class ModalityUser extends StatefulWidget {
   const ModalityUser({super.key});
 
   static String route = "/modality-user";
+  
 
   @override
   State<ModalityUser> createState() => _ModalityUserState();
@@ -30,13 +31,14 @@ class _ModalityUserState extends State<ModalityUser>
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
 
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         title: FittedBox(
           child: Text(
-            "BASQUETE MASCULINO",
+            "$arg",
             style: TextStyle(
               fontFamily: 'Lato',
               color: Theme.of(context).colorScheme.onPrimaryContainer,
