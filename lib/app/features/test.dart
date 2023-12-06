@@ -1,5 +1,4 @@
 import 'dart:convert';
-import 'dart:js_interop';
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -87,11 +86,12 @@ class NewGameCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final teamImage1 =         "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/teamImage%2F1701612513796?alt=media&token=c111993d-3471-477e-92de-46ad5afba0f3";
+    final teamImage1 =
+        "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/teamImage%2F1701612513796?alt=media&token=c111993d-3471-477e-92de-46ad5afba0f3";
 
-    final teamImage2 ="https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/teamImage%2F1701612513796?alt=media&token=c111993d-3471-477e-92de-46ad5afba0f3";
+    final teamImage2 =
+        "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/teamImage%2F1701612513796?alt=media&token=c111993d-3471-477e-92de-46ad5afba0f3";
 
-    
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     if (teamImage2 is String && teamImage1 is String)
       return GestureDetector(
@@ -271,26 +271,27 @@ class NewGameCard extends ConsumerWidget {
           ),
         ),
       );
-      return AspectRatio(
-        aspectRatio: 2.8,
-        child: Card(
-          margin: EdgeInsets.all(10),
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          elevation: 12,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Container(
-            color: Theme.of(context).colorScheme.primaryContainer,
-            padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
-            width: sizeWidth,
-            child: FittedBox(
-              fit: BoxFit.contain,
-              child:Center(child: CircularProgressIndicator(),)
-            ),
-          ),
+    return AspectRatio(
+      aspectRatio: 2.8,
+      child: Card(
+        margin: EdgeInsets.all(10),
+        clipBehavior: Clip.antiAliasWithSaveLayer,
+        elevation: 12,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20),
         ),
-      );
+        child: Container(
+          color: Theme.of(context).colorScheme.primaryContainer,
+          padding: EdgeInsets.symmetric(horizontal: 30, vertical: 0),
+          width: sizeWidth,
+          child: FittedBox(
+              fit: BoxFit.contain,
+              child: Center(
+                child: CircularProgressIndicator(),
+              )),
+        ),
+      ),
+    );
   }
 }
 
