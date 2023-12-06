@@ -15,17 +15,32 @@ final getDocIdTeamProvider =
   }
 });
 
-final getModalityTeam = FutureProvider.autoDispose
-    .family<Map<String, dynamic>, String>((ref, list) async {
+final getModalityTeamIdProvider =
+    FutureProvider.family<String, List<String>>((ref, list) async {
   QuerySnapshot querySnapshot = await FirebaseFirestore.instance
       .collection('team')
-      .doc(list)
+      .doc(list[0])
       .collection('modalityTeam')
+      .where("modality", isEqualTo: list[1])
       .get();
 
   if (querySnapshot.docs.isNotEmpty) {
-    return querySnapshot.docs.first.data() as Map<String, dynamic>;
+    return querySnapshot.docs.first.id;
   } else {
     throw Exception('No document found');
   }
+});
+
+final modalitiesTeamProvider = FutureProvider.autoDispose
+    .family<Map<String, dynamic>, String>((ref, teamId) async {
+  final snapshot = await FirebaseFirestore.instance
+      .collection('team')
+      .doc(teamId)
+      .collection('modalityTeam')
+      .get();
+  return Map.fromIterable(
+    snapshot.docs,
+    key: (doc) => doc.id,
+    value: (doc) => doc.data(),
+  );
 });
