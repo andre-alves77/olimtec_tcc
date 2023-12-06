@@ -7,12 +7,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
-import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
-import 'package:olimtec_tcc/app/features/championship/models/game.dart';
-import 'package:olimtec_tcc/app/features/championship/models/modality.dart';
+
 import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
-import 'package:olimtec_tcc/app/features/championship/service/team.service.dart';
-import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
+
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 
 class GamesScreen extends ConsumerWidget {

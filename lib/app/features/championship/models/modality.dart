@@ -102,8 +102,8 @@ nextGameCounter = !nextGameCounter;
           nextGame: _generate_nextGame(),
           round: qtdround,
           modalidade: name,
-          team1: team1,
-          team2: team2,
+          team1: team1.name,
+          team2: team2.name,
         ));
         gamesId++;
         i++;
@@ -127,8 +127,8 @@ nextGameCounter = !nextGameCounter;
               nextGame: _generate_nextGame(),
               round: qtdround,
               modalidade: name,
-              team1: teams[teamCounter],
-              team2: teams[teamCounter - 1]));
+              team1: teams[teamCounter].name,
+              team2: teams[teamCounter - 1].name));
           teamCounter -= 2;
         } else {
          // print("opa1");
