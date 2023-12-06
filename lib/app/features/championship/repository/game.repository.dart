@@ -25,6 +25,74 @@ var query = await FirebaseFirestore.instance.collection('game').get();
   return _gamesIdList;
   }
 
+  Future<List<String>> getGamesIDInProgress()async {
+    List<String> _gamesIdList = [];
+    try{
+var query = await FirebaseFirestore.instance.collection('game').where('gameState', isEqualTo: 'progress').get();
+
+  
+  query.docs.forEach((element) {
+     _gamesIdList.add(element.id);
+  });
+
+    }catch (e){
+      throw CustomSnackBar(message: "error", ref: ref);
+    }
+ print(_gamesIdList);
+  return _gamesIdList;
+  }
+
+  Future<List<String>> getGamesIDInFinished()async {
+    List<String> _gamesIdList = [];
+    try{
+var query = await FirebaseFirestore.instance.collection('game').where('gameState', isEqualTo: 'finished').get();
+
+  
+  query.docs.forEach((element) {
+     _gamesIdList.add(element.id);
+  });
+
+    }catch (e){
+      throw CustomSnackBar(message: "error", ref: ref);
+    }
+ print(_gamesIdList);
+  return _gamesIdList;
+  }
+
+  Future<List<String>> getGamesIDInPredicted()async {
+    List<String> _gamesIdList = [];
+    try{
+var query = await FirebaseFirestore.instance.collection('game').where('gameState', isEqualTo: 'predicted').get();
+
+  
+  query.docs.forEach((element) {
+     _gamesIdList.add(element.id);
+  });
+
+    }catch (e){
+      throw CustomSnackBar(message: "error", ref: ref);
+    }
+ print(_gamesIdList);
+  return _gamesIdList;
+  }
+
+  Future<List<String>> getGamesIDInPendent()async {
+    List<String> _gamesIdList = [];
+    try{
+var query = await FirebaseFirestore.instance.collection('game').where('gameState', isEqualTo: 'pendent').get();
+
+  
+  query.docs.forEach((element) {
+     _gamesIdList.add(element.id);
+  });
+
+    }catch (e){
+      throw CustomSnackBar(message: "error", ref: ref);
+    }
+ print(_gamesIdList);
+  return _gamesIdList;
+  }
+
 
 
 }

@@ -11,5 +11,49 @@ final gamesIDProvider = FutureProvider<List<String>?>((ref){
   return ref.read(gamesRepositoryProvider).getGamesID();
 });
 
+final gamesIDProviderInFinished = FutureProvider<List<String>?>((ref){
+  return ref.read(gamesRepositoryProvider).getGamesIDInFinished();
+});
+
+final inProgressGamesProvider = StreamProvider<List<String>>(
+ (ref) {
+   return FirebaseFirestore.instance
+       .collection('game')
+       .where('gameState', isEqualTo: 'inProgress')
+       .snapshots()
+       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+ },
+);
+
+final finishedGamesProvider = StreamProvider<List<String>>(
+ (ref) {
+   return FirebaseFirestore.instance
+       .collection('game')
+       .where('gameState', isEqualTo: 'finished')
+       .snapshots()
+       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+ },
+);
+
+final predictedGamesProvider = StreamProvider<List<String>>(
+ (ref) {
+   return FirebaseFirestore.instance
+       .collection('game')
+       .where('gameState', isEqualTo: 'predicted')
+       .snapshots()
+       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+ },
+);
+
+final pendentGamesProvider = StreamProvider<List<String>>(
+ (ref) {
+   return FirebaseFirestore.instance
+       .collection('game')
+       .where('gameState', isEqualTo: 'pendent')
+       .snapshots()
+       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+ },
+);
+
 
 

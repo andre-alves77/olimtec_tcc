@@ -6,7 +6,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:olimtec_tcc/app/features/championship/models/team.dart';
 
 enum GameState {
-  notConfigured,
+  pendent,
   inProgress,
   finished,
   predicted,

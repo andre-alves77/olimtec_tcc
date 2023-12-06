@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:file_picker/file_picker.dart';
 
 class InsertRuleOrganization extends StatelessWidget {
   const InsertRuleOrganization({super.key});
@@ -7,6 +8,8 @@ class InsertRuleOrganization extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
+
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -45,7 +48,7 @@ class InsertRuleOrganization extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                'MODADLIDADE: BASQUETE MASCULINO',
+                'MODADLIDADE: $arg',
                 style: TextStyle(
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                   fontFamily: 'Lato',

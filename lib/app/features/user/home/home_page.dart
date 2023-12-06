@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/app.dart';
+import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
+import 'package:olimtec_tcc/app/features/test.dart';
 import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
@@ -16,6 +18,11 @@ class HomeUser extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    List<String>? gameList = ref.watch(inProgressGamesProvider).whenData((value) => value).value;
+    List<Widget> widgetList = []; 
+    gameList!.forEach((element) {
+      widgetList.add(GameCardStream(docId: element));
+    });
     final _bottomBarStore = ref.watch(bottomBarProvider);
     return Scaffold(
       extendBody: true,
@@ -90,16 +97,7 @@ class HomeUser extends ConsumerWidget {
                   )),
                   Container(
                     constraints: const BoxConstraints(maxWidth: 400),
-                    child: Column(
-                      children: [
-                        GameCard(gametest),
-                        GameCard(gametest),
-                        GameCard(gametest),
-                        GameCard(gametest),
-                        GameCard(gametest),
-                        GameCard(gametest),
-                      ],
-                    ),
+                    child: Column(children: widgetList,),
                   ),
                   const SizedBox(height: 10),
                 ],

@@ -8,8 +8,8 @@ import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/features/settings/settings_page.dart';
 import 'package:olimtec_tcc/app/features/test.dart';
 import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
-import 'package:olimtec_tcc/app/ui/user/home/home_page.dart';
-import 'package:olimtec_tcc/app/ui/user/live/aovivo_page.dart';
+import 'package:olimtec_tcc/app/features/user/home/home_page.dart';
+import 'package:olimtec_tcc/app/features/user/live/aovivo_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/modalities_page.dart';
 
 class IndexHomeUser extends ConsumerWidget {

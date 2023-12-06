@@ -24,14 +24,14 @@ class GamesScreen extends ConsumerWidget {
       appBar: AppBar(
         title: const Text('Games'),
       ),
-      body: ref.watch(gamesIDProvider).when(
+      body: ref.watch(inProgressGamesProvider).when(
             loading: () => const Center(child: CircularProgressIndicator()),
             error: (err, stack) => Center(child: Text(err.toString())),
             data: (games) {
               return ListView.builder(
-                itemCount: games!.length,
+                itemCount: games.length,
                 itemBuilder: (_, index) {
-                  return GameCardStream(docId: games[index]);
+                  return GameCardStream(docId: games[index]); 
                 },
               );
             },

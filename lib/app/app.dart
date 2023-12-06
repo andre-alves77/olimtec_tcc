@@ -43,6 +43,7 @@ import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/ui/organization/modality_page_organization.dart';
 import 'package:olimtec_tcc/app/ui/organization/organization_games.dart';
 import 'package:olimtec_tcc/app/ui/organization/organization_modalities.dart';
+import 'package:olimtec_tcc/app/ui/organization/regulation_modalities.dart';
 import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
 
 import 'package:olimtec_tcc/app/ui/team/add_player.dart';
@@ -147,6 +148,7 @@ class App extends ConsumerWidget {
         LoadingPage.route: (ctx) => const LoadingPage(),
         ModalitiesOrganization.route: (ctx) => const ModalitiesOrganization(),
         GamesOrganization.route: (ctx) => const GamesOrganization(),
+        RegulationModalitiesOrganization.route: (ctx) => const RegulationModalitiesOrganization(),
       },
       home: const LandingPage(),
     );
