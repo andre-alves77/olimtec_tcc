@@ -11,12 +11,14 @@ import 'package:olimtec_tcc/app/features/championship/models/team.dart';
 class Modality {
   final String name;
   Map<String, dynamic> icon;
+  String? rulesLing;
   String category;
   Map<int, List<Game>> bracket = {};
   String? scoreType;
   Modality({
     required this.category,
     required this.name,
+    this.rulesLing,
     this.scoreType,
     required this.icon,
   });
@@ -219,21 +221,20 @@ teamsPerRound =(i-x)*2;
     return <String, dynamic>{
       'name': name,
       'icon': icon,
+      'rulesLing': rulesLing,
       'category': category,
       'scoreType': scoreType,
     };
   }
 
- 
-
   factory Modality.fromMap(Map<String, dynamic> map) {
-
     return Modality(
       name: map['name'] as String,
       icon: Map<String, dynamic>.from((map['icon'] as Map<String, dynamic>)),
+      rulesLing: map['rulesLing'] != null ? map['rulesLing'] as String : null,
       category: map['category'] as String,
       scoreType: map['scoreType'] != null ? map['scoreType'] as String : null,
-      );
+    );
   }
 
   String toJson() => json.encode(toMap());
