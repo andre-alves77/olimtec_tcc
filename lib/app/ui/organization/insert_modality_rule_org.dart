@@ -1,19 +1,22 @@
 import 'dart:io';
-
+import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
+import 'package:olimtec_tcc/app/features/championship/repository/team.service.dart';
 
-class InsertRuleOrganization extends StatelessWidget {
+class InsertRuleOrganization extends ConsumerWidget {
   const InsertRuleOrganization({super.key});
 
   static String route = "/insertrule-organization";
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final String? arg = ModalRoute.of(context)?.settings.arguments as String;
 
-    var file;
     return Scaffold(
       appBar: AppBar(
         title: const Text(
@@ -67,22 +70,7 @@ class InsertRuleOrganization extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               mainAxisSize: MainAxisSize.max,
-              children: [
-                Container(
-                    width: 332,
-                    height: 450,
-                    decoration: BoxDecoration(),
-                    child: PDFView(
-                      filePath: file.path,
-                      enableSwipe: true,
-                      swipeHorizontal: true,
-                      autoSpacing: false,
-                      pageFling: false,
-                      onPageChanged: (int? page, int? total) {
-                        print('page change: $page/$total');
-                      },
-                    )),
-              ],
+              children: [],
             ),
           ),
           Padding(
@@ -100,16 +88,49 @@ class InsertRuleOrganization extends StatelessWidget {
                     ),
                     child: InkWell(
                       onTap: () async {
+                        try {
+                          String modalityId = "";
+                        await FirebaseFirestore.instance
+                            .collection('modality')
+                            .where('name', isEqualTo: arg!)
+                            .get()
+                            .then((value) {
+                          modalityId = value.docs.first.id;
+                        });
+
                         FilePickerResult? result =
                             await FilePicker.platform.pickFiles(
                           type: FileType.custom,
                           allowedExtensions: ['pdf'],
                         );
+
                         if (result != null) {
-                          File file = File(result.files.single.path!);
-                          // Agora você tem o arquivo e pode exibi-lo na tela.
+                          PlatformFile file = result.files.first;
+
+                          final now = DateTime.now();
+                          final uniqueFileName =
+                              'meuArquivo${now.year}-${now.month}-${now.day}${now.hour}-${now.minute}-${now.second}.pdf';
+
+                          final storageRef = FirebaseStorage.instance.ref();
+                          final pdfRef =
+                              storageRef.child("modalityRules/$uniqueFileName");
+                          try {
+                            await pdfRef.putData(file.bytes!);
+                          } on FirebaseException catch (e) {}
+
+                          final pdfUrl = await pdfRef.getDownloadURL();
+
+                          final firestoreRef = FirebaseFirestore.instance;
+                          final docRef = firestoreRef
+                              .collection('modality')
+                              .doc(modalityId);
+                          await docRef.update({'rulesLing': pdfUrl});
                         } else {
-                          // O usuário cancelou o seletor de arquivos.
+                          // User canceled the picker
+                        }
+                        CustomSnackBar(message: 'PDF enviado com sucesso', ref: ref);
+                        } catch (e) {
+                          throw CustomSnackBar(message: 'Houve um erro', ref: ref, type: ScaffoldAlert.error);
                         }
                       },
                       child: Icon(
@@ -153,7 +174,27 @@ class InsertRuleOrganization extends StatelessWidget {
                       color: Theme.of(context).colorScheme.error,
                     ),
                     child: InkWell(
-                      onTap: () {},
+                      onTap: () async {
+                        try {
+                          String modalityId = "";
+                        await FirebaseFirestore.instance
+                            .collection('modality')
+                            .where('name', isEqualTo: arg!)
+                            .get()
+                            .then((value) {
+                          modalityId = value.docs.first.id;
+                        });
+
+                        final firestoreRef = FirebaseFirestore.instance;
+                        final docRef =
+                            firestoreRef.collection('modality').doc(modalityId);
+                        await docRef.update({"rulesLing": null});
+                        CustomSnackBar(message: 'PDF apagado com sucesso', ref: ref);
+                        } catch (e) {
+                          throw CustomSnackBar(message: 'Houve um erro', ref: ref, type: ScaffoldAlert.error);
+                        }
+                        
+                      },
                       child: Icon(
                         Icons.remove,
                         size: 48,
