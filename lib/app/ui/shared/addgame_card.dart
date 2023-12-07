@@ -1,13 +1,68 @@
 import 'dart:math';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/models/game.dart';
+
 
 // ignore: must_be_immutable
+
+class AddCardStream extends StatelessWidget {
+  const AddCardStream({super.key, required this.docId});
+
+ final String docId;
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+        stream: FirebaseFirestore.instance
+            .collection('game')
+            .doc(docId)
+            .snapshots(),
+        builder: (BuildContext context,
+            AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Erro ao carregar os dados do jogo');
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Carregando");
+          }
+          if (snapshot.data == null) {
+            return SizedBox(
+              height: 0,
+              width: 0,
+            );
+          }
+
+          // Atualize o widget com os novos dados do jogo aqui
+          
+          final game = snapshot.data!.data() as Map<String, dynamic>;
+
+          return AddGameCard(game);
+        }
+
+        // etc.
+        //   return NewGameCard(game);
+        );
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class AddGameCard extends StatefulWidget {
   AddGameCard(this.game, {super.key});
 
-  final Game game;
+  final Map<String, dynamic> game;
 
   @override
   State<AddGameCard> createState() => _AddGameCardState();
@@ -26,18 +81,18 @@ class _AddGameCardState extends State<AddGameCard> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    
+
     return Card(
-       clipBehavior: Clip.antiAliasWithSaveLayer,
-       color: Theme.of(context).colorScheme.primaryContainer,
-       elevation: 10,
-       shape: RoundedRectangleBorder(
+      clipBehavior: Clip.antiAliasWithSaveLayer,
+      color: Theme.of(context).colorScheme.primaryContainer,
+      elevation: 10,
+      shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(20),
-       ),
-       child: Container(
-         width: sizeWidth / 1.2,
-         height: 280,
-         decoration: BoxDecoration(
+      ),
+      child: Container(
+        width: sizeWidth / 1.2,
+        height: 280,
+        decoration: BoxDecoration(
           color: Theme.of(context).colorScheme.primaryContainer,
           borderRadius: BorderRadius.circular(20),
           shape: BoxShape.rectangle,
@@ -45,8 +100,8 @@ class _AddGameCardState extends State<AddGameCard> {
             color: Theme.of(context).colorScheme.primary,
             width: 1,
           ),
-         ),
-         child: Padding(
+        ),
+        child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -55,7 +110,7 @@ class _AddGameCardState extends State<AddGameCard> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    widget.game.modalidade,
+                    widget.game['modalidade'],
                     style: TextStyle(
                       fontFamily: 'Lato',
                       fontSize: 20,
@@ -80,7 +135,7 @@ class _AddGameCardState extends State<AddGameCard> {
                     ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
-                        widget.game.team1.image,
+                        "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FLOGO_USUARIO.png?alt=media&token=10499acb-7e47-4640-b3fe-f180dc3c72f9",
                         width: sizeWidth / 6,
                         fit: BoxFit.cover,
                       ),
@@ -98,18 +153,18 @@ class _AddGameCardState extends State<AddGameCard> {
                           Text(
                             "VS",
                             style: TextStyle(
-                             fontFamily: 'Lato',
-                             fontSize: 24,
-                             fontWeight: FontWeight.bold,
+                              fontFamily: 'Lato',
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],
                       ),
                     ),
-                     ClipRRect(
+                    ClipRRect(
                       borderRadius: BorderRadius.circular(8),
                       child: Image.asset(
-                        widget.game.team2.image,
+                        "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FLOGO_USUARIO.png?alt=media&token=10499acb-7e47-4640-b3fe-f180dc3c72f9",
                         width: sizeWidth / 6,
                         fit: BoxFit.cover,
                       ),
@@ -123,7 +178,7 @@ class _AddGameCardState extends State<AddGameCard> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     Text(
-                      widget.game.team1.name,
+                      widget.game['team1'],
                       style: TextStyle(
                         fontFamily: 'Lato',
                         fontSize: 18,
@@ -149,7 +204,7 @@ class _AddGameCardState extends State<AddGameCard> {
                       ],
                     ),
                     Text(
-                      widget.game.team2.name,
+                     widget.game['team2'],
                       style: TextStyle(
                         fontFamily: 'Lato',
                         fontSize: 18,
@@ -181,7 +236,7 @@ class _AddGameCardState extends State<AddGameCard> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                     Container(
+                    Container(
                       width: sizeWidth / 4.8,
                       height: 30,
                       decoration: BoxDecoration(
@@ -194,9 +249,9 @@ class _AddGameCardState extends State<AddGameCard> {
                           Text(
                             "01:00",
                             style: TextStyle(
-                             fontFamily: 'Lato',
-                             fontSize: 20,
-                             fontWeight: FontWeight.bold,
+                              fontFamily: 'Lato',
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
                             ),
                           ),
                         ],
@@ -219,62 +274,62 @@ class _AddGameCardState extends State<AddGameCard> {
                         fontWeight: FontWeight.bold,
                       ),
                     ),
-                      Container(
-                        width: sizeWidth / 2.8,
-                        child: DropdownButton(
-                                  dropdownColor: Theme.of(context).colorScheme.primaryContainer,
-                                  hint: Text("Seleciona a sala"),
-                                  style: TextStyle(
-                                    color: Theme.of(context).colorScheme.onPrimaryContainer,
-                                    fontFamily: 'Lato',
-                                    fontSize: 15,
-                                    fontWeight: FontWeight.bold,
-                                  ),
-                                 value: dropdownvalue,
-                                 items: items.map((String items) {
-                                   return DropdownMenuItem(
-                                     value: items,
-                                     child: Text(items as String),
-                                   );
-                                 }).toList(),
-                                 onChanged: (String? newValue) {
-                                  setState(() {
-                                    dropdownvalue = newValue!;
-                                  });
-                                 },
-                                ),
-                      ),
+                    Container(
+                      width: sizeWidth / 2.8,
+                      child: DropdownButton(
+                          dropdownColor:
+                              Theme.of(context).colorScheme.primaryContainer,
+                          hint: Text("Seleciona a sala"),
+                          style: TextStyle(
+                            color: Theme.of(context)
+                                .colorScheme
+                                .onPrimaryContainer,
+                            fontFamily: 'Lato',
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                          ),
+                          value: dropdownvalue,
+                          items: items.map((String items) {
+                            return DropdownMenuItem(
+                              value: items,
+                              child: Text(items as String),
+                            );
+                          }).toList(),
+                          onChanged: (String? newValue) {
+                            dropdownvalue = newValue!;
+                          }),
+                    ),
                   ],
                 ),
               ),
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0, 5, 0, 0),
                 child: Container(
-                      width: sizeWidth / 1.8,
-                      height: 30,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primary,
-                        borderRadius: BorderRadius.circular(20),
+                  width: sizeWidth / 1.8,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: Theme.of(context).colorScheme.primary,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Text(
+                        "CONFIRMAR",
+                        style: TextStyle(
+                          fontFamily: 'Lato',
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            "CONFIRMAR",
-                            style: TextStyle(
-                             fontFamily: 'Lato',
-                             fontSize: 24,
-                             fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
-         ),
-       ),
+        ),
+      ),
     );
   }
 }

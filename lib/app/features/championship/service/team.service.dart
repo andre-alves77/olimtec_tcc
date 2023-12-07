@@ -5,5 +5,5 @@ final getTeamImage = FutureProvider.family<String, String>((ref, team) async{
 
 
 var query =await FirebaseFirestore.instance.collection('team').where("name", isEqualTo: team).get();
-return query.docs.first.data().entries.first.value;
+return query.docs.first.data()['image'];
 } );

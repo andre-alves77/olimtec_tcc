@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
-import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
-import 'package:olimtec_tcc/app/ui/organization/organization_games.dart';
+import 'package:olimtec_tcc/app/features/organization/add_games/organization_games.dart';
 import 'package:olimtec_tcc/app/ui/organization/organization_modalities.dart';
 import 'package:olimtec_tcc/app/ui/organization/regulation_modalities.dart';
-import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainOrgnization extends StatefulWidget {
   const MainOrgnization({super.key});

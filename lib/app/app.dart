@@ -34,14 +34,14 @@ import 'package:olimtec_tcc/app/features/championship/views/initial_config/champ
 import 'package:olimtec_tcc/app/ui/insert_modalities.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_equipes.dart';
 
-import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
+import 'package:olimtec_tcc/app/features/organization/add_games/adicionar_jogo.dart';
 import 'package:olimtec_tcc/app/ui/organization/details_game_org.dart';
 import 'package:olimtec_tcc/app/ui/organization/game_score.dart';
 import 'package:olimtec_tcc/app/ui/organization/insert_modality_rule_org.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_modalities_org.dart';
-import 'package:olimtec_tcc/app/ui/organization/main_organization.dart';
+import 'package:olimtec_tcc/app/features/organization/main_organization.dart';
 import 'package:olimtec_tcc/app/ui/organization/modality_page_organization.dart';
-import 'package:olimtec_tcc/app/ui/organization/organization_games.dart';
+import 'package:olimtec_tcc/app/features/organization/add_games/organization_games.dart';
 import 'package:olimtec_tcc/app/ui/organization/organization_modalities.dart';
 import 'package:olimtec_tcc/app/ui/organization/regulation_modalities.dart';
 import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';

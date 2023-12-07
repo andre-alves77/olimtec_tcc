@@ -8,7 +8,23 @@ class GamesRepository {
 
   GamesRepository(this.ref);
 
-  Future<List<String>> getGamesID()async {
+  Future<List<String>> getModalityGamesID(String modality)async {
+    List<String> _gamesIdList = [];
+    try{
+var query = await FirebaseFirestore.instance.collection('game').where('modality', isEqualTo: modality).get();
+
+  
+  query.docs.forEach((element) {
+     _gamesIdList.add(element.id);
+  });
+
+    }catch (e){
+      throw CustomSnackBar(message: "error", ref: ref);
+    }
+  return _gamesIdList;
+  }
+
+    Future<List<String>> getGamesID()async {
     List<String> _gamesIdList = [];
     try{
 var query = await FirebaseFirestore.instance.collection('game').get();
@@ -24,6 +40,7 @@ var query = await FirebaseFirestore.instance.collection('game').get();
  print(_gamesIdList);
   return _gamesIdList;
   }
+
 
   Future<List<String>> getGamesIDInProgress()async {
     List<String> _gamesIdList = [];
