@@ -108,12 +108,22 @@ class InitConfigStore extends ChangeNotifier {
 
   void addModality(
       String modalityName, String modalityCategory, String modalityScore) {
-    setIcon(icon!);
-    modalitiesList.add(Modality(
-        category: modalityCategory,
-        name: modalityName,
-        scoreType: modalityScore,
-        icon: serializedIcon));
+    print(modalityName);
+    if (modalityName.length > 2 &&
+        modalityCategory != "Selecione a categoria" &&
+        modalityScore != "Selecione o tipo de placar") {
+      setIcon(icon!);
+      modalitiesList.add(Modality(
+          category: modalityCategory,
+          name: modalityName,
+          scoreType: modalityScore,
+          icon: serializedIcon));
+    } else {
+      CustomSnackBar(
+          message: "PREENCHA TODOS OS CAMPOS",
+          type: ScaffoldAlert.error,
+          ref: ref);
+    }
     notifyListeners();
   }
 
