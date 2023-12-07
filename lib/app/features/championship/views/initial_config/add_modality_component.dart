@@ -18,16 +18,18 @@ class AddModalityAdmin extends ConsumerStatefulWidget {
 }
 
 class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
+  _pickIcon() async {
+    IconData? icon = await FlutterIconPicker.showIconPicker(context,
+        iconPackModes: [IconPack.material]);
+    ref
+        .read(initialConfigProvider)
+        .setIcon(icon ?? Icons.sports_gymnastics_outlined);
+    setState(() {});
+    debugPrint('Picked Icon: $icon');
+  }
 
-_pickIcon() async {
-   IconData? icon = await FlutterIconPicker.showIconPicker(context,
-       iconPackModes: [IconPack.cupertino]);
-   ref.read(initialConfigProvider).setIcon(icon ?? Icons.sports_gymnastics_outlined);
-   setState(() {});
-   debugPrint('Picked Icon: $icon');
-   
- }
-  
+  String modalityName = "";
+
   String dropdownvalue1 = 'Selecione a categoria';
 
   var items1 = [
@@ -51,7 +53,6 @@ _pickIcon() async {
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final modalitiesList = ref.watch(initialConfigProvider).modalitiesList;
-    final _formKey = GlobalKey<FormState>();
 
     List<Widget> modalitiesWidgets = [];
     modalitiesList.forEach((element) {
@@ -63,12 +64,13 @@ _pickIcon() async {
                 children: [
                   Row(
                     children: [
-                      Icon(IconData(element.icon['codePoint'], fontFamily: element.icon['fontFamily'])),
-                      Text(  "${element.name.toUpperCase()}"),
+                      Icon(IconData(element.icon['codePoint'],
+                          fontFamily: element.icon['fontFamily'])),
+                      Text("${element.name.toUpperCase()}"),
                     ],
                   ),
-                  Text(  "   Categoria: ${element.category}"),
-                  Text(  "   Placar: ${element.scoreType}"),
+                  Text("   Categoria: ${element.category}"),
+                  Text("   Placar: ${element.scoreType}"),
                 ],
               ),
             ),
@@ -90,7 +92,6 @@ _pickIcon() async {
       );
     });
 
-    String modalityName = "";
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -107,7 +108,6 @@ _pickIcon() async {
         top: true,
         child: SingleChildScrollView(
           child: Form(
-            key: _formKey,
             child: Center(
               child: Column(
                 children: [
@@ -146,7 +146,7 @@ _pickIcon() async {
                                   shape: CircleBorder(),
                                   child: Icon(
                                     ref.read(initialConfigProvider).icon ??
-                                    Icons.add,
+                                        Icons.add,
                                     color: Theme.of(context)
                                         .colorScheme
                                         .onPrimaryContainer,
@@ -156,7 +156,8 @@ _pickIcon() async {
                                 const Padding(
                                   padding: EdgeInsets.only(left: 10),
                                   child: Column(
-                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
                                     children: [
                                       Text(
                                         "ADICIONAR ÍCONE",
@@ -184,6 +185,48 @@ _pickIcon() async {
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                               child: Container(
                                 width: sizeWidth / 1.3,
+                                child: TextFormField(
+                                  autofocus: true,
+                                  decoration: InputDecoration(
+                                    labelText: "Digite o nome da modalidade",
+                                    labelStyle: TextStyle(
+                                      fontFamily: 'Lato',
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                          width: 3,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                          width: 3,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                  ),
+                                  onChanged: (value) {
+                                    modalityName = value;
+                                  },
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                              child: Container(
+                                width: sizeWidth / 1.3,
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
                                       color: Theme.of(context)
@@ -201,18 +244,22 @@ _pickIcon() async {
                                         BoxShadow(
                                             color: Color.fromRGBO(0, 0, 0,
                                                 0.57), //shadow for button
-                                            blurRadius: 5) //blur radius of shadow
+                                            blurRadius:
+                                                5) //blur radius of shadow
                                       ]),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 15, 0, 0),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Container(
                                           width: sizeWidth / 1.5,
                                           height: 50,
-                                          child: DropdownButtonFormField<String>(
+                                          child:
+                                              DropdownButtonFormField<String>(
+                                            autofocus: false,
                                             dropdownColor: Theme.of(context)
                                                 .colorScheme
                                                 .primaryContainer,
@@ -241,7 +288,6 @@ _pickIcon() async {
                                             onChanged: (String? nemValue) {
                                               setState(() {
                                                 dropdownvalue1 = nemValue!;
-                                                
                                               });
                                             },
                                             validator: (value) {
@@ -282,18 +328,22 @@ _pickIcon() async {
                                         BoxShadow(
                                             color: Color.fromRGBO(0, 0, 0,
                                                 0.57), //shadow for button
-                                            blurRadius: 5) //blur radius of shadow
+                                            blurRadius:
+                                                5) //blur radius of shadow
                                       ]),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0, 15, 0, 0),
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         Container(
                                           width: sizeWidth / 1.5,
                                           height: 50,
-                                          child: DropdownButtonFormField<String>(
+                                          child:
+                                              DropdownButtonFormField<String>(
+                                            autofocus: false,
                                             dropdownColor: Theme.of(context)
                                                 .colorScheme
                                                 .primaryContainer,
@@ -343,55 +393,11 @@ _pickIcon() async {
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                              child: Container(
-                                width: sizeWidth / 1.3,
-                                child: TextFormField(
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return 'Campo Obrigatório';
-                                    }
-                                    return null;
-                                  },
-                                  onChanged: (value) {
-                                    modalityName = value;
-                                  },
-                                  decoration: InputDecoration(
-                                    labelText: "Digite o nome da modalidade",
-                                    labelStyle: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onPrimaryContainer,
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                          width: 3,
-                                        ),
-                                        borderRadius: BorderRadius.circular(30)),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                          width: 3,
-                                        ),
-                                        borderRadius: BorderRadius.circular(30)),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Padding(
-                              padding:
-                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                               child: SizedBox(
                                 width: sizeWidth / 1.8,
                                 height: 40,
                                 child: ElevatedButton(
+                                  autofocus: true,
                                   style: ElevatedButton.styleFrom(
                                     elevation: 5,
                                     backgroundColor:
@@ -409,14 +415,10 @@ _pickIcon() async {
                                     ),
                                   ),
                                   onPressed: () {
-                                    if (_formKey.currentState!.validate()) {
-                                      ref.read(initialConfigProvider).addModality(
-                                          modalityName,
-                                          dropdownvalue1,
-                                          dropdownvalue2);
-                                    } else {
-                                      // O formulário não é válido, mostre uma mensagem de erro
-                                    }
+                                    ref.read(initialConfigProvider).addModality(
+                                        modalityName,
+                                        dropdownvalue1,
+                                        dropdownvalue2);
                                   },
                                 ),
                               ),
@@ -433,7 +435,8 @@ _pickIcon() async {
                                         width: 170,
                                         height: 55,
                                         decoration: BoxDecoration(
-                                          borderRadius: BorderRadius.circular(20),
+                                          borderRadius:
+                                              BorderRadius.circular(20),
                                           color: Theme.of(context)
                                               .colorScheme
                                               .primary,
