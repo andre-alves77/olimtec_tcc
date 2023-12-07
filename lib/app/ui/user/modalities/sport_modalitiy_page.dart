@@ -1,17 +1,17 @@
 import 'dart:math';
-
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:olimtec_tcc/app/ui/user/modalities/equipe_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/resultado_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ModalityUser extends StatefulWidget {
   const ModalityUser({super.key});
 
   static String route = "/modality-user";
-  
 
   @override
   State<ModalityUser> createState() => _ModalityUserState();
@@ -26,6 +26,16 @@ class _ModalityUserState extends State<ModalityUser>
     super.initState();
 
     _tabController = TabController(length: 2, vsync: this);
+  }
+
+  Future<void> _launchUrl(String url) async {
+    // ignore: deprecated_member_use
+    if (await canLaunch(url)) {
+      // ignore: deprecated_member_use
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
   }
 
   @override
@@ -178,7 +188,32 @@ class _ModalityUserState extends State<ModalityUser>
                                 shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(15)),
                               ),
-                              onPressed: () {},
+                              onPressed: () async {
+                                var modalityId = "";
+                                await FirebaseFirestore.instance
+                                    .collection('modality')
+                                    .where('name', isEqualTo: arg!)
+                                    .get()
+                                    .then((value) {
+                                  modalityId = value.docs.first.id;
+                                });
+                                var link = "";
+
+                                final firestoreRef = FirebaseFirestore.instance;
+                                final docRef = await firestoreRef
+                                    .collection('modality')
+                                    .doc(modalityId)
+                                    .get()
+                                    .then((value) {
+                                  link = value.get("rulesLing");
+                                });
+                                print(link);
+                                try {
+                                  await launch(link);
+                                } catch (e) {
+                                  print(e);
+                                }
+                              },
                               child: const FittedBox(
                                 child: Text(
                                   "REGULAMENTO",

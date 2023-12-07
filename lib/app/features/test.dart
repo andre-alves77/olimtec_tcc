@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 
 import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
+import 'package:olimtec_tcc/app/features/championship/service/team.service.dart';
 
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 
@@ -84,11 +85,9 @@ class NewGameCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final teamImage1 =
-        "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/teamImage%2F1701612513796?alt=media&token=c111993d-3471-477e-92de-46ad5afba0f3";
+    final teamImage1 = ref.watch(getTeamImage(game['team1'])).value;
 
-    final teamImage2 =
-        "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/teamImage%2F1701612513796?alt=media&token=c111993d-3471-477e-92de-46ad5afba0f3";
+    final teamImage2 = ref.watch(getTeamImage(game['team2'])).value;
 
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     if (teamImage2 is String && teamImage1 is String)
@@ -163,7 +162,7 @@ class NewGameCard extends ConsumerWidget {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: CachedNetworkImage(
-                                imageUrl: teamImage1 as String,
+                                imageUrl: teamImage1,
                                 width: sizeWidth / 6,
                                 fit: BoxFit.cover,
                               ),
@@ -244,7 +243,7 @@ class NewGameCard extends ConsumerWidget {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
                                 child: CachedNetworkImage(
-                                  imageUrl: teamImage1 as String,
+                                  imageUrl: teamImage2,
                                   width: sizeWidth / 6,
                                   fit: BoxFit.cover,
                                 ),

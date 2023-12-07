@@ -28,6 +28,8 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
     debugPrint('Picked Icon: $icon');
   }
 
+  String modalityName = "";
+
   String dropdownvalue1 = 'Selecione a categoria';
 
   var items1 = [
@@ -51,7 +53,6 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final modalitiesList = ref.watch(initialConfigProvider).modalitiesList;
-    final _formKey = GlobalKey<FormState>();
 
     List<Widget> modalitiesWidgets = [];
     modalitiesList.forEach((element) {
@@ -91,7 +92,6 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
       );
     });
 
-    String modalityName = "";
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -107,30 +107,29 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
       body: SafeArea(
         top: true,
         child: SingleChildScrollView(
-          child: Center(
-            child: Column(
-              children: [
-                FittedBox(
-                  child: Card(
-                    clipBehavior: Clip.antiAliasWithSaveLayer,
-                    color: Theme.of(context).colorScheme.primaryContainer,
-                    elevation: 4,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    child: Container(
-                      width: sizeWidth / 1.1,
-                      height: 460,
-                      decoration: BoxDecoration(
-                        color: Theme.of(context).colorScheme.primaryContainer,
+          child: Form(
+            child: Center(
+              child: Column(
+                children: [
+                  FittedBox(
+                    child: Card(
+                      clipBehavior: Clip.antiAliasWithSaveLayer,
+                      color: Theme.of(context).colorScheme.primaryContainer,
+                      elevation: 4,
+                      shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
-                        border: Border.all(
-                          color: Theme.of(context).colorScheme.primary,
-                          width: 2,
-                        ),
                       ),
-                      child: Form(
-                        key: _formKey,
+                      child: Container(
+                        width: sizeWidth / 1.1,
+                        height: 460,
+                        decoration: BoxDecoration(
+                          color: Theme.of(context).colorScheme.primaryContainer,
+                          borderRadius: BorderRadius.circular(30),
+                          border: Border.all(
+                            color: Theme.of(context).colorScheme.primary,
+                            width: 2,
+                          ),
+                        ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -186,6 +185,48 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
                               child: Container(
                                 width: sizeWidth / 1.3,
+                                child: TextFormField(
+                                  autofocus: true,
+                                  decoration: InputDecoration(
+                                    labelText: "Digite o nome da modalidade",
+                                    labelStyle: TextStyle(
+                                      fontFamily: 'Lato',
+                                      fontSize: 18,
+                                      fontWeight: FontWeight.bold,
+                                      color: Theme.of(context)
+                                          .colorScheme
+                                          .onPrimaryContainer,
+                                    ),
+                                    enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                          width: 3,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                    focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                          width: 3,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(30)),
+                                  ),
+                                  onChanged: (value) {
+                                    modalityName = value;
+                                  },
+                                ),
+                              ),
+                            ),
+                            Padding(
+                              padding:
+                                  EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
+                              child: Container(
+                                width: sizeWidth / 1.3,
                                 child: DecoratedBox(
                                   decoration: BoxDecoration(
                                       color: Theme.of(context)
@@ -218,6 +259,7 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
                                           height: 50,
                                           child:
                                               DropdownButtonFormField<String>(
+                                            autofocus: false,
                                             dropdownColor: Theme.of(context)
                                                 .colorScheme
                                                 .primaryContainer,
@@ -301,6 +343,7 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
                                           height: 50,
                                           child:
                                               DropdownButtonFormField<String>(
+                                            autofocus: false,
                                             dropdownColor: Theme.of(context)
                                                 .colorScheme
                                                 .primaryContainer,
@@ -350,59 +393,82 @@ class _AddModalityAdminState extends ConsumerState<AddModalityAdmin> {
                             Padding(
                               padding:
                                   EdgeInsetsDirectional.fromSTEB(0, 10, 0, 0),
-                              child: Container(
-                                width: sizeWidth / 1.3,
-                                child: TextFormField(
-                                  key: _formKey,
-                                  validator: (value) {
-                                    if (value == null || value.isEmpty) {
-                                      return 'Campo Obrigatório';
-                                    }
-                                    return null;
-                                  },
-                                  onChanged: (value) {
-                                    modalityName = value;
-                                  },
-                                  decoration: InputDecoration(
-                                    labelText: "Digite o nome da modalidade",
-                                    labelStyle: TextStyle(
-                                      fontFamily: 'Lato',
-                                      fontSize: 18,
-                                      fontWeight: FontWeight.bold,
-                                      color: Theme.of(context)
-                                          .colorScheme
-                                          .onPrimaryContainer,
-                                    ),
-                                    enabledBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                          width: 3,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
-                                    focusedBorder: OutlineInputBorder(
-                                        borderSide: BorderSide(
-                                          color: Theme.of(context)
-                                              .colorScheme
-                                              .primary,
-                                          width: 3,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(30)),
+                              child: SizedBox(
+                                width: sizeWidth / 1.8,
+                                height: 40,
+                                child: ElevatedButton(
+                                  autofocus: true,
+                                  style: ElevatedButton.styleFrom(
+                                    elevation: 5,
+                                    backgroundColor:
+                                        Theme.of(context).colorScheme.primary,
+                                    foregroundColor: const Color(0xFFEDEDED),
                                   ),
+                                  child: FittedBox(
+                                    child: Text(
+                                      "ADICIONAR",
+                                      style: const TextStyle(
+                                        fontFamily: 'Lato',
+                                        fontSize: 20,
+                                        fontWeight: FontWeight.bold,
+                                      ),
+                                    ),
+                                  ),
+                                  onPressed: () {
+                                    ref.read(initialConfigProvider).addModality(
+                                        modalityName,
+                                        dropdownvalue1,
+                                        dropdownvalue2);
+                                  },
                                 ),
                               ),
                             ),
+                            Padding(
+                              padding: const EdgeInsets.all(15.0),
+                              child: FittedBox(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Center(
+                                      child: Container(
+                                        width: 170,
+                                        height: 55,
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(20),
+                                          color: Theme.of(context)
+                                              .colorScheme
+                                              .primary,
+                                        ),
+                                        child: TextButton(
+                                          onPressed: () {
+                                            Navigator.pop(context);
+                                          },
+                                          child: Text(
+                                            'CONFIRMAR',
+                                            style: TextStyle(
+                                              fontFamily: 'Lato',
+                                              color: Colors.white,
+                                              fontSize: 18,
+                                              fontWeight: FontWeight.bold,
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            )
                           ],
                         ),
                       ),
                     ),
                   ),
-                ),
-                ...modalitiesWidgets,
-              ],
+                  ...modalitiesWidgets,
+                ],
+              ),
             ),
           ),
         ),
