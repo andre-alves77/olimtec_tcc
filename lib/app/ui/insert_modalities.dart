@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 import 'package:olimtec_tcc/app/ui/modlityitemadmin.dart';
-import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
-import 'package:olimtec_tcc/app/shared/views/option_config.dart';
+import 'dart:io';
+import 'package:file_picker/file_picker.dart';
+import 'package:path_provider/path_provider.dart';
 
 class InsertModalitiesAdmin extends StatelessWidget {
   const InsertModalitiesAdmin({super.key});

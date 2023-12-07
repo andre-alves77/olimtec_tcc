@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.78.0
 Flutter extension: 3.78.0 (not activated)
@@ -297,6 +299,7 @@ Flutter (3.13.6): C:\flutter (No device)
 [04:08:49] [General] [Info] Did not find session cdb9b6db-12ef-4abb-b31b-642eb6505a16 to handle dart.progressStart. There were 0 sessions:
 [04:08:49] [General] [Info] Event will be queued and processed when the session start event fires
 [04:08:49] [General] [Info] Processing delayed event dart.progressStart for session cdb9b6db-12ef-4abb-b31b-642eb6505a16
+<<<<<<< HEAD
 [05:01:28] [General] [Info] Starting debug session...
 [05:01:28] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
 [05:01:28] [General] [Info]     program  : lib/main.dart
@@ -431,3 +434,6 @@ Flutter (3.13.6): C:\flutter (No device)
 [06:09:44] [General] [Info] Did not find session a2f23366-d448-4121-aec6-f37b702cf851 to handle dart.progressStart. There were 0 sessions:
 [06:09:44] [General] [Info] Event will be queued and processed when the session start event fires
 [06:09:44] [General] [Info] Processing delayed event dart.progressStart for session a2f23366-d448-4121-aec6-f37b702cf851
+=======
+>>>>>>> 207eefc957a99ad6580b5731042d3584f64d09de
+>>>>>>> ca1f4b7ae85bb15806bfcf838619607da1d5ac3a
