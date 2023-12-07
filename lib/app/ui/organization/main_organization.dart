@@ -51,20 +51,20 @@ class _MainOrgnizationState extends State<MainOrgnization> {
                   Navigator.pushNamed(context, ModalitiesOrganization.route);
                 },
                 child: OptionConfig(
-                    icone: Icons.play_circle_filled,
-                    text1: "COMEÇAR JOGOS",
-                    ),
+                  icone: Icons.play_circle_filled,
+                  text1: "COMEÇAR JOGOS",
+                ),
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, RegulationModalitiesOrganization.route);
+                  Navigator.pushNamed(
+                      context, RegulationModalitiesOrganization.route);
                 },
                 child: OptionConfig(
                     icone: Icons.mode,
                     text1: "MODIFICAR REGULAMENTO",
                     text2: "(DE CADA MODALIDADE)"),
               ),
-                      
             ],
           ),
         ),
@@ -74,7 +74,7 @@ class _MainOrgnizationState extends State<MainOrgnization> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
         onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+          Navigator.pop(context);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
