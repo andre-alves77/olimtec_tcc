@@ -4,13 +4,17 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/features/leader/team_players.dart';
 
 class ModalityItem extends StatelessWidget {
-  const ModalityItem({super.key, required this.routes, required this.modalityName, required this.iconName, required this.routesArg});
+  const ModalityItem(
+      {super.key,
+      required this.routes,
+      required this.modalityName,
+      required this.iconName,
+      required this.routesArg});
 
   final String routes;
   final String modalityName;
-  final String iconName;
+  final Map<String, dynamic> iconName;
   final String routesArg;
-  
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,8 @@ class ModalityItem extends StatelessWidget {
               width: sizeWidth,
               child: ListTile(
                 leading: Icon(
-                  Icons.sports_basketball,
+                  IconData(iconName['codePoint'],
+                      fontFamily: iconName['fontFamily']),
                   color: Theme.of(context).colorScheme.onPrimaryContainer,
                   size: sizeWidth / 9,
                 ),

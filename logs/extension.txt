@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 !! ⚠️ PLEASE REVIEW THIS LOG FOR SENSITIVE INFORMATION BEFORE SHARING ⚠️ !!
 Dart Code extension: 3.78.0
 Flutter extension: 3.78.0 (not activated)
@@ -168,3 +169,5 @@ Flutter (3.11.0-6.0.pre.49): C:\flutter_windows_3.7.7-stable\flutter (No device)
 [18:26:29] [General] [Info] Returning cached promise for getSupportedPlatforms()
 [18:26:29] [General] [Info] Returning cached promise for getSupportedPlatforms()
 [18:26:29] [General] [Info] Returning cached promise for getSupportedPlatforms()
+=======
+>>>>>>> 75594e11122bc19b3f2a82fd2e451519ce6e8817

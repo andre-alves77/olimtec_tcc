@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
-import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
+import 'package:olimtec_tcc/app/features/organization/add_games/adicionar_jogo.dart';
 import 'package:olimtec_tcc/app/ui/organization/insert_modality_rule_org.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 

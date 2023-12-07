@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
-import 'package:olimtec_tcc/app/ui/organization/adicionar_jogo.dart';
-import 'package:olimtec_tcc/app/ui/organization/organization_games.dart';
+import 'package:olimtec_tcc/app/features/organization/add_games/organization_games.dart';
 import 'package:olimtec_tcc/app/ui/organization/organization_modalities.dart';
 import 'package:olimtec_tcc/app/ui/organization/regulation_modalities.dart';
-import 'package:olimtec_tcc/app/utils/app_routes.dart';
 
 class MainOrgnization extends StatefulWidget {
   const MainOrgnization({super.key});
@@ -51,20 +49,20 @@ class _MainOrgnizationState extends State<MainOrgnization> {
                   Navigator.pushNamed(context, ModalitiesOrganization.route);
                 },
                 child: OptionConfig(
-                    icone: Icons.play_circle_filled,
-                    text1: "COMEÇAR JOGOS",
-                    ),
+                  icone: Icons.play_circle_filled,
+                  text1: "COMEÇAR JOGOS",
+                ),
               ),
               GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, RegulationModalitiesOrganization.route);
+                  Navigator.pushNamed(
+                      context, RegulationModalitiesOrganization.route);
                 },
                 child: OptionConfig(
                     icone: Icons.mode,
                     text1: "MODIFICAR REGULAMENTO",
                     text2: "(DE CADA MODALIDADE)"),
               ),
-                      
             ],
           ),
         ),
@@ -74,7 +72,7 @@ class _MainOrgnizationState extends State<MainOrgnization> {
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
         onPressed: () {
-          Navigator.pushNamedAndRemoveUntil(context, '/', (route) => false);
+          Navigator.pop(context);
         },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,

@@ -11,6 +11,10 @@ final gamesIDProvider = FutureProvider<List<String>?>((ref){
   return ref.read(gamesRepositoryProvider).getGamesID();
 });
 
+final gamesModalityIDProvider = FutureProvider.family<List<String>?, String>((ref, modality){
+  return ref.watch(gamesRepositoryProvider).getModalityGamesID(modality);
+});
+
 final gamesIDProviderInFinished = FutureProvider<List<String>?>((ref){
   return ref.read(gamesRepositoryProvider).getGamesIDInFinished();
 });
@@ -54,6 +58,30 @@ final pendentGamesProvider = StreamProvider<List<String>>(
        .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
  },
 );
+
+final pendentDocORDERIdsProvider = StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
+ final querySnapshot = FirebaseFirestore.instance
+    .collection('game')
+    .where('gameState', isEqualTo: 'pendent')
+    .where('modalidade', isEqualTo: modality).orderBy('id', descending: true)
+    .snapshots();
+
+ return querySnapshot.map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+});
+
+final pendentDocumentIdsProvider = StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
+ final querySnapshot = FirebaseFirestore.instance
+    .collection('game')
+    .where('gameState', isEqualTo: 'pendent')
+    .where('modalidade', isEqualTo: modality)
+    .snapshots();
+
+ return querySnapshot.map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+});
+
+final getGameMapProvider = FutureProvider.family<Map<String, dynamic>, String>((ref, docid) {
+  return FirebaseFirestore.instance.collection('game').doc(docid).get().then((value) => value.data() as Map<String, dynamic>);
+});
 
 
 
