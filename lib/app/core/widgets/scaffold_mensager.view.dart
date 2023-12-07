@@ -30,9 +30,10 @@ Future.delayed(Duration(seconds: 10));
 
     scaffoldMessenger.showSnackBar(
       SnackBar(
+        
         behavior: SnackBarBehavior.floating,
         content: Text(message, style: TextStyle(color:Theme.of(context!).colorScheme.onPrimaryContainer)),
-        backgroundColor: Theme.of(context).colorScheme.primaryContainer,
+        backgroundColor: type ==ScaffoldAlert.information ?Theme.of(context).colorScheme.primaryContainer:Colors.red,
         
       ),
     );

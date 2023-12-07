@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
@@ -16,9 +17,10 @@ class AddGameOrganization extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-      final game = ref.watch(getGameMapProvider("5fst3OI7KUEHKNvyhaYs")).value;
     final String? argModality =
         ModalRoute.of(context)?.settings.arguments as String;
+
+      
   
     return Scaffold(
         appBar: AppBar(
@@ -29,23 +31,32 @@ class AddGameOrganization extends ConsumerWidget {
           ),
           centerTitle: true,
         ),
-        body: ref.watch(pendentDocumentIdsProvider(argModality!)).when(
-            data: (data) {
-      final gamesId = ref.watch(pendentDocORDERIdsProvider(argModality!)).value;
+        body: Center(
+          child: ConstrainedBox(
+            constraints: BoxConstraints(maxWidth: 400),
+            child: ref.watch(pendentDocumentIdsProvider(argModality!)).when(
+                data: (mapA) {
 
-          return ListView.builder(
-              itemCount: gamesId!.length,
-              itemBuilder: ((_, index) {
-                return GameCardStream(docId: gamesId[index]);
-              }),
-           
-          );
-        }, error: (e, s) {
-          CustomSnackBar(message: "Ocorreu um erro", ref: ref);
-          Navigator.pop(context);
-          return SizedBox();
-        }, loading: () {
-          return LoadingPage();
-        }));
+
+              return ListView.builder(
+                  itemCount: mapA.length,
+                  itemBuilder: ((_, index) {
+                    return Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: AddGamecardStream(docId: mapA[index]),
+                    );
+                  }),
+               
+              );
+            }, error: (e, s) {
+              CustomSnackBar(message: "Ocorreu um erro", ref: ref);
+              Navigator.pop(context);
+              return SizedBox();
+            }, loading: () {
+              return LoadingPage();
+            }),
+          ),
+        ));
   }
 }
+
