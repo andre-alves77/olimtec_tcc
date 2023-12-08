@@ -123,7 +123,8 @@ final predictedgamesDocORDERIdsProvider =
     StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
   final querySnapshot = FirebaseFirestore.instance
       .collection('game')
-      .where('modalidade', isEqualTo: modality).where('gameState', isEqualTo: 'predicted')
+      .where('modalidade', isEqualTo: modality)
+      .where('gameState', isEqualTo: 'predicted')
       .orderBy('id')
       .snapshots();
 
@@ -135,7 +136,8 @@ final inProgressgamesDocORDERIdsProvider =
     StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
   final querySnapshot = FirebaseFirestore.instance
       .collection('game')
-      .where('modalidade', isEqualTo: modality).where('gameState', isEqualTo: 'inProgress')
+      .where('modalidade', isEqualTo: modality)
+      .where('gameState', isEqualTo: 'inProgress')
       .orderBy('id')
       .snapshots();
 
@@ -150,4 +152,14 @@ final getTeam2 = FutureProvider.family<String, List<String>>((ref, team) async {
         .where("modalidade", isEqualTo: team[0]).where('id', isEqualTo: team[1])
       .get();
   return query.docs.first.id;
+});
+final carouselStreamProvider = StreamProvider.autoDispose<List<Game>>((ref) {
+  final stream = FirebaseFirestore.instance
+      .collection('game')
+      .where('gameState', isNotEqualTo: 'pendent')
+      .snapshots();
+  return stream
+      .map((snapshot) =>
+          snapshot.docs.map((doc) => Game.fromMap(doc.data())).toList())
+      .take(3);
 });
