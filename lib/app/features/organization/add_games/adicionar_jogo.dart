@@ -20,8 +20,6 @@ class AddGameOrganization extends ConsumerWidget {
     final String? argModality =
         ModalRoute.of(context)?.settings.arguments as String;
 
-      
-  
     return Scaffold(
         appBar: AppBar(
           title: Text(
@@ -34,19 +32,16 @@ class AddGameOrganization extends ConsumerWidget {
         body: Center(
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 400),
-            child: ref.watch(pendentDocumentIdsProvider(argModality!)).when(
+            child: ref.watch(pendentDocORDERIdsProvider(argModality!)).when(
                 data: (mapA) {
-
-
               return ListView.builder(
-                  itemCount: mapA.length,
-                  itemBuilder: ((_, index) {
-                    return Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: AddGamecardStream(docId: mapA[index]),
-                    );
-                  }),
-               
+                itemCount: mapA.length,
+                itemBuilder: ((_, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: AddGamecardStream(docId: mapA[index]),
+                  );
+                }),
               );
             }, error: (e, s) {
               CustomSnackBar(message: "Ocorreu um erro", ref: ref);
@@ -59,4 +54,3 @@ class AddGameOrganization extends ConsumerWidget {
         ));
   }
 }
-

@@ -167,7 +167,7 @@ class ChaveamentoCard extends ConsumerWidget {
                                                   fontWeight: FontWeight.w900,
                                                   color: Colors.redAccent),
                                             )
-                                          : game['gameState'] == "predicted"? Text(
+                                          : game['gameState'] == "pendent"? Text(
                                               'Não configurado',
                                               style: TextStyle(
                                                   fontFamily: 'Lato',
