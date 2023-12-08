@@ -14,14 +14,23 @@ class ModalityOrganization extends ConsumerWidget {
     final String? argModality =
         ModalRoute.of(context)?.settings.arguments as String;
     List<String>? gameList = ref
-            .watch(pendentDocORDERIdsProvider(argModality!))
+            .watch(inProgressgamesDocORDERIdsProvider(argModality!))
+            .whenData((value) => value)
+            .value ??
+        [];
+           List<String>? gameList2 = ref
+            .watch(predictedgamesDocORDERIdsProvider(argModality))
             .whenData((value) => value)
             .value ??
         [];
 
     List<Widget> widgetList = [];
-    gameList.forEach((element) {
-      print(element);
+    gameList!.forEach((element) {
+
+      widgetList.add(StartGameCardStream(docId: element));
+
+    });
+     gameList2.forEach((element) {
       widgetList.add(StartGameCardStream(docId: element));
     });
     return Scaffold(

@@ -8,6 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/championship/service/team.service.dart';
 import 'package:olimtec_tcc/app/features/test.dart';
 import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
+import 'package:olimtec_tcc/app/ui/organization/game_score.dart';
+import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
 import 'package:provider/provider.dart';
 
 class StartGameCardStream extends StatelessWidget {
@@ -206,13 +208,24 @@ Map<String, dynamic> game;
                               Theme.of(context).colorScheme.onPrimaryContainer,
                         ),
                       ),
-                      Text(
-                        'COMEÇAR JOGO',
-                        style: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 20,
-                          fontWeight: FontWeight.bold,
-                          color: Theme.of(context).colorScheme.primary,
+                      InkWell(
+                        onTap: () async{
+
+var mytime = await FirebaseFirestore.instance.collection('modality').where('name', isEqualTo: game['modalidade']).get().then((value) => value.docs.first.data());
+                          if(mytime['scoreType'] != "Placar de números 1 a 100"){
+                            Navigator.popAndPushNamed(context, ScoreBoardWithoutPoints.route);
+                          }else{
+                            Navigator.popAndPushNamed(context, GameScore.route);
+                          }
+                        },
+                        child: Text(
+                          'COMEÇAR JOGO',
+                          style: TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 20,
+                            fontWeight: FontWeight.bold,
+                            color: Theme.of(context).colorScheme.primary,
+                          ),
                         ),
                       ),
                     ],

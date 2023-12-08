@@ -1,15 +1,29 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class GameScore extends StatefulWidget {
+
+
+
+
+
+
+
+
+
+class GameScore extends ConsumerStatefulWidget {
+  const GameScore({super.key});
   static String route = "/gamescore-organization";
+  
 
   @override
-  _GameScoreState createState() => _GameScoreState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _GameScoreState();
 }
 
+
 Widget _rowzinha(String head, String info) {
+
   return Row(
     mainAxisSize: MainAxisSize.max,
     mainAxisAlignment: MainAxisAlignment.center,
@@ -38,7 +52,7 @@ Widget _rowzinha(String head, String info) {
   );
 }
 
-class _GameScoreState extends State<GameScore> {
+class _GameScoreState extends ConsumerState<GameScore> {
   int _counter = 0;
   int _time2 = 0;
   int _foulsTime1 = 0;
@@ -95,6 +109,8 @@ class _GameScoreState extends State<GameScore> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
+        final String? argModality =
+        ModalRoute.of(context)?.settings.arguments as String;
 
     return Scaffold(
       appBar: AppBar(
