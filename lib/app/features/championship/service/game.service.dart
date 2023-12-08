@@ -83,5 +83,12 @@ final getGameMapProvider = FutureProvider.family<Map<String, dynamic>, String>((
   return FirebaseFirestore.instance.collection('game').doc(docid).get().then((value) => value.data() as Map<String, dynamic>);
 });
 
+final gamesDocORDERIdsProvider = StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
+ final querySnapshot = FirebaseFirestore.instance
+    .collection('game')
+    .where('modalidade', isEqualTo: modality)
+    .snapshots();
 
+ return querySnapshot.map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+});
 
