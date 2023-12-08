@@ -8,7 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/championship/service/team.service.dart';
 import 'package:olimtec_tcc/app/features/test.dart';
 import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
-import 'package:olimtec_tcc/app/ui/organization/game_score.dart';
+import 'package:olimtec_tcc/app/features/organization/game_score.dart';
 import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
 import 'package:provider/provider.dart';
 
@@ -43,7 +43,7 @@ class StartGameCardStream extends StatelessWidget {
           print(snapshot.requireData.data());
           final game = snapshot.data!.data() as Map<String, dynamic>;
 
-          return StartGame(game: game,);
+          return StartGame(game: game, docId: docId,);
         }
 
         // etc.
@@ -55,11 +55,12 @@ class StartGameCardStream extends StatelessWidget {
 
 
 class StartGame extends ConsumerWidget {
-  StartGame({
+  StartGame({required this.docId,
     super.key, required this.game
   });
 
 Map<String, dynamic> game;
+final String docId;
 
   @override
   Widget build(BuildContext context,WidgetRef ref) {
@@ -215,7 +216,9 @@ var mytime = await FirebaseFirestore.instance.collection('modality').where('name
                           if(mytime['scoreType'] != "Placar de números 1 a 100"){
                             Navigator.popAndPushNamed(context, ScoreBoardWithoutPoints.route);
                           }else{
-                            Navigator.popAndPushNamed(context, GameScore.route);
+                            print(docId);
+                            await FirebaseFirestore.instance.collection('game').doc(docId).update({'gameState': 'inProgress'});
+                            Navigator.popAndPushNamed(context, GameScore.route, arguments:docId);
                           }
                         },
                         child: Text(

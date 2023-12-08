@@ -142,3 +142,12 @@ final inProgressgamesDocORDERIdsProvider =
   return querySnapshot
       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
 });
+
+
+final getTeam2 = FutureProvider.family<String, List<String>>((ref, team) async {
+  var query = await FirebaseFirestore.instance
+      .collection('game')
+        .where("modalidade", isEqualTo: team[0]).where('id', isEqualTo: team[1])
+      .get();
+  return query.docs.first.id;
+});
