@@ -1,35 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
+import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
 import 'main_card.dart';
 
-class CardCarousel extends StatefulWidget {
+class CardCarousel extends ConsumerStatefulWidget {
   const CardCarousel({super.key});
 
   @override
-  State<CardCarousel> createState() => _CardCarouselState();
+  ConsumerState<ConsumerStatefulWidget> createState() => _CardCarouselState();
 }
 
-int _currentIndex = 0;
+class _CardCarouselState extends ConsumerState<CardCarousel> {
+  int _currentIndex = 0;
 
-List cardList = [
-  MainCard(gametest),
-  MainCard(gametest),
-  MainCard(gametest),
-];
-
-List<T> map<T>(List list, Function handler) {
-  List<T> result = [];
-  for (var i = 0; i < list.length; i++) {
-    result.add(handler(i, list[i]));
+  List<T> map<T>(List list, Function handler) {
+    List<T> result = [];
+    for (var i = 0; i < list.length; i++) {
+      result.add(handler(i, list[i]));
+    }
+    return result;
   }
-  return result;
-}
 
-class _CardCarouselState extends State<CardCarousel> {
   @override
   Widget build(BuildContext context) {
-
+    List cardList = [];
+    final game = ref.watch(carouselStreamProvider).when(
+          data: (data) {
+            for (int x = 0; x < 3; x++) {
+              cardList.add(MainCard(data[x]));
+            }
+            ;
+          },
+          error: (Object error, StackTrace stackTrace) {},
+          loading: () {},
+        );
     return Column(
       children: <Widget>[
         CarouselSlider(

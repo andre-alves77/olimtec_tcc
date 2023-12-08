@@ -1,15 +1,22 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/models/game.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/features/championship/models/game.dart';
+import 'package:olimtec_tcc/app/features/championship/service/team.service.dart';
 
-class MainCard extends StatelessWidget {
+class MainCard extends ConsumerWidget {
   const MainCard(this.game, {super.key});
 
   final Game game;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final teamImage1 = ref.watch(getTeamImage(game.team1!)).value;
+
+    final teamImage2 = ref.watch(getTeamImage(game.team2!)).value;
+
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return AspectRatio(
@@ -36,7 +43,7 @@ class MainCard extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              game.time,
+                              game.time ?? "A definir",
                               style: const TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 18,
@@ -66,7 +73,7 @@ class MainCard extends StatelessWidget {
                       width: sizeWidth / 5,
                       child: FittedBox(
                         child: Text(
-                          game.local,
+                          game.local ?? "A definir",
                           style: const TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 14,
@@ -86,18 +93,19 @@ class MainCard extends StatelessWidget {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              game.team1.image,
-                              width: sizeWidth / 4,
+                            child: CachedNetworkImage(
+                              imageUrl: teamImage1 ??
+                                  'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36',
+                              width: sizeWidth / 2,
                               fit: BoxFit.cover,
                             ),
                           ),
                           Container(
                             padding: EdgeInsets.only(top: 5),
-                            width: sizeWidth / 7,
+                            width: sizeWidth / 9,
                             child: FittedBox(
                               child: Text(
-                                game.team1.name,
+                                game.team1 ?? "A definir",
                                 style: const TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 16,
@@ -116,7 +124,7 @@ class MainCard extends StatelessWidget {
                             Theme.of(context).brightness == Brightness.dark
                                 ? 'assets/images/IMAGE_VS_L.png'
                                 : 'assets/images/IMAGE_VS.png',
-                            width: sizeWidth / 4,
+                            width: sizeWidth / 2,
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -125,18 +133,19 @@ class MainCard extends StatelessWidget {
                         children: [
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8),
-                            child: Image.asset(
-                              game.team2.image,
-                              width: sizeWidth / 4,
+                            child: CachedNetworkImage(
+                              imageUrl: teamImage2 ??
+                                  'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36',
+                              width: sizeWidth / 2,
                               fit: BoxFit.cover,
                             ),
                           ),
                           Container(
                             padding: EdgeInsets.only(top: 5),
-                            width: sizeWidth / 7,
+                            width: sizeWidth / 9,
                             child: FittedBox(
                               child: Text(
-                                game.team2.name,
+                                game.team2 ?? "A definir",
                                 style: const TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 16,

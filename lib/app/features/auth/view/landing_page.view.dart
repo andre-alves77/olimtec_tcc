@@ -24,7 +24,7 @@ class _LandingPageState extends State<LandingPage> {
         height: size.height * 1,
         decoration: BoxDecoration(
           image: DecorationImage(
-            fit: BoxFit.fill,
+            fit: BoxFit.cover,
             image: Image.asset(
               'assets/images/LANDING.png',
             ).image,
