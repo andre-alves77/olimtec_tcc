@@ -22,7 +22,7 @@ class ModalityUser extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final String? arg = ModalRoute.of(context)?.settings.arguments as String;
-    List<String>? gameList = ref.watch(gamesDocORDERIdsProvider(arg!)).whenData((value) => value).value;
+    List<String>? gameList = ref.watch(pendentDocORDERIdsProvider(arg!)).whenData((value) => value).value;
     List<Widget> widgetList = []; 
     gameList!.forEach((element) {
       widgetList.add(ChampionsCard(docId: element));

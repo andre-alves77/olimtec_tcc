@@ -63,7 +63,7 @@ final pendentDocORDERIdsProvider = StreamProvider.autoDispose.family<List<String
  final querySnapshot = FirebaseFirestore.instance
     .collection('game')
     .where('gameState', isEqualTo: 'pendent')
-    .where('modalidade', isEqualTo: modality).orderBy('id', descending: true)
+    .where('modalidade', isEqualTo: modality).orderBy('id')
     .snapshots();
 
  return querySnapshot.map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
@@ -86,7 +86,7 @@ final getGameMapProvider = FutureProvider.family<Map<String, dynamic>, String>((
 final gamesDocORDERIdsProvider = StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
  final querySnapshot = FirebaseFirestore.instance
     .collection('game')
-    .where('modalidade', isEqualTo: modality)
+    .where('modalidade', isEqualTo: modality).orderBy('id')
     .snapshots();
 
  return querySnapshot.map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
