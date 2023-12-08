@@ -14,7 +14,7 @@ class ModalityOrganization extends ConsumerWidget {
     final String? argModality =
         ModalRoute.of(context)?.settings.arguments as String;
     List<String>? gameList = ref
-            .watch(predictedDocumentModalityIdsProvider(argModality!))
+            .watch(pendentDocORDERIdsProvider(argModality!))
             .whenData((value) => value)
             .value ??
         [];
