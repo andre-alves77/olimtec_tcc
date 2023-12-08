@@ -9,6 +9,7 @@ import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 
 import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
 import 'package:olimtec_tcc/app/features/championship/service/team.service.dart';
+import 'package:olimtec_tcc/app/features/user/chaveamentoCard.dart';
 
 import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 
@@ -69,6 +70,46 @@ class GameCardStream extends StatelessWidget {
           final game = snapshot.data!.data() as Map<String, dynamic>;
 
           return NewGameCard(game);
+        }
+
+        // etc.
+        //   return NewGameCard(game);
+        );
+  }
+}
+
+class ChampionsCard extends StatelessWidget {
+  const ChampionsCard({super.key, required String this.docId});
+
+  final String docId;
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+        stream: FirebaseFirestore.instance
+            .collection('game')
+            .doc(docId)
+            .snapshots(),
+        builder: (BuildContext context,
+            AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
+          if (snapshot.hasError) {
+            return Text('Erro ao carregar os dados do jogo');
+          }
+
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return Text("Carregando");
+          }
+          if (snapshot.data == null) {
+            return SizedBox(
+              height: 0,
+              width: 0,
+            );
+          }
+
+          // Atualize o widget com os novos dados do jogo aqui
+          print(snapshot.requireData.data());
+          final game = snapshot.data!.data() as Map<String, dynamic>;
+
+          return ChaveamentoCard(game);
         }
 
         // etc.

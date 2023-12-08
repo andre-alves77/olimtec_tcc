@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class AboutUsPage extends StatefulWidget {
   const AboutUsPage({super.key});
@@ -7,6 +8,18 @@ class AboutUsPage extends StatefulWidget {
 
   @override
   State<AboutUsPage> createState() => _AboutUsPage();
+}
+
+_launchURLRocha() async {
+  const url =
+      'https://www.linkedin.com/authwall?trk=bf&trkInfo=AQFO0BArHELcpQAAAYxGfwogqVw2DibNt9nnPTZEY_b-8HuX5Gng2OOzGmStBuntaZ5IFHbhrKlMqF7E4a41zlokGjZzhkFzRMih_oGQm4uGC2lxsbyRpx68RQWZxW4mBZLHcSU=&original_referer=&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fgabriel-rocha-matos-421b16272%3Futm_source%3Dshare%26utm_campaign%3Dshare_via%26utm_content%3Dprofile%26utm_medium%3Dandroid_app';
+  // ignore: deprecated_member_use
+  if (await canLaunch(url)) {
+    // ignore: deprecated_member_use
+    await launch(url);
+  } else {
+    throw 'Could not launch $url';
+  }
 }
 
 class _AboutUsPage extends State<AboutUsPage> {
@@ -42,17 +55,17 @@ class _AboutUsPage extends State<AboutUsPage> {
                   children: [
                     Flexible(
                       child: AboutUsSingleCard(
-                          image: "assets/images/LOGO_USUARIO.png",
-                          name: 'Gabriel Rocha',
-                          role: 'Full Stack',
-                          pix: '548.084.918-26'),
+                        image: "assets/images/rochar.png",
+                        name: 'Gabriel Rocha',
+                        role: 'Designer',
+                      ),
                     ),
                     Flexible(
                       child: AboutUsSingleCard(
-                          image: "assets/images/LOGO_USUARIO.png",
-                          name: 'Luan Dias',
-                          role: 'Full Stack',
-                          pix: '123.456.789-12'),
+                        image: "assets/images/luan.png",
+                        name: 'Luan Dias',
+                        role: 'Front-end',
+                      ),
                     ),
                   ],
                 ),
@@ -60,17 +73,17 @@ class _AboutUsPage extends State<AboutUsPage> {
                   children: [
                     Flexible(
                       child: AboutUsSingleCard(
-                          image: "assets/images/LOGO_USUARIO.png",
-                          name: 'Riquelme Viana',
-                          role: 'Full Stack',
-                          pix: '987.654.321-98'),
+                        image: "assets/images/riquelme.png",
+                        name: 'Riquelme Viana',
+                        role: 'Front-end',
+                      ),
                     ),
                     Flexible(
                       child: AboutUsSingleCard(
-                          image: "assets/images/LOGO_USUARIO.png",
-                          name: 'Vinicius Vitoriano',
-                          role: 'Full Stack',
-                          pix: '546.829.358-79'),
+                        image: "assets/images/vini.png",
+                        name: 'Vinicius Vitoriano',
+                        role: 'Front-end',
+                      ),
                     ),
                   ],
                 ),
@@ -82,10 +95,10 @@ class _AboutUsPage extends State<AboutUsPage> {
                       child: ConstrainedBox(
                         constraints: BoxConstraints(maxWidth: 190),
                         child: AboutUsSingleCard(
-                            image: "assets/images/LOGO_USUARIO.png",
-                            name: 'André Alves',
-                            role: 'Full Stack',
-                            pix: '324.575.384-43'),
+                          image: "assets/images/andre.png",
+                          name: 'André Alves',
+                          role: 'Full Stack',
+                        ),
                       ),
                     ),
                   ],
@@ -100,16 +113,15 @@ class _AboutUsPage extends State<AboutUsPage> {
 }
 
 class AboutUsSingleCard extends StatelessWidget {
-  const AboutUsSingleCard(
-      {required this.image,
-      required this.name,
-      required this.role,
-      required this.pix});
+  const AboutUsSingleCard({
+    required this.image,
+    required this.name,
+    required this.role,
+  });
 
   final String image;
   final String name;
   final String role;
-  final String pix;
 
   @override
   Widget build(BuildContext context) {
@@ -147,13 +159,7 @@ class AboutUsSingleCard extends StatelessWidget {
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
-                Text(
-                  'Pix: $pix',
-                  style: TextStyle(
-                    fontFamily: 'Lato',
-                    fontSize: 16,
-                  ),
-                )
+                
               ],
             ),
           ),
