@@ -109,3 +109,28 @@ final gamesDocORDERIdsProvider =
   return querySnapshot
       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
 });
+
+final inProgressgamesDocORDERIdsProvider =
+    StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
+  final querySnapshot = FirebaseFirestore.instance
+      .collection('game')
+      .where('modalidade', isEqualTo: modality).where('gameState', isEqualTo: 'inProgress')
+      .orderBy('id')
+      .snapshots();
+
+  return querySnapshot
+      .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+});
+
+final predictedgamesDocORDERIdsProvider =
+    StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
+  final querySnapshot = FirebaseFirestore.instance
+      .collection('game')
+      .where('modalidade', isEqualTo: modality).where('gameState', isEqualTo: 'predicted')
+      .orderBy('id')
+      .snapshots();
+
+  return querySnapshot
+      .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+});
+
