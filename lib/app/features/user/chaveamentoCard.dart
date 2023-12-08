@@ -60,7 +60,25 @@ class ChaveamentoCard extends ConsumerWidget {
                           child: Row(
                             
                             children: [
-                             
+                              Text("N°: ",
+                              style: TextStyle(
+                                 fontFamily: 'Lato',
+                                    fontSize: 17.8,
+                                    fontWeight: FontWeight.bold,
+                              ),
+                              ),
+                             Padding(
+                               padding: const EdgeInsets.only(right: 20),
+                               child: Text(
+                                game["id"].toString(),
+                                style: TextStyle(
+                                   fontFamily: 'Lato',
+                                    fontSize: 17.8,
+                                    fontWeight: FontWeight.bold,
+                                ),
+                               ),
+                             ),
+
                               Text(
                                 game["modalidade"]?? 'modalidade',
                                 style: TextStyle(

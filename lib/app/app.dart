@@ -40,9 +40,9 @@ import 'package:olimtec_tcc/app/ui/organization/game_score.dart';
 import 'package:olimtec_tcc/app/ui/organization/insert_modality_rule_org.dart';
 import 'package:olimtec_tcc/app/ui/organization/main_modalities_org.dart';
 import 'package:olimtec_tcc/app/features/organization/main_organization.dart';
-import 'package:olimtec_tcc/app/ui/organization/modality_page_organization.dart';
+import 'package:olimtec_tcc/app/features/organization/start_games/modality_page_organization.dart';
 import 'package:olimtec_tcc/app/features/organization/add_games/organization_games.dart';
-import 'package:olimtec_tcc/app/ui/organization/organization_modalities.dart';
+import 'package:olimtec_tcc/app/features/organization/start_games/organization_modalities.dart';
 import 'package:olimtec_tcc/app/ui/organization/regulation_modalities.dart';
 import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
 
