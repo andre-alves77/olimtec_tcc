@@ -97,7 +97,7 @@ class App extends ConsumerWidget {
         ResetPasswordForm.route: (ctx) => const ResetPasswordForm(),
         ResultadoUser.route: (ctx) => const ResultadoUser(),
         ModalityUser.route: (ctx) => const ModalityUser(),
-        CronogramaUser.route: (ctx) => const CronogramaUser(),
+        CronogramaUser.route: (ctx) => CronogramaUser(),
         AboutUsPage.route: (ctx) => const AboutUsPage(),
         EquipeUser.route: (ctx) => const EquipeUser(),
         PerfilUser.route: (ctx) => const PerfilUser(),
@@ -148,7 +148,8 @@ class App extends ConsumerWidget {
         LoadingPage.route: (ctx) => const LoadingPage(),
         ModalitiesOrganization.route: (ctx) => const ModalitiesOrganization(),
         GamesOrganization.route: (ctx) => const GamesOrganization(),
-        RegulationModalitiesOrganization.route: (ctx) => const RegulationModalitiesOrganization(),
+        RegulationModalitiesOrganization.route: (ctx) =>
+            const RegulationModalitiesOrganization(),
       },
       home: const LandingPage(),
     );

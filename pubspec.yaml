@@ -102,6 +102,7 @@ flutter:
         - assets/lottie/
         - assets/images/
         - assets/images/logo_principal_dark_mode.png
+        - assets/images/LANDING.png
 
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in

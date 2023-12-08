@@ -109,3 +109,12 @@ final gamesDocORDERIdsProvider =
   return querySnapshot
       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
 });
+
+final gameStreamProvider = StreamProvider.autoDispose
+    .family<Map<String, dynamic>, String>((ref, documentId) {
+  return FirebaseFirestore.instance
+      .collection('game')
+      .doc(documentId)
+      .snapshots()
+      .map((snapshot) => snapshot.data() as Map<String, dynamic>);
+});

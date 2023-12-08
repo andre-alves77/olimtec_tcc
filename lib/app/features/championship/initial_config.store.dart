@@ -94,7 +94,7 @@ class InitConfigStore extends ChangeNotifier {
     teamList.add(Team(
         name: teamName,
         image:
-            'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/avatar%2F1701317816608?alt=media&token=97606ab7-ecb0-47f1-b86c-f4cb6fc0c1f2'));
+            'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36'));
 
     notifyListeners();
   }

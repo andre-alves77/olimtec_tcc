@@ -26,7 +26,7 @@ class _LandingPageState extends State<LandingPage> {
           image: DecorationImage(
             fit: BoxFit.fill,
             image: Image.asset(
-              'assets/images/trio_absurdo_login.jpg',
+              'assets/images/LANDING.png',
             ).image,
           ),
         ),
