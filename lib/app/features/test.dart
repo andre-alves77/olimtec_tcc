@@ -129,7 +129,7 @@ class NewGameCard extends ConsumerWidget {
                               ),
                               Text(' - '),
                               Text(
-                                game["time"],
+                                game["time"] ?? '?',
                                 style: TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 17.8,
@@ -168,7 +168,7 @@ class NewGameCard extends ConsumerWidget {
                               ),
                             ),
                             Text(
-                              game["team1"],
+                              game["team1"] ?? "TIME 1",
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 18,
@@ -249,7 +249,7 @@ class NewGameCard extends ConsumerWidget {
                                 ),
                               ),
                               Text(
-                                game["team2"],
+                                game["team2"] ?? "TIME 2",
                                 style: TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 18,

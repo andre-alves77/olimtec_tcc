@@ -63,16 +63,26 @@ final pendentDocORDERIdsProvider = StreamProvider.autoDispose.family<List<String
  final querySnapshot = FirebaseFirestore.instance
     .collection('game')
     .where('gameState', isEqualTo: 'pendent')
-    .where('modalidade', isEqualTo: modality).orderBy('id', descending: true)
+    .where('modalidade', isEqualTo: modality).orderBy('id')
     .snapshots();
 
  return querySnapshot.map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
 });
 
-final pendentDocumentIdsProvider = StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
+final pendentDocumentModalityIdsProvider = StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
  final querySnapshot = FirebaseFirestore.instance
     .collection('game')
     .where('gameState', isEqualTo: 'pendent')
+    .where('modalidade', isEqualTo: modality)
+    .snapshots();
+
+ return querySnapshot.map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+});
+
+final predictedDocumentModalityIdsProvider = StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
+ final querySnapshot = FirebaseFirestore.instance
+    .collection('game')
+    .where('gameState', isEqualTo: 'predicted')
     .where('modalidade', isEqualTo: modality)
     .snapshots();
 

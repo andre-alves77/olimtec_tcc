@@ -151,9 +151,9 @@ nextGameCounter = !nextGameCounter;
 }else{
       nextGame = qtdFirstRoundTeams + 1;
     }
+qtdround++;
 
-
-int brackerCounter = brackertype/qtdround as int;
+//int brackerCounter = brackertype/qtdround as int;
 
 if(brackertype == 4){
 i = 1;

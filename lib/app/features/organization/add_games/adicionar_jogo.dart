@@ -34,10 +34,8 @@ class AddGameOrganization extends ConsumerWidget {
         body: Center(
           child: ConstrainedBox(
             constraints: BoxConstraints(maxWidth: 400),
-            child: ref.watch(pendentDocumentIdsProvider(argModality!)).when(
+            child: ref.watch(pendentDocORDERIdsProvider(argModality!)).when(
                 data: (mapA) {
-
-
               return ListView.builder(
                   itemCount: mapA.length,
                   itemBuilder: ((_, index) {

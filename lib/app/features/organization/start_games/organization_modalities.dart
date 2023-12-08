@@ -1,9 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:olimtec_tcc/app/data/dummy_data.dart';
-import 'package:olimtec_tcc/app/shared/views/CardItem.dart';
-import 'package:olimtec_tcc/app/ui/admin/modalities/modality_admin_page.dart';
-import 'package:olimtec_tcc/app/ui/organization/modality_page_organization.dart';
+import 'package:olimtec_tcc/app/features/organization/start_games/modality_page_organization.dart';
 import 'package:olimtec_tcc/app/ui/shared/modalityItem_card.dart';
 
 
