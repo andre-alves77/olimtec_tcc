@@ -12,26 +12,24 @@ import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
 
 final mainAdminProvider = StateProvider((ref) {
   final champs = ref.watch(championshipStreamProvider);
-final context = ref.read(navigtorkeyProvider).currentContext;
+  final context = ref.read(navigtorkeyProvider).currentContext;
 
-  champs.when(data: (value) {
-    if(value == null){
-      Navigator.popAndPushNamed(context!, LandingPage.route);
-    }
-    if(value!.isCreated){
-      Navigator.popAndPushNamed(context!, MainAdmin2.route);
-    }
-    if(value.isCreated == false){
-      Navigator.popAndPushNamed(context!, StartChampionshipAdmin.route);
-    }
-  },error: (e, s){
-
-  },loading:(){
-    
-  } ,);
-
+  champs.when(
+    data: (value) {
+      if (value == null) {
+        Navigator.popAndPushNamed(context!, LandingPage.route);
+      }
+      if (value!.isCreated) {
+        Navigator.popAndPushNamed(context!, MainAdmin2.route);
+      }
+      if (value.isCreated == false) {
+        Navigator.popAndPushNamed(context!, StartChampionshipAdmin.route);
+      }
+    },
+    error: (e, s) {},
+    loading: () {},
+  );
 });
-
 
 class MainAdmin extends ConsumerWidget {
   const MainAdmin({super.key});
@@ -40,20 +38,20 @@ class MainAdmin extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-ref.watch(mainAdminProvider);
+    ref.watch(mainAdminProvider);
 
- return Scaffold(body:Center(child:CircularProgressIndicator()));
-}
+    return Scaffold(body: Center(child: CircularProgressIndicator()));
+  }
 }
 
 class MainAdmin2 extends ConsumerWidget {
   const MainAdmin2({super.key});
 
-static String route = "/main-admin2";
+  static String route = "/main-admin2";
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         title: Text(
           'ADMIN',
@@ -97,15 +95,15 @@ static String route = "/main-admin2";
                 ),
               ),
               Padding(padding: EdgeInsets.all(15)),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, ModalitiesAdmin.route);
-                },
-                child: OptionConfig(
-                    icone: Icons.sports_basketball,
-                    text1: "MODALIDADES",
-                    text2: "(TODAS AS MODALIDADES)"),
-              ),
+              // GestureDetector(
+              //   onTap: () {
+              //     Navigator.pushNamed(context, ModalitiesAdmin.route);
+              //   },
+              //   child: OptionConfig(
+              //       icone: Icons.sports_basketball,
+              //       text1: "MODALIDADES",
+              //       text2: "(TODAS AS MODALIDADES)"),
+              // ),
               Padding(padding: EdgeInsets.all(15)),
             ],
           ),
@@ -117,10 +115,9 @@ static String route = "/main-admin2";
         foregroundColor: Theme.of(context).colorScheme.onPrimaryContainer,
         onPressed: () {
           ref.read(authRepositoryProvider).signOut();
-                  },
+        },
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
-
   }
 }
