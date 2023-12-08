@@ -14,12 +14,23 @@ class ChaveamentoCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final teamImage1 = ref.watch(getTeamImage(game['team1'])).value;
+    var teamImage1 = null;
 
-    final teamImage2 = ref.watch(getTeamImage(game['team2'])).value;
+    var teamImage2 = null;
+
+    if(game['team1'] == null || game['team2'] == null) {
+        teamImage1 = null;
+
+     teamImage2 = null;
+    } else {
+       teamImage1 = ref.watch(getTeamImage(game['team1'])).value;
+
+     teamImage2 = ref.watch(getTeamImage(game['team2'])).value;
+    }
+   
+
 
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    if (teamImage2 is String && teamImage1 is String)
       return GestureDetector(
         onTap: () {
           Navigator.pushNamed(context, CronogramaUser.route);
@@ -49,9 +60,27 @@ class ChaveamentoCard extends ConsumerWidget {
                           child: Row(
                             
                             children: [
-                             
+                              Text("N°: ",
+                              style: TextStyle(
+                                 fontFamily: 'Lato',
+                                    fontSize: 17.8,
+                                    fontWeight: FontWeight.bold,
+                              ),
+                              ),
+                             Padding(
+                               padding: const EdgeInsets.only(right: 20),
+                               child: Text(
+                                game["id"].toString(),
+                                style: TextStyle(
+                                   fontFamily: 'Lato',
+                                    fontSize: 17.8,
+                                    fontWeight: FontWeight.bold,
+                                ),
+                               ),
+                             ),
+
                               Text(
-                                game["modalidade"],
+                                game["modalidade"]?? 'modalidade',
                                 style: TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 17.8,
@@ -60,14 +89,13 @@ class ChaveamentoCard extends ConsumerWidget {
                               ),
                               Text(' - '),
                               Text(
-                                game["local"]?? "?",
+                                game["local"]?? "A definir",
                                 style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
                               ),
                               ),
-                               
                             ],
                           ),
                         ),
@@ -94,13 +122,13 @@ class ChaveamentoCard extends ConsumerWidget {
                             ClipRRect(
                               borderRadius: BorderRadius.circular(8),
                               child: CachedNetworkImage(
-                                imageUrl: teamImage1,
+                                imageUrl: teamImage1 ?? '',
                                 width: sizeWidth / 6,
                                 fit: BoxFit.cover,
                               ),
                             ),
                             Text(
-                              game["team1"],
+                              game["team1"] ?? 'time1',
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 18,
@@ -157,7 +185,14 @@ class ChaveamentoCard extends ConsumerWidget {
                                                   fontWeight: FontWeight.w900,
                                                   color: Colors.redAccent),
                                             )
-                                          : Text(
+                                          : game['gameState'] == "predicted"? Text(
+                                              'Não configurado',
+                                              style: TextStyle(
+                                                  fontFamily: 'Lato',
+                                                  fontSize: 16,
+                                                  fontWeight: FontWeight.w900,
+                                                  color: Colors.redAccent),
+                                            ) : Text(
                                               'Encerrado',
                                               style: TextStyle(
                                                 fontFamily: 'Lato',
@@ -174,7 +209,7 @@ class ChaveamentoCard extends ConsumerWidget {
                                           ),
                                             
                                            Text(
-                                            game["round"].toString(),
+                                            game["round"].toString() ?? '0',
                                             style: TextStyle(
                                             fontFamily: 'Lato',
                                             fontSize: 17.8,
@@ -191,13 +226,13 @@ class ChaveamentoCard extends ConsumerWidget {
                               ClipRRect(
                                 borderRadius: BorderRadius.circular(8),
                                 child: CachedNetworkImage(
-                                  imageUrl: teamImage2,
+                                  imageUrl: teamImage2 ?? '',
                                   width: sizeWidth / 6,
                                   fit: BoxFit.cover,
                                 ),
                               ),
                               Text(
-                                game["team2"],
+                                game["team2"] ?? 'time2',
                                 style: TextStyle(
                                   fontFamily: 'Lato',
                                   fontSize: 18,
