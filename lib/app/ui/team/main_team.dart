@@ -37,16 +37,16 @@ class _MainTeamState extends State<MainTeam> {
           padding: EdgeInsetsDirectional.fromSTEB(0, 15, 0, 0),
           child: Column(
             children: [
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, ModalityTeam.route,
-                      arguments: arg);
-                },
-                child: OptionConfig(
-                    icone: Icons.person_add,
-                    text1: "EQUIPES ",
-                    text2: "(INSERIR ALUNOS NAS EQUIPES)"),
-              ),
+              // GestureDetector(
+              //   onTap: () {
+              //     Navigator.pushNamed(context, ModalityTeam.route,
+              //         arguments: arg);
+              //   },
+              //   child: OptionConfig(
+              //       icone: Icons.person_add,
+              //       text1: "EQUIPES ",
+              //       text2: "(INSERIR ALUNOS NAS EQUIPES)"),
+              // ),
               Padding(padding: EdgeInsets.all(15)),
               GestureDetector(
                   onTap: () {
