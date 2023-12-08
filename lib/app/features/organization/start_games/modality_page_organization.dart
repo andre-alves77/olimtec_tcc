@@ -25,7 +25,7 @@ class ModalityOrganization extends ConsumerWidget {
         [];
 
     List<Widget> widgetList = [];
-    gameList.forEach((element) {
+    gameList!.forEach((element) {
 
       widgetList.add(StartGameCardStream(docId: element));
 

@@ -58,7 +58,7 @@ class _DetailsGameOrganizationState extends State<DetailsGameOrganization> {
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         title: FittedBox(
           child: Text(
-            "3ºEAA VS 1ºEAB",
+            "3ºEAB VS 1ºEAB",
             style: TextStyle(
               fontFamily: 'Lato',
               fontSize: 24,

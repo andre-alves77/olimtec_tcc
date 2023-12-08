@@ -1,19 +1,18 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
+import 'package:olimtec_tcc/app/features/user/chaveamentoCard.dart';
+import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 
-class CronogramaUser extends StatefulWidget {
+class CronogramaUser extends ConsumerWidget {
   const CronogramaUser({super.key});
 
   static String route = "/cronograma-user";
 
-  @override
-  State<CronogramaUser> createState() => _CronogramaUserState();
-}
-
-class _CronogramaUserState extends State<CronogramaUser> {
   Widget _rowzinha(String head, String info) {
     return Row(
       mainAxisSize: MainAxisSize.max,
@@ -44,7 +43,12 @@ class _CronogramaUserState extends State<CronogramaUser> {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final String? docId = ModalRoute.of(context)?.settings.arguments as String;
+    final game = ref.watch(gameStreamProvider(docId!));
+    if (game.isLoading == true || game.value == null) {
+      return LoadingPage();
+    }
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
 
     return Scaffold(
@@ -52,7 +56,7 @@ class _CronogramaUserState extends State<CronogramaUser> {
         backgroundColor: Theme.of(context).colorScheme.primaryContainer,
         title: FittedBox(
           child: Text(
-            "3ºEAA VS 1ºEAB",
+            "${game.value!['team1'] ?? "A definir"} VS ${game.value!['team2'] ?? "A definir"}",
             style: TextStyle(
               fontFamily: 'Lato',
               fontSize: 24,
@@ -74,7 +78,7 @@ class _CronogramaUserState extends State<CronogramaUser> {
                   width: sizeWidth / 1.2,
                   child: FittedBox(
                     child: Text(
-                      "BASQUETE MASCULINO",
+                      game.value!['modalidade'],
                       style: TextStyle(
                         color: Theme.of(context).colorScheme.onPrimaryContainer,
                         fontFamily: 'Lato',
@@ -92,8 +96,13 @@ class _CronogramaUserState extends State<CronogramaUser> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Flexible(
-                    child:
-                        Container(width: sizeWidth, child: GameCard(gametest)),
+                    child: Container(
+                        width: sizeWidth,
+                        child: ChaveamentoCard(
+                          game.value!,
+                          docId,
+                          click: false,
+                        )),
                   ),
                 ],
               ),
@@ -140,7 +149,8 @@ class _CronogramaUserState extends State<CronogramaUser> {
                       fit: BoxFit.scaleDown,
                       child: Column(
                         children: <Widget>[
-                          _rowzinha('LOCAL', 'QUADRA 01'),
+                          _rowzinha(
+                              'LOCAL', game.value!['local'] ?? "a definir"),
                           SizedBox(
                             width: sizeWidth,
                             child: Divider(
@@ -151,7 +161,8 @@ class _CronogramaUserState extends State<CronogramaUser> {
                                   .onPrimaryContainer,
                             ),
                           ),
-                          _rowzinha('HORÁRIO', '8:45'),
+                          _rowzinha(
+                              'HORÁRIO', game.value!['time'] ?? "A definir"),
                           SizedBox(
                             width: sizeWidth,
                             child: Divider(
@@ -162,45 +173,12 @@ class _CronogramaUserState extends State<CronogramaUser> {
                                   .onPrimaryContainer,
                             ),
                           ),
-                          _rowzinha('DATA', '01/08'),
+                          _rowzinha('DATA', game.value!['date'] ?? "a definir"),
                         ],
                       ),
                     ),
                   ),
                 ),
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(15, 15, 15, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: sizeWidth / 2,
-                    child: const FittedBox(
-                      child: Text(
-                        'OUTROS JOGOS',
-                        style: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(15, 0, 15, 0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Flexible(
-                    child:
-                        Container(width: sizeWidth, child: GameCard(gametest)),
-                  )
-                ],
               ),
             ),
           ],

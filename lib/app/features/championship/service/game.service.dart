@@ -110,16 +110,13 @@ final gamesDocORDERIdsProvider =
       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
 });
 
-final inProgressgamesDocORDERIdsProvider =
-    StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
-  final querySnapshot = FirebaseFirestore.instance
+final gameStreamProvider = StreamProvider.autoDispose
+    .family<Map<String, dynamic>, String>((ref, documentId) {
+  return FirebaseFirestore.instance
       .collection('game')
-      .where('modalidade', isEqualTo: modality).where('gameState', isEqualTo: 'inProgress')
-      .orderBy('id')
-      .snapshots();
-
-  return querySnapshot
-      .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+      .doc(documentId)
+      .snapshots()
+      .map((snapshot) => snapshot.data() as Map<String, dynamic>);
 });
 
 final predictedgamesDocORDERIdsProvider =
@@ -134,3 +131,14 @@ final predictedgamesDocORDERIdsProvider =
       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
 });
 
+final inProgressgamesDocORDERIdsProvider =
+    StreamProvider.autoDispose.family<List<String>, String>((ref, modality) {
+  final querySnapshot = FirebaseFirestore.instance
+      .collection('game')
+      .where('modalidade', isEqualTo: modality).where('gameState', isEqualTo: 'inProgress')
+      .orderBy('id')
+      .snapshots();
+
+  return querySnapshot
+      .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
+});
