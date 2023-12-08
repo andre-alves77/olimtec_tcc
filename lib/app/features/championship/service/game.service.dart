@@ -156,10 +156,9 @@ final getTeam2 = FutureProvider.family<String, List<String>>((ref, team) async {
 final carouselStreamProvider = StreamProvider.autoDispose<List<Game>>((ref) {
   final stream = FirebaseFirestore.instance
       .collection('game')
-      .where('gameState', isNotEqualTo: 'pendent')
+      .where('gameState', isEqualTo: 'finished')
       .snapshots();
   return stream
       .map((snapshot) =>
-          snapshot.docs.map((doc) => Game.fromMap(doc.data())).toList())
-      .take(3);
+          snapshot.docs.map((doc) => Game.fromMap(doc.data())).toList());
 });
