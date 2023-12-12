@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:advance_pdf_viewer/advance_pdf_viewer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -106,19 +107,24 @@ class InsertRuleOrganization extends ConsumerWidget {
 
                         if (result != null) {
                           PlatformFile file = result.files.first;
-
+                          print(file);
                           final now = DateTime.now();
                           final uniqueFileName =
-                              'meuArquivo${now.year}-${now.month}-${now.day}${now.hour}-${now.minute}-${now.second}.pdf';
+                              '${now.year}-${now.month}-${now.day}${now.hour}-${now.minute}-${now.second}.pdf';
 
                           final storageRef = FirebaseStorage.instance.ref();
                           final pdfRef =
                               storageRef.child("modalityRules/$uniqueFileName");
-                          try {
-                            await pdfRef.putData(file.bytes!);
-                          } on FirebaseException catch (e) {}
+
+                          if (kIsWeb) {
+                             await pdfRef.putData(file.bytes!);
+                          } else {
+                            await pdfRef.putFile(File(file.path!));
+                          }
+                            
 
                           final pdfUrl = await pdfRef.getDownloadURL();
+                          print(pdfUrl);
 
                           final firestoreRef = FirebaseFirestore.instance;
                           final docRef = firestoreRef
@@ -130,7 +136,7 @@ class InsertRuleOrganization extends ConsumerWidget {
                         }
                         CustomSnackBar(message: 'PDF enviado com sucesso', ref: ref);
                         } catch (e) {
-                          throw CustomSnackBar(message: 'Houve um erro', ref: ref, type: ScaffoldAlert.error);
+                          throw CustomSnackBar(message: e.toString(), ref: ref, type: ScaffoldAlert.error);
                         }
                       },
                       child: Icon(
