@@ -6,7 +6,7 @@ import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_view.dart';
 import 'package:olimtec_tcc/app/features/settings/settings_page.dart';
-import 'package:olimtec_tcc/app/features/test.dart';
+import 'package:olimtec_tcc/app/features/user/home/pick_team.dart';
 import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 import 'package:olimtec_tcc/app/features/user/home/home_page.dart';
 import 'package:olimtec_tcc/app/features/user/live/aovivo_page.dart';
@@ -31,6 +31,9 @@ class IndexHomeUser extends ConsumerWidget {
       return LoadingPage();
     });
     if (appuser is AppUser) {
+      if(appuser.teamName.isEmpty){
+          return PickScreen();
+      }
       return Scaffold(
         extendBody: true,
         bottomNavigationBar: BottomBar(),

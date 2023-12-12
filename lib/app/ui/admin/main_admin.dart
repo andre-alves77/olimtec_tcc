@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
@@ -51,6 +52,7 @@ class MainAdmin2 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    ref.watch(mainAdminProvider);
     return Scaffold(
       appBar: AppBar(
         title: Text(
@@ -104,6 +106,60 @@ class MainAdmin2 extends ConsumerWidget {
               //       text1: "MODALIDADES",
               //       text2: "(TODAS AS MODALIDADES)"),
               // ),
+                GestureDetector(onTap: () {
+                  showAdaptiveDialog(context: context, builder: ((context) {
+                    return AlertDialog.adaptive(actions: [
+                      TextButton(onPressed: (){
+Navigator.pop(context, true);
+                      }, child: Text('CANCELAR')),
+TextButton(onPressed: (() async{
+  try{
+      final instance = FirebaseFirestore.instance;
+      final batch = instance.batch();
+
+      var collection = instance.collection('team');
+      var snapshots = await collection.get();
+
+      for (var doc in snapshots.docs) {
+        batch.delete(doc.reference);
+      }
+
+      var collection2 = instance.collection('game');
+      var snapshots2 = await collection2.get();
+
+      for (var doc in snapshots2.docs) {
+        batch.delete(doc.reference);
+      }
+
+      var collection3 = instance.collection('modality');
+      var snapshots3 = await collection3.get();
+
+      for (var doc in snapshots3.docs) {
+        batch.delete(doc.reference);
+      }
+
+      var collection4 = instance.collection('local');
+      var snapshots4 = await collection4.get();
+
+      for (var doc in snapshots4.docs) {
+        batch.delete(doc.reference);
+      }
+
+  ref.read(authRepositoryProvider).deleteAllUsersTeams();
+      
+
+      await batch.commit();
+  await FirebaseFirestore.instance.collection('championship').doc("MTayq9MuIFOUqqBsgWTQ").update({'isCreated':false});
+
+  ref.read(authRepositoryProvider).signOut();
+  }catch(e){
+
+  }
+}), child: Text('ENCERRAR'))
+                    ],title: Text('REINICIAR OLIMPÍADAS'),);
+                    
+                  }));
+                },child: OptionConfig(icone: Icons.restart_alt, text1: "REINICIAR CAMPEONATO")),
               Padding(padding: EdgeInsets.all(15)),
             ],
           ),

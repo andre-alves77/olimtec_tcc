@@ -19,13 +19,13 @@ class HomeUser extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     List<String>? gameList = ref.watch(finishedGamesProvider).whenData((value) => value).value;
-
-
     List<Widget> widgetList = [];
-    gameList!.forEach((element) {
+if(gameList !=null)
+    gameList.forEach((element) {
       print(element);
       widgetList.add(GameCardStream(docId: element));
     });
+    
     final _bottomBarStore = ref.watch(bottomBarProvider);
     return Scaffold(
       extendBody: true,
@@ -98,6 +98,7 @@ class HomeUser extends ConsumerWidget {
                     style:
                         TextStyle(fontSize: 26.1, fontWeight: FontWeight.bold),
                   )),
+                  if(widgetList!=null)
                   Container(
                     constraints: const BoxConstraints(maxWidth: 400),
                     child: Column(
