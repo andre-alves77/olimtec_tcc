@@ -6,15 +6,16 @@ import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/auth/view/landing_page.view.dart';
 import 'package:olimtec_tcc/app/features/championship/service/championship.service.dart';
 import 'package:olimtec_tcc/app/features/championship/views/initial_config/start_championship.dart';
+import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 import 'package:olimtec_tcc/app/shared/views/option_config.dart';
 import 'package:olimtec_tcc/app/ui/admin/management/main_management.dart';
 import 'package:olimtec_tcc/app/ui/admin/modalities/modalities_page.dart';
 import 'package:olimtec_tcc/app/ui/admin/privileges/main_privileges_admin.dart';
 
-final mainAdminProvider = StateProvider((ref) {
+final mainAdminProvider = StateProvider.autoDispose((ref) {
   final champs = ref.watch(championshipStreamProvider);
   final context = ref.read(navigtorkeyProvider).currentContext;
-
+  
   champs.when(
     data: (value) {
       if (value == null) {
@@ -31,6 +32,14 @@ final mainAdminProvider = StateProvider((ref) {
     loading: () {},
   );
 });
+
+final isCreatedProvider = StreamProvider.autoDispose<DocumentSnapshot>((ref) {
+ return FirebaseFirestore.instance
+     .collection('championship')
+     .doc('MTayq9MuIFOUqqBsgWTQ')
+     .snapshots();
+});
+
 
 class MainAdmin extends ConsumerWidget {
   const MainAdmin({super.key});
@@ -52,8 +61,10 @@ class MainAdmin2 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.watch(mainAdminProvider);
-    return Scaffold(
+   
+    return ref.watch(isCreatedProvider).when(data: (data){
+      if(data['isCreated']){
+  return  Scaffold(
       appBar: AppBar(
         title: Text(
           'ADMIN',
@@ -175,5 +186,12 @@ TextButton(onPressed: (() async{
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
+      }
+   return StartChampionshipAdmin();
+    }, error: ((error, stackTrace) {
+      return Scaffold(body: Center(child: Text('Ocorreu um erro'),));
+    }), loading: (() {
+    return LoadingPage();  
+    }));
   }
 }

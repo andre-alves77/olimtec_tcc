@@ -31,7 +31,7 @@ class IndexHomeUser extends ConsumerWidget {
       return LoadingPage();
     });
     if (appuser is AppUser) {
-      if(appuser.teamName.isEmpty){
+      if(appuser.teamName == 'nenhum'){
           return PickScreen();
       }
       return Scaffold(
