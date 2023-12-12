@@ -54,8 +54,6 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                 },
                 skipError: true,
                 error: (e, s) {
-                  CustomSnackBar(
-                      message: "Um erro aconteceu. Tente novamente.", ref: ref);
                   return Center(child: Text('Ocorreu um erro'),);
                 },
               ),

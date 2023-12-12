@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
+import 'dart:js_interop';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -12,6 +14,18 @@ final formUserSignInProvider = ChangeNotifierProvider<FormSignInStore>((ref) {
 });
 
 enum FormUserState { SignUp, SignIn }
+
+
+
+final teamnamesstream = StreamProvider.autoDispose((ref) {
+ return FirebaseFirestore.instance
+     .collection('team')
+     .snapshots()
+     .map((querySnapshot) => querySnapshot.docs.map((doc) => doc['name']).toList());
+
+});
+
+
 
 final getTeamStringProvider = FutureProvider((ref) async {
   try {
@@ -28,7 +42,7 @@ final getTeamStringProvider = FutureProvider((ref) async {
 
     return getTeams();
   } catch (e) {
-    CustomSnackBar(message: 'Error', ref: ref);
+    print(e.toString());
   }
 });
 

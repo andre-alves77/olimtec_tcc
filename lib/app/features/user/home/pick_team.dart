@@ -19,9 +19,8 @@ class PickScreen extends ConsumerWidget {
     return Scaffold(
       body: Center(child: teams.when(
                 data: (data) {
-                  if (data != null) {
                     var items =
-                        data.map<DropdownMenuEntry<String>>((String value) {
+                        data!.map<DropdownMenuEntry<String>>((value) {
                       return DropdownMenuEntry<String>(
                           value: value, label: value);
                     }).toList();
@@ -50,17 +49,15 @@ class PickScreen extends ConsumerWidget {
                         }, child: Text('CONFIRMAR')),
                       ],
                     );
-                  }
-                  return CircularProgressIndicator();
+                  
+              
                 },
                 loading: () {
                   return CircularProgressIndicator();
                 },
                 skipError: true,
                 error: (e, s) {
-                  CustomSnackBar(
-                      message: "Um erro aconteceu. Tente novamente.", ref: ref);
-                  return Placeholder();
+                  return Center(child: Text('Ocorreu um erro'),);
                 },
               ),),
     );
