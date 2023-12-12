@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/providers/navigatorkey.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
-import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
+
 import 'package:olimtec_tcc/app/features/auth/models/user.model.dart';
 import 'package:olimtec_tcc/app/features/auth/repository/auth.repository.dart';
 import 'package:olimtec_tcc/app/features/splashscreen/splash_screen.dart';
@@ -58,7 +58,7 @@ final appUserProvider = StateProvider<AppUser?>((ref) {
 
  if(appuser.isAdmin == true){
 
-Navigator.pushReplacementNamed(context!, MainAdmin.route);
+Navigator.pushReplacementNamed(context!, MainAdmin2.route);
 CustomSnackBar(message: "Admin", ref: ref);
 
 }else if(appuser.isAdmin == false){

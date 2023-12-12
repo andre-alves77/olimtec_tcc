@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz_unsafe.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/providers/firebase.provider.dart';
@@ -43,6 +44,40 @@ class AuthRepository extends ChangeNotifier {
         }
       });
     }
+  }
+
+
+void  deleteAllUsersTeams()async {
+  FirebaseFirestore.instance.collection('users').get().then((QuerySnapshot querySnapshot) {
+   querySnapshot.docs.forEach((doc) {
+    if(doc.get('isAdmin') == false){
+       FirebaseFirestore.instance.collection('users').doc(doc.id).update({
+           'teamName': 'nenhum'
+       });
+    }
+   });
+});
+}
+
+  Future<List<String>> getUserIds() async {
+    final userCollection = FirebaseFirestore.instance.collection('users');
+    List<String> userIdList = [];
+
+
+    try{
+  final snapshot = await userCollection.get();
+    snapshot.docs.map((doc) {
+      if (doc.data()['isAdmin'] == null) {
+      } else if (doc.data()['isAdmin'] == false) {
+        userIdList.add(doc.data()['id']);
+      }
+    });
+    }catch (e){
+      print('Deu ERROR');
+    }
+
+
+    return userIdList;
   }
 
   Future<void> sendPasswordResetEmail(String email) async {

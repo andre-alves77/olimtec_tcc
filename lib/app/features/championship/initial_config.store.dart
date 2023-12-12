@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_iconpicker/flutter_iconpicker.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
+import 'package:olimtec_tcc/app/features/auth/service/auth.service.dart';
 import 'package:olimtec_tcc/app/features/championship/models/game.dart';
 import 'package:olimtec_tcc/app/features/championship/models/modality.dart';
 import 'package:olimtec_tcc/app/features/championship/models/team.dart';
@@ -144,41 +145,15 @@ class InitConfigStore extends ChangeNotifier {
     notifyListeners();
   }
 
+
+void restart_championship(){
+  
+
+  
+}
+
   void create_championship() async {
     try {
-      final instance = FirebaseFirestore.instance;
-      final batch = instance.batch();
-
-      var collection = instance.collection('team');
-      var snapshots = await collection.get();
-
-      for (var doc in snapshots.docs) {
-        batch.delete(doc.reference);
-      }
-
-      var collection2 = instance.collection('game');
-      var snapshots2 = await collection2.get();
-
-      for (var doc in snapshots2.docs) {
-        batch.delete(doc.reference);
-      }
-
-      var collection3 = instance.collection('modality');
-      var snapshots3 = await collection3.get();
-
-      for (var doc in snapshots3.docs) {
-        batch.delete(doc.reference);
-      }
-
-      var collection4 = instance.collection('local');
-      var snapshots4 = await collection4.get();
-
-      for (var doc in snapshots4.docs) {
-        batch.delete(doc.reference);
-      }
-
-      await batch.commit();
-
       modalitiesList.forEach((element) async {
         element.generateBracket(teamList);
         await FirebaseFirestore.instance
@@ -207,6 +182,10 @@ class InitConfigStore extends ChangeNotifier {
       localList.forEach((element) async {
         Map<String, String> _mymap = {"name": element};
         await FirebaseFirestore.instance.collection('local').doc().set(_mymap);
+          await FirebaseFirestore.instance.collection('championship').doc("MTayq9MuIFOUqqBsgWTQ").update({'isCreated':true});
+  ref.read(authRepositoryProvider).signOut();
+
+
       });
     } catch (e) {
       CustomSnackBar(message: "Ocorreu um erro", ref: ref);

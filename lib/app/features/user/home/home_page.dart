@@ -1,13 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/app.dart';
 import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/test.dart';
-import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
-import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
-import 'package:olimtec_tcc/app/data/dummy_data.dart';
-import 'package:provider/provider.dart';
+import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 
 import 'card_carousel.dart';
 
@@ -18,15 +14,19 @@ class HomeUser extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    List<String>? gameList =
-        ref.watch(finishedGamesProvider).whenData((value) => value).value;
+    List<String>? gameList = ref.watch(finishedGamesProvider).whenData((value) => value).value;
+
 
     List<Widget> widgetList = [];
-    gameList!.forEach((element) {
+if(gameList !=null)
+    gameList.forEach((element) {
       print(element);
       widgetList.add(GameCardStream(docId: element));
     });
+final mygame = ref.watch(predictedGamesProvider);
     final _bottomBarStore = ref.watch(bottomBarProvider);
+if(mygame.isLoading)  return LoadingPage();
+    if(mygame.value!.length < 3){return Scaffold(body: Center(child: Text('AINDA NÃO HÁ JOGOS'),),);}else{
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
@@ -98,6 +98,7 @@ class HomeUser extends ConsumerWidget {
                     style:
                         TextStyle(fontSize: 26.1, fontWeight: FontWeight.bold),
                   )),
+                  if(widgetList!=null)
                   Container(
                     constraints: const BoxConstraints(maxWidth: 400),
                     child: Column(
@@ -112,5 +113,9 @@ class HomeUser extends ConsumerWidget {
         ),
       ),
     );
+    
+
+   
   }
+}
 }
