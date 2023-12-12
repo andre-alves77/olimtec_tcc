@@ -1,13 +1,11 @@
 import 'dart:core';
 import 'dart:math';
-
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/core/widgets/custom_text_field.dart';
 import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
 import 'package:olimtec_tcc/app/features/auth/lading.store.dart';
-import 'package:provider/provider.dart';
+
 
 class SignUpForm extends ConsumerStatefulWidget {
   const SignUpForm({super.key});
@@ -54,10 +52,11 @@ class _SignUpFormState extends ConsumerState<SignUpForm> {
                 loading: () {
                   return CircularProgressIndicator();
                 },
+                skipError: true,
                 error: (e, s) {
                   CustomSnackBar(
                       message: "Um erro aconteceu. Tente novamente.", ref: ref);
-                  return Placeholder();
+                  return Center(child: Text('Ocorreu um erro'),);
                 },
               ),
               Padding(

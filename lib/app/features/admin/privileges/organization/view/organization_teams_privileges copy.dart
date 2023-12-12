@@ -43,9 +43,6 @@ class OrganizationTeamsPrivilegesAdmin extends StatelessWidget {
                       );
                     } else {
                       return ListView(
-                        padding: EdgeInsets.zero,
-                        shrinkWrap: true,
-                        scrollDirection: Axis.vertical,
                         children: snapshot.data!.docs
                             .map((DocumentSnapshot document) {
                           Map<String, dynamic> data =

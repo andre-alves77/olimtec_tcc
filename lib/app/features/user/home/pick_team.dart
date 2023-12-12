@@ -56,6 +56,7 @@ class PickScreen extends ConsumerWidget {
                 loading: () {
                   return CircularProgressIndicator();
                 },
+                skipError: true,
                 error: (e, s) {
                   CustomSnackBar(
                       message: "Um erro aconteceu. Tente novamente.", ref: ref);
