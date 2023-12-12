@@ -39,9 +39,12 @@ class StartGameCardStream extends StatelessWidget {
           }
 
           // Atualize o widget com os novos dados do jogo aqui
-          print(snapshot.requireData.data());
-          final game = snapshot.data!.data() as Map<String, dynamic>;
-
+          final game = snapshot.data?.data() as Map<String, dynamic>;
+          game.forEach((key, value) {
+            if (value == null) {
+              print(key);
+            }
+          });
           return StartGame(
             game: game,
             docId: docId,
@@ -63,8 +66,21 @@ class StartGame extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    final teamImage1 = ref.watch(getTeamImage(game['team1']));
-    final teamImage2 = ref.watch(getTeamImage(game['team2']));
+    var teamImage1 = null;
+
+    var teamImage2 = null;
+
+    if (game['team1'] == null || game['team2'] == null) {
+      teamImage1 =
+          'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36';
+
+      teamImage2 =
+          'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36';
+    } else {
+      teamImage1 = ref.watch(getTeamImage(game['team1'])).value;
+
+      teamImage2 = ref.watch(getTeamImage(game['team2'])).value;
+    }
 
     return Padding(
       padding: EdgeInsetsDirectional.all(8),
@@ -96,7 +112,7 @@ class StartGame extends ConsumerWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          game['time'].toString(),
+                          game['time'] ?? "a definir",
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 22,
@@ -132,7 +148,7 @@ class StartGame extends ConsumerWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(80),
                           child: CachedNetworkImage(
-                            imageUrl: teamImage1.value ??
+                            imageUrl: teamImage1 ??
                                 "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36",
                             width: sizeWidth / 8,
                             height: 60,
@@ -172,7 +188,7 @@ class StartGame extends ConsumerWidget {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(80),
                           child: CachedNetworkImage(
-                            imageUrl: teamImage2.value ??
+                            imageUrl: teamImage2 ??
                                 "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36",
                             width: sizeWidth / 8,
                             height: 60,

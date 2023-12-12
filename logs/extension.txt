@@ -231,3 +231,70 @@ Flutter (3.13.6): C:\flutter (No device)
 [22:31:09] [General] [Info] Did not find session 4581512a-c771-4390-9223-45736fecb56a to handle dart.progressStart. There were 0 sessions:
 [22:31:09] [General] [Info] Event will be queued and processed when the session start event fires
 [22:31:09] [General] [Info] Processing delayed event dart.progressStart for session 4581512a-c771-4390-9223-45736fecb56a
+[23:22:47] [General] [Info] Starting debug session...
+[23:22:47] [General] [Info]     workspace: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[23:22:47] [General] [Info]     program  : lib/main.dart
+[23:22:47] [General] [Info] Setting cwd based on active workspace folder: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[23:22:47] [General] [Info] Converted program to absolute path: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc\lib\main.dart
+[23:22:47] [General] [Info] Using workspace as cwd: C:\Users\Vinicius Vitoriano\Desktop\TCC\olimtec_tcc
+[23:22:47] [General] [Info] Detected launch project as Flutter
+[23:22:47] [General] [Info] Using Flutter debug adapter for this session
+[23:22:47] [General] [Info] Getting DevTools server address to pass to Flutter...
+[23:22:47] [General] [Info] Checking for errors before launching
+[23:22:48] [General] [Info] Debug session starting...
+    {
+        "name": "Flutter (Chrome)",
+        "request": "launch",
+        "type": "dart",
+        "program": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\lib\\main.dart",
+        "args": [
+            "--web-hostname",
+            "any"
+        ],
+        "__configurationTarget": 6,
+        "noDebug": true,
+        "dartCodeDebugSessionID": "session-66764",
+        "projectRootPath": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
+        "cwd": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc",
+        "deviceId": "chrome",
+        "deviceName": "Chrome (web-javascript)",
+        "toolEnv": {
+            "FLUTTER_HOST": "VSCode",
+            "PUB_ENVIRONMENT": "vscode.dart-code",
+            "FLUTTER_ROOT": "C:\\flutter"
+        },
+        "sendLogsToClient": false,
+        "sendCustomProgressEvents": true,
+        "allowAnsiColorOutput": true,
+        "additionalProjectPaths": [
+            "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc"
+        ],
+        "vmAdditionalArgs": [],
+        "toolArgs": [
+            "-d",
+            "chrome",
+            "--devtools-server-address",
+            "http://127.0.0.1:9100/"
+        ],
+        "vmServicePort": 0,
+        "dartSdkPath": "C:\\flutter\\bin\\cache\\dart-sdk",
+        "vmServiceLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\observatory.txt",
+        "maxLogLineLength": 2000,
+        "debugSdkLibraries": false,
+        "debugExternalPackageLibraries": true,
+        "showDartDeveloperLogs": true,
+        "evaluateGettersInDebugViews": true,
+        "showGettersInDebugViews": true,
+        "evaluateToStringInDebugViews": true,
+        "flutterSdkPath": "C:\\flutter",
+        "useInspectorNotificationsForWidgetErrors": true,
+        "flutterRunLogFile": "C:\\Users\\Vinicius Vitoriano\\Desktop\\TCC\\olimtec_tcc\\logs\\flutter_run.txt",
+        "showMemoryUsage": false,
+        "debuggerType": 2
+    }
+[23:22:48] [General] [Info] Using flutter debugger for Flutter
+[23:22:48] [General] [Info] SDK DAP setting is true, set by sdkDaps experiment
+[23:22:48] [General] [Info] Running SDK DAP Dart VM in undefined: C:\flutter\bin\flutter.bat debug_adapter and options {"env":{"FLUTTER_HOST":"VSCode","PUB_ENVIRONMENT":"vscode.dart-code","FLUTTER_ROOT":"C:\\flutter"}}
+[23:22:49] [General] [Info] Did not find session 33b03b63-6716-4e73-b7af-86b5350046da to handle dart.progressStart. There were 0 sessions:
+[23:22:49] [General] [Info] Event will be queued and processed when the session start event fires
+[23:22:49] [General] [Info] Processing delayed event dart.progressStart for session 33b03b63-6716-4e73-b7af-86b5350046da
