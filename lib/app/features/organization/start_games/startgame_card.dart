@@ -9,6 +9,7 @@ import 'package:olimtec_tcc/app/features/test.dart';
 import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
 import 'package:olimtec_tcc/app/features/organization/game_score.dart';
 import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:provider/provider.dart';
 
 class StartGameCardStream extends StatelessWidget {
@@ -210,11 +211,17 @@ class StartGame extends ConsumerWidget {
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Text(
-                        'VER DETALHES',
-                        style: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 20,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, CronogramaUser.route,
+                              arguments: docId);
+                        },
+                        child: Text(
+                          'VER DETALHES',
+                          style: TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -226,37 +233,72 @@ class StartGame extends ConsumerWidget {
                               Theme.of(context).colorScheme.onPrimaryContainer,
                         ),
                       ),
-                      InkWell(
-                        onTap: () async {
-                          var mytime = await FirebaseFirestore.instance
-                              .collection('modality')
-                              .where('name', isEqualTo: game['modalidade'])
-                              .get()
-                              .then((value) => value.docs.first.data());
-                          if (mytime['scoreType'] !=
-                              "Placar de números 1 a 100") {
-                            Navigator.popAndPushNamed(
-                                context, ScoreBoardWithoutPoints.route);
-                          } else {
-                            print(docId);
-                            await FirebaseFirestore.instance
-                                .collection('game')
-                                .doc(docId)
-                                .update({'gameState': 'inProgress'});
-                            Navigator.popAndPushNamed(context, GameScore.route,
-                                arguments: docId);
-                          }
-                        },
-                        child: Text(
-                          'COMEÇAR JOGO',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Theme.of(context).colorScheme.primary,
+                      if (game['gameState'] == "predicted")
+                        InkWell(
+                          onTap: () async {
+                            var mytime = await FirebaseFirestore.instance
+                                .collection('modality')
+                                .where('name', isEqualTo: game['modalidade'])
+                                .get()
+                                .then((value) => value.docs.first.data());
+                            if (mytime['scoreType'] !=
+                                "Placar de números 1 a 100") {
+                              Navigator.popAndPushNamed(
+                                  context, ScoreBoardWithoutPoints.route);
+                            } else {
+                              print(docId);
+                              await FirebaseFirestore.instance
+                                  .collection('game')
+                                  .doc(docId)
+                                  .update({'gameState': 'inProgress'});
+                              Navigator.popAndPushNamed(
+                                  context, GameScore.route,
+                                  arguments: docId);
+                            }
+                          },
+                          child: Text(
+                            "COMEÇAR JOGO",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
                           ),
                         ),
-                      ),
+                      if (game['gameState'] == "inProgress")
+                        InkWell(
+                          onTap: () async {
+                            var mytime = await FirebaseFirestore.instance
+                                .collection('modality')
+                                .where('name', isEqualTo: game['modalidade'])
+                                .get()
+                                .then((value) => value.docs.first.data());
+                            if (mytime['scoreType'] !=
+                                "Placar de números 1 a 100") {
+                              Navigator.popAndPushNamed(
+                                  context, ScoreBoardWithoutPoints.route);
+                            } else {
+                              print(docId);
+                              await FirebaseFirestore.instance
+                                  .collection('game')
+                                  .doc(docId)
+                                  .update({'gameState': 'inProgress'});
+                              Navigator.popAndPushNamed(
+                                  context, GameScore.route,
+                                  arguments: docId);
+                            }
+                          },
+                          child: Text(
+                            "CONTINUAR JOGO",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.error,
+                            ),
+                          ),
+                        ),
                     ],
                   )
                 ],
