@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/test.dart';
+import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 
 import 'card_carousel.dart';
 
@@ -22,8 +23,10 @@ if(gameList !=null)
       print(element);
       widgetList.add(GameCardStream(docId: element));
     });
-    
+final mygame = ref.watch(predictedGamesProvider);
     final _bottomBarStore = ref.watch(bottomBarProvider);
+if(mygame.isLoading)  return LoadingPage();
+    if(mygame.value!.length < 3){return Scaffold(body: Center(child: Text('AINDA NÃO HÁ JOGOS'),),);}else{
     return Scaffold(
       extendBody: true,
       appBar: AppBar(
@@ -110,5 +113,9 @@ if(gameList !=null)
         ),
       ),
     );
+    
+
+   
   }
+}
 }
