@@ -92,7 +92,7 @@ class MainCard extends ConsumerWidget {
                       Column(
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(80),
                             child: CachedNetworkImage(
                               imageUrl: teamImage1 ??
                                   'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36',
@@ -132,7 +132,7 @@ class MainCard extends ConsumerWidget {
                       Column(
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(80),
                             child: CachedNetworkImage(
                               imageUrl: teamImage2 ??
                                   'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36',

@@ -136,7 +136,7 @@ class AboutUsSingleCard extends StatelessWidget {
             child: Column(
               children: [
                 ClipRRect(
-                  borderRadius: BorderRadius.circular(60),
+                  borderRadius: BorderRadius.circular(80),
                   child: Image.asset(
                     image,
                     width: 125,
@@ -159,7 +159,6 @@ class AboutUsSingleCard extends StatelessWidget {
                     color: Theme.of(context).colorScheme.primary,
                   ),
                 ),
-                
               ],
             ),
           ),

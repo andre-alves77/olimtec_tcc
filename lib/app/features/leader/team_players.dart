@@ -120,7 +120,7 @@ class PlayerTeam extends ConsumerWidget {
                         ),
                         alignment: AlignmentDirectional(0, 0),
                         child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
+                          borderRadius: BorderRadius.circular(80),
                           child: CachedNetworkImage(
                               imageUrl: teamImage!,
                               width: 170,

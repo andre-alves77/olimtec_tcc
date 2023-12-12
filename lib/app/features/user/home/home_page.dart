@@ -1,13 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:olimtec_tcc/app/app.dart';
 import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
 import 'package:olimtec_tcc/app/features/navigation/bottombar_store.dart';
 import 'package:olimtec_tcc/app/features/test.dart';
-import 'package:olimtec_tcc/app/features/theme/theme_store.dart';
-import 'package:olimtec_tcc/app/ui/user/shared/game_card.dart';
-import 'package:olimtec_tcc/app/data/dummy_data.dart';
-import 'package:provider/provider.dart';
 
 import 'card_carousel.dart';
 
@@ -19,6 +14,8 @@ class HomeUser extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     List<String>? gameList = ref.watch(finishedGamesProvider).whenData((value) => value).value;
+
+
     List<Widget> widgetList = [];
 if(gameList !=null)
     gameList.forEach((element) {
