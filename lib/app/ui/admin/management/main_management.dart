@@ -33,15 +33,15 @@ class MainManagementAdmin extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: FittedBox(
-                  child: GestureDetector(
-                      onTap: () {
-                        Navigator.pushNamed(
-                            context, ManagementAccountAddAdmin.route);
-                      },
-                      child: OptionConfig(
-                          icone: Icons.manage_accounts,
-                          text1: 'GERENCIAR CONTAS')),
-                ),
+                    // child: GestureDetector(
+                    //     onTap: () {
+                    //       Navigator.pushNamed(
+                    //           context, ManagementAccountAddAdmin.route);
+                    //     },
+                    //     child: OptionConfig(
+                    //         icone: Icons.manage_accounts,
+                    //         text1: 'GERENCIAR CONTAS')),
+                    ),
               ),
             ),
             FittedBox(

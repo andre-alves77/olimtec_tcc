@@ -1,29 +1,24 @@
 import 'dart:math';
 
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
-
-
-
-
-
-
-
-
+import 'package:olimtec_tcc/app/core/widgets/scaffold_mensager.view.dart';
+import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
+import 'package:olimtec_tcc/app/features/championship/service/team.service.dart';
+import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 
 class GameScore extends ConsumerStatefulWidget {
   const GameScore({super.key});
   static String route = "/gamescore-organization";
-  
 
   @override
   ConsumerState<ConsumerStatefulWidget> createState() => _GameScoreState();
 }
 
-
 Widget _rowzinha(String head, String info) {
-
   return Row(
     mainAxisSize: MainAxisSize.max,
     mainAxisAlignment: MainAxisAlignment.center,
@@ -58,28 +53,56 @@ class _GameScoreState extends ConsumerState<GameScore> {
   int _foulsTime1 = 0;
   int _foulsTime2 = 0;
 
-  void _incrementCounter() {
-    setState(() {
+  void _incrementCounter(String docId) async {
+    try {
       _counter++;
-    });
+      await FirebaseFirestore.instance
+          .collection('game')
+          .doc(docId)
+          .update({'teamPts1': _counter});
+      setState(() {});
+    } catch (e) {
+      throw CustomSnackBar(message: 'Ocorreu um erro', ref: ref);
+    }
   }
 
-  void _decrementCounter() {
-    setState(() {
+  void _decrementCounter(String docId) async {
+    try {
       _counter--;
-    });
+      await FirebaseFirestore.instance
+          .collection('game')
+          .doc(docId)
+          .update({'teamPts1': _counter});
+      setState(() {});
+    } catch (e) {
+      throw CustomSnackBar(message: 'Ocorreu um erro', ref: ref);
+    }
   }
 
-  void _incrementTime2() {
-    setState(() {
+  void _incrementTime2(String docId) async {
+    try {
       _time2++;
-    });
+      await FirebaseFirestore.instance
+          .collection('game')
+          .doc(docId)
+          .update({'teamPts2': _time2});
+      setState(() {});
+    } catch (e) {
+      throw CustomSnackBar(message: 'Ocorreu um erro', ref: ref);
+    }
   }
 
-  void _decrementTime2() {
-    setState(() {
+  void _decrementTime2(String docId) async {
+    try {
       _time2--;
-    });
+      await FirebaseFirestore.instance
+          .collection('game')
+          .doc(docId)
+          .update({'teamPts2': _time2});
+      setState(() {});
+    } catch (e) {
+      throw CustomSnackBar(message: 'Ocorreu um erro', ref: ref);
+    }
   }
 
   void _incrementFoulsTime1() {
@@ -109,14 +132,21 @@ class _GameScoreState extends ConsumerState<GameScore> {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-        final String? argModality =
+    final String? argModality =
         ModalRoute.of(context)?.settings.arguments as String;
+    final data = ref.watch(gameStreamProvider(argModality!)).value;
 
+    final teamImage1 = ref.watch(getTeamImage(data!['team1'])).value ??
+        'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36';
+    final teamImage2 = ref.watch(getTeamImage(data!['team2'])).value ??
+        'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36';
+
+    if (data == null) return LoadingPage();
     return Scaffold(
       appBar: AppBar(
         title: FittedBox(
-          child: const Text(
-            "2ºEAA VS 1ºDSB",
+          child: Text(
+            "${data['team1']} X ${data['team2']}",
             style: TextStyle(
               fontFamily: 'Lato',
               fontSize: 24,
@@ -138,7 +168,7 @@ class _GameScoreState extends ConsumerState<GameScore> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'BASQUETE MASCULINO',
+                        data['modalidade'],
                         style: TextStyle(
                           fontFamily: 'Lato',
                           fontSize: 24,
@@ -192,9 +222,9 @@ class _GameScoreState extends ConsumerState<GameScore> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(20),
-                                  child: Image.asset(
-                                    'assets/images/LOGO_1EAA_EXAMPLE.png',
+                                  borderRadius: BorderRadius.circular(80),
+                                  child: CachedNetworkImage(
+                                    imageUrl: teamImage1,
                                     width: 110,
                                     height: 110,
                                     fit: BoxFit.scaleDown,
@@ -232,9 +262,9 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                   child: Row(
                                     children: [
                                       ClipRRect(
-                                        borderRadius: BorderRadius.circular(20),
-                                        child: Image.asset(
-                                          'assets/images/LOGO_2DSB_EXAMPLE.png',
+                                        borderRadius: BorderRadius.circular(80),
+                                        child: CachedNetworkImage(
+                                          imageUrl: teamImage2,
                                           width: 100,
                                           height: 110,
                                           fit: BoxFit.scaleDown,
@@ -256,7 +286,7 @@ class _GameScoreState extends ConsumerState<GameScore> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                             child: Text(
-                              '2ºEAA',
+                              data['team1'],
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 22,
@@ -281,7 +311,7 @@ class _GameScoreState extends ConsumerState<GameScore> {
                           Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(5, 0, 0, 0),
                             child: Text(
-                              '1ºDSB',
+                              data['team2'],
                               style: TextStyle(
                                 fontFamily: 'Lato',
                                 fontSize: 22,
@@ -315,7 +345,9 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                 children: [
                                   IconButton(
                                     icon: Icon(Icons.remove),
-                                    onPressed: _decrementCounter,
+                                    onPressed: () {
+                                      _decrementCounter(argModality);
+                                    },
                                   ),
                                   AnimatedOpacity(
                                     opacity: _counter != 0 ? 1.0 : 0.0,
@@ -330,7 +362,9 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                   ),
                                   IconButton(
                                     icon: Icon(Icons.add),
-                                    onPressed: _incrementCounter,
+                                    onPressed: () {
+                                      _incrementCounter(argModality);
+                                    },
                                   ),
                                 ],
                               ),
@@ -363,7 +397,9 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                 children: [
                                   IconButton(
                                     icon: Icon(Icons.remove),
-                                    onPressed: _decrementTime2,
+                                    onPressed: () {
+                                      _decrementTime2(argModality);
+                                    },
                                   ),
                                   AnimatedOpacity(
                                     opacity: _time2 != 0 ? 1.0 : 0.0,
@@ -378,7 +414,9 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                   ),
                                   IconButton(
                                     icon: Icon(Icons.add),
-                                    onPressed: _incrementTime2,
+                                    onPressed: () {
+                                      _incrementTime2(argModality);
+                                    },
                                   ),
                                 ],
                               ),
@@ -509,37 +547,37 @@ class _GameScoreState extends ConsumerState<GameScore> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.max,
                         children: [
-                          Row(
-                            children: [
-                              Text(
-                                'TEMPO: 00:00',
-                                style: TextStyle(
-                                  fontFamily: 'Lato',
-                                  fontSize: 26,
-                                  fontWeight: FontWeight.bold,
-                                ),
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            autofocus: true,
-                            focusColor: Theme.of(context).colorScheme.primary,
-                            hoverColor: Theme.of(context).colorScheme.primary,
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.pause,
-                              color: Theme.of(context)
-                                  .colorScheme
-                                  .primaryContainer,
-                              size: 50,
-                            ),
-                          ),
+                          //     Row(
+                          //       children: [
+                          //         Text(
+                          //           'TEMPO: 00:00',
+                          //           style: TextStyle(
+                          //             fontFamily: 'Lato',
+                          //             fontSize: 26,
+                          //             fontWeight: FontWeight.bold,
+                          //           ),
+                          //         ),
+                          //       ],
+                          //     ),
+                          //   ],
+                          // ),
+                          // Row(
+                          //   mainAxisSize: MainAxisSize.max,
+                          //   mainAxisAlignment: MainAxisAlignment.center,
+                          //   children: [
+                          //     IconButton(
+                          //       autofocus: true,
+                          //       focusColor: Theme.of(context).colorScheme.primary,
+                          //       hoverColor: Theme.of(context).colorScheme.primary,
+                          //       onPressed: () {},
+                          //       icon: Icon(
+                          //         Icons.pause,
+                          //         color: Theme.of(context)
+                          //             .colorScheme
+                          //             .primaryContainer,
+                          //         size: 50,
+                          //       ),
+                          //     ),
                         ],
                       ),
                     ],
@@ -562,7 +600,145 @@ class _GameScoreState extends ConsumerState<GameScore> {
                             color: Theme.of(context).colorScheme.error,
                           ),
                           child: TextButton(
-                            onPressed: () {},
+                            onPressed: () async {
+//await FirebaseFirestore.instance.collection('game').doc(argModality).update({'gameState':"finished"});
+
+                              String nextgameDocId = '';
+                              Map<String, dynamic>? nextGameData;
+                              try {
+                                if (data['isfinal'] == true) {
+                                  await FirebaseFirestore.instance
+                                      .collection('game')
+                                      .doc(argModality)
+                                      .update({'gameState': 'finished'});
+                                  Navigator.pop(context);
+                                }
+
+                                if (_counter > _time2) {
+                                  await FirebaseFirestore.instance
+                                      .collection('game')
+                                      .doc(argModality)
+                                      .update({'winner': data['team1']});
+                                  await FirebaseFirestore.instance
+                                      .collection('game')
+                                      .where("modalidade",
+                                          isEqualTo: data['modalidade'])
+                                      .where('id', isEqualTo: data['nextGame'])
+                                      .get()
+                                      .then((value) => value.docs.first.id)
+                                      .then((value) {
+                                    nextgameDocId = value;
+                                  });
+                                  await FirebaseFirestore.instance
+                                      .collection('game')
+                                      .where("modalidade",
+                                          isEqualTo: data['modalidade'])
+                                      .where('id', isEqualTo: data['nextGame'])
+                                      .get()
+                                      .then((value) => value.docs.first.data())
+                                      .then((value) {
+                                    nextGameData = value;
+                                  });
+                                  print("opa");
+
+                                  if (nextGameData!['team1'] == null) {
+                                    await FirebaseFirestore.instance
+                                        .collection('game')
+                                        .doc(nextgameDocId)
+                                        .update({'team1': data['team1']});
+                                  } else {
+                                    await FirebaseFirestore.instance
+                                        .collection('game')
+                                        .doc(nextgameDocId)
+                                        .update({'team2': data['team1']});
+                                  }
+                                } else {
+                                  await FirebaseFirestore.instance
+                                      .collection('game')
+                                      .doc(argModality)
+                                      .update({'winner': data['team2']});
+                                  await FirebaseFirestore.instance
+                                      .collection('game')
+                                      .where("modalidade",
+                                          isEqualTo: data['modalidade'])
+                                      .where('id', isEqualTo: data['nextGame'])
+                                      .get()
+                                      .then((value) => value.docs.first.id)
+                                      .then((value) {
+                                    nextgameDocId = value;
+                                  });
+                                  await FirebaseFirestore.instance
+                                      .collection('game')
+                                      .where("modalidade",
+                                          isEqualTo: data['modalidade'])
+                                      .where('id', isEqualTo: data['nextGame'])
+                                      .get()
+                                      .then((value) => value.docs.first.data())
+                                      .then((value) {
+                                    nextGameData = value;
+                                  });
+
+                                  if (nextGameData!['team1'] == null) {
+                                    await FirebaseFirestore.instance
+                                        .collection('game')
+                                        .doc(nextgameDocId)
+                                        .update({'team1': data['team2']});
+                                  } else {
+                                    await FirebaseFirestore.instance
+                                        .collection('game')
+                                        .doc(nextgameDocId)
+                                        .update({'team2': data['team2']});
+                                  }
+                                }
+                                await FirebaseFirestore.instance
+                                    .collection('game')
+                                    .doc(argModality)
+                                    .update({'gameState': 'finished'});
+
+                                Navigator.pop(context);
+                              } catch (e) {
+                                print(e.toString());
+                              }
+//                                 if(_counter > _time2){
+// await FirebaseFirestore.instance.collection('game').doc(argModality).update({'winner':data['team1']});
+// ref.watch(getTeam2([data['modalidade'], data['nextGame']])).whenData((value) async {
+
+// await FirebaseFirestore.instance.collection('game').doc(value).get().then((value2)async {
+//   var my = value2.data()!['team1'];
+//   print('oaa');
+
+//   if(my == null){
+// await FirebaseFirestore.instance.collection('game').doc().update({'team1':data['team1']});
+
+//   }else{
+// await FirebaseFirestore.instance.collection('game').doc().update({'team2':data['team1']});
+
+//   }
+// });
+
+//  });
+
+// }else{
+// await FirebaseFirestore.instance.collection('game').doc(argModality).update({'winner':data['team2']});
+// ref.watch(getTeam2([data['modalidade'], data['nextGame']])).whenData((value) async {
+
+// await FirebaseFirestore.instance.collection('game').doc(value).get().then((value2)async {
+//   print('MINHA BOLA');
+//   var my = value2.data()!['team1'];
+//   print('oaa');
+
+//   if(my == null){
+// await FirebaseFirestore.instance.collection('game').doc(value).update({'team1':data['team2']});
+
+//   }else{
+// await FirebaseFirestore.instance.collection('game').doc(value).update({'team2':data['team2']});
+
+//   }
+// });
+// });
+
+//                                 }
+                            },
                             child: Text(
                               'FINALIZAR JOGO',
                               style: TextStyle(
@@ -611,7 +787,7 @@ class _GameScoreState extends ConsumerState<GameScore> {
                         fit: BoxFit.scaleDown,
                         child: Column(
                           children: <Widget>[
-                            _rowzinha('LOCAL', 'QUADRA 02'),
+                            _rowzinha('LOCAL', data['local']),
                             SizedBox(
                               width: sizeWidth,
                               child: Divider(
@@ -622,7 +798,7 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                     .onPrimaryContainer,
                               ),
                             ),
-                            _rowzinha('HORÁRIO', '8:45'),
+                            _rowzinha('HORÁRIO', data['time']),
                             SizedBox(
                               width: sizeWidth,
                               child: Divider(
@@ -633,24 +809,10 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                     .onPrimaryContainer,
                               ),
                             ),
-                            _rowzinha('DATA', '01/08'),
+                            _rowzinha('DATA', data['date']),
                           ],
                         ),
                       ),
-                    ),
-                  ),
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.all(10),
-                child: FittedBox(
-                  child: Text(
-                    'OUTROS JOGOS',
-                    style: TextStyle(
-                      fontFamily: 'Lato',
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
-                      color: Theme.of(context).colorScheme.onPrimaryContainer,
                     ),
                   ),
                 ),

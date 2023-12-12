@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -8,8 +7,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/features/championship/service/team.service.dart';
 import 'package:olimtec_tcc/app/features/test.dart';
 import 'package:olimtec_tcc/app/shared/views/StartGame.dart';
-import 'package:olimtec_tcc/app/ui/organization/game_score.dart';
+import 'package:olimtec_tcc/app/features/organization/game_score.dart';
 import 'package:olimtec_tcc/app/ui/organization/scoreboard_without_points.dart';
+import 'package:olimtec_tcc/app/ui/user/modalities/cronograma_page.dart';
 import 'package:provider/provider.dart';
 
 class StartGameCardStream extends StatelessWidget {
@@ -40,10 +40,16 @@ class StartGameCardStream extends StatelessWidget {
           }
 
           // Atualize o widget com os novos dados do jogo aqui
-          print(snapshot.requireData.data());
-          final game = snapshot.data!.data() as Map<String, dynamic>;
-
-          return StartGame(game: game,);
+          final game = snapshot.data?.data() as Map<String, dynamic>;
+          game.forEach((key, value) {
+            if (value == null) {
+              print(key);
+            }
+          });
+          return StartGame(
+            game: game,
+            docId: docId,
+          );
         }
 
         // etc.
@@ -52,20 +58,30 @@ class StartGameCardStream extends StatelessWidget {
   }
 }
 
-
-
 class StartGame extends ConsumerWidget {
-  StartGame({
-    super.key, required this.game
-  });
+  StartGame({required this.docId, super.key, required this.game});
 
-Map<String, dynamic> game;
+  Map<String, dynamic> game;
+  final String docId;
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
-    final teamImage1 = ref.watch(getTeamImage(game['team1']));
-    final teamImage2 = ref.watch(getTeamImage(game['team2']));
+    var teamImage1 = null;
+
+    var teamImage2 = null;
+
+    if (game['team1'] == null || game['team2'] == null) {
+      teamImage1 =
+          'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36';
+
+      teamImage2 =
+          'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36';
+    } else {
+      teamImage1 = ref.watch(getTeamImage(game['team1'])).value;
+
+      teamImage2 = ref.watch(getTeamImage(game['team2'])).value;
+    }
 
     return Padding(
       padding: EdgeInsetsDirectional.all(8),
@@ -97,7 +113,7 @@ Map<String, dynamic> game;
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          game['time'].toString(),
+                          game['time'] ?? "a definir",
                           style: TextStyle(
                             fontFamily: 'Lato',
                             fontSize: 22,
@@ -131,8 +147,10 @@ Map<String, dynamic> game;
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: CachedNetworkImage(imageUrl:teamImage1.value!,
+                          borderRadius: BorderRadius.circular(80),
+                          child: CachedNetworkImage(
+                            imageUrl: teamImage1 ??
+                                "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36",
                             width: sizeWidth / 8,
                             height: 60,
                             fit: BoxFit.scaleDown,
@@ -141,7 +159,7 @@ Map<String, dynamic> game;
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(7, 0, 5, 0),
                           child: Text(
-                            game['team1'],
+                            game['team1'] ?? "A definir",
                             style: TextStyle(
                               fontFamily: 'Lato',
                               fontSize: 22,
@@ -160,7 +178,7 @@ Map<String, dynamic> game;
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(7, 0, 5, 0),
                           child: Text(
-                            game['team2'],
+                            game['team2'] ?? "A definir",
                             style: TextStyle(
                               fontFamily: 'Lato',
                               fontSize: 22,
@@ -169,9 +187,10 @@ Map<String, dynamic> game;
                           ),
                         ),
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: CachedNetworkImage(imageUrl:
- teamImage2.value!,
+                          borderRadius: BorderRadius.circular(80),
+                          child: CachedNetworkImage(
+                            imageUrl: teamImage2 ??
+                                "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36",
                             width: sizeWidth / 8,
                             height: 60,
                             fit: BoxFit.scaleDown,
@@ -192,11 +211,17 @@ Map<String, dynamic> game;
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Text(
-                        'VER DETALHES',
-                        style: TextStyle(
-                          fontFamily: 'Lato',
-                          fontSize: 20,
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushNamed(context, CronogramaUser.route,
+                              arguments: docId);
+                        },
+                        child: Text(
+                          'VER DETALHES',
+                          style: TextStyle(
+                            fontFamily: 'Lato',
+                            fontSize: 20,
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -208,26 +233,72 @@ Map<String, dynamic> game;
                               Theme.of(context).colorScheme.onPrimaryContainer,
                         ),
                       ),
-                      InkWell(
-                        onTap: () async{
-
-var mytime = await FirebaseFirestore.instance.collection('modality').where('name', isEqualTo: game['modalidade']).get().then((value) => value.docs.first.data());
-                          if(mytime['scoreType'] != "Placar de números 1 a 100"){
-                            Navigator.popAndPushNamed(context, ScoreBoardWithoutPoints.route);
-                          }else{
-                            Navigator.popAndPushNamed(context, GameScore.route);
-                          }
-                        },
-                        child: Text(
-                          'COMEÇAR JOGO',
-                          style: TextStyle(
-                            fontFamily: 'Lato',
-                            fontSize: 20,
-                            fontWeight: FontWeight.bold,
-                            color: Theme.of(context).colorScheme.primary,
+                      if (game['gameState'] == "predicted")
+                        InkWell(
+                          onTap: () async {
+                            var mytime = await FirebaseFirestore.instance
+                                .collection('modality')
+                                .where('name', isEqualTo: game['modalidade'])
+                                .get()
+                                .then((value) => value.docs.first.data());
+                            if (mytime['scoreType'] !=
+                                "Placar de números 1 a 100") {
+                              Navigator.popAndPushNamed(
+                                  context, ScoreBoardWithoutPoints.route);
+                            } else {
+                              print(docId);
+                              await FirebaseFirestore.instance
+                                  .collection('game')
+                                  .doc(docId)
+                                  .update({'gameState': 'inProgress'});
+                              Navigator.popAndPushNamed(
+                                  context, GameScore.route,
+                                  arguments: docId);
+                            }
+                          },
+                          child: Text(
+                            "COMEÇAR JOGO",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.primary,
+                            ),
                           ),
                         ),
-                      ),
+                      if (game['gameState'] == "inProgress")
+                        InkWell(
+                          onTap: () async {
+                            var mytime = await FirebaseFirestore.instance
+                                .collection('modality')
+                                .where('name', isEqualTo: game['modalidade'])
+                                .get()
+                                .then((value) => value.docs.first.data());
+                            if (mytime['scoreType'] !=
+                                "Placar de números 1 a 100") {
+                              Navigator.popAndPushNamed(
+                                  context, ScoreBoardWithoutPoints.route);
+                            } else {
+                              print(docId);
+                              await FirebaseFirestore.instance
+                                  .collection('game')
+                                  .doc(docId)
+                                  .update({'gameState': 'inProgress'});
+                              Navigator.popAndPushNamed(
+                                  context, GameScore.route,
+                                  arguments: docId);
+                            }
+                          },
+                          child: Text(
+                            "CONTINUAR JOGO",
+                            style: TextStyle(
+                              fontFamily: 'Lato',
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color: Theme.of(context).colorScheme.error,
+                            ),
+                          ),
+                        ),
                     ],
                   )
                 ],

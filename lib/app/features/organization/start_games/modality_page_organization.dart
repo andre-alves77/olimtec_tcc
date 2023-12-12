@@ -18,19 +18,17 @@ class ModalityOrganization extends ConsumerWidget {
             .whenData((value) => value)
             .value ??
         [];
-           List<String>? gameList2 = ref
+    List<String>? gameList2 = ref
             .watch(predictedgamesDocORDERIdsProvider(argModality))
             .whenData((value) => value)
             .value ??
         [];
 
     List<Widget> widgetList = [];
-    gameList!.forEach((element) {
-
+    gameList.forEach((element) {
       widgetList.add(StartGameCardStream(docId: element));
-
     });
-     gameList2.forEach((element) {
+    gameList2.forEach((element) {
       widgetList.add(StartGameCardStream(docId: element));
     });
     return Scaffold(

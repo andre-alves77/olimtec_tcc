@@ -59,7 +59,7 @@ class ResultTimelineCard extends StatelessWidget {
                     Column(
                       children: [
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(8),
+                          borderRadius: BorderRadius.circular(80),
                           child: Image.asset(
                             game.team1.image,
                             width: sizeWidth / 6,
@@ -107,7 +107,7 @@ class ResultTimelineCard extends StatelessWidget {
                             child: Column(
                               children: [
                                 ClipRRect(
-                                  borderRadius: BorderRadius.circular(8),
+                                  borderRadius: BorderRadius.circular(80),
                                   child: Image.asset(
                                     game.team2.image,
                                     width: sizeWidth / 6,

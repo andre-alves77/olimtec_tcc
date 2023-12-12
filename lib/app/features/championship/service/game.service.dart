@@ -145,13 +145,20 @@ final inProgressgamesDocORDERIdsProvider =
       .map((querySnapshot) => querySnapshot.docs.map((doc) => doc.id).toList());
 });
 
+
+final getTeam2 = FutureProvider.family<String, List<String>>((ref, team) async {
+  var query = await FirebaseFirestore.instance
+      .collection('game')
+        .where("modalidade", isEqualTo: team[0]).where('id', isEqualTo: team[1])
+      .get();
+  return query.docs.first.id;
+});
 final carouselStreamProvider = StreamProvider.autoDispose<List<Game>>((ref) {
   final stream = FirebaseFirestore.instance
       .collection('game')
-      .where('gameState', isNotEqualTo: 'pendent')
+      .where('gameState', isEqualTo: 'finished')
       .snapshots();
   return stream
       .map((snapshot) =>
-          snapshot.docs.map((doc) => Game.fromMap(doc.data())).toList())
-      .take(3);
+          snapshot.docs.map((doc) => Game.fromMap(doc.data())).toList());
 });

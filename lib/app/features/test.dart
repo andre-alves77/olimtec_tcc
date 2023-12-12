@@ -69,7 +69,7 @@ class GameCardStream extends StatelessWidget {
           print(snapshot.requireData.data());
           final game = snapshot.data!.data() as Map<String, dynamic>;
 
-          return NewGameCard(game);
+          return NewGameCard(game, docId);
         }
 
         // etc.
@@ -119,7 +119,9 @@ class ChampionsCard extends StatelessWidget {
 }
 
 class NewGameCard extends ConsumerWidget {
-  NewGameCard(this.game, {super.key});
+  NewGameCard(this.game, this.docId, {super.key});
+
+  final String docId;
 
   final Map<String, dynamic>
       game; //Dentro desse map que vem do banco, vai ser game['team1']
@@ -134,7 +136,7 @@ class NewGameCard extends ConsumerWidget {
     if (teamImage2 is String && teamImage1 is String)
       return GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, CronogramaUser.route);
+          Navigator.pushNamed(context, CronogramaUser.route, arguments: docId);
         },
         child: AspectRatio(
           aspectRatio: 2.8,
@@ -201,7 +203,7 @@ class NewGameCard extends ConsumerWidget {
                         Column(
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(80),
                               child: CachedNetworkImage(
                                 imageUrl: teamImage1,
                                 width: sizeWidth / 6,

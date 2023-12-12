@@ -91,23 +91,23 @@ class InsertRuleOrganization extends ConsumerWidget {
                       onTap: () async {
                         try {
                           String modalityId = "";
-                        await FirebaseFirestore.instance
-                            .collection('modality')
-                            .where('name', isEqualTo: arg!)
-                            .get()
-                            .then((value) {
-                          modalityId = value.docs.first.id;
-                        });
+                          await FirebaseFirestore.instance
+                              .collection('modality')
+                              .where('name', isEqualTo: arg!)
+                              .get()
+                              .then((value) {
+                            modalityId = value.docs.first.id;
+                          });
 
-                        FilePickerResult? result =
-                            await FilePicker.platform.pickFiles(
-                          type: FileType.custom,
-                          allowedExtensions: ['pdf'],
-                        );
+                          FilePickerResult? result =
+                              await FilePicker.platform.pickFiles(
+                            type: FileType.custom,
+                            allowedExtensions: ['pdf'],
+                          );
 
                         if (result != null) {
                           PlatformFile file = result.files.first;
-                          print(file);
+
                           final now = DateTime.now();
                           final uniqueFileName =
                               '${now.year}-${now.month}-${now.day}${now.hour}-${now.minute}-${now.second}.pdf';
@@ -116,25 +116,24 @@ class InsertRuleOrganization extends ConsumerWidget {
                           final pdfRef =
                               storageRef.child("modalityRules/$uniqueFileName");
 
-                          if (kIsWeb) {
+                         if (kIsWeb) {
                              await pdfRef.putData(file.bytes!);
                           } else {
                             await pdfRef.putFile(File(file.path!));
                           }
-                            
 
                           final pdfUrl = await pdfRef.getDownloadURL();
-                          print(pdfUrl);
 
-                          final firestoreRef = FirebaseFirestore.instance;
-                          final docRef = firestoreRef
-                              .collection('modality')
-                              .doc(modalityId);
-                          await docRef.update({'rulesLing': pdfUrl});
-                        } else {
-                          // User canceled the picker
-                        }
-                        CustomSnackBar(message: 'PDF enviado com sucesso', ref: ref);
+                            final firestoreRef = FirebaseFirestore.instance;
+                            final docRef = firestoreRef
+                                .collection('modality')
+                                .doc(modalityId);
+                            await docRef.update({'rulesLing': pdfUrl});
+                          } else {
+                            // User canceled the picker
+                          }
+                          CustomSnackBar(
+                              message: 'PDF enviado com sucesso', ref: ref);
                         } catch (e) {
                           throw CustomSnackBar(message: e.toString(), ref: ref, type: ScaffoldAlert.error);
                         }
@@ -183,23 +182,27 @@ class InsertRuleOrganization extends ConsumerWidget {
                       onTap: () async {
                         try {
                           String modalityId = "";
-                        await FirebaseFirestore.instance
-                            .collection('modality')
-                            .where('name', isEqualTo: arg!)
-                            .get()
-                            .then((value) {
-                          modalityId = value.docs.first.id;
-                        });
+                          await FirebaseFirestore.instance
+                              .collection('modality')
+                              .where('name', isEqualTo: arg!)
+                              .get()
+                              .then((value) {
+                            modalityId = value.docs.first.id;
+                          });
 
-                        final firestoreRef = FirebaseFirestore.instance;
-                        final docRef =
-                            firestoreRef.collection('modality').doc(modalityId);
-                        await docRef.update({"rulesLing": null});
-                        CustomSnackBar(message: 'PDF apagado com sucesso', ref: ref);
+                          final firestoreRef = FirebaseFirestore.instance;
+                          final docRef = firestoreRef
+                              .collection('modality')
+                              .doc(modalityId);
+                          await docRef.update({"rulesLing": null});
+                          CustomSnackBar(
+                              message: 'PDF apagado com sucesso', ref: ref);
                         } catch (e) {
-                          throw CustomSnackBar(message: 'Houve um erro', ref: ref, type: ScaffoldAlert.error);
+                          throw CustomSnackBar(
+                              message: 'Houve um erro',
+                              ref: ref,
+                              type: ScaffoldAlert.error);
                         }
-                        
                       },
                       child: Icon(
                         Icons.remove,
