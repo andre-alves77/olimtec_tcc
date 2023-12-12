@@ -327,7 +327,11 @@ class NewGameCard extends ConsumerWidget {
           child: FittedBox(
               fit: BoxFit.contain,
               child: Center(
-                child: CircularProgressIndicator(),
+                child: SizedBox(
+                  child: CircularProgressIndicator(
+                    strokeWidth: 0.5,
+                  ),
+                ),
               )),
         ),
       ),
