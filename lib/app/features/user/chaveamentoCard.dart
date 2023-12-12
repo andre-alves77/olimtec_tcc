@@ -124,7 +124,7 @@ class ChaveamentoCard extends ConsumerWidget {
                       Column(
                         children: [
                           ClipRRect(
-                            borderRadius: BorderRadius.circular(8),
+                            borderRadius: BorderRadius.circular(80),
                             child: CachedNetworkImage(
                               imageUrl: teamImage1 ?? '',
                               width: sizeWidth / 6,
@@ -230,7 +230,7 @@ class ChaveamentoCard extends ConsumerWidget {
                         child: Column(
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(80),
                               child: CachedNetworkImage(
                                 imageUrl: teamImage2 ?? '',
                                 width: sizeWidth / 6,

@@ -126,6 +126,7 @@ class NewGameCard extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final String? arg = ModalRoute.of(context)?.settings.arguments as String;
     final teamImage1 = ref.watch(getTeamImage(game['team1'])).value;
 
     final teamImage2 = ref.watch(getTeamImage(game['team2'])).value;
@@ -134,7 +135,7 @@ class NewGameCard extends ConsumerWidget {
     if (teamImage2 is String && teamImage1 is String)
       return GestureDetector(
         onTap: () {
-          Navigator.pushNamed(context, CronogramaUser.route);
+          Navigator.pushNamed(context, CronogramaUser.route, arguments: arg);
         },
         child: AspectRatio(
           aspectRatio: 2.8,
@@ -201,7 +202,7 @@ class NewGameCard extends ConsumerWidget {
                         Column(
                           children: [
                             ClipRRect(
-                              borderRadius: BorderRadius.circular(8),
+                              borderRadius: BorderRadius.circular(80),
                               child: CachedNetworkImage(
                                 imageUrl: teamImage1,
                                 width: sizeWidth / 6,
@@ -282,7 +283,7 @@ class NewGameCard extends ConsumerWidget {
                           child: Column(
                             children: [
                               ClipRRect(
-                                borderRadius: BorderRadius.circular(8),
+                                borderRadius: BorderRadius.circular(80),
                                 child: CachedNetworkImage(
                                   imageUrl: teamImage2,
                                   width: sizeWidth / 6,

@@ -1,4 +1,3 @@
-
 import 'dart:math';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -43,7 +42,10 @@ class StartGameCardStream extends StatelessWidget {
           print(snapshot.requireData.data());
           final game = snapshot.data!.data() as Map<String, dynamic>;
 
-          return StartGame(game: game, docId: docId,);
+          return StartGame(
+            game: game,
+            docId: docId,
+          );
         }
 
         // etc.
@@ -52,18 +54,14 @@ class StartGameCardStream extends StatelessWidget {
   }
 }
 
-
-
 class StartGame extends ConsumerWidget {
-  StartGame({required this.docId,
-    super.key, required this.game
-  });
+  StartGame({required this.docId, super.key, required this.game});
 
-Map<String, dynamic> game;
-final String docId;
+  Map<String, dynamic> game;
+  final String docId;
 
   @override
-  Widget build(BuildContext context,WidgetRef ref) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final sizeWidth = min(MediaQuery.of(context).size.width, 400).toDouble();
     final teamImage1 = ref.watch(getTeamImage(game['team1']));
     final teamImage2 = ref.watch(getTeamImage(game['team2']));
@@ -132,8 +130,10 @@ final String docId;
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: CachedNetworkImage(imageUrl:teamImage1.value!,
+                          borderRadius: BorderRadius.circular(80),
+                          child: CachedNetworkImage(
+                            imageUrl: teamImage1.value ??
+                                "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36",
                             width: sizeWidth / 8,
                             height: 60,
                             fit: BoxFit.scaleDown,
@@ -142,7 +142,7 @@ final String docId;
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(7, 0, 5, 0),
                           child: Text(
-                            game['team1'],
+                            game['team1'] ?? "A definir",
                             style: TextStyle(
                               fontFamily: 'Lato',
                               fontSize: 22,
@@ -161,7 +161,7 @@ final String docId;
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(7, 0, 5, 0),
                           child: Text(
-                            game['team2'],
+                            game['team2'] ?? "A definir",
                             style: TextStyle(
                               fontFamily: 'Lato',
                               fontSize: 22,
@@ -170,9 +170,10 @@ final String docId;
                           ),
                         ),
                         ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: CachedNetworkImage(imageUrl:
- teamImage2.value!,
+                          borderRadius: BorderRadius.circular(80),
+                          child: CachedNetworkImage(
+                            imageUrl: teamImage2.value ??
+                                "https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36",
                             width: sizeWidth / 8,
                             height: 60,
                             fit: BoxFit.scaleDown,
@@ -210,15 +211,24 @@ final String docId;
                         ),
                       ),
                       InkWell(
-                        onTap: () async{
-
-var mytime = await FirebaseFirestore.instance.collection('modality').where('name', isEqualTo: game['modalidade']).get().then((value) => value.docs.first.data());
-                          if(mytime['scoreType'] != "Placar de números 1 a 100"){
-                            Navigator.popAndPushNamed(context, ScoreBoardWithoutPoints.route);
-                          }else{
+                        onTap: () async {
+                          var mytime = await FirebaseFirestore.instance
+                              .collection('modality')
+                              .where('name', isEqualTo: game['modalidade'])
+                              .get()
+                              .then((value) => value.docs.first.data());
+                          if (mytime['scoreType'] !=
+                              "Placar de números 1 a 100") {
+                            Navigator.popAndPushNamed(
+                                context, ScoreBoardWithoutPoints.route);
+                          } else {
                             print(docId);
-                            await FirebaseFirestore.instance.collection('game').doc(docId).update({'gameState': 'inProgress'});
-                            Navigator.popAndPushNamed(context, GameScore.route, arguments:docId);
+                            await FirebaseFirestore.instance
+                                .collection('game')
+                                .doc(docId)
+                                .update({'gameState': 'inProgress'});
+                            Navigator.popAndPushNamed(context, GameScore.route,
+                                arguments: docId);
                           }
                         },
                         child: Text(
