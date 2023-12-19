@@ -48,18 +48,18 @@ Widget _rowzinha(String head, String info) {
 }
 
 class _GameScoreState extends ConsumerState<GameScore> {
-  int _counter = 0;
-  int _time2 = 0;
-  int _foulsTime1 = 0;
-  int _foulsTime2 = 0;
+  int counter = 0;
+  int time2 = 0;
+  int foulsTime1 = 0;
+  int foulsTime2 = 0;
 
   void _incrementCounter(String docId) async {
     try {
-      _counter++;
+      counter++;
       await FirebaseFirestore.instance
           .collection('game')
           .doc(docId)
-          .update({'teamPts1': _counter});
+          .update({'teamPts1': counter});
       setState(() {});
     } catch (e) {
       throw CustomSnackBar(message: 'Ocorreu um erro', ref: ref);
@@ -68,11 +68,11 @@ class _GameScoreState extends ConsumerState<GameScore> {
 
   void _decrementCounter(String docId) async {
     try {
-      _counter--;
+      counter--;
       await FirebaseFirestore.instance
           .collection('game')
           .doc(docId)
-          .update({'teamPts1': _counter});
+          .update({'teamPts1': counter});
       setState(() {});
     } catch (e) {
       throw CustomSnackBar(message: 'Ocorreu um erro', ref: ref);
@@ -81,11 +81,11 @@ class _GameScoreState extends ConsumerState<GameScore> {
 
   void _incrementTime2(String docId) async {
     try {
-      _time2++;
+      time2++;
       await FirebaseFirestore.instance
           .collection('game')
           .doc(docId)
-          .update({'teamPts2': _time2});
+          .update({'teamPts2': time2});
       setState(() {});
     } catch (e) {
       throw CustomSnackBar(message: 'Ocorreu um erro', ref: ref);
@@ -94,11 +94,11 @@ class _GameScoreState extends ConsumerState<GameScore> {
 
   void _decrementTime2(String docId) async {
     try {
-      _time2--;
+    time2--;
       await FirebaseFirestore.instance
           .collection('game')
           .doc(docId)
-          .update({'teamPts2': _time2});
+          .update({'teamPts2': time2});
       setState(() {});
     } catch (e) {
       throw CustomSnackBar(message: 'Ocorreu um erro', ref: ref);
@@ -107,25 +107,25 @@ class _GameScoreState extends ConsumerState<GameScore> {
 
   void _incrementFoulsTime1() {
     setState(() {
-      _foulsTime1++;
+     foulsTime1++;
     });
   }
 
   void _decrementFoulsTime1() {
     setState(() {
-      _foulsTime1--;
+     foulsTime1--;
     });
   }
 
   void _incrementFoulsTime2() {
     setState(() {
-      _foulsTime2++;
+      foulsTime2++;
     });
   }
 
   void _decrementFoulsTime2() {
     setState(() {
-      _foulsTime2--;
+      foulsTime2--;
     });
   }
 
@@ -135,6 +135,9 @@ class _GameScoreState extends ConsumerState<GameScore> {
     final String? argModality =
         ModalRoute.of(context)?.settings.arguments as String;
     final data = ref.watch(gameStreamProvider(argModality!)).value;
+      int counter = data!['teamPts1'];
+  time2 =  data['teamPts2'];
+
 
     final teamImage1 = ref.watch(getTeamImage(data!['team1'])).value ??
         'https://firebasestorage.googleapis.com/v0/b/olimtec-59335.appspot.com/o/images%2FTEMPLATELOGO-removebg-preview.png?alt=media&token=b699f564-8f5f-413a-9a0b-29d7c5f6bb36';
@@ -350,10 +353,10 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                     },
                                   ),
                                   AnimatedOpacity(
-                                    opacity: _counter != 0 ? 1.0 : 0.0,
+                                    opacity: counter != 0 ? 1.0 : 0.0,
                                     duration: Duration(milliseconds: 500),
                                     child: Text(
-                                      '$_counter',
+                                      '$counter',
                                       style: TextStyle(
                                         fontSize: 17,
                                         color: Colors.white,
@@ -402,10 +405,10 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                     },
                                   ),
                                   AnimatedOpacity(
-                                    opacity: _time2 != 0 ? 1.0 : 0.0,
+                                    opacity: time2 != 0 ? 1.0 : 0.0,
                                     duration: Duration(milliseconds: 500),
                                     child: Text(
-                                      '$_time2',
+                                      '$time2',
                                       style: TextStyle(
                                         fontSize: 17,
                                         color: Colors.white,
@@ -470,10 +473,10 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                     onPressed: _decrementFoulsTime1,
                                   ),
                                   AnimatedOpacity(
-                                    opacity: _foulsTime1 != 0 ? 1.0 : 0.0,
+                                    opacity: foulsTime1 != 0 ? 1.0 : 0.0,
                                     duration: Duration(milliseconds: 500),
                                     child: Text(
-                                      '$_foulsTime1',
+                                      '$foulsTime1',
                                       style: TextStyle(
                                         fontSize: 17,
                                         color: Colors.white,
@@ -518,10 +521,10 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                     onPressed: _decrementFoulsTime2,
                                   ),
                                   AnimatedOpacity(
-                                    opacity: _foulsTime2 != 0 ? 1.0 : 0.0,
+                                    opacity: foulsTime2 != 0 ? 1.0 : 0.0,
                                     duration: Duration(milliseconds: 500),
                                     child: Text(
-                                      '$_foulsTime2',
+                                      '$foulsTime2',
                                       style: TextStyle(
                                         fontSize: 17,
                                         color: Colors.white,
@@ -606,6 +609,8 @@ class _GameScoreState extends ConsumerState<GameScore> {
                               String nextgameDocId = '';
                               Map<String, dynamic>? nextGameData;
                               try {
+
+                                
                                 if (data['isfinal'] == true) {
                                   await FirebaseFirestore.instance
                                       .collection('game')
@@ -614,7 +619,7 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                   Navigator.pop(context);
                                 }
 
-                                if (_counter > _time2) {
+                                if (counter > time2) {
                                   await FirebaseFirestore.instance
                                       .collection('game')
                                       .doc(argModality)
@@ -652,7 +657,7 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                         .doc(nextgameDocId)
                                         .update({'team2': data['team1']});
                                   }
-                                } else {
+                                } else if (counter <time2) {
                                   await FirebaseFirestore.instance
                                       .collection('game')
                                       .doc(argModality)
@@ -689,6 +694,8 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                         .doc(nextgameDocId)
                                         .update({'team2': data['team2']});
                                   }
+                                }else if(counter == time2){
+                                  CustomSnackBar(message: 'EMPATE NÃO FUNCIONA', ref: ref);
                                 }
                                 await FirebaseFirestore.instance
                                     .collection('game')

@@ -92,22 +92,22 @@ class MainAdmin2 extends ConsumerWidget {
                     text1: "PRIVILÉGIOS ",
                     text2: "(UNICOS DO ADMINISTRADOR)"),
               ),
-              Padding(padding: EdgeInsets.all(15)),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, '/');
-                },
-                child: GestureDetector(
-                  onTap: () {
-                    Navigator.pushNamed(context, MainManagementAdmin.route);
-                  },
-                  child: OptionConfig(
-                      icone: Icons.library_books,
-                      text1: "GERENCIAMENTO ",
-                      text2: "(DE CADA MODALIDADE)"),
-                ),
-              ),
-              Padding(padding: EdgeInsets.all(15)),
+            // Padding(padding: EdgeInsets.all(15)),
+            //   GestureDetector(
+            //     onTap: () {
+            //       Navigator.pushNamed(context, '/');
+            //     },
+            //     child: GestureDetector(
+            //       onTap: () {
+            //         Navigator.pushNamed(context, MainManagementAdmin.route);
+            //       },
+            //       child: OptionConfig(
+            //           icone: Icons.library_books,
+            //           text1: "GERENCIAMENTO ",
+            //           text2: "(DE CADA MODALIDADE)"),
+            //     ),
+            //   ),
+                            Padding(padding: EdgeInsets.all(15)),
               // GestureDetector(
               //   onTap: () {
               //     Navigator.pushNamed(context, ModalitiesAdmin.route);
