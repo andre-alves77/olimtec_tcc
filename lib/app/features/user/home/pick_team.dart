@@ -17,49 +17,56 @@ class PickScreen extends ConsumerWidget {
     String? team = '';
 
     return Scaffold(
-      body: Center(child: teams.when(
-                data: (data) {
-                    var items =
-                        data!.map<DropdownMenuEntry<String>>((value) {
-                      return DropdownMenuEntry<String>(
-                          value: value, label: value);
-                    }).toList();
-                    return Column(
-                      children: [
-                        Text('Escolha sua sala'),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 12.0),
-                          child: DropdownMenu(
-                              label: Text("SALA"),
-                              requestFocusOnTap: false,
-                              dropdownMenuEntries: items,
-                              onSelected: (value) {
-                                team = value;
-                              }),
+      body: Center(
+        child: Container(
+          height: double.infinity,
+          child: teams.when(
+                  data: (data) {
+                      var items =
+                          data!.map<DropdownMenuEntry<String>>((value) {
+                        return DropdownMenuEntry<String>(
+                            value: value, label: value);
+                      }).toList();
+                      return Center(
+                        child: Column(
+                          children: [
+                            Text('Escolha sua sala'),
+                            Padding(
+                              padding: const EdgeInsets.only(top: 12.0),
+                              child: DropdownMenu(
+                                  label: Text("SALA"),
+                                  requestFocusOnTap: false,
+                                  dropdownMenuEntries: items,
+                                  onSelected: (value) {
+                                    team = value;
+                                  }),
+                            ),
+                            ElevatedButton(onPressed: ()async{
+                              final id = ref.watch(appUserStream).value!.id;
+                              print(id);
+                              print(team);
+                              String docid = "";
+                              await FirebaseFirestore.instance.collection('users').where('id', isEqualTo: id).get().then((value) {
+                                docid = value.docs.first.id;});
+                      
+                              await FirebaseFirestore.instance.collection('users').doc(docid).update({'teamName':team});
+                            }, child: Text('CONFIRMAR')),
+                          ],
                         ),
-                        ElevatedButton(onPressed: ()async{
-                          final id = ref.watch(appUserStream).value!.id;
-                          print(id);
-                          print(team);
-                          String docid = "";
-                          await FirebaseFirestore.instance.collection('users').where('id', isEqualTo: id).get().then((value) {
-                            docid = value.docs.first.id;});
-
-                          await FirebaseFirestore.instance.collection('users').doc(docid).update({'teamName':team});
-                        }, child: Text('CONFIRMAR')),
-                      ],
-                    );
-                  
-              
-                },
-                loading: () {
-                  return CircularProgressIndicator();
-                },
-                skipError: true,
-                error: (e, s) {
-                  return Center(child: Text('Ocorreu um erro'),);
-                },
-              ),),
+                      );
+                    
+                
+                  },
+                  loading: () {
+                    return CircularProgressIndicator();
+                  },
+                  skipError: true,
+                  error: (e, s) {
+                    return Center(child: Text('Ocorreu um erro'),);
+                  },
+                ),
+        ),
+      ),
     );
   }
 }

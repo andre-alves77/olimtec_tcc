@@ -58,6 +58,18 @@ void  deleteAllUsersTeams()async {
    });
 });
 }
+void  deleteAllUsersPrivilliges()async {
+  FirebaseFirestore.instance.collection('users').get().then((QuerySnapshot querySnapshot) {
+   querySnapshot.docs.forEach((doc) {
+    if(doc.get('isAdmin') == false){
+       FirebaseFirestore.instance.collection('users').doc(doc.id).update({
+           'isLeader': false,
+           'isOrganization':false,
+       });
+    }
+   });
+});
+}
 
   Future<List<String>> getUserIds() async {
     final userCollection = FirebaseFirestore.instance.collection('users');

@@ -52,10 +52,10 @@ class MainCard extends ConsumerWidget {
                             ),
                             const Text(' - '),
                             Text(
-                              game.modalidade,
+                              game.modalidade ?? '',
                               style: const TextStyle(
-                                fontFamily: 'Lato',
                                 fontSize: 18,
+                                fontFamily: 'Lato',
                                 fontWeight: FontWeight.bold,
                               ),
                             ),

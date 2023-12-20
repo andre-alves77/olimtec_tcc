@@ -3,6 +3,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:olimtec_tcc/app/data/dummy_data.dart';
 import 'package:olimtec_tcc/app/features/championship/service/game.service.dart';
+import 'package:olimtec_tcc/app/shared/views/loading_page.dart';
 import 'main_card.dart';
 
 class CardCarousel extends ConsumerStatefulWidget {
@@ -18,6 +19,7 @@ class _CardCarouselState extends ConsumerState<CardCarousel> {
   List<T> map<T>(List list, Function handler) {
     List<T> result = [];
     for (var i = 0; i < list.length; i++) {
+      if(list[i]!=null)
       result.add(handler(i, list[i]));
     }
     return result;
@@ -29,16 +31,27 @@ class _CardCarouselState extends ConsumerState<CardCarousel> {
     final game = ref.watch(carouselStreamProvider).when(
           data: (data) {
             for (int x = 0; x < 3; x++) {
+              if(data[x]!=null){
+
               cardList.add(MainCard(data[x]));
+              }
             }
             ;
           },
           error: (Object error, StackTrace stackTrace) {},
           loading: () {},
         );
+
+    if(cardList.length<3){
+
+      return SizedBox();
+    }if(ref.watch(carouselStreamProvider).isLoading){
+      return LoadingPage();
+    }
     return Column(
       children: <Widget>[
         CarouselSlider(
+
           options: CarouselOptions(
             autoPlay: true,
             autoPlayInterval: Duration(seconds: 5),
@@ -56,6 +69,7 @@ class _CardCarouselState extends ConsumerState<CardCarousel> {
             },
           ),
           items: cardList.map((card) {
+            if(card!=null) SizedBox();
             return Builder(builder: (BuildContext context) {
               return AspectRatio(
                 aspectRatio: 1.7,

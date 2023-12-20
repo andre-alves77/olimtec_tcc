@@ -605,6 +605,10 @@ class _GameScoreState extends ConsumerState<GameScore> {
                           child: TextButton(
                             onPressed: () async {
 //await FirebaseFirestore.instance.collection('game').doc(argModality).update({'gameState':"finished"});
+if(counter == time2){
+                                  CustomSnackBar(message: 'EMPATE NÃO FUNCIONA', ref: ref);
+}else{
+
 
                               String nextgameDocId = '';
                               Map<String, dynamic>? nextGameData;
@@ -694,8 +698,6 @@ class _GameScoreState extends ConsumerState<GameScore> {
                                         .doc(nextgameDocId)
                                         .update({'team2': data['team2']});
                                   }
-                                }else if(counter == time2){
-                                  CustomSnackBar(message: 'EMPATE NÃO FUNCIONA', ref: ref);
                                 }
                                 await FirebaseFirestore.instance
                                     .collection('game')
@@ -745,7 +747,7 @@ class _GameScoreState extends ConsumerState<GameScore> {
 // });
 
 //                                 }
-                            },
+                            }},
                             child: Text(
                               'FINALIZAR JOGO',
                               style: TextStyle(

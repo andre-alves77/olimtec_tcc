@@ -27,7 +27,7 @@ final teamnamesstream = StreamProvider.autoDispose((ref) {
 
 
 
-final getTeamStringProvider = FutureProvider((ref) async {
+final getTeamStringProvider = FutureProvider.autoDispose((ref) async {
   try {
     Future<List<String>> getTeams() async {
       List<String> fieldValues = [];

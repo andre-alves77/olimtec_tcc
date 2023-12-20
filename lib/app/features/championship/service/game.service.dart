@@ -31,7 +31,7 @@ final inProgressGamesProvider = StreamProvider<List<String>>(
   },
 );
 
-final finishedGamesProvider = StreamProvider<List<String>>(
+final finishedGamesProvider = StreamProvider.autoDispose<List<String>>(
   (ref) {
     return FirebaseFirestore.instance
         .collection('game')

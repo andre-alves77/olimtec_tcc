@@ -157,6 +157,7 @@ TextButton(onPressed: (() async{
       }
 
   ref.read(authRepositoryProvider).deleteAllUsersTeams();
+  ref.read(authRepositoryProvider).deleteAllUsersPrivilliges();
       
 
       await batch.commit();
